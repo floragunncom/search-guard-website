@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Redirect } from 'react-router-dom';
-import Home from './components/Home';
 
 class App extends Component {
   render() {
@@ -10,8 +9,8 @@ class App extends Component {
         <header className="App-header">
           <div className="App-intro">
             <Route path='/home' exact component={Home} />
-            {/* <Route path='/next' component={Next} />
-            <Route path='/last' component={Last} /> */}
+            <Route path='/next' component={Next} />
+            <Route path='/last' component={Last} />
             <Redirect to='/home' />
           </div>
         </header>
