@@ -29,7 +29,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "eslint": "^5.15.3",
     "eslint-loader": "^2.1.2"
   }
 }

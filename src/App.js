@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import { injectIntl, defineMessages } from "react-intl";
 
 const messages = defineMessages({
@@ -21,18 +20,13 @@ class App extends Component {
   render() {
     const { intl: { formatMessage } } = this.props;
     return (
-      <div className="App">
-        <header className="App-header">
-          <div className="languages">
-            <a href="/?locale=en">English</a>
-            <a href="/?locale=de">Deutsch</a>
-          </div>
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">{formatMessage(messages.title)}</h1>
-        </header>
-        <p className="App-intro">
+      <div>
+        <a href="/?locale=en">English</a>
+        <a href="/?locale=de">Deutsch</a>
+        <h1 className="App-title">{formatMessage(messages.title)}</h1>
+        <div>
           {formatMessage(messages.content1)} <code>src/App.js</code> {formatMessage(messages.content2)}
-        </p>
+        </div>
       </div>
     );
   }
