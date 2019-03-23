@@ -1,5 +1,6 @@
 import React from 'react';
 import { injectIntl, defineMessages } from 'react-intl';
+import LanguagePicker from './components/LanguagePicker';
 
 const messages = defineMessages({
   title: {
@@ -16,26 +17,14 @@ const messages = defineMessages({
   },
 });
 
-const ENGLISH = 'en';
-const GERMAN = 'de';
-
 const App = props => {
-  const setLanguage = language => {
-    localStorage.setItem('language', language);
-    window.location.reload();
-  };
-
   const {
     intl: { formatMessage },
   } = props;
+
   return (
     <div>
-      <button type="button" onClick={() => setLanguage(ENGLISH)}>
-        English
-      </button>
-      <button type="button" onClick={() => setLanguage(GERMAN)}>
-        Deutsch
-      </button>
+      <LanguagePicker />
       <h1 className="App-title">{formatMessage(messages.title)}</h1>
       <div>
         {formatMessage(messages.content1)} <code>src/App.js</code>
