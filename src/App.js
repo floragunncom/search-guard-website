@@ -17,13 +17,20 @@ const messages = defineMessages({
   },
 });
 
+const ENGLISH = 'en';
+const GERMAN = 'de';
+
 class App extends Component {
+  setLanguage(language) {
+    localStorage.setItem('language', language);
+    window.location.reload();
+  }
   render() {
     const { intl: { formatMessage } } = this.props;
     return (
       <div>
-        <a href="/?locale=en">English</a>
-        <a href="/?locale=de">Deutsch</a>
+        <button onClick={() => this.setLanguage(ENGLISH)}>English</button>
+        <button onClick={() => this.setLanguage(GERMAN)}>Deutsch</button>
         <h1 className="App-title">{formatMessage(messages.title)}</h1>
         <div>
           {formatMessage(messages.content1)} <code>src/App.js</code> {formatMessage(messages.content2)}
