@@ -1,11 +1,20 @@
 import React from 'react';
+import { injectIntl, defineMessages } from "react-intl";
+
+const messages = defineMessages({
+  headline: {
+    id: 'home.headline',
+    defaultMessage: 'Welcome to React'
+  },
+});
 
 const Home = props => {
+  const { intl: { formatMessage } } = props;
   return (
     <div>
-      <h3>Home View</h3>
+      <h3>{formatMessage(messages.headline)}</h3>
     </div>
   );
 };
 
-export default Home;
+export default injectIntl(Home);

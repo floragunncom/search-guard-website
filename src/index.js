@@ -10,7 +10,12 @@ import translations from './i18n/locales/';
 
 
 addLocaleData(deLocaleData);
-const locale = window.location.search.replace("?locale=", "") || "en";
+
+const getLanguage = () => {
+  return localStorage.getItem('language');
+}
+
+const locale = getLanguage() || "en";
 const messages = translations[locale];
 
 ReactDOM.render(
