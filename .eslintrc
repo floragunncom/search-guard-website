@@ -22,7 +22,8 @@
     "max-len": [
       "error",
       120
-    ]
+    ],
+    "react/prop-types": 0
   },
   "env": {
     "browser": true

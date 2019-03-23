@@ -13,10 +13,5 @@
     "id": "app.content2",
     "defaultMessage": "and save to reload.",
     "filepath": "src/App.js"
-  },
-  {
-    "id": "home.headline",
-    "defaultMessage": "Welcome to React",
-    "filepath": "src/views/Home.js"
   }
 ]
