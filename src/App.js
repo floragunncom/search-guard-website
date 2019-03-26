@@ -1,6 +1,11 @@
 import React from 'react';
+import './index.scss';
 import { injectIntl, defineMessages } from 'react-intl';
 import LanguagePicker from './components/LanguagePicker';
+import Cta from './components/Cta';
+import Title from './components/Title';
+import Footer from './components/Footer';
+import NavBar from './components/NavBar';
 
 const messages = defineMessages({
   title: {
@@ -24,12 +29,21 @@ const App = props => {
 
   return (
     <div>
-      <LanguagePicker />
+      <NavBar />
+      {/* <LanguagePicker />
       <h1 className="App-title">{formatMessage(messages.title)}</h1>
       <div>
         {formatMessage(messages.content1)} <code>src/App.js</code>
         {formatMessage(messages.content2)}
-      </div>
+      </div> */}
+      <Title text="Search guard security plugin" />
+      <Cta
+        headline="Free 60-day trial"
+        text="Want to see how your company can benefit from our Compliance
+            edition? Sign up to our 60-day trial, completely free of charge."
+        ctaText="start free trial"
+      />
+      <Footer />
     </div>
   );
 };

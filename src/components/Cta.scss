@@ -1,0 +1,90 @@
+@import '../styles/Colors';
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 482px;
+  background: linear-gradient(40deg, $darkBlue 30%, $navyBlue 30%);
+  @media only screen and (min-width: 1440px) {
+    background: linear-gradient(40deg, $darkBlue 33%, $navyBlue 33%);
+  };
+  @media only screen and (max-width: 450px) {
+    background: linear-gradient(165deg, $darkBlue 22%, $navyBlue 22%);
+  };
+}
+
+.cta-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1100px;
+  padding: 0 20px;
+  @media only screen and (max-width: 450px) {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+  };
+}
+
+.cta-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+img {
+  width: 50%;
+}
+img.image-style {
+  width: 90%;
+  border-radius: 50%;
+  @media only screen and (max-width: 450px) {
+    width: 64px;
+  }
+}
+
+.cta-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+  text-align: center; 
+  @media only screen and (max-width: 450px) {
+    justify-content: space-between;
+  }
+}
+
+.cta-headline {
+  font-size: 48px;
+  font-weight: 300;
+  color: $white;
+  margin-bottom: 32px;
+  @media only screen and (max-width: 450px) {
+    font-size: 24px;
+    margin-top: 24px;
+  }
+}
+
+.cta-text {
+  text-align: center;
+  line-height: 30px;
+  color: $white;
+  letter-spacing: 0.8;
+  font-size: 24px;
+  max-width: 600px;
+  @media only screen and (max-width: 450px) {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: normal;
+    margin-bottom: 32px;
+  }
+}
