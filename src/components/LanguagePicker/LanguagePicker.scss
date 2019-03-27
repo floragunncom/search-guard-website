@@ -1,0 +1,37 @@
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+  background-color: #ff0000;
+  padding: 15px;
+  cursor: pointer;
+}
+.header-closed {
+  border-radius: 3px;
+}
+
+.header-open {
+  border-radius: 3px 3px 0 0;
+}
+
+.open-and-close-button {
+  width: 10px;
+  transition-duration: 0.3s;
+}
+
+.close-button {
+  transform: rotate(180deg);
+}
+
+.dropdown-list {
+  position: absolute;
+  background-color: red;
+  padding: 15px;
+  width: 120px;
+  border-radius: 0 0 3px 3px;
+}
+
+.dropdown-list-element {
+  cursor: pointer;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { injectIntl, defineMessages } from 'react-intl';
-import LanguagePicker from './components/LanguagePicker';
+import LanguagePicker from './components/LanguagePicker/LanguagePicker';
 
 const messages = defineMessages({
   title: {
