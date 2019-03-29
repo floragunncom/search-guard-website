@@ -13,5 +13,15 @@
     "id": "app.content2",
     "defaultMessage": "and save to reload.",
     "filepath": "src/App.js"
+  },
+  {
+    "id": "app.language",
+    "defaultMessage": "English",
+    "filepath": "src/components/LanguagePicker/textContent.js"
+  },
+  {
+    "id": "app.languageAbbreviation",
+    "defaultMessage": "en",
+    "filepath": "src/components/LanguagePicker/textContent.js"
   }
 ]

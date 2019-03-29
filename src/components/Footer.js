@@ -6,66 +6,66 @@ const Footer = () => {
     <div className="footer-container">
       <div className="footer-wrapper">
         <div className="footer-links-container">
-          <div className="links-column-container">
-            <div className="list-headline">product</div>
-            <div className="list-item">
+          <div className="footer-links-column-container">
+            <div className="footer-list-headline">product</div>
+            <div className="footer-list-item">
               <a href="/">What it is</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">How it works</a>
             </div>
           </div>
-          <div className="links-column-container">
-            <div className="list-headline">licensing</div>
-            <div className="list-item">
+          <div className="footer-links-column-container">
+            <div className="footer-list-headline">licensing</div>
+            <div className="footer-list-item">
               <a href="/">Standard editions</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">Feature breakdown</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">Academic & Custom editions</a>
             </div>
           </div>
-          <div className="links-column-container">
-            <div className="list-headline">resource hub</div>
-            <div className="list-item">
+          <div className="footer-links-column-container">
+            <div className="footer-list-headline">resource hub</div>
+            <div className="footer-list-item">
               <a href="/">Documentation</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">Github repo</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">FAQ</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">Community forum</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">TLS certificate generator</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">Blog</a>
             </div>
           </div>
-          <div className="links-column-container">
-            <div className="list-headline">company</div>
-            <div className="list-item">
+          <div className="footer-links-column-container">
+            <div className="footer-list-headline">company</div>
+            <div className="footer-list-item">
               <a href="/">Mission</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">Who we are</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">Partners</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">Integrators</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">Data protection</a>
             </div>
-            <div className="list-item">
+            <div className="footer-list-item">
               <a href="/">Imprint</a>
             </div>
           </div>

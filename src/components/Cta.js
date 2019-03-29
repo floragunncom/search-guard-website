@@ -1,6 +1,6 @@
 import React from 'react';
 import './Cta.scss';
-import logo from '../images/cloud.png';
+import logo from '../images/cloud-big.svg';
 import Button from './Button';
 
 const Cta = props => {
@@ -9,7 +9,7 @@ const Cta = props => {
       <div className="cta-wrapper">
         <div className="cta-image-container">
           <div className="cta-image-wrapper">
-            <img src={logo} alt="cloud" className="image-style" />
+            <img src={logo} alt="cloud" className="cta-image-style" />
           </div>
         </div>
         <div className="cta-text-container">

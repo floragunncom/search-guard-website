@@ -1,0 +1,56 @@
+@import '../../styles/Colors';
+
+.lang-picker-dropdown {
+  @media only screen and (max-width: 768px) {
+    width: 90%;
+  }
+}
+
+.lang-picker-dropdown-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 120px;
+  background-color: $navyBlue;
+  color: $white;
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+.lang-picker-header-closed {
+  border-radius: 3px;
+}
+
+.lang-picker-header-open {
+  border-radius: 3px 3px 0 0;
+}
+
+.lang-picker-open-and-close-button {
+  width: 10px;
+  transition-duration: 0.3s;
+}
+
+.lang-picker-close-button {
+  transform: rotate(180deg);
+}
+
+.lang-picker-dropdown-list {
+  position: absolute;
+  background-color: $white;
+  color: $darkBlue;
+  // font-weight: bold;
+  padding: 15px;
+  width: 120px;
+  border-radius: 0 0 3px 3px;
+  @media only screen and (max-width: 768px) {
+    width: 80%;
+  }
+}
+
+.lang-picker-dropdown-list-element {
+  cursor: pointer;
+  padding-bottom: 10px;
+}
