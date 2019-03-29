@@ -30,8 +30,6 @@
   justify-content: space-between;
   align-items: start;
   width: 1180px;
-  // width: 100%;
-  // min-width: 100vw;
   margin: 0 20px;
     @media only screen and (max-width: 1140px) {
       width: 100%;
@@ -46,7 +44,6 @@
 
 .footer-links-column-container {
   border-left: 3px solid $turkis;
-  // padding-right: 110px;
   @media only screen and (max-width: 800px) {
     padding-right: 50px;
   };

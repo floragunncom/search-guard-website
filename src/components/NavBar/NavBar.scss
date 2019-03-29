@@ -6,14 +6,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // border: 2px solid red;
   @media only screen and (max-width: 900px) {
     height: 70px;
   }
 }
 
 .navbar-navbar-wrapper {
-  // border: 2px solid green;
   width: 1180px;
   padding: 0 20px;
   height: 100px;
@@ -28,7 +26,6 @@
 }
 
 img.navbar-logo-style {
-  // border: 2px solid blue;
   margin-top: 24px;
   width: 150px;
   @media only screen and (max-width: 900px) {
@@ -38,7 +35,6 @@ img.navbar-logo-style {
 }
 
 .navbar-nav-links-container {
-  // border: 2px solid purple;
   width: 700px;
   display: flex;
   align-items: center;
