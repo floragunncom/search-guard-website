@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './NavBar.scss';
-import logo from '../images/logo-white.svg';
-import cross from '../images/cross-white.svg';
+import logo from '../../images/logo-white.svg';
+import cross from '../../images/cross-white.svg';
 
 class NavBar extends Component {
   constructor(props) {

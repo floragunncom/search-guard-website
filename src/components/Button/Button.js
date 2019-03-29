@@ -1,6 +1,6 @@
 import React from 'react';
 import './Button.scss';
-import arrowRight from '../images/arrow-right-dark-blue.svg';
+import arrowRight from '../../images/arrow-right-dark-blue.svg';
 
 const Button = props => {
   return (
@@ -9,6 +9,6 @@ const Button = props => {
       <img src={arrowRight} alt="arrow" className="button-arrow-style" />
     </div>
   );
-}
+};
 
 export default Button;

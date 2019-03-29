@@ -1,11 +1,11 @@
 import React from 'react';
-import LanguagePicker from './LanguagePicker/LanguagePicker';
+import LanguagePicker from '../LanguagePicker/LanguagePicker';
 import './PreFooter.scss';
-import Email from './Email';
-import twitter from '../images/tw-dark.svg';
-import linkedIn from '../images/li-dark.svg';
-import youtube from '../images/yt-dark.svg';
-import facebook from '../images/fb-dark.svg';
+import Email from '../Email/Email';
+import twitter from '../../images/tw-dark.svg';
+import linkedIn from '../../images/li-dark.svg';
+import youtube from '../../images/yt-dark.svg';
+import facebook from '../../images/fb-dark.svg';
 
 const Info = () => {
   return (

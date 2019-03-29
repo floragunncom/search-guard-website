@@ -1,7 +1,7 @@
 import React from 'react';
 import './Cta.scss';
-import logo from '../images/cloud-big.svg';
-import Button from './Button';
+import logo from '../../images/cloud-big.svg';
+import Button from '../Button/Button';
 
 const Cta = props => {
   return (
