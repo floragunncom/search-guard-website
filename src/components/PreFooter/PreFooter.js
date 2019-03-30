@@ -9,15 +9,16 @@ import facebook from '../../images/fb-dark.svg';
 
 const Info = () => {
   return (
-    <div className="prefooter-container">
-      <div className="prefooter-wrapper">
-        <div className="prefooter-content-wrapper">
+    <div className="container">
+      <div className="row">
+        <div className="col s12 m6 l4">
           <div className="prefooter-headline">select your language</div>
           <div className="prefooter-content hr">
             <LanguagePicker />
           </div>
         </div>
-        <div className="prefooter-content-wrapper">
+        <div className="col s12 m6 l4">
+          <div className="pink darken-1">test</div>
           <div className="prefooter-headline">follow us</div>
           <div className="prefooter-content hr">
             <a href="/">
@@ -34,7 +35,7 @@ const Info = () => {
             </a>
           </div>
         </div>
-        <div className="prefooter-content-wrapper">
+        <div className="col s12 m12 l4">
           <div className="prefooter-headline">stay updated</div>
           <div className="prefooter-content">
             <p>

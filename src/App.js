@@ -1,16 +1,16 @@
 import React from 'react';
 import './index.scss';
 import { injectIntl, defineMessages } from 'react-intl';
-import Cta from './components/Cta';
-import Title from './components/Title';
-import Footer from './components/Footer';
-import NavBar from './components/NavBar';
-import PreFooter from './components/PreFooter';
+import Cta from './components/Cta/Cta';
+import Title from './components/Title/Title';
+import Footer from './components/Footer/Footer';
+import NavBar from './components/NavBar/NavBar';
+import PreFooter from './components/PreFooter/PreFooter';
 
 const messages = defineMessages({
   title: {
     id: 'app.title',
-    defaultMessage: 'Get in touch',
+    defaultMessage: 'Get in touch toucher in get touch',
   },
   content1: {
     id: 'app.content1',
