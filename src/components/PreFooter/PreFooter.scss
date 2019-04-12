@@ -2,46 +2,28 @@
 
 .prefooter-container {
   background-color: $lightGrey;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 315px;
-  @media only screen and (max-width: 768px) {
-    height: 100%;
-  };
 }
 
-.prefooter-wrapper {
-  width: 1180px;
-  height: 100%;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    margin: 0 24px 32px 24px;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+.prefooter-row {
+  padding: 64px 32px;
+  @media only screen and (max-width: 900px) {
+    padding: 0px 16px 32px 16px;
   };
 }
 
 .prefooter-content-wrapper {
-  margin-top: 64px;
-  display: flex;
-  padding-right: 20px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  @media only screen and (max-width: 768px) {
-    margin-top: 32px;
-    padding: 0;
-    border-bottom: 2px solid $navyBlue;
-    width: 100%;
-    &:last-child {
-      border: none;
-    }
+  padding: 0px;
+  @media only screen and (max-width: 900px) {
+    margin: 32px 0px;
+  };
+  @media only screen and (max-width: 450px) {
+    margin: 16px 0px;
+  };
+};
+
+.prefooter-col-content {
+  @media only screen and (max-width: 900px) and (min-width: 450px) {
+    padding: 0 12px;
   }
 }
 
@@ -49,34 +31,39 @@
   color: $darkBlue;
   text-transform: uppercase;
   font-size: 12px;
-  line-height: 32px;
   letter-spacing: 3.3px;
-  margin-bottom: 23px;
-  @media only screen and (max-width: 768px) {
-    margin-bottom: 16px;
-  };
-}
-
-a img {
-  width: 32px;
-  padding-right: 16px;
+  line-height: 32px;
 }
 
 .prefooter-content {
-  p {
-    color: $darkGrey;
-    font-size: 18px;
-    line-height: 27px;
-    max-width: 555px;
-    margin-bottom: 34px;
+  margin: 8px 0px 0px 0px;
+  @media only screen and (max-width: 600px) {
+    margin-top: 8px;
   };
 }
 
-.prefooter-content.hr {
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 32px;
+.prefooter-content-text {
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  padding-top: 4px;
+  margin-bottom: 32px;
+  @media only screen and (max-width: 900px) and (min-width: 450px) {
+    padding-top: 8px;
+    margin-bottom: 12px;
   };
+}
+
+hr.prefooter-hr {
+  display: none;
+  height: 1.75px;
+  background-color: $navyBlue;
+  margin-top: 24px;
+  @media only screen and (max-width: 600px) {
+    display: block;
+  };
+}
+
+.prefooter-content.icons img {
+  padding: 8px 16px 8px 0;
 }

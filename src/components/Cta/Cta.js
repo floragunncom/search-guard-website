@@ -1,21 +1,22 @@
 import React from 'react';
 import './Cta.scss';
-import logo from '../../images/cloud-big.svg';
 import Button from '../Button/Button';
 
 const Cta = props => {
   return (
     <div className="cta-container">
-      <div className="cta-wrapper">
-        <div className="cta-image-container">
-          <div className="cta-image-wrapper">
-            <img src={logo} alt="cloud" className="cta-image-style" />
+      <div className="row cta-row-wrapper">
+        <div className="cta-row col xs12 m4 l5">
+        <div className="cta-image-wrapper">
+          <div className="cta-image-container" />
           </div>
         </div>
-        <div className="cta-text-container">
-          <div className="cta-headline">{props.headline}</div>
-          <div className="cta-text">{props.text}</div>
-          <Button text={props.ctaText} />
+        <div className="cta-row col s12 m8 l7">
+          <div className="cta-text-container">
+            <div className="cta-headline">{props.headline}</div>
+            <div className="cta-text">{props.text}</div>
+            <Button text={props.ctaText} style="loud-link" />
+          </div>
         </div>
       </div>
     </div>

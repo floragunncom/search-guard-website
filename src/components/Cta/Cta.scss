@@ -1,52 +1,55 @@
 @import '../../styles/Colors.scss';
 
 .cta-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 482px;
-  background: linear-gradient(40deg, $darkBlue 30%, $navyBlue 30%);
-  @media only screen and (min-width: 1440px) {
-    background: linear-gradient(40deg, $darkBlue 33%, $navyBlue 33%);
+  padding: 96px 0px;
+  background: linear-gradient(40deg, $darkBlue 33%, $navyBlue 33%);
+  @media only screen and (max-width: 1100px) {
+    background: linear-gradient(66deg, $darkBlue 25%, $navyBlue 25%);
+    padding: 64px 0px;
   };
-  @media only screen and (max-width: 450px) {
-    background: linear-gradient(165deg, $darkBlue 22%, $navyBlue 22%);
+  @media only screen and (max-width: 600px) {
+    background: linear-gradient(165deg, $darkBlue 27.5%, $navyBlue 27.5%);
+    padding: 32px 0px 32px 0px;
   };
 }
 
-.cta-wrapper {
+.cta-image-wrapper {
+  height: 292px;
   display: flex;
-  justify-content: flex-start;
-  max-width: 1180px;
-  padding: 0 20px;
-  @media only screen and (max-width: 450px) {
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0;
+  align-items: center;
+  @media only screen and (max-width: 600px) {
+    height: unset;
+  };
+}
+
+.row.cta-row-wrapper {
+  margin-bottom: 0px;
+}
+
+.cta-row {
+  @media only screen and (max-width: 1100px) {
+    margin: 0px;
+  };
+  @media only screen and (max-width: 600px) {
+    margin-buttom: 32px;
+    width: 100%;
   };
 }
 
 .cta-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cta-image-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-img {
-  // width: 50%;
-}
-img.cta-image-style {
-  @media only screen and (max-width: 450px) {
-    width: 64px;
-  }
+  background: url('../../images/cta-tablet.svg') no-repeat;
+  background-size: cover;
+  width: 25vw;
+  height: 25vw;
+  max-width: 360px;
+  max-height: 360px;
+  @media only screen and (max-width: 1100px) {
+    margin-left: auto;
+    margin-right: auto;
+  };
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 8px;
+  };  
 }
 
 .cta-text-container {
@@ -63,11 +66,18 @@ img.cta-image-style {
 
 .cta-headline {
   font-size: 48px;
+  line-height: 57px;
   font-weight: 300;
   color: $white;
   margin-bottom: 32px;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 1100px) {
+    font-size: 36px;
+    line-height: 43px;
+  };
+  @media only screen and (max-width: 600px) {
     font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 8px;
     margin-top: 24px;
   }
 }
@@ -75,11 +85,11 @@ img.cta-image-style {
 .cta-text {
   text-align: center;
   line-height: 30px;
-  color: $white;
-  letter-spacing: 1px;
   font-size: 24px;
-  max-width: 600px;
-  @media only screen and (max-width: 450px) {
+  letter-spacing: 0.8px;
+  color: $white;
+  margin-bottom: 64px;
+  @media only screen and (max-width: 600px) {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: normal;

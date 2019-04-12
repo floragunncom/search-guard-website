@@ -1,0 +1,52 @@
+@import '../../styles/Colors';
+
+.blogpost-headline1 {
+  color: $darkBlue;
+  margin-top: 64px;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 57px;
+}
+
+.blogpost-headline2 {
+  margin-top: 32px;
+  color: $darkBlue;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  line-height: 30px;
+}
+
+.blogpost-code-snippet {
+  background-color: $lightGrey;
+  padding: 16px;
+}
+
+.blogpost-quote {
+  color: $navyBlue;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  line-height: 27px;
+}
+
+.blogpost-image-wrapper {
+  margin: 64px 0px;
+}
+
+.blogpost-image {
+  width: 100%;
+}
+
+.blogpost-image-description {
+  color: $darkGrey;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.blogpost-text {
+  margin-top: 32px;
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+}
+

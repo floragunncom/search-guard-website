@@ -1,0 +1,14 @@
+import React from 'react';
+import './LinkGhost.scss';
+import arrowRight from '../../images/arrow-right-dark-blue.svg';
+
+const ButtonGhost = props => {
+  return (
+    <div className="arrow-link-ghost-container">
+      <div className="arrow-button-text">{props.text}</div>
+      <img src={arrowRight} alt="arrow" className="arrow-link-arrow-style" />
+    </div>
+  );
+};
+
+export default ButtonGhost;

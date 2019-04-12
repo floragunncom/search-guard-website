@@ -63,7 +63,9 @@ class LanguagePicker extends React.Component {
                 key={language.i18n}
                 onClick={() => this.setLanguage(language)}
               >
-                {language.full.toUpperCase()}
+                <div className="lang-picker-text">
+                  {language.full.toUpperCase()}
+                </div>
               </div>
             ))}
           </div>

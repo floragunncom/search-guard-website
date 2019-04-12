@@ -6,6 +6,7 @@ import Title from './components/Title/Title';
 import Footer from './components/Footer/Footer';
 import NavBar from './components/NavBar/NavBar';
 import PreFooter from './components/PreFooter/PreFooter';
+import 'materialize-css/dist/css/materialize.min.css';
 
 const messages = defineMessages({
   title: {

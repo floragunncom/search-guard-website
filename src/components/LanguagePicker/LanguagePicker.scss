@@ -1,8 +1,9 @@
 @import '../../styles/Colors.scss';
 
 .lang-picker-dropdown {
-  @media only screen and (max-width: 768px) {
-    width: 90%;
+  margin-top: 12px;
+  @media only screen and (max-width: 450px) {
+    padding-bottom: 8px;
   }
 }
 
@@ -10,16 +11,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 120px;
   background-color: $navyBlue;
   color: $white;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  color: $white;
   font-weight: bold;
-  padding: 15px;
+  padding: 11px;
   cursor: pointer;
-  @media only screen and (max-width: 768px) {
-    width: 100%;
+  @media only screen and (min-width: 1000px) {
+    width: 150px;
   }
 }
+
 .lang-picker-header-closed {
   border-radius: 3px;
 }
@@ -29,7 +34,7 @@
 }
 
 .lang-picker-open-and-close-button {
-  width: 10px;
+  width: 10px; 
   transition-duration: 0.3s;
 }
 
@@ -38,14 +43,12 @@
 }
 
 .lang-picker-dropdown-list {
-  position: absolute;
   background-color: $white;
   color: $darkBlue;
-  padding: 15px;
-  width: 120px;
+  padding: 10px;
   border-radius: 0 0 3px 3px;
-  @media only screen and (max-width: 768px) {
-    width: 80%;
+    @media only screen and (min-width: 1000px) {
+    width: 150px;
   }
 }
 
