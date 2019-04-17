@@ -1,0 +1,33 @@
+@import '../../styles/Colors.scss';
+
+.arrow-button-loud-container {
+  height: 48px;	
+  width: 200px;
+  border-radius: 3px;
+  background-color: $turkis;
+  box-shadow: 0 20px 40px 0 rgba(90,90,90,0.24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background-color: $turkisHover;
+  };
+  &:active {
+    background-color: $turkisActive;
+  }
+  @media only screen and (max-width: 450px) {
+    width: 100%;
+  };
+}
+
+.arrow-button-loud-text {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: $textLoud;
+}
