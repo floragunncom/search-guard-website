@@ -1,8 +1,8 @@
 import React from 'react';
 import './contactUs.scss';
-import Footer from '../components/Footer';
-import NavBar from '../components/NavBar';
-import Title from '../components/Title';
+import Footer from '../components/Footer/Footer';
+import NavBar from '../components/NavBar/NavBar';
+import Title from '../components/Title/Title';
 import { injectIntl, defineMessages } from 'react-intl';
 import ContactForm from '../components/ContactForm';
 
