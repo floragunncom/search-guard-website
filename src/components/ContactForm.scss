@@ -1,7 +1,7 @@
 @import '../styles/Colors';
 
 .contact-form-container {
-  height: 1012px;
+  height: 1268;
   display: flex;
   justify-content: space-between;
   padding: 150px;
@@ -15,6 +15,9 @@
   height: 1012px;
   border-left: 3px solid $grey;
   padding-left: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .contact-information-wrapper {
@@ -94,3 +97,7 @@
     width: 100%;
   }
 }
+
+// .cta-wrapper {
+//   height
+// }

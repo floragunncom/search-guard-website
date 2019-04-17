@@ -1,6 +1,7 @@
 import React from 'react';
 import TextInput from './TextInput.js';
 import './ContactForm.scss';
+import Button from '../components/Button/Button';
 
 class ContactForm extends React.Component {
   state = {
@@ -60,138 +61,93 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      // <div className="contact-form-container">
-      //   <div>
-      //     Placeholder
-      //   </div>
-      //   <div className="contact-form-wrapper">
-      //     <div className="contact-information-wrapper">
-      //       <div className="contact-title">
-      //         CONTACT INFORMATION
-      //       </div>
-      //       <TextInput
-      //         value={this.state.firstName} 
-      //         onTextChange={this.onFirstNameChange}
-      //         placeholder={'First name'}
-      //       />
-      //       <TextInput
-      //         value={this.state.LastName}
-      //         onTextChange={this.onLastNameChange}
-      //         placeholder={'Last name'}
-      //       />
-      //       <TextInput
-      //         value={this.state.jobTitle}
-      //         onTextChange={this.onJobTitleChange}
-      //         placeholder={'Job title (optional)'}
-      //       />
-      //       <TextInput
-      //         value={this.state.email}
-      //         onTextChange={this.onEmailChange}
-      //         placeholder={'Email'}
-      //       />
-      //       <TextInput
-      //         value={this.state.phoneNumber}
-      //         onTextChange={this.onPhoneNumberChange}
-      //         placeholder={'Phone Number (optional)'}
-      //       />
-      //       <TextInput
-      //         value={this.state.website}
-      //         onTextChange={this.onWebsiteChange}
-      //         placeholder={'Website (optional)'}
-      //       />
-      //       <TextInput
-      //         value={this.state.cpuntry}
-      //         onTextChange={this.onCountryChange}
-      //         placeholder={'Country'}
-      //       />
-      //     </div>
-      //     <div className="technical-information-wrapper">
-      //       <div className="contact-title">
-      //         TECHNICAL INFORMATION
-      //       </div>
-      //       <TextInput
-      //         value={this.state.firstName}
-      //         onTextChange={this.onFirstNameChange}
-      //         placeholder={'Elasticsearch version'}
-      //       />
-      //       <TextInput
-      //         value={this.state.LastName}
-      //         onTextChange={this.onLastNameChange}
-      //         placeholder={'Current stage'}
-      //       />
-      //       <div class="input-field">
-      //         <input placeholder="Placeholder" id="first_name" type="text" class="validate" />
-      //         <label for="first_name">First Name</label>
-      //       </div>
-      //     </div>
-      //     <div className="message-wrapper">
-      //       <div className="contact-title">
-      //         YOUR MESSAGE
-      //       </div>
-      //       <TextInput
-      //         value={this.state.firstName}
-      //         onTextChange={this.onFirstNameChange}
-      //         placeholder={'Message'}
-      //       />
-      //     </div>
-      //     <div className="newsletter-section-wrapper">
-      //       <div className="contact-title">
-      //         NEWSLETTER
-      //       </div>
-      //       <label>
-      //         <input type="checkbox" class="filled-in" checked="checked" />
-      //       </label>
-      //     </div>
-      //     <div className="privacy-policy">
-      //       This form collects your name and email. Please take a look in our privacy policy for a better understanding on how we protect and manage your submitted data.
-      //     </div>
-      //     <div className="contact-cta">
-      //       SEND MESSAGE
-      //     </div>
-      //   </div>
-      // </div>
-      <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <input placeholder="Placeholder" id="first_name" type="text" class="validate"/>
-                <label for="first_name">First Name</label>
+      <div className="contact-form-container">
+        <div>
+          Placeholder
         </div>
-              <div class="input-field col s6">
-                <input id="last_name" type="text" class="validate"/>
-                  <label for="last_name">Last Name</label>
-        </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input disabled value="I am not editable" id="disabled" type="text" class="validate"/>
-                    <label for="disabled">Disabled</label>
-        </div>
+        <div className="contact-form-wrapper">
+          <div className="contact-information-wrapper">
+            CONTACT INFORMATION
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="first_name" type="text" class="validate" />
+                    <label for="first_name">First Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate" />
+                    <label for="last_name">Last Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="job_title" type="text" class="validate" />
+                    <label for="job_title">Job title (optional)</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="email" type="text" class="validate" />
+                    <label for="email">Email</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="phone_number" type="text" class="validate" />
+                    <label for="phone_number">Phone number (optional)</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="website" type="text" class="validate" />
+                    <label for="website">Website</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="country" type="text" class="validate" />
+                    <label for="country">Country</label>
+                  </div>
                 </div>
+              </form>
+            </div>
+          </div>
+          <div className="technical-information-wrapper">
+            TECHNICAL INFORMATION
+              <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="elasticseacrh_version" type="text" class="validate" />
+                    <label for="elasticseacrh_version">Elasticseacrh version</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="current_stage" type="text" class="validate" />
+                    <label for="current_stage">Current stage</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div className="message-wrapper">
+            YOUR MESSAGE
+              <div class="row">
+              <form class="col s12">
                 <div class="row">
                   <div class="input-field col s12">
-                    <input id="password" type="password" class="validate"/>
-                      <label for="password">Password</label>
-        </div>
+                    <input id="your_message" type="text" class="validate" />
+                    <label for="your_message">Message</label>
                   </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <input id="email" type="email" class="validate"/>
-                        <label for="email">Email</label>
-        </div>
-                    </div>
-                    <div class="row">
-                      <div class="col s12">
-                        This is an inline input field:
-          <div class="input-field inline">
-                          <input id="email_inline" type="email" class="validate" />
-                            <label for="email_inline">Email</label>
-                            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+                </div>
+              </form>
+            </div>
           </div>
-                        </div>
-                      </div>
-    </form>
-                  </div>
+          <div className="newsletter-section-wrapper">
+            NEWSLETTER
+            <div className="privacy-policy-checkbox">
+              <input type="checkbox" class="filled-in" checked="checked" />
+              <span> Send me updates about Serach Guard products and services</span>
+            </div>
+            <div class="privacy-policy">
+              This form collects your name and email. PLease take a look in our privacy policy for a better understanding on how we protect and manage your submitted data.
+            </div>
+          </div>
+          <div className=" cta-wrapper">
+            <Button style='default-button' text={'send message'} />
+          </div>
+        </div>
+      </div>
     );
   }
 }
