@@ -23,8 +23,8 @@ class Blog extends Component {
   render() {
     const posts = this.state.posts.map((post, index) => {
       return (
-        <div className="col s12 l6">
-          <BlogPost id={index} key={index} post={post} />
+        <div className="col s12 l6 blogpost-column-wrapper">
+          <BlogPost key={index} post={post} />
         </div>
       );
     });

@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^13.1.0",
+    "@contentful/rich-text-react-renderer": "^13.2.0",
+    "@contentful/rich-text-types": "^13.1.0",
     "contentful": "^7.5.0",
     "font-awesome": "^4.7.0",
     "materialize-css": "^1.0.0-rc.2",

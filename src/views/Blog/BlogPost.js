@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './BlogPost.scss';
-import infoArrow from '../../images/blog-info-arrow.svg';
+import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 
 class BlogPost extends Component {
   render() {
@@ -11,7 +11,7 @@ class BlogPost extends Component {
     let teaserText = null;
     content.forEach((paragraph) => {
       if (paragraph.nodeType === "paragraph") {
-        teaserText = paragraph.content[0].value.slice(0, 100);
+        teaserText = paragraph.content[0].value.slice(0, 80);
         return;
       }
     });
@@ -22,7 +22,7 @@ class BlogPost extends Component {
           <div className="blog-image-wrapper">
             <img
               src={post.postImage.fields.file.url}
-              className="blog-image"
+              className="blogpost-feed-image"
             />
           </div>
           <div className="blog-text-content">
@@ -35,7 +35,7 @@ class BlogPost extends Component {
             <div className="blog-paragraph">{teaserText} ...</div>
             <div className="blog-info-link">
               read more
-              <img src={infoArrow} className="blog-arrow" />
+              <img src={infoArrowForward} className="blog-arrow" />
             </div>
           </div>
         </Link>

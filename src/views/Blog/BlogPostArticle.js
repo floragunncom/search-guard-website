@@ -1,84 +1,107 @@
 import React, { Component} from 'react';
-import client from '../../components/Client/Client';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Link } from 'react-router-dom';
 import './BlogPostArticle.scss';
 import NavBar from '../../components/NavBar/NavBar';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
+// import BlogPost from './BlogPost';
+import quote from '../../images/quote.svg';
+import infoArrowBack from '../../images/info-arrow-back.svg';
+import iconGoogle from '../../images/icon-google-loud.svg';
+import iconTwitter from '../../images/icon-tw-loud.svg';
+import iconY from '../../images/icon-y-loud.svg';
+import iconIn from '../../images/icon-in-loud.svg';
+import iconFb from '../../images/icon-fb-loud.svg';
 
 class BlogPostArticle extends Component {
   constructor() {
     super();
     this.state = {
       content: null,
+      documentContent: null,
     };
   }
 
   componentDidMount() {
     const content = this.props.location.state.content;
-    // this.setState({ post });
-    // const {params} = this.props;
-    // console.log('params', params);
-    if (content && content.slug) {
-      // client.getEntries({ contentType: 'post', 'fields.slug': params.slug })
-      // .then((response) => {
-      //         console.log('response', response);
-      this.setState({ content });
+    const documentContent = content.postContent;
+    if (content) {
+      this.setState({ content, documentContent });
     }
   }
 
   render() {
-    function setParagraph (paragraph) {
-      return <div>{paragraph.content[0].value}</div>
-    }
+    const options = {
+      renderMark: {
+        [MARKS.BOLD]: text => <div className="bold">{text}</div>,
+        [MARKS.ITALIC]: text => <div className="italic">{text}</div>,
+        [MARKS.UNDERLINE]: text => <div className="underline">{text}</div>,
+        [MARKS.CODE]: text => <div className="blogpost-code-snippet">{text}</div>,
+      },
+      renderNode: {
+        [BLOCKS.QUOTE]: (node, children) => 
+          <div className="blogpost-quote-wrapper">
+            <img src={quote} className="blogpost-quote-image" />
+            <div className="blogpost-quote-text">{children}</div>
+        </div>,
+        [BLOCKS.PARAGRAPH]: (node, children) => node.content.some(childNode => childNode.nodeType === `text` && childNode.marks.some(mark => mark.type === MARKS.CODE)) ? children : <div className="blogpost-text">{children}</div>,
+        [BLOCKS.HEADING_1]: (node, children) => <div className="blogpost-headline1">{children}</div>,
+        [BLOCKS.HEADING_2]: (node, children) => <div className="blogpost-headline2">{children}</div>,
+        [BLOCKS.EMBEDDED_ASSET]: (node) => (
+          <div className="blogpost-image-wrapper">
+            <img className="blogpost-image" src={node.data.target.fields.file.url} />
+            <div className="blogpost-image-description">{node.data.target.fields.description}</div>
+          </div>
+        ),
+      },
+    };
 
     if (!this.state.content) {
       return <h1>Loading ...</h1>;
     }
-    
-    const content = this.state.content.postContent.content;
-    console.log(content);
     return (
       <div className="blogpost-container">
         <NavBar />
-        <BlogTitle 
+        <BlogTitle
           text={this.state.content.title}
           subText={`${this.state.content.author} || ${this.state.content.date}`}
           tags="security, search-guard, installation"
         />
         <div className="row">
-          <div className="col s12 offset-l2 l8 offset-l2">
-            {content.map(paragraph => {
-              switch (paragraph.nodeType) {
-                case "paragraph": 
-                  const contentType = paragraph.content[0].marks;
-                  if (contentType.length === 0) {
-                    return <div className="blogpost-text">{paragraph.content[0].value}</div>;
-                  }
-                  return <div className="blogpost-code-snippet"><code>{paragraph.content[0].value}</code></div>;
-                case "heading-1":
-                  return <div className="blogpost-headline1">{paragraph.content[0].value}</div>;
-                case "heading-2":
-                  return <div className="blogpost-headline2">{paragraph.content[0].value}</div>;
-                case "heading-3":
-                  return <div className="blogpost-headline2">{paragraph.content[0].value}</div>;
-                case "blockquote":
-                  return <div className="blogpost-quote">{paragraph.content[0].value}</div>;
-                case "embedded-asset-block":
-                  return (
-                    <div className="blogpost-image-wrapper">
-                      <img className="blogpost-image" src={paragraph.data.target.fields.file.url}/>
-                      <div className="blogpost-image-description">{paragraph.data.target.fields.description}</div>
-                    </div>
-                  );
-                default:
-                  return <div className="blogpost-text">{paragraph.content[0].value}</div>;
-              }
-              if (paragraph.nodeType == "paragraph") {
-              }
-            })}
-            <Link to={'/blog'}>Back</Link>
+          <div className="col s12 offset-l2 l8">
+            {documentToReactComponents(this.state.documentContent, options)}
+          </div>
+          <div className="col s12 offset-l1 l1 blogpost-sidebar-container">
+            <div className="blogpost-sidebar-title">share</div>
+            <div className="blogpost-sidebar-icons-container">
+              <div className="blogpost-sidebar-icon">
+                <img src={iconFb} />
+              </div>
+              <div className="blogpost-sidebar-icon">
+                <img src={iconTwitter} />
+              </div>
+              <div className="blogpost-sidebar-icon">
+                <img src={iconIn} />
+              </div>
+              <div className="blogpost-sidebar-icon">
+                <img src={iconY} />
+              </div>
+              <div className="blogpost-sidebar-icon">
+                <img src={iconGoogle} />
+              </div>
+            </div>
+          </div>
+          <div className="col s12 blogpost-recommended-headline">Other posts you may like</div>
+          <div className="col s12 l4">
+          </div>
+          <div className="col s12 blogpost-link">
+            <Link to={'/blog'}>
+              <img src={infoArrowBack} className="blogpost-arrow-back" />
+              back to blog
+            </Link>
           </div>
         </div>
         <PreFooter />

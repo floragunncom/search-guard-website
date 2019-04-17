@@ -3,11 +3,15 @@ import './BlogTitle.scss';
 
 const Title = props => {
   return (
-    <div className="blogtitle-container">
-      <div className="blogtitle-wrapper">
-        <div className="blogtitle-text">{props.text}</div>
-        <div className="blogtitle-sub-text">{props.subText}</div>
-        <div className="blogtitle-sub-text">{props.tags}</div>
+    <div>
+      <div className="blogtitle-container">
+        <div className="blogtitle-wrapper">
+          <div className="blogtitle-text">{props.text}</div>
+        </div>
+      </div>
+      <div className="blogtitle-subtext-container">
+          <div className="blogtitle-sub-text">{props.subText}</div>
+          <div className="blogtitle-sub-text">Tags: {props.tags}</div>
       </div>
     </div>
   );
