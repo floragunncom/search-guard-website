@@ -139,11 +139,11 @@ class ContactForm extends React.Component {
               <input type="checkbox" class="filled-in" checked="checked" />
               <span> Send me updates about Serach Guard products and services</span>
             </div>
-            <div class="privacy-policy">
-              This form collects your name and email. PLease take a look in our privacy policy for a better understanding on how we protect and manage your submitted data.
-            </div>
           </div>
-          <div className=" cta-wrapper">
+          <div class="privacy-policy">
+            This form collects your name and email. PLease take a look in our privacy policy for a better understanding on how we protect and manage your submitted data.
+          </div>
+          <div className="cta-wrapper">
             <Button style='default-button' text={'send message'} />
           </div>
         </div>
