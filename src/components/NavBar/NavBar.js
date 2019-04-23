@@ -59,7 +59,7 @@ class NavBar extends Component {
                   <a href="/" className="navbar-nav-link" href="javascript:void(0)">licensing</a>
                   <a href="/" className="navbar-nav-link" href="javascript:void(0)">resource hub</a>
                   <a href="/" className="navbar-nav-link" href="javascript:void(0)">company</a>
-                  <a href="/contact" className="navbar-nav-link" href="javascript:void(0)">contact us</a>
+                  <a href="/contact" className="navbar-nav-link">contact us</a>
                 </div>
               </div>
             </div>
