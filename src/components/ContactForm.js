@@ -62,7 +62,7 @@ class ContactForm extends React.Component {
   render() {
     return (
       <div className="contact-form-container">
-        <div>
+        <div className="place-holder">
           Placeholder
         </div>
         <div className="contact-form-wrapper">
@@ -71,32 +71,32 @@ class ContactForm extends React.Component {
             <div class="row">
               <form class="col s12">
                 <div class="row">
-                  <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate" />
+                  <div class="input-field col s12 m6 input-field-contact-wrapper">
+                    <input id="first_name" type="text" class="validate input-field-contact" />
                     <label for="first_name">First Name</label>
                   </div>
-                  <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate" />
+                  <div class="input-field col s12 m6 input-field-contact-wrapper">
+                    <input id="last_name" type="text" class="validate input-field-contact" />
                     <label for="last_name">Last Name</label>
                   </div>
-                  <div class="input-field col s6">
-                    <input id="job_title" type="text" class="validate" />
+                  <div class="input-field col s12 m6 input-field-contact-wrapper">
+                    <input id="job_title" type="text" class="validate input-field-contact" />
                     <label for="job_title">Job title (optional)</label>
                   </div>
-                  <div class="input-field col s6">
-                    <input id="email" type="text" class="validate" />
+                  <div class="input-field col s12 m6 input-field-contact-wrapper">
+                    <input id="email" type="text" class="validate input-field-contact" />
                     <label for="email">Email</label>
                   </div>
-                  <div class="input-field col s6">
-                    <input id="phone_number" type="text" class="validate" />
+                  <div class="input-field col s12 m6 input-field-contact-wrapper">
+                    <input id="phone_number" type="text" class="validate input-field-contact" />
                     <label for="phone_number">Phone number (optional)</label>
                   </div>
-                  <div class="input-field col s6">
-                    <input id="website" type="text" class="validate" />
+                  <div class="input-field col s12 m6 input-field-contact-wrapper">
+                    <input id="website" type="text" class="validate input-field-contact" />
                     <label for="website">Website</label>
                   </div>
-                  <div class="input-field col s6">
-                    <input id="country" type="text" class="validate" />
+                  <div class="input-field col s12 m6 input-field-contact-wrapper">
+                    <input id="country" type="text" class="validate input-field-contact" />
                     <label for="country">Country</label>
                   </div>
                 </div>
@@ -108,12 +108,12 @@ class ContactForm extends React.Component {
               <div class="row">
               <form class="col s12">
                 <div class="row">
-                  <div class="input-field col s6">
-                    <input id="elasticseacrh_version" type="text" class="validate" />
-                    <label for="elasticseacrh_version">Elasticseacrh version</label>
+                  <div class="input-field col s12 m6 input-field-contact-wrapper">
+                    <input id="elasticsearch_version" type="text" class="validate input-field-contact" />
+                    <label for="elasticsearch_version">Elasticsearch version</label>
                   </div>
-                  <div class="input-field col s6">
-                    <input id="current_stage" type="text" class="validate" />
+                  <div class="input-field col s12 m6 input-field-contact-wrapper">
+                    <input id="current_stage" type="text" class="validate input-field-contact" />
                     <label for="current_stage">Current stage</label>
                   </div>
                 </div>
@@ -125,8 +125,8 @@ class ContactForm extends React.Component {
               <div class="row">
               <form class="col s12">
                 <div class="row">
-                  <div class="input-field col s12">
-                    <input id="your_message" type="text" class="validate" />
+                  <div class="input-field col s12 input-field-contact-wrapper">
+                    <input id="your_message" type="text" class="validate input-field-contact" />
                     <label for="your_message">Message</label>
                   </div>
                 </div>
