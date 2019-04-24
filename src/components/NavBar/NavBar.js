@@ -38,7 +38,7 @@ class NavBar extends Component {
           <div href="/" className="navbar-nav-links-container">
             <Link to="/product" className="navbar-nav-link" href="javascript:void(0)">product</Link>
             <Link to="/license" className="navbar-nav-link" href="javascript:void(0)">licensing</Link>
-            <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource</Link>
+            <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource hub</Link>
             <Link to="/company" className="navbar-nav-link" href="javascript:void(0)">company</Link>
             <a href="/" className="navbar-nav-link">contact us</a>
           </div>
@@ -57,7 +57,7 @@ class NavBar extends Component {
                 <div href="/" className="navbar-nav-links-container-mobile">
                   <Link to="/product" className="navbar-nav-link" href="javascript:void(0)">product</Link>
                   <Link to="/license" className="navbar-nav-link" href="javascript:void(0)">licensing</Link>
-                  <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource</Link>
+                  <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource hub</Link>
                   <Link to="/company" className="navbar-nav-link" href="javascript:void(0)">company</Link>
                   <a href="/" className="navbar-nav-link" href="javascript:void(0)">contact us</a>
                 </div>
