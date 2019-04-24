@@ -16,7 +16,7 @@ const Button  = props => {
     case 'default-button':
       return <ButtonDefault text={props.text} />;
     case 'ghost-link':
-      return <LinkGhost text={props.text} />;
+      return <LinkGhost text={props.text} color={props.color} />;
     default:
       return <LinkDefault text={props.text} />;
   }

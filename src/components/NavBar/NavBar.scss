@@ -1,4 +1,5 @@
 @import '../../styles/Colors';
+@import '../../styles/Breakpoints';
 
 .navbar-navbar-container {
   background-color: $navyBlue;
@@ -6,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: $tabletBig) {
     height: 70px;
   }
 }
@@ -18,13 +19,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: $xl) {
     width: 100%;
     padding: 16px 32px 0 32px;
     height: 100%;
     margin: 0;
   };
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: $mobile) {
     padding: 16px 24px 0 24px;
   };
 }
@@ -32,7 +33,7 @@
 img.navbar-logo-style {
   margin-top: 24px;
   width: 150px;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: $tabletBig) {
     width: 100px;
     margin: 0;
   }
@@ -44,7 +45,7 @@ img.navbar-logo-style {
   align-items: center;
   justify-content: space-between;
   margin-top: 24px;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: $tabletBig) {
     display: none;
     margin: 0;
   }
@@ -71,7 +72,7 @@ a.navbar-nav-link, span.navbar-nav-link {
 
 .navbar-menu-container {
   display: none;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: $tabletBig) {
     display: block;
   }
 }
@@ -94,7 +95,7 @@ a.navbar-nav-link, span.navbar-nav-link {
   align-items: center;
   height: 80px;
   margin: 3px 24px 0 32px;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: $mobile) {
     margin-left: 24px;
   }
 }

@@ -8,7 +8,7 @@ import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 // import BlogPost from './BlogPost';
-import quote from '../../images/quote.svg';
+import quote from '../../images/quote-up.svg';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 import iconGoogle from '../../images/icon-google-loud.svg';
 import iconTwitter from '../../images/icon-tw-loud.svg';

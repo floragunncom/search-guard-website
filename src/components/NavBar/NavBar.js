@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './NavBar.scss';
+import { Link } from 'react-router-dom';
 import logo from '../../images/logo-white.svg';
 import cross from '../../images/cross-white.svg';
 
@@ -34,12 +35,11 @@ class NavBar extends Component {
           <a href="/">
             <img src={logo} alt="Logo" className="navbar-logo-style" />
           </a>
-          {/* <div className="navbar-empty-container" /> */}
           <div href="/" className="navbar-nav-links-container">
-            <a href="/" className="navbar-nav-link">product</a>
-            <a href="/" className="navbar-nav-link">licensing</a>
-            <a href="/" className="navbar-nav-link">resource hub</a>
-            <a href="/" className="navbar-nav-link">company</a>
+            <Link to="/product" className="navbar-nav-link" href="javascript:void(0)">product</Link>
+            <Link to="/license" className="navbar-nav-link" href="javascript:void(0)">licensing</Link>
+            <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource</Link>
+            <Link to="/company" className="navbar-nav-link" href="javascript:void(0)">company</Link>
             <a href="/" className="navbar-nav-link">contact us</a>
           </div>
           <div className="navbar-menu-container">
@@ -55,10 +55,10 @@ class NavBar extends Component {
                   </div>
                 </div>
                 <div href="/" className="navbar-nav-links-container-mobile">
-                  <a href="/" className="navbar-nav-link" href="javascript:void(0)">product</a>
-                  <a href="/" className="navbar-nav-link" href="javascript:void(0)">licensing</a>
-                  <a href="/" className="navbar-nav-link" href="javascript:void(0)">resource hub</a>
-                  <a href="/" className="navbar-nav-link" href="javascript:void(0)">company</a>
+                  <Link to="/product" className="navbar-nav-link" href="javascript:void(0)">product</Link>
+                  <Link to="/license" className="navbar-nav-link" href="javascript:void(0)">licensing</Link>
+                  <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource</Link>
+                  <Link to="/company" className="navbar-nav-link" href="javascript:void(0)">company</Link>
                   <a href="/" className="navbar-nav-link" href="javascript:void(0)">contact us</a>
                 </div>
               </div>

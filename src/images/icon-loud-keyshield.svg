@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 54.1 (76490) - https://sketchapp.com -->
+    <title>C4C597DA-6BDD-446D-BD01-CBE076C1565D</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="-37.1430985%" y1="-12.3282392%" x2="186.16446%" y2="139.48626%" id="linearGradient-1">
+            <stop stop-color="#00FCE5" offset="0%"></stop>
+            <stop stop-color="#00E3CE" offset="41.1836135%"></stop>
+            <stop stop-color="#00B0A0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="95.9938101%" y1="111.46588%" x2="-36.8129271%" y2="-79.3599544%" id="linearGradient-2">
+            <stop stop-color="#184962" offset="0%"></stop>
+            <stop stop-color="#246E94" offset="52.8810936%"></stop>
+            <stop stop-color="#246E94" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Templates" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SG_home" transform="translate(-242.000000, -3797.000000)" fill-rule="nonzero">
+            <g id="organisms-/-icon-group-/-desktop" transform="translate(0.000000, 3492.000000)">
+                <g id="organisms-/-icon-group-/-table" transform="translate(149.000000, 250.000000)">
+                    <g id="category-1">
+                        <g id="Stacked-Group" transform="translate(82.000000, 55.000000)">
+                            <g id="image-/-icon-/-encryption-/-desktop" transform="translate(11.000000, 0.000000)">
+                                <circle id="avatar" fill="url(#linearGradient-1)" cx="50" cy="50" r="50"></circle>
+                                <g id="icon-/-lock" transform="translate(25.000000, 25.000000)" fill="url(#linearGradient-2)">
+                                    <g id="shield-key-(1)" transform="translate(5.000000, 0.000000)">
+                                        <path d="M20.4545455,15.9090909 C21.7097381,15.9090909 22.7272727,16.9266256 22.7272727,18.1818182 C22.7272727,19.4370108 21.7097381,20.4545455 20.4545455,20.4545455 C19.1993528,20.4545455 18.1818182,19.4370108 18.1818182,18.1818182 C18.1818182,16.9266256 19.1993528,15.9090909 20.4545455,15.9090909 L20.4545455,15.9090909 Z M40.9090909,22.7272727 C40.9090909,35.3409091 32.1818182,47.1363636 20.4545455,50 C8.72727273,47.1363636 0,35.3409091 0,22.7272727 L0,9.09090909 L20.4545455,0 L40.9090909,9.09090909 L40.9090909,22.7272727 L40.9090909,22.7272727 Z M20.4545455,11.3636364 C16.6889676,11.3636364 13.6363636,14.4162403 13.6363636,18.1818182 C13.6363636,21.1590909 15.5227273,23.6818182 18.1818182,24.6136364 L18.1818182,38.6363636 L22.7272727,38.6363636 L22.7272727,34.0909091 L27.2727273,34.0909091 L27.2727273,29.5454545 L22.7272727,29.5454545 L22.7272727,24.6136364 C25.3863636,23.6818182 27.2727273,21.1590909 27.2727273,18.1818182 C27.2727273,14.4162403 24.2201233,11.3636364 20.4545455,11.3636364 Z" id="Shape"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

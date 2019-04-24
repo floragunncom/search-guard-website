@@ -1,20 +1,27 @@
 @import '../../styles/Colors';
+@import '../../styles/Breakpoints';
 
 .blog-wrapper {
   margin: 32px 0px;
   background-color: $lightGrey;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: $tabletBig) {
     margin: 0px;
   };
 }
 
 .col.s12.offset-l2.l8.offset-l2 {
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: $tabletBig) {
     padding: 0px 32px;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: $mobile) {
     padding: 0px 24px;
   }
+}
+
+.col.s12.l6.blogpost-column-wrapper {
+  @media only screen and (max-width: $tabletBig) {
+    padding: 0px;
+  };
 }
 
 .blog-image-wrapper {
@@ -45,7 +52,7 @@ img.blogpost-feed-image {
   font-size: 18px;
   line-height: 27px;
   font-weight: bold;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: $mobile) {
     font-size: 16px;
     line-height: 24px;
   };
@@ -63,7 +70,7 @@ img.blogpost-feed-image {
   margin-bottom: 36px;
   font-size: 18px;
   line-height: 27px;
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: $mobile) {
     font-size: 16px;
     line-height: 24px;
   };
