@@ -44,7 +44,7 @@ const Product = () => {
             </a>
           </div>
           <div className="product-anchor-item">
-            <a href="" className="product-anchor-link">
+            <a href="#certified" className="product-anchor-link">
               <img
                 src={arrowDown}
                 alt="arrow-down"
@@ -90,7 +90,7 @@ const Product = () => {
         headline="All industry sectors"
         text="Search Guard runs on high-scale mission-critical production clusters protecting sensitive data in the finance, healthcare, pharmaceutical, aviation, telecommunications, security, and data intelligence sectors."
       />
-      <div className="certified-wrapper">
+      <div className="certified-wrapper  scrollspy" id="certified">
         <div className="certified-headline">Certified</div>
         <div className="row">
           <div className="col s12 m4">
