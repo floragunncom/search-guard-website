@@ -48,15 +48,15 @@ const TileSimple = props => {
   } else {
     tilePosition = (
       <div className={wrapperStyle}>
-        <div className="row">
-          <div className="col s12 l6">
+        <div className="row tilesimple-change-order">
+          <div className="col s12 push-l6 l6 tilesimple-icon-wrapper-right">
+            <img src={props.icon} className={iconStyle}/>
+          </div>
+          <div className="col s12 pull-l6 l6">
             <div className={contentStyle}>
               <div className="tilesimple-headline">{props.headline}</div>
               <div className="tilesimple-text">{props.text}</div>
             </div>
-          </div>
-          <div className="col s12 l6 tilesimple-icon-wrapper-right">
-            <img src={props.icon} className={iconStyle} />
           </div>
         </div>
       </div>

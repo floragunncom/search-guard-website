@@ -29,6 +29,7 @@
 }
 
 .licensing-buttons {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,14 +39,15 @@
   };
 }
 
-.licensing-buttons-left, .licensing-buttons-right {
+.licensing-button-active, .licensing-button {
+  transition: all 200ms;
   border: 2px solid $navyBlue;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: bold;
 }
 
-.licensing-buttons-left {
+.licensing-button-active {
   padding: 18px 20px;
   font-size: 14px;
   line-height: 14px;
@@ -53,7 +55,7 @@
   color: $white;
 }
 
-.licensing-buttons-right {
+.licensing-button {
   padding: 15px 20px;
   font-size: 14px;
   line-height: 20px;
@@ -122,9 +124,10 @@
 }
 
 .licensing-editions-text-wrapper {
-  height: 212px;
+  height: 240px;
   @media only screen and (max-width: $tabletBig) {
     height: unset;
+    max-width: 500px;
   };
 }
 
@@ -149,11 +152,15 @@ img.licensing-icon {
   };
 }
 
-.community-border, .compliance-border, .enterprise-border {
+.community-border, .compliance-border, .enterprise-border{
   width: 100%;
   @media only screen and (max-width: $tabletBig) {
     width: 65%;
   };  
+}
+
+.academic-border, .custom-border {
+  width: 70%;
 }
 
 .community-border {
@@ -168,11 +175,18 @@ img.licensing-icon {
   border-bottom: 2.5px solid $complianceEdition;
 }
 
+.academic-border {
+  border-bottom: 2.5px solid $darkGrey;
+  color: $darkGrey;
+}
+
+.custom-border {
+  border-bottom: 2.5px solid $navyBlue;
+  color: $navyBlue;
+}
+
 .licensing-editions-button {
   margin-top: 16px;
-  @media only screen and (max-width: $mobile) {
-    width: 90%;
-  };
 }
 
 .licensing-info-wrapper {

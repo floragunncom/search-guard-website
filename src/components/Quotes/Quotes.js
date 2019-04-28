@@ -14,6 +14,7 @@ const Quotes = () => {
     swipeToSlide: true,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
     customPaging: dots => (
       <div>
         <div

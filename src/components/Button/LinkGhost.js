@@ -4,7 +4,7 @@ import arrowRight from '../../images/arrow-right-dark-blue.svg';
 
 const ButtonGhost = props => {
   return (
-    <div className="arrow-link-ghost-container" style={{ borderColor: `${props.color || '#00FCE5'}` }}>
+    <div className="arrow-link-ghost-container" style={{ borderColor: `${props.color || '#00FCE5'}`, width: `${props.width || '190px'}` }}>
       <div className="arrow-button-text">{props.text}</div>
       <img src={arrowRight} alt="arrow" className="arrow-link-arrow-style" />
     </div>

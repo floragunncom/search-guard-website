@@ -5,19 +5,58 @@ import TileSimple from '../../components/TileSimple/TileSimple';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import lock from '../../images/tile-icon-wheel.svg';
+import multilevel from '../../images/multilevel-security.svg';
+import disk from '../../images/disk.svg';
 import certificate from '../../images/icon-certificate.svg';
 import check from '../../images/icon-check.svg';
-import Services from '../../components/Services/Services';
+import shieldWheel from '../../images/shield-wheel.svg';
+import ctaIcon from '../../images/cta-banner-arrow.svg';
 import Cta from '../../components/Cta/Cta';
+import Services from '../../components/Services/Services';
 import Quotes from '../../components/Quotes/Quotes';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
+import Button from '../../components/Button/Button';
+import heroCertificates from '../../images/hero-certificates.svg';
+import veracode from '../../images/veracode.svg';
+import alliance from '../../images/alliance.svg';
+import security from '../../images/security.svg';
 
 const HomePage = () => {
   return (
     <div>
-      <NavBar />
+      <NavBar background="#184962" />
+      <div className="hero-wrapper">
+        <div className="row">
+          <div className="hero-row-empty-mobile" />
+          <div className="hero-row-wrapper">
+            <div className="col s12 m5 l6 hero-col-wrapper">
+              <div className="hero-text-wrapper">
+                <div className="hero-text-wrapper-headline">
+                  Security for Elasticsearch
+                </div>
+                <div className="hero-text-wrapper-text">
+                  Search Guard is an Enterprise Security Suite that encrypts and
+                  protects your data and data flows in the entire Elastic Stack,
+                  including Kibana, Logstash and Beats.
+                </div>
+              </div>
+              <div className="hero-button-wrapper">
+                <Button text="start free trial" style="loud-link" />
+              </div>
+              <div className="hero-certificate-wrapper">
+                <img src={heroCertificates} alt="icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="hero-certificate-wrapper-hidden">
+        <img src={veracode} alt="icon" />
+        <img src={alliance} alt="icon" />
+        <img src={security} alt="icon" />
+      </div>
       <TileSimple
-        icon={lock}
+        icon={multilevel}
         iconPosition="left"
         backgroundColor="dark"
         headline="Multilevel security"
@@ -31,7 +70,7 @@ const HomePage = () => {
         text="Search Guard can be used to secure your Elasticsearch cluster by working with different industry standard authentication techniques, like Kerberos, LDAP / Active Directory, JSON web tokens, TLS certificates and Proxy authentication / SSO."
       />
       <TileSimple
-        icon={lock}
+        icon={disk}
         iconPosition="left"
         backgroundColor="dark"
         headline="Elastic Stack"
@@ -56,7 +95,7 @@ const HomePage = () => {
           </div>
           <div className="col s12 m4">
             <div className="securityinfo-icon-wrapper">
-              <img src={check} />
+              <img src={shieldWheel} />
             </div>
             <div className="securityinfo-text-wrapper">
               <div className="securityinfo-headline">Priority support</div>
@@ -69,7 +108,7 @@ const HomePage = () => {
           </div>
           <div className="col s12 m4">
             <div className="securityinfo-icon-wrapper">
-              <img src={certificate} />
+              <img src={check} />
             </div>
             <div className="securityinfo-text-wrapper">
               <div className="securityinfo-headline">Trusted by</div>
@@ -88,6 +127,7 @@ const HomePage = () => {
         headline="Free 60-day trial"
         text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
         ctaText="start free trial"
+        icon={ctaIcon}
       />
       <Quotes />
       <PreFooter />

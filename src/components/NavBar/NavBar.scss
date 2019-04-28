@@ -3,7 +3,6 @@
 
 .navbar-navbar-container {
   background-color: $navyBlue;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,8 +13,7 @@
 
 .navbar-navbar-wrapper {
   width: 1180px;
-  padding: 0 20px;
-  height: 100px;
+  padding: 3px 20px 18px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;

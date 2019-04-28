@@ -30,7 +30,7 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div className="navbar-navbar-container">
+      <div className="navbar-navbar-container" style={{backgroundColor: this.props.background}}>
         <div className="navbar-navbar-wrapper">
           <a href="/">
             <img src={logo} alt="Logo" className="navbar-logo-style" />
