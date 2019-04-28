@@ -1,0 +1,70 @@
+@import '../../styles/Colors.scss';
+@import '../../styles/Breakpoints';
+
+.prefooter-container {
+  background-color: $lightGrey;
+}
+
+.prefooter-row {
+  padding: 64px 32px;
+  @media only screen and (max-width: $tabletBig) {
+    padding: 0px 16px 32px 16px;
+  };
+}
+
+.prefooter-content-wrapper {
+  padding: 0px;
+  @media only screen and (max-width: $tabletBig) {
+    margin: 32px 0px;
+  };
+  @media only screen and (max-width: $mobile) {
+    margin: 16px 0px;
+  };
+};
+
+.prefooter-col-content {
+  @media only screen and (max-width: $tabletBig) and (min-width: $mobile) {
+    padding: 0 12px;
+  }
+}
+
+.prefooter-headline {
+  color: $darkBlue;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 3.3px;
+  line-height: 32px;
+}
+
+.prefooter-content {
+  margin: 8px 0px 0px 0px;
+  @media only screen and (max-width: 600px) {
+    margin-top: 8px;
+  };
+}
+
+.prefooter-content-text {
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  padding-top: 4px;
+  margin-bottom: 32px;
+  @media only screen and (max-width: $tabletBig) and (min-width: $mobile) {
+    padding-top: 8px;
+    margin-bottom: 12px;
+  };
+}
+
+hr.prefooter-hr {
+  display: none;
+  height: 1.75px;
+  background-color: $navyBlue;
+  margin-top: 24px;
+  @media only screen and (max-width: 600px) {
+    display: block;
+  };
+}
+
+.prefooter-content.icons img {
+  padding: 8px 16px 8px 0;
+}

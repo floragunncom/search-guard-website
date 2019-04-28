@@ -1,0 +1,83 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.quotes-container {
+  @media only screen and (max-width: $tabletBig) {
+    display: none;
+  };
+}
+
+.slick-slider {
+  margin-bottom: 128px;
+}
+.quotes-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.quotes-headline {
+  margin-top: 128px;
+  margin-bottom: 26px;
+  color: $darkBlue;
+  font-size: 48px;
+  line-height: 57px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.quotes-right-icon {
+  float: right;
+  margin-top: -24px;
+  transform: rotate(180deg);
+}
+
+.quotes-text {
+  margin: -30px 90px 0px 90px;
+  font-size: 24px;
+  line-height: 39px;
+  letter-spacing: 0.8px;
+  color: $darkBlue;
+  text-align: center;
+}
+
+.quotes-author-name {
+  text-align: center;
+  margin-top: 64px;
+  font-size: 18px;
+  line-height: 27px;
+  color: $darkGrey;
+}
+
+.quotes-author-title, .quotes-author-company {
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: $darkGrey;
+}
+
+.quotes-carousel {
+  margin-bottom: 128px;
+}
+
+.quotes-quote-down {
+  width: 100%;
+  text-align: left;
+}
+
+.slick-dots li {
+  width: unset;
+  height: unset;
+}
+
+ul.slick-dots .slick-active {
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  font-size: 0px;
+  background-color: $buttonGreen;
+  border: 0.5px solid $buttonGreen;
+}

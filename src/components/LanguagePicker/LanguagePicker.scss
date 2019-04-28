@@ -1,37 +1,58 @@
-.dropdown-header {
+@import '../../styles/Colors.scss';
+
+.lang-picker-dropdown {
+  margin-top: 12px;
+  @media only screen and (max-width: 450px) {
+    padding-bottom: 8px;
+  }
+}
+
+.lang-picker-dropdown-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 120px;
-  background-color: #ff0000;
-  padding: 15px;
+  background-color: $navyBlue;
+  color: $white;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  color: $white;
+  font-weight: bold;
+  padding: 11px;
   cursor: pointer;
+  @media only screen and (min-width: 1000px) {
+    width: 150px;
+  }
 }
-.header-closed {
+
+.lang-picker-header-closed {
   border-radius: 3px;
 }
 
-.header-open {
+.lang-picker-header-open {
   border-radius: 3px 3px 0 0;
 }
 
-.open-and-close-button {
-  width: 10px;
+.lang-picker-open-and-close-button {
+  width: 10px; 
   transition-duration: 0.3s;
 }
 
-.close-button {
+.lang-picker-close-button {
   transform: rotate(180deg);
 }
 
-.dropdown-list {
-  position: absolute;
-  background-color: red;
-  padding: 15px;
-  width: 120px;
+.lang-picker-dropdown-list {
+  background-color: $white;
+  color: $darkBlue;
+  padding: 10px;
   border-radius: 0 0 3px 3px;
+    @media only screen and (min-width: 1000px) {
+    width: 150px;
+  }
 }
 
-.dropdown-list-element {
+.lang-picker-dropdown-list-element {
   cursor: pointer;
+  padding-bottom: 10px;
 }

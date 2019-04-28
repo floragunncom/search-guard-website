@@ -1,0 +1,30 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+.container, .row, .container .row {
+  width: inherit;
+  margin: 0px auto;
+}
+
+div.row {
+  max-width: 1180px;
+  margin-bottom: 0px;
+}
+
+.row .col {
+  padding: 0px 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+}

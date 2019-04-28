@@ -27,3 +27,6 @@ eg. ```import de from './de.json';```
 8. In the same file add the language abbreviation to the `Translations` object
 e.g. ```export const Translations = { de, en, es };```
 9. In the newly created translation json (e.g. `src/i18n/locales/de.json`) you can now translate the strings.
+
+**Get Materialize up-and-running**
+http://fullstackhybrid.com/using-materializecss-with-reactjs/

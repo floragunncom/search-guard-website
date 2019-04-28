@@ -41,29 +41,31 @@ class LanguagePicker extends React.Component {
     });
 
     return (
-      <div className="dropdown">
+      <div className="lang-picker-dropdown">
         <div
-          className={`dropdown-header ${
-            isOpen ? 'header-open' : 'header-closed'
+          className={`lang-picker-dropdown-header ${
+            isOpen ? 'lang-picker-header-open' : 'lang-picker-header-closed'
           }`}
           onClick={() => this.toggleList()}
         >
           <div>{currentLanguage.toUpperCase()}</div>
           <img
-            className={`open-and-close-button ${isOpen ? 'close-button' : ''}`}
+            className={`lang-picker-open-and-close-button ${isOpen ? 'lang-picker-close-button' : ''}`}
             src={openCloseButton}
-            alt="open-and-close-button"
+            alt="lang-picker-open-and-close-button"
           />
         </div>
         {isOpen && (
-          <div className="dropdown-list">
+          <div className="lang-picker-dropdown-list">
             {arrayOfOtherLanguages.map(language => (
               <div
-                className="dropdown-list-element"
+                className="lang-picker-dropdown-list-element"
                 key={language.i18n}
                 onClick={() => this.setLanguage(language)}
               >
-                {language.full.toUpperCase()}
+                <div className="lang-picker-text">
+                  {language.full.toUpperCase()}
+                </div>
               </div>
             ))}
           </div>

@@ -1,0 +1,21 @@
+@import '../../styles/Colors.scss';
+@import '../../styles/Breakpoints';
+
+#email-input {
+  color: $navyBlueActive;
+}
+
+input#email {
+  padding: 0px;
+  border-bottom: 2px solid $navyBlue;
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 22px;
+  };
+}
+
+div.input-field.col {
+  padding: 0px 21px 0px 0px;
+  @media only screen and (max-width: $mobile) {
+    padding: 0px; 
+  };
+}
