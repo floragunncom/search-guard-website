@@ -13,6 +13,29 @@
   };
 }
 
+.topic-wrapper-icon {
+  padding: 64px 32px;
+  @media only screen and (max-width: $tabletBig) {
+    background-color: $lightGrey;
+    padding: 32px;
+  };
+  @media only screen and (max-width: $mobile) {
+    padding: 16px 24px 32px 24px;
+  };
+}
+
+.topic-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  img {
+    @media only screen and (max-width: $mobile) {
+      height: 100px;
+      width: 100px;
+    };
+  }
+}
+
 .topic-headline {
   font-size: 48px;
   line-height: 57px;

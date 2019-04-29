@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="150px" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>illustration / mission 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="123.19697%" y1="44.5%" x2="-23.3787879%" y2="44.5%" id="linearGradient-1">
+            <stop stop-color="#00FCE5" offset="0%"></stop>
+            <stop stop-color="#00C9B7" offset="49%"></stop>
+            <stop stop-color="#00C9B7" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="123.19697%" y1="44.5%" x2="-23.3787879%" y2="44.5%" id="linearGradient-2">
+            <stop stop-color="#00FCE5" offset="0%"></stop>
+            <stop stop-color="#00C9B7" offset="49%"></stop>
+            <stop stop-color="#00C9B7" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="51.7003933%" y1="-103.393965%" x2="49.4260204%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#246E94" offset="0%"></stop>
+            <stop stop-color="#184962" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50.5613015%" y1="0%" x2="49.4386985%" y2="100%" id="linearGradient-4">
+            <stop stop-color="#246E94" offset="0%"></stop>
+            <stop stop-color="#184962" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="27.7777778%" x2="0%" y2="72.2222222%" id="linearGradient-5">
+            <stop stop-color="#246E94" offset="0%"></stop>
+            <stop stop-color="#184962" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="banner-/-headline-+-h3-+-icon-/-desktop" transform="translate(-645.000000, -64.000000)">
+            <g id="illustration-/-mission-2" transform="translate(645.000000, 64.000000)">
+                <g id="illustration-/-mission">
+                    <circle id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="75" cy="75" r="75"></circle>
+                    <g id="flag,-target,-tag,-flagged" stroke-width="1" fill-rule="evenodd" transform="translate(32.000000, 33.000000)">
+                        <path d="M40.46,10 L9,10 L9,55 L40.46,55 C44.624227,55 48,58.375773 48,62.54 L48,17.54 C48,13.375773 44.624227,10 40.46,10 Z" id="Path" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+                        <path d="M48,17.5 L48,65.5 C48.0220088,69.6485975 51.3913441,73.0000584 55.54,73 L78.26,73 C81.4963886,73 84.12,70.3763886 84.12,67.14 L84.12,30.38 C84.1306608,28.9568261 83.5727651,27.5882775 82.570163,26.5781653 C81.5675609,25.5680531 80.2032138,24.9999601 78.78,25 L55.54,25 C51.3913441,25.0000584 48.0220088,21.6485975 48,17.5 Z" id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+                        <path d="M9,85 L0,85 L0,5.5 C-1.77635684e-15,3.01471863 2.01471863,1 4.5,1 C5.6934742,1 6.83806681,1.47410578 7.68198052,2.31801948 C8.52589422,3.16193319 9,4.3065258 9,5.5 L9,85 Z" id="Path" fill="url(#linearGradient-3)" fill-rule="nonzero" opacity="0.815824963"></path>
+                        <path d="M9,85 L9,5.78 C9.05636091,3.34403339 7.24173198,1.2689314 4.82,1 C2.58468469,0.840088594 0.572373336,2.34932211 0.1,4.54 L1.4,5.96 C3.38389026,8.15352537 4.48784041,11.002429 4.5,13.96 L4.5,85 L9,85 Z" id="Path" fill="url(#linearGradient-4)" fill-rule="nonzero" opacity="0.815824963"></path>
+                        <rect id="Rectangle" fill="url(#linearGradient-5)" fill-rule="nonzero" opacity="0.815824963" x="0" y="79" width="9" height="6"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
