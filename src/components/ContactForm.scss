@@ -4,8 +4,8 @@
   height: 1268;
   display: flex;
   justify-content: space-between;
-  padding: 150px;
-  @media only screen and (max-width: 900px) {
+  padding: 10%;
+  @media only screen and (max-width: 1000px) {
     padding: 28px;
     flex-wrap: wrap;
     margin-top: 4px;
@@ -19,7 +19,7 @@
   padding-left: 100px;
   display: flex;
   flex-direction: column;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     padding: 0px;
     padding-top: 32px;
     border-left: 0;
@@ -34,12 +34,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     width: 100%;
-    height: 480px;
     flex-wrap: unset;
     flex-direction: column;
     justify-content: initial;
+  }
+  @media only screen and (max-width: 600px) {
+    height: 480px;
   }
 }
 
@@ -60,7 +62,7 @@ input#first_name, input#last_name, input#job_title, input#email, input#phone_num
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 64px;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     width: 100%;
     height: 160px;
   }
@@ -73,7 +75,7 @@ input#first_name, input#last_name, input#job_title, input#email, input#phone_num
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 64px;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     width: 100%;
     height: 96px;
   }
@@ -83,7 +85,7 @@ input#first_name, input#last_name, input#job_title, input#email, input#phone_num
   width: 653px;
   height: 112px;
   margin-top: 64px;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     width: 100%;
     height: 92px;
   }
@@ -93,7 +95,7 @@ input#first_name, input#last_name, input#job_title, input#email, input#phone_num
   height: 54px;	
   width: 653px;
   margin: 32px 0px;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     width: 100%;
     height: 120px;
   }
@@ -120,13 +122,40 @@ input#first_name, input#last_name, input#job_title, input#email, input#phone_num
   display: flex;
   justify-content: center;
   align-items: center;
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 1000px) {
     width: 100%;
   }
 }
 
-.place-holder {
+.company-information-container {
   height: 154px;
+  margin-right: 50px;
+  @media only screen and (max-width: 1000px) {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
+.company-information-header {
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 16px;
+  @media only screen and (max-width: 1000px) {
+    text-align: center;
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 20px;
+  }
+}
+
+.company-information-text {
+  font-size: 18px;
+  text-align: left;
+  line-height: 27px;
+  @media only screen and (max-width: 1000px) {
+    text-align: center;
+  }
 }
 
 // .cta-wrapper {

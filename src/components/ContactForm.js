@@ -62,12 +62,16 @@ class ContactForm extends React.Component {
   render() {
     return (
       <div className="contact-form-container">
-        <div className="place-holder">
-          Serach Guard Headquarters
-          floragunn GmbH
-          Tempelhofer Ufer 16
-          10963 Berlin
-          Germnay
+        <div className="company-information-container">
+          <p className="company-information-header">
+            Serach Guard Headquarters
+          </p>
+          <p className="company-information-text">
+            floragunn GmbH<br/>
+            Tempelhofer Ufer 16<br />
+            10963 Berlin<br />
+            Germnay
+          </p>
         </div>
         <div className="contact-form-wrapper">
           <div className="contact-information-wrapper">
