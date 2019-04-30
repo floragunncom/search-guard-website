@@ -1,0 +1,101 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.security-detail-dark, .security-detail-light, .security-detail-dark-mobile, .security-detail-light-mobile {
+  background-color: $grey;
+  height: 286px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  @media only screen and (max-width: $tabletBig) {
+    height: 170px;
+  };
+  @media only screen and (max-width: $mobile) {
+    height: 155px;
+  };
+}
+
+.security-detail-light, .security-detail-light-mobile {
+  background-color: $lightGrey;
+}
+
+.security-detail-light-mobile {
+  @media only screen and (max-width: $mobile) {
+    background-color: $grey;
+  };
+}
+
+.security-detail-dark-mobile {
+  @media only screen and (max-width: $mobile) {
+    background-color: $lightGrey;
+  };
+}
+
+.security-detail-icon {
+  padding-top: 55px;
+  margin-bottom: 16px;
+  @media only screen and (max-width: $tabletBig) {
+    padding-top: 27px;
+    margin-bottom: 8px;
+    img {
+      height: 60px;
+      width: 60px;
+    }
+  };
+  @media only screen and (max-width: $mobile) {
+    padding-top: 22px;
+  };
+}
+
+.services-headline {
+  margin-top: 128px;
+  margin-bottom: 64px;
+  color: $darkBlue;
+  font-size: 48px;
+  line-height: 57px;
+  font-weight: 300;
+  text-align: center;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 36px;
+    line-height: 43px;
+    margin-top: 64px;
+    margin-bottom: 32px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 24px;
+    line-height: 28px;
+  };
+}
+
+.security-detail-title {
+  color: $darkBlue;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  text-align: center;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.67px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+  };
+}
+
+.security-button {
+  margin-top: 76px;
+  margin-bottom: 112px;
+  display: flex;
+  justify-content: center; 
+  @media only screen and (max-width: $tabletBig) {
+    margin: 64px 0px;
+  };
+  @media only screen and (max-width: $mobile) {
+    margin: 0px;
+    padding: 32px 24px;
+    width: 100%;
+  };
+}

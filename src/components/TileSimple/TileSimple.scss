@@ -1,0 +1,123 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.tilesimple-container-dark-right {
+  background: linear-gradient(90deg, $white 50%, $navyBlue 50%,);
+  @media only screen and (max-width: $tabletBig) {
+    background: unset;
+  };
+}
+
+.tilesimple-container-light-right {
+  background: linear-gradient(90deg, $white 50%, $grey 50%);
+  @media only screen and (max-width: $tabletBig) {
+    background: unset;
+  };
+}
+
+.tilesimple-container-dark-left {
+  background: linear-gradient(90deg, $navyBlue 50%, $white 50%);
+  @media only screen and (max-width: $tabletBig) {
+    background: unset;
+  };
+}
+
+.tilesimple-container-light-left {
+  background: linear-gradient(90deg, $grey 50%, $white 50%);
+  @media only screen and (max-width: $tabletBig) {
+    background: unset;
+  };
+}
+
+.tilesimple-icon-wrapper-left {
+  display: flex;
+  justify-content: flex-start;
+  @media only screen and (max-width: $tabletBig) {
+    background-color: $navyBlue;
+  }
+}
+
+.tilesimple-icon-wrapper-right {
+  display: flex;
+  justify-content: flex-end;
+  @media only screen and (max-width: $tabletBig) {
+    background-color: $grey;
+  }
+}
+
+img.tilesimple-icon-style-right {
+  max-height: 468px;
+  height: 40vw;
+  margin: 116px 0px;
+  @media only screen and (max-width: $tabletBig) {
+    max-height: 285px;
+    margin: 64px 0px;
+    width: 100%;
+  };
+  @media only screen and (max-width: $mobile) {
+    max-height: 170px;
+    margin: 32px 0px;
+  };
+}
+
+img.tilesimple-icon-style-left {
+  max-height: 468px;
+  height: 40vw;
+  margin: 116px 0px;
+  @media only screen and (max-width: $tabletBig) {
+    max-height: 285px;
+    margin: 64px 0px;
+    width: 100%;
+  };
+  @media only screen and (max-width: $mobile) {
+    max-height: 170px;
+    margin: 32px 0px;
+  };
+}
+
+.tilesimple-content-wrapper-left {
+  padding-top: 210px;
+  padding-left: 135px;
+  @media only screen and (max-width: $tabletBig) {
+    padding: 32px 155px 64px 155px;
+    text-align: center;
+  };
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px;
+  };
+}
+
+.tilesimple-content-wrapper-right {
+  padding-top: 210px;
+  padding-right: 135px;
+  text-align: right;
+  @media only screen and (max-width: $tabletBig) {
+    padding: 32px 155px 64px 155px;
+    text-align: center;
+  };
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px;
+  };
+}
+
+.tilesimple-headline {
+  color: $darkBlue;
+  font-size: 48px;
+  line-height: 57px;
+  font-weight: 300;
+  margin-bottom: 32px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 24px;
+    line-height: 28px;
+  };
+}
+
+.tilesimple-text {
+  font-size: 18px;
+  line-height: 27px;
+  color: $darkGrey;
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+  };
+}

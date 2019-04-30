@@ -78,18 +78,18 @@ module.exports = merge(common, {
               loader: 'sass-loader',
               options: {
                 sourceMap: true,
-                functions: {
-                  'get($keys)': function = (keys) => {
-                    keys = keys.getValue().split('.');
-                    let result = sassVars;
-                    let i;
-                    for (i = 0; i < keys.length; i++) {
-                      result = result[keys[i]];
-                    }
-                    result = sassUtils.castToSass(result);
-                    return result;
-                  },
-                },
+                // functions: {
+                //   'get($keys)': function = (keys) => {
+                //     keys = keys.getValue().split('.');
+                //     let result = sassVars;
+                //     let i;
+                //     for (i = 0; i < keys.length; i++) {
+                //       result = result[keys[i]];
+                //     }
+                //     result = sassUtils.castToSass(result);
+                //     return result;
+                //   },
+                // },
               },
             },
             // Add additional loaders here. (e.g. sass-loader)

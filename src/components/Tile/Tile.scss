@@ -1,0 +1,163 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.tile-background-dark {
+  background: linear-gradient(90deg, $navyBlue 50%, $grey 50%);
+  @media only screen and (max-width: $tabletBig) {
+    background: unset;
+  };
+}
+
+.tile-background-light {
+  background: linear-gradient(90deg, $grey 50%, $navyBlue 50%);
+  @media only screen and (max-width: $tabletBig) {
+    background: unset;
+  };
+}
+
+.tile-wrapper {
+  padding: 89px 0px;
+  @media only screen and (max-width: $tabletBig) {
+    padding: 0px
+  };
+}
+
+.tile-content-left, .tile-content-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 525px;
+  @media only screen and (max-width: $tabletBig) {
+    padding-top: 32px;
+    padding-bottom: 70px;
+    align-items: center;
+    height: unset;
+  };
+  .tile-content-button {
+    @media only screen and (max-width: $mobile) {
+      width: 100%;
+    };
+  }
+}
+
+.col.s12.l6.tile-content-left {
+  align-items: flex-end;
+  padding-right: 135px;
+  @media only screen and (max-width: $tabletBig) {
+    background: $navyBlue;
+    padding: 32px 0px 70px 0px;
+    align-items: center;
+  };
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px;
+  };
+  .tile-content-headline {
+    max-width: 450px;
+    margin: 32px 0;
+    font-size: 48px;
+    line-height: 57px;
+    text-align: right;
+    font-weight: 300;
+    @media only screen and (max-width: $tabletBig) {
+      text-align: center;
+      margin: 32px 0px 16px 0px;
+      font-size: 36px;
+      line-height: 43px;
+      color: $white;
+    };
+    @media only screen and (max-width: $mobile) {
+      margin: 16px 0px 8px 0px;
+      font-size: 24px;
+      line-height: 28px;
+    };
+  };
+  .tile-content-text {
+    max-width: 450px;
+    margin-bottom: 64px;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: right;
+    @media only screen and (max-width: $tabletBig) {
+      text-align: center;
+      margin-bottom: 32px;
+      line-height: 24px;
+      color: $white;
+    };
+    @media only screen and (max-width: $mobile) {
+      font-size: 16px;
+      line-height: 24px;
+    };
+  }
+}
+
+.col.s12.l6.tile-content-right {
+  align-items: flex-start;
+  padding-left: 135px;
+  @media only screen and (max-width: $tabletBig) {
+    background: $grey;
+    padding: 32px 0px 70px 0px;
+    align-items: center;
+  };
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px;
+  };
+  .tile-content-headline {
+    max-width: 450px;
+    margin: 32px 0;
+    font-size: 48px;
+    line-height: 57px;
+    text-align: left;
+    font-weight: 300;
+    @media only screen and (max-width: $tabletBig) {
+      text-align: center;
+      margin: 32px 0px 16px 0px;
+      font-size: 36px;
+      line-height: 43px;
+      color: $darkBlue;
+    };
+    @media only screen and (max-width: $mobile) {
+      margin: 16px 0px 8px 0px;
+      font-size: 24px;
+      line-height: 28px;
+    };
+  };
+  .tile-content-text {
+    max-width: 450px;
+    margin-bottom: 64px;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: left;
+    @media only screen and (max-width: $tabletBig) {
+      text-align: center;
+      margin-bottom: 32px;
+      line-height: 24px;
+      color: $darkGrey;
+    };
+    @media only screen and (max-width: $mobile) {
+      font-size: 16px;
+      line-height: 24px;
+    };
+  }
+}
+
+.tile-headline-dark-colors {
+  color: $darkBlue;
+}
+
+.tile-headline-light-colors {
+  color: $white;
+}
+
+.tile-text-dark-colors {
+  color: $darkGrey;
+}
+
+.tile-text-light-colors {
+  color: $white;
+}
+
+.tile-content-image {
+  @media only screen and (max-width: $mobile) {
+    width: 64px;
+  };
+}

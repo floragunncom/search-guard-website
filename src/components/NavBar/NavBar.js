@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './NavBar.scss';
+import { Link } from 'react-router-dom';
 import logo from '../../images/logo-white.svg';
 import cross from '../../images/cross-white.svg';
 
@@ -29,18 +30,17 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div className="navbar-navbar-container">
+      <div className="navbar-navbar-container" style={{backgroundColor: this.props.background}}>
         <div className="navbar-navbar-wrapper">
           <a href="/">
             <img src={logo} alt="Logo" className="navbar-logo-style" />
           </a>
-          {/* <div className="navbar-empty-container" /> */}
           <div href="/" className="navbar-nav-links-container">
-            <a href="/" className="navbar-nav-link">product</a>
-            <a href="/" className="navbar-nav-link">licensing</a>
-            <a href="/" className="navbar-nav-link">resource hub</a>
-            <a href="/" className="navbar-nav-link">company</a>
-            <a href="/contact" className="navbar-nav-link">contact us</a>
+            <Link to="/contact" className="navbar-nav-link">contact us</Link>
+            <Link to="/product" className="navbar-nav-link" href="javascript:void(0)">product</Link>
+            <Link to="/license" className="navbar-nav-link" href="javascript:void(0)">licensing</Link>
+            <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource hub</Link>
+            <Link to="/company" className="navbar-nav-link" href="javascript:void(0)">company</Link>
           </div>
           <div className="navbar-menu-container">
             <span className="navbar-nav-link" onClick={this.openNav}>menu</span>
@@ -55,11 +55,11 @@ class NavBar extends Component {
                   </div>
                 </div>
                 <div href="/" className="navbar-nav-links-container-mobile">
-                  <a href="/" className="navbar-nav-link" href="javascript:void(0)">product</a>
-                  <a href="/" className="navbar-nav-link" href="javascript:void(0)">licensing</a>
-                  <a href="/" className="navbar-nav-link" href="javascript:void(0)">resource hub</a>
-                  <a href="/" className="navbar-nav-link" href="javascript:void(0)">company</a>
-                  <a href="/contact" className="navbar-nav-link">contact us</a>
+                  <Link to="/contact" className="navbar-nav-link">contact us</Link>
+                  <Link to="/product" className="navbar-nav-link" href="javascript:void(0)">product</Link>
+                  <Link to="/license" className="navbar-nav-link" href="javascript:void(0)">licensing</Link>
+                  <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource hub</Link>
+                  <Link to="/company" className="navbar-nav-link" href="javascript:void(0)">company</Link>
                 </div>
               </div>
             </div>

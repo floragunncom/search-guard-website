@@ -1,4 +1,5 @@
 @import '../../styles/Colors.scss';
+@import '../../styles/Breakpoints';
 
 .footer-container {
   background-color: $darkBlue;
@@ -6,7 +7,7 @@
 
 div.row.footer-row {
   padding: 64px 0px;
-  @media only screen and (max-width: 1260px) {
+  @media only screen and (max-width: $xl) {
     padding: 64px 34px 0px 34px;
   };
 }
@@ -14,7 +15,7 @@ div.row.footer-row {
 .footer-links-column-container {
   border-left: 3px solid $turkis;
   margin-bottom: 32px;
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: $tabletBig) {
     margin-bottom: 64px;
     &:last-child {
       margin-bottom: 0px;
@@ -32,7 +33,7 @@ a {
   letter-spacing: 1px;
   margin-left: 16px;
   color: $white;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: $mobile) {
     line-height: 48px;
   }
 }
@@ -41,7 +42,7 @@ a {
   margin-bottom: 32px;
   font-weight: bold;
   text-transform: uppercase;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: $mobile) {
     position: relative;
     top: -16px;
     margin-bottom: 0px;
@@ -54,7 +55,7 @@ a {
     position: relative;
     top: 21px;
     margin-top: -21px;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: $mobile) {
       top: 32px;
       margin-top: -32px;
     };

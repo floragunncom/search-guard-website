@@ -1,0 +1,63 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.license-ref-wrapper {
+  margin: 128px 0px;
+  @media only screen and (max-width: $tabletBig) {
+    margin: 64px 0px 32px 0px;
+  };
+  @media only screen and (max-width: $tabletBig) {
+    margin: 64px 0px 60px 0px;
+  };
+}
+
+.license-ref-headline {
+  margin-bottom: 64px;
+  font-size: 48px;
+  line-height: 57px;
+  text-align: center;
+  font-weight: 300;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 36px;
+    line-height: 43px;
+  };
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 32px;
+    font-size: 24px;
+    line-height: 28px;
+  };
+}
+
+.license-ref-content-row img {
+  width: 153px;
+  height: 153px;
+}
+
+img.license-ref {
+  width: 153px;
+  height: 153px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 4px;
+  };
+  @media only screen and (max-width: $mobile) {
+    width: 100px;
+    height: 100px;
+  };
+}
+
+.license-ref-content-row {
+  margin: 0px 32px 61px 32px;
+  display: flex;
+  justify-content: space-between;
+  &:last-child {
+    margin: 0px 32px 0px 32px;
+  }
+}
+
+.license-ref-image {
+  display: flex;
+  justify-content: center;
+}

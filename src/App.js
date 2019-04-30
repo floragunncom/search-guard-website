@@ -1,11 +1,7 @@
 import React from 'react';
 import './index.scss';
 import { injectIntl, defineMessages } from 'react-intl';
-import Cta from './components/Cta/Cta';
-import Title from './components/Title/Title';
-import Footer from './components/Footer/Footer';
-import NavBar from './components/NavBar/NavBar';
-import PreFooter from './components/PreFooter/PreFooter';
+import HomePage from './views/HomePage/HomePage';
 import 'materialize-css/dist/css/materialize.min.css';
 
 const messages = defineMessages({
@@ -30,16 +26,7 @@ const App = props => {
 
   return (
     <div>
-      <NavBar />
-      <Title text={formatMessage(messages.title)} />
-      <PreFooter />
-      <Cta
-        headline="Free 60-day trial"
-        text="Want to see how your company can benefit from our Compliance
-        edition? Sign up to our 60-day trial, completely free of charge."
-        ctaText="start free trial"
-      />
-      <Footer />
+      <HomePage />
     </div>
   );
 };
