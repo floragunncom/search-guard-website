@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import App from './App';
+import ContactUs from './views/ContactUs';
 import Blog from './views/Blog/Blog';
 import Resource from './views/Resource/Resource';
 import Company from './views/Company/Company';
@@ -15,6 +16,7 @@ const Routes = () => {
     <div>
       <Switch>
         <Route exact path="/" component={App} />
+        <Route exact path="/contact" component={ContactUs} />
         <Route exact path="/product" component={Product} />
         <Route exact path="/company" component={Company} />
         <Route exact path="/resource" component={Resource} />

@@ -41,7 +41,7 @@ const Video = props => {
             />
             <div className="video-playlist-text">
               Search Guard - Suspendisse nibh libero
-              </div>
+            </div>
           </div>
         </div>
       </div>
