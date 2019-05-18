@@ -2,6 +2,7 @@ import React from 'react';
 import TextInput from './TextInput.js';
 import './ContactForm.scss';
 import Button from '../components/Button/Button';
+import DropDown from '../components/DropDown/DropDown';
 
 class ContactForm extends React.Component {
   state = {
@@ -103,10 +104,10 @@ class ContactForm extends React.Component {
                     <input id="website" type="text" class="validate input-field-contact" />
                     <label for="website">Website</label>
                   </div>
-                  <div class="input-field col s12 m6 input-field-contact-wrapper">
-                    <input id="country" type="text" class="validate input-field-contact" />
-                    <label for="country">Country</label>
-                  </div>
+                  <DropDown
+                    dropDownCategory="Country"
+                    dropDownOptions={['Germany', 'France', 'Italy', 'England', 'United States', 'Netherlands', 'Ghana']}
+                  />
                 </div>
               </form>
             </div>
@@ -116,14 +117,14 @@ class ContactForm extends React.Component {
               <div class="row">
               <form class="col s12">
                 <div class="row">
-                  <div class="input-field col s12 m6 input-field-contact-wrapper">
-                    <input id="elasticsearch_version" type="text" class="validate input-field-contact" />
-                    <label for="elasticsearch_version">Elasticsearch version</label>
-                  </div>
-                  <div class="input-field col s12 m6 input-field-contact-wrapper">
-                    <input id="current_stage" type="text" class="validate input-field-contact" />
-                    <label for="current_stage">Current stage</label>
-                  </div>
+                  <DropDown
+                    dropDownCategory="Elasticsearch version"
+                    dropDownOptions={['1', '2', '3', '4', '5']}
+                  />
+                  <DropDown
+                    dropDownCategory="Current stage"
+                    dropDownOptions={['1', '2', '3', '4', '5']}
+                  />
                 </div>
               </form>
             </div>
