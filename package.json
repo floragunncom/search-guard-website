@@ -15,6 +15,7 @@
     "react-intl": "^2.8.0",
     "react-intl-cra": "^0.3.4",
     "react-intl-translations-manager": "^5.0.3",
+    "react-player": "^1.11.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-slick": "^0.24.0",
@@ -22,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "npm clean; webpack --config config/webpack-prod-config.js",
+    "build": "react-scripts build",
     "clean": "rm -rf build/*",
     "start:dev": "node config/webpack-dev-server.js",
     "start:prod": "npm build; serve build",

@@ -24,7 +24,7 @@ class Blog extends Component {
     const posts = this.state.posts.map((post, index) => {
       return (
         <div className="col s12 l6 blogpost-column-wrapper">
-          <BlogPost key={index} post={post} />
+          <BlogPost key={index} post={post} relatedPosts={this.state.posts} />
         </div>
       );
     });
@@ -32,7 +32,7 @@ class Blog extends Component {
     return (
       <div>
         <NavBar />
-        <Title text="Blog" />
+        <Title headline="Blog" />
         <div className="row">{posts}</div>
         <PreFooter />
         <Footer />

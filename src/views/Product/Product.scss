@@ -1,11 +1,15 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
+.product-anchor-container {
+  background-color: $lightGrey;
+}
+
 .product-anchor-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 34px 32px;
+  padding: 34px 32px;
   @media only screen and (max-width: $tabletBig) {
     display: none;
   };

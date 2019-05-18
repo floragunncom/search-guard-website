@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.scss';
-import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -37,13 +36,13 @@ const Footer = () => {
             <div className="footer-links-column-container col s12 m6 l3">
               <div className="footer-list-headline">resource hub</div>
               <div className="footer-list-item">
-                <a href="/">Documentation</a>
+                <a href="https://docs.search-guard.com/latest/" target="_blank">Documentation</a>
               </div>
               <div className="footer-list-item">
                 <a href="/">Github repo</a>
               </div>
               <div className="footer-list-item">
-                <a href="/">FAQ</a>
+                <a href="/faq">FAQ</a>
               </div>
               <div className="footer-list-item">
                 <a href="/">Community forum</a>
@@ -52,7 +51,7 @@ const Footer = () => {
                 <a href="/">TLS certificate generator</a>
               </div>
               <div className="footer-list-item">
-                <Link to="/blog">Blog</Link>
+                <a href="/blog">Blog</a>
               </div>
               <div className="footer-list-item">
                 <a href="/">Presentations</a>
@@ -83,7 +82,7 @@ const Footer = () => {
                 <a href="/">Data protection</a>
               </div>
               <div className="footer-list-item">
-                <a href="/">Imprint</a>
+                <a href="/imprint">Imprint</a>
               </div>
             </div>
             <div className="filler-class" />

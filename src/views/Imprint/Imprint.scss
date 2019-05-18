@@ -1,0 +1,35 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.imprint-wrapper {
+  padding: 64px 32px;
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px;
+  };
+}
+
+.imprint-headline {
+  color: $darkBlue;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  margin-bottom: 32px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.67px;
+    margin-bottom: 16px;
+  };
+}
+
+.imprint-text {
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 64px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  };
+}

@@ -8,6 +8,7 @@ class BlogPost extends Component {
   render() {
     const post = this.props.post.fields;
     const content = post.postContent.content;
+    const relatedPosts = this.props.relatedPosts;
     let teaserText = null;
     content.forEach((paragraph) => {
       if (paragraph.nodeType === "paragraph") {
@@ -15,10 +16,9 @@ class BlogPost extends Component {
         return;
       }
     });
-
     return (
       <div className="blog-wrapper">
-        <Link to={{pathname: `blog/${post.slug}`, state: {content: post}}} className="blog-link-wrapper">
+        <Link to={{pathname: `blog/${post.slug}`, state: {content: post, relatedPosts: relatedPosts}}} className="blog-link-wrapper">
           <div className="blog-image-wrapper">
             <img
               src={post.postImage.fields.file.url}

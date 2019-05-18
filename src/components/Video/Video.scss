@@ -1,0 +1,107 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.video-wrapper {
+  padding-top: 128px;
+  background: linear-gradient(180deg, $lightGrey 30%, $white 30%);
+  @media only screen and (max-width: $tabletBig) {
+    padding: 64px 32px;
+  };
+  @media only screen and (max-width: $mobile) {
+    padding: 64px 24px 32px 24px;
+  };
+}
+
+.video-wrapper-long {
+  padding-bottom: 128px;
+}
+
+.video-headline {
+  text-align: center;
+  font-size: 48px;
+  line-height: 57px;
+  font-weight: 300;
+  padding-bottom: 64px;
+  color: $darkBlue;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 36px;
+    line-height: 43px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 24px;
+    line-height: 28px;
+    padding-bottom: 32px;
+  };
+}
+
+.video-description-video {
+  display: flex;
+  justify-content: center;
+}
+
+.video-description {
+  margin: 0px 32px 128px 32px;
+  @media only screen and (max-width: $tabletBig) {
+    margin: 0px;
+  };
+}
+
+.video-description-headline {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-size: 24px;
+  line-height: 30px;
+  color: $darkBlue;
+  letter-spacing: 0.8px; 
+  @media only screen and (max-width: $mobile) {
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    letter-spacing: 0.67px; 
+  };
+}
+
+.video-description-text {
+  font-size: 18px;
+  line-height: 27px;
+  color: $darkGrey;
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+  };
+}
+
+.video-playlist-headline {
+  text-align: center;
+  color: $darkBlue;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  margin-bottom: 64px;
+  @media only screen and (max-width: $tabletBig) {
+    display: none;
+  }
+}
+
+.video-playlist {
+  @media only screen and (max-width: $tabletBig) {
+    display: none;
+  }
+}
+
+.video-playlist-text {
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  margin-top: 16px;
+}
+
+.video-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+  @media only screen and (max-width: $tabletBig) {
+    margin-top: 32px;
+  }
+}

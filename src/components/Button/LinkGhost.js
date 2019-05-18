@@ -4,10 +4,15 @@ import arrowRight from '../../images/arrow-right-dark-blue.svg';
 
 const ButtonGhost = props => {
   return (
-    <div className="arrow-link-ghost-container" onClick={props.onPress} style={{borderColor: `${props.color || '#00FCE5'}`}}>
+    <a
+      href={props.link}
+      target={props.target || '_self'}
+      className="arrow-link-ghost-container"
+      style={{ borderColor: `${props.color || '#00FCE5'}` }}
+    >
       <div className="arrow-button-text">{props.text}</div>
       <img src={arrowRight} alt="arrow" className="arrow-link-arrow-style" />
-    </div>
+    </a>
   );
 };
 
