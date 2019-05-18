@@ -4,10 +4,14 @@ import arrowRight from '../../images/arrow-right-dark-blue.svg';
 
 const LinkLoud = props => {
   return (
-    <div className="arrow-link-loud-container" onClick={props.onPress}>
+    <a
+      href={props.link}
+      target={props.target || '_self'}
+      className="arrow-link-loud-container"
+    >
       <div className="arrow-link-text">{props.text}</div>
       <img src={arrowRight} alt="arrow" className="arrow-link-arrow-style" />
-    </div>
+    </a>
   );
 };
 

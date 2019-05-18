@@ -1,0 +1,103 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.faq-row-wrapper {
+  padding: 64px 32px;
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px;
+  };
+}
+
+.faq-question-section {
+  margin-bottom: 48px;
+  max-width: 75%;
+  @media only screen and (max-width: $tabletBig) {
+    &:last-child {
+      margin-bottom: 32px;
+    };
+  };
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 32px;
+    max-width: 100%;
+  };
+}
+
+.faq-question-headline, .faq-answer-section-headline {
+  color: $darkBlue;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 32px;
+  letter-spacing: 3.3px;
+}
+
+.faq-answer-section-headline {
+  @media only screen and (max-width: $tabletBig) {
+    padding-top: 64px;
+    &:first-child {
+      padding-top: 32px;
+    };
+  };
+}
+
+.faq-question-text {
+  color: $darkBlue;
+  font-size: 18px;
+  margin-bottom: 16px;
+  line-height: 27px;
+  text-decoration: underline;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 16px;
+    line-height: 24px;
+  };
+}
+
+.faq-answer-section {
+  border-left: 3px solid $grey;
+  padding-left: 100px;
+  @media only screen and (max-width: $tabletBig) {
+    margin-bottom: 64px;
+    border-left: unset;
+    padding-left: 0px;
+    &:first-child {
+      border-top: 3px solid $grey;
+    };
+  }; 
+  @media only screen and (max-width: $tabletBig) {
+    &:last-child {
+      margin-bottom: 0px;
+    };
+  };
+}
+
+.faq-answer-headline {
+  margin-bottom: 32px;
+  font-size: 24px;
+  line-height: 30px;
+  color: $darkBlue;
+  letter-spacing: 0.8px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 20px;
+    letter-spacing: 0.67px;
+    margin-bottom: 16px;
+  }
+}
+
+.faq-answer-text {
+  font-size: 18px;
+  line-height: 27px;
+  color: $darkGrey;
+  margin-bottom: 96px;
+  @media only screen and (max-width: $tabletBig) {
+    margin-bottom: 64px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  };
+}
+
+.faq-answer-links {
+  word-break: break-all;
+}

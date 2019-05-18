@@ -3,9 +3,10 @@ import './Title.scss';
 
 const Title = props => {
   return (
-    <div className="title-container">
-      <div className="title-wrapper">
-        <div className="title-text">{props.text}</div>
+    <div className="title-wrapper-style">
+      <div className="row">
+        <div className="title-headline-style">{props.headline}</div>
+        <div className="title-text-style">{props.text}</div>
       </div>
     </div>
   );

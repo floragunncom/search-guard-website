@@ -6,8 +6,10 @@ import Blog from './views/Blog/Blog';
 import Resource from './views/Resource/Resource';
 import Company from './views/Company/Company';
 import Product from './views/Product/Product';
+import Faqs from './views/Faqs/Faqs';
 import License from './views/License/License';
 import BlogPostArticle from './views/Blog/BlogPostArticle';
+import Imprint from './views/Imprint/Imprint';
 
 const Routes = () => {
   return (
@@ -19,6 +21,8 @@ const Routes = () => {
         <Route exact path="/company" component={Company} />
         <Route exact path="/resource" component={Resource} />
         <Route exact path="/license" component={License} />
+        <Route exact path="/faq" component={Faqs} />
+        <Route exact path="/imprint" component={Imprint} />
         <Route exact={true} path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPostArticle} />
       </Switch>

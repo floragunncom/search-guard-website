@@ -34,6 +34,7 @@ class BlogPostArticle extends Component {
   }
 
   render() {
+    console.log('blogpost props', this.props);
     const options = {
       renderMark: {
         [MARKS.BOLD]: text => <div className="bold">{text}</div>,
