@@ -1,0 +1,163 @@
+@import '../styles/Colors';
+
+.contact-form-container {
+  height: 1268;
+  display: flex;
+  justify-content: space-between;
+  padding: 10%;
+  @media only screen and (max-width: 1000px) {
+    padding: 28px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+    margin-bottom: 40px;
+  }
+}
+
+.contact-form-wrapper {
+  height: 1012px;
+  border-left: 3px solid $grey;
+  padding-left: 100px;
+  display: flex;
+  flex-direction: column;
+  @media only screen and (max-width: 1000px) {
+    padding: 0px;
+    padding-top: 32px;
+    border-left: 0;
+    border-top: 3px solid $grey;
+    height: 1244px;
+  }
+}
+
+.contact-information-wrapper {
+  width: 653px;
+  height: 352px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    flex-wrap: unset;
+    flex-direction: column;
+    justify-content: initial;
+  }
+  @media only screen and (max-width: 600px) {
+    height: 480px;
+  }
+}
+
+.input-field-contact-wrapper {
+  height: 48px;
+  margin: 0;
+  margin-top: 16px;
+}
+
+input#first_name, input#last_name, input#job_title, input#email, input#phone_number, input#website, input#country, input#elasticsearch_version, input#current_stage, input#your_message {
+  border-bottom: 2px solid $navyBlue;
+}
+
+.technical-information-wrapper {
+  width: 653px;
+  height: 112px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 64px;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    height: 160px;
+  }
+}
+
+.message-wrapper {
+  width: 653px;
+  height: 112px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 64px;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    height: 96px;
+  }
+}
+
+.newsletter-section-wrapper {
+  width: 653px;
+  height: 112px;
+  margin-top: 64px;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    height: 92px;
+  }
+}
+
+.privacy-policy {	
+  height: 54px;	
+  width: 653px;
+  margin: 32px 0px;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+    height: 120px;
+  }
+}
+
+.contact-title {
+  width: 653px;
+  height: 32px;
+  color: $darkBlue;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3.3px;
+}
+
+.contact-cta {
+  height: 40px;	
+  width: 653px;	
+  border-radius: 3px;	
+  background-color: #246E94;	
+  box-shadow: 0 20px 40px 0 rgba(90,90,90,0.24);
+  margin-top: 32px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+  }
+}
+
+.company-information-container {
+  height: 154px;
+  margin-right: 50px;
+  @media only screen and (max-width: 1000px) {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
+.company-information-header {
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 16px;
+  @media only screen and (max-width: 1000px) {
+    text-align: center;
+  }
+  @media only screen and (max-width: 900px) {
+    font-size: 20px;
+  }
+}
+
+.company-information-text {
+  font-size: 18px;
+  text-align: left;
+  line-height: 27px;
+  @media only screen and (max-width: 1000px) {
+    text-align: center;
+  }
+}
+
+// .cta-wrapper {
+//   height
+// }

@@ -36,11 +36,11 @@ class NavBar extends Component {
             <img src={logo} alt="Logo" className="navbar-logo-style" />
           </a>
           <div href="/" className="navbar-nav-links-container">
+            <Link to="/contact" className="navbar-nav-link">contact us</Link>
             <Link to="/product" className="navbar-nav-link" href="javascript:void(0)">product</Link>
             <Link to="/license" className="navbar-nav-link" href="javascript:void(0)">licensing</Link>
             <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource hub</Link>
             <Link to="/company" className="navbar-nav-link" href="javascript:void(0)">company</Link>
-            <a href="/" className="navbar-nav-link">contact us</a>
           </div>
           <div className="navbar-menu-container">
             <span className="navbar-nav-link" onClick={this.openNav}>menu</span>
@@ -55,11 +55,11 @@ class NavBar extends Component {
                   </div>
                 </div>
                 <div href="/" className="navbar-nav-links-container-mobile">
+                  <Link to="/contact" className="navbar-nav-link">contact us</Link>
                   <Link to="/product" className="navbar-nav-link" href="javascript:void(0)">product</Link>
                   <Link to="/license" className="navbar-nav-link" href="javascript:void(0)">licensing</Link>
                   <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource hub</Link>
                   <Link to="/company" className="navbar-nav-link" href="javascript:void(0)">company</Link>
-                  <a href="/" className="navbar-nav-link" href="javascript:void(0)">contact us</a>
                 </div>
               </div>
             </div>
