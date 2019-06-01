@@ -264,7 +264,7 @@ class LicensingModel extends Component {
     }
 
     return (
-      <div className="licensing-wrapper">
+      <div className="licensing-wrapper" id="standard">
         <div className="row">
           <div className="col s12">
             <div className="licensing-headline">{this.props.headline}</div>

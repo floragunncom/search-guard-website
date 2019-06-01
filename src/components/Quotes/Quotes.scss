@@ -4,6 +4,7 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 .quotes-container {
+
   @media only screen and (max-width: $tabletBig) {
     display: none;
   };
@@ -32,6 +33,7 @@
 .quotes-right-icon {
   float: right;
   margin-top: -24px;
+  margin-left: 50px;
   transform: rotate(180deg);
 }
 

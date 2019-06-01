@@ -95,40 +95,49 @@ const Resource = () => {
       </div>
       <Tile
         leftDark={false}
-        iconLeft={iconFolder}
-        iconRight={iconPeople}
-        headlineLeft="Documentation"
-        textLeft="Get the official documentation you need to nascetur ridiculus mus nullam at porta ex."
-        headlineRight="Community forum"
-        textRight="Any questions on installation or configuration? Ask our community forum."
+        leftIcon={iconFolder}
+        rightIcon={iconPeople}
+        leftHeadline="Documentation"
+        leftText="Get the official documentation you need to nascetur ridiculus mus nullam at porta ex."
+        rightHeadline="Community forum"
+        rightText="Any questions on installation or configuration? Ask our community forum."
+        leftLink="https://docs.search-guard.com/latest/"
+        rightLink="/"
       />
       <Faq />
       <Tile
         leftDark={true}
-        iconLeft={iconDownload}
-        iconRight={iconCertificate}
-        headlineLeft="GitHub repo"
-        textLeft="Access and download code, so you can rta ex, et bibendum nisl. "
-        headlineRight="TLS Certificate Generator"
-        textRight="From TLS certificates for testing or implementing a PoC, our generator is here to ease the pain!"
+        leftIcon={iconDownload}
+        rightIcon={iconCertificate}
+        leftHeadline="GitHub repo"
+        leftText="Access and download code, so you can rta ex, et bibendum nisl. "
+        rightHeadline="TLS Certificate Generator"
+        rightText="From TLS certificates for testing or implementing a PoC, our generator is here to ease the pain!"
+        leftLink="https://www.github.com/floragunn"
+        rightLink="/"
+        leftButtonTarget="_blank"
       />
       <Tile
         leftDark={false}
-        iconLeft={iconSpeaker}
-        iconRight={iconNote}
-        headlineLeft="Presentations"
-        headlineRight="White Papers"
-        textLeft="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
-        textRight="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
+        leftIcon={iconSpeaker}
+        rightIcon={iconNote}
+        leftHeadline="Presentations"
+        rightHeadline="White Papers"
+        leftText="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
+        rightText="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
+        leftLink="/presentations"
+        rightLink="/white-papers"
       />
       <Tile
         leftDark={true}
-        iconLeft={iconShield}
-        iconRight={iconLock}
-        headlineLeft="CVE advisory"
-        headlineRight="Disclosure Policy"
-        textLeft="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
-        textRight="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
+        leftIcon={iconShield}
+        rightIcon={iconLock}
+        leftHeadline="CVE advisory"
+        rightHeadline="Disclosure Policy"
+        leftText="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
+        rightText="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
+        leftLink="/advisory"
+        rightLink="/disclosure"
       />
       <Video playlist={true} />
       <Cta

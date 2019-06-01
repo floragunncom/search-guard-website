@@ -14,7 +14,7 @@ const Video = props => {
         <div className="video-playlist">
           <div className="video-playlist-item col l4">
             <ReactPlayer
-              url="https://www.youtube.com/watch?v=393C3pr2ioY"
+              url="https://www.youtube.com/watch?v=qiRgy5FcsnI"
               width="350px"
               height="208px"
             />
@@ -24,7 +24,7 @@ const Video = props => {
           </div>
           <div className="video-playlist-item col l4">
             <ReactPlayer
-              url="https://www.youtube.com/watch?v=KWZ-J_Ab4ec"
+              url="https://www.youtube.com/watch?v=1uWGqcy5PeQ"
               width="350px"
               height="208px"
             />
@@ -35,7 +35,7 @@ const Video = props => {
           </div>
           <div className="video-playlist-item col l4">
             <ReactPlayer
-              url="https://vimeo.com/311493992"
+              url="https://www.youtube.com/watch?v=C_pWD-gaJow"
               width="350px"
               height="208px"
             />
@@ -61,7 +61,7 @@ const Video = props => {
         <div className="video-description">
           <div className="video-description-video">
             <ReactPlayer
-              url="https://www.youtube.com/watch?v=XINBvGAaowI"
+              url="https://www.youtube.com/watch?v=0vCqFtFd5B8"
               width="100%"
               height="400px"
             />

@@ -66,12 +66,14 @@ const License = () => {
       />
       <Tile
         leftDark={false}
-        iconLeft={iconBook}
-        iconRight={iconWheels}
-        headlineLeft="Academic & Scientific edition"
-        headlineRight="Custom edition"
-        textLeft="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus, orci ut tincidunt vulputate, tortor erat."
-        textRight="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus, orci ut tincidunt vulputate, tortor erat."
+        leftIcon={iconBook}
+        rightIcon={iconWheels}
+        leftHeadline="Academic & Scientific edition"
+        rightHeadline="Custom edition"
+        leftText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus, orci ut tincidunt vulputate, tortor erat."
+        rightText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus, orci ut tincidunt vulputate, tortor erat."
+        leftLink="/"
+        rightLink="/"
       />
       <div className="license-ref-wrapper">
         <div className="row license-ref-content-responsive">

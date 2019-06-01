@@ -49,7 +49,7 @@ img.navbar-logo-style {
   }
 }
 
-a.navbar-nav-link, span.navbar-nav-link {
+.navbar-nav-link {
   text-transform: uppercase;
   line-height: 20px;
   font-size: 14px;
@@ -57,7 +57,7 @@ a.navbar-nav-link, span.navbar-nav-link {
   color: $white;
   font-weight: bold;
 
-  &:active, &:hover {
+  &:hover, &:focus {
     border-bottom: 2px solid $turkis;
   }
   &:last-child {

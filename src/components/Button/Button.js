@@ -7,25 +7,17 @@ import LinkGhost from './LinkGhost';
 
 const Button = props => {
   switch (props.style) {
+    case 'loud-button':
+      return <ButtonLoud text={props.text} onPress={props.onPress} />;
+    case 'default-button':
+      return <ButtonDefault text={props.text} onPress={props.onPress} />;
     case 'loud-link':
       return (
         <LinkLoud text={props.text} target={props.target} link={props.link} />
       );
-    case 'loud-button':
-      return (
-        <ButtonLoud text={props.text} target={props.target} link={props.link} />
-      );
     case 'default-link':
       return (
         <LinkDefault
-          text={props.text}
-          target={props.target}
-          link={props.link}
-        />
-      );
-    case 'default-button':
-      return (
-        <ButtonDefault
           text={props.text}
           target={props.target}
           link={props.link}

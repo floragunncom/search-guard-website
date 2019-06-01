@@ -43,7 +43,7 @@ class NavBar extends Component {
             <Link to="/contact" className="navbar-nav-link">contact us</Link>
           </div>
           <div className="navbar-menu-container">
-            <span className="navbar-nav-link" onClick={this.openNav}>menu</span>
+            <div className="navbar-nav-link" onClick={this.openNav}>menu</div>
             <div ef="snav" className="navbar-overlay" style={this.state.style}>
               <div className="navbar-sidenav-container">
                 <div className="navbar-overlay-header">
