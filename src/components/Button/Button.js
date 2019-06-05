@@ -28,7 +28,7 @@ const Button = props => {
         <LinkGhost
           text={props.text}
           target={props.target}
-          ink={props.link}
+          link={props.link}
           color={props.color}
         />
       );

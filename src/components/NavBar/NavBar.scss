@@ -65,6 +65,9 @@ img.navbar-logo-style {
     padding: 15px 20px;
     margin: 0;
     cursor: pointer;
+    &:hover, &:active {
+      border: 2px solid $turkis;
+    }
   }
 }
 
