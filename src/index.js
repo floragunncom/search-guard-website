@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-snapshot';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import deLocaleData from 'react-intl/locale-data/de';
@@ -11,13 +11,13 @@ addLocaleData(deLocaleData);
 addLocaleData(esLocaleData);
 
 const getLanguage = () => {
-  return localStorage.getItem('language');
+  return 'de';
 };
 
 const locale = getLanguage() || 'en';
 const messages = Translations[locale];
 
-ReactDOM.render(
+render(
   <IntlProvider locale={locale} key={locale} messages={messages}>
     <Router>
       <Routes />
