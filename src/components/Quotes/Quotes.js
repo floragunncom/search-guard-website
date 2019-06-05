@@ -1,6 +1,6 @@
 import React from 'react';
 import './Quotes.scss';
-import Slider from 'react-slick';
+// import Slider from 'react-slick';
 import quoteUp from '../../images/quote-up.svg';
 import quoteDown from '../../images/quote-down.svg';
 
@@ -37,7 +37,7 @@ const Quotes = () => {
       <div className="row">
         <div className="quotes-headline">What our clients say</div>
         <div className="col s12 quotes-slider">
-          <Slider {...settings}>
+          {/* <Slider {...settings}>
             <div className="quotes-wrapper">
               <img src={quoteUp} alt="icon" />
               <div className="quotes-text">
@@ -75,7 +75,7 @@ const Quotes = () => {
               <div className="quotes-author-title">Tastenhauer</div>
               <div className="quotes-author-company">was mit Beats</div>
             </div>
-          </Slider>
+          </Slider> */}
         </div>
       </div>
     </div>
