@@ -34,7 +34,6 @@ class WhitePaperDetail extends Component {
   }
 
   render() {
-    console.log('blogpost props', this.props);
     const options = {
       renderMark: {
         [MARKS.BOLD]: text => <div className="bold">{text}</div>,
@@ -63,13 +62,13 @@ class WhitePaperDetail extends Component {
     if (!this.state.content) {
       return <h1>Loading ...</h1>;
     }
+
     return (
       <div className="blogpost-container">
         <NavBar />
         <BlogTitle
           text={this.state.content.title}
-          subText={`${this.state.content.author} || ${this.state.content.date}`}
-          tags="security, search-guard, installation"
+          subText={`SEARCH GUARD WHITE PAPER || ${this.state.content.date}`}
         />
         <div className="row">
           <div className="col s12 offset-l2 l8">
@@ -96,12 +95,10 @@ class WhitePaperDetail extends Component {
             </div>
           </div>
           <div className="col s12 blogpost-recommended-headline">Other posts you may like</div>
-          <div className="col s12 l4">
-          </div>
           <div className="col s12 blogpost-link">
-            <Link to={'/blog'}>
+            <Link to={'/white-papers'}>
               <img src={infoArrowBack} className="blogpost-arrow-back" />
-              back to blog
+              back to all white papers
             </Link>
           </div>
         </div>

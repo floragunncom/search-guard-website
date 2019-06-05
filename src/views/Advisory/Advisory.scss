@@ -1,0 +1,69 @@
+@import '../../styles/Colors.scss';
+@import '../../styles/Breakpoints';
+
+.advisory-wrapper {
+  padding: 64px 32px 128px 32px;
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px;
+  };
+}
+.advisory-info-headline {
+  color: $darkBlue;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  margin-bottom: 32px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.67px;
+    margin-bottom: 16px;
+  };
+}
+
+.advisory-info-text {
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 64px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  };
+}
+
+.advisory-table-wrapper {
+  @media only screen and (max-width: $tabletBig) {
+    overflow: auto;
+    white-space: nowrap;
+  };
+}
+
+.advisory-table-head th {
+  padding: 16px;
+  color: $darkBlue;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 3.3px;
+  text-transform: uppercase;
+}
+
+.advisory-table-row td {
+  padding: 16px;
+  color: $darkGrey;
+  font-size: 14px;
+  line-height: 20px;
+  border-right: 1px solid $borderGrey;
+  &:last-child {
+    border-right: unset;
+  };
+}
+
+th.advisory-table-first {
+  min-width: 180px;
+}
+
+th.advisory-table-second {
+  min-width: 130px;
+}

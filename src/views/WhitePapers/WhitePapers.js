@@ -23,7 +23,7 @@ class WhitePapers extends Component {
   render() {
     const whitePapers = this.state.whitePapers.map((whitePaper, index) => {
       return (
-        <div className="col s12 l6 blogpost-column-wrapper">
+        <div className="col s12 whitepaper-column-wrapper">
           <WhitePaper key={index} whitePaper={whitePaper} />
         </div>
       );
@@ -36,7 +36,9 @@ class WhitePapers extends Component {
           headline="White Papers"
           text="As the pioneers in securing Elasticsearch clusters, all decisions about our technology have the same purpose, to make your Elasticsearch environment more secure."
         />
-        <div className="row">{whitePapers}</div>
+        <div className="whitepaper-wrapper">
+          <div className="row">{whitePapers}</div>
+        </div>
         <PreFooter />
         <Footer />
       </div>

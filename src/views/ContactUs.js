@@ -16,7 +16,10 @@ const ContactUs = props => {
         {formatMessage(messages.content1)} <code>src/App.js</code>
         {formatMessage(messages.content2)}
       </div> */}
-      <Title headline="Get in touch" />
+      <Title
+        headline="Get in touch"
+        text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
+      />
       <ContactForm />
       <Footer />
     </div>

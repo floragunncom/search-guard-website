@@ -34,7 +34,6 @@ class BlogPostArticle extends Component {
   }
 
   render() {
-    console.log('blogpost props', this.props);
     const options = {
       renderMark: {
         [MARKS.BOLD]: text => <div className="bold">{text}</div>,
@@ -69,7 +68,7 @@ class BlogPostArticle extends Component {
         <BlogTitle
           text={this.state.content.title}
           subText={`${this.state.content.author} || ${this.state.content.date}`}
-          tags="security, search-guard, installation"
+          tags={this.state.content.tags.join(', ')}
         />
         <div className="row">
           <div className="col s12 offset-l2 l8">

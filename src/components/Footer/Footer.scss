@@ -23,15 +23,16 @@ div.row.footer-row {
   };
 }
 
-a {
+a.footer-links {
   text-decoration: none;
   color: $white;
 }
 
 .footer-list-headline, .footer-list-item a {
   font-size: 14px;
+  line-height: 14px;
   letter-spacing: 1px;
-  margin-left: 16px;
+  margin-left: 4.75px;
   color: $white;
   @media only screen and (max-width: $mobile) {
     line-height: 48px;

@@ -8,7 +8,7 @@ const TableEditions = () => {
   return (
     <div className="licensing-table-wrapper">
       <table className="centered highlight hide-on-med-and-down">
-        <thead>
+        <thead className="licensing-table-head">
           <tr>
             <th><div className="licensing-table-left">feature</div></th>
             <th>community edition</th>
@@ -16,7 +16,7 @@ const TableEditions = () => {
             <th>Compliance edition</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="licensing-table-body">
           <tr>
             <td><div className="licensing-table-left">Nunc eu augue ullamcorper</div></td>
             <td className="licensing-checkmark"><img src={community} alt="checkmark"/></td>

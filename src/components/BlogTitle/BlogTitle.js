@@ -10,8 +10,8 @@ const Title = props => {
         </div>
       </div>
       <div className="blogtitle-subtext-container">
-          <div className="blogtitle-sub-text">{props.subText}</div>
-          <div className="blogtitle-sub-text">Tags: {props.tags}</div>
+        <div className="blogtitle-sub-text">{props.subText}</div>
+        {props.tags === undefined ? '' : <div className="blogtitle-sub-text">Tags: {props.tags}</div>}
       </div>
     </div>
   );

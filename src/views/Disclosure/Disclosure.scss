@@ -1,0 +1,59 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.disclosure-wrapper {
+  padding: 64px 32px;
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px;
+  };
+}
+
+.disclosure-main-headline {
+  color: $darkBlue;
+  font-size: 48px;
+  line-height: 57px;
+  font-weight: 300;
+  margin-bottom: 64px;
+  @media only screen and (max-width: $mobile) {
+    margin: 32px 0px 16px 0px;
+    font-size: 36px;
+    line-height: 43px;
+    color: $darkBlue;
+  };
+}
+
+.disclosure-headline {
+  color: $darkBlue;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  margin-bottom: 32px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.67px;
+    margin-bottom: 16px;
+  };
+}
+
+.disclosure-text {
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 64px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  };
+}
+
+ul {
+  margin-left: 20px !important;
+}
+
+.disclosure-list li {
+  color: $darkGrey;
+  list-style-type: disc !important;
+  list-style-position: outside !important;
+}

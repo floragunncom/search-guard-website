@@ -10,6 +10,14 @@ import Faqs from './views/Faqs/Faqs';
 import License from './views/License/License';
 import BlogPostArticle from './views/Blog/BlogPostArticle';
 import Imprint from './views/Imprint/Imprint';
+import WhitePapers from './views/WhitePapers/WhitePapers';
+import WhitePaperDetail from './views/WhitePapers/WhitePaperDetail';
+import Presentations from './views/Presentations/Presentations';
+import DataProtection from './views/DataProtection/DataProtection';
+import Security from './views/Security/Security';
+import Advisory from './views/Advisory/Advisory';
+import Disclosure from './views/Disclosure/Disclosure';
+import Certifications from './views/Certifications/Certifications';
 
 const Routes = () => {
   return (
@@ -23,8 +31,19 @@ const Routes = () => {
         <Route exact path="/license" component={License} />
         <Route exact path="/faq" component={Faqs} />
         <Route exact path="/imprint" component={Imprint} />
+        <Route exact path="/prese" component={Imprint} />
+        <Route exact path="/imprint" component={Imprint} />
+        <Route exact path="/white-papers" component={WhitePapers} />
+        <Route exact path="/presentations" component={Presentations} />
+        <Route exact path="/data-protection" component={DataProtection} />
+        <Route exact path="/security" component={Security} />
+        <Route exact path="/advisory" component={Advisory} />
+        <Route exact path="/disclosure" component={Disclosure} />
+        <Route exact path="/certifications" component={Certifications} />
         <Route exact={true} path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPostArticle} />
+        <Route exact={true} path="/white-papers" component={WhitePapers} />
+        <Route path="/white-papers/:slug" component={WhitePaperDetail} />
       </Switch>
     </div>
   );
