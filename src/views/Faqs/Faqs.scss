@@ -41,14 +41,16 @@
 }
 
 .faq-question-text {
-  color: $darkBlue;
   font-size: 18px;
-  margin-bottom: 16px;
+  padding-bottom: 16px;
   line-height: 27px;
-  text-decoration: underline;
   @media only screen and (max-width: $tabletBig) {
     font-size: 16px;
     line-height: 24px;
+  };
+  a {
+    color: $darkBlue;
+    border-bottom: 1px solid $green
   };
 }
 
@@ -87,7 +89,7 @@
   font-size: 18px;
   line-height: 27px;
   color: $darkGrey;
-  margin-bottom: 96px;
+  padding-bottom: 96px;
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 64px;
   };

@@ -67,4 +67,7 @@ hr.prefooter-hr {
 
 .prefooter-content.icons img {
   padding: 8px 16px 8px 0;
+  &:hover, &:focus, &:active {
+    opacity: 0.9
+  }
 }

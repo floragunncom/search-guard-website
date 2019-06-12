@@ -152,7 +152,7 @@ const Company = () => {
                 <div className="profile-position">{person.position}</div>
                 <div className="profile-link">
                   <a href="www.linkedin.com" target="_blank">
-                    <img src={iconIn} alt="icon" />
+                    <img src={iconIn} alt="icon" className="profile-linkedIn" />
                   </a>
                 </div>
               </div>

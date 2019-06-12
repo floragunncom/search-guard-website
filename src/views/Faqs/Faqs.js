@@ -19,59 +19,59 @@ const Faqs = () => {
         <div className="col s12 l4">
           <div className="faq-question-section">
             <div className="faq-question-headline">Nullam at porta</div>
-            <div>
-              <a href="#" className="faq-question-text">
+            <div className="faq-question-text">
+              <a href="#">
                 How does Search Guard compare to Shield / X-Pack Security?
               </a>
             </div>
-            <div>
-              <a href="#" className="faq-question-text">
+            <div className="faq-question-text">
+              <a href="#">
                 Who is using Search Guard?
               </a>
             </div>
-            <div>
-              <a href="#" className="faq-question-text">
+            <div className="faq-question-text">
+              <a href="#">
                 How secure is Search Guard?
               </a>
             </div>
           </div>
           <div className="faq-question-section">
             <div className="faq-question-headline">Aenean volutpat</div>
-            <div>
-              <a href="#" className="faq-question-text">
+            <div className="faq-question-text">
+              <a href="#">
                 What is your licensing model?
               </a>
             </div>
-            <div>
-              <a href="#" className="faq-question-text">
+            <div className="faq-question-text">
+              <a href="#">
                 What's the easiest way to set up a PoC?
               </a>
             </div>
-            <div>
-              <a href="#" className="faq-question-text">
+            <div className="faq-question-text">
+              <a href="#">
                 How do I get/install the enterprise features?
               </a>
             </div>
           </div>
           <div className="faq-question-section">
             <div className="faq-question-headline">Suspendisse nibh libero</div>
-            <div>
-              <a href="#" className="faq-question-text">
+            <div className="faq-question-text">
+              <a href="#">
                 Where can I get support?
               </a>
             </div>
-            <div>
-              <a href="#" className="faq-question-text">
+            <div className="faq-question-text">
+              <a href="#">
                 Why is your complete code publicly visible?
               </a>
             </div>
-            <div>
-              <a href="#" className="faq-question-text">
+            <div className="faq-question-text">
+              <a href="#">
                 If the license expires, what happens with my cluster?
               </a>
             </div>
-            <div>
-              <a href="#" className="faq-question-text">
+            <div className="faq-question-text">
+              <a href="#">
                 Is Search Guard compatible with the Elastic Stack?
               </a>
             </div>

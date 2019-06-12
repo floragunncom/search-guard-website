@@ -28,8 +28,8 @@ const HomePage = () => {
       <div className="hero-wrapper">
         <div className="row">
           <div className="hero-row-empty-mobile" />
-          <div className="hero-row-wrapper">
-            <div className="col s12 m5 l6 hero-col-wrapper">
+          <div className="col s12 m5 l6">
+            <div className="hero-col-wrapper">
               <div className="hero-text-wrapper">
                 <div className="hero-text-wrapper-headline">
                   Security for Elasticsearch

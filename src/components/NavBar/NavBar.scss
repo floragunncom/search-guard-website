@@ -56,9 +56,10 @@ img.navbar-logo-style {
   letter-spacing: 1px;
   color: $white;
   font-weight: bold;
-
+  margin-bottom: 2px;
   &:hover, &:focus {
     border-bottom: 2px solid $turkis;
+    margin-bottom: 0px;
   }
   &:last-child {
     border: 2px solid $white;

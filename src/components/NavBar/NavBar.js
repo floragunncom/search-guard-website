@@ -36,10 +36,10 @@ class NavBar extends Component {
             <img src={logo} alt="Logo" className="navbar-logo-style" />
           </a>
           <div href="/" className="navbar-nav-links-container">
-            <Link to="/product" className="navbar-nav-link" href="javascript:void(0)">product</Link>
-            <Link to="/license" className="navbar-nav-link" href="javascript:void(0)">licensing</Link>
-            <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource hub</Link>
-            <Link to="/company" className="navbar-nav-link" href="javascript:void(0)">company</Link>
+            <Link to="/product" className="navbar-nav-link">product</Link>
+            <Link to="/license" className="navbar-nav-link">licensing</Link>
+            <Link to="/resource" className="navbar-nav-link">resource hub</Link>
+            <Link to="/company" className="navbar-nav-link">company</Link>
             <Link to="/contact" className="navbar-nav-link">contact us</Link>
           </div>
           <div className="navbar-menu-container">

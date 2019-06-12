@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="931px" height="657px" viewBox="0 0 931 657" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="931px" height="657px" viewBox="-250 0 931 657" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
     <title>illustration / desktop</title>
     <desc>Created with Sketch.</desc>
@@ -69,86 +69,85 @@
             <stop stop-color="#1C6481" offset="0%"></stop>
             <stop stop-color="#00FCE5" offset="51.1871804%"></stop>
             <stop stop-color="#15AAB6" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="10%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="1.55514792%" y1="31.9871979%" x2="78.0490472%" y2="60.0191808%" id="linearGradient-24">
             <stop stop-color="#1E6C89" offset="0%"></stop>
             <stop stop-color="#00FCE5" offset="51.1871804%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="84.5958699%" y1="38.6265792%" x2="11.7592441%" y2="63.3023347%" id="linearGradient-25">
             <stop stop-color="#1C6582" offset="0%"></stop>
             <stop stop-color="#00FCE5" offset="51.1871804%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="5.04706114%" y1="66.7978417%" x2="100%" y2="33.2021583%" id="linearGradient-26">
             <stop stop-color="#237196" offset="0%"></stop>
             <stop stop-color="#00FCE5" offset="51.1871804%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="24.657749%" y1="45.1636348%" x2="88.2309285%" y2="54.4305669%" id="linearGradient-27">
             <stop stop-color="#237196" offset="0%"></stop>
             <stop stop-color="#00FCE5" offset="51.1871804%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="93.522184%" y1="37.6619352%" x2="-15.8880313%" y2="83.0641121%" id="linearGradient-28">
             <stop stop-color="#1C6683" offset="0%"></stop>
             <stop stop-color="#00FCE5" offset="51.1871804%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="24.657749%" y1="32.9472%" x2="125.213287%" y2="85.1895352%" id="linearGradient-29">
             <stop stop-color="#1F7391" offset="0%"></stop>
             <stop stop-color="#00FCE5" offset="51.1871804%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="0%" y1="33.2915752%" x2="95.8754829%" y2="64.9550068%" id="linearGradient-30">
-            <stop stop-color="#184962" offset="0%"></stop>
             <stop stop-color="#10BEC2" offset="20.6028294%"></stop>
             <stop stop-color="#1F7392" offset="57.3918368%"></stop>
             <stop stop-color="#0DC5C5" offset="83.6509777%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="9.40544114%" y1="63.6933406%" x2="100%" y2="33.7722681%" id="linearGradient-31">
             <stop stop-color="#184962" offset="0%"></stop>
             <stop stop-color="#236E94" offset="20.7559122%"></stop>
             <stop stop-color="#00FCE5" offset="48.8128196%"></stop>
             <stop stop-color="#237196" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="0%" y1="66.4606289%" x2="100%" y2="33.5393711%" id="linearGradient-32">
             <stop stop-color="#184962" offset="0%"></stop>
             <stop stop-color="#237196" offset="21.5793919%"></stop>
             <stop stop-color="#00FCE5" offset="51.1871804%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="0%" y1="67.0138889%" x2="100%" y2="32.9861111%" id="linearGradient-33">
             <stop stop-color="#184962" offset="0%"></stop>
             <stop stop-color="#237196" offset="11.1750422%"></stop>
             <stop stop-color="#00FCE5" offset="51.1871804%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="0%" y1="66.5178182%" x2="82.0596334%" y2="39.6100817%" id="linearGradient-34">
             <stop stop-color="#184962" offset="0%"></stop>
             <stop stop-color="#237196" offset="20.2553855%"></stop>
             <stop stop-color="#00FCE5" offset="41.4984872%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <radialGradient x1="9.40544114%" y1="64.391209%" x2="100%" y2="32.9452369%" id="linearGradient-35">
             <stop stop-color="#184962" offset="0.266575169%"></stop>
             <stop stop-color="#237196" offset="21.1570946%"></stop>
             <stop stop-color="#00FCE5" offset="53.0431799%"></stop>
             <stop stop-color="#236E94" offset="100%"></stop>
-            <animate attributeName="fy" dur="700ms" from="0%" to="100%" repeatCount="indefinite" />
+            <animate attributeName="fy" dur="1500ms" from="0%" to="100%" repeatCount="indefinite" />
         </radialGradient>
         <filter x="-27.9%" y="-41.5%" width="155.7%" height="183.0%" filterUnits="objectBoundingBox" id="filter-36">
             <feGaussianBlur stdDeviation="10" in="SourceGraphic"></feGaussianBlur>
