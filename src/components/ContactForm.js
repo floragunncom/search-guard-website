@@ -12,7 +12,10 @@ class ContactForm extends React.Component {
     email: '',
     phoneNumber: '',
     website: '',
-    country: ''
+    country: '',
+    version: '',
+    stage: '',
+    newsletterCheck: false
   }
 
   onFirstNameChange = (event) => {
@@ -53,16 +56,29 @@ class ContactForm extends React.Component {
       website
     });
   }
-  onCountryChange = (event) => {
-    const country = event.target.value
+  onCountryChange = (country) => {
     this.setState({
       country
     });
   }
 
+  onElasticsearchVersionChange = (version) => {
+    this.setState({
+      version
+    });
+  }
+
+  onStageChange = (stage) => {
+    this.setState({
+      stage
+    });
+  }
+
+
   render() {
+    console.log(this.state.newsletterCheck);
     return (
-      <div className="contact-form-container">
+      <div className="row contact-form-container">
         <div className="company-information-container">
           <p className="company-information-header">
             Serach Guard Headquarters
@@ -77,75 +93,66 @@ class ContactForm extends React.Component {
         <div className="contact-form-wrapper">
           <div className="contact-information-wrapper">
             CONTACT INFORMATION
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s12 m6 input-field-contact-wrapper">
-                    <input id="first_name" type="text" class="validate input-field-contact" />
-                    <label for="first_name">First Name</label>
-                  </div>
-                  <div class="input-field col s12 m6 input-field-contact-wrapper">
-                    <input id="last_name" type="text" class="validate input-field-contact" />
-                    <label for="last_name">Last Name</label>
-                  </div>
-                  <div class="input-field col s12 m6 input-field-contact-wrapper">
-                    <input id="job_title" type="text" class="validate input-field-contact" />
-                    <label for="job_title">Job title (optional)</label>
-                  </div>
-                  <div class="input-field col s12 m6 input-field-contact-wrapper">
-                    <input id="email" type="text" class="validate input-field-contact" />
-                    <label for="email">Email</label>
-                  </div>
-                  <div class="input-field col s12 m6 input-field-contact-wrapper">
-                    <input id="phone_number" type="text" class="validate input-field-contact" />
-                    <label for="phone_number">Phone number (optional)</label>
-                  </div>
-                  <div class="input-field col s12 m6 input-field-contact-wrapper">
-                    <input id="website" type="text" class="validate input-field-contact" />
-                    <label for="website">Website</label>
-                  </div>
-                  <DropDown
-                    dropDownCategory="Country"
-                    dropDownOptions={['Germany', 'France', 'Italy', 'England', 'United States', 'Netherlands', 'Ghana']}
-                  />
-                </div>
-              </form>
-            </div>
+            <form>
+              <div class="input-field col s12 m6">
+                <input id="first_name" type="text" class="validate input-field-contact" onChange={event => this.onFirstNameChange(event)}/>
+                <label for="first_name" class="input-field-label">First Name</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input id="last_name" type="text" class="validate input-field-contact" onChange={event => this.onLastNameChange(event)}/>
+                <label for="last_name" class="input-field-label">Last Name</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input id="job_title" type="text" class="validate input-field-contact" onChange={event => this.onJobTitleChange(event)}/>
+                <label for="job_title" class="input-field-label">Job title (optional)</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input id="email" type="text" class="validate input-field-contact" onChange={event => this.onEmailChange(event)}/>
+                <label for="email" class="input-field-label">Email</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input id="phone_number" type="text" class="validate input-field-contact" onChange={event => this.onPhoneNumberChange(event)}/>
+                <label for="phone_number" class="input-field-label">Phone number (optional)</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input id="website" type="text" class="validate input-field-contact" onChange={event => this.onWebsiteChange(event)}/>
+                <label for="website" class="input-field-label">Website</label>
+              </div>
+              <DropDown
+                dropDownCategory="Country"
+                dropDownOptions={['Germany', 'France', 'Italy', 'England', 'United States', 'Netherlands', 'Ghana']}
+                onDropDownOptionChange={this.onCountryChange}
+              />
+            </form>
           </div>
           <div className="technical-information-wrapper">
             TECHNICAL INFORMATION
-              <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <DropDown
-                    dropDownCategory="Elasticsearch version"
-                    dropDownOptions={['1', '2', '3', '4', '5']}
-                  />
-                  <DropDown
-                    dropDownCategory="Current stage"
-                    dropDownOptions={['1', '2', '3', '4', '5']}
-                  />
-                </div>
-              </form>
+            <div class="row">
+              <DropDown
+                dropDownCategory="Elasticsearch version"
+                dropDownOptions={['1', '2', '3', '4', '5']}
+                onDropDownOptionChange={this.onElasticsearchVersionChange}
+              />
+              <DropDown
+                dropDownCategory="Current stage"
+                dropDownOptions={['1', '2', '3', '4', '5']}
+                onDropDownOptionChange={this.onStageChange}
+              />
             </div>
           </div>
           <div className="message-wrapper">
             YOUR MESSAGE
-              <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s12 input-field-contact-wrapper">
-                    <input id="your_message" type="text" class="validate input-field-contact" />
-                    <label for="your_message">Message</label>
-                  </div>
-                </div>
-              </form>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="your_message" type="text" class="validate input-field-contact" />
+                <label for="your_message" class="input-field-label">Message</label>
+              </div>
             </div>
           </div>
           <div className="newsletter-section-wrapper">
             NEWSLETTER
             <div className="privacy-policy-checkbox">
-              <input type="checkbox" class="filled-in" checked="checked" />
+              <input type="checkbox" class="filled-in" checked={this.state.newsletterCheck} onChange={() => this.setState({ newsletterCheck: !this.statenewsletterCheck})}/>
               <span> Send me updates about Serach Guard products and services</span>
             </div>
           </div>
