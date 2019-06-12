@@ -20,10 +20,9 @@ class DropDowm extends React.Component {
         return (
           <div 
             className="drop-down-value"
-            onClick={() => this.setState({
+            onClick={() => {this.setState({
               selectedValue: option,
-
-            })}
+            }); this.props.onDropDownOptionChange(option)}}
           >
             {option}
           </div>
@@ -37,7 +36,7 @@ class DropDowm extends React.Component {
     return (
       <div>
         <div 
-          className="drop-down-container col s12 m6"
+          className="drop-down-container col s12 m6 "
           onClick={() => this.handleClick()}
         > 
           <div className="drop-down-text-field">
