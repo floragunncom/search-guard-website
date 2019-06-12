@@ -2,10 +2,10 @@
 
 .drop-down-container {
   height: 45.5px;
-  width: 310px;
+  width: 100%;
   cursor: pointer;
   border-bottom: 2px solid #246E94;
-  padding-right: 21px;
+  padding-right: 21px !important;
   margin-top: 16px;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
 .drop-down-text-field {
   height: 21px;	
   width: 290px;	
-  color: #184962;	
+  color: $darkBlue;	
   font-family: Roboto;	
   font-size: 14px;	
   line-height: 20px;
