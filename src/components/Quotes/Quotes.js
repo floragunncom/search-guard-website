@@ -1,85 +1,81 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Quotes.scss';
-// import Slider from 'react-slick';
+import M from 'materialize-css';
 import quoteUp from '../../images/quote-up.svg';
 import quoteDown from '../../images/quote-down.svg';
 
-const Quotes = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    pauseOnHover: true,
-    swipeToSlide: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    customPaging: dots => (
-      <div>
-        <div
-          style={{
-            height: '12px',
-            width: '12px',
-            borderRadius: '6px',
-            color: 'white',
-            fontSize: '0px',
-            border: '0.5px solid #009688',
-          }}
-        >
-          {dots}
+class Quotes extends Component {
+  componentDidMount() {
+    const elems = document.querySelectorAll('.slider');
+    const options = {
+      indicators: true,
+      duration: 750,
+    };
+    M.Slider.init(elems, options);
+  }
+
+  render() {
+    const quotes = [
+      {
+        quote:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.Utenim ad minim veniam.',
+        author: 'Goethe',
+        profession: 'Pianist',
+        company: 'Wien',
+      },
+      {
+        quote:
+          'Security is the prerequisite for every project in the IT industry, especially when it comes to data. HEAnet chooses Search Guard to protect its ELK cluster because it provides node-to-node encryption (TLS) and more features such as multi-tenancy, compliance, unlike its competitors who only provide security on the REST layer.',
+        author: 'Yasvanth Babu',
+        profession: 'Fuerst',
+        company: 'Siemens',
+      },
+      {
+        quote:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.Utenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        author: 'Peter Müller',
+        profession: 'Unternehmer in der Sofware Branche',
+        company: 'Middleware System Administrator HEAnet CLG ',
+      },
+    ];
+    return (
+      <div className="quotes-container">
+        <div className="row">
+          <div className="quotes-headline">What our clients say</div>
+          <div className="slider">
+            <ul className="slides">
+              {quotes.map((quote, index) => {
+                return (
+                  <li key={index}>
+                    <div className="quotes-wrapper">
+                      <div className="quotes-left-icon">
+                        <img src={quoteUp} alt="icon" />
+                      </div>
+                      <div className="quotes-quote">
+                        <div className="quotes-text">{quote.quote}</div>
+                        <div className="quotes-author-name">
+                          - {quote.author}
+                        </div>
+                        <div className="quotes-author-title">
+                          {quote.profession}
+                        </div>
+                        <div className="quotes-author-company">
+                          {quote.company}
+                        </div>
+                      </div>
+                      <div className="quotes-right-icon">
+                        <img src={quoteDown} alt="icon" />
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
-    ),
-  };
-  return (
-    <div className="quotes-container">
-      <div className="row">
-        <div className="quotes-headline">What our clients say</div>
-        <div className="col s12 quotes-slider">
-          {/* <Slider {...settings}>
-            <div className="quotes-wrapper">
-              <img src={quoteUp} alt="icon" />
-              <div className="quotes-text">
-                I’ve missed more than 9000 shots in my career. I’ve lost almost
-                300 games. 26 times, I’ve been trusted to take the game winning
-                shot and missed. I’ve failed over and over and over again in my
-                life. And that is why I succeed.
-              </div>
-              <img src={quoteDown} alt="icon" className="quotes-right-icon" />
-              <div className="quotes-author-name">- Michael Jordan</div>
-              <div className="quotes-author-title">GOT</div>
-              <div className="quotes-author-company">Chicago Bulls</div>
-            </div>
-            <div className="quotes-wrapper">
-              <img src={quoteUp} alt="icon" />
-              <div className="quotes-text">Ehöhö ffhm deDaddle diddleli</div>
-              <img src={quoteDown} alt="icon" className="quotes-right-icon" />
-              <div className="quotes-author-name">- Bahara Mazdak</div>
-              <div className="quotes-author-title">deDaddle</div>
-              <div className="quotes-author-company">Novili</div>
-            </div>
-            <div className="quotes-wrapper">
-              <img src={quoteUp} alt="icon" />
-              <div className="quotes-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </div>
-              <img src={quoteDown} alt="icon" className="quotes-right-icon" />
-              <div className="quotes-author-name">- Goethe</div>
-              <div className="quotes-author-title">Tastenhauer</div>
-              <div className="quotes-author-company">was mit Beats</div>
-            </div>
-          </Slider> */}
-        </div>
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Quotes;

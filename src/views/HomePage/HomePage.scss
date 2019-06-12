@@ -3,27 +3,13 @@
 
 .hero-wrapper {
   background-color: $darkBlue;
-  background-image: url('../../images/hero-background.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: fill;
   width: 100%;
-}
-
-.hero-row-wrapper {
-  padding: 0px 10px;
-  background: url('../../images/hero-animation.svg') no-repeat right;
-  background-size: 75% 100%;
-  display: flow-root;
-  @media only screen and (max-width: $tabletBig) {
-    padding: 0px 21px;
-    background: url('../../images/hero-animation-tablet.svg') no-repeat right;
-  };
+  background-image: url('../../images/hero-animation.svg'), url('../../images/hero-background.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat, no-repeat;
   @media only screen and (max-width: $mobile) {
-    background-image: url('../../images/hero-animation-mobile.svg') no-repeat;
-    background-position: top;
-    background-size: contain;
-  };
+    background-image: url('../../images/hero-animation-mobile.svg'), url('../../images/hero-background.svg');
+  }
 }
 
 .hero-row-empty-mobile {
@@ -37,12 +23,18 @@
 .hero-col-wrapper {
   max-width: 500px;
   @media only screen and (max-width: $tabletBig) {
-    margin-left: 20px;
+    margin-left: 12px;
   };
   @media only screen and (max-width: $mobile) {
     margin: 0px 24px;
     max-width: unset;
   };
+}
+
+div.col.s12.m5.l6 {
+  @media only screen and (max-width: $xl) and (min-width: $tabletBig) {
+    margin-left: 12px;
+  }
 }
 
 .hero-text-wrapper-headline {

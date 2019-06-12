@@ -1,27 +1,29 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
-@import "~slick-carousel/slick/slick.css";
-@import "~slick-carousel/slick/slick-theme.css";
 
 .quotes-container {
-
+  padding: 128px 0px;
   @media only screen and (max-width: $tabletBig) {
     display: none;
   };
 }
 
-.slick-slider {
-  margin-bottom: 128px;
-}
 .quotes-wrapper {
+  margin-top: 50px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.quotes-quote {
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  justify-content: center;
   flex-direction: column;
-  margin-bottom: 32px;
 }
 
 .quotes-headline {
-  margin-top: 128px;
   margin-bottom: 26px;
   color: $darkBlue;
   font-size: 48px;
@@ -31,14 +33,20 @@
 }
 
 .quotes-right-icon {
-  float: right;
-  margin-top: -24px;
-  margin-left: 50px;
   transform: rotate(180deg);
+  width: 58px;
+  margin-right: 32px;
+  margin-bottom: 100px;
+  align-self: flex-end;
+}
+
+.quotes-left-icon {
+  margin-left: 32px;
+  width: 58px;
 }
 
 .quotes-text {
-  margin: -30px 90px 0px 90px;
+  padding: 0px 20px;
   font-size: 24px;
   line-height: 39px;
   letter-spacing: 0.8px;
@@ -61,25 +69,15 @@
   color: $darkGrey;
 }
 
-.quotes-carousel {
-  margin-bottom: 128px;
+ul.slides {
+  background-color: $white !important;
 }
 
-.quotes-quote-down {
-  width: 100%;
-  text-align: left;
+li.indicator-item {
+  background-color: white !important;
+  border: 1px solid $buttonGreen;
 }
-
-.slick-dots li {
-  width: unset;
-  height: unset;
-}
-
-ul.slick-dots .slick-active {
-  height: 12px;
-  width: 12px;
-  border-radius: 6px;
-  font-size: 0px;
-  background-color: $buttonGreen;
-  border: 0.5px solid $buttonGreen;
+  
+li.indicator-item.active {
+  background-color: $buttonGreen !important;
 }

@@ -7,10 +7,17 @@
 
 input#email {
   padding: 0px;
-  border-bottom: 2px solid $navyBlue;
+  border-bottom: 2px solid $navyBlue !important;
   @media only screen and (max-width: $mobile) {
     margin-bottom: 22px;
   };
+}
+
+input.invalid[type=email]:not(.browser-default),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+  input.valid[type=email]:not(.browser-default) {
+  -webkit-box-shadow: unset;
+  box-shadow: unset;
 }
 
 div.input-field.col {
@@ -19,3 +26,11 @@ div.input-field.col {
     padding: 0px; 
   };
 }
+
+.input-field.col label {
+  left: 0px;
+}
+
+  .input-field input:focus + label {
+   color: unset !important;
+ }
