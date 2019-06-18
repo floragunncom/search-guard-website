@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './LicensingModel.scss';
 import TableEditions from '../../components/TableEditions/TableEditions';
-import enterprise from '../../images/icon-enterprise.svg';
-import compliance from '../../images/icon-compliance.svg';
-import community from '../../images/icon-community.svg';
+import enterprise from '../../images/icon-enterprise-green.svg';
+import compliance from '../../images/icon-compliance-red.svg';
+import community from '../../images/icon-community-gold.svg';
 import academic from '../../images/icon-academic.svg';
 import custom from '../../images/icon-custom.svg';
 import Button from '../Button/Button';
@@ -19,7 +19,7 @@ class LicensingModel extends Component {
     this.setState({ standardButton });
   }
   
-  onBottomButtonPress() {
+  ontableViewPress() {
     const tableVisible = !this.state.tableVisible;
     this.setState({ tableVisible });
   }
@@ -47,6 +47,7 @@ class LicensingModel extends Component {
         </div>
       );
     }
+    
     if (this.state.standardButton) {
       return (
         <div className="licensing-editions-wrapper">
@@ -75,7 +76,7 @@ class LicensingModel extends Component {
                   </div>
                 </div>
                 <div className="licensing-editions-button">
-                  <Button text="get a quote" style="ghost-link" />
+                  <Button text="get a quote" style="ghost-link" color="#C5AF2B" />
                 </div>
               </div>
             </div>
@@ -105,10 +106,7 @@ class LicensingModel extends Component {
                 </div>
                 <div className="licensing-editions-button">
                   <Button
-                    text="get a quote"
-                    style="ghost-link"
-                    color="#00C9B7"
-                  />
+                    text="get a quote" style="ghost-link" color="#1A8542" />
                 </div>
               </div>
             </div>
@@ -136,11 +134,7 @@ class LicensingModel extends Component {
                   </div>
                 </div>
                 <div className="licensing-editions-button">
-                  <Button
-                    text="install now"
-                    style="ghost-link"
-                    color="#00B0A0"
-                  />
+                  <Button text="install now" style="ghost-link" color="#B81F3F" />
                 </div>
               </div>
               {infoButton}
@@ -225,7 +219,7 @@ class LicensingModel extends Component {
 
   render() {
     let buttons = undefined;
-    let bottomButton = undefined;
+    let tableView = undefined;
 
     if (this.props.topButtons) {
       buttons = (
@@ -246,31 +240,31 @@ class LicensingModel extends Component {
       );
     }
 
-    if (this.props.bottomButton) {
-      if (!this.state.tableVisible) {
-        bottomButton = (
-          <div className="licensing-bottom-button-wrapper">
-            <Button text="See licensing model comparison" style="loud-button" onPress={() => this.onBottomButtonPress()} />
-          </div>
-        );
-      } else {
-        bottomButton = (
-          <div className="licensing-comparison-wrapper ">
-            <div className="licensing-comparison-headline" onClick={() => this.onBottomButtonPress()}>Feature breakdown</div>
-            <TableEditions />
-          </div>
-        );
-      }
+    if (this.props.tableView) {
+      tableView = (
+        <div className="licensing-comparison-wrapper">
+          <div className="licensing-comparison-headline" onClick={() => this.ontableViewPress()}>Standard edition feature breakdown</div>
+          <TableEditions />
+        </div>
+      );
     }
 
     return (
-      <div className="licensing-wrapper" id="standard">
-        <div className="row">
-          <div className="col s12">
-            <div className="licensing-headline">{this.props.headline}</div>
-            {buttons}
-            {this.renderContent()}
-            {bottomButton}
+      <div>
+        <div className={this.props.tableView ? "licensing-wrapper-expanded" : "licensing-wrapper"} id="standard">
+          <div className="row">
+            <div className="col s12">
+              <div className="licensing-headline">{this.props.headline}</div>
+              {buttons}
+              {this.renderContent()}
+            </div>
+          </div>
+        </div>
+        <div style={{backgroundColor: 'white'}}>
+          <div className="row">
+            <div className="col s12">
+              {tableView}
+            </div>
           </div>
         </div>
       </div>

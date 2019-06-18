@@ -122,7 +122,7 @@ const HomePage = () => {
         </div>
       </div>
       <Services />
-      <LicensingModel headline="Licensing models" topButtons={true} bottomButton={false} />
+      <LicensingModel headline="Licensing models" topButtons={true} tableView={false} />
       <Cta
         headline="Free 60-day trial"
         text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."

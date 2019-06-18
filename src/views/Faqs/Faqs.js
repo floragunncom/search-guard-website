@@ -80,7 +80,7 @@ const Faqs = () => {
         <div className="col s12 l8 faq-answer-wrapper">
           <div className="faq-answer-section">
             <div className="faq-answer-section-headline">Nullam at porta</div>
-            <div className="faq-answer-headline">
+            <div className="faq-answer-headline" id="first">
               How does Search Guard compare to Shield / X-Pack Security?
             </div>
             <div className="faq-answer-text">
@@ -116,7 +116,7 @@ const Faqs = () => {
               staging, integration and QA/AUT-systems are covered by the license
               as well at no additional cost.
             </div>
-            <div className="faq-answer-headline">
+            <div className="faq-answer-headline" id="second">
               Who is using Search Guard?
             </div>
             <div className="faq-answer-text">
@@ -144,7 +144,7 @@ const Faqs = () => {
               </p>
               <br />
             </div>
-            <div className="faq-answer-headline">
+            <div className="faq-answer-headline" id="third">
               How secure is Search Guard?
             </div>
             <div className="faq-answer-text">

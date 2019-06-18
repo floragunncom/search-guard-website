@@ -37,6 +37,18 @@
 .video-description-video {
   display: flex;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.video-iframe-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .video-description {
@@ -85,9 +97,17 @@
 }
 
 .video-playlist {
+  display: flex;
   @media only screen and (max-width: $tabletBig) {
     display: none;
   }
+}
+
+.video-playlist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .video-playlist-text {
@@ -104,4 +124,8 @@
   @media only screen and (max-width: $tabletBig) {
     margin-top: 32px;
   }
+}
+
+.ytp-large-play-button-bg{
+  background: green !important
 }

@@ -30,6 +30,10 @@
   font-size: 14px;
   line-height: 20px;
   color: $darkGrey;
+  border-right: 1px solid $grey;
+  &:last-child {
+    border-right: unset;
+  }
 }
 
 td .licensing-checkmark {
@@ -60,6 +64,7 @@ td .licensing-checkmark {
     font-size: 24px;
     line-height: 30px;
     letter-spacing: 0.8px;
+    text-align: center;
   };
   @media only screen and (max-width: $mobile) {
     margin: 48px 10.5px 16px 10.5px;
@@ -106,4 +111,15 @@ td .licensing-checkmark {
     font-size: 14px;
     line-height: 20px;
   };
+}
+
+.material-tooltip {
+    width: 250px;
+    padding: 20px 16px;
+    text-align: left;
+    background-color: $white;
+    box-shadow: 0 1px 15px 0 rgba(69,65,78,0.1);
+    color: $darkGrey;
+    font-size: 14px;
+    line-height: 20px;
 }

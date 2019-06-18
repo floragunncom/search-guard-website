@@ -42,7 +42,7 @@ const Footer = () => {
                 <a href="https://docs.search-guard.com/latest/" target="_blank" className="footer-links">Documentation</a>
               </div>
               <div className="footer-list-item">
-                <a href="https://www.github.com/floragunn" target="_blank" className="footer-links">Github repo</a>
+                <a href="https://github.com/floragunncom" target="_blank" className="footer-links">Github repo</a>
               </div>
               <div className="footer-list-item">
                 <a href="/faq" className="footer-links">FAQ</a>

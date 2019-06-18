@@ -2,7 +2,6 @@ import React from 'react';
 import './index.scss';
 import { injectIntl, defineMessages } from 'react-intl';
 import HomePage from './views/HomePage/HomePage';
-// import 'materialize-css/dist/css/materialize.min.css';
 
 const messages = defineMessages({
   title: {

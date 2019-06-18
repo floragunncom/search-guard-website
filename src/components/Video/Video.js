@@ -1,11 +1,10 @@
 import React from 'react';
-import ReactPlayer from 'react-player';
 import Button from '../Button/Button';
 import './Video.scss';
 
 const Video = props => {
-  let playlist = undefined;
-  let playlistButton = undefined;
+  let playlist;
+  let playlistButton;
 
   if (props.playlist) {
     playlist = (
@@ -13,31 +12,37 @@ const Video = props => {
         <div className="video-playlist-headline">Other videos you may like</div>
         <div className="video-playlist">
           <div className="video-playlist-item col l4">
-            <ReactPlayer
-              url="https://www.youtube.com/watch?v=qiRgy5FcsnI"
-              width="350px"
-              height="208px"
+            <iframe
+              className="responsive-video"
+              src="https://www.youtube.com/embed/qiRgy5FcsnI"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
             <div className="video-playlist-text">
               Search Guard - Compliance Module
-              </div>
+            </div>
           </div>
           <div className="video-playlist-item col l4">
-            <ReactPlayer
-              url="https://www.youtube.com/watch?v=1uWGqcy5PeQ"
-              width="350px"
-              height="208px"
+            <iframe
+              className="responsive-video"
+              src="https://www.youtube.com/embed/1uWGqcy5PeQ"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
             <div className="video-playlist-text">
               Search Guard - Orci varius natoque penatibus et magnis dis
               parturient
-              </div>
+            </div>
           </div>
           <div className="video-playlist-item col l4">
-            <ReactPlayer
-              url="https://www.youtube.com/watch?v=C_pWD-gaJow"
-              width="350px"
-              height="208px"
+            <iframe
+              className="responsive-video"
+              src="https://www.youtube.com/embed/C_pWD-gaJow"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
             <div className="video-playlist-text">
               Search Guard - Suspendisse nibh libero
@@ -53,17 +58,23 @@ const Video = props => {
     );
   }
   return (
-    <div className={ props.playlist ? "video-wrapper video-wrapper-long" : "video-wrapper" }>
+    <div
+      className={
+        props.playlist ? 'video-wrapper video-wrapper-long' : 'video-wrapper'
+      }
+    >
       <div className="row">
         <div className="video-headline">
           Video convallis condimentum lobortis
         </div>
         <div className="video-description">
           <div className="video-description-video">
-            <ReactPlayer
-              url="https://www.youtube.com/watch?v=0vCqFtFd5B8"
-              width="100%"
-              height="400px"
+            <iframe
+              className="video-iframe-video"
+              src="https://www.youtube.com/embed/0vCqFtFd5B8"
+              frameBorder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
             />
           </div>
           <div className="video-description-headline">

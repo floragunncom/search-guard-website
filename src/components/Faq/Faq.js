@@ -14,7 +14,7 @@ class Faq extends Component {
         <div className="row faq-row">
           <div className="faq-headline">Frequently asked questions</div>
           <div className="faq-info-boxes">
-            <div className="faq-info-box">
+            <a className="faq-info-box" href="faq#first">
               <div className="faq-info-box-headline">
                 How does Search Guard compare to Shield / X-Pack Security?
               </div>
@@ -25,8 +25,8 @@ class Faq extends Component {
                 similar functionality as competitor products and adds additional
                 features on top, with a flexible licensing model…
               </div>
-            </div>
-            <div className="faq-info-box">
+            </a>
+            <a className="faq-info-box" href="faq#second">
               <div className="faq-info-box-headline">
                 Who is using Search Guard?
               </div>
@@ -38,8 +38,8 @@ class Faq extends Component {
                 installations to hundreds of data nodes storing petabytes of data.
                 For a list of Enterprise integrations...
               </div>
-            </div>
-            <div className="faq-info-box">
+            </a>
+            <a className="faq-info-box" href="faq#third">
               <div className="faq-info-box-headline">
                 How secure is Search Guard?
               </div>
@@ -53,7 +53,7 @@ class Faq extends Component {
                 installations to hundreds of data nodes storing petabytes of data.
                 For a list of Enterprise integrations...
               </div>
-            </div>
+            </a>
           </div>
           <div className="faq-button">
             <Button text="see more" link="/faq" />

@@ -62,7 +62,7 @@ const License = () => {
       <LicensingModel
         headline="Standard editions"
         topButtons={false}
-        bottomButton={true}
+        tableView={true}
       />
       <Tile
         leftDark={false}

@@ -28,12 +28,12 @@ import './Company.scss';
 
 const Company = () => {
   const team = [
-    { name: 'Claudia Kressin', position: 'Founder & CEO', pic: claudia },
-    { name: 'Jochen Kressin', position: 'Founder & CEO', pic: jochen },
-    { name: 'Hendrik Saly', position: 'CTO', pic: hendrik },
-    { name: 'Mechthild Wetekam', position: 'COO', pic: mechthild },
-    { name: 'Fabian Michalsen', position: 'CBO', pic: fabian },
-    { name: 'Paulo Melo', position: 'CMO', pic: paulo },
+    { name: 'Claudia Kressin', position: 'Founder & CEO', pic: claudia, link: 'https://www.linkedin.com/in/searchguard/' },
+    { name: 'Jochen Kressin', position: 'Founder & CEO', pic: jochen, link: 'https://www.linkedin.com/in/jkressin/' },
+    { name: 'Hendrik Saly', position: 'CTO', pic: hendrik, link: 'https://www.linkedin.com/in/salyh/' },
+    { name: 'Mechthild Wetekam', position: 'COO', pic: mechthild, link: '' },
+    { name: 'Fabian Michalsen', position: 'CBO', pic: fabian, link: 'https://www.linkedin.com/in/fabianmichalsen/' },
+    { name: 'Paulo Melo', position: 'CMO', pic: paulo, link: 'https://www.linkedin.com/in/paulobrandaomelo/' },
   ];
 
   const integrators = [
@@ -151,7 +151,7 @@ const Company = () => {
                 <div className="profile-name">{person.name}</div>
                 <div className="profile-position">{person.position}</div>
                 <div className="profile-link">
-                  <a href="www.linkedin.com" target="_blank">
+                  <a href={person.link} target="_blank">
                     <img src={iconIn} alt="icon" className="profile-linkedIn" />
                   </a>
                 </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './NavBar.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo-white.svg';
 import cross from '../../images/cross-white.svg';
 
@@ -29,6 +29,16 @@ class NavBar extends Component {
   }
 
   render() {
+    const style = {
+      active: {
+        borderBottom: '2px solid #00FCE5',
+        marginBottom: 0,
+      },
+      activeContact: {
+        border: '2px solid #00FCE5',
+      }
+    }
+
     return (
       <div className="navbar-navbar-container" style={{backgroundColor: this.props.background}}>
         <div className="navbar-navbar-wrapper">
@@ -36,11 +46,11 @@ class NavBar extends Component {
             <img src={logo} alt="Logo" className="navbar-logo-style" />
           </a>
           <div href="/" className="navbar-nav-links-container">
-            <Link to="/product" className="navbar-nav-link">product</Link>
-            <Link to="/license" className="navbar-nav-link">licensing</Link>
-            <Link to="/resource" className="navbar-nav-link">resource hub</Link>
-            <Link to="/company" className="navbar-nav-link">company</Link>
-            <Link to="/contact" className="navbar-nav-link">contact us</Link>
+            <NavLink to="/product" className="navbar-nav-link" activeStyle={style.active}>product</NavLink>
+            <NavLink to="/license" className="navbar-nav-link" activeStyle={style.active}>licensing</NavLink>
+            <NavLink to="/resource" className="navbar-nav-link" activeStyle={style.active}>resource hub</NavLink>
+            <NavLink to="/company" className="navbar-nav-link" activeStyle={style.active}>company</NavLink>
+            <NavLink to="/contact" className="navbar-nav-link" activeStyle={style.activeContact}>contact us</NavLink>
           </div>
           <div className="navbar-menu-container">
             <div className="navbar-nav-link" onClick={this.openNav}>menu</div>
@@ -55,11 +65,11 @@ class NavBar extends Component {
                   </div>
                 </div>
                 <div href="/" className="navbar-nav-links-container-mobile">
-                  <Link to="/product" className="navbar-nav-link" href="javascript:void(0)">product</Link>
-                  <Link to="/license" className="navbar-nav-link" href="javascript:void(0)">licensing</Link>
-                  <Link to="/resource" className="navbar-nav-link" href="javascript:void(0)">resource hub</Link>
-                  <Link to="/company" className="navbar-nav-link" href="javascript:void(0)">company</Link>
-                  <Link to="/contact" className="navbar-nav-link">contact us</Link>
+                  <NavLink to="/product" className="navbar-nav-link" activeStyle={style.active}>product</NavLink>
+                  <NavLink to="/license" className="navbar-nav-link" activeStyle={style.active}>licensing</NavLink>
+                  <NavLink to="/resource" className="navbar-nav-link" activeStyle={style.active}>resource hub</NavLink>
+                  <NavLink to="/company" className="navbar-nav-link" activeStyle={style.active}>company</NavLink>
+                  <NavLink to="/contact" className="navbar-nav-link" activeStyle={style.activeContact}>contact us</NavLink>
                 </div>
               </div>
             </div>

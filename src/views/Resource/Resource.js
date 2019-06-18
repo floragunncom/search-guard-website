@@ -103,6 +103,7 @@ const Resource = () => {
         rightText="Any questions on installation or configuration? Ask our community forum."
         leftLink="https://docs.search-guard.com/latest/"
         rightLink="/"
+        leftButtonTarget="_blank"
       />
       <Faq />
       <Tile
@@ -113,7 +114,7 @@ const Resource = () => {
         leftText="Access and download code, so you can rta ex, et bibendum nisl. "
         rightHeadline="TLS Certificate Generator"
         rightText="From TLS certificates for testing or implementing a PoC, our generator is here to ease the pain!"
-        leftLink="https://www.github.com/floragunn"
+        leftLink="https://github.com/floragunncom"
         rightLink="/"
         leftButtonTarget="_blank"
       />

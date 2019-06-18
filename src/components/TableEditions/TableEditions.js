@@ -1,8 +1,8 @@
 import React from 'react';
 import './TableEditions.scss';
-import compliance from '../../images/checkmark-compliance.svg';
-import enterprise from '../../images/checkmark-enterprise.svg';
-import community from '../../images/checkmark-community.svg';
+import compliance from '../../images/checkmark-red.svg';
+import enterprise from '../../images/checkmark-green.svg';
+import community from '../../images/checkmark-gold.svg';
 
 const TableEditions = () => {
   return (
@@ -18,19 +18,19 @@ const TableEditions = () => {
         </thead>
         <tbody className="licensing-table-body">
           <tr>
-            <td><div className="licensing-table-left">Nunc eu augue ullamcorper</div></td>
+            <td><div className="licensing-table-left tooltipped" data-position="right" data-tooltip="This model is our standard model, perfect if you want to get started with Search-Guard.">Nunc eu augue ullamcorper</div></td>
             <td className="licensing-checkmark"><img src={community} alt="checkmark"/></td>
             <td className="licensing-checkmark"><img src={enterprise} alt="checkmark"/></td>
             <td className="licensing-checkmark"><img src={compliance} alt="checkmark"/></td>
           </tr>
           <tr>
-            <td><div className="licensing-table-left">dsf sdfdsf dsf sd</div></td>
+            <td><div className="licensing-table-left tooltipped" data-position="right" data-tooltip="This model is our standard model, perfect if you want to get started with Search-Guard.">Nunc eu augue ullamcorper</div></td>
             <td className="licensing-checkmark"><img src={community} alt="checkmark" /></td>
             <td className="licensing-checkmark"><img src={enterprise} alt="checkmark" /></td>
             <td className="licensing-checkmark"><img src={compliance} alt="checkmark" /></td>
           </tr>
           <tr>
-            <td><div className="licensing-table-left">dsfsd fdsf dsf ds</div></td>
+            <td><div className="licensing-table-left tooltipped" data-position="right" data-tooltip="This model is our standard model, perfect if you want to get started with Search-Guard.">Nunc eu augue ullamcorper</div></td>
             <td className="licensing-checkmark"><img src={community} alt="checkmark" /></td>
             <td className="licensing-checkmark"><img src={enterprise} alt="checkmark" /></td>
             <td className="licensing-checkmark"><img src={compliance} alt="checkmark" /></td>
@@ -42,7 +42,7 @@ const TableEditions = () => {
             <td />
           </tr>
           <tr>
-            <td><div className="licensing-table-left">dsf sdfds fsdf sd</div></td>
+            <td><div className="licensing-table-left tooltipped" data-position="right" data-tooltip="This model is our standard model, perfect if you want to get started with Search-Guard.">Nunc eu augue ullamcorper</div></td>
             <td className="licensing-checkmark"><img src={community} alt="checkmark" /></td>
             <td className="licensing-checkmark"><img src={enterprise} alt="checkmark" /></td>
             <td className="licensing-checkmark"><img src={compliance} alt="checkmark" /></td>
@@ -87,7 +87,7 @@ const TableEditions = () => {
       </table>
       <div className="row hide-on-large-only">
         <div className="licensing-overview-headline">Community Edition</div>
-        <div className="col s12 m6 licensing-overview-content">
+        <div className="col s12 m3 offset-m2 licensing-overview-content">
           <div className="licensing-overview-content-box">
             <div className="licensing-overview-content-headline">feature category</div>
             <div className="licensing-overview-content-text">Feature name lorem ipsum</div>
@@ -105,7 +105,7 @@ const TableEditions = () => {
             <div className="licensing-overview-content-text">Augue ullamcorper</div>
           </div>
         </div>
-        <div className="col s12 m6 licensing-overview-content">
+        <div className="col s12 m3 offset-m2 licensing-overview-content">
           <div className="licensing-overview-content-box">
             <div className="licensing-overview-content-headline">category</div>
             <div className="licensing-overview-content-text">Feature name lorem ipsum</div>
@@ -126,7 +126,7 @@ const TableEditions = () => {
       </div>
       <div className="row hide-on-large-only">
         <div className="licensing-overview-headline">Enterprise Edition</div>
-          <div className="col s12 m6 licensing-overview-content">
+        <div className="col s12 m3 offset-m2 licensing-overview-content">
           <div className="licensing-overview-content-box">
             <div className="licensing-overview-content-headline">feature category</div>
             <div className="licensing-overview-content-text">Feature name lorem ipsum</div>
@@ -144,7 +144,7 @@ const TableEditions = () => {
             <div className="licensing-overview-content-text">Augue ullamcorper</div>
           </div>
         </div>
-        <div className="col s12 m6 licensing-overview-content">
+        <div className="col s12 m3 offset-m2 licensing-overview-content">
           <div className="licensing-overview-content-box">
             <div className="licensing-overview-content-headline">category</div>
             <div className="licensing-overview-content-text">Feature name lorem ipsum</div>
@@ -165,7 +165,7 @@ const TableEditions = () => {
       </div>
       <div className="row hide-on-large-only">
         <div className="licensing-overview-headline">Compliance Edition</div>
-        <div className="col s12 m6 licensing-overview-content">
+        <div className="col s12 m3 offset-m2 licensing-overview-content">
           <div className="licensing-overview-content-box">
             <div className="licensing-overview-content-headline">feature category</div>
             <div className="licensing-overview-content-text">Feature name lorem ipsum</div>
@@ -183,7 +183,7 @@ const TableEditions = () => {
             <div className="licensing-overview-content-text">Augue ullamcorper</div>
           </div>
         </div>
-        <div className="col s12 m6 licensing-overview-content">
+        <div className="col s12 m3 offset-m2 licensing-overview-content">
           <div className="licensing-overview-content-box">
             <div className="licensing-overview-content-headline">category</div>
             <div className="licensing-overview-content-text">Feature name lorem ipsum</div>

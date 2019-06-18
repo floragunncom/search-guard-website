@@ -20,6 +20,9 @@
   font-weight: bold;
   padding: 11px;
   cursor: pointer;
+  &:hover {
+    background-color: $navyBlueHover;
+  };
   @media only screen and (min-width: 1000px) {
     width: 150px;
   }
@@ -43,6 +46,7 @@
 }
 
 .lang-picker-dropdown-list {
+  transition: 0.3s ease-in-out;
   background-color: $white;
   color: $darkBlue;
   padding: 10px;
@@ -55,4 +59,6 @@
 .lang-picker-dropdown-list-element {
   cursor: pointer;
   padding-bottom: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }

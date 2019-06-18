@@ -23,7 +23,7 @@ const Tile = props => {
           <div className={props.leftDark ? "tile-content-headline tile-headline-dark-colors" : "tile-content-headline tile-headline-light-colors"}>{props.rightHeadline}</div>
           <div className={props.leftDark ? "tile-content-text tile-text-dark-colors" : "tile-content-text tile-text-light-colors"}>{props.rightText}</div>
           <div className="tile-content-button">
-            <Button text="find out more" style="loud-link" link={props.rightLink} target={props.leftButtonTarget} />
+            <Button text="find out more" style="loud-link" link={props.rightLink} target={props.rightButtonTarget} />
           </div>
         </div>
       </div>
