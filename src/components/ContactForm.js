@@ -76,7 +76,6 @@ class ContactForm extends React.Component {
 
 
   render() {
-    console.log(this.state.newsletterCheck);
     return (
       <div className="row contact-form-container">
         <div className="company-information-container">
@@ -141,7 +140,7 @@ class ContactForm extends React.Component {
             </div>
           </div>
           <div className="message-wrapper">
-            YOUR MESSAGE
+            YOUR MESSAGEcode
             <div class="row">
               <div class="input-field col s12">
                 <input id="your_message" type="text" class="validate input-field-contact" />
@@ -151,8 +150,8 @@ class ContactForm extends React.Component {
           </div>
           <div className="newsletter-section-wrapper">
             NEWSLETTER
-            <div className="privacy-policy-checkbox">
-              <input type="checkbox" class="filled-in" checked={this.state.newsletterCheck} onChange={() => this.setState({ newsletterCheck: !this.statenewsletterCheck})}/>
+            <div className="privacy-policy-checkbox" onClick={() => this.setState({ newsletterCheck: !this.state.newsletterCheck })}>
+              <input type="checkbox" class="filled-in" checked={this.state.newsletterCheck}/>
               <span> Send me updates about Serach Guard products and services</span>
             </div>
           </div>

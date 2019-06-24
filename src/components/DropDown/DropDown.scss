@@ -2,15 +2,29 @@
 
 .drop-down-container {
   height: 45.5px;
-  width: 100%;
   cursor: pointer;
   border-bottom: 2px solid #246E94;
-  padding-right: 21px !important;
   margin-top: 16px;
+  margin-right: 21px !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  width: 305.5px !important;
+  @media only screen and (max-width: 1000px) {
+    width: 921px !important;
+  }
+  @media only screen and (max-width: 950px) {
+    width: 98% !important;
+  }
+  @media only screen and (max-width: 600px) {
+    width: 100% !important;
+  }
+}
+
+.drop-down-label {
+  position: absolute;
+  top: -6px;
 }
 
 .drop-down-text-field {
@@ -20,6 +34,7 @@
   font-family: Roboto;	
   font-size: 14px;	
   line-height: 20px;
+  padding: 0px;
 }
 
 .drop-down-open-and-close-button {
@@ -38,7 +53,7 @@
   top: 47px;
   left: 0px;
   color: #184962;
-  width: 316px;
+  width: 305px;
   background-color: white;
   z-index: 1;
 }

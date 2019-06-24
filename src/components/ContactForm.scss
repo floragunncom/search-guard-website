@@ -14,6 +14,9 @@
     margin-top: 4px;
     margin-bottom: 40px;
   }
+  @media only screen and (max-width: 600px) {
+    height: 1570px;
+  }
 }
 
 .input-field-label {
@@ -48,7 +51,7 @@
     justify-content: initial;
   }
   @media only screen and (max-width: 600px) {
-    height: 480px;
+    height: 580px;
   }
 }
 
