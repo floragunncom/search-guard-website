@@ -61,7 +61,7 @@ const Services = () => {
           <div className="security-detail-icon">
             <img src={callcenter} alt="icon"/>
           </div>
-          <div className="security-detail-title">Enterpreise support</div>
+          <div className="security-detail-title">Enterprise support</div>
         </div>
       </div>
       <div className="security-button">

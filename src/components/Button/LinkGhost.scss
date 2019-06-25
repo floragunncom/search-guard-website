@@ -12,11 +12,10 @@
   align-items: center;
   text-transform: uppercase;
   padding: 14px 20px;
-  transition: 0.3s ease-in-out;
   cursor: pointer;
   &:hover {
     border-width: 3px;
-    cursor: pointer;
+    transition: border-width 0.3s linear;
   };
   &:active {
     border-width: 3px;

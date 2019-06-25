@@ -7,6 +7,11 @@ class Email extends Component {
   componentDidMount() {
     M.AutoInit();
   }
+
+  onButtonPress = () => {
+    console.log('object test testing');
+  }
+
   render() {
     return (
       <form>
@@ -16,7 +21,7 @@ class Email extends Component {
           <span className="helper-text" data-error="Please type in the correct format!" data-success="Valid format" />
         </div>
         <div className="input-field col s12 m6 l4">
-          <Button text="subscribe" style="default-button" />
+          <Button text="subscribe" style="default-button" onPress={() => this.onButtonPress()} />
         </div>
       </form>
     );

@@ -47,7 +47,6 @@
 }
 
 .licensing-button-active, .licensing-button {
-  transition: 0.3s ease-in-out;
   border: 2px solid $navyBlue;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -69,6 +68,7 @@
   background-color: $grey;
   color: $navyBlue;
   &:hover {
+    transition: background-color 0.3s linear;
     padding: 18px 20px;
     font-size: 14px;
     line-height: 14px;
