@@ -1,6 +1,6 @@
 import React from 'react';
-import {render} from 'react-snapshot';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { render } from 'react-snapshot';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import deLocaleData from 'react-intl/locale-data/de';
 import esLocaleData from 'react-intl/locale-data/es';
@@ -19,7 +19,7 @@ const messages = Translations[locale];
 
 render(
   <IntlProvider locale={locale} key={locale} messages={messages}>
-    <Router>
+    <Router onUpdate={() => window.scrollTo(0, 0)}>
       <Routes />
     </Router>
   </IntlProvider>,

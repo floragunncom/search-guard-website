@@ -1,6 +1,18 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: all 1.6s;
+  z-index: 10;
+  transition: display 2s linear;
+  display: block;
+  box-shadow: 3px 1px 10px 0px $darkBlue;
+  opacity: 1;
+}
+
 .navbar-navbar-container {
   background-color: $navyBlue;
   display: flex;
@@ -8,13 +20,15 @@
   align-items: center;
   @media only screen and (max-width: $tabletBig) {
     height: 70px;
-  }
+  };
 }
 
 .navbar-navbar-wrapper {
   width: 1180px;
-  padding: 3px 20px 18px 20px;
+  padding: 3px 20px 10px 20px;
   display: flex;
+    margin-left: auto;
+    margin-right: auto;
   justify-content: space-between;
   align-items: center;
   @media only screen and (max-width: $xl) {

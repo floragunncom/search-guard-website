@@ -7,7 +7,6 @@ import NavBar from '../../components/NavBar/NavBar';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-// import BlogPost from './BlogPost';
 import quote from '../../images/quote-up.svg';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 import iconGoogle from '../../images/icon-google-loud.svg';
@@ -98,10 +97,10 @@ class BlogPostArticle extends Component {
           <div className="col s12 l4">
           </div>
           <div className="col s12 blogpost-link">
-            <Link to={'/blog'}>
+            <a href={'/blog'}>
               <img src={infoArrowBack} className="blogpost-arrow-back" />
               back to blog
-            </Link>
+            </a>
           </div>
         </div>
         <PreFooter />
