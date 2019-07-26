@@ -242,7 +242,7 @@ class LicensingModel extends Component {
 
     if (this.props.tableView) {
       tableView = (
-        <div className="licensing-comparison-wrapper">
+        <div className="licensing-comparison-wrapper" id="feature">
           <div className="licensing-comparison-headline" onClick={() => this.ontableViewPress()}>Standard edition feature breakdown</div>
           <TableEditions />
         </div>

@@ -25,45 +25,31 @@ const Faqs = () => {
               </a>
             </div>
             <div className="faq-question-text">
-              <a href="#">
-                Who is using Search Guard?
-              </a>
+              <a href="#">Who is using Search Guard?</a>
             </div>
             <div className="faq-question-text">
-              <a href="#">
-                How secure is Search Guard?
-              </a>
+              <a href="#">How secure is Search Guard?</a>
             </div>
           </div>
           <div className="faq-question-section">
             <div className="faq-question-headline">Aenean volutpat</div>
             <div className="faq-question-text">
-              <a href="#">
-                What is your licensing model?
-              </a>
+              <a href="#">What is your licensing model?</a>
             </div>
             <div className="faq-question-text">
-              <a href="#">
-                What's the easiest way to set up a PoC?
-              </a>
+              <a href="#">What's the easiest way to set up a PoC?</a>
             </div>
             <div className="faq-question-text">
-              <a href="#">
-                How do I get/install the enterprise features?
-              </a>
+              <a href="#">How do I get/install the enterprise features?</a>
             </div>
           </div>
           <div className="faq-question-section">
             <div className="faq-question-headline">Suspendisse nibh libero</div>
             <div className="faq-question-text">
-              <a href="#">
-                Where can I get support?
-              </a>
+              <a href="#">Where can I get support?</a>
             </div>
             <div className="faq-question-text">
-              <a href="#">
-                Why is your complete code publicly visible?
-              </a>
+              <a href="#">Why is your complete code publicly visible?</a>
             </div>
             <div className="faq-question-text">
               <a href="#">
@@ -71,9 +57,7 @@ const Faqs = () => {
               </a>
             </div>
             <div className="faq-question-text">
-              <a href="#">
-                Is Search Guard compatible with the Elastic Stack?
-              </a>
+              <a href="#">Is Search Guard compatible with the Elastic Stack?</a>
             </div>
           </div>
         </div>
@@ -131,8 +115,10 @@ const Faqs = () => {
               <br />
               <p>
                 For a list of Enterprise integrations, including Red Hat Open
-                Shift and Pivotal Cloud Foundry, please see the list of
-                integrators.
+                Shift and Pivotal Cloud Foundry,{' '}
+                <a href="/company#integrators">
+                  please see the list of integrators.
+                </a>
               </p>
               <br />
               <p>

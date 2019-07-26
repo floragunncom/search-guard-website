@@ -17,6 +17,8 @@ import DataProtection from './views/DataProtection/DataProtection';
 import Security from './views/Security/Security';
 import Advisory from './views/Advisory/Advisory';
 import Disclosure from './views/Disclosure/Disclosure';
+import Education from './views/Education/Education';
+import TlsGenerator from './views/TlsGenerator/TlsGenerator';
 import Certifications from './views/Certifications/Certifications';
 
 const Routes = () => {
@@ -36,9 +38,11 @@ const Routes = () => {
         <Route exact path="/white-papers" component={WhitePapers} />
         <Route exact path="/presentations" component={Presentations} />
         <Route exact path="/data-protection" component={DataProtection} />
+        <Route exact path="/education-program" component={Education} />
         <Route exact path="/security" component={Security} />
         <Route exact path="/advisory" component={Advisory} />
         <Route exact path="/disclosure" component={Disclosure} />
+        <Route exact path="/tls-certificate-generator" component={TlsGenerator} />
         <Route exact path="/certifications" component={Certifications} />
         <Route exact={true} path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPostArticle} />

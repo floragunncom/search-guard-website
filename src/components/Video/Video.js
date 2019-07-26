@@ -58,38 +58,41 @@ const Video = props => {
     );
   }
   return (
-    <div
-      className={
-        props.playlist ? 'video-wrapper video-wrapper-long' : 'video-wrapper'
-      }
-    >
-      <div className="row">
-        <div className="video-headline">
-          Video convallis condimentum lobortis
+    <div id="videos">
+      <div
+        className={
+          props.playlist ? 'video-wrapper video-wrapper-long' : 'video-wrapper'
+        }
+      >
+        <div className="row">
+          <div className="video-headline">
+            Video convallis condimentum lobortis
+          </div>
+          <div className="video-description">
+            <div className="video-description-video">
+              <iframe
+                className="video-iframe-video"
+                src="https://www.youtube.com/embed/0vCqFtFd5B8"
+                frameBorder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+            <div className="video-description-headline">
+              Search Guard - Open Source Software
+            </div>
+            <div className="video-description-text">
+              Security-related software has to be Open Source by definition.
+              Since it is such a crucial and sensitive part of your
+              infrastructure, you need to be able to inspect, audit and compile
+              the code yourself. The complete code of Search Guard has always
+              been openly available, and will always be.
+            </div>
+          </div>
+          {playlist}
         </div>
-        <div className="video-description">
-          <div className="video-description-video">
-            <iframe
-              className="video-iframe-video"
-              src="https://www.youtube.com/embed/0vCqFtFd5B8"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-          <div className="video-description-headline">
-            Video title consectetur adipiscing elit
-          </div>
-          <div className="video-description-text">
-            Lorem ipsum dolor sit amet, finibus, orci ut tincidunt vulputate,
-            tortor erat maximus dolor, vel convallis ligula mi eu urna. Etiam
-            consequat neque et ante pretium rutrum. Proin condimentum tellus ex,
-            eget consectetur nunc bibendum vel. Suspendisse potenti.{' '}
-          </div>
-        </div>
-        {playlist}
+        {playlistButton}
       </div>
-      {playlistButton}
     </div>
   );
 };

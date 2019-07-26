@@ -1,12 +1,13 @@
 import React from 'react';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-import NavBar from '../../components/NavBar/NavBar';
 import Tile from '../../components/Tile/Tile';
+import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import Cta from '../../components/Cta/Cta';
 import Faq from '../../components/Faq/Faq';
 import Video from '../../components/Video/Video';
+import BlogBox from '../../components/BlogBox/BlogBox';
 import envelope from '../../images/icon-envelope.svg';
 import arrowDown from '../../images/arrow-down-green.svg';
 import iconNote from '../../images/icon-note.svg';
@@ -21,7 +22,7 @@ import './Resource.scss';
 
 const Resource = () => {
   return (
-    <div>
+    <div id="top">
       <NavBar />
       <Title
         headline="resource hub"
@@ -31,17 +32,7 @@ const Resource = () => {
         <div className="row">
           <div className="product-anchor-wrapper">
             <div className="product-anchor-item">
-              <a href="#test" className="product-anchor-link">
-                <img
-                  src={arrowDown}
-                  alt="arrow-down"
-                  className="product-anchor-img"
-                />
-                documentation & github
-              </a>
-            </div>
-            <div className="product-anchor-item">
-              <a href="" className="product-anchor-link">
+              <a href="#faq" className="product-anchor-link">
                 <img
                   src={arrowDown}
                   alt="arrow-down"
@@ -51,17 +42,27 @@ const Resource = () => {
               </a>
             </div>
             <div className="product-anchor-item">
-              <a href="" className="product-anchor-link">
+              <a href="#github" className="product-anchor-link">
                 <img
                   src={arrowDown}
                   alt="arrow-down"
                   className="product-anchor-img"
                 />
-                Forum & TLS certificates
+                github
               </a>
             </div>
             <div className="product-anchor-item">
-              <a href="" className="product-anchor-link">
+              <a href="#github" className="product-anchor-link">
+                <img
+                  src={arrowDown}
+                  alt="arrow-down"
+                  className="product-anchor-img"
+                />
+                tls certificates
+              </a>
+            </div>
+            <div className="product-anchor-item">
+              <a href="#blog" className="product-anchor-link">
                 <img
                   src={arrowDown}
                   alt="arrow-down"
@@ -71,7 +72,7 @@ const Resource = () => {
               </a>
             </div>
             <div className="product-anchor-item">
-              <a href="" className="product-anchor-link">
+              <a href="#whitePapers" className="product-anchor-link">
                 <img
                   src={arrowDown}
                   alt="arrow-down"
@@ -81,7 +82,7 @@ const Resource = () => {
               </a>
             </div>
             <div className="product-anchor-item">
-              <a href="" className="product-anchor-link">
+              <a href="#videos" className="product-anchor-link">
                 <img
                   src={arrowDown}
                   alt="arrow-down"
@@ -102,33 +103,39 @@ const Resource = () => {
         rightHeadline="Community forum"
         rightText="Any questions on installation or configuration? Ask our community forum."
         leftLink="https://docs.search-guard.com/latest/"
-        rightLink="/"
+        rightLink="https://forum.search-guard.com/latest/"
         leftButtonTarget="_blank"
+        rightButtonTarget="_blank"
       />
       <Faq />
-      <Tile
-        leftDark={true}
-        leftIcon={iconDownload}
-        rightIcon={iconCertificate}
-        leftHeadline="GitHub repo"
-        leftText="Access and download code, so you can rta ex, et bibendum nisl. "
-        rightHeadline="TLS Certificate Generator"
-        rightText="From TLS certificates for testing or implementing a PoC, our generator is here to ease the pain!"
-        leftLink="https://github.com/floragunncom"
-        rightLink="/"
-        leftButtonTarget="_blank"
-      />
-      <Tile
-        leftDark={false}
-        leftIcon={iconSpeaker}
-        rightIcon={iconNote}
-        leftHeadline="Presentations"
-        rightHeadline="White Papers"
-        leftText="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
-        rightText="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
-        leftLink="/presentations"
-        rightLink="/white-papers"
-      />
+      <BlogBox />
+      <div id="github">
+        <Tile
+          leftDark={true}
+          leftIcon={iconDownload}
+          rightIcon={iconCertificate}
+          leftHeadline="GitHub repo"
+          leftText="Access and download code, so you can rta ex, et bibendum nisl. "
+          rightHeadline="TLS Certificate Generator"
+          rightText="From TLS certificates for testing or implementing a PoC, our generator is here to ease the pain!"
+          leftLink="https://github.com/floragunncom"
+          rightLink="/tls-certificate-generator"
+          leftButtonTarget="_blank"
+        />
+      </div>
+      <div id="whitePapers">
+        <Tile
+          leftDark={false}
+          leftIcon={iconSpeaker}
+          rightIcon={iconNote}
+          leftHeadline="Presentations"
+          rightHeadline="White Papers"
+          leftText="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
+          rightText="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
+          leftLink="/presentations"
+          rightLink="/white-papers"
+        />
+      </div>
       <Tile
         leftDark={true}
         leftIcon={iconShield}

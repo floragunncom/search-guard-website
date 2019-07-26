@@ -10,7 +10,7 @@ class Faq extends Component {
 
   render() {
     return (
-      <div className="faq-wrapper">
+      <div className="faq-wrapper" id="faq">
         <div className="row faq-row">
           <div className="faq-headline">Frequently asked questions</div>
           <div className="faq-info-boxes">
