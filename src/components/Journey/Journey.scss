@@ -1,2 +1,182 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
+
+
+.journey-wrapper {
+  padding: 0px 30px 96px 30px;
+  @media only screen and (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.journey-headline {
+  padding: 137px 20px 144px 20px;
+  text-align: center;
+  font-weight: 300;
+  color: $darkBlue;
+  font-size: 48px;
+  line-height: 57px;
+  @media only screen and (max-width: $tabletBig) {
+    padding: 96px 20px 64px 20px;
+  }
+}
+
+.timeline {
+  color: $darkBlue;
+  ul{    
+    li{
+      background: $turkis;
+      position: relative;
+      margin: 0 auto;
+      width: 5px;
+      padding-bottom: 40px;
+      list-style-type: none;
+      
+      &:last-child{
+        padding-bottom: 7px;
+      }
+      
+      &:before{
+        content: '';
+        background: $white;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        border: 3px solid $turkis;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+      }
+      
+      .hidden {
+        opacity: 0;
+      }
+      
+      .content{
+        position: relative;
+        top: 7px;
+        width: 450px;
+        padding: 20px;
+        opacity: 1;
+        transition: opacity 500ms;
+        h2{
+          margin-top: -45px;
+          margin-bottom: 16px;
+          color: $darkBlue;
+          font-weight: 300;
+          font-size: 48px;
+          line-height: 57px;
+          @media only screen and (max-width: $mobile) {
+            font-size: 36px;
+            line-height: 43px;
+          }
+        }
+        p{
+          background: $lightGrey;
+          padding: 16px;
+          #headline {
+            color: $darkBlue;
+            font-size: 12px;
+            line-height: 32px;
+            letter-spacing: 3.3px;
+            margin-bottom: 8px;
+            @media only screen and (max-width: $mobile) {
+              margin-bottom: 8px;
+            }
+          }
+          #text {
+            color: $darkGrey;
+            font-size: 18px;
+            line-height: 27px;
+            margin-bottom: 32px;
+          }
+          #highlight {
+            color: $darkGrey;
+            background-color: $turkis;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            padding: 16px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: bold;
+            margin-bottom: 32px;
+          }
+        }
+        &:before{
+          content: '';
+          background: $turkis;
+          position: absolute;
+          top: 0px;
+          width: 38px;
+          height: 5px;
+        }
+      }
+      
+      &:nth-child(odd) .content {
+        left: 50px;
+        h2 {
+          text-align: left;
+        }
+        // background: pink;
+        // background: -webkit-linear-gradient(-45deg, $lightGrey , $lightGrey);
+        // background: linear-gradient(-45deg,  $lightGrey , $lightGrey);
+      }
+      
+      &:nth-child(odd) .content:before {
+        left: -38px;
+      }
+      
+      &:nth-child(even) .content {
+        h2 {
+          text-align: right;
+        }
+        left: calc(-#{450px} - 45px);
+        // background: $turkis;
+        // background: -webkit-linear-gradient(-45deg, $lightGrey , $lightGrey);
+        // background: linear-gradient(-45deg,  $lightGrey , $lightGrey);
+      }
+      
+      &:nth-child(even) .content:before {
+        right: -38px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletBig) {
+  .timeline ul li .content {
+    width: 41vw;
+  }
+  .timeline ul li:nth-child(even) .content {
+    left: calc(-41vw - 45px);
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .timeline ul li {
+    margin-left: 20px;
+    
+    .content {
+      width: calc(100vw - 100px);
+    }
+    
+    &:nth-child(even) .content {
+      left: 45px;
+      h2 {
+        text-align: left;
+      }
+      // background: $turkis;
+      // background: -webkit-linear-gradient(-45deg, $turkis , $turkis);
+      // background: linear-gradient(-45deg,  $turkis , $turkis);
+    }
+    
+    &:nth-child(even) .content:before {
+      left: -33px;
+    }
+  }
+}

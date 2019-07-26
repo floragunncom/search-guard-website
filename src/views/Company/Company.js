@@ -89,7 +89,7 @@ const Company = () => {
   ];
 
   return (
-    <div>
+    <div id="top">
       <NavBar />
       <Title
         headline="company"
@@ -99,17 +99,7 @@ const Company = () => {
         <div className="row">
           <div className="product-anchor-wrapper">
             <div className="product-anchor-item">
-              <a href="#test" className="product-anchor-link">
-                <img
-                  src={arrowDown}
-                  alt="arrow-down"
-                  className="product-anchor-img"
-                />
-                mission
-              </a>
-            </div>
-            <div className="product-anchor-item">
-              <a href="" className="product-anchor-link">
+              <a href="#team" className="product-anchor-link">
                 <img
                   src={arrowDown}
                   alt="arrow-down"
@@ -119,7 +109,7 @@ const Company = () => {
               </a>
             </div>
             <div className="product-anchor-item">
-              <a href="" className="product-anchor-link">
+              <a href="#partners" className="product-anchor-link">
                 <img
                   src={arrowDown}
                   alt="arrow-down"
@@ -129,7 +119,7 @@ const Company = () => {
               </a>
             </div>
             <div className="product-anchor-item">
-              <a href="" className="product-anchor-link">
+              <a href="#integrators" className="product-anchor-link">
                 <img
                   src={arrowDown}
                   alt="arrow-down"
@@ -141,7 +131,7 @@ const Company = () => {
           </div>
         </div>
       </div>
-      <div className="company-team-wrapper">
+      <div className="company-team-wrapper" id="team">
         <div className="row">
           <div className="company-team-headline">Mangement team</div>
           {team.map(person => {
@@ -160,7 +150,7 @@ const Company = () => {
           })}
         </div>
       </div>
-      <div className="company-partners-wrapper">
+      <div className="company-partners-wrapper" id="partners">
         <div className="row">
           <div className="company-partners-headline">Partners</div>
           <div className="company-partners-pic-wrapper">
@@ -176,7 +166,7 @@ const Company = () => {
           </div>
         </div>
       </div>
-      <div className="company-integrators-wrapper">
+      <div className="company-integrators-wrapper" id="integrators">
         <div className="row company-integrators">
           <div className="company-integrators-headline">Integrators</div>
           {integrators.map(profile => {

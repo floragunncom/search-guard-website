@@ -8,84 +8,148 @@ const Footer = () => {
         <div className="footer-links-container">
           <div className="row footer-row">
             <div className="footer-links-column-container col s12 m6 l3">
-              <div className="footer-list-headline">product</div>
-              <div className="footer-list-item">
-                <a href="/" className="footer-links">What it is</a>
+              <div className="footer-list-headline">
+                <a href="/product">product</a>
               </div>
               <div className="footer-list-item">
-                <a href="/" className="footer-links">How it works</a>
+                <a href="/product#concept" className="footer-links">
+                  What it is
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/certifications" className="footer-links">Certifications</a>
-              </div>
-            </div>
-            <div className="filler-class" />
-            <div className="footer-links-column-container col s12 m6 l3">
-              <div className="footer-list-headline">licensing</div>
-              <div className="footer-list-item">
-                <a href="/license#standard" className="footer-links">Standard editions</a>
+                <a href="/product#videos" className="footer-links">
+                  How it works
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/" className="footer-links">Feature breakdown</a>
-              </div>
-              <div className="footer-list-item">
-                <a href="/" className="footer-links">Academic edition</a>
-              </div>
-              <div className="footer-list-item">
-                <a href="/" className="footer-links">Custom edition</a>
+                <a href="/certifications" className="footer-links">
+                  Certifications
+                </a>
               </div>
             </div>
             <div className="filler-class" />
             <div className="footer-links-column-container col s12 m6 l3">
-              <div className="footer-list-headline">resource hub</div>
-              <div className="footer-list-item">
-                <a href="https://docs.search-guard.com/latest/" target="_blank" className="footer-links">Documentation</a>
+              <div className="footer-list-headline">
+                <a href="/license">license</a>
               </div>
               <div className="footer-list-item">
-                <a href="https://github.com/floragunncom" target="_blank" className="footer-links">Github repo</a>
+                <a href="/license#standard" className="footer-links">
+                  Standard editions
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/faq" className="footer-links">FAQ</a>
+                <a href="/license#feature" className="footer-links">
+                  Feature breakdown
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/" className="footer-links">Community forum</a>
+                <a href="/license#academic" className="footer-links">
+                  Academic edition
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/" className="footer-links">TLS certificate generator</a>
+                <a href="/license#academic" className="footer-links">
+                  Custom edition
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/blog" className="footer-links">Blog</a>
-              </div>
-              <div className="footer-list-item">
-                <a href="/presentations" className="footer-links">Presentations</a>
-              </div>
-              <div className="footer-list-item">
-                <a href="/white-papers" className="footer-links">White Paper</a>
+                <a href="/education-program" className="footer-links">
+                  Education program
+                </a>
               </div>
             </div>
             <div className="filler-class" />
             <div className="footer-links-column-container col s12 m6 l3">
-              <div className="footer-list-headline">company</div>
-              <div className="footer-list-item">
-                <a href="/" className="footer-links">Mission</a>
+              <div className="footer-list-headline">
+                <a href="/resource">resource hub</a>
               </div>
               <div className="footer-list-item">
-                <a href="/" className="footer-links">Who we are</a>
+                <a
+                  href="https://docs.search-guard.com/latest/"
+                  target="_blank"
+                  className="footer-links"
+                >
+                  Documentation
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/" className="footer-links">Partners</a>
+                <a
+                  href="https://github.com/floragunncom"
+                  target="_blank"
+                  className="footer-links"
+                >
+                  Github repo
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/" className="footer-links">Integrators</a>
+                <a href="/faq" className="footer-links">
+                  FAQ
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/data-protection" className="footer-links">Data protection</a>
+                <a
+                  href="https://forum.search-guard.com/latest/"
+                  target="_blank"
+                  className="footer-links"
+                >
+                  Community forum
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/imprint" className="footer-links">Imprint</a>
+                <a href="/tls-certificate-generator" className="footer-links">
+                  TLS certificate generator
+                </a>
               </div>
               <div className="footer-list-item">
-                <a href="/security" className="footer-links">Public key & security</a>
+                <a href="/blog" className="footer-links">
+                  Blog
+                </a>
+              </div>
+              <div className="footer-list-item">
+                <a href="/presentations" className="footer-links">
+                  Presentations
+                </a>
+              </div>
+              <div className="footer-list-item">
+                <a href="/white-papers" className="footer-links">
+                  White papers
+                </a>
+              </div>
+            </div>
+            <div className="filler-class" />
+            <div className="footer-links-column-container col s12 m6 l3">
+              <div className="footer-list-headline">
+                <a href="/company">company</a>
+              </div>
+              <div className="footer-list-item">
+                <a href="/company#team" className="footer-links">
+                  Who we are
+                </a>
+              </div>
+              <div className="footer-list-item">
+                <a href="/company#partners" className="footer-links">
+                  Partners
+                </a>
+              </div>
+              <div className="footer-list-item">
+                <a href="/company#integrators" className="footer-links">
+                  Integrators
+                </a>
+              </div>
+              <div className="footer-list-item">
+                <a href="/data-protection" className="footer-links">
+                  Data protection
+                </a>
+              </div>
+              <div className="footer-list-item">
+                <a href="/imprint" className="footer-links">
+                  Imprint
+                </a>
+              </div>
+              <div className="footer-list-item">
+                <a href="/security" className="footer-links">
+                  Public key & security
+                </a>
               </div>
             </div>
             <div className="filler-class" />

@@ -1,7 +1,7 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
-.license-ref-wrapper {
+.ref-wrapper {
   margin: 128px 0px;
   @media only screen and (max-width: $tabletBig) {
     margin: 64px 0px 32px 0px;
@@ -11,7 +11,7 @@
   };
 }
 
-.license-ref-headline {
+.ref-headline {
   margin-bottom: 64px;
   font-size: 48px;
   line-height: 57px;
@@ -28,12 +28,12 @@
   };
 }
 
-.license-ref-content-row img {
+.ref-content-row img {
   width: 153px;
   height: 153px;
 }
 
-img.license-ref {
+img.ref {
   width: 153px;
   height: 153px;
   display: flex;
@@ -48,7 +48,7 @@ img.license-ref {
   };
 }
 
-.license-ref-content-row {
+.ref-content-row {
   margin: 0px 32px 61px 32px;
   display: flex;
   justify-content: space-between;
@@ -57,7 +57,7 @@ img.license-ref {
   }
 }
 
-.license-ref-image {
+.ref-image {
   display: flex;
   justify-content: center;
 }

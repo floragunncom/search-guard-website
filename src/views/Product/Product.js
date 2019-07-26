@@ -6,7 +6,7 @@ import Title from '../../components/Title/Title';
 import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
 import Video from '../../components/Video/Video';
-// import Journey from '../../components/Journey/Journey';
+import Journey from '../../components/Journey/Journey';
 import ctaIcon from '../../images/cta-banner-arrow.svg';
 import fileCode from '../../images/file-code.svg';
 import worldLock from '../../images/world-lock.svg';
@@ -19,7 +19,7 @@ import './Product.scss';
 
 const Product = () => {
   return (
-    <div>
+    <div id="top">
       <NavBar />
       <Title
         headline="search guard security plugin"
@@ -29,7 +29,7 @@ const Product = () => {
         <div className="row">
           <div className="product-anchor-wrapper">
             <div className="product-anchor-item">
-              <a href="" className="product-anchor-link">
+              <a href="#concept" className="product-anchor-link">
                 <img
                   src={arrowDown}
                   alt="arrow-down"
@@ -39,7 +39,7 @@ const Product = () => {
               </a>
             </div>
             <div className="product-anchor-item">
-              <a href="" className="product-anchor-link">
+              <a href="#videos" className="product-anchor-link">
                 <img
                   src={arrowDown}
                   alt="arrow-down"
@@ -71,13 +71,15 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <TileSimple
-        icon={fileCode}
-        iconPosition="left"
-        backgroundColor="light"
-        headline="Completely Open Source"
-        text="Closed source security is no security, never leave the control of your data to a third party. Zero trust in networks, zero trust in closed source. We think that security software has to be Open Source by definition, so all of our code is available for you to download, inspect, evaluate and audit."
-      />
+      <div id="concept">
+        <TileSimple
+          icon={fileCode}
+          iconPosition="left"
+          backgroundColor="light"
+          headline="Completely Open Source"
+          text="Closed source security is no security, never leave the control of your data to a third party. Zero trust in networks, zero trust in closed source. We think that security software has to be Open Source by definition, so all of our code is available for you to download, inspect, evaluate and audit."
+        />
+      </div>
       <TileSimple
         icon={certificate}
         iconPosition="right"
@@ -92,7 +94,7 @@ const Product = () => {
         headline="All industry sectors"
         text="Search Guard runs on high-scale mission-critical production clusters protecting sensitive data in the finance, healthcare, pharmaceutical, aviation, telecommunications, security, and data intelligence sectors."
       />
-      {/* <Journey /> */}
+      <Journey />
       <Video />
       <div className="certified-wrapper" id="certified">
         <div className="certified-headline">Certified</div>

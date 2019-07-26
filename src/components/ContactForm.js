@@ -62,7 +62,7 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <div className="contact-form-container">
+      <div className="row contact-form-container">
         <div className="company-information-container">
           <p className="company-information-header">
             Serach Guard Headquarters
