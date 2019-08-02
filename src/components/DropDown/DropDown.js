@@ -8,6 +8,20 @@ class DropDowm extends React.Component {
     isOpen: false
   };
 
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleOutsideClick, false);
+  }
+
+  handleOutsideClick = (event) => {
+    if (this.node && !this.node.contains(event.target)) {
+      if (this.state.isOpen) {
+        this.setState({
+          isOpen: false
+        });
+      };
+    };
+  }
+
   handleClick = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -20,10 +34,9 @@ class DropDowm extends React.Component {
         return (
           <div 
             className="drop-down-value"
-            onClick={() => this.setState({
+            onClick={() => {this.setState({
               selectedValue: option,
-
-            })}
+            }); this.props.onDropDownOptionChange(option)}}
           >
             {option}
           </div>
@@ -32,14 +45,26 @@ class DropDowm extends React.Component {
     };
   }
 
+  getLabelOnOptionSelected = () => {
+    if (this.state.selectedValue) {
+      return (
+        <label for="website" class="input-field-label drop-down-label">{this.props.dropDownCategory}</label>
+      )
+    };
+
+    return null
+  }
+
   render() {
     const dropDownOptions = this.getDropDownOptions()
     return (
       <div>
         <div 
-          className="drop-down-container col s12 m6"
+          className="drop-down-container  col s12 m6"
           onClick={() => this.handleClick()}
+          ref={node => { this.node = node; }}
         > 
+          {this.getLabelOnOptionSelected()}
           <div className="drop-down-text-field">
             {this.state.selectedValue || this.props.dropDownCategory}
           </div>

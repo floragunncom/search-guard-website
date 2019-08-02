@@ -1,16 +1,26 @@
 @import '../styles/Colors';
 
 .contact-form-container {
+  color: $darkBlue;
   height: 1268;
   display: flex;
   justify-content: space-between;
-  padding: 10%;
+  padding: 20px;
+  padding-top: 68px;
+  padding-bottom: 68px;
   @media only screen and (max-width: 1000px) {
     padding: 28px;
     flex-wrap: wrap;
     margin-top: 4px;
     margin-bottom: 40px;
   }
+  @media only screen and (max-width: 600px) {
+    height: 1570px;
+  }
+}
+
+.input-field-label {
+  color: $darkBlue !important;
 }
 
 .contact-form-wrapper {
@@ -41,14 +51,8 @@
     justify-content: initial;
   }
   @media only screen and (max-width: 600px) {
-    height: 480px;
+    height: 580px;
   }
-}
-
-.input-field-contact-wrapper {
-  height: 48px;
-  margin: 0;
-  margin-top: 16px;
 }
 
 input#first_name, input#last_name, input#job_title, input#email, input#phone_number, input#website, input#country, input#elasticsearch_version, input#current_stage, input#your_message {
@@ -129,7 +133,7 @@ input#first_name, input#last_name, input#job_title, input#email, input#phone_num
 
 .company-information-container {
   height: 154px;
-  margin-right: 50px;
+  margin-left: initial;
   @media only screen and (max-width: 1000px) {
     margin-right: 0;
     width: 100%;
