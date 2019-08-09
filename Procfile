@@ -1,1 +1,1 @@
-web: npx serve -l $PORT build
+web: node .
