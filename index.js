@@ -5,7 +5,7 @@ const port = process.env.PORT || 4444;
 
 const options = {
   public: './build',
-  redirects: [{ source: '/old', destination: '/new', type: 301 }],
+  redirects: [{ source: '/product', destination: '/product-test', type: 301 }],
 };
 
 const server = http.createServer((request, response) => {
