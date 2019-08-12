@@ -53,7 +53,7 @@
       }
       
       .hidden {
-        opacity: 0;
+        opacity: 1;
       }
       
       .content{
@@ -61,7 +61,7 @@
         top: 7px;
         width: 450px;
         padding: 20px;
-        opacity: 1;
+        // opacity: 1;
         transition: opacity 500ms;
         h2{
           margin-top: -45px;

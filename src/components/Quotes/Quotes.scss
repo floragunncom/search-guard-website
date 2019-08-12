@@ -8,7 +8,7 @@
   };
 }
 
-.quotes-wrapper {
+ul li .quotes-wrapper {
   margin-top: 50px;
   display: flex;
   align-items: flex-start;
@@ -17,8 +17,6 @@
 
 .quotes-quote {
   display: flex;
-  flex: 1;
-  flex-grow: 1;
   justify-content: center;
   flex-direction: column;
 }
@@ -34,7 +32,7 @@
 
 .quotes-right-icon {
   transform: rotate(180deg);
-  width: 58px;
+  min-width: 50px;
   margin-right: 32px;
   margin-bottom: 100px;
   align-self: flex-end;
@@ -42,7 +40,7 @@
 
 .quotes-left-icon {
   margin-left: 32px;
-  width: 58px;
+  min-width: 50px;
 }
 
 .quotes-text {
@@ -69,8 +67,14 @@
   color: $darkGrey;
 }
 
-ul.slides {
-  background-color: $white !important;
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px !important;
+  .slides li {
+    overflow: initial;
+  }
 }
 
 li.indicator-item {

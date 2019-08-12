@@ -58,9 +58,9 @@ class DropDowm extends React.Component {
   render() {
     const dropDownOptions = this.getDropDownOptions()
     return (
-      <div>
+      <div className="drop-down-wrapper col s12 m6">
         <div 
-          className="drop-down-container  col s12 m6"
+          className="drop-down-container"
           onClick={() => this.handleClick()}
           ref={node => { this.node = node; }}
         > 

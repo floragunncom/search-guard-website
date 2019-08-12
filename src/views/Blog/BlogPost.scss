@@ -29,17 +29,25 @@
   height: 238px;
   overflow: hidden;
   position: relative;
+  -webkit-filter: grayscale(75%);
+	filter: grayscale(75%);
+	-webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  &:hover {
+    -webkit-filter: grayscale(0);
+	  filter: grayscale(0);
+  }
 }
 
 img.blogpost-feed-image {
   margin: auto; 
-  min-height: 100%;
-  min-width: 100%;
+  max-height: auto;
+  max-width: 100%;
   object-fit: cover;
   transition: 0.3s;
   &:hover {
     transition: 0.3s;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 

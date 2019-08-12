@@ -26,7 +26,7 @@ const Resource = () => {
       <NavBar />
       <Title
         headline="resource hub"
-        text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
+        // text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
       />
       <div className="product-anchor-container">
         <div className="row">
@@ -99,7 +99,7 @@ const Resource = () => {
         leftIcon={iconFolder}
         rightIcon={iconPeople}
         leftHeadline="Documentation"
-        leftText="Get the official documentation you need to nascetur ridiculus mus nullam at porta ex."
+        leftText="Get the official technical documentation for all Search Guard versions."
         rightHeadline="Community forum"
         rightText="Any questions on installation or configuration? Ask our community forum."
         leftLink="https://docs.search-guard.com/latest/"
@@ -115,9 +115,9 @@ const Resource = () => {
           leftIcon={iconDownload}
           rightIcon={iconCertificate}
           leftHeadline="GitHub repo"
-          leftText="Access and download code, so you can rta ex, et bibendum nisl. "
+          leftText="Access, download and inspect all our code on GitHub, report any issue you find or request a feature."
           rightHeadline="TLS Certificate Generator"
-          rightText="From TLS certificates for testing or implementing a PoC, our generator is here to ease the pain!"
+          rightText="If you need TLS certificates for testing or a PoC, our generator web service is here to ease the pain."
           leftLink="https://github.com/floragunncom"
           rightLink="/tls-certificate-generator"
           leftButtonTarget="_blank"
@@ -130,8 +130,8 @@ const Resource = () => {
           rightIcon={iconNote}
           leftHeadline="Presentations"
           rightHeadline="White Papers"
-          leftText="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
-          rightText="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
+          leftText="Browse our library of presentations on all Search Guard features."
+          rightText="Download our whitepapers on Search Guard use cases and implementation examples."
           leftLink="/presentations"
           rightLink="/white-papers"
         />
@@ -141,9 +141,9 @@ const Resource = () => {
         leftIcon={iconShield}
         rightIcon={iconLock}
         leftHeadline="CVE advisory"
+        leftText="We are the official CVE numbering authority for Search Guard. Browse the list of known issues."
         rightHeadline="Disclosure Policy"
-        leftText="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
-        rightText="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
+        rightText="If you have found a security related issue, please read our disclosure policy."
         leftLink="/advisory"
         rightLink="/disclosure"
       />

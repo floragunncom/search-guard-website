@@ -63,7 +63,7 @@ const Advisory = () => {
       <NavBar />
       <Title
         headline="cve advisory"
-        text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
+        text="floragunn GmbH is the official CVE numbering authority for Search Guard. Any security related issue is published here."
       />
       <div className="row advisory-wrapper">
         <div className="col s12 l8 offset-l2 advisory-info-wrapper">
@@ -73,18 +73,22 @@ const Advisory = () => {
           <div className="advisory-info-text">
             An Search Guard Security Advisory (“SGSA”) is a notice from Search
             Guard/floragunn GmbH to its users of security issues with the Search
-            Guard products. Search Guard/floragunn assigns both a <a href="/">CVE</a> and an
-            SGSA identifier to each advisory along with a summary and
-            remediation and mitigation details.
-            <br /><br />
-            For how to report a security issue please see <a href="/">Disclosure Policy</a>.
+            Guard products. Search Guard/floragunn assigns both a{' '}
+            <a href="/">CVE</a> and an SGSA identifier to each advisory along
+            with a summary and remediation and mitigation details.
+            <br />
+            <br />
+            For how to report a security issue please see{' '}
+            <a href="/">Disclosure Policy</a>.
           </div>
         </div>
         <div className="col s12 advisory-table-wrapper">
           <table className="stripped bordered">
             <thead className="advisory-table-head">
               <tr>
-                <th className="advisory-table-first">SGSA ID (formerly SISG)</th>
+                <th className="advisory-table-first">
+                  SGSA ID (formerly SISG)
+                </th>
                 <th className="advisory-table-second">CVE</th>
                 <th>date disclosed</th>
                 <th>Vulnerability Summary</th>

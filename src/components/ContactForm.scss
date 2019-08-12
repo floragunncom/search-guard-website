@@ -1,143 +1,10 @@
 @import '../styles/Colors';
+@import '../styles/Breakpoints';
 
-.contact-form-container {
-  color: $darkBlue;
-  height: 1268;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  padding-top: 68px;
-  padding-bottom: 68px;
-  @media only screen and (max-width: 1000px) {
-    padding: 28px;
-    flex-wrap: wrap;
-    margin-top: 4px;
-    margin-bottom: 40px;
-  }
-  @media only screen and (max-width: 600px) {
-    height: 1570px;
-  }
-}
-
-.input-field-label {
-  color: $darkBlue !important;
-}
-
-.contact-form-wrapper {
-  height: 1012px;
-  border-left: 3px solid $grey;
-  padding-left: 100px;
-  display: flex;
-  flex-direction: column;
-  @media only screen and (max-width: 1000px) {
-    padding: 0px;
-    padding-top: 32px;
-    border-left: 0;
-    border-top: 3px solid $grey;
-    height: 1244px;
-  }
-}
-
-.contact-information-wrapper {
-  width: 653px;
-  height: 352px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  @media only screen and (max-width: 1000px) {
-    width: 100%;
-    flex-wrap: unset;
-    flex-direction: column;
-    justify-content: initial;
-  }
-  @media only screen and (max-width: 600px) {
-    height: 580px;
-  }
-}
-
-input#first_name, input#last_name, input#job_title, input#email, input#phone_number, input#website, input#country, input#elasticsearch_version, input#current_stage, input#your_message {
-  border-bottom: 2px solid $navyBlue;
-}
-
-.technical-information-wrapper {
-  width: 653px;
-  height: 112px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 64px;
-  @media only screen and (max-width: 1000px) {
-    width: 100%;
-    height: 160px;
-  }
-}
-
-.message-wrapper {
-  width: 653px;
-  height: 112px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 64px;
-  @media only screen and (max-width: 1000px) {
-    width: 100%;
-    height: 96px;
-  }
-}
-
-.newsletter-section-wrapper {
-  width: 653px;
-  height: 112px;
-  margin-top: 64px;
-  @media only screen and (max-width: 1000px) {
-    width: 100%;
-    height: 92px;
-  }
-}
-
-.privacy-policy {	
-  height: 54px;	
-  width: 653px;
-  margin: 32px 0px;
-  @media only screen and (max-width: 1000px) {
-    width: 100%;
-    height: 120px;
-  }
-}
-
-.contact-title {
-  width: 653px;
-  height: 32px;
-  color: $darkBlue;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 12px;
-  letter-spacing: 3.3px;
-}
-
-.contact-cta {
-  height: 40px;	
-  width: 653px;	
-  border-radius: 3px;	
-  background-color: #246E94;	
-  box-shadow: 0 20px 40px 0 rgba(90,90,90,0.24);
-  margin-top: 32px;
-  color: white;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media only screen and (max-width: 1000px) {
-    width: 100%;
-  }
-}
-
-.company-information-container {
-  height: 154px;
-  margin-left: initial;
-  @media only screen and (max-width: 1000px) {
-    margin-right: 0;
-    width: 100%;
-    margin-bottom: 32px;
+.contact-wrapper {
+  padding: 64px 32px;
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px;
   }
 }
 
@@ -145,11 +12,14 @@ input#first_name, input#last_name, input#job_title, input#email, input#phone_num
   font-size: 24px;
   text-align: left;
   margin-bottom: 16px;
-  @media only screen and (max-width: 1000px) {
+  letter-spacing: 0.8px;
+  font-size: 24px;
+  @media only screen and (max-width: $tabletBig) {
     text-align: center;
   }
-  @media only screen and (max-width: 900px) {
-    font-size: 20px;
+  @media only screen and (max-width: $tabletBig) {
+    line-height: 20px;
+    letter-spacing: 0.67px;
   }
 }
 
@@ -157,11 +27,96 @@ input#first_name, input#last_name, input#job_title, input#email, input#phone_num
   font-size: 18px;
   text-align: left;
   line-height: 27px;
-  @media only screen and (max-width: 1000px) {
+  color: $darkGrey;
+  padding-bottom: 48px;
+  word-break: break-all;
+  @media only screen and (max-width: $tabletBig) {
     text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 32px;
   }
 }
 
-// .cta-wrapper {
-//   height
-// }
+.contact-info-container {
+  border-left: 3px solid $grey;
+  padding-left: 100px;
+  display: flex;
+  flex-direction: column;
+  @media only screen and (max-width: $tabletBig) {
+    border-top: 3px solid $grey;
+    border-left: none;
+    padding-top: 32px;
+    padding-left: 0;
+  }
+}
+
+.contact-tech-wrapper, .contact-info-wrapper, .contact-message-wrapper, .contact-newsletter-wrapper {
+  margin-bottom: 64px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 32px;  
+  }
+}
+
+.contact-information-headline {
+  color: $darkBlue;
+  font-size: 12px;
+  line-height: 32px;
+  letter-spacing: 3.3px;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+  @media only screen and (max-width: $mobile) {
+    padding-bottom: 0;  
+  }
+}
+
+.input-field-label {
+  color: $darkBlue !important;
+}
+
+input#first_name,
+input#last_name,
+input#job_title,
+input#company,
+input#address,
+input#zipcode,
+input#city,
+input#email2,
+input#phone_number,
+input#website,
+input#country,
+input#elasticsearch_version,
+input#current_stage,
+input#your_message,
+input#organization,
+input#tls-email,
+input#host1,
+input#host2,
+input#host2,
+input#host3,
+input#host4,
+input#host5,
+input#host6,
+input#host7,
+input#host8,
+input#host9,
+input#host10 {
+  border-bottom: 2px solid $navyBlue;
+  box-shadow: none;
+}
+
+.privacy-policy {	
+  margin: 32px 0px;
+}
+
+.drop-down-container.col.s12.m6 {
+  padding: 0;
+}
+
+#contact {
+  @media only screen and (max-width: $mobile) {
+    padding: 0;
+  }
+}

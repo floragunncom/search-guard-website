@@ -14,7 +14,7 @@ const Security = () => {
       <Navbar />
       <Title
         headline="Security information"
-        text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
+        text="You can use our public keys to send us confidential information and to verify the integrity of any Search Guard download."
       />
       <div className="row">
         <div className="col s12 l8 offset-l2 security-wrapper">

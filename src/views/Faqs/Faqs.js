@@ -8,6 +8,226 @@ import envelope from '../../images/icon-envelope.svg';
 import './Faqs.scss';
 
 const Faqs = () => {
+  const faq = [
+    {
+      section: 'General',
+      faq: [
+        {
+          question: 'What is Search Guard?',
+          answer: (
+            <p>
+              Search Guard is an Enterprise Security Suite that encrypts and
+              protects your data and data flows in the entire Elastic Stack,
+              including Kibana, Logstash and Beats.
+            </p>
+          ),
+          anchor: 'one',
+        },
+        {
+          question: 'Who is using Search Guard?',
+          answer: (
+            <p>
+              A wide variety of enterprises, from Fortune 500 companies to the
+              most innovative start-ups around the world, are trusting in Search
+              Guard to secure their environments. Our customers include leading
+              companies from the finance, healthcare, telecommunications, big
+              data, legal and aerospace sectors. We also work together with
+              governmental agencies and provide security for scientific and
+              educational institutions
+            </p>
+          ),
+          anchor: 'two',
+        },
+        {
+          question: 'Is your code secure and audited?',
+          answer: (
+            <p>
+              Yes, the complete code base of Search Guard is constantly audited
+              for security issues by ourselves and independent security experts
+              of our customers.
+              <br />
+              <br />
+              Search Guard is also verified by CA Veracode. We use Veracode's
+              patented static binary analysis technology that inspects software
+              executables (compiled binaries or bytecode) for security flaws.
+              Through advanced modeling, Veracode’s static engine detects flaws
+              in the software's inputs and outputs that cannot be seen through
+              penetration testing alone. Unlike source code review tools, this
+              approach accurately detects issues in the core application and
+              extends coverage to vulnerabilities found in 3rd party libraries,
+              pre-packaged components, and code introduced by compiler or
+              platform-specific interpretations.
+            </p>
+          ),
+          anchor: 'three',
+        },
+      ],
+    },
+    {
+      section: 'Support',
+      faq: [
+        {
+          question: 'Do you offer support?',
+          answer: (
+            <p>
+              Of course. We offer both free support for the{' '}
+              <a href="https://forum.search-guard.com/latest/" target="_blank">
+                Search Guard community
+              </a>{' '}
+              as well as paid support for our customers. As paying customer you
+              get direct access to the core Search Guard developers and we also
+              guarantee SLAs via our support portal.
+            </p>
+          ),
+          anchor: 'four',
+        },
+        {
+          question: 'Do you offer 24x7 support?',
+          answer: (
+            <p>
+              Yes, we offer 24x7 support. Please get in contact with us to
+              discuss a support plan that fits your requirements.
+            </p>
+          ),
+          anchor: 'five',
+        },
+        {
+          question: 'Do you offer Elastic Stack support?',
+          answer: (
+            <p>
+              Yes, we offer support for the Elastic stack in collaboration with
+              our authorized partners around the world. Please get in contact
+              with us to discuss a support plan that fits your requirements.
+            </p>
+          ),
+          anchor: 'six',
+        },
+      ],
+    },
+    {
+      section: 'Features',
+      faq: [
+        {
+          question: 'Does Search Guard support feature XYZ?',
+          answer: (
+            <p>
+              Please refer to our feature matrix for an overview of our
+              features. If you are missing a feature for your specific use case,
+              please get in contact with us. We work closely together with our
+              customers to make sure Search Guard meets their needs.
+            </p>
+          ),
+          anchor: 'seven',
+        },
+        {
+          question: 'Does Search Guard offer Alerting?',
+          answer: (
+            <p>
+              Yes, we are offering alerting capabilities via our Signals for
+              Elasticsearch plugin. Signals is included in any Enterprise
+              license subscription and offers a free community as well.
+            </p>
+          ),
+          anchor: 'eight',
+        },
+        {
+          question: 'Does Search Guard offer Machine Learning?',
+          answer: <p>Not yet, but we are working on it.</p>,
+          anchor: 'nine',
+        },
+      ],
+    },
+    {
+      section: 'Licensing model',
+      faq: [
+        {
+          question: 'What is your licensing model?',
+          answer: (
+            <p>
+              Search Guard is dual licensed. All basic security features in the
+              Community Edition are free, while you need to obtain a license in
+              order to use the Enterprise or Compliance Edition in production.{' '}
+              <br /> We license Search Guard per production cluster, not number
+              of nodes. The regular license has no limits regarding the number
+              of nodes, so you can scale your cluster indefinitely without
+              additional costs. All other systems, like development, staging,
+              integration, test and the like are included in the license. Scale
+              your cluster, not your cost!
+              <br />
+              We also offer discounted licenses for small installations with 5
+              nodes or less. Get <a href="/contact">in contact with us</a> and
+              we will work out a licensing model that fits your needs.
+            </p>
+          ),
+          anchor: 'ten',
+        },
+        {
+          question: 'My company  is non-profit, do you offer any discounts?',
+          answer: (
+            <p>
+              Absolutely. We want to give back to education and science and
+              provide special discounts and free licenses for eligible
+              institutions.{' '}
+              <a href="/education-program">Get in touch with us</a> to learn
+              more about our education & scientific licensing.
+            </p>
+          ),
+          anchor: 'eleven',
+        },
+      ],
+    },
+    {
+      section: 'Compatibility',
+      faq: [
+        {
+          question:
+            'Is Search Guard compatible with the complete Elastic Stack?',
+          answer: (
+            <p>
+              Yes, Search Guard is compatible with the complete Elastic stack
+              and can be used to secure Elasticseach, Kibana, Logstash and
+              Beats. We are also compatible with the Elastic subscription based
+              features like monitoring, alerting and machine learning.
+            </p>
+          ),
+          anchor: 'twelve',
+        },
+        {
+          question: 'Is Search Guard compatible with tool  XYZ?',
+          answer: (
+            <p>
+              Search Guard is compatible with most third party plugins and
+              tools, including Grafana, Cerebro and fluentd.
+            </p>
+          ),
+          anchor: 'thirteen',
+        },
+      ],
+    },
+    {
+      section: 'Getting started',
+      faq: [
+        {
+          question: 'What is the easiest way to set up a PoC?',
+          answer:
+            <p>The easiest way to set up a PoC and try out all Search Guard features is to use the Search Guard Demo Installer:<br /><br /><a href='https://docs.search-guard.com/latest/demo-installer' target='_blank'>Search Guard Demo Installer</a><br /><br />The installer comes with a trial license that enables all Enterprise and Compliance features for 60 days. If you need to extend your Search Guard trial, just <a href='/contact'>get in contact with us</a> and we’re happy to provide you with an extended license.</p>,
+          anchor: 'fourteen',
+        },
+      ],
+    },
+    {
+      section: 'Search Guard in production',
+      faq: [
+        {
+          question: 'Can I run Search Guard on Kubernetes?',
+          answer:
+            <p>Absolutely. We provide <a href='https://docs.search-guard.com/latest/search-guard-kubernetes-helm' target='_blank'>K8s helm charts</a> for Kubernetes and also  work on a Kubernetes operator.</p>,
+          anchor: 'fifteen',
+        },
+      ],
+    },
+  ];
+
   return (
     <div>
       <NavBar />
@@ -17,293 +237,49 @@ const Faqs = () => {
       />
       <div className="row faq-row-wrapper">
         <div className="col s12 l4">
-          <div className="faq-question-section">
-            <div className="faq-question-headline">Nullam at porta</div>
-            <div className="faq-question-text">
-              <a href="#">
-                How does Search Guard compare to Shield / X-Pack Security?
-              </a>
-            </div>
-            <div className="faq-question-text">
-              <a href="#">Who is using Search Guard?</a>
-            </div>
-            <div className="faq-question-text">
-              <a href="#">How secure is Search Guard?</a>
-            </div>
-          </div>
-          <div className="faq-question-section">
-            <div className="faq-question-headline">Aenean volutpat</div>
-            <div className="faq-question-text">
-              <a href="#">What is your licensing model?</a>
-            </div>
-            <div className="faq-question-text">
-              <a href="#">What's the easiest way to set up a PoC?</a>
-            </div>
-            <div className="faq-question-text">
-              <a href="#">How do I get/install the enterprise features?</a>
-            </div>
-          </div>
-          <div className="faq-question-section">
-            <div className="faq-question-headline">Suspendisse nibh libero</div>
-            <div className="faq-question-text">
-              <a href="#">Where can I get support?</a>
-            </div>
-            <div className="faq-question-text">
-              <a href="#">Why is your complete code publicly visible?</a>
-            </div>
-            <div className="faq-question-text">
-              <a href="#">
-                If the license expires, what happens with my cluster?
-              </a>
-            </div>
-            <div className="faq-question-text">
-              <a href="#">Is Search Guard compatible with the Elastic Stack?</a>
-            </div>
-          </div>
+          {
+            faq.map(category => {
+              return (
+                <div className="faq-question-section">
+                  <div className="faq-question-headline">{category.section}</div>
+                  {
+                    category.faq.map(faq => {
+                      return (
+                        <div className="faq-question-text">
+                          <a href={`#${faq.anchor}`}>
+                            {faq.question}
+                          </a>
+                        </div>
+                      )
+                    })
+                  }
+                </div>      
+              )
+            })
+          }
         </div>
         <div className="col s12 l8 faq-answer-wrapper">
-          <div className="faq-answer-section">
-            <div className="faq-answer-section-headline">Nullam at porta</div>
-            <div className="faq-answer-headline" id="first">
-              How does Search Guard compare to Shield / X-Pack Security?
-            </div>
-            <div className="faq-answer-text">
-              <p>
-                Search Guard is an independent implementation of a security
-                access layer for Elasticsearch and is completely independent of
-                Elasticsearch’s own security offerings.
-              </p>
-              <br />
-              <p>
-                Search Guard offers similar functionality as competitor products
-                and adds additional features on top, with a flexible licensing
-                model.
-              </p>
-              <br />
-              <p>Additional features include:</p>
-              <br />
-              <ul>
-                <li>OpenSSL support</li>
-                <li>Kerberos support</li>
-                <li>JSON web token</li>
-                <li>OpenID / JWKS</li>
-                <li>Kibana multitenancy</li>
-                <li>HTTP Proxy Authentication support</li>
-                <li>Read- and write history compliance audit trails</li>
-                <li>Field anonymization</li>
-                <li>Immutable indices</li>
-                <li>Open Source</li>
-              </ul>
-              Licenses for Search Guard are based on production clusters, not
-              nodes. That means that you can scale your cluster up and down as
-              necessary, without affecting the license costs. Development,
-              staging, integration and QA/AUT-systems are covered by the license
-              as well at no additional cost.
-            </div>
-            <div className="faq-answer-headline" id="second">
-              Who is using Search Guard?
-            </div>
-            <div className="faq-answer-text">
-              <p>
-                Search Guard runs on mission-critical production clusters
-                protecting sensitive data in the finance, healthcare,
-                pharmaceutical, aviation, telecommunications, security, and data
-                intelligence industries. The cluster sizes range from typical
-                ELK installations to hundreds of data nodes storing petabytes of
-                data.
-              </p>
-              <br />
-              <p>
-                For a list of Enterprise integrations, including Red Hat Open
-                Shift and Pivotal Cloud Foundry,{' '}
-                <a href="/company#integrators">
-                  please see the list of integrators.
-                </a>
-              </p>
-              <br />
-              <p>
-                We also support non-profit organizations under our Scientific
-                and Academic licensing programme. Customers include Harvard Law
-                School, Princeton University, University of Chicago, Karlsruhe
-                Institute of Technology (KIT), Université Laval or Centre de
-                Calcul de l’Institut National de Physique Nucléaire (France).
-              </p>
-              <br />
-            </div>
-            <div className="faq-answer-headline" id="third">
-              How secure is Search Guard?
-            </div>
-            <div className="faq-answer-text">
-              <p>
-                Our complete code is Open Source, so in addition to our own
-                quality processes it has been audited several times by security
-                experts and auditors of our customers.
-              </p>
-              <br />
-              <p>
-                Search Guard also participates in CA Veracode Verified, a
-                program that validates a company’s secure software development
-                processes, and has reached the verified status. CA Veracode
-                Verified empowers us to demonstrate our commitment to creating
-                secure software:
-              </p>
-              <br />
-              <p>
-                <a
-                  href="https://www.veracode.com/verified/directory"
-                  target="_blank"
-                  className="faq-answer-links"
-                >
-                  https://www.veracode.com/verified/directory
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://www.veracode.com/ratings/floragunngmbh"
-                  target="_blank"
-                  className="faq-answer-links"
-                >
-                  https://www.veracode.com/ratings/floragunngmbh
-                </a>
-              </p>
-              <br />
-              <p>
-                We are also member of the IT Security Association Germany
-                (TeleTrusT). TeleTrusT is a widespread competence network for IT
-                security comprising members from industry, administration,
-                consultancy and research as well as national and international
-                partner organizations with similar objectives.
-              </p>
-              <br />
-              <p>
-                We also participate in the Alliance for Cybersecurity. The
-                Alliance for Cyber Security is an initiative of the Federal
-                Office for Information Security (BSI) founded in cooperation
-                with the Federal Association for Information Technology,
-                Telecommunications and New Media (BITKOM).
-              </p>
-            </div>
-          </div>
-          <div className="faq-answer-section">
-            <div className="faq-answer-section-headline">Nullam at porta</div>
-            <div className="faq-answer-headline">
-              What is your licensing model?
-            </div>
-            <div className="faq-answer-text">
-              <p>
-                Search Guard is an independent implementation of a security
-                access layer for Elasticsearch and is completely independent of
-                Elasticsearch’s own security offerings.
-              </p>
-              <br />
-              <p>
-                Search Guard offers similar functionality as competitor products
-                and adds additional features on top, with a flexible licensing
-                model.
-              </p>
-              <br />
-              <p>Additional features include:</p>
-              <br />
-              <ul>
-                <li>OpenSSL support</li>
-                <li>Kerberos support</li>
-                <li>JSON web token</li>
-                <li>OpenID / JWKS</li>
-                <li>Kibana multitenancy</li>
-                <li>HTTP Proxy Authentication support</li>
-                <li>Read- and write history compliance audit trails</li>
-                <li>Field anonymization</li>
-                <li>Immutable indices</li>
-                <li>Open Source</li>
-              </ul>
-              Licenses for Search Guard are based on production clusters, not
-              nodes. That means that you can scale your cluster up and down as
-              necessary, without affecting the license costs. Development,
-              staging, integration and QA/AUT-systems are covered by the license
-              as well at no additional cost.
-            </div>
-            <div className="faq-answer-headline">
-              What's the easiest way to set up a PoC?
-            </div>
-            <div className="faq-answer-text">
-              <p>
-                Search Guard runs on mission-critical production clusters
-                protecting sensitive data in the finance, healthcare,
-                pharmaceutical, aviation, telecommunications, security, and data
-                intelligence industries. The cluster sizes range from typical
-                ELK installations to hundreds of data nodes storing petabytes of
-                data.
-              </p>
-              <br />
-              <p>
-                For a list of Enterprise integrations, including Red Hat Open
-                Shift and Pivotal Cloud Foundry, please see the list of
-                integrators.
-              </p>
-              <br />
-              <p>
-                We also support non-profit organizations under our Scientific
-                and Academic licensing programme. Customers include Harvard Law
-                School, Princeton University, University of Chicago, Karlsruhe
-                Institute of Technology (KIT), Université Laval or Centre de
-                Calcul de l’Institut National de Physique Nucléaire (France).
-              </p>
-              <br />
-            </div>
-            <div className="faq-answer-headline">
-              How do I get/install the enterprise features?
-            </div>
-            <div className="faq-answer-text">
-              <p>
-                Our complete code is Open Source, so in addition to our own
-                quality processes it has been audited several times by security
-                experts and auditors of our customers.
-              </p>
-              <br />
-              <p>
-                Search Guard also participates in CA Veracode Verified, a
-                program that validates a company’s secure software development
-                processes, and has reached the verified status. CA Veracode
-                Verified empowers us to demonstrate our commitment to creating
-                secure software:
-              </p>
-              <br />
-              <p>
-                <a
-                  href="https://www.veracode.com/verified/directory"
-                  target="_blank"
-                  className="faq-answer-links"
-                >
-                  https://www.veracode.com/verified/directory
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://www.veracode.com/ratings/floragunngmbh"
-                  target="_blank"
-                  className="faq-answer-links"
-                >
-                  https://www.veracode.com/ratings/floragunngmbh
-                </a>
-              </p>
-              <br />
-              <p>
-                We are also member of the IT Security Association Germany
-                (TeleTrusT). TeleTrusT is a widespread competence network for IT
-                security comprising members from industry, administration,
-                consultancy and research as well as national and international
-                partner organizations with similar objectives.
-              </p>
-              <br />
-              <p>
-                We also participate in the Alliance for Cybersecurity. The
-                Alliance for Cyber Security is an initiative of the Federal
-                Office for Information Security (BSI) founded in cooperation
-                with the Federal Association for Information Technology,
-                Telecommunications and New Media (BITKOM).
-              </p>
-            </div>
-          </div>
+          {
+            faq.map(category => {
+              return (
+                <div className="faq-answer-section">
+                  <div className="faq-answer-section-headline">{category.section}</div>
+                  {
+                    category.faq.map(faq => {
+                      return (
+                        <div>
+                          <div className="faq-answer-headline" id={`${faq.anchor}`}>{faq.question}</div>
+                          <div className="faq-answer-text">
+                            {faq.answer}
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              )
+            })
+          }
         </div>
       </div>
       <Cta

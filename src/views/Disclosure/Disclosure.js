@@ -11,7 +11,7 @@ const Disclosure = () => {
       <NavBar />
       <Title
         headline="disclosure policy"
-        text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
+        text="Before reporting, please read our disclosure policy on how we handle security related bugs and issues."
       />
       <div className="row">
         <div className="col s12 l8 offset-l2">
@@ -141,7 +141,11 @@ const Disclosure = () => {
             <div className="disclosure-text">
               If you believe you’ve found a security vulnerability in one of our
               products (open source or commercial) please send it to us by
-              emailing <a href="mailto:security@search-guard.com?Subject=Security%20Issue%20Search-Guard">security@floragunn.com</a>.
+              emailing{' '}
+              <a href="mailto:security@search-guard.com?Subject=Security%20Issue%20Search-Guard">
+                security@floragunn.com
+              </a>
+              .
               <br />
               <br />
               We can accept only security issues at this address. Please include
@@ -164,7 +168,8 @@ const Disclosure = () => {
                 </li>
               </ul>
               <br />
-              If you’d like to encrypt the information, please use our <a href="/">[PGP key].</a>
+              If you’d like to encrypt the information, please use our{' '}
+              <a href="/">[PGP key].</a>
             </div>
           </div>
         </div>

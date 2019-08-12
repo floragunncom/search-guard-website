@@ -41,6 +41,8 @@
 
 .faq-info-box {
   border: 3px solid $grey;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   height: 442px;
   width: 360px;

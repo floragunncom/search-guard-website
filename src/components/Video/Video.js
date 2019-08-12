@@ -9,7 +9,7 @@ const Video = props => {
   if (props.playlist) {
     playlist = (
       <div>
-        <div className="video-playlist-headline">Other videos you may like</div>
+        {/* <div className="video-playlist-headline">Other videos you may like</div> */}
         <div className="video-playlist">
           <div className="video-playlist-item col l4">
             <iframe
@@ -66,9 +66,9 @@ const Video = props => {
       >
         <div className="row">
           <div className="video-headline">
-            Video convallis condimentum lobortis
+            Instructional videos
           </div>
-          <div className="video-description">
+          {/* <div className="video-description">
             <div className="video-description-video">
               <iframe
                 className="video-iframe-video"
@@ -88,7 +88,7 @@ const Video = props => {
               the code yourself. The complete code of Search Guard has always
               been openly available, and will always be.
             </div>
-          </div>
+          </div> */}
           {playlist}
         </div>
         {playlistButton}

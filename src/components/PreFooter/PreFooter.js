@@ -12,7 +12,7 @@ const Info = () => {
     <div className="prefooter-container">
       <div className="prefooter-row">
         <div className="row">
-          <div className="prefooter-content-wrapper col s12 m6 l3">
+          {/* <div className="prefooter-content-wrapper col s12 m6 l3">
             <div className="prefooter-col-content">
               <div className="prefooter-headline">select your language</div>
               <div className="prefooter-content">
@@ -20,8 +20,8 @@ const Info = () => {
                 <hr className="prefooter-hr" />
               </div>
             </div>
-          </div>
-          <div className="prefooter-content-wrapper col s12 m6 l3">
+          </div> */}
+          <div className="prefooter-content-wrapper col s12 m6 l6">
             <div className="prefooter-col-content">
               <div className="prefooter-headline">follow us</div>
               <div className="prefooter-content icons">

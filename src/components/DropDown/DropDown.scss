@@ -1,40 +1,44 @@
 @import '../../styles/Colors.scss';
+@import '../../styles/Breakpoints.scss';
 
 .drop-down-container {
-  height: 45.5px;
   cursor: pointer;
-  border-bottom: 2px solid #246E94;
+  border-bottom: 2px solid $navyBlue;
   margin-top: 16px;
   margin-right: 21px !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  width: 305.5px !important;
-  @media only screen and (max-width: 1000px) {
-    width: 921px !important;
+  width: 100%;
+  padding-left: 0;
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
   }
-  @media only screen and (max-width: 950px) {
-    width: 98% !important;
-  }
-  @media only screen and (max-width: 600px) {
-    width: 100% !important;
+}
+
+.drop-down-wrapper.col.s12.m6 {
+  padding-left: 0;
+  @media only screen and (max-width: $mobile) {
+    padding: 0;
+    margin-bottom: 16px;
   }
 }
 
 .drop-down-label {
   position: absolute;
-  top: -6px;
+  top: -10px;
 }
 
 .drop-down-text-field {
-  height: 21px;	
-  width: 290px;	
-  color: $darkBlue;	
   font-family: Roboto;	
-  font-size: 14px;	
+  font-size: 15px;	
   line-height: 20px;
   padding: 0px;
+  margin: 12px 0;
+  @media only screen and (max-width: $tabletBig) {
+    line-height: 15px;
+  }
 }
 
 .drop-down-open-and-close-button {
@@ -53,7 +57,7 @@
   top: 47px;
   left: 0px;
   color: #184962;
-  width: 305px;
+  width: 100%;
   background-color: white;
   z-index: 1;
 }

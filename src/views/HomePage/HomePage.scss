@@ -88,9 +88,9 @@ div.col.s12.m5.l6 {
   };
 }
 
-.hero-certificate-wrapper {
-  margin-bottom: 72px;
-  width: fit-content;
+.hero-certificate-wrapper img {
+  width: 100%;
+  padding-bottom: 48px;
   @media only screen and (max-width: $tabletBig) {
     display: none;
   };

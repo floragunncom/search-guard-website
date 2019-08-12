@@ -41,11 +41,16 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="hero-button-wrapper">
-                <Button text="start free trial" style="loud-link" />
+                <Button
+                  text="start free trial"
+                  style="loud-link"
+                  link="https://docs.search-guard.com/latest/demo-installer"
+                  target="_blank"
+                />
               </div>
-              <div className="hero-certificate-wrapper">
+              <a href="/certifications" className="hero-certificate-wrapper">
                 <img src={heroCertificates} alt="icon" />
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -60,21 +65,21 @@ const HomePage = () => {
         iconPosition="left"
         backgroundColor="dark"
         headline="Multilevel security"
-        text="Securing an Elasticsearch cluster can be a very complex task, as your cluster may contain various layers of components, from the nodes itself to Logstash and Kibana instances or even Beats. Search Guard covers it all, from top to bottom, you get encryption, authentication, authorization, audit logging, multitenancy and compliance features."
+        text="Protect your sensitive data on all levels by using role-based access control to your clusters, indices, documents and fields. Search Guard covers it all, from top to bottom, and adds encryption, authentication, authorization, audit logging, multi tenancy and compliance features to Elasticsearch and Kibana."
       />
       <TileSimple
         icon={lock}
         iconPosition="right"
         backgroundColor="light"
-        headline="Support industry standards"
-        text="Search Guard can be used to secure your Elasticsearch cluster by working with different industry standard authentication techniques, like Kerberos, LDAP / Active Directory, JSON web tokens, TLS certificates and Proxy authentication / SSO."
+        headline="Industry standards"
+        text="Search Guard supports all industry standards for authentication and authorization like LDAP, Active Directory, OpenID, SAML, Kerberos, JSON web tokens or client certificates. By using OpenSSL you can chose from a wide variety of modern and highly secure cipher suites."
       />
       <TileSimple
         icon={disk}
         iconPosition="left"
         backgroundColor="dark"
         headline="Elastic Stack"
-        text="Search Guard gives you full security control over your entire Elasticsearch environment. Whether you just want to encrypt data in transit, authenticate users against Active Directory, use Kerberos or JSON web tokens for Single Sign On or need to monitor and log malicious access attempts."
+        text="Search Guard gives you full security control over your entire Elastisearch environment. Protect the complete Elastic stack, including Kibana, logstash and beats."
       />
       <div className="securityinfo-wrapper">
         <div className="row">
@@ -122,7 +127,11 @@ const HomePage = () => {
         </div>
       </div>
       <Services />
-      <LicensingModel headline="Licensing models" topButtons={true} tableView={false} />
+      <LicensingModel
+        headline="Licensing models"
+        topButtons={true}
+        tableView={false}
+      />
       <Cta
         headline="Free 60-day trial"
         text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."

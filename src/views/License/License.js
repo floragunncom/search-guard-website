@@ -18,7 +18,7 @@ const License = () => {
       <NavBar />
       <Title
         headline="licensing model"
-        text="The regular license has no limits regarding the number of nodes, so you have the freedom to scale your cluster indefinitely without additional costs or managerial overhead, without additional costs. Our fully flexible approach also apply to the non-production systems, like DEV, SNG, AUT which are included in the license, free of charge."
+        text="Non-productive systems are included in the license free of charge."
       />
       <div className="product-anchor-container">
         <div className="row">
@@ -67,9 +67,9 @@ const License = () => {
           leftIcon={iconBook}
           rightIcon={iconWheels}
           leftHeadline="Academic & Scientific edition"
-          rightHeadline="Custom edition"
-          leftText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus, orci ut tincidunt vulputate, tortor erat."
-          rightText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam finibus, orci ut tincidunt vulputate, tortor erat."
+          rightHeadline="OEM, integrators & resellers"
+          leftText="Because we love to support education and science, we offer a special license model for non-profit academic and scientific purposes. If you think your project/institution is eligible for this program, please contact us."
+          rightText="We provide tailor made custom licenses for system integrators, OEM partners and resellers."
           leftLink="/"
           rightLink="/"
         />

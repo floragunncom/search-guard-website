@@ -11,7 +11,7 @@ const Imprint = () => {
       <NavBar />
       <Title
         headline="Imprint"
-        text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
+        // text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
       />
       <div className="row">
         <div className="col s12 l8 offset-l2">
@@ -30,8 +30,6 @@ const Imprint = () => {
             </div>
             <div className="imprint-headline">Kontakt</div>
             <div className="imprint-text">
-              Telefon: 030 – 89379249
-              <br />
               E-Mail: info@floragunn.com
             </div>
             <div className="imprint-headline">Registereintrag</div>
@@ -42,9 +40,6 @@ const Imprint = () => {
               <br />
               Registernummer: HRB 147010 B<br />
               USt-IdNr.: DE287373363
-              <br />
-              <br />
-              Quelle: Impressumgenerator von http://www.e-recht24.de/
               <br />
               <br />
               Search Guard is a trademark of floragunn GmbH, registered in the
@@ -111,8 +106,7 @@ const Imprint = () => {
               HRB 147010
               <br />
               USt-IdNr.: DE287373363
-              <br /><br />
-              floragunn GmbH is not affiliated with Elasticsearch BV.
+              <br />
               <br />
               Search Guard is a trademark of floragunn GmbH, registered in the
               U.S. and in other countries. Elasticsearch, Kibana, Logstash, and

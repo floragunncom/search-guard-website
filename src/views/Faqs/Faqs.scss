@@ -91,12 +91,12 @@
   color: $darkGrey;
   padding-bottom: 96px;
   @media only screen and (max-width: $tabletBig) {
-    margin-bottom: 64px;
+    padding-bottom: 64px;
   };
   @media only screen and (max-width: $mobile) {
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 32px;
+    padding-bottom: 32px;
   };
   ul {
     li:before {

@@ -5,16 +5,14 @@ import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
-import Video from '../../components/Video/Video';
-import Journey from '../../components/Journey/Journey';
+import Certified from '../../components/Certified/Certified';
+// import Video from '../../components/Video/Video';
+import Integrators from '../../components/Integrators/Integrators';
 import ctaIcon from '../../images/cta-banner-arrow.svg';
 import fileCode from '../../images/file-code.svg';
 import worldLock from '../../images/world-lock.svg';
 import certificate from '../../images/certificate-big.svg';
 import arrowDown from '../../images/arrow-down-green.svg';
-import veracode from '../../images/veracode.svg';
-import alliance from '../../images/alliance.svg';
-import security from '../../images/security.svg';
 import './Product.scss';
 
 const Product = () => {
@@ -38,7 +36,7 @@ const Product = () => {
                 what it is
               </a>
             </div>
-            <div className="product-anchor-item">
+            {/* <div className="product-anchor-item">
               <a href="#videos" className="product-anchor-link">
                 <img
                   src={arrowDown}
@@ -47,7 +45,7 @@ const Product = () => {
                 />
                 how it works
               </a>
-            </div>
+            </div> */}
             <div className="product-anchor-item">
               <a href="#certified" className="product-anchor-link">
                 <img
@@ -94,45 +92,9 @@ const Product = () => {
         headline="All industry sectors"
         text="Search Guard runs on high-scale mission-critical production clusters protecting sensitive data in the finance, healthcare, pharmaceutical, aviation, telecommunications, security, and data intelligence sectors."
       />
-      <Journey />
-      <Video />
-      <div className="certified-wrapper" id="certified">
-        <div className="certified-headline">Certified</div>
-        <div className="row">
-          <div className="col s12 m4">
-            <div className="certified-col-img">
-              <img src={veracode} alt="icon" />
-            </div>
-            <div className="certified-col-headline">Veracode</div>
-            <div className="certified-col-text">
-              Mauris ullamcorper commodo eros a cursus. Mauris est sapien,
-              lobortis ac orci non, mollis semper diam.
-            </div>
-          </div>
-          <div className="col s12 m4">
-            <div className="certified-col-img">
-              <img src={alliance} alt="icon" />
-            </div>
-            <div className="certified-col-headline">
-              Allianz für Cyber-Sicherheit
-            </div>
-            <div className="certified-col-text">
-              Mauris ullamcorper commodo eros a cursus. Mauris est sapien,
-              lobortis ac orci non, mollis semper diam.
-            </div>
-          </div>
-          <div className="col s12 m4">
-            <div className="certified-col-img">
-              <img src={security} alt="icon" />
-            </div>
-            <div className="certified-col-headline">TeleTrusT</div>
-            <div className="certified-col-text">
-              Mauris ullamcorper commodo eros a cursus. Mauris est sapien,
-              lobortis ac orci non, mollis semper diam.
-            </div>
-          </div>
-        </div>
-      </div>
+      <Integrators />
+      {/* <Video /> */}
+      <Certified />
       <div id="quote">
         <Cta
           headline="Free 60-day trial"
