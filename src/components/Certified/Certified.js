@@ -2,7 +2,7 @@ import React from 'react';
 import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
-import ove from '../../images/ove.png';
+import ove from '../../images/ove.svg';
 import './Certified.scss';
 
 const Certified = () => {
@@ -49,7 +49,6 @@ const Certified = () => {
             href="https://cve.mitre.org/cve/request_id.html#cna_participants"
             target="_blank"
             className="certified-col-img"
-            id="ove"
           >
             <img src={ove} alt="icon" />
           </a>

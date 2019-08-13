@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+// import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+// import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import marked from 'marked';
 import { Link } from 'react-router-dom';
 import './BlogPostArticle.scss';
 import NavBar from '../../components/NavBar/NavBar';
@@ -32,31 +33,37 @@ class BlogPostArticle extends Component {
     }
   }
 
+  getMarkdownText() {
+    var rawMarkup = marked(this.state.documentContent, { sanitize: true });
+    return { __html: rawMarkup };
+  }
+
   render() {
-    const options = {
-      renderMark: {
-        [MARKS.BOLD]: text => <div className="bold">{text}</div>,
-        [MARKS.ITALIC]: text => <div className="italic">{text}</div>,
-        [MARKS.UNDERLINE]: text => <div className="underline">{text}</div>,
-        [MARKS.CODE]: text => <div className="blogpost-code-snippet">{text}</div>,
-      },
-      renderNode: {
-        [BLOCKS.QUOTE]: (node, children) => 
-          <div className="blogpost-quote-wrapper">
-            <img src={quote} className="blogpost-quote-image" />
-            <div className="blogpost-quote-text">{children}</div>
-        </div>,
-        [BLOCKS.PARAGRAPH]: (node, children) => node.content.some(childNode => childNode.nodeType === `text` && childNode.marks.some(mark => mark.type === MARKS.CODE)) ? children : <div className="blogpost-text">{children}</div>,
-        [BLOCKS.HEADING_1]: (node, children) => <div className="blogpost-headline1">{children}</div>,
-        [BLOCKS.HEADING_2]: (node, children) => <div className="blogpost-headline2">{children}</div>,
-        [BLOCKS.EMBEDDED_ASSET]: (node) => (
-          <div className="blogpost-image-wrapper">
-            <img className="blogpost-image" src={node.data.target.fields.file.url} />
-            <div className="blogpost-image-description">{node.data.target.fields.description}</div>
-          </div>
-        ),
-      },
-    };
+    console.log('this.state.content', this.state.content);
+    // const options = {
+    //   renderMark: {
+    //     [MARKS.BOLD]: text => <div className="bold">{text}</div>,
+    //     [MARKS.ITALIC]: text => <div className="italic">{text}</div>,
+    //     [MARKS.UNDERLINE]: text => <div className="underline">{text}</div>,
+    //     [MARKS.CODE]: text => <div className="blogpost-code-snippet">{text}</div>,
+    //   },
+    //   renderNode: {
+    //     [BLOCKS.QUOTE]: (node, children) =>
+    //       <div className="blogpost-quote-wrapper">
+    //         <img src={quote} className="blogpost-quote-image" />
+    //         <div className="blogpost-quote-text">{children}</div>
+    //     </div>,
+    //     [BLOCKS.PARAGRAPH]: (node, children) => node.content.some(childNode => childNode.nodeType === `text` && childNode.marks.some(mark => mark.type === MARKS.CODE)) ? children : <div className="blogpost-text">{children}</div>,
+    //     [BLOCKS.HEADING_1]: (node, children) => <div className="blogpost-headline1">{children}</div>,
+    //     [BLOCKS.HEADING_2]: (node, children) => <div className="blogpost-headline2">{children}</div>,
+    //     [BLOCKS.EMBEDDED_ASSET]: (node) => (
+    //       <div className="blogpost-image-wrapper">
+    //         <img className="blogpost-image" src={node.data.target.fields.file.url} />
+    //         <div className="blogpost-image-description">{node.data.target.fields.description}</div>
+    //       </div>
+    //     ),
+    //   },
+    // };
 
     if (!this.state.content) {
       return <h1>Loading ...</h1>;
@@ -71,7 +78,8 @@ class BlogPostArticle extends Component {
         />
         <div className="row">
           <div className="col s12 offset-l2 l8">
-            {documentToReactComponents(this.state.documentContent, options)}
+            {/* {documentToReactComponents(this.state.documentContent, options)} */}
+            <div dangerouslySetInnerHTML={this.getMarkdownText()} />
           </div>
           <div className="col s12 offset-l1 l1 blogpost-sidebar-container">
             <div className="blogpost-sidebar-title">share</div>
@@ -93,9 +101,10 @@ class BlogPostArticle extends Component {
               </div>
             </div>
           </div>
-          <div className="col s12 blogpost-recommended-headline">Other posts you may like</div>
-          <div className="col s12 l4">
+          <div className="col s12 blogpost-recommended-headline">
+            Other posts you may like
           </div>
+          <div className="col s12 l4" />
           <div className="col s12 blogpost-link">
             <a href={'/blog'}>
               <img src={infoArrowBack} className="blogpost-arrow-back" />

@@ -8,6 +8,7 @@
     "@contentful/rich-text-types": "^13.1.0",
     "contentful": "^7.5.0",
     "font-awesome": "^4.7.0",
+    "marked": "^0.7.0",
     "materialize-css": "^1.0.0-rc.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
