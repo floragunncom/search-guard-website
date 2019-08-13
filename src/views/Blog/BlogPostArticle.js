@@ -1,14 +1,14 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 // import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 // import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import marked from 'marked';
-import { Link } from 'react-router-dom';
+import Markdown from 'markdown-to-jsx';
+// import { Link } from 'react-router-dom';
 import './BlogPostArticle.scss';
 import NavBar from '../../components/NavBar/NavBar';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-import quote from '../../images/quote-up.svg';
+// import quote from '../../images/quote-up.svg';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 import iconGoogle from '../../images/icon-google-loud.svg';
 import iconTwitter from '../../images/icon-tw-loud.svg';
@@ -33,10 +33,10 @@ class BlogPostArticle extends Component {
     }
   }
 
-  getMarkdownText() {
-    var rawMarkup = marked(this.state.documentContent, { sanitize: true });
-    return { __html: rawMarkup };
-  }
+  // getMarkdownText() {
+  //   var rawMarkup = marked(this.state.documentContent, { sanitize: true });
+  //   return { __html: rawMarkup };
+  // }
 
   render() {
     console.log('this.state.content', this.state.content);
@@ -65,6 +65,65 @@ class BlogPostArticle extends Component {
     //   },
     // };
 
+    const options = {
+      overrides: {
+        h1: {
+          // component: 'BlogPostArticle',
+          props: {
+            className: 'blogpost-headline1',
+          },
+        },
+        h2: {
+          // component: 'BlogPostArticle',
+          props: {
+            className: 'blogpost-headline2',
+          },
+        },
+        p: {
+          component: 'p',
+          props: {
+            className: 'blogpost-text',
+          },
+        },
+        b: {
+          component: 'div',
+          props: {
+            className: 'bold',
+          },
+        },
+        i: {
+          component: 'div',
+          props: {
+            className: 'i',
+          },
+        },
+        u: {
+          component: 'div',
+          props: {
+            className: 'underline',
+          },
+        },
+        code: {
+          component: 'div',
+          props: {
+            className: 'blogpost-code-snippet',
+          },
+        },
+        a: {
+          component: 'a',
+          props: {
+            className: 'blogpost-link',
+          },
+        },
+        li: {
+          component: 'div',
+          props: {
+            className: 'blogpost-listitem',
+          },
+        },
+      },
+    };
+
     if (!this.state.content) {
       return <h1>Loading ...</h1>;
     }
@@ -79,7 +138,7 @@ class BlogPostArticle extends Component {
         <div className="row">
           <div className="col s12 offset-l2 l8">
             {/* {documentToReactComponents(this.state.documentContent, options)} */}
-            <div dangerouslySetInnerHTML={this.getMarkdownText()} />
+            <Markdown options={options}>{this.state.documentContent}</Markdown>
           </div>
           <div className="col s12 offset-l1 l1 blogpost-sidebar-container">
             <div className="blogpost-sidebar-title">share</div>
@@ -106,7 +165,7 @@ class BlogPostArticle extends Component {
           </div>
           <div className="col s12 l4" />
           <div className="col s12 blogpost-link">
-            <a href={'/blog'}>
+            <a href="/blog">
               <img src={infoArrowBack} className="blogpost-arrow-back" />
               back to blog
             </a>
@@ -117,7 +176,6 @@ class BlogPostArticle extends Component {
       </div>
     );
   }
-};
-
+}
 
 export default BlogPostArticle;
