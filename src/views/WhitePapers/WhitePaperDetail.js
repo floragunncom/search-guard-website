@@ -17,51 +17,51 @@ import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
 
 class WhitePaperDetail extends Component {
-  constructor() {
-    super();
-    this.state = {
-      content: null,
-      documentContent: null,
-    };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     content: null,
+  //     documentContent: null,
+  //   };
+  // }
 
-  componentDidMount() {
-    const content = this.props.location.state.content;
-    const documentContent = content.whitePaperContent;
-    if (content) {
-      this.setState({ content, documentContent });
-    }
-  }
+  // componentDidMount() {
+  //   const content = this.props.location.state.content;
+  //   const documentContent = content.whitePaperContent;
+  //   if (content) {
+  //     this.setState({ content, documentContent });
+  //   }
+  // }
 
   render() {
-    const options = {
-      renderMark: {
-        [MARKS.BOLD]: text => <div className="bold">{text}</div>,
-        [MARKS.ITALIC]: text => <div className="italic">{text}</div>,
-        [MARKS.UNDERLINE]: text => <div className="underline">{text}</div>,
-        [MARKS.CODE]: text => <div className="blogpost-code-snippet">{text}</div>,
-      },
-      renderNode: {
-        [BLOCKS.QUOTE]: (node, children) =>
-          <div className="blogpost-quote-wrapper">
-            <img src={quote} className="blogpost-quote-image" />
-            <div className="blogpost-quote-text">{children}</div>
-          </div>,
-        [BLOCKS.PARAGRAPH]: (node, children) => node.content.some(childNode => childNode.nodeType === `text` && childNode.marks.some(mark => mark.type === MARKS.CODE)) ? children : <div className="blogpost-text">{children}</div>,
-        [BLOCKS.HEADING_1]: (node, children) => <div className="blogpost-headline1">{children}</div>,
-        [BLOCKS.HEADING_2]: (node, children) => <div className="blogpost-headline2">{children}</div>,
-        [BLOCKS.EMBEDDED_ASSET]: (node) => (
-          <div className="blogpost-image-wrapper">
-            <img className="blogpost-image" src={node.data.target.fields.file.url} />
-            <div className="blogpost-image-description">{node.data.target.fields.description}</div>
-          </div>
-        ),
-      },
-    };
+    // const options = {
+    //   renderMark: {
+    //     [MARKS.BOLD]: text => <div className="bold">{text}</div>,
+    //     [MARKS.ITALIC]: text => <div className="italic">{text}</div>,
+    //     [MARKS.UNDERLINE]: text => <div className="underline">{text}</div>,
+    //     [MARKS.CODE]: text => <div className="blogpost-code-snippet">{text}</div>,
+    //   },
+    //   renderNode: {
+    //     [BLOCKS.QUOTE]: (node, children) =>
+    //       <div className="blogpost-quote-wrapper">
+    //         <img src={quote} className="blogpost-quote-image" />
+    //         <div className="blogpost-quote-text">{children}</div>
+    //       </div>,
+    //     [BLOCKS.PARAGRAPH]: (node, children) => node.content.some(childNode => childNode.nodeType === `text` && childNode.marks.some(mark => mark.type === MARKS.CODE)) ? children : <div className="blogpost-text">{children}</div>,
+    //     [BLOCKS.HEADING_1]: (node, children) => <div className="blogpost-headline1">{children}</div>,
+    //     [BLOCKS.HEADING_2]: (node, children) => <div className="blogpost-headline2">{children}</div>,
+    //     [BLOCKS.EMBEDDED_ASSET]: (node) => (
+    //       <div className="blogpost-image-wrapper">
+    //         <img className="blogpost-image" src={node.data.target.fields.file.url} />
+    //         <div className="blogpost-image-description">{node.data.target.fields.description}</div>
+    //       </div>
+    //     ),
+    //   },
+    // };
 
-    if (!this.state.content) {
-      return <h1>Loading ...</h1>;
-    }
+    // if (!this.state.content) {
+    //   return <h1>Loading ...</h1>;
+    // }
 
     return (
       <div className="blogpost-container">
@@ -70,7 +70,7 @@ class WhitePaperDetail extends Component {
           text={this.state.content.title}
           subText={`SEARCH GUARD WHITE PAPER || ${this.state.content.date}`}
         />
-        <div className="row">
+        {/* <div className="row">
           <div className="col s12 offset-l2 l8">
             {documentToReactComponents(this.state.documentContent, options)}
           </div>
@@ -101,7 +101,7 @@ class WhitePaperDetail extends Component {
               back to all white papers
             </Link>
           </div>
-        </div>
+        </div> */}
         <PreFooter />
         <Footer />
       </div>
