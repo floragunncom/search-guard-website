@@ -7,9 +7,11 @@
   margin: 128px 32px;
 }
 
-.pagination-number {
-  padding: 14px 18px;
-  color: $green;
-  font-weight: bold;
-  cursor: pointer;
+li.pagination-number {
+  a {
+    padding: 14px 18px;
+    color: $green;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
