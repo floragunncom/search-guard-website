@@ -6,11 +6,11 @@ import arrowRight from '../../images/arrow-right-white.svg';
 import pdf from '../../images/pdf-download-dark.svg';
 
 const WhitePaper = props => {
-    const whitePaper = props.whitePaper.fields;
+    // const whitePaper = props.whitePaper.fields;
 
   return (
     <div>
-      <div className="col s12 m4 whitepaper-image-wrapper">
+      {/* <div className="col s12 m4 whitepaper-image-wrapper">
         <img
           src={whitePaper.cover.fields.file.url}
           className="whitepaper-feed-image"
@@ -52,13 +52,13 @@ const WhitePaper = props => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
 
-WhitePaper.propTypes = {
+{/* WhitePaper.propTypes = {
   whitePaper: PropTypes.object,
-};
+}; */}
 
 export default WhitePaper;
