@@ -145,12 +145,12 @@ class BlogPostArticle extends Component {
             Other posts you may like
           </div>
           <div className="col s12 l4" />
-          <div className="col s12 blogpost-link">
+          {/* <div className="col s12 blogpost-link">
             <a href="/blog">
               <img src={infoArrowBack} className="blogpost-arrow-back" />
               back to blog
             </a>
-          </div>
+          </div> */}
         </div>
         <PreFooter />
         <Footer />
