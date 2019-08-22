@@ -4,47 +4,45 @@ import { Link } from 'react-router-dom';
 import './BlogPost.scss';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 
-const BlogPost = (props) => {
-  const post = props.post.fields;
-  // const content = post.postContent;
-  // const relatedPosts = this.props.relatedPosts;
-  const teaserText = null;
-  // content.forEach((paragraph) => {
-  //   if (paragraph.nodeType === "paragraph") {
-  //     teaserText = paragraph.content[0].value.slice(0, 80);
-  //     return;
-  //   }
-  // });
+const BlogPost = ({ post }) => {
+  const blogPost = post.fields;
+  let infoTextLength = 165;
+  while (blogPost.postContent[infoTextLength] !== ' ') {
+    infoTextLength -= 1;
+  }
+
   return (
     <div className="blog-wrapper">
       <Link
-        to={{ pathname: `blog/${post.slug}`, state: { content: post } }}
+        to={{ pathname: `blog/${blogPost.slug}`, state: { content: blogPost } }}
         className="blog-link-wrapper"
       >
         <div className="blog-image-wrapper">
           <img
-            src={post.postImage.fields.file.url}
+            src={blogPost.postImage.fields.file.url}
             className="blogpost-feed-image"
           />
         </div>
         <div className="blog-text-content">
-          <div className="blog-headline">{post.title}</div>
-          <div className="blog-info-headline">
-            {post.author} || {post.date}
+          <div className="blog-headline">
+            {blogPost.title.length < 46
+              ? blogPost.title
+              : `${blogPost.title.substring(0, 45)}...`}
           </div>
-          <div className="blog-paragraph">{teaserText} ...</div>
+          <div className="blog-info-headline">
+            {blogPost.author} || {blogPost.date}
+          </div>
+          <div className="blog-paragraph">
+            {blogPost.postContent.substring(0, infoTextLength)} ...
+          </div>
           <div className="blog-info-link">
-            read more
+            <span>read more</span>
             <img src={infoArrowForward} className="blog-arrow" />
           </div>
         </div>
       </Link>
     </div>
   );
-}
-
-// BlogPost.propTypes = {
-//   post: PropTypes.object,
-// };
+};
 
 export default BlogPost;

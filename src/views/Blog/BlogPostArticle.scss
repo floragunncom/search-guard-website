@@ -33,50 +33,53 @@
   font-size: 16px;
   line-height: 19px;
   padding: 16px;
+  word-break: break-all;
+  overflow: scroll;
 }
 
-// .blogpost-quote-wrapper {
-//   margin: 26px 30px 30px -15vw;
-//   max-width: 425px;
-//   float: left;
-//   @media only screen and (max-width: $tabletBig) {
-//     margin-left: 0px;
-//     float: none;
-//     max-width: unset;
-//   };
-//   @media only screen and (max-width: $mobile) {
-//     margin-right: 0px;
-//   };
-// }
 
-// .blogpost-quote-image {
-//   float: left;
-//   @media only screen and (max-width: $mobile) {
-//     width: 26px;
-//     height: 29px;
-//   };
-// }
+.blogpost-quote-wrapper {
+  margin: 26px 30px 30px -15vw;
+  max-width: 425px;
+  float: left;
+  @media only screen and (max-width: $tabletBig) {
+    margin-left: 0px;
+    float: none;
+    max-width: unset;
+  };
+  @media only screen and (max-width: $mobile) {
+    margin-right: 0px;
+  };
+}
 
-// .blogpost-quote-text .blogpost-text {
-//   margin: 0px;
-//   max-width: 360px;
-//   margin-left: 70px;
-//   color: $navyBlue;
-//   padding: 16px 0px;
-//   font-size: 24px;
-//   letter-spacing: 0.8px;
-//   line-height: 27px;
-//   border-top: 10px solid $grey;
-//   border-bottom: 10px solid $grey;
-//   @media only screen and (max-width: $tabletBig) {
-//     max-width: 85%;
-//   };
-//   @media only screen and (max-width: $mobile) {
-//     font-size: 18px;
-//     line-height: 20px;
-//     max-width: 100%;
-//   };
-// }
+.blogpost-quote-image {
+  float: left;
+  @media only screen and (max-width: $mobile) {
+    width: 26px;
+    height: 29px;
+  };
+}
+
+.blogpost-quote-text .blogpost-text {
+  margin: 0px;
+  max-width: 360px;
+  margin-left: 70px;
+  color: $navyBlue;
+  padding: 16px 0px;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  line-height: 27px;
+  border-top: 10px solid $grey;
+  border-bottom: 10px solid $grey;
+  @media only screen and (max-width: $tabletBig) {
+    max-width: 85%;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 18px;
+    line-height: 20px;
+    max-width: 100%;
+  };
+}
 
 .blogpost-image-wrapper {
   margin: 64px 0px;
@@ -174,15 +177,14 @@
   }
 }
 
-.blogpost-link {
-  text-transform: uppercase;
-  font-weight: bold;
+a.blogpost-link {
+  // text-transform: uppercase;
+  // font-weight: bold;
   align-items: center;
+  text-decoration: underline;
   margin: 32px 0px;
   text-align: -webkit-center;
-  a {
-    color: $green;
-  };
+  color: $green;
 }
 
 .blogpost-arrow-back {

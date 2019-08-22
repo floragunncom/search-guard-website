@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-// import { BLOCKS, MARKS } from '@contentful/rich-text-types';
-// import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Markdown from 'markdown-to-jsx';
-// import { Link } from 'react-router-dom';
 import './BlogPostArticle.scss';
 import NavBar from '../../components/NavBar/NavBar';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-// import quote from '../../images/quote-up.svg';
+import quote from '../../images/quote-up.svg';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 import iconGoogle from '../../images/icon-google-loud.svg';
 import iconTwitter from '../../images/icon-tw-loud.svg';
@@ -33,54 +30,26 @@ class BlogPostArticle extends Component {
     }
   }
 
-  // getMarkdownText() {
-  //   var rawMarkup = marked(this.state.documentContent, { sanitize: true });
-  //   return { __html: rawMarkup };
-  // }
-
   render() {
-    console.log('this.state.content', this.state.content);
-    // const options = {
-    //   renderMark: {
-    //     [MARKS.BOLD]: text => <div className="bold">{text}</div>,
-    //     [MARKS.ITALIC]: text => <div className="italic">{text}</div>,
-    //     [MARKS.UNDERLINE]: text => <div className="underline">{text}</div>,
-    //     [MARKS.CODE]: text => <div className="blogpost-code-snippet">{text}</div>,
-    //   },
-    //   renderNode: {
-    //     [BLOCKS.QUOTE]: (node, children) =>
-    //       <div className="blogpost-quote-wrapper">
-    //         <img src={quote} className="blogpost-quote-image" />
-    //         <div className="blogpost-quote-text">{children}</div>
-    //     </div>,
-    //     [BLOCKS.PARAGRAPH]: (node, children) => node.content.some(childNode => childNode.nodeType === `text` && childNode.marks.some(mark => mark.type === MARKS.CODE)) ? children : <div className="blogpost-text">{children}</div>,
-    //     [BLOCKS.HEADING_1]: (node, children) => <div className="blogpost-headline1">{children}</div>,
-    //     [BLOCKS.HEADING_2]: (node, children) => <div className="blogpost-headline2">{children}</div>,
-    //     [BLOCKS.EMBEDDED_ASSET]: (node) => (
-    //       <div className="blogpost-image-wrapper">
-    //         <img className="blogpost-image" src={node.data.target.fields.file.url} />
-    //         <div className="blogpost-image-description">{node.data.target.fields.description}</div>
-    //       </div>
-    //     ),
-    //   },
-    // };
-
     const options = {
       overrides: {
         h1: {
-          // component: 'BlogPostArticle',
           props: {
             className: 'blogpost-headline1',
           },
         },
         h2: {
-          // component: 'BlogPostArticle',
+          props: {
+            className: 'blogpost-headline2',
+          },
+        },
+        h3: {
           props: {
             className: 'blogpost-headline2',
           },
         },
         p: {
-          component: 'p',
+          component: 'div',
           props: {
             className: 'blogpost-text',
           },
@@ -107,6 +76,7 @@ class BlogPostArticle extends Component {
           component: 'div',
           props: {
             className: 'blogpost-code-snippet',
+            id: 'post-code',
           },
         },
         a: {
@@ -119,6 +89,17 @@ class BlogPostArticle extends Component {
           component: 'div',
           props: {
             className: 'blogpost-listitem',
+          },
+        },
+        blockquote: {
+          component: 'div',
+          props: {
+            className: 'blogpost-quote-wrapper',
+
+        //     <div className="blogpost-quote-wrapper">
+        //     <img src={quote} className="blogpost-quote-image" />
+        //     <div className="blogpost-quote-text">{children}</div>
+        // </div>
           },
         },
       },

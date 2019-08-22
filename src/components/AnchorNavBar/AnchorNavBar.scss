@@ -10,9 +10,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 34px 32px;
+
   @media only screen and (max-width: $tabletBig) {
     display: none;
-  };
+  }
+
+  ;
 }
 
 .product-anchor-link {

@@ -4,15 +4,21 @@ import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import Tile from '../../components/Tile/Tile';
+import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
 import References from '../../components/References/References';
 import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/cta-banner-arrow.svg';
-import arrowDown from '../../images/arrow-down-green.svg';
 import iconBook from '../../images/icon-book.svg';
 import iconWheels from '../../images/icon-wheels.svg';
 
 const License = () => {
+  const anchors = [
+    { anchor: 'standard', name: 'standard editions' },
+    { anchor: 'feature', name: 'feature breakdown' },
+    { anchor: 'academic', name: 'Academic and Custom editions' },
+  ];
+
   return (
     <div id="top">
       <NavBar />
@@ -20,46 +26,11 @@ const License = () => {
         headline="licensing model"
         text="Non-productive systems are included in the license free of charge."
       />
-      <div className="product-anchor-container">
-        <div className="row">
-          <div className="product-anchor-wrapper">
-            <div className="product-anchor-item">
-              <a href="#standard" className="product-anchor-link">
-                <img
-                  src={arrowDown}
-                  alt="arrow-down"
-                  className="product-anchor-img"
-                />
-                standard editions
-              </a>
-            </div>
-            <div className="product-anchor-item">
-              <a href="#feature" className="product-anchor-link">
-                <img
-                  src={arrowDown}
-                  alt="arrow-down"
-                  className="product-anchor-img"
-                />
-                feature breakdown
-              </a>
-            </div>
-            <div className="product-anchor-item">
-              <a href="#academic" className="product-anchor-link">
-                <img
-                  src={arrowDown}
-                  alt="arrow-down"
-                  className="product-anchor-img"
-                />
-                Academic and Custom editions
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <AnchorNavBar anchors={anchors} />
       <LicensingModel
         headline="Standard editions"
         topButtons={false}
-        tableView={true}
+        tableView
       />
       <div id="academic">
         <Tile

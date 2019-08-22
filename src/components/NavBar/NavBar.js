@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo-white.svg';
 import cross from '../../images/cross-white.svg';
 
-class NavBar extends Component {
+export default class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -184,5 +184,3 @@ class NavBar extends Component {
     return <div>{visibleNavBar}</div>;
   }
 }
-
-export default NavBar;

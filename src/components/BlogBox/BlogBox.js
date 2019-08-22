@@ -1,10 +1,11 @@
 import React from 'react';
+import BlogPost from '../../views/Blog/BlogPost';
 import './BlogBox.scss';
 
 const Education = () => {
   return (
     <div id="blog">
-      hi
+      <BlogPost />
     </div>
   );
 };
