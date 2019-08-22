@@ -24,7 +24,8 @@
   "scripts": {
     "heroku-postbuild": "npm run build",
     "start": "react-scripts start",
-    "build": "react-scripts build && react-snapshot",
+    // "build": "react-scripts build && react-snapshot",
+    "build": "react-scripts build",
     "clean": "rm -rf build/*",
     "start:dev": "node config/webpack-dev-server.js",
     "start:prod": "npm build; serve build",

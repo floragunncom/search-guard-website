@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render } from 'react-snapshot';
+// import { render } from 'react-snapshot';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import deLocaleData from 'react-intl/locale-data/de';
 import esLocaleData from 'react-intl/locale-data/es';
