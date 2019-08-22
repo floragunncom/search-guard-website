@@ -5,8 +5,8 @@ import NavBar from '../../components/NavBar/NavBar';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-import quote from '../../images/quote-up.svg';
-import infoArrowBack from '../../images/info-arrow-back.svg';
+// import quote from '../../images/quote-up.svg';
+// import infoArrowBack from '../../images/info-arrow-back.svg';
 import iconGoogle from '../../images/icon-google-loud.svg';
 import iconTwitter from '../../images/icon-tw-loud.svg';
 import iconY from '../../images/icon-y-loud.svg';
@@ -24,6 +24,8 @@ class BlogPostArticle extends Component {
 
   componentDidMount() {
     const content = this.props.location.state.content;
+    const posts = this.props.location.state.posts;
+    console.log('posts ', posts )
     const documentContent = content.postContent;
     if (content) {
       this.setState({ content, documentContent });
@@ -125,19 +127,19 @@ class BlogPostArticle extends Component {
             <div className="blogpost-sidebar-title">share</div>
             <div className="blogpost-sidebar-icons-container">
               <div className="blogpost-sidebar-icon">
-                <img src={iconFb} />
+                <img src={iconFb} alt="icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconTwitter} />
+                <img src={iconTwitter} alt="icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconIn} />
+                <img src={iconIn} alt="icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconY} />
+                <img src={iconY} alt="icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconGoogle} />
+                <img src={iconGoogle} alt="icon" />
               </div>
             </div>
           </div>

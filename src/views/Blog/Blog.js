@@ -37,7 +37,7 @@ const Blog = () => {
         {currentPosts.map((post, index) => {
           return (
             <div className="col s12 l6 blogpost-column-wrapper">
-              <BlogPost key={index} post={post} />
+              <BlogPost key={index} post={post} posts={posts} />
             </div>
           );
         })}
