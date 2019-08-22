@@ -1,4 +1,5 @@
 import React from 'react';
+import * as ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 // import { render } from 'react-snapshot';
 import { addLocaleData, IntlProvider } from 'react-intl';
@@ -17,7 +18,7 @@ const getLanguage = () => {
 const locale = getLanguage() || 'en';
 const messages = Translations[locale];
 
-render(
+ReactDOM.render (
   <IntlProvider locale={locale} key={locale} messages={messages}>
     <Router onUpdate={() => window.scrollTo(0, 0)}>
       <Routes />
