@@ -14,15 +14,17 @@ const Blog = () => {
   const [postsPerPage] = useState(10);
 
   useEffect(() => {
+    setLoading(true);
     const fetchPosts = async () => {
-      setLoading(true);
       const fetch = await client.getEntries({ content_type: 'post', 'order':'sys.createdAt' }).then(response => {
+        console.log('response', response)
         setPosts(response.items);
       });
       setLoading(false);
     };
-
+    
     fetchPosts();
+
   }, []);
 
   const indexOfLastPost = currentPage * postsPerPage;
