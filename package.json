@@ -8,6 +8,7 @@
     "@contentful/rich-text-types": "^13.1.0",
     "contentful": "^7.5.0",
     "font-awesome": "^4.7.0",
+    "lunr": "^2.3.6",
     "markdown-to-jsx": "^6.10.3",
     "materialize-css": "^1.0.0-rc.2",
     "prop-types": "^15.7.2",
