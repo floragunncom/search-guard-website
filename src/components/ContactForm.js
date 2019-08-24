@@ -2,94 +2,117 @@ import React, { Component } from 'react';
 import './ContactForm.scss';
 import Button from '../components/Button/Button';
 import DropDown from '../components/DropDown/DropDown';
+import { throws } from 'assert';
 
 class ContactForm extends React.Component {
-  state = {
-    firstName: '',
-    lastName: '',
-    jobTitle: '',
-    company: '',
-    address: '',
-    zipcode: '',
-    city: '',
-    email: '',
-    phoneNumber: '',
-    website: '',
-    country: '',
-    version: '',
-    stage: '',
-    message: '',
-    newsletterCheck: false
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      firstName: '',
+      lastName: '',
+      jobTitle: '',
+      company: '',
+      address: '',
+      zipcode: '',
+      city: '',
+      email: '',
+      phoneNumber: '',
+      website: '',
+      country: '',
+      version: '',
+      stage: '',
+      message: '',
+      newsletterCheck: false,
+    };
   }
 
-  onFirstNameChange = (event) => {
-    const firstName = event.target.value;
-    this.setState({ firstName });
-  }
+  // onFirstNameChange = event => {
+  //   const firstName = event.target.value;
+  //   this.setState({ firstName });
+  // };
 
-  onLastNameChange = (event) => {
-    const lastName = event.target.value;
-    this.setState({ lastName });
-  }
+  // onLastNameChange = event => {
+  //   const lastName = event.target.value;
+  //   this.setState({ lastName });
+  // };
 
-  onJobTitleChange = (event) => {
-    const jobTitle = event.target.value;
-    this.setState({ jobTitle });
-  }
+  // onJobTitleChange = event => {
+  //   const jobTitle = event.target.value;
+  //   this.setState({ jobTitle });
+  // };
 
-  onCompanyChange = (event) => {
-    const company = event.target.value;
-    this.setState({ company });
-  }
+  // onCompanyChange = event => {
+  //   const company = event.target.value;
+  //   this.setState({ company });
+  // };
 
-  onCityChange = (event) => {
-    const city = event.target.value;
-    this.setState({ city });
-  }
+  // onCityChange = event => {
+  //   const city = event.target.value;
+  //   this.setState({ city });
+  // };
 
-  onZipcodeChange = (event) => {
-    const zipcode = event.target.value;
-    this.setState({ zipcode });
-  }
+  // onZipcodeChange = event => {
+  //   const zipcode = event.target.value;
+  //   this.setState({ zipcode });
+  // };
 
-  onAddressChange = (event) => {
-    const address = event.target.value;
-    this.setState({ address });
-  }
+  // onAddressChange = event => {
+  //   const address = event.target.value;
+  //   this.setState({ address });
+  // };
 
-  onEmailChange = (event) => {
-    const email = event.target.value;
-    this.setState({ email });
-  }
+  // onEmailChange = event => {
+  //   const email = event.target.value;
+  //   this.setState({ email });
+  // };
 
-  onPhoneNumberChange = (event) => {
-    const phoneNumber = event.target.value;
-    this.setState({ phoneNumber });
-  }
+  // onPhoneNumberChange = event => {
+  //   const phoneNumber = event.target.value;
+  //   this.setState({ phoneNumber });
+  // };
 
-  onMessageChange = (event) => {
-    const message = event.target.value;
-    this.setState({ message });
-  }
+  // onMessageChange = event => {
+  //   const message = event.target.value;
+  //   this.setState({ message });
+  // };
 
-  onWebsiteChange = (event) => {
-    const website = event.target.value;
-    this.setState({ website });
-  }
-  onCountryChange = (country) => {
-    this.setState({ country });
-  }
+  // onWebsiteChange = event => {
+  //   const website = event.target.value;
+  //   this.setState({ website });
+  // };
+  // onCountryChange = country => {
+  //   this.setState({ country });
+  // };
 
-  onElasticsearchVersionChange = (version) => {
-    this.setState({ version });
-  }
+  // onElasticsearchVersionChange = version => {
+  //   this.setState({ version });
+  // };
 
-  onStageChange = (stage) => {
-    this.setState({ stage });
+  // onStageChange = stage => {
+  //   this.setState({ stage });
+  // };
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const data = [...new FormData(event.target)].reduce((o, [k, v]) => {
+      o[k] = v;
+      return o;
+    }, {});
+    
+    fetch('http://localhost:3000/', {
+      method: 'POST',
+      "headers": {
+        "content-type": "multipart/form-data; boundary=---011000010111000001101001"
+      },
+      body: data,
+    });
+
+    this.setState({ ...this.state });
+    window.location.reload();
   }
 
   render() {
-    console.log('this.state', this.state)
     return (
       <div className="row contact-wrapper">
         <div className="col s12 l4" id="contact">
@@ -117,13 +140,19 @@ class ContactForm extends React.Component {
               <br /> david.bennett@exceleratesystems.net
             </p>
             <p className="company-information-text">
-              France<br /> Excelerate Systems France<br /> Les Bureaux du Lac II, Rue Robert
-              Caumont, Imm P<br /> 33049 Bordeaux<br />
+              France
+              <br /> Excelerate Systems France
+              <br /> Les Bureaux du Lac II, Rue Robert Caumont, Imm P<br />{' '}
+              33049 Bordeaux
+              <br />
               aadel.benyoussef@exceleratesystems.net
             </p>
             <p className="company-information-text">
-              South America<br /> Excelerate Systems S de R.L. de C.V.<br /> Córdoba 42,
-              Roma Norte, Cuauhtémoc, C.P.<br /> 06700, Ciudad de México<br />
+              South America
+              <br /> Excelerate Systems S de R.L. de C.V.
+              <br /> Córdoba 42, Roma Norte, Cuauhtémoc, C.P.
+              <br /> 06700, Ciudad de México
+              <br />
               victor.pichardo@exceleratesystems.net
             </p>
           </div>
@@ -134,15 +163,16 @@ class ContactForm extends React.Component {
               <div className="contact-information-headline">
                 contact information
               </div>
-              <form>
+              <form onSubmit={this.handleSubmit}>
                 <div class="input-field col s12 m6">
                   <input
                     id="first_name"
+                    name="first_name"
                     type="text"
                     class="validate"
                     required=""
                     aria-required="true"
-                    onChange={event => this.onFirstNameChange(event)}
+                    // onChange={event => this.onFirstNameChange(event)}
                   />
                   <label
                     for="first_name"
@@ -155,9 +185,10 @@ class ContactForm extends React.Component {
                 <div class="input-field col s12 m6">
                   <input
                     id="last_name"
+                    name="last_name"
                     type="text"
                     class="validate input-field-contact"
-                    onChange={event => this.onLastNameChange(event)}
+                    // onChange={event => this.onLastNameChange(event)}
                   />
                   <label for="last_name" class="input-field-label">
                     Last Name
@@ -166,9 +197,10 @@ class ContactForm extends React.Component {
                 <div class="input-field col s12 m6">
                   <input
                     id="company"
+                    name="company"
                     type="text"
                     class="validate input-field-contact"
-                    onChange={event => this.onCompanyChange(event)}
+                    // onChange={event => this.onCompanyChange(event)}
                   />
                   <label for="company" class="input-field-label">
                     Company
@@ -177,9 +209,10 @@ class ContactForm extends React.Component {
                 <div class="input-field col s12 m6">
                   <input
                     id="address"
+                    name="address"
                     type="text"
                     class="validate input-field-contact"
-                    onChange={event => this.onAddressChange(event)}
+                    // onChange={event => this.onAddressChange(event)}
                   />
                   <label for="address" class="input-field-label">
                     Address
@@ -188,9 +221,10 @@ class ContactForm extends React.Component {
                 <div class="input-field col s12 m6">
                   <input
                     id="zipcode"
+                    name="zip"
                     type="text"
                     class="validate input-field-contact"
-                    onChange={event => this.onZipcodeChange(event)}
+                    // onChange={event => this.onZipcodeChange(event)}
                   />
                   <label for="zipcode" class="input-field-label">
                     Zipcode
@@ -199,9 +233,10 @@ class ContactForm extends React.Component {
                 <div class="input-field col s12 m6">
                   <input
                     id="city"
+                    name="city"
                     type="text"
                     class="validate input-field-contact"
-                    onChange={event => this.onCityChange(event)}
+                    // onChange={event => this.onCityChange(event)}
                   />
                   <label for="city" class="input-field-label">
                     City
@@ -210,9 +245,10 @@ class ContactForm extends React.Component {
                 <div class="input-field col s12 m6">
                   <input
                     id="website"
+                    name="website"
                     type="text"
                     class="validate input-field-contact"
-                    onChange={event => this.onWebsiteChange(event)}
+                    // onChange={event => this.onWebsiteChange(event)}
                   />
                   <label for="website" class="input-field-label">
                     Website
@@ -221,9 +257,10 @@ class ContactForm extends React.Component {
                 <div class="input-field col s12 m6">
                   <input
                     id="email2"
+                    name="email"
                     type="email"
                     className="validate"
-                    onChange={event => this.onEmailChange(event)}
+                    // onChange={event => this.onEmailChange(event)}
                   />
                   <label htmlFor="email2" id="email-input">
                     Email address
@@ -237,9 +274,10 @@ class ContactForm extends React.Component {
                 <div class="input-field col s12 m6">
                   <input
                     id="job_title"
+                    name="job_position"
                     type="text"
                     class="validate input-field-contact"
-                    onChange={event => this.onJobTitleChange(event)}
+                    // onChange={event => this.onJobTitleChange(event)}
                   />
                   <label for="job_title" class="input-field-label">
                     Job title (optional)
@@ -248,9 +286,10 @@ class ContactForm extends React.Component {
                 <div class="input-field col s12 m6">
                   <input
                     id="phone_number"
+                    name="phone"
                     type="text"
                     class="validate input-field-contact"
-                    onChange={event => this.onPhoneNumberChange(event)}
+                    // onChange={event => this.onPhoneNumberChange(event)}
                   />
                   <label for="phone_number" class="input-field-label">
                     Phone number (optional)
@@ -268,66 +307,71 @@ class ContactForm extends React.Component {
                     'Ghana',
                   ]}
                   onDropDownOptionChange={this.onCountryChange}
+                  name="country"
                 />
+                <div className="contact-tech-wrapper">
+                  <div className="contact-information-headline">
+                    technical information
+                  </div>
+                  <DropDown
+                    dropDownCategory="Elasticsearch version"
+                    dropDownOptions={['1', '2', '3', '4', '5']}
+                    onDropDownOptionChange={this.onElasticsearchVersionChange}
+                  />
+                  <DropDown
+                    dropDownCategory="Current stage"
+                    dropDownOptions={['1', '2', '3', '4', '5']}
+                    onDropDownOptionChange={this.onStageChange}
+                  />
+                </div>
+                <div className="contact-message-wrapper">
+                  <div className="contact-information-headline">
+                    your message
+                  </div>
+                  <div class="input-field col s12">
+                    <input
+                      id="your_message"
+                      name="message"
+                      type="text"
+                      class="validate input-field-contact"
+                      // onChange={event => this.onMessageChange(event)}
+                    />
+                    <label for="your_message" class="input-field-label">
+                      Message
+                    </label>
+                  </div>
+                </div>
+                <div className="contact-newsletter-wrapper">
+                  <div className="contact-information-headline">newsletter</div>
+                  <div
+                    className="privacy-policy-checkbox"
+                    onClick={() =>
+                      this.setState({
+                        newsletterCheck: !this.state.newsletterCheck,
+                      })
+                    }
+                    >
+                    <input
+                      type="checkbox"
+                      // name="newsletter"
+                      class="filled-in"
+                      checked={this.state.newsletterCheck}
+                      />
+                    <span>
+                      {' '}
+                      Send me updates about Serach Guard products and services
+                    </span>
+                  </div>
+                  <div class="privacy-policy">
+                    This form collects your name and email. PLease take a look in
+                    our privacy policy for a better understanding on how we protect
+                    and manage your submitted data.
+                  </div>
+                  <div className="cta-wrapper">
+                    <Button style="default-button" text={'send message'} />
+                  </div>
+                </div>
               </form>
-            </div>
-            <div className="contact-tech-wrapper">
-              <div className="contact-information-headline">
-                technical information
-              </div>
-              <DropDown
-                dropDownCategory="Elasticsearch version"
-                dropDownOptions={['1', '2', '3', '4', '5']}
-                onDropDownOptionChange={this.onElasticsearchVersionChange}
-              />
-              <DropDown
-                dropDownCategory="Current stage"
-                dropDownOptions={['1', '2', '3', '4', '5']}
-                onDropDownOptionChange={this.onStageChange}
-              />
-            </div>
-            <div className="contact-message-wrapper">
-              <div className="contact-information-headline">your message</div>
-              <div class="input-field col s12">
-                <input
-                  id="your_message"
-                  type="text"
-                  class="validate input-field-contact"
-                  onChange={event => this.onMessageChange(event)}
-                />
-                <label for="your_message" class="input-field-label">
-                  Message
-                </label>
-              </div>
-            </div>
-            <div className="contact-newsletter-wrapper">
-              <div className="contact-information-headline">newsletter</div>
-              <div
-                className="privacy-policy-checkbox"
-                onClick={() =>
-                  this.setState({
-                    newsletterCheck: !this.state.newsletterCheck,
-                  })
-                }
-              >
-                <input
-                  type="checkbox"
-                  class="filled-in"
-                  checked={this.state.newsletterCheck}
-                />
-                <span>
-                  {' '}
-                  Send me updates about Serach Guard products and services
-                </span>
-              </div>
-              <div class="privacy-policy">
-                This form collects your name and email. PLease take a look in
-                our privacy policy for a better understanding on how we protect
-                and manage your submitted data.
-              </div>
-              <div className="cta-wrapper">
-                <Button style="default-button" text={'send message'} />
-              </div>
             </div>
           </div>
         </div>

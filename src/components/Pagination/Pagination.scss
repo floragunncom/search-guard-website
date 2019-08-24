@@ -1,0 +1,17 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 128px 32px;
+}
+
+li.pagination-number {
+  a {
+    padding: 14px 18px;
+    color: $green;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

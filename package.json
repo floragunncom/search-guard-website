@@ -8,6 +8,8 @@
     "@contentful/rich-text-types": "^13.1.0",
     "contentful": "^7.5.0",
     "font-awesome": "^4.7.0",
+    "lunr": "^2.3.6",
+    "markdown-to-jsx": "^6.10.3",
     "materialize-css": "^1.0.0-rc.2",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
@@ -23,7 +25,7 @@
   "scripts": {
     "heroku-postbuild": "npm run build",
     "start": "react-scripts start",
-    "build": "react-scripts build && react-snapshot",
+    "build": "react-scripts build",
     "clean": "rm -rf build/*",
     "start:dev": "node config/webpack-dev-server.js",
     "start:prod": "npm build; serve build",

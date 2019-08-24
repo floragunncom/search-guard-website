@@ -52,16 +52,15 @@
         border-radius: 50%;
       }
       
-      .hidden {
-        opacity: 1;
-      }
+      // .hidden {
+      //   opacity: 1;
+      // }
       
-      .content{
+      .content {
         position: relative;
         top: 7px;
         width: 450px;
         padding: 20px;
-        // opacity: 1;
         transition: opacity 500ms;
         h2{
           margin-top: -45px;
@@ -162,7 +161,7 @@
     margin-left: 20px;
     
     .content {
-      width: calc(100vw - 100px);
+      width: 80vw;
     }
     
     &:nth-child(even) .content {

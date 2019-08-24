@@ -33,7 +33,10 @@
   font-size: 16px;
   line-height: 19px;
   padding: 16px;
+  word-break: break-all;
+  overflow: scroll;
 }
+
 
 .blogpost-quote-wrapper {
   margin: 26px 30px 30px -15vw;
@@ -174,15 +177,14 @@
   }
 }
 
-.blogpost-link {
-  text-transform: uppercase;
-  font-weight: bold;
+a.blogpost-link {
+  // text-transform: uppercase;
+  // font-weight: bold;
   align-items: center;
+  text-decoration: underline;
   margin: 32px 0px;
   text-align: -webkit-center;
-  a {
-    color: $green;
-  };
+  color: $green;
 }
 
 .blogpost-arrow-back {
@@ -211,4 +213,22 @@
 .italic {
   font-style: italic;
   display: inline;
+}
+
+.blogpost-listitem {
+  // margin: 16px;
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  &:before {
+    content: '•';
+    margin-left: -20px;
+    padding-right: 13px;
+  }
 }

@@ -96,8 +96,13 @@ class TlsGenerator extends Component {
   handleSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
-    console.log('data', data.get('host1'))
+    
+    fetch('https://localhost:3000/', {
+      method: 'POST',
+      body: data,
+    })
   }
+
   render() {
     return (
       <div>

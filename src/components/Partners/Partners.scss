@@ -1,0 +1,49 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.company-partners-wrapper {
+  background-color: $grey;
+  padding: 128px 0px;
+  @media only screen and (max-width: $tabletBig) {
+    padding:  64px 32px;
+  };
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px 16px 24px;
+  };
+}
+
+.company-partners-headline {
+  margin-bottom: 64px;
+  color: $darkBlue;
+  font-size: 48px;
+  line-height: 57px;
+  text-align: center;
+  font-weight: 300;
+  @media only screen and (max-width: $tabletBig) {
+    margin-bottom: 32px;
+    font-size: 36px;
+    line-height: 43px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 24px;
+    line-height: 28px;
+  };
+}
+
+.company-partners-pic,
+.company-partners-pic-mobile {
+  img {
+    height: auto;
+    max-width: 100%;
+    @media only screen and (max-width: $mobile) {
+      background-color: $white;
+      width: 173px;
+      height: 80px;
+      margin-bottom: 16px;
+    };
+  };
+}
+
+.company-partners-pic-mobile {
+  text-align: center;
+}

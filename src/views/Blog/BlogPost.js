@@ -1,51 +1,55 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './BlogPost.scss';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 
-class BlogPost extends Component {
-  render() {
-    const post = this.props.post.fields;
-    const content = post.postContent.content;
-    const relatedPosts = this.props.relatedPosts;
-    let teaserText = null;
-    content.forEach((paragraph) => {
-      if (paragraph.nodeType === "paragraph") {
-        teaserText = paragraph.content[0].value.slice(0, 80);
-        return;
-      }
-    });
-    return (
-      <div className="blog-wrapper">
-        <Link to={{pathname: `blog/${post.slug}`, state: {content: post, relatedPosts: relatedPosts}}} className="blog-link-wrapper">
-          <div className="blog-image-wrapper">
-            <img
-              src={post.postImage.fields.file.url}
-              className="blogpost-feed-image"
-            />
-          </div>
-          <div className="blog-text-content">
-            <div className="blog-headline">
-              {post.title}
-            </div>
-            <div className="blog-info-headline">
-              {post.author} || {post.date}
-            </div>
-            <div className="blog-paragraph">{teaserText} ...</div>
-            <div className="blog-info-link">
-              read more
-              <img src={infoArrowForward} className="blog-arrow" />
-            </div>
-          </div>
-        </Link>
-      </div>
-    );
+const BlogPost = ({ post, posts }) => {
+  const blogPost = post.fields;
+  let infoTextLength = 165;
+  while (blogPost.postContent[infoTextLength] !== ' ') {
+    infoTextLength -= 1;
   }
-}
 
-BlogPost.propTypes = {
-  post: PropTypes.object,
+  let BlogPostContent = undefined;
+  if (blogPost !== undefined) {
+    BlogPostContent = (
+      <Link
+        to={{ pathname: `blog/${blogPost.slug}`, state: { content: blogPost, posts: posts } }}
+        className="blog-link-wrapper"
+      >
+        <div className="blog-image-wrapper">
+          <img
+            src={blogPost.postImage.fields.file.url}
+            className="blogpost-feed-image"
+          />
+        </div>
+        <div className="blog-text-content">
+          <div className="blog-headline">
+            {blogPost.title.length < 46
+              ? blogPost.title
+              : `${blogPost.title.substring(0, 45)}...`}
+          </div>
+          <div className="blog-info-headline">
+            {blogPost.author} || {blogPost.date}
+          </div>
+          <div className="blog-paragraph">
+            {blogPost.postContent.substring(0, infoTextLength)} ...
+          </div>
+          <div className="blog-info-link">
+            <span>read more</span>
+            <img src={infoArrowForward} className="blog-arrow" />
+          </div>
+        </div>
+      </Link>
+    )
+  }
+
+  return (
+    <div className="blog-wrapper">
+      {BlogPostContent}
+    </div>
+  );
 };
 
 export default BlogPost;
