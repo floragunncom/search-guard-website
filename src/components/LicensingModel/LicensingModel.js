@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './LicensingModel.scss';
 import TableEditions from '../../components/TableEditions/TableEditions';
-import enterprise from '../../images/icon-enterprise-green.svg';
-import compliance from '../../images/icon-compliance-red.svg';
-import community from '../../images/icon-community-gold.svg';
+import enterprise from '../../images/icon-enterprise.svg';
+import compliance from '../../images/icon-compliance.svg';
+import community from '../../images/icon-community.svg';
 import academic from '../../images/icon-academic.svg';
 import custom from '../../images/icon-custom.svg';
 import Button from '../Button/Button';
@@ -55,11 +55,7 @@ class LicensingModel extends Component {
             <div className="col s12 l4 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img
-                    src={community}
-                    alt="icon"
-                    className="licensing-icon"
-                  />
+                  <img src={community} alt="icon" className="licensing-icon" />
                 </div>
                 <div className="licensing-editions-headline community-border">
                   Community edition
@@ -68,26 +64,24 @@ class LicensingModel extends Component {
                   <div className="licensing-editions-text">
                     Covers all your basic security needs
                   </div>
-                  <div className="licensing-editions-text">
-                    Free of charge
-                  </div>
+                  <div className="licensing-editions-text">Free of charge</div>
                   <div className="licensing-editions-text">
                     Integrated with the entire Elastic Stack
                   </div>
                 </div>
                 <div className="licensing-editions-button">
-                  <Button text="get a quote" style="ghost-link" color="#C5AF2B" />
+                  <Button
+                    text="get a quote"
+                    style="ghost-link"
+                    color="#00C9B7"
+                  />
                 </div>
               </div>
             </div>
             <div className="col s12 l4 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img
-                    src={enterprise}
-                    alt="icon"
-                    className="licensing-icon"
-                  />
+                  <img src={enterprise} alt="icon" className="licensing-icon" />
                 </div>
                 <div className="licensing-editions-headline enterprise-border">
                   Enterprise edition
@@ -106,18 +100,17 @@ class LicensingModel extends Component {
                 </div>
                 <div className="licensing-editions-button">
                   <Button
-                    text="get a quote" style="ghost-link" color="#1A8542" />
+                    text="get a quote"
+                    style="ghost-link"
+                    color="#009688"
+                  />
                 </div>
               </div>
             </div>
             <div className="col s12 l4 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img
-                    src={compliance}
-                    alt="icon"
-                    className="licensing-icon"
-                  />
+                  <img src={compliance} alt="icon" className="licensing-icon" />
                 </div>
                 <div className="licensing-editions-headline compliance-border">
                   Compliance edition
@@ -134,7 +127,11 @@ class LicensingModel extends Component {
                   </div>
                 </div>
                 <div className="licensing-editions-button">
-                  <Button text="install now" style="ghost-link" color="#B81F3F" />
+                  <Button
+                    text="install now"
+                    style="ghost-link"
+                    color="#009688"
+                  />
                 </div>
               </div>
               {infoButton}
@@ -149,11 +146,7 @@ class LicensingModel extends Component {
             <div className="col s12 l6 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img
-                    src={academic}
-                    alt="icon"
-                    className="licensing-icon"
-                  />
+                  <img src={academic} alt="icon" className="licensing-icon" />
                 </div>
                 <div className="licensing-editions-headline academic-border">
                   Academic & Scientific edition
@@ -162,18 +155,17 @@ class LicensingModel extends Component {
                   <div className="licensing-editions-text">
                     Etiam vitae dolor eu felis porttitor
                   </div>
+                  <div className="licensing-editions-text">In quam neque</div>
                   <div className="licensing-editions-text">
-                    In quam neque
-                  </div>
-                  <div className="licensing-editions-text">
-                    Quisque ut eros sit amet ex convallis condimentum lobortis eu ante
+                    Quisque ut eros sit amet ex convallis condimentum lobortis
+                    eu ante
                   </div>
                 </div>
                 <div className="licensing-editions-button">
                   <Button
                     text="find out more"
                     style="ghost-link"
-                    color="#63737E"
+                    color="#246E94"
                   />
                 </div>
               </div>
@@ -181,11 +173,7 @@ class LicensingModel extends Component {
             <div className="col s12 l6 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img
-                    src={custom}
-                    alt="icon"
-                    className="licensing-icon"
-                  />
+                  <img src={custom} alt="icon" className="licensing-icon" />
                 </div>
                 <div className="licensing-editions-headline custom-border">
                   Custom edition
@@ -206,7 +194,7 @@ class LicensingModel extends Component {
                     text="find out more"
                     style="ghost-link"
                     color="#246E94"
-                    />
+                  />
                 </div>
               </div>
               {infoButton}

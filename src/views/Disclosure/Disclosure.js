@@ -75,7 +75,6 @@ const Disclosure = () => {
             <div className="disclosure-text">
               Source code of the following public GitHub repos:
               <br />
-              <br />
               <ul className="disclosure-list">
                 <li>
                   <a href="">Search Guard</a>
@@ -109,7 +108,6 @@ const Disclosure = () => {
                 <li>The Search Guard Documentation Website</li>
                 <li>Private github repos</li>
               </ul>
-              <br />
               <br />
               In the interest of the safety of our users, staff, the Internet at
               large and you as a security researcher, the following test types

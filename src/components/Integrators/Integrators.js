@@ -2,7 +2,9 @@ import React from 'react';
 import sieMonster from '../../images/sie-monster.svg';
 import pivotal from '../../images/pivotal.svg';
 import wuerthPhoenix from '../../images/wuerth-phoenix.svg';
-import redHat from '../../images/red-hat.svg';
+import redHat from '../../images/redHatNew.svg';
+import ibm from '../../images/IBM.svg';
+import objectRocket from '../../images/objectRocket.svg';
 import mitratech from '../../images/mitratech.svg';
 import siren from '../../images/siren.svg';
 import kubedb from '../../images/kubedb.svg';
@@ -12,11 +14,25 @@ import './Integrators.scss';
 const Integrators = () => {
   const integrators = [
     {
+      headline: 'IBM',
+      text:
+        'IBM uses Search Guard in the StoredIQ and Spectrum Conductor products. and two more words',
+      pic: ibm,
+      link: 'https://www.ibm.com/',
+    },
+    {
       headline: 'Red Hat® OpenShift',
       text:
         'Red Hat® OpenShift is a container application platform that brings docker and Kubernetes to the enterprise. OpenShift includes Kubernetes for container orchestration and management.',
       pic: redHat,
       link: 'https://www.google.com',
+    },
+    {
+      headline: 'ObjectRocket',
+      text:
+        'ObjectRocket uses Search Guard to secure their next-generation Kubernetes-based managed Elasticsearch service.',
+      pic: objectRocket,
+      link: 'https://www.objectrocket.com/managed-elasticsearch/',
     },
     {
       headline: 'Würth Phoenix',
@@ -78,7 +94,7 @@ const Integrators = () => {
                 </div>
                 <div className="integrators-content-text">{profile.text}</div>
                 <div className="integrators-content-button">
-                  <Button text="visit website" />
+                  <Button text="visit website" link={profile.link} />
                 </div>
               </div>
             </div>

@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import Markdown from 'markdown-to-jsx';
-import './BlogPostArticle.scss';
 import NavBar from '../../components/NavBar/NavBar';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-// import quote from '../../images/quote-up.svg';
-// import infoArrowBack from '../../images/info-arrow-back.svg';
+import BlogBox from '../../components/BlogBox/BlogBox';
+import Blockquote from '../../components/Blockquote/Blockquote';
+import infoArrowBack from '../../images/info-arrow-back.svg';
 import iconGoogle from '../../images/icon-google-loud.svg';
 import iconTwitter from '../../images/icon-tw-loud.svg';
 import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
+import './BlogPostArticle.scss';
 
 class BlogPostArticle extends Component {
   constructor() {
@@ -92,16 +93,14 @@ class BlogPostArticle extends Component {
             className: 'blogpost-listitem',
           },
         },
-        blockquote: {
-          component: 'div',
+        img: {
+          component: 'img',
           props: {
-            className: 'blogpost-quote-wrapper',
-
-        //     <div className="blogpost-quote-wrapper">
-        //     <img src={quote} className="blogpost-quote-image" />
-        //     <div className="blogpost-quote-text">{children}</div>
-        // </div>
+            className: 'blogpost-image-wrapper, blogpost-image',
           },
+        },
+        blockquote: {
+          component: Blockquote,
         },
       },
     };
@@ -142,16 +141,14 @@ class BlogPostArticle extends Component {
               </div>
             </div>
           </div>
-          <div className="col s12 blogpost-recommended-headline">
-            Other posts you may like
-          </div>
-          <div className="col s12 l4" />
-          {/* <div className="col s12 blogpost-link">
-            <a href="/blog">
-              <img src={infoArrowBack} className="blogpost-arrow-back" />
-              back to blog
-            </a>
-          </div> */}
+        </div>
+        <BlogBox headline={'Other posts you may like'} />
+        <div className="col s12 l4" />
+        <div className="col s12 blogpost-link">
+          <a href="/blog">
+            <img src={infoArrowBack} className="blogpost-arrow-back" />
+            <span>back to blog</span>
+          </a>
         </div>
         <PreFooter />
         <Footer />

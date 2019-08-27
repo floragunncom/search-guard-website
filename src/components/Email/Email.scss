@@ -1,11 +1,11 @@
 @import '../../styles/Colors.scss';
 @import '../../styles/Breakpoints';
 
-#email-input {
+#email-input, #search {
   color: $navyBlueActive;
 }
 
-input#email {
+input#email, input#search {
   padding: 0px;
   border-bottom: 2px solid $navyBlue !important;
   @media only screen and (max-width: $mobile) {
@@ -15,7 +15,7 @@ input#email {
 
 input.invalid[type=email]:not(.browser-default),
 input[type=email]:not(.browser-default):focus:not([readonly]),
-  input.valid[type=email]:not(.browser-default) {
+input.valid[type=email]:not(.browser-default) {
   -webkit-box-shadow: unset;
   box-shadow: unset;
 }

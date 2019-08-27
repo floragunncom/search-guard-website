@@ -58,16 +58,14 @@ const Video = props => {
     );
   }
   return (
-    <div id="videos">
+    <div id="videos" className="hide-on-med-and-down">
       <div
         className={
           props.playlist ? 'video-wrapper video-wrapper-long' : 'video-wrapper'
         }
       >
         <div className="row">
-          <div className="video-headline">
-            Instructional videos
-          </div>
+          <div className="video-headline">Instructional videos</div>
           {/* <div className="video-description">
             <div className="video-description-video">
               <iframe

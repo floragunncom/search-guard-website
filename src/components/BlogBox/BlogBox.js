@@ -1,13 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import BlogPost from '../../views/Blog/BlogPost';
+import client from '../../components/Client/Client';
+import Button from '../../components/Button/Button';
 import './BlogBox.scss';
 
-const Education = () => {
+const BlogBox = ({ intro, headline }) => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const fetch = await client
+        .getEntries({ content_type: 'post', order: 'sys.createdAt' })
+        .then(response => {
+          setPosts(response.items);
+        });
+    };
+    fetchPosts();
+  }, []);
+
+  let extraRow = undefined;
+  if (intro) {
+    extraRow = (
+      <div>
+        <div className="boxblog-posts">
+          {posts.slice(3, 6).map((post, index) => {
+            return <BlogPost key={index} post={post} />;
+          })}
+        </div>
+        <div className="blogbox-button">
+          <Button text="see more" link="/blog" />
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div id="blog">
-      <BlogPost />
+    <div className="boxblog-wrapper" id="blog">
+      <div className={intro ? 'boxblog-headline-intro' : 'boxblog-headline'}>
+        {headline}
+      </div>
+      <div className={intro ? "boxblog-posts" : "row boxblog-posts"}>
+        {posts.slice(0, 3).map((post, index) => {
+          return <BlogPost key={index} post={post} />;
+        })}
+      </div>
+      {extraRow}
     </div>
   );
 };
 
-export default Education;
+export default BlogBox;

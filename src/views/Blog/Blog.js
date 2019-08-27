@@ -95,9 +95,9 @@ const Blog = () => {
                 <div className="input-field col m8 offset-m2 s12 center">
                   <i className="material-icons prefix">search</i>
                   <input
-                    id="icon_prefix"
+                    id="search"
                     type="text"
-                    className="validate"
+                    className="validate dark-blue"
                     onChange={event => onSearchTermChange(event)}
                     placeholder="Search blog ..."
                   />
@@ -110,7 +110,7 @@ const Blog = () => {
           {currentPosts.map((post, index) => {
             return (
               <div className="col s12 l6 blogpost-column-wrapper">
-                <BlogPost key={index} post={post} posts={posts} />
+                <BlogPost key={index} post={post} intro />
               </div>
             );
           })}
@@ -151,13 +151,20 @@ const Blog = () => {
               No results for '{searchTerm}'
             </div>
           ) : (
-            searchResultPosts.map((post, index) => {
-              return (
-                <div className="col m12 l8 offset-l2 searchblogpost-wrapper">
-                  <SearchBlogPost key={index} post={post} />
-                </div>
-              );
-            })
+            <div>
+              <div className="searchblogpost-result-headline">
+                {searchResultPosts.length}{' '}
+                {searchResultPosts.length !== 1 ? 'results' : 'result'} found
+                for "{searchTerm}"
+              </div>
+              {searchResultPosts.map((post, index) => {
+                return (
+                  <div className="col m12 l8 offset-l2 searchblogpost-wrapper">
+                    <SearchBlogPost key={index} post={post} />
+                  </div>
+                );
+              })}
+            </div>
           )}
         </div>
       </div>

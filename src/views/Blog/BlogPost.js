@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './BlogPost.scss';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 
-const BlogPost = ({ post, posts }) => {
+const BlogPost = ({ post, intro }) => {
   const blogPost = post.fields;
   let infoTextLength = 165;
   while (blogPost.postContent[infoTextLength] !== ' ') {
@@ -15,7 +15,7 @@ const BlogPost = ({ post, posts }) => {
   if (blogPost !== undefined) {
     BlogPostContent = (
       <Link
-        to={{ pathname: `blog/${blogPost.slug}`, state: { content: blogPost, posts: posts } }}
+        to={{ pathname: `blog/${blogPost.slug}`, state: { content: blogPost } }}
         className="blog-link-wrapper"
       >
         <div className="blog-image-wrapper">
@@ -28,7 +28,7 @@ const BlogPost = ({ post, posts }) => {
           <div className="blog-headline">
             {blogPost.title.length < 46
               ? blogPost.title
-              : `${blogPost.title.substring(0, 45)}...`}
+              : `${blogPost.title.substring(0, 43)}...`}
           </div>
           <div className="blog-info-headline">
             {blogPost.author} || {blogPost.date}
@@ -46,7 +46,7 @@ const BlogPost = ({ post, posts }) => {
   }
 
   return (
-    <div className="blog-wrapper">
+    <div className={intro ? "blog-wrapper" : "blog-wrapper-intro"}>
       {BlogPostContent}
     </div>
   );

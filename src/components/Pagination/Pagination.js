@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Pagination.scss';
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
@@ -14,7 +15,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
         {pageNumbers.map(number => {
           return (
             <li key={number} className="pagination-number">
-              <a onClick={() => paginate(number)}>{number}</a>
+              <NavLink onClick={() => paginate(number)}>{number}</NavLink>
             </li>
           );
         })}

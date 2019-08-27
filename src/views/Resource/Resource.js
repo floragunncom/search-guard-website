@@ -51,7 +51,6 @@ const Resource = () => {
         rightButtonTarget="_blank"
       />
       <Faq />
-      <BlogBox />
       <div id="github">
         <Tile
           leftDark
@@ -66,6 +65,7 @@ const Resource = () => {
           leftButtonTarget="_blank"
         />
       </div>
+      <BlogBox intro headline={'Blog'} />
       <div id="whitePapers">
         <Tile
           leftDark={false}

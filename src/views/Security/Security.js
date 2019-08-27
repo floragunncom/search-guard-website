@@ -27,7 +27,8 @@ const Security = () => {
           <div className="security-text">
             Type Bits/KeyID Date User ID
             <br />
-            {/* pub 2048/51EDB2FE 2015/05/23 Search Guard <info/u0040search-guard.com><br /> */}
+            {'pub 2048/51EDB2FE 2015/05/23 Search Guard <infos@earch-guard.com>'}
+            <br />
             <br />
             -----BEGIN PGP PUBLIC KEY BLOCK-----
             <br />

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './ContactForm.scss';
+import { throws } from 'assert';
 import Button from '../components/Button/Button';
 import DropDown from '../components/DropDown/DropDown';
-import { throws } from 'assert';
 
 class ContactForm extends React.Component {
   constructor(props) {
@@ -95,23 +95,23 @@ class ContactForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const data = [...new FormData(event.target)].reduce((o, [k, v]) => {
-      o[k] = v;
-      return o;
-    }, {});
-    
+    const data = {};
+    const formElements = Array.from(event.target);
+    formElements.map(input => (data[input.name] = input.value));
+
+    // Log what our lambda function will receive
+    console.log(JSON.stringify(data));
     fetch('http://localhost:3000/', {
       method: 'POST',
       "headers": {
-        "content-type": "multipart/form-data; boundary=---011000010111000001101001"
+        "accept": "application/json; charset=utf-8",
+        "content-type": "application/json; charset=UTF-8",
       },
-      body: data,
+      body: JSON.stringify(data),
     });
-
-    this.setState({ ...this.state });
-    window.location.reload();
+    // window.location.reload();
   }
-
+  
   render() {
     return (
       <div className="row contact-wrapper">
@@ -159,160 +159,164 @@ class ContactForm extends React.Component {
         </div>
         <div className="col s12 l8" id="contact">
           <div className="contact-info-container">
-            <div className="contact-info-wrapper">
-              <div className="contact-information-headline">
-                contact information
-              </div>
-              <form onSubmit={this.handleSubmit}>
-                <div class="input-field col s12 m6">
-                  <input
-                    id="first_name"
-                    name="first_name"
-                    type="text"
-                    class="validate"
-                    required=""
-                    aria-required="true"
-                    // onChange={event => this.onFirstNameChange(event)}
-                  />
-                  <label
-                    for="first_name"
-                    class="input-field-label"
-                    data-error="Please type in the correct format!"
-                  >
-                    First Name
-                  </label>
+            <form onSubmit={this.handleSubmit}>
+              <div className="contact-info-wrapper">
+                <div className="contact-information-headline">
+                  contact information
                 </div>
-                <div class="input-field col s12 m6">
-                  <input
-                    id="last_name"
-                    name="last_name"
-                    type="text"
-                    class="validate input-field-contact"
-                    // onChange={event => this.onLastNameChange(event)}
-                  />
-                  <label for="last_name" class="input-field-label">
-                    Last Name
-                  </label>
-                </div>
-                <div class="input-field col s12 m6">
-                  <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    class="validate input-field-contact"
-                    // onChange={event => this.onCompanyChange(event)}
-                  />
-                  <label for="company" class="input-field-label">
-                    Company
-                  </label>
-                </div>
-                <div class="input-field col s12 m6">
-                  <input
-                    id="address"
-                    name="address"
-                    type="text"
-                    class="validate input-field-contact"
-                    // onChange={event => this.onAddressChange(event)}
-                  />
-                  <label for="address" class="input-field-label">
-                    Address
-                  </label>
-                </div>
-                <div class="input-field col s12 m6">
-                  <input
-                    id="zipcode"
-                    name="zip"
-                    type="text"
-                    class="validate input-field-contact"
-                    // onChange={event => this.onZipcodeChange(event)}
-                  />
-                  <label for="zipcode" class="input-field-label">
-                    Zipcode
-                  </label>
-                </div>
-                <div class="input-field col s12 m6">
-                  <input
-                    id="city"
-                    name="city"
-                    type="text"
-                    class="validate input-field-contact"
-                    // onChange={event => this.onCityChange(event)}
-                  />
-                  <label for="city" class="input-field-label">
-                    City
-                  </label>
-                </div>
-                <div class="input-field col s12 m6">
-                  <input
-                    id="website"
-                    name="website"
-                    type="text"
-                    class="validate input-field-contact"
-                    // onChange={event => this.onWebsiteChange(event)}
-                  />
-                  <label for="website" class="input-field-label">
-                    Website
-                  </label>
-                </div>
-                <div class="input-field col s12 m6">
-                  <input
-                    id="email2"
-                    name="email"
-                    type="email"
-                    className="validate"
-                    // onChange={event => this.onEmailChange(event)}
-                  />
-                  <label htmlFor="email2" id="email-input">
-                    Email address
-                  </label>
-                  <span
-                    className="helper-text"
-                    data-error="Please type in the correct format!"
-                    data-success="Valid format"
-                  />
-                </div>
-                <div class="input-field col s12 m6">
-                  <input
-                    id="job_title"
-                    name="job_position"
-                    type="text"
-                    class="validate input-field-contact"
-                    // onChange={event => this.onJobTitleChange(event)}
-                  />
-                  <label for="job_title" class="input-field-label">
-                    Job title (optional)
-                  </label>
-                </div>
-                <div class="input-field col s12 m6">
-                  <input
-                    id="phone_number"
-                    name="phone"
-                    type="text"
-                    class="validate input-field-contact"
-                    // onChange={event => this.onPhoneNumberChange(event)}
-                  />
-                  <label for="phone_number" class="input-field-label">
-                    Phone number (optional)
-                  </label>
-                </div>
-                <DropDown
-                  dropDownCategory="Country"
-                  dropDownOptions={[
-                    'Germany',
-                    'France',
-                    'Italy',
-                    'England',
-                    'United States',
-                    'Netherlands',
-                    'Ghana',
-                  ]}
-                  onDropDownOptionChange={this.onCountryChange}
-                  name="country"
-                />
-                <div className="contact-tech-wrapper">
-                  <div className="contact-information-headline">
-                    technical information
+                <div className="contact-info-input-fields">
+                  <div className="input-field col s12 m6">
+                    <input
+                      id="first_name"
+                      name="first_name"
+                      type="text"
+                      className="validate"
+                      required=""
+                      aria-required="true"
+                      // onChange={event => this.onFirstNameChange(event)}
+                    />
+                    <label
+                      htmlFor="first_name"
+                      className="input-field-label"
+                      data-error="Please type in the correct format!"
+                    >
+                      First Name
+                    </label>
                   </div>
+                  <div className="input-field col s12 m6">
+                    <input
+                      id="last_name"
+                      name="last_name"
+                      type="text"
+                      className="validate input-field-contact"
+                      // onChange={event => this.onLastNameChange(event)}
+                    />
+                    <label htmlFor="last_name" className="input-field-label">
+                      Last Name
+                    </label>
+                  </div>
+                  <div className="input-field col s12 m6">
+                    <input
+                      id="company"
+                      name="company"
+                      type="text"
+                      className="validate input-field-contact"
+                      // onChange={event => this.onCompanyChange(event)}
+                    />
+                    <label htmlFor="company" className="input-field-label">
+                      Company
+                    </label>
+                  </div>
+                  <div className="input-field col s12 m6">
+                    <input
+                      id="address"
+                      name="address"
+                      type="text"
+                      className="validate input-field-contact"
+                      // onChange={event => this.onAddressChange(event)}
+                    />
+                    <label htmlFor="address" className="input-field-label">
+                      Address
+                    </label>
+                  </div>
+                  <div className="input-field col s12 m6">
+                    <input
+                      id="zipcode"
+                      name="zip"
+                      type="text"
+                      className="validate input-field-contact"
+                      // onChange={event => this.onZipcodeChange(event)}
+                    />
+                    <label htmlFor="zipcode" className="input-field-label">
+                      Zipcode
+                    </label>
+                  </div>
+                  <div className="input-field col s12 m6">
+                    <input
+                      id="city"
+                      name="city"
+                      type="text"
+                      className="validate input-field-contact"
+                      // onChange={event => this.onCityChange(event)}
+                    />
+                    <label htmlFor="city" className="input-field-label">
+                      City
+                    </label>
+                  </div>
+                  <div className="input-field col s12 m6">
+                    <input
+                      id="website"
+                      name="website"
+                      type="text"
+                      className="validate input-field-contact"
+                      // onChange={event => this.onWebsiteChange(event)}
+                    />
+                    <label htmlFor="website" className="input-field-label">
+                      Website
+                    </label>
+                  </div>
+                  <div className="input-field col s12 m6">
+                    <input
+                      id="email2"
+                      name="email"
+                      type="email"
+                      className="validate"
+                      // onChange={event => this.onEmailChange(event)}
+                    />
+                    <label htmlFor="email2" id="email-input">
+                      Email address
+                    </label>
+                    <span
+                      className="helper-text"
+                      data-error="Please type in the correct format!"
+                      data-success="Valid format"
+                    />
+                  </div>
+                  <div className="input-field col s12 m6">
+                    <input
+                      id="job_title"
+                      name="job_position"
+                      type="text"
+                      className="validate input-field-contact"
+                      // onChange={event => this.onJobTitleChange(event)}
+                    />
+                    <label htmlFor="job_title" className="input-field-label">
+                      Job title (optional)
+                    </label>
+                  </div>
+                  <div className="input-field col s12 m6">
+                    <input
+                      id="phone_number"
+                      name="phone"
+                      type="text"
+                      className="validate input-field-contact"
+                      // onChange={event => this.onPhoneNumberChange(event)}
+                    />
+                    <label htmlFor="phone_number" className="input-field-label">
+                      Phone number (optional)
+                    </label>
+                  </div>
+                  <DropDown
+                    dropDownCategory="Country"
+                    dropDownOptions={[
+                      'Germany',
+                      'France',
+                      'Italy',
+                      'England',
+                      'United States',
+                      'Netherlands',
+                      'Ghana',
+                    ]}
+                    onDropDownOptionChange={this.onCountryChange}
+                    name="country"
+                  />
+                </div>
+              </div>
+              <div className="contact-tech-wrapper">
+                <div className="contact-information-headline">
+                  technical information
+                </div>
+                <div className="contact-tech-input-fields">
                   <DropDown
                     dropDownCategory="Elasticsearch version"
                     dropDownOptions={['1', '2', '3', '4', '5']}
@@ -324,55 +328,54 @@ class ContactForm extends React.Component {
                     onDropDownOptionChange={this.onStageChange}
                   />
                 </div>
-                <div className="contact-message-wrapper">
-                  <div className="contact-information-headline">
-                    your message
-                  </div>
-                  <div class="input-field col s12">
-                    <input
-                      id="your_message"
-                      name="message"
-                      type="text"
-                      class="validate input-field-contact"
-                      // onChange={event => this.onMessageChange(event)}
-                    />
-                    <label for="your_message" class="input-field-label">
-                      Message
-                    </label>
-                  </div>
+              </div>
+              <div className="contact-message-wrapper">
+                <div className="contact-information-headline">your message</div>
+                <div className="input-field col s12">
+                  <input
+                    id="your_message"
+                    name="message"
+                    type="text"
+                    className="validate input-field-contact"
+                    // onChange={event => this.onMessageChange(event)}
+                  />
+                  <label htmlFor="your_message" className="input-field-label">
+                    Message
+                  </label>
                 </div>
-                <div className="contact-newsletter-wrapper">
-                  <div className="contact-information-headline">newsletter</div>
-                  <div
-                    className="privacy-policy-checkbox"
-                    onClick={() =>
-                      this.setState({
-                        newsletterCheck: !this.state.newsletterCheck,
-                      })
-                    }
-                    >
-                    <input
-                      type="checkbox"
-                      // name="newsletter"
-                      class="filled-in"
-                      checked={this.state.newsletterCheck}
-                      />
-                    <span>
-                      {' '}
-                      Send me updates about Serach Guard products and services
-                    </span>
-                  </div>
-                  <div class="privacy-policy">
-                    This form collects your name and email. PLease take a look in
-                    our privacy policy for a better understanding on how we protect
-                    and manage your submitted data.
-                  </div>
-                  <div className="cta-wrapper">
-                    <Button style="default-button" text={'send message'} />
-                  </div>
+              </div>
+              <div className="contact-newsletter-wrapper">
+                <div className="contact-information-headline">newsletter</div>
+                <div
+                  className="privacy-policy-checkbox"
+                  onClick={() =>
+                    this.setState({
+                      newsletterCheck: !this.state.newsletterCheck,
+                    })
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    name="newsletter"
+                    p
+                    className="filled-in"
+                    checked={this.state.newsletterCheck}
+                  />
+                  <span>
+                    {' '}
+                    Send me updates about Serach Guard products and services
+                  </span>
                 </div>
-              </form>
-            </div>
+                <div className="privacy-policy">
+                  This form collects your name and email. PLease take a look in
+                  our privacy policy for a better understanding on how we
+                  protect and manage your submitted data.
+                </div>
+                <div className="cta-wrapper">
+                  <Button style="default-button" text="send message" />
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

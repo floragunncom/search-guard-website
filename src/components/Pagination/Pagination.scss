@@ -10,8 +10,12 @@
 li.pagination-number {
   a {
     padding: 14px 18px;
+    font-size: 18px;
     color: $green;
     font-weight: bold;
     cursor: pointer;
+    &:focus {
+      border-bottom: 2px solid $green;
+    }
   }
 }

@@ -46,6 +46,11 @@
     line-height: 24px;
     margin-bottom: 32px;
   };
+  a {
+    color: $darkGrey;
+    text-decoration: none;
+    border-bottom: 1px solid $green;
+  }
 }
 
 ul {
@@ -53,7 +58,14 @@ ul {
 }
 
 .disclosure-list li {
-  color: $darkGrey;
-  list-style-type: disc !important;
-  list-style-position: outside !important;
+  &:before {
+    content: '•';
+    margin-left: -20px;
+    padding-right: 13px;
+  }
+  a {
+    color: $darkGrey;
+    border-bottom: 1px solid $green;
+    text-decoration: none;
+  }
 }
