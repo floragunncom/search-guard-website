@@ -16,6 +16,7 @@ import certificate from '../../images/certificate-big.svg';
 const Product = () => {
   const anchors = [
     { anchor: 'concept', name: 'what it is' },
+    { anchor: 'integrators', name: 'integrators' },
     { anchor: 'certified', name: 'certified' },
     { anchor: 'quote', name: 'get a quote' },
   ];

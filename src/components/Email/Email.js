@@ -1,31 +1,50 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './Email.scss';
-import M from 'materialize-css';
 import Button from '../Button/Button';
 
-class Email extends Component {
-  componentDidMount() {
-    M.AutoInit();
+const Email = () => {
+  const [emailSendStatus, setEmailSendStatus] = useState(false);
+  // componentDidMount() {
+  //   M.AutoInit();
+  // }
+
+  function onButtonPress() {
+    setEmailSendStatus(true);
   }
 
-  onButtonPress = () => {
-    console.log('object test testing');
-  }
-
-  render() {
-    return (
-      <form>
-        <div className="input-field col s12 m6 l8">
-          <input id="email" type="email" className="validate" />
-          <label htmlFor="email" id="email-input">Email address</label>
-          <span className="helper-text" data-error="Please type in the correct format!" data-success="Valid format" />
+  return (
+    <div>
+      {emailSendStatus ? (
+        <div
+          className="prefooter-content-text bold"
+          style={{ color: '#246E94' }}
+        >
+          Thank you for signing up to our newsletter!
         </div>
-        <div className="input-field col s12 m6 l4">
-          <Button text="subscribe" style="default-button" onPress={() => this.onButtonPress()} />
-        </div>
-      </form>
-    );
-  }
-}
+      ) : (
+        <form>
+          <div className="input-field col s12 m6 l8">
+            <input id="email" type="email" className="validate" />
+            <label htmlFor="email" id="email-input">
+              Email address
+            </label>
+            <span
+              className="helper-text"
+              data-error="Please type in the correct format!"
+              data-success="Valid format"
+            />
+          </div>
+          <div className="input-field col s12 m6 l4">
+            <Button
+              text="subscribe"
+              style="default-button"
+              onPress={() => onButtonPress()}
+            />
+          </div>
+        </form>
+      )}
+    </div>
+  );
+};
 
 export default Email;

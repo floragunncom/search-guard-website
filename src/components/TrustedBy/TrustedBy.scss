@@ -1,0 +1,39 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.trusted-wrapper {
+  padding: 128px;
+  background-color: $lightGrey;
+  @media only screen and (max-width: $tabletBig) {
+    padding: 64px 32px 0px 32px;
+  }
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px 16px 24px;
+  }
+}
+
+.trusted-headline {
+  margin-bottom: 64px;
+  color: $darkBlue;
+  font-size: 48px;
+  line-height: 57px;
+  text-align: center;
+  font-weight: 300;
+
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 36px;
+    line-height: 43px;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 32px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.trusted-pic {
+  display: flex;
+  justify-content: center;
+  margin: 30px 20px;
+}

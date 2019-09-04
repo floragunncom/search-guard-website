@@ -20,6 +20,7 @@ import Disclosure from './views/Disclosure/Disclosure';
 import Education from './views/Education/Education';
 import TlsGenerator from './views/TlsGenerator/TlsGenerator';
 import NotFound from './views/NotFound/NotFound';
+import Thanks from './views/Thanks/Thanks';
 import Certifications from './views/Certifications/Certifications';
 
 const Routes = () => {
@@ -46,6 +47,7 @@ const Routes = () => {
         <Route exact path="/tls-certificate-generator" component={TlsGenerator} />
         <Route exact path="/certifications" component={Certifications} />
         <Route exact path="/NotFound" component={NotFound} />
+        <Route exact path="/thanks" component={Thanks} />
         <Route exact={true} path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPostArticle} />
         <Route exact={true} path="/white-papers" component={WhitePapers} />

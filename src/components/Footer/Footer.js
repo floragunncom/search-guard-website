@@ -52,11 +52,11 @@ const Footer = () => {
                   Custom edition
                 </a>
               </div>
-              <div className="footer-list-item">
+              {/* <div className="footer-list-item">
                 <a href="/education-program" className="footer-links">
                   Education program
                 </a>
-              </div>
+              </div> */}
             </div>
             <div className="filler-class" />
             <div className="footer-links-column-container col s12 m6 l3">

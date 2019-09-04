@@ -53,18 +53,19 @@
   position: absolute;
   top: 47px;
   left: 0px;
-  color: #184962;
+  color: $darkBlue;
   width: 100%;
   background-color: white;
   z-index: 1;
 }
 
-.drop-down-value {
-  border-bottom: 0.5px solid #246E94;
+select.browser-default {
+  border: unset;
+  border-bottom: 2px solid $navyBlue;
+  color: $darkBlue;
   padding: 10px;
-}
-
-.drop-down-value:hover {
-  background-color: #184962;
-  color: white;
+  &:hover {
+    background-color: $darkBlue;
+    color: white;
+  }
 }
