@@ -84,7 +84,7 @@ export default class NavBar extends Component {
               product
             </NavLink>
             <NavLink
-              to="/license"
+              to="/licensing"
               className="navbar-nav-link"
               activeStyle={style.active}
             >
@@ -105,7 +105,7 @@ export default class NavBar extends Component {
               company
             </NavLink>
             <NavLink
-              to="/contact"
+              to="/contacts"
               className="navbar-nav-link"
               activeStyle={style.activeContact}
             >
@@ -135,7 +135,7 @@ export default class NavBar extends Component {
                     product
                   </NavLink>
                   <NavLink
-                    to="/license"
+                    to="/licensing"
                     className="navbar-nav-link"
                     activeStyle={style.active}
                   >
@@ -156,9 +156,9 @@ export default class NavBar extends Component {
                     company
                   </NavLink>
                   <NavLink
-                    to="/contact"
+                    to="/contacts"
                     className="navbar-nav-link"
-                    activeStyle={style.activeContact}
+                    activeStyle={style.actives}
                   >
                     contact us
                   </NavLink>

@@ -28,11 +28,11 @@ const Routes = () => {
     <div>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route exact path="/contact" component={ContactUs} />
+        <Route exact path="/contacts" component={ContactUs} />
         <Route exact path="/product" component={Product} />
         <Route exact path="/company" component={Company} />
         <Route exact path="/resource" component={Resource} />
-        <Route exact path="/license" component={License} />
+        <Route exact path="/licensing" component={License} />
         <Route exact path="/faq" component={Faqs} />
         <Route exact path="/imprint" component={Imprint} />
         <Route exact path="/prese" component={Imprint} />

@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="filler-class" />
             <div className="footer-links-column-container col s12 m6 l3">
               <div className="footer-list-headline">
-                <a href="/license">license</a>
+                <a href="/licensing">license</a>
               </div>
               <div className="footer-list-item">
                 <a href="/license#standard" className="footer-links">

@@ -12,6 +12,7 @@ import ctaIcon from '../../images/cta-banner-arrow.svg';
 import fileCode from '../../images/file-code.svg';
 import worldLock from '../../images/world-lock.svg';
 import certificate from '../../images/certificate-big.svg';
+import { Helmet } from 'react-helmet';
 
 const Product = () => {
   const anchors = [
@@ -23,6 +24,17 @@ const Product = () => {
 
   return (
     <div id="top">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          Product | Search Guard product overview for securing Elasticsearch
+          cluster
+        </title>
+        <meta
+          name="description"
+          content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="search guard security plugin"

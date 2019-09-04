@@ -7,10 +7,19 @@ import Footer from '../../components/Footer/Footer';
 import Tile from '../../components/Tile/Tile';
 import iconLock from '../../images/icon-multilayer-security.svg';
 import iconShield from '../../images/icon-wheel-shield.svg';
+import { Helmet } from 'react-helmet';
 
 const Security = () => {
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Security Information - Search Guard</title>
+        <meta
+          name="description"
+          // content="Get to know more about the Search Guard Editions and pricing. Fair licensing and secure your Elasticsearch cluster with an unlimited amount of nodes - scale your cluster not your costs."
+        />
+      </Helmet>
       <Navbar />
       <Title
         headline="Security information"
@@ -27,7 +36,9 @@ const Security = () => {
           <div className="security-text">
             Type Bits/KeyID Date User ID
             <br />
-            {'pub 2048/51EDB2FE 2015/05/23 Search Guard <infos@earch-guard.com>'}
+            {
+              'pub 2048/51EDB2FE 2015/05/23 Search Guard <infos@earch-guard.com>'
+            }
             <br />
             <br />
             -----BEGIN PGP PUBLIC KEY BLOCK-----

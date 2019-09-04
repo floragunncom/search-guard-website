@@ -14,10 +14,21 @@ import lock from '../../images/tile-icon-wheel.svg';
 import multilevel from '../../images/multilevel-security.svg';
 import disk from '../../images/disk.svg';
 import ctaIcon from '../../images/cta-banner-arrow.svg';
+import { Helmet } from 'react-helmet';
 
 const HomePage = () => {
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          Search Guard | Security for Elasticsearch and the ELK stack
+        </title>
+        <meta
+          name="description"
+          content="Nested componentSearch Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."
+        />
+      </Helmet>
       <NavBar background="#184962" />
       <Hero />
       <TileSimple

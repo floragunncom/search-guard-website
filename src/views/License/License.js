@@ -11,6 +11,7 @@ import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/cta-banner-arrow.svg';
 import iconBook from '../../images/icon-book.svg';
 import iconWheels from '../../images/icon-wheels.svg';
+import { Helmet } from 'react-helmet';
 
 const License = () => {
   const anchors = [
@@ -21,6 +22,16 @@ const License = () => {
 
   return (
     <div id="top">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          Licensing | Search Guard Community, Enterprise and Compliance Edition
+        </title>
+        <meta
+          name="description"
+          content="Get to know more about the Search Guard Editions and pricing. Fair licensing and secure your Elasticsearch cluster with an unlimited amount of nodes - scale your cluster not your costs."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="licensing model"

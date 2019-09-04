@@ -14,6 +14,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-helmet": "^5.2.1",
     "react-intl": "^2.8.0",
     "react-intl-cra": "^0.3.4",
     "react-intl-translations-manager": "^5.0.3",

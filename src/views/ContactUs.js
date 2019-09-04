@@ -7,10 +7,19 @@ import PreFooter from '../components/PreFooter/PreFooter';
 import Cta from '../components/Cta/Cta';
 import folderGlass from '../images/folder-glass.svg';
 import ContactForm from '../components/ContactForm';
+import { Helmet } from 'react-helmet';
 
 const ContactUs = () => {
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Contact the Search Guard team - get in touch with us</title>
+        <meta
+          name="description"
+          content="Any questions regarding Search Guard licensing or pricing? Do you need OEM licenses or want to partner with us? Please fill out the contact form and we will get back to you as soon as possible."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="Get in touch"
