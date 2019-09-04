@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ContactForm.scss';
-import { throws } from 'assert';
+// import { throws } from 'assert';
 import Button from '../components/Button/Button';
-import DropDown from "./DropDown/DropDown";
+import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
   function handleSubmit(event) {
@@ -192,7 +192,6 @@ const ContactForm = () => {
                     name="phone"
                     type="text"
                     className="validate input-field-contact"
-                    // onChange={event => this.onPhoneNumberChange(event)}
                   />
                   <label htmlFor="phone_number" className="input-field-label">
                     Phone number (optional)

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
@@ -7,201 +7,126 @@ import Button from '../../components/Button/Button';
 import DropDown from '../../components/DropDown/DropDown';
 import './TlsGenerator.scss';
 
-class TlsGenerator extends Component {
-  constructor() {
-    super();
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {
-      tlsEmail: '',
-      organization: '',
-      tlsCountry: '',
-      host1: '',
-      host2: '',
-      host3: '',
-      host4: '',
-      host5: '',
-      host6: '',
-      host7: '',
-      host8: '',
-      host9: '',
-      host10: '',
-      newsletter2Check: false,
-    };
-  }
-
-  onOrganizationChange = event => {
-    const organization = event.target.value;
-    this.setState({ organization });
-  };
-
-  onTlsEmailChange = event => {
-    const tlsEmail = event.target.value;
-    this.setState({ tlsEmail });
-  };
-
-  onTlsCountryChange = tlsCountry => {
-    this.setState({ tlsCountry });
-  };
-
-  onHost1Change = event => {
-    const host1 = event.target.value;
-    this.setState({ host1 });
-  };
-
-  onHost2Change = event => {
-    const host2 = event.target.value;
-    this.setState({ host2 });
-  };
-
-  onHost3Change = event => {
-    const host3 = event.target.value;
-    this.setState({ host3 });
-  };
-
-  onHost4Change = event => {
-    const host4 = event.target.value;
-    this.setState({ host4 });
-  };
-
-  onHost5Change = event => {
-    const host5 = event.target.value;
-    this.setState({ host5 });
-  };
-
-  onHost6Change = event => {
-    const host6 = event.target.value;
-    this.setState({ host6 });
-  };
-
-  onHost7Change = event => {
-    const host7 = event.target.value;
-    this.setState({ host7 });
-  };
-
-  onHost8Change = event => {
-    const host8 = event.target.value;
-    this.setState({ host8 });
-  };
-
-  onHost9Change = event => {
-    const host9 = event.target.value;
-    this.setState({ host9 });
-  };
-
-  onHost10Change = event => {
-    const host10 = event.target.value;
-    this.setState({ host10 });
-  };
-
-  handleSubmit(event) {
+const TlsGenerator = () => {
+  function handleSubmit(event) {
     event.preventDefault();
-    const data = new FormData(event.target);
-    
-    fetch('https://localhost:3000/', {
+    const data = {};
+    const formElements = Array.from(event.target);
+    formElements.map(input => (data[input.name] = input.value));
+
+    // Log what our lambda function will receive
+    console.log(JSON.stringify(data));
+    fetch('http://localhost:3000/', {
       method: 'POST',
-      body: data,
-    })
+      headers: {
+        accept: 'application/json; charset=utf-8',
+        'content-type': 'application/json; charset=UTF-8',
+      },
+      body: JSON.stringify(data),
+    });
+    // window.location.href = '/thanks';
   }
 
-  render() {
-    return (
-      <div>
-        <NavBar />
-        <Title
-          headline="TLS Certificate Generator"
-          text="If you need TLS certificates for setting up Search Guard, our certificate generator is here to ease the pain."
-        />
-        <div className="row">
-          <div className="col s12 l8 offset-l2" id="tls">
-            <div className="tls-wrapper">
-              <div className="tls-headline">How does it work?</div>
-              <div className="tls-text">
-                Please fill out the following form, and we’ll arrange everything
-                for you. The download will contain all certificates in various
-                formats and a text file with the respective password and
-                keystore passwords. You will also get a SHA-256 checksum to
-                verify the integrity of the download.
-              </div>
-              <div className="tls-headline">
-                Note: Please use this service only for testing purposes, and not
-                for production!
-              </div>
-              <div className="tls-text">
-                Although the package is checksummed and the download is TLS
-                protected, anyone with access to the link can obtain the
-                certificates. If you want to generate production-ready
-                certificates, please use our offline TLS tool.
-              </div>
-              <div className="tls-headline">Usage guidelines</div>
-              <div className="tls-text">
-                <ul>
-                  <li>
-                    Hostnames must be unique and must not contain special
-                    characters. IP addresses are not supported.
-                  </li>
-                  <li>
-                    Organization name becomes part of the certificate and must
-                    not contain special characters (e.g. ‘&’)
-                  </li>
-                  <li>
-                    The download link is sent to the email address you provided
-                  </li>
-                </ul>
-              </div>
-              <div className="tls-headline">TLS certificate generator</div>
-              <div className="tls-text">
-                Fields marked with an (*) are required
-              </div>
-              <div className="tls-info-wrapper">
-                <form onSubmit={this.handleSubmit}>
+  return (
+    <div>
+      <NavBar />
+      <Title
+        headline="TLS Certificate Generator"
+        text="If you need TLS certificates for setting up Search Guard, our certificate generator is here to ease the pain."
+      />
+      <div className="row">
+        <div className="col s12 l8 offset-l2" id="tls">
+          <div className="tls-wrapper">
+            <div className="tls-headline">How does it work?</div>
+            <div className="tls-text">
+              Please fill out the following form, and we’ll arrange everything
+              for you. The download will contain all certificates in various
+              formats and a text file with the respective password and keystore
+              passwords. You will also get a SHA-256 checksum to verify the
+              integrity of the download.
+            </div>
+            <div className="tls-headline">
+              Note: Please use this service only for testing purposes, and not
+              for production!
+            </div>
+            <div className="tls-text">
+              Although the package is checksummed and the download is TLS
+              protected, anyone with access to the link can obtain the
+              certificates. If you want to generate production-ready
+              certificates, please use our offline TLS tool.
+            </div>
+            <div className="tls-headline">Usage guidelines</div>
+            <div className="tls-text">
+              <ul>
+                <li>
+                  Hostnames must be unique and must not contain special
+                  characters. IP addresses are not supported.
+                </li>
+                <li>
+                  Organization name becomes part of the certificate and must not
+                  contain special characters (e.g. ‘&’)
+                </li>
+                <li>
+                  The download link is sent to the email address you provided
+                </li>
+              </ul>
+            </div>
+            <div className="tls-headline">TLS certificate generator</div>
+            <div className="tls-text">
+              Fields marked with an (*) are required
+            </div>
+            <div className="tls-info-wrapper">
+              <div className="contact-info-container">
+                <form onSubmit={handleSubmit}>
                   <div className="contact-info-wrapper">
                     <div className="contact-information-headline">
                       contact information
                     </div>
-                    <div className="input-field col s12 m6">
-                      <input
-                        id="tls-email"
-                        type="email"
-                        className="validate"
-                        onChange={event => this.onTlsEmailChange(event)}
-                      />
-                      <label htmlFor="tls-email" id="email-input">
-                        Email *
-                      </label>
-                      <span
-                        className="helper-text"
-                        data-error="Please type in the correct format!"
-                        data-success="Valid format"
+                    <div className="contact-info-input-fields">
+                      <div className="input-field col s12 m6">
+                        <input
+                          id="tls-email"
+                          type="email"
+                          className="validate"
+                          name="email"
+                        />
+                        <label htmlFor="tls-email" id="email-input">
+                          Email *
+                        </label>
+                        <span
+                          className="helper-text"
+                          data-error="Please type in the correct format!"
+                          data-success="Valid format"
+                        />
+                      </div>
+                      <div className="input-field col s12 m6">
+                        <input
+                          id="organization"
+                          name="organization"
+                          type="text"
+                          className="validate input-field-contact"
+                          name="organization"
+                        />
+                        <label
+                          htmlFor="organization"
+                          className="input-field-label"
+                        >
+                          Organization name *
+                        </label>
+                      </div>
+                      <DropDown
+                        category="Country"
+                        options={[
+                          'Germany',
+                          'France',
+                          'Italy',
+                          'England',
+                          'United States',
+                          'Netherlands',
+                          'Ghana',
+                        ]}
                       />
                     </div>
-                    <div className="input-field col s12 m6">
-                      <input
-                        id="organization"
-                        name="organization"
-                        type="text"
-                        className="validate input-field-contact"
-                        onChange={event => this.onOrganizationChange(event)}
-                      />
-                      <label
-                        htmlFor="organization"
-                        className="input-field-label"
-                      >
-                        Organization name *
-                      </label>
-                    </div>
-                    <DropDown
-                      dropDownCategory="Country"
-                      dropDownOptions={[
-                        'Germany',
-                        'France',
-                        'Italy',
-                        'England',
-                        'United States',
-                        'Netherlands',
-                        'Ghana',
-                      ]}
-                      onDropDownOptionChange={this.onTlsCountryChange}
-                    />
                   </div>
                   <div className="contact-tech-wrapper">
                     <div className="contact-information-headline">
@@ -215,7 +140,6 @@ class TlsGenerator extends Component {
                         className="validate"
                         required=""
                         aria-required="true"
-                        onChange={event => this.onHost1Change(event)}
                       />
                       <label
                         htmlFor="host1"
@@ -231,7 +155,6 @@ class TlsGenerator extends Component {
                         name="host2"
                         type="text"
                         className="validate"
-                        onChange={event => this.onHost2Change(event)}
                       />
                       <label htmlFor="host2" className="input-field-label">
                         Hostname 2
@@ -240,9 +163,9 @@ class TlsGenerator extends Component {
                     <div className="input-field col s12">
                       <input
                         id="host3"
+                        name="host3"
                         type="text"
                         className="validate"
-                        onChange={event => this.onHost3Change(event)}
                       />
                       <label htmlFor="host3" className="input-field-label">
                         Hostname 3
@@ -253,7 +176,7 @@ class TlsGenerator extends Component {
                         id="host4"
                         type="text"
                         className="validate"
-                        onChange={event => this.onHost4Change(event)}
+                        name="host4"
                       />
                       <label htmlFor="host4" className="input-field-label">
                         Hostname 4
@@ -264,7 +187,7 @@ class TlsGenerator extends Component {
                         id="host5"
                         type="text"
                         className="validate"
-                        onChange={event => this.onHost5Change(event)}
+                        name="host5"
                       />
                       <label htmlFor="host5" className="input-field-label">
                         Hostname 5
@@ -275,7 +198,7 @@ class TlsGenerator extends Component {
                         id="host6"
                         type="text"
                         className="validate"
-                        onChange={event => this.onHost6Change(event)}
+                        name="host6"
                       />
                       <label htmlFor="host6" className="input-field-label">
                         Hostname 6
@@ -286,7 +209,7 @@ class TlsGenerator extends Component {
                         id="host7"
                         type="text"
                         className="validate"
-                        onChange={event => this.onHost7Change(event)}
+                        name="host7"
                       />
                       <label htmlFor="host7" className="input-field-label">
                         Hostname 7
@@ -297,7 +220,7 @@ class TlsGenerator extends Component {
                         id="host8"
                         type="text"
                         className="validate"
-                        onChange={event => this.onHost8Change(event)}
+                        name="host8"
                       />
                       <label htmlFor="host8" className="input-field-label">
                         Hostname 8
@@ -308,7 +231,7 @@ class TlsGenerator extends Component {
                         id="host9"
                         type="text"
                         className="validate"
-                        onChange={event => this.onHost9Change(event)}
+                        name="host9"
                       />
                       <label htmlFor="host9" className="input-field-label">
                         Hostname 9
@@ -320,7 +243,7 @@ class TlsGenerator extends Component {
                         name="host10"
                         type="text"
                         className="validate"
-                        onChange={event => this.onHost10Change(event)}
+                        name="host10"
                       />
                       <label htmlFor="host10" className="input-field-label">
                         Hostname 10
@@ -331,18 +254,11 @@ class TlsGenerator extends Component {
                     <div className="contact-information-headline">
                       newsletter
                     </div>
-                    <div
-                      className="privacy-policy-checkbox"
-                      onClick={() =>
-                        this.setState({
-                          newsletter2Check: !this.state.newsletter2Check,
-                        })
-                      }
-                    >
+                    <div className="privacy-policy-checkbox">
                       <input
                         type="checkbox"
                         className="filled-in"
-                        checked={this.state.newsletter2Check}
+                        name="newsletter"
                       />
                       <span>
                         {' '}
@@ -355,8 +271,7 @@ class TlsGenerator extends Component {
                       protect and manage your submitted data.
                     </div>
                     <div className="cta-wrapper">
-                      {/* <Button style="default-button" text={'send message'} /> */}
-                      <button>send</button>
+                      <Button style="default-button" text="send message" />
                     </div>
                   </div>
                 </form>
@@ -364,11 +279,11 @@ class TlsGenerator extends Component {
             </div>
           </div>
         </div>
-        <PreFooter />
-        <Footer />
       </div>
-    );
-  }
+      <PreFooter />
+      <Footer />
+    </div>
+  );
 };
 
 export default TlsGenerator;
