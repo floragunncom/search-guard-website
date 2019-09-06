@@ -79,7 +79,7 @@ class DropDowm extends React.Component {
           </div>
         </div> */}
         <div className="dropdown-container">
-          <select name={this.props.name} className="browser-default">
+          <select name={this.props.category} className="browser-default">
             {this.props.options.map(option => {
               return (
                   <option value={option}>{option}</option>

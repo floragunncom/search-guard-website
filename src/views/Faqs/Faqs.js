@@ -6,6 +6,7 @@ import Cta from '../../components/Cta/Cta';
 import Title from '../../components/Title/Title';
 import envelope from '../../images/icon-envelope.svg';
 import './Faqs.scss';
+import { Helmet } from 'react-helmet';
 
 const Faqs = () => {
   const faq = [
@@ -230,6 +231,16 @@ const Faqs = () => {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          Frequently asked questions | Search Guard | Security for Elasticsearch
+        </title>
+        <meta
+          name="description"
+          content="Find answers to frequently asked questions about Search Guard, the rock-solid and battle proven security suite for Elasticsearch."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="Frequently asked questions"
@@ -237,49 +248,41 @@ const Faqs = () => {
       />
       <div className="row faq-row-wrapper">
         <div className="col s12 l4">
-          {
-            faq.map(category => {
-              return (
-                <div className="faq-question-section">
-                  <div className="faq-question-headline">{category.section}</div>
-                  {
-                    category.faq.map(faq => {
-                      return (
-                        <div className="faq-question-text">
-                          <a href={`#${faq.anchor}`}>
-                            {faq.question}
-                          </a>
-                        </div>
-                      )
-                    })
-                  }
-                </div>      
-              )
-            })
-          }
+          {faq.map(category => {
+            return (
+              <div className="faq-question-section">
+                <div className="faq-question-headline">{category.section}</div>
+                {category.faq.map(faq => {
+                  return (
+                    <div className="faq-question-text">
+                      <a href={`#${faq.anchor}`}>{faq.question}</a>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
         <div className="col s12 l8 faq-answer-wrapper">
-          {
-            faq.map(category => {
-              return (
-                <div className="faq-answer-section">
-                  <div className="faq-answer-section-headline">{category.section}</div>
-                  {
-                    category.faq.map(faq => {
-                      return (
-                        <div>
-                          <div className="faq-answer-headline" id={`${faq.anchor}`}>{faq.question}</div>
-                          <div className="faq-answer-text">
-                            {faq.answer}
-                          </div>
-                        </div>
-                      )
-                    })
-                  }
+          {faq.map(category => {
+            return (
+              <div className="faq-answer-section">
+                <div className="faq-answer-section-headline">
+                  {category.section}
                 </div>
-              )
-            })
-          }
+                {category.faq.map(faq => {
+                  return (
+                    <div>
+                      <div className="faq-answer-headline" id={`${faq.anchor}`}>
+                        {faq.question}
+                      </div>
+                      <div className="faq-answer-text">{faq.answer}</div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
       </div>
       <Cta

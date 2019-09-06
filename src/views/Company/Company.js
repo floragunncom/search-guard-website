@@ -10,6 +10,7 @@ import ctaIcon from '../../images/cta-banner-arrow.svg';
 import Title from '../../components/Title/Title';
 import Team from '../../components/Team/Team';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
+import { Helmet } from 'react-helmet';
 
 const Company = () => {
   const anchors = [
@@ -20,6 +21,14 @@ const Company = () => {
 
   return (
     <div id="top">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Team | Get to know the minds behind Search Guard</title>
+        <meta
+          name="description"
+          content="Our mission is to shape IT security and Open Source business models. From day 1 until today, we follow our principles of putting security first and providing no-nonsense IT."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="company"

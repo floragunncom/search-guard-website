@@ -8,6 +8,7 @@ import Footer from '../../components/Footer/Footer';
 import client from '../../components/Client/Client';
 import BlogPost from './BlogPost';
 import SearchBlogPost from './SearchBlogPost';
+import { Helmet } from 'react-helmet';
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -173,6 +174,16 @@ const Blog = () => {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          Official Search Guard blog - news about security for Elasticsearch
+        </title>
+        <meta
+          name="description"
+          content="This is the official Search Guard blog. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch."
+        />
+      </Helmet>
       <NavBar />
       <Title headline="Blog" />
       <div className="row">{postResult}</div>

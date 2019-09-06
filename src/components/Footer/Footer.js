@@ -137,12 +137,12 @@ const Footer = () => {
                 </a>
               </div>
               <div className="footer-list-item">
-                <a href="/data-protection" className="footer-links">
+                <a href="/datenschutz" className="footer-links">
                   Data protection
                 </a>
               </div>
               <div className="footer-list-item">
-                <a href="/imprint" className="footer-links">
+                <a href="/impressum" className="footer-links">
                   Imprint
                 </a>
               </div>

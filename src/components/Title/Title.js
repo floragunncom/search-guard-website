@@ -5,8 +5,8 @@ const Title = props => {
   return (
     <div className="title-wrapper-style">
       <div className="row">
-        <div className="title-headline-style">{props.headline}</div>
-        <div className="title-text-style">{props.text}</div>
+        <h1 className="title-headline-style">{props.headline}</h1>
+        <h2 className="title-text-style">{props.text}</h2>
       </div>
     </div>
   );

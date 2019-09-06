@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ContactForm.scss';
 // import { throws } from 'assert';
-import Button from '../components/Button/Button';
+import Button from "./Button/Button";
 import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
+  const [receiveNewsletter, setReceiveNewsletter] = useState(false);
+
+  const setNewsletter = (event) => {
+    console.log('test')
+    // setReceiveNewsletter(event.target.checked);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     const data = {};
@@ -21,7 +28,7 @@ const ContactForm = () => {
       },
       body: JSON.stringify(data),
     });
-    window.location.href="/thanks";
+    // window.location.href="/thanks";
   }
 
   return (
@@ -246,10 +253,11 @@ const ContactForm = () => {
                 <input
                   type="checkbox"
                   name="newsletter"
-                  className="filled-in"
+                  // className="filled-in"
+                  // value={receiveNewsletter}
+                  onChange={setNewsletter}
                 />
                 <span>
-                  {' '}
                   Send me updates about Serach Guard products and services
                 </span>
               </div>

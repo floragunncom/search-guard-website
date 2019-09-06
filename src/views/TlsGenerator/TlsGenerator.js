@@ -5,6 +5,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
 import DropDown from '../../components/DropDown/DropDown';
+import { Helmet } from 'react-helmet';
 import './TlsGenerator.scss';
 
 const TlsGenerator = () => {
@@ -29,6 +30,14 @@ const TlsGenerator = () => {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>TLS Certificate Generator - Search Guard</title>
+        <meta
+          name="description"
+          content="Search Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="TLS Certificate Generator"
@@ -76,206 +85,197 @@ const TlsGenerator = () => {
               Fields marked with an (*) are required
             </div>
             <div className="tls-info-wrapper">
-              <div className="contact-info-container">
-                <form onSubmit={handleSubmit}>
-                  <div className="contact-info-wrapper">
-                    <div className="contact-information-headline">
-                      contact information
-                    </div>
-                    <div className="contact-info-input-fields">
-                      <div className="input-field col s12 m6">
-                        <input
-                          id="tls-email"
-                          type="email"
-                          className="validate"
-                          name="email"
-                        />
-                        <label htmlFor="tls-email" id="email-input">
-                          Email *
-                        </label>
-                        <span
-                          className="helper-text"
-                          data-error="Please type in the correct format!"
-                          data-success="Valid format"
-                        />
-                      </div>
-                      <div className="input-field col s12 m6">
-                        <input
-                          id="organization"
-                          name="organization"
-                          type="text"
-                          className="validate input-field-contact"
-                          name="organization"
-                        />
-                        <label
-                          htmlFor="organization"
-                          className="input-field-label"
-                        >
-                          Organization name *
-                        </label>
-                      </div>
-                      <DropDown
-                        category="Country"
-                        options={[
-                          'Germany',
-                          'France',
-                          'Italy',
-                          'England',
-                          'United States',
-                          'Netherlands',
-                          'Ghana',
-                        ]}
-                      />
-                    </div>
+              <form onSubmit={handleSubmit}>
+                <div className="contact-info-wrapper">
+                  <div className="contact-information-headline">
+                    contact information
                   </div>
-                  <div className="contact-tech-wrapper">
-                    <div className="contact-information-headline">
-                      technical information
-                    </div>
-                    <div className="input-field col s12">
+                  <div className="contact-info-input-fields">
+                    <div className="input-field col s12 m6">
                       <input
-                        id="host1"
-                        name="host1"
-                        type="text"
+                        id="tls-email"
+                        type="email"
                         className="validate"
-                        required=""
-                        aria-required="true"
+                        name="email"
+                      />
+                      <label htmlFor="tls-email" id="email-input">
+                        Email *
+                      </label>
+                    </div>
+                    <div className="input-field col s12 m6">
+                      <input
+                        id="organization"
+                        name="organization"
+                        type="text"
+                        className="validate input-field-contact"
+                        name="organization"
                       />
                       <label
-                        htmlFor="host1"
+                        htmlFor="organization"
                         className="input-field-label"
-                        data-error="Please type in the correct format!"
                       >
-                        Hostname 1 *
+                        Organization name *
                       </label>
                     </div>
-                    <div className="input-field col s12">
-                      <input
-                        id="host2"
-                        name="host2"
-                        type="text"
-                        className="validate"
-                      />
-                      <label htmlFor="host2" className="input-field-label">
-                        Hostname 2
-                      </label>
-                    </div>
-                    <div className="input-field col s12">
-                      <input
-                        id="host3"
-                        name="host3"
-                        type="text"
-                        className="validate"
-                      />
-                      <label htmlFor="host3" className="input-field-label">
-                        Hostname 3
-                      </label>
-                    </div>
-                    <div className="input-field col s12">
-                      <input
-                        id="host4"
-                        type="text"
-                        className="validate"
-                        name="host4"
-                      />
-                      <label htmlFor="host4" className="input-field-label">
-                        Hostname 4
-                      </label>
-                    </div>
-                    <div className="input-field col s12">
-                      <input
-                        id="host5"
-                        type="text"
-                        className="validate"
-                        name="host5"
-                      />
-                      <label htmlFor="host5" className="input-field-label">
-                        Hostname 5
-                      </label>
-                    </div>
-                    <div className="input-field col s12">
-                      <input
-                        id="host6"
-                        type="text"
-                        className="validate"
-                        name="host6"
-                      />
-                      <label htmlFor="host6" className="input-field-label">
-                        Hostname 6
-                      </label>
-                    </div>
-                    <div className="input-field col s12">
-                      <input
-                        id="host7"
-                        type="text"
-                        className="validate"
-                        name="host7"
-                      />
-                      <label htmlFor="host7" className="input-field-label">
-                        Hostname 7
-                      </label>
-                    </div>
-                    <div className="input-field col s12">
-                      <input
-                        id="host8"
-                        type="text"
-                        className="validate"
-                        name="host8"
-                      />
-                      <label htmlFor="host8" className="input-field-label">
-                        Hostname 8
-                      </label>
-                    </div>
-                    <div className="input-field col s12">
-                      <input
-                        id="host9"
-                        type="text"
-                        className="validate"
-                        name="host9"
-                      />
-                      <label htmlFor="host9" className="input-field-label">
-                        Hostname 9
-                      </label>
-                    </div>
-                    <div className="input-field col s12">
-                      <input
-                        id="host10"
-                        name="host10"
-                        type="text"
-                        className="validate"
-                        name="host10"
-                      />
-                      <label htmlFor="host10" className="input-field-label">
-                        Hostname 10
-                      </label>
-                    </div>
+                    <DropDown
+                      category="Country"
+                      options={[
+                        'Germany',
+                        'France',
+                        'Italy',
+                        'England',
+                        'United States',
+                        'Netherlands',
+                        'Ghana',
+                      ]}
+                    />
                   </div>
-                  <div className="contact-newsletter-wrapper">
-                    <div className="contact-information-headline">
-                      newsletter
-                    </div>
-                    <div className="privacy-policy-checkbox">
-                      <input
-                        type="checkbox"
-                        className="filled-in"
-                        name="newsletter"
-                      />
-                      <span>
-                        {' '}
-                        Send me updates about Serach Guard products and services
-                      </span>
-                    </div>
-                    <div className="privacy-policy">
-                      This form collects your name and email. PLease take a look
-                      in our privacy policy for a better understanding on how we
-                      protect and manage your submitted data.
-                    </div>
-                    <div className="cta-wrapper">
-                      <Button style="default-button" text="send message" />
-                    </div>
+                </div>
+                <div className="contact-tech-wrapper">
+                  <div className="contact-information-headline">
+                    technical information
                   </div>
-                </form>
-              </div>
+                  <div className="input-field col s12">
+                    <input
+                      id="host1"
+                      name="host1"
+                      type="text"
+                      className="validate"
+                      required=""
+                      aria-required="true"
+                    />
+                    <label
+                      htmlFor="host1"
+                      className="input-field-label"
+                      data-error="Please type in the correct format!"
+                    >
+                      Hostname 1 *
+                    </label>
+                  </div>
+                  <div className="input-field col s12">
+                    <input
+                      id="host2"
+                      name="host2"
+                      type="text"
+                      className="validate"
+                    />
+                    <label htmlFor="host2" className="input-field-label">
+                      Hostname 2
+                    </label>
+                  </div>
+                  <div className="input-field col s12">
+                    <input
+                      id="host3"
+                      name="host3"
+                      type="text"
+                      className="validate"
+                    />
+                    <label htmlFor="host3" className="input-field-label">
+                      Hostname 3
+                    </label>
+                  </div>
+                  <div className="input-field col s12">
+                    <input
+                      id="host4"
+                      type="text"
+                      className="validate"
+                      name="host4"
+                    />
+                    <label htmlFor="host4" className="input-field-label">
+                      Hostname 4
+                    </label>
+                  </div>
+                  <div className="input-field col s12">
+                    <input
+                      id="host5"
+                      type="text"
+                      className="validate"
+                      name="host5"
+                    />
+                    <label htmlFor="host5" className="input-field-label">
+                      Hostname 5
+                    </label>
+                  </div>
+                  <div className="input-field col s12">
+                    <input
+                      id="host6"
+                      type="text"
+                      className="validate"
+                      name="host6"
+                    />
+                    <label htmlFor="host6" className="input-field-label">
+                      Hostname 6
+                    </label>
+                  </div>
+                  <div className="input-field col s12">
+                    <input
+                      id="host7"
+                      type="text"
+                      className="validate"
+                      name="host7"
+                    />
+                    <label htmlFor="host7" className="input-field-label">
+                      Hostname 7
+                    </label>
+                  </div>
+                  <div className="input-field col s12">
+                    <input
+                      id="host8"
+                      type="text"
+                      className="validate"
+                      name="host8"
+                    />
+                    <label htmlFor="host8" className="input-field-label">
+                      Hostname 8
+                    </label>
+                  </div>
+                  <div className="input-field col s12">
+                    <input
+                      id="host9"
+                      type="text"
+                      className="validate"
+                      name="host9"
+                    />
+                    <label htmlFor="host9" className="input-field-label">
+                      Hostname 9
+                    </label>
+                  </div>
+                  <div className="input-field col s12">
+                    <input
+                      id="host10"
+                      name="host10"
+                      type="text"
+                      className="validate"
+                      name="host10"
+                    />
+                    <label htmlFor="host10" className="input-field-label">
+                      Hostname 10
+                    </label>
+                  </div>
+                </div>
+                <div className="contact-newsletter-wrapper">
+                  <div className="contact-information-headline">newsletter</div>
+                  <div className="privacy-policy-checkbox">
+                    <input
+                      type="checkbox"
+                      className="filled-in"
+                      name="newsletter"
+                    />
+                    <span>
+                      {' '}
+                      Send me updates about Serach Guard products and services
+                    </span>
+                  </div>
+                  <div className="privacy-policy">
+                    This form collects your name and email. PLease take a look
+                    in our privacy policy for a better understanding on how we
+                    protect and manage your submitted data.
+                  </div>
+                  <div className="cta-wrapper">
+                    <Button style="default-button" text="send message" />
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
