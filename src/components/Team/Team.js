@@ -32,7 +32,7 @@ const Team = () => {
   return (
     <div className="company-team-wrapper" id="team">
       <div className="row">
-        <div className="company-team-headline">Mangement team</div>
+        <div className="company-team-headline">Management team</div>
         {team.map(person => {
           return (
             <div className="col s6 m3 company-team-profile">

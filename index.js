@@ -7,7 +7,8 @@ const options = {
   public: './build',
   redirects: [
     { source: '/partners', destination: '/company#partners', type: 301 },
-    // { source: '/product', destination: '/license', type: 301 },
+    { source: '/integrators', destination: '/product#integrators', type: 301 },
+    { source: '/collaborators', destination: '/product#integrators', type: 301 },
   ],
 };
 

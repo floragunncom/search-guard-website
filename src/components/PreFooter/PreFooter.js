@@ -25,16 +25,16 @@ const Info = () => {
             <div className="prefooter-col-content">
               <div className="prefooter-headline">follow us</div>
               <div className="prefooter-content icons">
-                <a href="/">
+                <a href="https://twitter.com/searchguard?lang=en" target="_blank">
                   <img src={twitter} alt="twitter" />
                 </a>
-                <a href="/">
+                <a href="https://www.facebook.com/searchguard/" target="_blank">
                   <img src={facebook} alt="facebook" />
                 </a>
-                <a href="/">
+                <a href="https://www.linkedin.com/company/search-guard/" target="_blank">
                   <img src={linkedIn} alt="linkedIn" />
                 </a>
-                <a href="/">
+                <a href="https://www.youtube.com/channel/UCUw93I0DHMvoA8HNQ31AeJw" target="_blank">
                   <img src={youtube} alt="youtube" />
                 </a>
                 <hr className="prefooter-hr" />

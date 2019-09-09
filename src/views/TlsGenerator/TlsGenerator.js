@@ -1,5 +1,4 @@
 import React from 'react';
-import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
@@ -63,6 +62,10 @@ const TlsGenerator = () => {
               protected, anyone with access to the link can obtain the
               certificates. If you want to generate production-ready
               certificates, please use our offline TLS tool.
+              <br/><br/>
+              Downlaod TLS tool:
+              <br/><br/>
+            <Button text="Download" link="https://docs.search-guard.com/latest/offline-tls-tool" target="_blank" />
             </div>
             <div className="tls-headline">Usage guidelines</div>
             <div className="tls-text">
@@ -280,7 +283,6 @@ const TlsGenerator = () => {
           </div>
         </div>
       </div>
-      <PreFooter />
       <Footer />
     </div>
   );

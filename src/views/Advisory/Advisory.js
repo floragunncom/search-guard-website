@@ -6,6 +6,7 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import Cta from '../../components/Cta/Cta';
 import Footer from '../../components/Footer/Footer';
 import folderGlass from '../../images/folder-glass.svg';
+import { Helmet } from 'react-helmet';
 
 const Advisory = () => {
   const bugs = [
@@ -60,6 +61,14 @@ const Advisory = () => {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>CVE - advisory - Search Guard</title>
+        <meta
+          name="description"
+          content="Search Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="cve advisory"

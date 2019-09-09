@@ -14,44 +14,47 @@ class Faq extends Component {
         <div className="row faq-row">
           <div className="faq-headline">Frequently asked questions</div>
           <div className="faq-info-boxes">
-            <a className="faq-info-box" href="faq#first">
-              <div className="faq-info-box-headline">
-                How does Search Guard compare to Shield / X-Pack Security?
-              </div>
+            <a className="faq-info-box" href="faq#one">
+              <div className="faq-info-box-headline">What is Search Guard?</div>
               <div className="faq-info-box-text">
-                Search Guard is an independent implementation of a security access
-                layer for Elasticsearch and is completely independent of
-                Elasticsearch’s own security offerings. Search Guard offers
-                similar functionality as competitor products and adds additional
-                features on top, with a flexible licensing model…
+                Search Guard is an Enterprise Security Suite that encrypts and
+                protects your data and data flows in the entire Elastic Stack,
+                including Kibana, Logstash and Beats.
               </div>
             </a>
-            <a className="faq-info-box" href="faq#second">
-              <div className="faq-info-box-headline">
-                Who is using Search Guard?
-              </div>
+            <a className="faq-info-box" href="faq#four">
+              <div className="faq-info-box-headline">Do you offer support?</div>
               <div className="faq-info-box-text">
-                Search Guard runs on mission-critical production clusters
-                protecting sensitive data in the finance, healthcare,
-                pharmaceutical, aviation, telecommunications, security, and data
-                intelligence industries. The cluster sizes range from typical ELK
-                installations to hundreds of data nodes storing petabytes of data.
-                For a list of Enterprise integrations...
+                Of course. We offer both free support for the{' '}
+                <a
+                  href="https://forum.search-guard.com/latest/"
+                  target="_blank"
+                >
+                  Search Guard community
+                </a>{' '}
+                as well as paid support for our customers. As paying customer
+                you get direct access to the core Search Guard developers and we
+                also guarantee SLAs via our support portal.
               </div>
             </a>
-            <a className="faq-info-box" href="faq#third">
+            <a className="faq-info-box" href="faq#thirteen">
               <div className="faq-info-box-headline">
-                How secure is Search Guard?
+                What is the easiest way to set up PoC?
               </div>
               <div className="faq-info-box-text">
-                Search Guard runs on mission-critical production clusters
-                protecting sensitive data in the finance, healthcare,
-                pharmaceutical, aviation, telecommunications, security, and data
-                intelligence industries. The cluster sizes range from typical ELK
-                installations to hundreds of data nodes storing petabytes of data.
-                installations to hundreds of data nodes storing petabytes of data.
-                installations to hundreds of data nodes storing petabytes of data.
-                For a list of Enterprise integrations...
+                The easiest way to set up a PoC and try out all Search Guard
+                features is to use the Search Guard Demo Installer:
+                <a
+                  href="https://docs.search-guard.com/latest/demo-installer"
+                  target="_blank"
+                >
+                  Search Guard Demo Installer
+                </a>
+                The installer comes with a trial license that enables all
+                Enterprise and Compliance features for 60 days. If you need to
+                extend your Search Guard trial, just{' '}
+                <a href="/contact">get in contact with us</a> and we’re happy to
+                provide you with an extended license.
               </div>
             </a>
           </div>

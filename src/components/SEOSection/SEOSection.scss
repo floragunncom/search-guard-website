@@ -1,0 +1,45 @@
+@import '../../styles/Colors.scss';
+@import '../../styles/Breakpoints';
+
+.seo-wrapper {
+  background-color: $lightGrey;
+  padding: 128px 32px 88px 32px;
+  @media only screen and (max-width: $tabletBig) {
+    padding: 32px;
+  }
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 24px;
+  }
+}
+.seo-headline {
+  padding-bottom: 64px;
+  font-size: 48px;
+  line-height: 57px;
+  text-align: center;
+  color: $darkBlue;
+  font-weight: 300;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 36px;
+    line-height: 43px;
+  }
+  @media only screen and (max-width: $mobile) {
+    font-size: 24px;
+    line-height: 28px;
+    padding-bottom: 32px;
+  }
+}
+
+.seo-content-link {
+  display: flex;
+  align-items: center;
+  padding-bottom: 41px;
+  a {
+    color: $green;
+    padding-right: 12px;
+    text-transform: uppercase;
+    line-height: 15px;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+  }
+}

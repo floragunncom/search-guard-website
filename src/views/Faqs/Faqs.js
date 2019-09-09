@@ -210,8 +210,27 @@ const Faqs = () => {
       faq: [
         {
           question: 'What is the easiest way to set up a PoC?',
-          answer:
-            <p>The easiest way to set up a PoC and try out all Search Guard features is to use the Search Guard Demo Installer:<br /><br /><a href='https://docs.search-guard.com/latest/demo-installer' target='_blank'>Search Guard Demo Installer</a><br /><br />The installer comes with a trial license that enables all Enterprise and Compliance features for 60 days. If you need to extend your Search Guard trial, just <a href='/contact'>get in contact with us</a> and we’re happy to provide you with an extended license.</p>,
+          answer: (
+            <p>
+              The easiest way to set up a PoC and try out all Search Guard
+              features is to use the Search Guard Demo Installer:
+              <br />
+              <br />
+              <a
+                href="https://docs.search-guard.com/latest/demo-installer"
+                target="_blank"
+              >
+                Search Guard Demo Installer
+              </a>
+              <br />
+              <br />
+              The installer comes with a trial license that enables all
+              Enterprise and Compliance features for 60 days. If you need to
+              extend your Search Guard trial, just{' '}
+              <a href="/contact">get in contact with us</a> and we’re happy to
+              provide you with an extended license.
+            </p>
+          ),
           anchor: 'fourteen',
         },
       ],
@@ -221,8 +240,18 @@ const Faqs = () => {
       faq: [
         {
           question: 'Can I run Search Guard on Kubernetes?',
-          answer:
-            <p>Absolutely. We provide <a href='https://docs.search-guard.com/latest/search-guard-kubernetes-helm' target='_blank'>K8s helm charts</a> for Kubernetes and also  work on a Kubernetes operator.</p>,
+          answer: (
+            <p>
+              Absolutely. We provide{' '}
+              <a
+                href="https://docs.search-guard.com/latest/search-guard-kubernetes-helm"
+                target="_blank"
+              >
+                K8s helm charts
+              </a>{' '}
+              for Kubernetes and also work on a Kubernetes operator.
+            </p>
+          ),
           anchor: 'fifteen',
         },
       ],

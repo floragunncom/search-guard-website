@@ -9,7 +9,8 @@ import ctaIcon from '../../images/cta-banner-arrow.svg';
 import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
-import pdf from '../../images/pdf-download.svg';
+// import pdf from '../../images/pdf-download.svg';
+import { Helmet } from 'react-helmet';
 
 const Certifications = () => {
   const certificates = [
@@ -109,12 +110,20 @@ const Certifications = () => {
         { name: 'Download Report 23.09.19', link: '/' },
         { name: 'Download Report 23.09.19', link: '/' },
       ],
-      homepage: 'https://www.veracode.com/verified/directory/floragunn-gmbh',
+      homepage: 'https://www.teletrust.de/en/',
     },
   ];
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>certificates Archives - Search Guard</title>
+        <meta
+          name="description"
+          // content="Search Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="Certifications"
@@ -128,7 +137,11 @@ const Certifications = () => {
                 <div className="col s12 certifications-headline">
                   {certificate.headline}
                 </div>
-                <a href={certificate.homepage} target="_blank" className="col s12 m3 certifications-image">
+                <a
+                  href={certificate.homepage}
+                  target="_blank"
+                  className="col s12 m3 certifications-image"
+                >
                   <img src={certificate.image} alt={certificate.image} />
                 </a>
                 <div className="col s12 m8 certifications-context">

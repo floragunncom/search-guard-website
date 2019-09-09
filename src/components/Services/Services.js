@@ -10,61 +10,70 @@ import id from '../../images/icon-loud-id.svg';
 import audit from '../../images/audit-icon.svg';
 import keyshield from '../../images/icon-loud-keyshield.svg';
 
-const Services = () => {
+const Services = ({landing}) => {
   return (
-    <div className="services-wrapper">
-      <div className="services-headline">Enterprise security on all levels</div>
+    <div
+      className={!landing ? "services-wrapper" : "services-wrapper services-landing-background"}
+    >
+      <div
+        className="services-headline"
+        style={landing ? { color: 'white' } : null}
+      >
+        Enterprise security on all levels
+      </div>
       <div className="row">
         <div className="col s6 m3 security-detail-dark">
           <div className="security-detail-icon">
-            <img src={keyshield} alt="icon"/>
+            <img src={keyshield} alt="icon" />
           </div>
           <div className="security-detail-title">Encryption</div>
         </div>
         <div className="col s6 m3 security-detail-light">
           <div className="security-detail-icon">
-            <img src={dblock} alt="icon"/>
+            <img src={dblock} alt="icon" />
           </div>
           <div className="security-detail-title">Authentication</div>
         </div>
         <div className="col s6 m3 security-detail-dark-mobile">
           <div className="security-detail-icon">
-            <img src={key} alt="icon"/>
+            <img src={key} alt="icon" />
           </div>
           <div className="security-detail-title">Authorisation</div>
         </div>
         <div className="col s6 m3 security-detail-light-mobile">
           <div className="security-detail-icon">
-            <img src={id} alt="icon"/>
+            <img src={id} alt="icon" />
           </div>
           <div className="security-detail-title">Role-based access control</div>
         </div>
         <div className="col s6 m3 security-detail-light-mobile">
           <div className="security-detail-icon">
-            <img src={audit} alt="icon"/>
+            <img src={audit} alt="icon" />
           </div>
           <div className="security-detail-title">Audit logging</div>
         </div>
         <div className="col s6 m3 security-detail-dark-mobile">
           <div className="security-detail-icon">
-            <img src={people} alt="icon"/>
+            <img src={people} alt="icon" />
           </div>
           <div className="security-detail-title">Multitenancy</div>
         </div>
         <div className="col s6 m3 security-detail-light">
           <div className="security-detail-icon">
-            <img src={db} alt="icon"/>
+            <img src={db} alt="icon" />
           </div>
           <div className="security-detail-title">Elastic stack</div>
         </div>
         <div className="col s6 m3 security-detail-dark">
           <div className="security-detail-icon">
-            <img src={pc} alt="icon"/>
+            <img src={pc} alt="icon" />
           </div>
           <div className="security-detail-title">Compliance</div>
         </div>
       </div>
-      <div className="security-button">
+      <div
+        className={!landing ? "security-button" : "hidden"}
+      >
         <Button style="default-link" text="see all features" />
       </div>
     </div>

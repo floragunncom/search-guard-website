@@ -22,6 +22,7 @@ import TlsGenerator from './views/TlsGenerator/TlsGenerator';
 import NotFound from './views/NotFound/NotFound';
 import Thanks from './views/Thanks/Thanks';
 import Certifications from './views/Certifications/Certifications';
+import LandingPage from './views/LandingPage/LandingPage';
 
 const Routes = () => {
   return (
@@ -42,12 +43,13 @@ const Routes = () => {
         <Route exact path="/datenschutz" component={DataProtection} />
         <Route exact path="/education-program" component={Education} />
         <Route exact path="/security" component={Security} />
-        <Route exact path="/advisory" component={Advisory} />
-        <Route exact path="/disclosure" component={Disclosure} />
+        <Route exact path="/cve-advisory" component={Advisory} />
+        <Route exact path="/disclosure-policy" component={Disclosure} />
         <Route exact path="/tls-certificate-generator" component={TlsGenerator} />
-        <Route exact path="/certifications" component={Certifications} />
+        <Route exact path="/certificates" component={Certifications} />
         <Route exact path="/NotFound" component={NotFound} />
         <Route exact path="/thanks" component={Thanks} />
+        <Route exact path='/([0-9]{3})' component={LandingPage} />
         <Route exact={true} path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPostArticle} />
         <Route exact={true} path="/white-papers" component={WhitePapers} />

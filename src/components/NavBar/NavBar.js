@@ -80,36 +80,36 @@ export default class NavBar extends Component {
               to="/product"
               className="navbar-nav-link"
               activeStyle={style.active}
-            >
-              product
+              >
+              {this.props.landing ? '' : 'product'}
             </NavLink>
             <NavLink
               to="/licensing"
               className="navbar-nav-link"
               activeStyle={style.active}
-            >
-              licensing
+              >
+              {this.props.landing ? '' : 'licensing'}
             </NavLink>
             <NavLink
               to="/resource"
               className="navbar-nav-link"
               activeStyle={style.active}
-            >
-              resource hub
+              >
+            {this.props.landing ? '' : 'resource hub'}
             </NavLink>
             <NavLink
               to="/company"
               className="navbar-nav-link"
               activeStyle={style.active}
-            >
-              company
+              >
+              {this.props.landing ? '' : 'company'}
             </NavLink>
             <NavLink
               to="/contacts"
               className="navbar-nav-link"
               activeStyle={style.activeContact}
-            >
-              contact us
+              >
+              {this.props.landing ? 'start free trial' : 'contact us'}
             </NavLink>
           </div>
           <div className="navbar-menu-container">
@@ -131,36 +131,36 @@ export default class NavBar extends Component {
                     to="/product"
                     className="navbar-nav-link"
                     activeStyle={style.active}
-                  >
-                    product
+                    >
+                    {this.props.landing ? '' : 'product'}
                   </NavLink>
                   <NavLink
                     to="/licensing"
                     className="navbar-nav-link"
                     activeStyle={style.active}
-                  >
-                    licensing
+                    >
+                    {this.props.landing ? '' : 'licensing'}
                   </NavLink>
                   <NavLink
                     to="/resource"
                     className="navbar-nav-link"
                     activeStyle={style.active}
-                  >
-                    resource hub
+                    >
+                    {this.props.landing ? '' : 'resource hub'}
                   </NavLink>
                   <NavLink
                     to="/company"
                     className="navbar-nav-link"
                     activeStyle={style.active}
-                  >
-                    company
+                    >
+                  {this.props.landing ? '' : 'company'}
                   </NavLink>
                   <NavLink
                     to="/contacts"
                     className="navbar-nav-link"
                     activeStyle={style.actives}
-                  >
-                    contact us
+                    >
+                    {this.props.landing ? 'start free trial' : 'contact us'}
                   </NavLink>
                 </div>
               </div>
