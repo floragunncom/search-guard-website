@@ -49,7 +49,7 @@ const Routes = () => {
         <Route exact path="/certificates" component={Certifications} />
         <Route exact path="/NotFound" component={NotFound} />
         <Route exact path="/thanks" component={Thanks} />
-        <Route exact path='/([0-9]{3})' component={LandingPage} />
+        <Route exact path='/landing-page' component={LandingPage} />
         <Route exact={true} path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPostArticle} />
         <Route exact={true} path="/white-papers" component={WhitePapers} />
