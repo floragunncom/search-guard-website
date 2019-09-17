@@ -40,7 +40,7 @@ const Hero = ({landing}) => {
                 className="hero-certificate-wrapper"
                 style={landing ? { visibility: 'hidden' } : null}
               >
-                <img src={heroCertificates} alt="icon" />
+                <img src={heroCertificates} alt="certificate icon" />
               </a>
             </div>
           </div>
@@ -48,9 +48,9 @@ const Hero = ({landing}) => {
       </div>
       <div
         className={landing ? "hidden" : "hero-certificate-wrapper-hidden"}>
-        <img src={veracode} alt="icon" />
-        <img src={alliance} alt="icon" />
-        <img src={security} alt="icon" />
+        <img src={veracode} alt="veracode logo" />
+        <img src={alliance} alt="alliance logo" />
+        <img src={security} alt="security logo" />
       </div>
     </div>
   );

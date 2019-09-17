@@ -30,7 +30,7 @@ const TrustedBy = () => {
           return (
             <div className="col s12 m6 l4">
               <div className="trusted-pic">
-                <img src={icon} alt="icon" />
+                <img src={icon} alt="company logo" />
               </div>
             </div>
           );

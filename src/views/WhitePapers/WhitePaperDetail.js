@@ -44,7 +44,7 @@ class WhitePaperDetail extends Component {
     //   renderNode: {
     //     [BLOCKS.QUOTE]: (node, children) =>
     //       <div className="blogpost-quote-wrapper">
-    //         <img src={quote} className="blogpost-quote-image" />
+    //         <img src={quote} className="blogpost-quote-image" alt="quote icon" />
     //         <div className="blogpost-quote-text">{children}</div>
     //       </div>,
     //     [BLOCKS.PARAGRAPH]: (node, children) => node.content.some(childNode => childNode.nodeType === `text` && childNode.marks.some(mark => mark.type === MARKS.CODE)) ? children : <div className="blogpost-text">{children}</div>,
@@ -52,7 +52,7 @@ class WhitePaperDetail extends Component {
     //     [BLOCKS.HEADING_2]: (node, children) => <div className="blogpost-headline2">{children}</div>,
     //     [BLOCKS.EMBEDDED_ASSET]: (node) => (
     //       <div className="blogpost-image-wrapper">
-    //         <img className="blogpost-image" src={node.data.target.fields.file.url} />
+    //         <img className="blogpost-image" src={node.data.target.fields.file.url} alt="post image" />
     //         <div className="blogpost-image-description">{node.data.target.fields.description}</div>
     //       </div>
     //     ),
@@ -78,26 +78,26 @@ class WhitePaperDetail extends Component {
             <div className="blogpost-sidebar-title">share</div>
             <div className="blogpost-sidebar-icons-container">
               <div className="blogpost-sidebar-icon">
-                <img src={iconFb} />
+                <img src={iconFb} alt="facebook icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconTwitter} />
+                <img src={iconTwitter} alt="twitter icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconIn} />
+                <img src={iconIn} alt="linkedIn icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconY} />
+                <img src={iconY} alt="y icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconGoogle} />
+                <img src={iconGoogle} alt="google icon" />
               </div>
             </div>
           </div>
           <div className="col s12 blogpost-recommended-headline">Other posts you may like</div>
           <div className="col s12 blogpost-link">
             <Link to={'/white-papers'}>
-              <img src={infoArrowBack} className="blogpost-arrow-back" />
+              <img src={infoArrowBack} className="blogpost-arrow-back" alt="arrow icon" />
               back to all white papers
             </Link>
           </div>

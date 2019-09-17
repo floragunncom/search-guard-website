@@ -55,7 +55,7 @@ class LicensingModel extends Component {
             <div className="col s12 l4 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img src={community} alt="icon" className="licensing-icon" />
+                  <img src={community} alt="community icon" className="licensing-icon" />
                 </div>
                 <div className="licensing-editions-headline community-border">
                   Community edition
@@ -81,7 +81,7 @@ class LicensingModel extends Component {
             <div className="col s12 l4 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img src={enterprise} alt="icon" className="licensing-icon" />
+                  <img src={enterprise} alt="enterprise icon" className="licensing-icon" />
                 </div>
                 <div className="licensing-editions-headline enterprise-border">
                   Enterprise edition
@@ -110,7 +110,7 @@ class LicensingModel extends Component {
             <div className="col s12 l4 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img src={compliance} alt="icon" className="licensing-icon" />
+                  <img src={compliance} alt="compliance icon" className="licensing-icon" />
                 </div>
                 <div className="licensing-editions-headline compliance-border">
                   Compliance edition
@@ -146,7 +146,7 @@ class LicensingModel extends Component {
             <div className="col s12 l6 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img src={academic} alt="icon" className="licensing-icon" />
+                  <img src={academic} alt="academic icon" className="licensing-icon" />
                 </div>
                 <div className="licensing-editions-headline academic-border">
                   Academic & Scientific edition
@@ -173,7 +173,7 @@ class LicensingModel extends Component {
             <div className="col s12 l6 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img src={custom} alt="icon" className="licensing-icon" />
+                  <img src={custom} alt="custom icon" className="licensing-icon" />
                 </div>
                 <div className="licensing-editions-headline custom-border">
                   Custom edition

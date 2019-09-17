@@ -6,7 +6,7 @@ import Journey from '../../components/Journey/Journey';
 import Button from '../../components/Button/Button';
 import Cta from '../../components/Cta/Cta';
 import Partners from '../../components/Partners/Partners';
-import ctaIcon from '../../images/cta-banner-arrow.svg';
+import ctaIcon from '../../images/icon-sg.svg';
 import Title from '../../components/Title/Title';
 import Team from '../../components/Team/Team';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';

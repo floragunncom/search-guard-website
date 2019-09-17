@@ -8,7 +8,7 @@ import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
 import References from '../../components/References/References';
 import Cta from '../../components/Cta/Cta';
-import ctaIcon from '../../images/cta-banner-arrow.svg';
+import ctaIcon from '../../images/icon-sg.svg';
 import iconBook from '../../images/icon-book.svg';
 import iconWheels from '../../images/icon-wheels.svg';
 import { Helmet } from 'react-helmet';

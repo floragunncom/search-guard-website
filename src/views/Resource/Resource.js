@@ -87,7 +87,7 @@ const Resource = () => {
         leftText="We are the official CVE numbering authority for Search Guard. Browse the list of known issues."
         rightHeadline="Disclosure Policy"
         rightText="If you have found a security related issue, please read our disclosure policy."
-        leftLink="/advisory"
+        leftLink="/cve-advisory"
         rightLink="/disclosure"
       />
       <Video playlist />

@@ -12,16 +12,16 @@ const Partners = () => {
         <div className="company-partners-headline">Partners</div>
         <div className="company-partners-pic-wrapper">
           <div className="col s12 m4 offset-m2 company-partners-pic hide-on-small-only">
-            <img src={excelerate} alt="icon" />{' '}
+            <img src={excelerate} alt="excelerate logo" />{' '}
           </div>
           <div className="col s12 m4 offset-m2 company-partners-pic-mobile hide-on-med-and-up">
-            <img src={excelerateMobile} alt="icon" />{' '}
+            <img src={excelerateMobile} alt="excelerate logo" />{' '}
           </div>
           <div className="col s12 m4 company-partners-pic hide-on-small-only">
-            <img src={sirenPartner} alt="icon" />{' '}
+            <img src={sirenPartner} alt="siren logo" />{' '}
           </div>
           <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
-            <img src={sirenPartnerMobile} alt="icon" />{' '}
+            <img src={sirenPartnerMobile} alt="siren logo" />{' '}
           </div>
         </div>
       </div>

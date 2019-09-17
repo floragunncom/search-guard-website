@@ -53,7 +53,7 @@ class Faq extends Component {
                 The installer comes with a trial license that enables all
                 Enterprise and Compliance features for 60 days. If you need to
                 extend your Search Guard trial, just{' '}
-                <a href="/contact">get in contact with us</a> and we’re happy to
+                <a href="/contacts">get in contact with us</a> and we’re happy to
                 provide you with an extended license.
               </div>
             </a>

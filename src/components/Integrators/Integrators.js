@@ -86,7 +86,7 @@ const Integrators = () => {
           return (
             <div className="company-integrators-section">
               <div className="integrators-pic">
-                <img src={profile.pic} alt="logo" />
+                <img src={profile.pic} alt="integrator icon" />
               </div>
               <div className="integrators-content">
                 <div className="integrators-content-headline">

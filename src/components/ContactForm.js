@@ -5,11 +5,10 @@ import Button from "./Button/Button";
 import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
-  const [receiveNewsletter, setReceiveNewsletter] = useState(false);
-
-  const setNewsletter = (event) => {
-    console.log('test')
-    // setReceiveNewsletter(event.target.checked);
+  const [newsletterValue, setNewsletterValue] = useState(false);
+  
+  function changeNewsletterValue() {
+    setNewsletterValue(!newsletterValue);
   }
 
   function handleSubmit(event) {
@@ -89,8 +88,8 @@ const ContactForm = () => {
                     name="first_name"
                     type="text"
                     className="validate"
-                    required=""
-                    aria-required="true"
+                    // required=""
+                    // aria-required="true"
                   />
                   <label
                     htmlFor="first_name"
@@ -205,7 +204,8 @@ const ContactForm = () => {
                   </label>
                 </div>
                 <DropDown
-                  category="country"
+                  category="Country"
+                  name="country"
                   options={[
                     'Germany',
                     'France',
@@ -224,11 +224,13 @@ const ContactForm = () => {
               </div>
               <div className="contact-tech-input-fields">
                 <DropDown
-                  category="Elasticsearch version"
+                  category="Elasticsearch Version"
+                  name="version"
                   options={['1', '2', '3', '4', '5']}
                 />
                 <DropDown
-                  category="Current stage"
+                  category="Current Stage"
+                  name="stage"
                   options={['1', '2', '3', '4', '5']}
                 />
               </div>
@@ -250,16 +252,19 @@ const ContactForm = () => {
             <div className="contact-newsletter-wrapper">
               <div className="contact-information-headline">newsletter</div>
               <div className="privacy-policy-checkbox">
-                <input
-                  type="checkbox"
-                  name="newsletter"
-                  // className="filled-in"
-                  // value={receiveNewsletter}
-                  onChange={setNewsletter}
-                />
-                <span>
-                  Send me updates about Serach Guard products and services
-                </span>
+                <label>
+                  <input
+                    id="check"
+                    type="checkbox"
+                    name="newsletter"
+                    className="filled-in"
+                    onClick={changeNewsletterValue}
+                    value={newsletterValue}
+                  />
+                  <span>
+                    Send me updates about Serach Guard products and services
+                  </span>
+                </label>
               </div>
               <div className="privacy-policy">
                 This form collects your name and email. PLease take a look in

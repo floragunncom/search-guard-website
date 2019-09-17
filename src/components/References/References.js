@@ -23,72 +23,72 @@ const References = () => {
         <div className="ref-headline">References</div>
         <div className="ref-content hide-on-med-and-down">
           <div className="ref-content-row">
-            <img src={heanet} alt="icon" />
-            <img src={harvard} alt="icon" />
-            <img src={kit} alt="icon" />
-            <img src={seges} alt="icon" />
-            <img src={deflect} alt="icon" />
+            <img src={heanet} alt="heanet logo" />
+            <img src={harvard} alt="harvard logo" />
+            <img src={kit} alt="kit logo" />
+            <img src={seges} alt="seges logo" />
+            <img src={deflect} alt="deflect logo" />
           </div>
           <div className="ref-content-row">
-            <img src={princeton} alt="icon" />
-            <img src={koc} alt="icon" />
-            <img src={mdc} alt="icon" />
-            <img src={laval} alt="icon" />
-            <img src={uc3m} alt="icon" />
+            <img src={princeton} alt="princeton logo" />
+            <img src={koc} alt="koc logo" />
+            <img src={mdc} alt="mdc logo" />
+            <img src={laval} alt="laval logo" />
+            <img src={uc3m} alt="uc3m logo" />
           </div>
           <div className="ref-content-row">
-            <img src={ub} alt="icon" />
-            <img src={bucharest} alt="icon" />
-            <img src={icfo} alt="icon" />
-            <img src={arnes} alt="icon" />
-            <img src={oxford} alt="icon" />
+            <img src={ub} alt="ub logo" />
+            <img src={bucharest} alt="bucharest logo" />
+            <img src={icfo} alt="icfo logo" />
+            <img src={arnes} alt="arnes logo" />
+            <img src={oxford} alt="oxford logo" />
           </div>
         </div>
         <div className="ref-content-responsive hide-on-large-only">
           <div className="col s4 m3 ref-image">
-            <img src={heanet} alt="icon" className="ref" />
+            <img src={heanet} alt="heanet logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={harvard} alt="icon" className="ref" />
+            <img src={harvard} alt="harvard logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={kit} alt="icon" className="ref" />
+            <img src={kit} alt="kit logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={seges} alt="icon" className="ref" />
+            <img src={seges} alt="seges logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={deflect} alt="icon" className="ref" />
+            <img src={deflect} alt="deflect logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={princeton} alt="icon" className="ref" />
+            <img src={princeton} alt="princeton logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={koc} alt="icon" className="ref" />
+            <img src={koc} alt="koc logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={mdc} alt="icon" className="ref" />
+            <img src={mdc} alt="mdc logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={laval} alt="icon" className="ref" />
+            <img src={laval} alt="laval logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={uc3m} alt="icon" className="ref" />
+            <img src={uc3m} alt="uc3m logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={ub} alt="icon" className="ref" />
+            <img src={ub} alt="ub logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={bucharest} alt="icon" className="ref" />
+            <img src={bucharest} alt="bucharest logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={icfo} alt="icon" className="ref" />
+            <img src={icfo} alt="icfo logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={arnes} alt="icon" className="ref" />
+            <img src={arnes} alt="arnes logo" className="ref" />
           </div>
           <div className="col s4 m3 ref-image">
-            <img src={oxford} alt="icon" className="ref" />
+            <img src={oxford} alt="oxford logo" className="ref" />
           </div>
         </div>
       </div>

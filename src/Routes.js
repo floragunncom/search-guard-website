@@ -23,12 +23,14 @@ import NotFound from './views/NotFound/NotFound';
 import Thanks from './views/Thanks/Thanks';
 import Certifications from './views/Certifications/Certifications';
 import LandingPage from './views/LandingPage/LandingPage';
+import HomePage from './views/HomePage/HomePage';
 
 const Routes = () => {
   return (
     <div>
       <Switch>
         <Route exact path="/" component={App} />
+        <Route exact path="/landing-page" component={LandingPage} />
         <Route exact path="/contacts" component={ContactUs} />
         <Route exact path="/product" component={Product} />
         <Route exact path="/company" component={Company} />
@@ -47,13 +49,13 @@ const Routes = () => {
         <Route exact path="/disclosure-policy" component={Disclosure} />
         <Route exact path="/tls-certificate-generator" component={TlsGenerator} />
         <Route exact path="/certificates" component={Certifications} />
-        <Route exact path="/NotFound" component={NotFound} />
         <Route exact path="/thanks" component={Thanks} />
-        <Route exact path='/landing-page' component={LandingPage} />
-        <Route exact={true} path="/blog" component={Blog} />
+        <Route exact path="/blog" component={Blog} />
+        <Route path="/blog/category/:slug" component={Blog} />
         <Route path="/blog/:slug" component={BlogPostArticle} />
-        <Route exact={true} path="/white-papers" component={WhitePapers} />
+        <Route exact path="/white-papers" component={WhitePapers} />
         <Route path="/white-papers/:slug" component={WhitePaperDetail} />
+        <Route component={NotFound} />
       </Switch>
     </div>
   );

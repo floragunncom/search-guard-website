@@ -10,7 +10,7 @@ const Labels = () => {
       <div className="row">
         <div className="col s12 m4">
           <div className="securityinfo-icon-wrapper">
-            <img src={certificate} />
+            <img src={certificate} alt="certificate icon" />
           </div>
           <div className="securityinfo-text-wrapper">
             <div className="securityinfo-headline">Certified</div>
@@ -25,7 +25,7 @@ const Labels = () => {
         </div>
         <div className="col s12 m4">
           <div className="securityinfo-icon-wrapper">
-            <img src={shieldWheel} />
+            <img src={shieldWheel} alt="shield icon" />
           </div>
           <div className="securityinfo-text-wrapper">
             <div className="securityinfo-headline">Priority support</div>
@@ -38,7 +38,7 @@ const Labels = () => {
         </div>
         <div className="col s12 m4">
           <div className="securityinfo-icon-wrapper">
-            <img src={check} />
+            <img src={check} alt="checkmark icon" />
           </div>
           <div className="securityinfo-text-wrapper">
             <div className="securityinfo-headline">Trusted by</div>

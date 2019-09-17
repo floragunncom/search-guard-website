@@ -5,7 +5,7 @@ import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import Cta from '../../components/Cta/Cta';
-import ctaIcon from '../../images/cta-banner-arrow.svg';
+import ctaIcon from '../../images/icon-sg.svg';
 import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
@@ -142,7 +142,7 @@ const Certifications = () => {
                   target="_blank"
                   className="col s12 m3 certifications-image"
                 >
-                  <img src={certificate.image} alt={certificate.image} />
+                  <img src={certificate.image} alt={certificate.image} alt="certificate icon" />
                 </a>
                 <div className="col s12 m8 certifications-context">
                   <div className="col s12 certifications-text">

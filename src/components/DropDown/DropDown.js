@@ -60,31 +60,14 @@ class DropDowm extends React.Component {
     const dropDownOptions = this.getDropDownOptions()
     return (
       <div className="drop-down-wrapper col s12 m6">
-        {/* <div 
-          className="drop-down-container"
-          onClick={() => this.handleClick()}
-          ref={node => { this.node = node; }}
-        > 
-          {this.getLabelOnOptionSelected()}
-          <div className="drop-down-text-field">
-          {this.state.selectedValue || this.props.dropDownCategory}
-          </div>
-          <img
-          className={`drop-down-open-and-close-button ${this.state.isOpen ? 'drop-down-close-button' : ''}`}
-          src={arrowDown}
-          alt="drop-down-open-and-close-button"
-          />
-          <div className="drop-down-options-container">
-          { dropDownOptions }
-          </div>
-        </div> */}
         <div className="dropdown-container">
-          <select name={this.props.category} className="browser-default">
+          <div className="drop-down-text-field">
+            {this.props.category}
+          </div>
+          <select name={this.props.name} className="browser-default">
             {this.props.options.map(option => {
-              return (
-                  <option value={option}>{option}</option>
-                  );
-                })}
+              return <option value={option}>{option}</option>;
+            })}
           </select>
         </div>
       </div>

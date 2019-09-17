@@ -125,19 +125,19 @@ class BlogPostArticle extends Component {
             <div className="blogpost-sidebar-title">share</div>
             <div className="blogpost-sidebar-icons-container">
               <div className="blogpost-sidebar-icon">
-                <img src={iconFb} alt="icon" />
+                <img src={iconFb} alt="facebook icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconTwitter} alt="icon" />
+                <img src={iconTwitter} alt="twitter icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconIn} alt="icon" />
+                <img src={iconIn} alt="linkedIn icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconY} alt="icon" />
+                <img src={iconY} alt="y icon" />
               </div>
               <div className="blogpost-sidebar-icon">
-                <img src={iconGoogle} alt="icon" />
+                <img src={iconGoogle} alt="google icon" />
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@ class BlogPostArticle extends Component {
         <div className="col s12 l4" />
         <div className="col s12 blogpost-link">
           <a href="/blog">
-            <img src={infoArrowBack} className="blogpost-arrow-back" />
+            <img src={infoArrowBack} className="blogpost-arrow-back" alt="arrow icon" />
             <span>back to blog</span>
           </a>
         </div>

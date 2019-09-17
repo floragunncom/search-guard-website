@@ -38,7 +38,7 @@ const BlogPost = ({ post, intro }) => {
           </div>
           <div className="blog-info-link">
             <span>read more</span>
-            <img src={infoArrowForward} className="blog-arrow" />
+            <img src={infoArrowForward} className="blog-arrow" alt="arrow icon" />
           </div>
         </div>
       </Link>

@@ -8,7 +8,7 @@ import Cta from '../../components/Cta/Cta';
 import Certified from '../../components/Certified/Certified';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import Integrators from '../../components/Integrators/Integrators';
-import ctaIcon from '../../images/cta-banner-arrow.svg';
+import ctaIcon from '../../images/icon-sg.svg';
 import fileCode from '../../images/file-code.svg';
 import worldLock from '../../images/world-lock.svg';
 import certificate from '../../images/certificate-big.svg';

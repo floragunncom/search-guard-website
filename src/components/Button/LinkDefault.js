@@ -10,7 +10,7 @@ const LinkLoud = props => {
       className="arrow-link-default-container"
     >
       <div className="arrow-link-default-text">{props.text}</div>
-      <img src={arrowRight} alt="arrow" className="arrow-link-arrow-style" />
+      <img src={arrowRight} alt="arrow icon" className="arrow-link-arrow-style" />
     </a>
   );
 };

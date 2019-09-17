@@ -13,7 +13,7 @@ import LicensingModel from '../../components/LicensingModel/LicensingModel';
 import lock from '../../images/tile-icon-wheel.svg';
 import multilevel from '../../images/multilevel-security.svg';
 import disk from '../../images/disk.svg';
-import ctaIcon from '../../images/cta-banner-arrow.svg';
+import ctaIcon from '../../images/icon-sg.svg';
 import { Helmet } from 'react-helmet';
 
 const HomePage = () => {

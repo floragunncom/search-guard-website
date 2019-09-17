@@ -8,7 +8,7 @@ const Tile = props => {
       <div className="row">
         <div className="col s12 l6 tile-content-left">
           <div className="tile-content-icon">
-            <img src={props.leftIcon} alt="icon" className="tile-content-image" />
+            <img src={props.leftIcon} alt="tile icon" className="tile-content-image" />
           </div>
           <div className={props.leftDark ? "tile-content-headline tile-headline-light-colors" : "tile-content-headline tile-headline-dark-colors"}>{props.leftHeadline}</div>
           <div className={props.leftDark ? "tile-content-text tile-text-light-colors" : "tile-content-text tile-text-dark-colors"}>{props.leftText}</div>
@@ -18,7 +18,7 @@ const Tile = props => {
         </div>
         <div className="col s12 l6 tile-content-right">
           <div className="tile-content-icon">
-            <img src={props.rightIcon} alt="icon" className="tile-content-image" />
+            <img src={props.rightIcon} alt="tile icon" className="tile-content-image" />
           </div>
           <div className={props.leftDark ? "tile-content-headline tile-headline-dark-colors" : "tile-content-headline tile-headline-light-colors"}>{props.rightHeadline}</div>
           <div className={props.leftDark ? "tile-content-text tile-text-dark-colors" : "tile-content-text tile-text-light-colors"}>{props.rightText}</div>

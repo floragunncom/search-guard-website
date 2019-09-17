@@ -36,12 +36,12 @@ const Team = () => {
         {team.map(person => {
           return (
             <div className="col s6 m3 company-team-profile">
-              <img src={person.pic} alt="icon" className="profile-pic" />
+              <img src={person.pic} alt="profile picture" className="profile-pic" />
               <div className="profile-name">{person.name}</div>
               <div className="profile-position">{person.position}</div>
               <div className="profile-link">
                 <a href={person.link} target="_blank">
-                  <img src={iconIn} alt="icon" className="profile-linkedIn" />
+                  <img src={iconIn} alt="linkedIn icon" className="profile-linkedIn" />
                 </a>
               </div>
             </div>

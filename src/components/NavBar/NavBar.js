@@ -73,7 +73,7 @@ export default class NavBar extends Component {
       >
         <div className="navbar-navbar-wrapper">
           <a href="/">
-            <img src={logo} alt="Logo" className="navbar-logo-style" />
+            <img src={logo} alt="Search Guard logo" className="navbar-logo-style" />
           </a>
           <div className="navbar-nav-links-container">
             <NavLink
@@ -120,10 +120,10 @@ export default class NavBar extends Component {
               <div className="navbar-sidenav-container">
                 <div className="navbar-overlay-header">
                   <div onClick={this.closeNav}>
-                    <img src={logo} alt="logo" className="navbar-logo-style" />
+                    <img src={logo} alt="Search Guard logo" className="navbar-logo-style" />
                   </div>
                   <div onClick={this.closeNav}>
-                    <img src={cross} alt="close" className="navbar-close-btn" />
+                    <img src={cross} alt="close icon" className="navbar-close-btn" />
                   </div>
                 </div>
                 <div className="navbar-nav-links-container-mobile">

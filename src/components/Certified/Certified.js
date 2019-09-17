@@ -16,7 +16,7 @@ const Certified = () => {
             target="_blank"
             className="certified-col-img"
           >
-            <img src={veracode} alt="icon" />
+            <img src={veracode} alt="veracode logo" />
           </a>
           <div className="certified-col-headline">Veracode</div>
           <div className="certified-col-text">
@@ -32,7 +32,7 @@ const Certified = () => {
             target="_blank"
             className="certified-col-img"
           >
-            <img src={alliance} alt="icon" />
+            <img src={alliance} alt="alliance logo" />
           </a>
           <div className="certified-col-headline">
             Allianz for Cyber-Sicherheit
@@ -50,7 +50,7 @@ const Certified = () => {
             target="_blank"
             className="certified-col-img"
           >
-            <img src={ove} alt="icon" />
+            <img src={ove} alt="ove logo" />
           </a>
           <div className="certified-col-headline">OVE</div>
           <div className="certified-col-text">
@@ -64,7 +64,7 @@ const Certified = () => {
             target="_blank"
             className="certified-col-img"
           >
-            <img src={security} alt="icon" />
+            <img src={security} alt="security icon" />
           </a>
           <div className="certified-col-headline">TeleTrusT</div>
           <div className="certified-col-text">

@@ -60,13 +60,20 @@ const Presentations = () => {
               <img
                 src={item.image}
                 className="presentations-image"
-                alt="preview-image"
+                alt="preview image"
               />
               <div className="presentations-headline">{item.headline}</div>
               <div className="presentations-text">{item.text}</div>
               <div className="presenations-download">
-                <div className="presentations-button" onClick={console.log('works')}>
-                  <img src={pdf} alt="download" className="presentations-button-icon" />
+                <div
+                  className="presentations-button"
+                  onClick={console.log('works')}
+                >
+                  <img
+                    src={pdf}
+                    alt="download icon"
+                    className="presentations-button-icon"
+                  />
                   <div className="presentations-button-text">download pdf</div>
                 </div>
               </div>

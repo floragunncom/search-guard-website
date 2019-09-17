@@ -156,7 +156,7 @@ const Faqs = () => {
               your cluster, not your cost!
               <br />
               We also offer discounted licenses for small installations with 5
-              nodes or less. Get <a href="/contact">in contact with us</a> and
+              nodes or less. Get <a href="/contacts">in contact with us</a> and
               we will work out a licensing model that fits your needs.
             </p>
           ),
@@ -169,7 +169,7 @@ const Faqs = () => {
               Absolutely. We want to give back to education and science and
               provide special discounts and free licenses for eligible
               institutions.{' '}
-              <a href="/education-program">Get in touch with us</a> to learn
+              <a href="/contacts">Get in touch with us</a> to learn
               more about our education & scientific licensing.
             </p>
           ),
@@ -227,7 +227,7 @@ const Faqs = () => {
               The installer comes with a trial license that enables all
               Enterprise and Compliance features for 60 days. If you need to
               extend your Search Guard trial, just{' '}
-              <a href="/contact">get in contact with us</a> and we’re happy to
+              <a href="/contacts">get in contact with us</a> and we’re happy to
               provide you with an extended license.
             </p>
           ),

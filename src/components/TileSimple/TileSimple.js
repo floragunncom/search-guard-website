@@ -34,7 +34,7 @@ const TileSimple = props => {
       <div className={wrapperStyle}>
         <div className="row">
           <div className="col s12 l6 tilesimple-icon-wrapper-left">
-            <img src={props.icon} className={iconStyle} />
+            <img src={props.icon} className={iconStyle} alt="tile icon" />
           </div>
           <div className="col s12 l6">
             <div className={contentStyle}>
@@ -50,7 +50,7 @@ const TileSimple = props => {
       <div className={wrapperStyle}>
         <div className="row tilesimple-change-order">
           <div className="col s12 push-l6 l6 tilesimple-icon-wrapper-right">
-            <img src={props.icon} className={iconStyle}/>
+            <img src={props.icon} className={iconStyle} aqlt="tile icon" />
           </div>
           <div className="col s12 pull-l6 l6">
             <div className={contentStyle}>

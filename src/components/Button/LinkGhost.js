@@ -11,7 +11,7 @@ const ButtonGhost = props => {
       style={{ borderColor: `${props.color || '#00FCE5'}` }}
     >
       <div className="arrow-button-text">{props.text}</div>
-      <img src={arrowRight} alt="arrow" className="arrow-link-arrow-style" />
+      <img src={arrowRight} alt="arrow icon" className="arrow-link-arrow-style" />
     </a>
   );
 };

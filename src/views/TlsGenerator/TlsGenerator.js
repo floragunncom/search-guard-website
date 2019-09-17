@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
 import DropDown from '../../components/DropDown/DropDown';
-import { Helmet } from 'react-helmet';
 import './TlsGenerator.scss';
 
 const TlsGenerator = () => {
+  const [newsletterValue, setNewsletterValue] = useState(false);
+
+  function changeNewsletterValue() {
+    setNewsletterValue(!newsletterValue);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     const data = {};
@@ -62,10 +68,16 @@ const TlsGenerator = () => {
               protected, anyone with access to the link can obtain the
               certificates. If you want to generate production-ready
               certificates, please use our offline TLS tool.
-              <br/><br/>
+              <br />
+              <br />
               Downlaod TLS tool:
-              <br/><br/>
-            <Button text="Download" link="https://docs.search-guard.com/latest/offline-tls-tool" target="_blank" />
+              <br />
+              <br />
+              <Button
+                text="Download"
+                link="https://docs.search-guard.com/latest/offline-tls-tool"
+                target="_blank"
+              />
             </div>
             <div className="tls-headline">Usage guidelines</div>
             <div className="tls-text">
@@ -122,6 +134,7 @@ const TlsGenerator = () => {
                     </div>
                     <DropDown
                       category="Country"
+                      name="country"
                       options={[
                         'Germany',
                         'France',
@@ -259,15 +272,18 @@ const TlsGenerator = () => {
                 <div className="contact-newsletter-wrapper">
                   <div className="contact-information-headline">newsletter</div>
                   <div className="privacy-policy-checkbox">
-                    <input
-                      type="checkbox"
-                      className="filled-in"
-                      name="newsletter"
-                    />
-                    <span>
-                      {' '}
-                      Send me updates about Serach Guard products and services
-                    </span>
+                    <label>
+                      <input
+                        type="checkbox"
+                        className="filled-in"
+                        name="newsletter"
+                        value={newsletterValue}
+                        onClick={changeNewsletterValue}
+                      />
+                      <span>
+                        Send me updates about Serach Guard products and services
+                      </span>
+                    </label>
                   </div>
                   <div className="privacy-policy">
                     This form collects your name and email. PLease take a look

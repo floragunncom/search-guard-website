@@ -243,3 +243,32 @@ i.material-icons.prefix {
     margin: 32px 24px;
   }
 }
+
+.blog-tags-headline, .blog-tags-tag {
+  font-size: 12px;
+  line-height: 32px;
+  letter-spacing: 3.3px;
+  color: $darkBlue;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.blog-tags-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.blog-tags-tag {
+  border: 1px solid $darkBlue;
+  padding: 8px 16px;
+  margin: 8px;
+  @media only screen and (max-width: $mobile) {
+    margin: 4px;
+  }
+  &:hover {
+    background-color: $darkBlue;
+    color: $white;
+  }
+}

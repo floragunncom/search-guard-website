@@ -2,7 +2,7 @@ import React from 'react';
 import './LandingUSP.scss';
 import shield from '../../images/icon-wheel-shield.svg';
 import multilayer from '../../images/icon-multilayer-security.svg';
-import disk from '../../images/disk.svg';
+import disc from '../../images/disk.svg';
 
 const LandingUSP = () => {
   return (
@@ -10,7 +10,7 @@ const LandingUSP = () => {
       <div className="row">
         <div className="col s12 m4">
           <div className="landing-usp-box">
-            <img src={multilayer} alt="icon" />
+            <img src={multilayer} alt="multilayer icon" />
             <div className="landing-usp-text-box">
               <div className="landing-usp-text-box-headline">
                 Multilevel security
@@ -24,7 +24,7 @@ const LandingUSP = () => {
           </div>
         <div className="col s12 m4">
           <div className="landing-usp-box">
-            <img src={shield} alt="icon" />
+            <img src={shield} alt="shield icon" />
             <div className="landing-usp-text-box">
               <div className="landing-usp-text-box-headline">
                 Support industry standards
@@ -38,7 +38,7 @@ const LandingUSP = () => {
           </div>
         <div className="col s12 m4">
           <div className="landing-usp-box">
-            <img src={disk} alt="icon" />
+            <img src={disc} alt="disc icon" />
             <div className="landing-usp-text-box">
               <div className="landing-usp-text-box-headline">Elastic Stack</div>
               <div className="landing-usp-text-box-text">

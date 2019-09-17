@@ -78,7 +78,7 @@ const SEOSection = () => {
                   <a href={link.link} target="_blank">
                     {link.text}
                   </a>
-                  <img src={arrow} alt="arrow" className="seo-content-arrow" />
+                  <img src={arrow} alt="arrow icon" className="seo-content-arrow" />
                 </div>
               </div>
             );

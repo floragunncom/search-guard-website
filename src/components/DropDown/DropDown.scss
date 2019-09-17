@@ -29,8 +29,9 @@
 
 .drop-down-text-field {
   font-family: Roboto;	
-  font-size: 15px;	
-  line-height: 20px;
+  font-size: 15px;
+  color: $darkBlue;
+  line-height: 22px;
   padding: 0px;
   margin: 12px 0;
   @media only screen and (max-width: $tabletBig) {

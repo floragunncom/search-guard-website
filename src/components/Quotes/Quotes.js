@@ -70,7 +70,7 @@ class Quotes extends Component {
                   <li key={quote.author}>
                     <div className="quotes-wrapper">
                       <div className="quotes-left-icon">
-                        <img src={quoteUp} alt="icon" />
+                        <img src={quoteUp} alt="quote icon" />
                       </div>
                       <div className="quotes-quote">
                         <div className="quotes-text">{quote.quote}</div>
@@ -85,7 +85,7 @@ class Quotes extends Component {
                         </div>
                       </div>
                       <div className="quotes-right-icon">
-                        <img src={quoteDown} alt="icon" />
+                        <img src={quoteDown} alt="quote icon" />
                       </div>
                     </div>
                   </li>
