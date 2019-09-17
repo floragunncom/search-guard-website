@@ -262,7 +262,7 @@ const ContactForm = () => {
                     value={newsletterValue}
                   />
                   <span>
-                    Send me updates about Serach Guard products and services
+                    Send me updates about Search Guard products and services
                   </span>
                 </label>
               </div>
