@@ -167,7 +167,7 @@ class Journey extends Component {
                 {timelineContent.map(event => {
                   return (
                     <li>
-                      <div className="content">
+                      <div className="content no-hide">
                         <h2>
                           <time>{event.year}</time>
                         </h2>
