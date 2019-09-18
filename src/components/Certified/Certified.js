@@ -2,7 +2,7 @@ import React from 'react';
 import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
-import ove from '../../images/ove.svg';
+import cve from '../../images/ove.svg';
 import './Certified.scss';
 
 const Certified = () => {
@@ -50,9 +50,9 @@ const Certified = () => {
             target="_blank"
             className="certified-col-img"
           >
-            <img src={ove} alt="ove logo" />
+            <img src={cve} alt="ove logo" />
           </a>
-          <div className="certified-col-headline">OVE</div>
+          <div className="certified-col-headline">CVE</div>
           <div className="certified-col-text">
             floragunn GmbH is the official CVE numbering authority for Search
             Guard.

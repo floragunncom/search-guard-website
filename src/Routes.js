@@ -52,7 +52,7 @@ const Routes = () => {
         <Route exact path="/thanks" component={Thanks} />
         <Route exact path="/blog" component={Blog} />
         <Route path="/blog/category/:slug" component={Blog} />
-        <Route path="/blog/:slug" component={BlogPostArticle} />
+        <Route path="/:slug" component={BlogPostArticle} />
         <Route exact path="/white-papers" component={WhitePapers} />
         <Route path="/white-papers/:slug" component={WhitePaperDetail} />
         <Route component={NotFound} />

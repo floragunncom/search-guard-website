@@ -267,7 +267,7 @@ const ContactForm = () => {
                 </label>
               </div>
               <div className="privacy-policy">
-                This form collects your name and email. PLease take a look in
+                This form collects your name and email. Please take a look in
                 our privacy policy for a better understanding on how we protect
                 and manage your submitted data.
               </div>

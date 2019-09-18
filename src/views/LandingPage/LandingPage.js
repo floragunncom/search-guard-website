@@ -6,6 +6,7 @@ import Certified from '../../components/Certified/Certified';
 import References from '../../components/References/References';
 import Cta from '../../components/Cta/Cta';
 import Services from '../../components/Services/Services';
+import TileSimple from '../../components/TileSimple/TileSimple';
 import SEOSection from '../../components/SEOSection/SEOSection';
 import Footer from '../../components/Footer/Footer';
 import LandingUSP from '../../components/LandingUSP/LandingUSP';
