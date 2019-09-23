@@ -7,7 +7,6 @@ import Footer from '../../components/Footer/Footer';
 import BlogBox from '../../components/BlogBox/BlogBox';
 import Blockquote from '../../components/Blockquote/Blockquote';
 import infoArrowBack from '../../images/info-arrow-back.svg';
-import iconGoogle from '../../images/icon-google-loud.svg';
 import iconTwitter from '../../images/icon-tw-loud.svg';
 import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
@@ -135,9 +134,6 @@ class BlogPostArticle extends Component {
               </div>
               <div className="blogpost-sidebar-icon">
                 <img src={iconY} alt="y icon" />
-              </div>
-              <div className="blogpost-sidebar-icon">
-                <img src={iconGoogle} alt="google icon" />
               </div>
             </div>
           </div>

@@ -123,7 +123,6 @@ const TlsGenerator = () => {
                         name="organization"
                         type="text"
                         className="validate input-field-contact"
-                        name="organization"
                       />
                       <label
                         htmlFor="organization"

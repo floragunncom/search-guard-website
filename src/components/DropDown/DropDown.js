@@ -65,8 +65,8 @@ class DropDowm extends React.Component {
             {this.props.category}
           </div>
           <select name={this.props.name} className="browser-default">
-            {this.props.options.map(option => {
-              return <option value={option}>{option}</option>;
+            {this.props.options.map((option, index) => {
+              return <option value={option} key={index}>{option}</option>;
             })}
           </select>
         </div>

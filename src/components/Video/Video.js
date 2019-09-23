@@ -15,6 +15,7 @@ const Video = props => {
             <iframe
               className="responsive-video"
               src="https://www.youtube.com/embed/qiRgy5FcsnI"
+              title="Search Guard - Compliance Module"
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -28,6 +29,7 @@ const Video = props => {
               className="responsive-video"
               src="https://www.youtube.com/embed/1uWGqcy5PeQ"
               frameBorder="0"
+              title="Search Guard - Orci varius natoque penatibus et magnis dis parturient"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -41,6 +43,7 @@ const Video = props => {
               className="responsive-video"
               src="https://www.youtube.com/embed/C_pWD-gaJow"
               frameBorder="0"
+              title="Search Guard - Suspendisse nibh libero"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

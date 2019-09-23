@@ -28,10 +28,12 @@ const Blog = () => {
         .getEntries({ content_type: 'post', order: 'sys.createdAt' })
         .then(response => {
           setPosts(response.items);
+          console.log('posts', response.items);
         });
       setLoading(false);
     };
     fetchPosts();
+
   }, []);
 
   function onSearchTermChange(event) {
