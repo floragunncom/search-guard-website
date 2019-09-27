@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import * as lunr from 'lunr';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -7,37 +7,53 @@ import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Pagination from '../../components/Pagination/Pagination';
 import Footer from '../../components/Footer/Footer';
-import client from '../../components/Client/Client';
+// import client from '../../components/Client/Client';
 import BlogPost from './BlogPost';
 import SearchBlogPost from './SearchBlogPost';
 import infoArrowBack from '../../images/info-arrow-back.svg';
+import { BlogContext } from '../../contexts/BlogContext';
 
 const Blog = () => {
-  const [posts, setPosts] = useState([]);
+  const posts = useContext(BlogContext);
+
+  // useEffect(() => { 
+  //   const fetchContect = async () => {
+  //     setLoading(true);
+  //     const contextType = await useContext(BlogContext);
+  //     console.log('contextType', contextType)
+  //     setPosts(contextType);
+  //     setLoading(false);
+  //   };
+  //   fetchContect();
+  // }, []);
+
   const [searchResultPosts, setSearchResultPosts] = useState([]);
   const [categoryPosts, setCategoryPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading]  = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      const fetch = await client
-        .getEntries({ content_type: 'post', order: 'sys.createdAt' })
-        .then(response => {
-          setPosts(response.items);
-          console.log('posts', response.items);
-        });
-      setLoading(false);
-    };
-    fetchPosts();
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     setLoading(true);
+  //     const fetch = await client
+  //       .getEntries({ content_type: 'post', order: 'sys.createdAt' })
+  //       .then(response => {
+  //         setPosts(response.items);
+  //       });
+  //     setLoading(false);
+  //   };
+  //   fetchPosts();
 
-  }, []);
+  // }, []);
 
-  function onSearchTermChange(event) {
-    const searchTerm = event.target.value;
+  // function onClearSearch(query) {
+  //   console.log('query.target.value', query.target.value)
+  // }
+
+  function onSearchTermChange(query) {
+    const searchTerm = query.target.value.trim() + '*';
     setSearchTerm(searchTerm);
     let searchResultPosts = [];
     const searchResult = searchIndexGeneral.search(searchTerm);
@@ -46,7 +62,7 @@ const Blog = () => {
     });
     setSearchResultPosts(searchResultPosts);
   }
-  
+
   function onCategoryClick(tag) {
     let categoryPosts = [];
     const categorySearchResult = searchIndexTags.search(tag);
@@ -110,13 +126,14 @@ const Blog = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   let postsToRender;
-  if (loading) {
-    postsToRender = <div className="searchblogpost-no-results">Loading ...</div>;
-  } else if (searchTerm.length > 1) {
+  // if (loading) {
+  //   postsToRender = <div className="searchblogpost-no-results">Loading ...</div>;
+  // } else if (searchTerm.length > 1) {
+  if (searchTerm.length > 1) {
     if (searchResultPosts.length === 0) {
       postsToRender = (
         <div className="searchblogpost-no-results">
-          No results for '{searchTerm}'
+          No results for "{searchTerm.substring(0, searchTerm.length - 1)}"
         </div>
       );
     } else {
@@ -125,7 +142,7 @@ const Blog = () => {
           <div className="searchblogpost-result-headline">
             {searchResultPosts.length}{' '}
             {searchResultPosts.length !== 1 ? 'results' : 'result'} found for
-            "{searchTerm}"
+            "{searchTerm.substring(0, searchTerm.length - 1)}"
           </div>
           {searchResultPosts.map((post, index) => {
             return (
@@ -180,6 +197,7 @@ const Blog = () => {
     }
   }
 
+
   return (
     <div>
       <Helmet>
@@ -205,10 +223,13 @@ const Blog = () => {
                     <input
                       id="search"
                       type="text"
-                      className="validate dark-blue"
-                      onChange={event => onSearchTermChange(event)}
+                      className="validate dark-blue blog-search"
+                      onChange={query => onSearchTermChange(query)}
                       placeholder="Search blog ..."
                     />
+                    {/* <div onPress={query => onClearSearch(query)}>
+                      <i className="material-icons">close</i>
+                    </div> */}
                   </div>
                 </div>
                 <div className="row">

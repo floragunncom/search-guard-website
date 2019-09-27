@@ -24,7 +24,6 @@ class BlogPostArticle extends Component {
 
   componentDidMount() {
     const content = this.props.location.state.content;
-    const posts = this.props.location.state.posts;
     const documentContent = content.postContent;
     if (content) {
       this.setState({ content, documentContent });

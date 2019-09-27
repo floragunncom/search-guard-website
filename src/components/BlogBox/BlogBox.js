@@ -1,22 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext} from 'react';
 import BlogPost from '../../views/Blog/BlogPost';
 import client from '../../components/Client/Client';
 import Button from '../../components/Button/Button';
+import { BlogContext } from '../../contexts/BlogContext';
 import './BlogBox.scss';
 
 const BlogBox = ({ intro, headline }) => {
-  const [posts, setPosts] = useState([]);
+    const posts = useContext(BlogContext);
+  // const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const fetch = await client
-        .getEntries({ content_type: 'post', order: 'sys.createdAt' })
-        .then(response => {
-          setPosts(response.items);
-        });
-    };
-    fetchPosts();
-  }, []);
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     const fetch = await client
+  //       .getEntries({ content_type: 'post', order: 'sys.createdAt' })
+  //       .then(response => {
+  //         setPosts(response.items);
+  //       });
+  //   };
+  //   fetchPosts();
+  // }, []);
 
   let extraRow = undefined;
   if (intro) {

@@ -62,7 +62,7 @@ class DropDowm extends React.Component {
       <div className="drop-down-wrapper col s12 m6">
         <div className="dropdown-container">
           <div className="drop-down-text-field">
-            {this.props.category}
+            {this.props.category} {this.props.category == 'Country' ? '*' : ''}
           </div>
           <select name={this.props.name} className="browser-default">
             {this.props.options.map((option, index) => {

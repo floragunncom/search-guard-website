@@ -19,7 +19,8 @@ const ContactForm = () => {
 
     // Log what our lambda function will receive
     console.log(JSON.stringify(data));
-    fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
+    // fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
+    fetch('http://localhost:3000/', {
       method: 'POST',
       headers: {
         accept: 'application/json; charset=utf-8',
@@ -27,7 +28,7 @@ const ContactForm = () => {
       },
       body: JSON.stringify(data),
     });
-    // window.location.href="/thanks";
+    window.location.href="/thanks";
   }
 
   return (
@@ -79,7 +80,7 @@ const ContactForm = () => {
           <form onSubmit={handleSubmit}>
             <div className="contact-info-wrapper">
               <div className="contact-information-headline">
-                contact information
+                contact information<br />(Fields marked with an (*) are required)
               </div>
               <div className="contact-info-input-fields">
                 <div className="input-field col s12 m6">
@@ -87,16 +88,13 @@ const ContactForm = () => {
                     id="first_name"
                     name="first_name"
                     type="text"
-                    className="validate"
-                    // required=""
-                    // aria-required="true"
+                    required
                   />
                   <label
-                    htmlFor="first_name"
+                    // htmlFor="first_name"
                     className="input-field-label"
-                    data-error="Please type in the correct format!"
                   >
-                    First Name
+                    First Name *
                   </label>
                 </div>
                 <div className="input-field col s12 m6">
@@ -104,10 +102,11 @@ const ContactForm = () => {
                     id="last_name"
                     name="last_name"
                     type="text"
-                    className="validate input-field-contact"
+                    className="input-field-contact"
+                    required
                   />
                   <label htmlFor="last_name" className="input-field-label">
-                    Last Name
+                    Last Name *
                   </label>
                 </div>
                 <div className="input-field col s12 m6">
@@ -115,10 +114,11 @@ const ContactForm = () => {
                     id="company"
                     name="company"
                     type="text"
-                    className="validate input-field-contact"
+                    className="input-field-contact"
+                    required
                   />
                   <label htmlFor="company" className="input-field-label">
-                    Company
+                    Company *
                   </label>
                 </div>
                 <div className="input-field col s12 m6">
@@ -126,7 +126,7 @@ const ContactForm = () => {
                     id="address"
                     name="address"
                     type="text"
-                    className="validate input-field-contact"
+                    className="input-field-contact"
                   />
                   <label htmlFor="address" className="input-field-label">
                     Address
@@ -137,7 +137,7 @@ const ContactForm = () => {
                     id="zipcode"
                     name="zip"
                     type="text"
-                    className="validate input-field-contact"
+                    className="input-field-contact"
                   />
                   <label htmlFor="zipcode" className="input-field-label">
                     Zipcode
@@ -148,10 +148,11 @@ const ContactForm = () => {
                     id="city"
                     name="city"
                     type="text"
-                    className="validate input-field-contact"
+                    className="input-field-contact"
+                    required
                   />
                   <label htmlFor="city" className="input-field-label">
-                    City
+                    City *
                   </label>
                 </div>
                 <div className="input-field col s12 m6">
@@ -159,7 +160,7 @@ const ContactForm = () => {
                     id="website"
                     name="website"
                     type="text"
-                    className="validate input-field-contact"
+                    className="input-field-contact"
                   />
                   <label htmlFor="website" className="input-field-label">
                     Website
@@ -171,14 +172,14 @@ const ContactForm = () => {
                     name="email"
                     type="email"
                     className="validate"
+                    required
                   />
                   <label htmlFor="email2" id="email-input">
-                    Email address
+                    Email address *
                   </label>
                   <span
                     className="helper-text"
-                    data-error="Please type in the correct format!"
-                    data-success="Valid format"
+                    data-error="Please type in a valid email address!"
                   />
                 </div>
                 <div className="input-field col s12 m6">
@@ -186,7 +187,7 @@ const ContactForm = () => {
                     id="job_title"
                     name="job_position"
                     type="text"
-                    className="validate input-field-contact"
+                    className="input-field-contact"
                   />
                   <label htmlFor="job_title" className="input-field-label">
                     Job title (optional)
@@ -197,7 +198,7 @@ const ContactForm = () => {
                     id="phone_number"
                     name="phone"
                     type="text"
-                    className="validate input-field-contact"
+                    className="input-field-contact"
                   />
                   <label htmlFor="phone_number" className="input-field-label">
                     Phone number (optional)
@@ -242,10 +243,11 @@ const ContactForm = () => {
                   id="message"
                   name="message"
                   type="text"
-                  className="validate input-field-contact materialize-textarea"
+                  className="input-field-contact materialize-textarea"
+                  required
                 />
                 <label htmlFor="message" className="input-field-label">
-                  Message
+                  Message *
                 </label>
               </div>
             </div>

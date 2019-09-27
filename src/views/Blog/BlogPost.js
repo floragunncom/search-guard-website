@@ -11,7 +11,7 @@ const BlogPost = ({ post, intro }) => {
     infoTextLength -= 1;
   }
 
-  let BlogPostContent = undefined;
+  let BlogPostContent;
   if (blogPost !== undefined) {
     BlogPostContent = (
       <Link

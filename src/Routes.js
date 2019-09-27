@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import App from './App';
+// import App from './App';
+import HomePage from './views/HomePage/HomePage';
 import ContactUs from './views/ContactUs';
 import Blog from './views/Blog/Blog';
 import Resource from './views/Resource/Resource';
@@ -23,13 +24,14 @@ import NotFound from './views/NotFound/NotFound';
 import Thanks from './views/Thanks/Thanks';
 import Certifications from './views/Certifications/Certifications';
 import LandingPage from './views/LandingPage/LandingPage';
-import HomePage from './views/HomePage/HomePage';
+// import HomePage from './views/HomePage/HomePage';
+import BlogContextProvider from './contexts/BlogContext';
 
 const Routes = () => {
   return (
-    <div>
+    <BlogContextProvider>
       <Switch>
-        <Route exact path="/" component={App} />
+        <Route exact path="/" component={HomePage} />
         <Route exact path="/landing-page" component={LandingPage} />
         <Route exact path="/contacts" component={ContactUs} />
         <Route exact path="/product" component={Product} />
@@ -57,7 +59,7 @@ const Routes = () => {
         <Route path="/white-papers/:slug" component={WhitePaperDetail} />
         <Route component={NotFound} />
       </Switch>
-    </div>
+    </BlogContextProvider>
   );
 };
 

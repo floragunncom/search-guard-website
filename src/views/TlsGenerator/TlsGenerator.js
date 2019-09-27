@@ -112,17 +112,23 @@ const TlsGenerator = () => {
                         type="email"
                         className="validate"
                         name="email"
+                        required
                       />
                       <label htmlFor="tls-email" id="email-input">
                         Email *
                       </label>
+                      <span
+                        className="helper-text"
+                        data-error="Please type in a valid email address!"
+                      />
                     </div>
                     <div className="input-field col s12 m6">
                       <input
                         id="organization"
                         name="organization"
                         type="text"
-                        className="validate input-field-contact"
+                        className="input-field-contact"
+                        required
                       />
                       <label
                         htmlFor="organization"
@@ -155,8 +161,7 @@ const TlsGenerator = () => {
                       id="host1"
                       name="host1"
                       type="text"
-                      className="validate"
-                      required=""
+                      required
                       aria-required="true"
                     />
                     <label
@@ -172,7 +177,6 @@ const TlsGenerator = () => {
                       id="host2"
                       name="host2"
                       type="text"
-                      className="validate"
                     />
                     <label htmlFor="host2" className="input-field-label">
                       Hostname 2
@@ -183,7 +187,6 @@ const TlsGenerator = () => {
                       id="host3"
                       name="host3"
                       type="text"
-                      className="validate"
                     />
                     <label htmlFor="host3" className="input-field-label">
                       Hostname 3
@@ -193,7 +196,6 @@ const TlsGenerator = () => {
                     <input
                       id="host4"
                       type="text"
-                      className="validate"
                       name="host4"
                     />
                     <label htmlFor="host4" className="input-field-label">
@@ -204,7 +206,6 @@ const TlsGenerator = () => {
                     <input
                       id="host5"
                       type="text"
-                      className="validate"
                       name="host5"
                     />
                     <label htmlFor="host5" className="input-field-label">
@@ -215,7 +216,6 @@ const TlsGenerator = () => {
                     <input
                       id="host6"
                       type="text"
-                      className="validate"
                       name="host6"
                     />
                     <label htmlFor="host6" className="input-field-label">
@@ -226,7 +226,6 @@ const TlsGenerator = () => {
                     <input
                       id="host7"
                       type="text"
-                      className="validate"
                       name="host7"
                     />
                     <label htmlFor="host7" className="input-field-label">
@@ -237,7 +236,6 @@ const TlsGenerator = () => {
                     <input
                       id="host8"
                       type="text"
-                      className="validate"
                       name="host8"
                     />
                     <label htmlFor="host8" className="input-field-label">
@@ -248,7 +246,6 @@ const TlsGenerator = () => {
                     <input
                       id="host9"
                       type="text"
-                      className="validate"
                       name="host9"
                     />
                     <label htmlFor="host9" className="input-field-label">
@@ -260,7 +257,6 @@ const TlsGenerator = () => {
                       id="host10"
                       name="host10"
                       type="text"
-                      className="validate"
                       name="host10"
                     />
                     <label htmlFor="host10" className="input-field-label">
