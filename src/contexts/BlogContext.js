@@ -5,17 +5,17 @@ export const BlogContext = React.createContext();
 
 const BlogContextProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      // setLoading(true);
+      setLoading(true);
       const fetch = await client
         .getEntries({ content_type: 'post', order: 'sys.createdAt' })
         .then(response => {
           setPosts(response.items);
         });
-      // setLoading(false);
+      setLoading(false);
     };
     fetchPosts();
   }, []);

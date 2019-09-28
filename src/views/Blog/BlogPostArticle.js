@@ -13,22 +13,10 @@ import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
 import './BlogPostArticle.scss';
 
-const BlogPostArticle = props => {
-  const postContent = props.posts.find(function(entry) {
-    return (
-      entry.fields.slug ===
-      `${props.match.url.substring(1, props.match.url.length)}`
-    );
-  });
-
-  // useEffect(() => {
-  //   const createPostContent = async () => {
-  //     if (props.posts !== []) {
-  //     setContent(postContent);
-  //   }
-  //   };
-  //   createPostContent();
-  // }, []);
+const BlogPostArticle = ({ posts, match }) => {
+  const postContent = posts.find(
+    entry => entry.fields.slug === `${match.url.substring(1)}`,
+  );
 
   const options = {
     overrides: {
@@ -101,11 +89,10 @@ const BlogPostArticle = props => {
       },
     },
   };
-
   if (!postContent) {
     return <h1>Loading ...</h1>;
   }
-  console.log('postContent', postContent)
+
   return (
     <div className="blogpost-container">
       <NavBar />

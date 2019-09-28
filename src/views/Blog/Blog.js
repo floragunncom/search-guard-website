@@ -17,6 +17,9 @@ const Blog = ({ posts }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
+  const [loading, setLoading] = useState(false);
+
+  // posts === undefined ? setLoading(true) : setLoading(false);
 
   function onSearchTermChange(query) {
     const searchedWord = `${query.target.value.trim()}*`;
@@ -92,10 +95,10 @@ const Blog = ({ posts }) => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   let postsToRender;
-  // if (loading) {
-  //   postsToRender = <div className="searchblogpost-no-results">Loading ...</div>;
-  // } else if (searchTerm.length > 1) {
-  if (searchTerm.length > 1) {
+  if (loading) {
+    postsToRender = <div className="searchblogpost-no-results">Loading ...</div>;
+  } else if (searchTerm.length > 1) {
+  // if (searchTerm.length > 1) {
     if (searchResultPosts.length === 0) {
       postsToRender = (
         <div className="searchblogpost-no-results">

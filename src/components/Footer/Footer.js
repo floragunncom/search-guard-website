@@ -18,7 +18,7 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/product#videos" className="footer-links">
+                  <a href="/resource#videos" className="footer-links">
                     How it works
                   </a>
                 </div>
@@ -34,22 +34,22 @@ const Footer = ({ landing }) => {
                   <a href="/licensing">license</a>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/license#standard" className="footer-links">
+                  <a href="/licensing#standard" className="footer-links">
                     Standard editions
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/license#feature" className="footer-links">
+                  <a href="/licensing#feature" className="footer-links">
                     Feature breakdown
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/license#academic" className="footer-links">
+                  <a href="/licensing#academic" className="footer-links">
                     Academic edition
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/license#academic" className="footer-links">
+                  <a href="/licensing#academic" className="footer-links">
                     Custom edition
                   </a>
                 </div>
@@ -133,7 +133,7 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/company#integrators" className="footer-links">
+                  <a href="/product#integrators" className="footer-links">
                     Integrators
                   </a>
                 </div>
@@ -157,7 +157,10 @@ const Footer = ({ landing }) => {
             </div>
           </div>
         ) : null}
-        <div className="footer-text" style={landing ? {paddingTop: '64px'} : null}>
+        <div
+          className="footer-text"
+          style={landing ? { paddingTop: '64px' } : null}
+        >
           <p>© 2018 floragunn GmbH - All Rights Reserved</p>
           <p>
             Search Guard is a trademark of floragunn GmbH, registered in the

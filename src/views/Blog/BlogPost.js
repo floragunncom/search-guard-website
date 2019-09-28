@@ -22,6 +22,7 @@ const BlogPost = ({ post, intro }) => {
           <img
             src={blogPost.postImage.fields.file.url}
             className="blogpost-feed-image"
+            alt="Post Header"
           />
         </div>
         <div className="blog-text-content">
@@ -38,15 +39,19 @@ const BlogPost = ({ post, intro }) => {
           </div>
           <div className="blog-info-link">
             <span>read more</span>
-            <img src={infoArrowForward} className="blog-arrow" alt="arrow icon" />
+            <img
+              src={infoArrowForward}
+              className="blog-arrow"
+              alt="arrow icon"
+            />
           </div>
         </div>
       </Link>
-    )
+    );
   }
 
   return (
-    <div className={intro ? "blog-wrapper" : "blog-wrapper-intro"}>
+    <div className={intro ? 'blog-wrapper' : 'blog-wrapper-intro'}>
       {BlogPostContent}
     </div>
   );
