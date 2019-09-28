@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
-// import App from './App';
 import HomePage from './views/HomePage/HomePage';
 import ContactUs from './views/ContactUs';
 import Blog from './views/Blog/Blog';
@@ -24,12 +23,12 @@ import NotFound from './views/NotFound/NotFound';
 import Thanks from './views/Thanks/Thanks';
 import Certifications from './views/Certifications/Certifications';
 import LandingPage from './views/LandingPage/LandingPage';
-// import HomePage from './views/HomePage/HomePage';
-import BlogContextProvider from './contexts/BlogContext';
+import { BlogContext } from './contexts/BlogContext';
 
 const Routes = () => {
+  const posts = useContext(BlogContext);
   return (
-    <BlogContextProvider>
+    <div>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/landing-page" component={LandingPage} />
@@ -49,17 +48,28 @@ const Routes = () => {
         <Route exact path="/security" component={Security} />
         <Route exact path="/cve-advisory" component={Advisory} />
         <Route exact path="/disclosure-policy" component={Disclosure} />
-        <Route exact path="/tls-certificate-generator" component={TlsGenerator} />
+        <Route
+          exact
+          path="/tls-certificate-generator"
+          component={TlsGenerator}
+        />
         <Route exact path="/certificates" component={Certifications} />
         <Route exact path="/thanks" component={Thanks} />
-        <Route exact path="/blog" component={Blog} />
+        <Route
+          exact
+          path="/blog"
+          render={props => <Blog {...props} posts={posts} />}
+        />
+        <Route
+          path="/:slug"
+          render={props => <BlogPostArticle {...props} posts={posts} />}
+        />
         <Route path="/blog/category/:slug" component={Blog} />
-        <Route path="/:slug" component={BlogPostArticle} />
         <Route exact path="/white-papers" component={WhitePapers} />
         <Route path="/white-papers/:slug" component={WhitePaperDetail} />
         <Route component={NotFound} />
       </Switch>
-    </BlogContextProvider>
+    </div>
   );
 };
 

@@ -15,7 +15,7 @@ const BlogPost = ({ post, intro }) => {
   if (blogPost !== undefined) {
     BlogPostContent = (
       <Link
-        to={{ pathname: `/${blogPost.slug}`, state: { content: blogPost } }}
+        to={{ pathname: `/${blogPost.slug}` }}
         className="blog-link-wrapper"
       >
         <div className="blog-image-wrapper">

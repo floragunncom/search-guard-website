@@ -3,28 +3,24 @@ import client from '../components/Client/Client';
 
 export const BlogContext = React.createContext();
 
-const BlogContextProvider = (props) => {
+const BlogContextProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      setLoading(true);
+      // setLoading(true);
       const fetch = await client
         .getEntries({ content_type: 'post', order: 'sys.createdAt' })
         .then(response => {
           setPosts(response.items);
         });
-      setLoading(false);
+      // setLoading(false);
     };
     fetchPosts();
   }, []);
 
-  return (
-    <BlogContext.Provider value={posts}>
-      {props.children}
-    </BlogContext.Provider>
-  )
-}
+  return <BlogContext.Provider value={posts}>{children}</BlogContext.Provider>;
+};
 
 export default BlogContextProvider;

@@ -26,9 +26,9 @@ const TrustedBy = () => {
     <div className="trusted-wrapper">
       <div className="row">
         <div className="trusted-headline">Search Guard is trusted by</div>
-        {icons.map(icon => {
+        {icons.map((icon, index) => {
           return (
-            <div className="col s12 m6 l4">
+            <div className="col s12 m6 l4" key={index}>
               <div className="trusted-pic">
                 <img src={icon} alt="company logo" />
               </div>

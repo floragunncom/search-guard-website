@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState } from 'react';
 import * as lunr from 'lunr';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -7,54 +7,20 @@ import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Pagination from '../../components/Pagination/Pagination';
 import Footer from '../../components/Footer/Footer';
-// import client from '../../components/Client/Client';
 import BlogPost from './BlogPost';
 import SearchBlogPost from './SearchBlogPost';
 import infoArrowBack from '../../images/info-arrow-back.svg';
-import { BlogContext } from '../../contexts/BlogContext';
 
-const Blog = () => {
-  const posts = useContext(BlogContext);
-
-  // useEffect(() => { 
-  //   const fetchContect = async () => {
-  //     setLoading(true);
-  //     const contextType = await useContext(BlogContext);
-  //     console.log('contextType', contextType)
-  //     setPosts(contextType);
-  //     setLoading(false);
-  //   };
-  //   fetchContect();
-  // }, []);
-
+const Blog = ({ posts }) => {
   const [searchResultPosts, setSearchResultPosts] = useState([]);
   const [categoryPosts, setCategoryPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  // const [loading, setLoading]  = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
 
-  // useEffect(() => {
-  //   const fetchPosts = async () => {
-  //     setLoading(true);
-  //     const fetch = await client
-  //       .getEntries({ content_type: 'post', order: 'sys.createdAt' })
-  //       .then(response => {
-  //         setPosts(response.items);
-  //       });
-  //     setLoading(false);
-  //   };
-  //   fetchPosts();
-
-  // }, []);
-
-  // function onClearSearch(query) {
-  //   console.log('query.target.value', query.target.value)
-  // }
-
   function onSearchTermChange(query) {
-    const searchTerm = query.target.value.trim() + '*';
-    setSearchTerm(searchTerm);
+    const searchedWord = `${query.target.value.trim()}*`;
+    setSearchTerm(searchedWord);
     let searchResultPosts = [];
     const searchResult = searchIndexGeneral.search(searchTerm);
     searchResult.map(res => {
