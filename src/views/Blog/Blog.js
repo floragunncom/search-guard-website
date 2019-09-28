@@ -33,35 +33,37 @@ const Blog = ({ posts }) => {
   }
 
   function onCategoryClick(tag) {
-    let categoryPosts = [];
+    let fetchCategoryPosts = [];
     const categorySearchResult = searchIndexTags.search(tag);
     categorySearchResult.map(res => {
-      categoryPosts.push(posts.find(post => post.sys.id === res.ref));
+      fetchCategoryPosts.push(posts.find(post => post.sys.id === res.ref));
     });
-    setCategoryPosts(categoryPosts);
+    setCategoryPosts(fetchCategoryPosts);
   }
 
   let documentsGeneral = [];
   let documentsTags = [];
   const fetchTags = {};
 
-  posts.map(post => {
-    documentsGeneral.push({
-      id: post.sys.id,
-      author: post.fields.author,
-      title: post.fields.title,
-      content: post.fields.postContent,
-    });
+  if (posts !== undefined) {
+    posts.map(post => {
+      documentsGeneral.push({
+        id: post.sys.id,
+        author: post.fields.author,
+        title: post.fields.title,
+        content: post.fields.postContent,
+      });
 
-    documentsTags.push({
-      id: post.sys.id,
-      tags: post.fields.tags,
-    });
+      documentsTags.push({
+        id: post.sys.id,
+        tags: post.fields.tags,
+      });
 
-    post.fields.tags.map(tag => {
-      fetchTags[tag] ? (fetchTags[tag] += 1) : (fetchTags[tag] = 1);
+      post.fields.tags.map(tag => {
+        fetchTags[tag] ? (fetchTags[tag] += 1) : (fetchTags[tag] = 1);
+      });
     });
-  });
+  }
 
   const searchIndexGeneral = lunr(function() {
     this.ref('id');
@@ -91,14 +93,19 @@ const Blog = ({ posts }) => {
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = posts !== undefined ? posts.slice(indexOfFirstPost, indexOfLastPost) : null;
   const paginate = pageNumber => setCurrentPage(pageNumber);
-
   let postsToRender;
-  if (loading) {
-    postsToRender = <div className="searchblogpost-no-results">Loading ...</div>;
-  } else if (searchTerm.length > 1) {
-  // if (searchTerm.length > 1) {
+
+  console.log('categoryPosts', categoryPosts);
+  console.log('posts', posts);
+
+  // if (posts === undefined) {
+  //   postsToRender = (
+  //     <div className="searchblogpost-no-results">Loading ...</div>
+  //   );
+  // } else if (searchTerm.length > 1) {
+  if (searchTerm.length > 1) {
     if (searchResultPosts.length === 0) {
       postsToRender = (
         <div className="searchblogpost-no-results">
@@ -110,8 +117,8 @@ const Blog = ({ posts }) => {
         <div>
           <div className="searchblogpost-result-headline">
             {searchResultPosts.length}{' '}
-            {searchResultPosts.length !== 1 ? 'results' : 'result'} found for
-            "{searchTerm.substring(0, searchTerm.length - 1)}"
+            {searchResultPosts.length !== 1 ? 'results' : 'result'} found for "
+            {searchTerm.substring(0, searchTerm.length - 1)}"
           </div>
           {searchResultPosts.map((post, index) => {
             return (
@@ -124,7 +131,7 @@ const Blog = ({ posts }) => {
       );
     }
   } else {
-    if (categoryPosts.length !== 0) {
+    if (categoryPosts.length > 0) {
       postsToRender = (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div>
@@ -138,7 +145,11 @@ const Blog = ({ posts }) => {
           </div>
           <div className="col s12 blogpost-link">
             <a href="/blog">
-              <img src={infoArrowBack} className="blogpost-arrow-back" alt="arrow icon" />
+              <img
+                src={infoArrowBack}
+                className="blogpost-arrow-back"
+                alt="arrow icon"
+              />
               <span>back to blog</span>
             </a>
           </div>
@@ -165,7 +176,6 @@ const Blog = ({ posts }) => {
       );
     }
   }
-
 
   return (
     <div>
@@ -205,14 +215,11 @@ const Blog = ({ posts }) => {
                   <div className="blog-tags-headline">tags</div>
                   <div className="blog-tags-wrapper">
                     {Object.keys(fetchTags).map(tag => {
-                      const tagUrl = tag
-                        .split(' ')
-                        .join('-')
-                        .toLowerCase();
+                      const tagUrl = tag.split(' ').join('-').toLowerCase();
                       if (fetchTags[tag] > 3) {
                         return (
                           <Link
-                            to={`/blog/category/${tagUrl}`}
+                            to={`/category/${tagUrl}`}
                             className="blog-tags-tag"
                             onClick={() => onCategoryClick(tag)}
                           >

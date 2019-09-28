@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SearchBlogPost = ({ post }) => {
-   let previewContentTextLength = 165;
+  let previewContentTextLength = 165;
   while (post.fields.postContent[previewContentTextLength] !== ' ') {
     previewContentTextLength -= 1;
   }
   return (
     <Link
       to={{
-        pathname: `blog/${post.fields.slug}`,
-        state: { content: post.fields },
+        pathname: `/${post.fields.slug}`,
+        // state: { content: post.fields },
       }}
       // className="blog-link-wrapper"
     >
@@ -25,6 +25,6 @@ const SearchBlogPost = ({ post }) => {
       </div>
     </Link>
   );
-}
+};
 
 export default SearchBlogPost;

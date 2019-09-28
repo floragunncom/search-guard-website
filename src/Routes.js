@@ -55,6 +55,7 @@ const Routes = () => {
         />
         <Route exact path="/certificates" component={Certifications} />
         <Route exact path="/thanks" component={Thanks} />
+        <Route exact path="/category/:slug" component={Blog} />
         <Route
           exact
           path="/blog"
@@ -64,7 +65,6 @@ const Routes = () => {
           path="/:slug"
           render={props => <BlogPostArticle {...props} posts={posts} />}
         />
-        <Route path="/blog/category/:slug" component={Blog} />
         <Route exact path="/white-papers" component={WhitePapers} />
         <Route path="/white-papers/:slug" component={WhitePaperDetail} />
         <Route component={NotFound} />
