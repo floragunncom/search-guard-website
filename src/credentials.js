@@ -1,0 +1,2 @@
+export const CONTENTFUL_SPACE = '95di84mqkkro';
+export const CONTENTFUL_ACCESS_TOKEN = 'e374194597d1e72907428441d7ffe9f2ef9486dc92b23a733d9ca02d87e4da3c';

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Presentations.scss';
 import Navbar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
@@ -65,9 +66,9 @@ const Presentations = () => {
               <div className="presentations-headline">{item.headline}</div>
               <div className="presentations-text">{item.text}</div>
               <div className="presenations-download">
-                <div
+                <Link
+                  to={item.link}
                   className="presentations-button"
-                  onClick={console.log('works')}
                 >
                   <img
                     src={pdf}
@@ -75,7 +76,7 @@ const Presentations = () => {
                     className="presentations-button-icon"
                   />
                   <div className="presentations-button-text">download pdf</div>
-                </div>
+                </Link>
               </div>
             </div>
           );

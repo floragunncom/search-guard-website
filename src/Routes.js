@@ -39,8 +39,6 @@ const Routes = () => {
         <Route exact path="/licensing" component={License} />
         <Route exact path="/faq" component={Faqs} />
         <Route exact path="/impressum" component={Imprint} />
-        <Route exact path="/prese" component={Imprint} />
-        <Route exact path="/imprint" component={Imprint} />
         <Route exact path="/white-papers" component={WhitePapers} />
         <Route exact path="/presentations" component={Presentations} />
         <Route exact path="/datenschutz" component={DataProtection} />

@@ -88,7 +88,7 @@ const Resource = () => {
         rightHeadline="Disclosure Policy"
         rightText="If you have found a security related issue, please read our disclosure policy."
         leftLink="/cve-advisory"
-        rightLink="/disclosure"
+        rightLink="/disclosure-policy"
       />
       <Video playlist />
       <Cta

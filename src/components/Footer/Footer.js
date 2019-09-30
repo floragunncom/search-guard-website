@@ -68,6 +68,7 @@ const Footer = ({ landing }) => {
                   <a
                     href="https://docs.search-guard.com/latest/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="footer-links"
                   >
                     Documentation
@@ -77,6 +78,7 @@ const Footer = ({ landing }) => {
                   <a
                     href="https://github.com/floragunncom"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="footer-links"
                   >
                     Github repo
@@ -91,6 +93,7 @@ const Footer = ({ landing }) => {
                   <a
                     href="https://forum.search-guard.com/latest/"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="footer-links"
                   >
                     Community forum

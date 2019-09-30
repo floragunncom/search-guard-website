@@ -31,16 +31,14 @@ export default class NavBar extends Component {
       }
       prevScrollpos = currentScrollPos;
     };
-    
-    window.addEventListener("scroll", this.handleScroll);
+
+    window.addEventListener('scroll', this.handleScroll);
   }
 
-    
-    handleScroll = () => {
-      const prevScrollpos = window.pageYOffset;
-      this.setState({ prevScrollpos });
-    }
-
+  handleScroll = () => {
+    const prevScrollpos = window.pageYOffset;
+    this.setState({ prevScrollpos });
+  }
 
   openNav() {
     const style = { width: '100%' };
@@ -73,42 +71,46 @@ export default class NavBar extends Component {
       >
         <div className="navbar-navbar-wrapper">
           <a href="/">
-            <img src={logo} alt="Search Guard logo" className="navbar-logo-style" />
+            <img
+              src={logo}
+              alt="Search Guard logo"
+              className="navbar-logo-style"
+            />
           </a>
           <div className="navbar-nav-links-container">
             <NavLink
               to="/product"
               className="navbar-nav-link"
               activeStyle={style.active}
-              >
+            >
               {this.props.landing ? '' : 'product'}
             </NavLink>
             <NavLink
               to="/licensing"
               className="navbar-nav-link"
               activeStyle={style.active}
-              >
+            >
               {this.props.landing ? '' : 'licensing'}
             </NavLink>
             <NavLink
               to="/resource"
               className="navbar-nav-link"
               activeStyle={style.active}
-              >
-            {this.props.landing ? '' : 'resource hub'}
+            >
+              {this.props.landing ? '' : 'resource hub'}
             </NavLink>
             <NavLink
               to="/company"
               className="navbar-nav-link"
               activeStyle={style.active}
-              >
+            >
               {this.props.landing ? '' : 'company'}
             </NavLink>
             <NavLink
               to="/contacts"
               className="navbar-nav-link"
               activeStyle={style.activeContact}
-              >
+            >
               {this.props.landing ? 'start free trial' : 'contact us'}
             </NavLink>
           </div>
@@ -120,10 +122,18 @@ export default class NavBar extends Component {
               <div className="navbar-sidenav-container">
                 <div className="navbar-overlay-header">
                   <div onClick={this.closeNav}>
-                    <img src={logo} alt="Search Guard logo" className="navbar-logo-style" />
+                    <img
+                      src={logo}
+                      alt="Search Guard logo"
+                      className="navbar-logo-style"
+                    />
                   </div>
                   <div onClick={this.closeNav}>
-                    <img src={cross} alt="close icon" className="navbar-close-btn" />
+                    <img
+                      src={cross}
+                      alt="close icon"
+                      className="navbar-close-btn"
+                    />
                   </div>
                 </div>
                 <div className="navbar-nav-links-container-mobile">
@@ -131,35 +141,35 @@ export default class NavBar extends Component {
                     to="/product"
                     className="navbar-nav-link"
                     activeStyle={style.active}
-                    >
+                  >
                     {this.props.landing ? '' : 'product'}
                   </NavLink>
                   <NavLink
                     to="/licensing"
                     className="navbar-nav-link"
                     activeStyle={style.active}
-                    >
+                  >
                     {this.props.landing ? '' : 'licensing'}
                   </NavLink>
                   <NavLink
                     to="/resource"
                     className="navbar-nav-link"
                     activeStyle={style.active}
-                    >
+                  >
                     {this.props.landing ? '' : 'resource hub'}
                   </NavLink>
                   <NavLink
                     to="/company"
                     className="navbar-nav-link"
                     activeStyle={style.active}
-                    >
-                  {this.props.landing ? '' : 'company'}
+                  >
+                    {this.props.landing ? '' : 'company'}
                   </NavLink>
                   <NavLink
                     to="/contacts"
                     className="navbar-nav-link"
                     activeStyle={style.actives}
-                    >
+                  >
                     {this.props.landing ? 'start free trial' : 'contact us'}
                   </NavLink>
                 </div>
@@ -176,11 +186,11 @@ export default class NavBar extends Component {
         <div className="navbar" ref={this.navBar}>
           {navBar}
         </div>
-      )
+      );
     } else {
       visibleNavBar = <div ref={this.navBar}>{navBar}</div>;
     }
-    
+
     return <div>{visibleNavBar}</div>;
   }
 }
