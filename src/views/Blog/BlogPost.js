@@ -15,7 +15,7 @@ const BlogPost = ({ post, intro }) => {
   if (blogPost !== undefined) {
     BlogPostContent = (
       <Link
-        to={{ pathname: `/${blogPost.slug}` }}
+        to={{ pathname: `/${blogPost.slug}`, state: { status: 302 } }}
         className="blog-link-wrapper"
         onPress={window.scrollTo(0, 0)}
       >
