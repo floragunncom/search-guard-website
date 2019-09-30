@@ -33,3 +33,9 @@
     margin-bottom: 32px;
   };
 }
+
+.imprint-listitem li::before {
+  content: '•';
+  margin-left: -20px;
+  padding-right: 13px;
+}

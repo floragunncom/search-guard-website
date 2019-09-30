@@ -1,4 +1,11 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  LinkedinShareButton,
+  RedditShareButton,
+} from 'react-share';
 import Markdown from 'markdown-to-jsx';
 import NavBar from '../../components/NavBar/NavBar';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
@@ -92,9 +99,15 @@ const BlogPostArticle = ({ posts, match }) => {
   if (!postContent) {
     return <h1>Loading ...</h1>;
   }
+  console.log('postContent.fields', postContent.fields)
 
   return (
     <div className="blogpost-container">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{postContent.fields.htmlTitle}</title>
+        <meta name="description" content={postContent.fields.htmlDescription} />
+      </Helmet>
       <NavBar />
       <BlogTitle
         text={postContent.fields.title}
@@ -111,18 +124,45 @@ const BlogPostArticle = ({ posts, match }) => {
         <div className="col s12 offset-l1 l1 blogpost-sidebar-container">
           <div className="blogpost-sidebar-title">share</div>
           <div className="blogpost-sidebar-icons-container">
-            <div className="blogpost-sidebar-icon">
+            {/* <a
+              href={`https://twitter.com/intent/tweet?url=https://www.search-guard.com/${postContent.fields.slug}&text=${postContent.fields.title}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              >
               <img src={iconFb} alt="facebook icon" />
-            </div>
-            <div className="blogpost-sidebar-icon">
+            </a> */}
+            <FacebookShareButton
+              className="blogpost-sidebar-icon"
+              url={`https://www.search-guard.com/${postContent.fields.slug}`}
+              quote={postContent.fields.title}
+              onShareWindowClose
+              >
+              <img src={iconFb} alt="facebook icon" />
+            </FacebookShareButton>
+            <TwitterShareButton
+              className="blogpost-sidebar-icon"
+              url={`https://www.search-guard.com/${postContent.fields.slug}`}
+              title={postContent.fields.title}
+              hastags={postContent.fields.tags}
+              onShareWindowClose
+            >
               <img src={iconTwitter} alt="twitter icon" />
-            </div>
-            <div className="blogpost-sidebar-icon">
+            </TwitterShareButton>
+            <LinkedinShareButton
+              className="blogpost-sidebar-icon"
+              url={`https://www.search-guard.com/${postContent.fields.slug}`}
+              onShareWindowClose
+            >
               <img src={iconIn} alt="linkedIn icon" />
-            </div>
-            <div className="blogpost-sidebar-icon">
+            </LinkedinShareButton>
+            <RedditShareButton
+              className="blogpost-sidebar-icon"
+              url={`https://www.search-guard.com/${postContent.fields.slug}`}
+              title={postContent.fields.title}
+              onShareWindowClose
+            >
               <img src={iconY} alt="y icon" />
-            </div>
+            </RedditShareButton>
           </div>
         </div>
       </div>

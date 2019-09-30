@@ -38,7 +38,9 @@ const Imprint = () => {
               Geschäftsführung: Claudia Kressin, Jochen Kressin
             </div>
             <div className="imprint-headline">Kontakt</div>
-            <div className="imprint-text">E-Mail: info@floragunn.com</div>
+            <div className="imprint-text">
+              <a href="mailto:info@floragunn.com">info@floragunn.com</a>
+            </div>
             <div className="imprint-headline">Registereintrag</div>
             <div className="imprint-text">
               Eintragung im Handelsregister.
@@ -60,11 +62,14 @@ const Imprint = () => {
             <div className="imprint-text">
               Eintragung im Handelsregister. Registergericht: Amtsgericht
               Charlottenburg Registernummer: HRB 147010 B USt-IdNr.: DE287373363
-              Quelle: Impressumgenerator von http://www.e-recht24.de/ Search
-              Guard is a trademark of floragunn GmbH, registered in the U.S. and
-              in other countries. Elasticsearch, Kibana, Logstash, and Beats are
-              trademarks of Elasticsearch BV, registered in the U.S. and in
-              other countries. floragunn GmbH is not affiliated with
+              Quelle: Impressumgenerator von{' '}
+              <a href="http://www.e-recht24.de/" target="_blank">
+                http://www.e-recht24.de/
+              </a>{' '}
+              Search Guard is a trademark of floragunn GmbH, registered in the
+              U.S. and in other countries. Elasticsearch, Kibana, Logstash, and
+              Beats are trademarks of Elasticsearch BV, registered in the U.S.
+              and in other countries. floragunn GmbH is not affiliated with
               Elasticsearch BV.
             </div>
             <div className="imprint-headline">Haftung für Links</div>

@@ -2,7 +2,6 @@ const handler = require('serve-handler');
 const http = require('http');
 
 const port = process.env.PORT || 4444;
-
 const options = {
   public: './build',
   redirects: [

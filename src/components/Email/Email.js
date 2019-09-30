@@ -8,8 +8,25 @@ const Email = () => {
   //   M.AutoInit();
   // }
 
-  function onButtonPress() {
+  function onSubscribeClick(event) {
     setEmailSendStatus(true);
+    event.preventDefault();
+    console.log('works perfectly fine');
+    const data = {};
+    const formElements = Array.from(event.target);
+    formElements.map(input => (data[input.name] = input.value));
+
+    console.log(JSON.stringify(data));
+    // fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
+    // fetch('http://localhost:3000/', {
+    //   method: 'POST',
+    //   headers: {
+    //     accept: 'application/json; charset=utf-8',
+    //     'content-type': 'application/json; charset=UTF-8',
+    //   },
+    //   body: JSON.stringify(data),
+    // });
+    // window.location.href = '/thanks';
   }
 
   return (
@@ -22,7 +39,7 @@ const Email = () => {
           Thank you for signing up to our newsletter!
         </div>
       ) : (
-        <form>
+        <form onSubmit={onSubscribeClick}>
           <div className="input-field col s12 m6 l8">
             <input
               id="email"
@@ -40,11 +57,7 @@ const Email = () => {
             />
           </div>
           <div className="input-field col s12 m6 l4">
-            <Button
-              text="subscribe"
-              style="default-button"
-              onPress={() => onButtonPress()}
-            />
+            <Button text="subscribe" style="default-button" />
           </div>
         </form>
       )}
