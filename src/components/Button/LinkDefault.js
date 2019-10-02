@@ -4,7 +4,7 @@ import './LinkDefault.scss';
 import arrowRight from '../../images/arrow-right-white.svg';
 
 const LinkLoud = ({ link, target, text }) => {
-  // if (target === '_blank') {
+  if (target === '_blank') {
     return (
       <a href={link} target={target} className="arrow-link-default-container">
         <div className="arrow-link-default-text">{text}</div>
@@ -16,17 +16,17 @@ const LinkLoud = ({ link, target, text }) => {
         />
       </a>
     );
-  // }
-  // return (
-  //   <NavLink to={link}>
-  //     <div className="arrow-link-default-text">{text}</div>
-  //     <img
-  //       src={arrowRight}
-  //       alt="arrow icon"
-  //       className="arrow-link-arrow-style"
-  //     />
-  //   </NavLink>
-  // );
+  }
+  return (
+    <NavLink to={`/${link}/`}>
+      <div className="arrow-link-default-text">{text}</div>
+      <img
+        src={arrowRight}
+        alt="arrow icon"
+        className="arrow-link-arrow-style"
+      />
+    </NavLink>
+  );
 };
 
 export default LinkLoud;

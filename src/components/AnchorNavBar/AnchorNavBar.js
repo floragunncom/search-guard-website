@@ -1,23 +1,27 @@
 import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 import './AnchorNavBar.scss';
 import arrowDown from '../../images/arrow-down-green.svg';
 
-const AnchorNavBar = props => {
+const AnchorNavBar = ({ anchors }) => {
   return (
     <div className="product-anchor-container">
       <div className="row">
         <div className="product-anchor-wrapper">
-          {props.anchors.map(item => {
+          {anchors.map(item => {
             return (
               <div className="product-anchor-item">
-                <a href={`#${item.anchor}`} className="product-anchor-link">
+                <HashLink
+                  to={`#${item.anchor}`}
+                  className="product-anchor-link"
+                >
                   <img
                     src={arrowDown}
                     alt="arrow-down"
                     className="product-anchor-img"
                   />
                   {item.name}
-                </a>
+                </HashLink>
               </div>
             );
           })}

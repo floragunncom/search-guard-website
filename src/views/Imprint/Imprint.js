@@ -63,7 +63,11 @@ const Imprint = () => {
               Eintragung im Handelsregister. Registergericht: Amtsgericht
               Charlottenburg Registernummer: HRB 147010 B USt-IdNr.: DE287373363
               Quelle: Impressumgenerator von{' '}
-              <a href="http://www.e-recht24.de/" target="_blank">
+              <a
+                href="http://www.e-recht24.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 http://www.e-recht24.de/
               </a>{' '}
               Search Guard is a trademark of floragunn GmbH, registered in the

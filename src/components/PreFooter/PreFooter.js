@@ -25,16 +25,32 @@ const Info = () => {
             <div className="prefooter-col-content">
               <div className="prefooter-headline">follow us</div>
               <div className="prefooter-content icons">
-                <a href="https://twitter.com/searchguard?lang=en" target="_blank">
+                <a
+                  href="https://twitter.com/searchguard?lang=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={twitter} alt="twitter icon" />
                 </a>
-                <a href="https://www.facebook.com/searchguard/" target="_blank">
+                <a
+                  href="https://www.facebook.com/searchguard/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={facebook} alt="facebook icon" />
                 </a>
-                <a href="https://www.linkedin.com/company/search-guard/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/company/search-guard/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={linkedIn} alt="linkedIn icon" />
                 </a>
-                <a href="https://www.youtube.com/channel/UCUw93I0DHMvoA8HNQ31AeJw" target="_blank">
+                <a
+                  href="https://www.youtube.com/channel/UCUw93I0DHMvoA8HNQ31AeJw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={youtube} alt="youtube icon" />
                 </a>
                 <hr className="prefooter-hr" />

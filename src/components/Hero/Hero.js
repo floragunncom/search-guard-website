@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import heroCertificates from '../../images/hero-certificates.svg';
 import veracode from '../../images/veracode.svg';
@@ -35,13 +36,13 @@ const Hero = ({landing}) => {
                   target="_blank"
                 />
               </div>
-              <a
-                href="/certifications"
+              <NavLink
+                to="/certificates/"
                 className="hero-certificate-wrapper"
                 style={landing ? { visibility: 'hidden' } : null}
               >
                 <img src={heroCertificates} alt="certificate icon" />
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>

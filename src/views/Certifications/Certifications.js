@@ -140,6 +140,7 @@ const Certifications = () => {
                 <a
                   href={certificate.homepage}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="col s12 m3 certifications-image"
                 >
                   <img src={certificate.image} alt={certificate.image} />

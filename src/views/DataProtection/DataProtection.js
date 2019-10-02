@@ -53,7 +53,11 @@ const DataProtection = () => {
               a) Beim Besuch der Website <br />
               <br />
               Beim Aufrufen unserer Website{' '}
-              <a href="https://search-guard.com/" target="_blank">
+              <a
+                href="https://search-guard.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 https://search-guard.com
               </a>{' '}
               werden durch den auf Ihrem Endgerät zum Einsatz kommenden Browser
@@ -288,7 +292,11 @@ const DataProtection = () => {
               zum Schutz Ihrer Privatsphäre entnehmen Sie bitte den <br />
               <br />
               Datenschutzhinweisen{' '}
-              <a href="https://www.facebook.com/about/privacy/" target="_blank">
+              <a
+                href="https://www.facebook.com/about/privacy/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 (https://www.facebook.com/about/privacy/)
               </a>{' '}
               von Facebook. <br />
@@ -303,6 +311,7 @@ const DataProtection = () => {
               <a
                 href="https://about.twitter.com/resources/buttons"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 (https://about.twitter.com/resources/buttons)
               </a>
@@ -321,7 +330,11 @@ const DataProtection = () => {
               loggen Sie sich bitte aus Ihrem Twitter-Benutzerkonto aus. Weitere
               Informationen hierzu finden Sie in der Datenschutzerklärung von
               Twitter{' '}
-              <a href="https://about.twitter.com/privacy" target="_blank">
+              <a
+                href="https://about.twitter.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 (https://about.twitter.com/privacy)
               </a>
               .<br />
@@ -360,6 +373,7 @@ const DataProtection = () => {
               <a
                 href="https://help.instagram.com/155833707900388"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 (https://help.instagram.com/155833707900388)
               </a>{' '}

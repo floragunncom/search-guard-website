@@ -70,44 +70,44 @@ export default class NavBar extends Component {
         style={{ backgroundColor: this.props.background }}
       >
         <div className="navbar-navbar-wrapper">
-          <a href="/">
+          <NavLink to="/">
             <img
               src={logo}
               alt="Search Guard logo"
               className="navbar-logo-style"
             />
-          </a>
+          </NavLink>
           <div className="navbar-nav-links-container">
             <NavLink
-              to="/product"
+              to="/product/"
               className="navbar-nav-link"
               activeStyle={style.active}
             >
               {this.props.landing ? '' : 'product'}
             </NavLink>
             <NavLink
-              to="/licensing"
+              to="/licensing/"
               className="navbar-nav-link"
               activeStyle={style.active}
             >
               {this.props.landing ? '' : 'licensing'}
             </NavLink>
             <NavLink
-              to="/resource"
+              to="/resource/"
               className="navbar-nav-link"
               activeStyle={style.active}
             >
               {this.props.landing ? '' : 'resource hub'}
             </NavLink>
             <NavLink
-              to="/company"
+              to="/company/"
               className="navbar-nav-link"
               activeStyle={style.active}
             >
               {this.props.landing ? '' : 'company'}
             </NavLink>
             <NavLink
-              to="/contacts"
+              to="/contacts/"
               className="navbar-nav-link"
               activeStyle={style.activeContact}
             >
@@ -137,36 +137,36 @@ export default class NavBar extends Component {
                   </div>
                 </div>
                 <div className="navbar-nav-links-container-mobile">
-                  <NavLink    
-                    to="/product"
+                  <NavLink
+                    to="/product/"
                     className="navbar-nav-link"
                     activeStyle={style.active}
                   >
                     {this.props.landing ? '' : 'product'}
                   </NavLink>
-                  <NavLink    
-                    to="/licensing"
+                  <NavLink
+                    to="/licensing/"
                     className="navbar-nav-link"
                     activeStyle={style.active}
                   >
                     {this.props.landing ? '' : 'licensing'}
                   </NavLink>
-                  <NavLink    
-                    to="/resource"
+                  <NavLink
+                    to="/resource/"
                     className="navbar-nav-link"
                     activeStyle={style.active}
                   >
                     {this.props.landing ? '' : 'resource hub'}
                   </NavLink>
-                  <NavLink    
-                    to="/company"
+                  <NavLink
+                    to="/company/"
                     className="navbar-nav-link"
                     activeStyle={style.active}
                   >
                     {this.props.landing ? '' : 'company'}
                   </NavLink>
-                  <NavLink    
-                    to="/contacts"
+                  <NavLink
+                    to="/contacts/"
                     className="navbar-nav-link"
                     activeStyle={style.actives}
                   >

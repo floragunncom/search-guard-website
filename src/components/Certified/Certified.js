@@ -14,6 +14,7 @@ const Certified = () => {
           <a
             href="https://www.veracode.com/verified/directory/floragunn-gmbh"
             target="_blank"
+            rel="noopener noreferrer"
             className="certified-col-img"
           >
             <img src={veracode} alt="veracode logo" />
@@ -30,6 +31,7 @@ const Certified = () => {
           <a
             href="https://www.bsi.bund.de/EN/"
             target="_blank"
+            rel="noopener noreferrer"
             className="certified-col-img"
           >
             <img src={alliance} alt="alliance logo" />
@@ -48,6 +50,7 @@ const Certified = () => {
           <a
             href="https://cve.mitre.org/cve/request_id.html#cna_participants"
             target="_blank"
+            rel="noopener noreferrer"
             className="certified-col-img"
           >
             <img src={cve} alt="ove logo" />
@@ -62,6 +65,7 @@ const Certified = () => {
           <a
             href="https://www.teletrust.de/en/"
             target="_blank"
+            rel="noopener noreferrer"
             className="certified-col-img"
           >
             <img src={security} alt="security icon" />
@@ -75,6 +79,6 @@ const Certified = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Certified;
