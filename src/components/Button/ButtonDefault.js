@@ -1,10 +1,14 @@
 import React from 'react';
 import './ButtonDefault.scss';
 
-const ButtonLoud = props => {
+const ButtonLoud = ({ onPress, text }) => {
   return (
-    <button className="arrow-button-default-container" onClick={props.onPress}>
-      <div className="arrow-button-default-text">{props.text}</div>
+    <button
+      className="arrow-button-default-container"
+      onClick={onPress}
+      type="submit"
+    >
+      <div className="arrow-button-default-text">{text}</div>
     </button>
   );
 };

@@ -1,18 +1,39 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './LinkGhost.scss';
 import arrowRight from '../../images/arrow-right-dark-blue.svg';
 
-const ButtonGhost = props => {
+const ButtonGhost = ({ link, color, text }) => {
+  if (text !== 'get a quote' || text !== 'find out more') {
+    return (
+      <a
+        href={link}
+        className="arrow-link-ghost-container"
+        rel="noopener noreferrer"
+        style={{ borderColor: `${color || '#00FCE5'}` }}
+      >
+        <div className="arrow-button-text">{text}</div>
+        <img
+          src={arrowRight}
+          alt="arrow icon"
+          className="arrow-link-arrow-style"
+        />
+      </a>
+    );
+  }
   return (
-    <a
-      href={props.link}
-      target={props.target || '_self'}
+    <NavLink
+      to={`/${link}/`}
       className="arrow-link-ghost-container"
-      style={{ borderColor: `${props.color || '#00FCE5'}` }}
+      style={{ borderColor: `${color || '#00FCE5'}` }}
     >
-      <div className="arrow-button-text">{props.text}</div>
-      <img src={arrowRight} alt="arrow icon" className="arrow-link-arrow-style" />
-    </a>
+      <div className="arrow-button-text">{text}</div>
+      <img
+        src={arrowRight}
+        alt="arrow icon"
+        className="arrow-link-arrow-style"
+      />
+    </NavLink>
   );
 };
 

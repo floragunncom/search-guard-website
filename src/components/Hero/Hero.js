@@ -46,8 +46,7 @@ const Hero = ({landing}) => {
           </div>
         </div>
       </div>
-      <div
-        className={landing ? "hidden" : "hero-certificate-wrapper-hidden"}>
+      <div className={landing ? 'hidden' : 'hero-certificate-wrapper-hidden'}>
         <img src={veracode} alt="veracode logo" />
         <img src={alliance} alt="alliance logo" />
         <img src={security} alt="security logo" />

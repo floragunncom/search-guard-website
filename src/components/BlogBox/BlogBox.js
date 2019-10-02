@@ -20,7 +20,8 @@ const BlogBox = ({ intro, headline }) => {
   //   fetchPosts();
   // }, []);
 
-  let extraRow = undefined;
+  let extraRow;
+
   if (intro) {
     extraRow = (
       <div>
@@ -30,7 +31,7 @@ const BlogBox = ({ intro, headline }) => {
           })}
         </div>
         <div className="blogbox-button">
-          <Button text="see more" link="/blog" />
+          <Button text="see more" link="/blog/" />
         </div>
       </div>
     );
@@ -41,7 +42,7 @@ const BlogBox = ({ intro, headline }) => {
       <div className={intro ? 'boxblog-headline-intro' : 'boxblog-headline'}>
         {headline}
       </div>
-      <div className={intro ? "boxblog-posts" : "row boxblog-posts"}>
+      <div className={intro ? 'boxblog-posts' : 'row boxblog-posts'}>
         {posts.slice(0, 3).map((post, index) => {
           return <BlogPost key={index} post={post} />;
         })}

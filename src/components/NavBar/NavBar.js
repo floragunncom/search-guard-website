@@ -137,35 +137,35 @@ export default class NavBar extends Component {
                   </div>
                 </div>
                 <div className="navbar-nav-links-container-mobile">
-                  <NavLink
+                  <NavLink    
                     to="/product"
                     className="navbar-nav-link"
                     activeStyle={style.active}
                   >
                     {this.props.landing ? '' : 'product'}
                   </NavLink>
-                  <NavLink
+                  <NavLink    
                     to="/licensing"
                     className="navbar-nav-link"
                     activeStyle={style.active}
                   >
                     {this.props.landing ? '' : 'licensing'}
                   </NavLink>
-                  <NavLink
+                  <NavLink    
                     to="/resource"
                     className="navbar-nav-link"
                     activeStyle={style.active}
                   >
                     {this.props.landing ? '' : 'resource hub'}
                   </NavLink>
-                  <NavLink
+                  <NavLink    
                     to="/company"
                     className="navbar-nav-link"
                     activeStyle={style.active}
                   >
                     {this.props.landing ? '' : 'company'}
                   </NavLink>
-                  <NavLink
+                  <NavLink    
                     to="/contacts"
                     className="navbar-nav-link"
                     activeStyle={style.actives}

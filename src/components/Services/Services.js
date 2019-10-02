@@ -10,10 +10,14 @@ import id from '../../images/icon-loud-id.svg';
 import audit from '../../images/audit-icon.svg';
 import keyshield from '../../images/icon-loud-keyshield.svg';
 
-const Services = ({landing}) => {
+const Services = ({ landing }) => {
   return (
     <div
-      className={!landing ? "services-wrapper" : "services-wrapper services-landing-background"}
+      className={
+        !landing
+          ? 'services-wrapper'
+          : 'services-wrapper services-landing-background'
+      }
     >
       <div
         className="services-headline"
@@ -71,9 +75,7 @@ const Services = ({landing}) => {
           <div className="security-detail-title">Compliance</div>
         </div>
       </div>
-      <div
-        className={!landing ? "security-button" : "hidden"}
-      >
+      <div className={!landing ? 'security-button' : 'hidden'}>
         <Button style="default-link" text="see all features" />
       </div>
     </div>

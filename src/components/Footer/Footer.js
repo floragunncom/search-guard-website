@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import './Footer.scss';
 
 const Footer = ({ landing }) => {
@@ -10,63 +12,63 @@ const Footer = ({ landing }) => {
             <div className="row footer-row">
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <a href="/product">product</a>
+                  <NavLink to="/product/">product</NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/product#concept" className="footer-links">
+                  <HashLink to="/product#concept" className="footer-links">
                     What it is
-                  </a>
+                  </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/resource#videos" className="footer-links">
+                  <HashLink to="/resource#videos" className="footer-links">
                     How it works
-                  </a>
+                  </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/certificates" className="footer-links">
+                  <NavLink to="/certificates/" className="footer-links">
                     Certifications
-                  </a>
+                  </NavLink>
                 </div>
               </div>
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <a href="/licensing">license</a>
+                  <NavLink to="/licensing/">license</NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/licensing#standard" className="footer-links">
+                  <HashLink to="/licensing#standard" className="footer-links">
                     Standard editions
-                  </a>
+                  </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/licensing#feature" className="footer-links">
+                  <HashLink to="/licensing#feature" className="footer-links">
                     Feature breakdown
-                  </a>
+                  </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/licensing#academic" className="footer-links">
+                  <HashLink to="/licensing#academic" className="footer-links">
                     Academic edition
-                  </a>
+                  </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/licensing#academic" className="footer-links">
+                  <HashLink to="/licensing#academic" className="footer-links">
                     Custom edition
-                  </a>
+                  </HashLink>
                 </div>
                 {/* <div className="footer-list-item">
-                    <a href="/education-program" className="footer-links">
-                      Education program
-                    </a>
-                  </div> */}
+                  <NavLink to="/education-program/" className="footer-links">
+                    Education program
+                  </NavLink>
+                </div> */}
               </div>
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <a href="/resource">resource hub</a>
+                  <NavLink to="/resource/">resource hub</NavLink>
                 </div>
                 <div className="footer-list-item">
                   <a
-                    href="https://docs.search-guard.com/latest/"
+                    to="https://docs.search-guard.com/latest/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="footer-links"
@@ -85,9 +87,9 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/faq" className="footer-links">
+                  <NavLink to="/faq/" className="footer-links">
                     FAQ
-                  </a>
+                  </NavLink>
                 </div>
                 <div className="footer-list-item">
                   <a
@@ -100,60 +102,63 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/tls-certificate-generator" className="footer-links">
+                  <NavLink
+                    to="/tls-certificate-generator/"
+                    className="footer-links"
+                  >
                     TLS certificate generator
-                  </a>
+                  </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/blog" className="footer-links">
+                  <NavLink to="/blog/" className="footer-links">
                     Blog
-                  </a>
+                  </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/presentations" className="footer-links">
+                  <NavLink to="/presentations/" className="footer-links">
                     Presentations
-                  </a>
+                  </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/white-papers" className="footer-links">
+                  <NavLink to="/white-papers/" className="footer-links">
                     White papers
-                  </a>
+                  </NavLink>
                 </div>
               </div>
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <a href="/company">company</a>
+                  <NavLink to="/company/">company</NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/company#team" className="footer-links">
+                  <HashLink to="/company#team" className="footer-links">
                     Who we are
-                  </a>
+                  </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/company#partners" className="footer-links">
+                  <HashLink to="/company#partners" className="footer-links">
                     Partners
-                  </a>
+                  </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/product#integrators" className="footer-links">
+                  <HashLink to="/product#integrators" className="footer-links">
                     Integrators
-                  </a>
+                  </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/datenschutz" className="footer-links">
+                  <NavLink to="/datenschutz/" className="footer-links">
                     Data protection
-                  </a>
+                  </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/impressum" className="footer-links">
+                  <NavLink to="/impressum/" className="footer-links">
                     Imprint
-                  </a>
+                  </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/security" className="footer-links">
+                  <NavLink to="/security/" className="footer-links">
                     Public key & security
-                  </a>
+                  </NavLink>
                 </div>
               </div>
               <div className="filler-class" />

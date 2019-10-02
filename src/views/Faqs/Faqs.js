@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -6,7 +7,6 @@ import Cta from '../../components/Cta/Cta';
 import Title from '../../components/Title/Title';
 import envelope from '../../images/icon-envelope.svg';
 import './Faqs.scss';
-import { Helmet } from 'react-helmet';
 
 const Faqs = () => {
   const faq = [
@@ -72,7 +72,11 @@ const Faqs = () => {
           answer: (
             <p>
               Of course. We offer both free support for the{' '}
-              <a href="https://forum.search-guard.com/latest/" target="_blank">
+              <a
+                href="https://forum.search-guard.com/latest/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Search Guard community
               </a>{' '}
               as well as paid support for our customers. As paying customer you
@@ -168,9 +172,8 @@ const Faqs = () => {
             <p>
               Absolutely. We want to give back to education and science and
               provide special discounts and free licenses for eligible
-              institutions.{' '}
-              <a href="/contacts">Get in touch with us</a> to learn
-              more about our education & scientific licensing.
+              institutions. <a href="/contacts">Get in touch with us</a> to
+              learn more about our education & scientific licensing.
             </p>
           ),
           anchor: 'eleven',
@@ -219,6 +222,7 @@ const Faqs = () => {
               <a
                 href="https://docs.search-guard.com/latest/demo-installer"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Search Guard Demo Installer
               </a>
@@ -246,6 +250,7 @@ const Faqs = () => {
               <a
                 href="https://docs.search-guard.com/latest/search-guard-kubernetes-helm"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 K8s helm charts
               </a>{' '}

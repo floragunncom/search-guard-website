@@ -55,7 +55,11 @@ class LicensingModel extends Component {
             <div className="col s12 l4 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img src={community} alt="community icon" className="licensing-icon" />
+                  <img
+                    src={community}
+                    alt="community icon"
+                    className="licensing-icon"
+                  />
                 </div>
                 <div className="licensing-editions-headline community-border">
                   Community edition
@@ -73,6 +77,7 @@ class LicensingModel extends Component {
                   <Button
                     text="get a quote"
                     style="ghost-link"
+                    link="contacts"
                     color="#00C9B7"
                   />
                 </div>
@@ -81,7 +86,11 @@ class LicensingModel extends Component {
             <div className="col s12 l4 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img src={enterprise} alt="enterprise icon" className="licensing-icon" />
+                  <img
+                    src={enterprise}
+                    alt="enterprise icon"
+                    className="licensing-icon"
+                  />
                 </div>
                 <div className="licensing-editions-headline enterprise-border">
                   Enterprise edition
@@ -102,6 +111,7 @@ class LicensingModel extends Component {
                   <Button
                     text="get a quote"
                     style="ghost-link"
+                    link="contacts"
                     color="#009688"
                   />
                 </div>
@@ -110,7 +120,11 @@ class LicensingModel extends Component {
             <div className="col s12 l4 licensing-right-border">
               <div className="licensing-edition">
                 <div className="licensing-editions-icon">
-                  <img src={compliance} alt="compliance icon" className="licensing-icon" />
+                  <img
+                    src={compliance}
+                    alt="compliance icon"
+                    className="licensing-icon"
+                  />
                 </div>
                 <div className="licensing-editions-headline compliance-border">
                   Compliance edition
@@ -130,6 +144,7 @@ class LicensingModel extends Component {
                   <Button
                     text="install now"
                     style="ghost-link"
+                    link="https://docs.search-guard.com/latest/demo-installer"
                     color="#009688"
                   />
                 </div>
@@ -165,6 +180,7 @@ class LicensingModel extends Component {
                   <Button
                     text="find out more"
                     style="ghost-link"
+                    link="faq"
                     color="#246E94"
                   />
                 </div>
@@ -193,6 +209,7 @@ class LicensingModel extends Component {
                   <Button
                     text="find out more"
                     style="ghost-link"
+                    link="faq"
                     color="#246E94"
                   />
                 </div>

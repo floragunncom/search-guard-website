@@ -173,92 +173,55 @@ const TlsGenerator = () => {
                     </label>
                   </div>
                   <div className="input-field col s12">
-                    <input
-                      id="host2"
-                      name="host2"
-                      type="text"
-                    />
+                    <input id="host2" name="host2" type="text" />
                     <label htmlFor="host2" className="input-field-label">
                       Hostname 2
                     </label>
                   </div>
                   <div className="input-field col s12">
-                    <input
-                      id="host3"
-                      name="host3"
-                      type="text"
-                    />
+                    <input id="host3" name="host3" type="text" />
                     <label htmlFor="host3" className="input-field-label">
                       Hostname 3
                     </label>
                   </div>
                   <div className="input-field col s12">
-                    <input
-                      id="host4"
-                      type="text"
-                      name="host4"
-                    />
+                    <input id="host4" type="text" name="host4" />
                     <label htmlFor="host4" className="input-field-label">
                       Hostname 4
                     </label>
                   </div>
                   <div className="input-field col s12">
-                    <input
-                      id="host5"
-                      type="text"
-                      name="host5"
-                    />
+                    <input id="host5" type="text" name="host5" />
                     <label htmlFor="host5" className="input-field-label">
                       Hostname 5
                     </label>
                   </div>
                   <div className="input-field col s12">
-                    <input
-                      id="host6"
-                      type="text"
-                      name="host6"
-                    />
+                    <input id="host6" type="text" name="host6" />
                     <label htmlFor="host6" className="input-field-label">
                       Hostname 6
                     </label>
                   </div>
                   <div className="input-field col s12">
-                    <input
-                      id="host7"
-                      type="text"
-                      name="host7"
-                    />
+                    <input id="host7" type="text" name="host7" />
                     <label htmlFor="host7" className="input-field-label">
                       Hostname 7
                     </label>
                   </div>
                   <div className="input-field col s12">
-                    <input
-                      id="host8"
-                      type="text"
-                      name="host8"
-                    />
+                    <input id="host8" type="text" name="host8" />
                     <label htmlFor="host8" className="input-field-label">
                       Hostname 8
                     </label>
                   </div>
                   <div className="input-field col s12">
-                    <input
-                      id="host9"
-                      type="text"
-                      name="host9"
-                    />
+                    <input id="host9" type="text" name="host9" />
                     <label htmlFor="host9" className="input-field-label">
                       Hostname 9
                     </label>
                   </div>
                   <div className="input-field col s12">
-                    <input
-                      id="host10"
-                      name="host10"
-                      type="text"
-                      name="host10"
-                    />
+                    <input id="host10" name="host10" type="text" />
                     <label htmlFor="host10" className="input-field-label">
                       Hostname 10
                     </label>

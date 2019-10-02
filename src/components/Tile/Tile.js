@@ -1,34 +1,102 @@
 import React from 'react';
 import './Tile.scss';
-import Button from '../../components/Button/Button';
+import Button from '../Button/Button';
 
-const Tile = props => {
+const Tile = ({
+  leftIcon,
+  leftDark,
+  leftHeadline,
+  leftText,
+  leftLink,
+  leftButtonTarget,
+  rightIcon,
+  rightHeadline,
+  rightText,
+  rightLink,
+  rightButtonTarget,
+}) => {
   return (
-    <div className={props.leftDark ? 'tile-wrapper tile-background-dark' : 'tile-wrapper tile-background-light'}>
+    <div
+      className={
+        leftDark
+          ? 'tile-wrapper tile-background-dark'
+          : 'tile-wrapper tile-background-light'
+      }
+    >
       <div className="row">
         <div className="col s12 l6 tile-content-left">
           <div className="tile-content-icon">
-            <img src={props.leftIcon} alt="tile icon" className="tile-content-image" />
+            <img
+              src={leftIcon}
+              alt="tile icon"
+              className="tile-content-image"
+            />
           </div>
-          <div className={props.leftDark ? "tile-content-headline tile-headline-light-colors" : "tile-content-headline tile-headline-dark-colors"}>{props.leftHeadline}</div>
-          <div className={props.leftDark ? "tile-content-text tile-text-light-colors" : "tile-content-text tile-text-dark-colors"}>{props.leftText}</div>
+          <div
+            className={
+              leftDark
+                ? 'tile-content-headline tile-headline-light-colors'
+                : 'tile-content-headline tile-headline-dark-colors'
+            }
+          >
+            {leftHeadline}
+          </div>
+          <div
+            className={
+              leftDark
+                ? 'tile-content-text tile-text-light-colors'
+                : 'tile-content-text tile-text-dark-colors'
+            }
+          >
+            {leftText}
+          </div>
           <div className="tile-content-button">
-            <Button text="find out more" style={"loud-link"} link={props.leftLink} target={props.leftButtonTarget} />
+            <Button
+              text="find out more"
+              style="loud-link"
+              link={leftLink}
+              target={leftButtonTarget}
+            />
           </div>
         </div>
         <div className="col s12 l6 tile-content-right">
           <div className="tile-content-icon">
-            <img src={props.rightIcon} alt="tile icon" className="tile-content-image" />
+            <img
+              src={rightIcon}
+              alt="tile icon"
+              className="tile-content-image"
+            />
           </div>
-          <div className={props.leftDark ? "tile-content-headline tile-headline-dark-colors" : "tile-content-headline tile-headline-light-colors"}>{props.rightHeadline}</div>
-          <div className={props.leftDark ? "tile-content-text tile-text-dark-colors" : "tile-content-text tile-text-light-colors"}>{props.rightText}</div>
+          <div
+            className={
+              leftDark
+                ? 'tile-content-headline tile-headline-dark-colors'
+                : 'tile-content-headline tile-headline-light-colors'
+            }
+          >
+            {rightHeadline}
+          </div>
+          <div
+            className={
+              leftDark
+                ? 'tile-content-text tile-text-dark-colors'
+                : 'tile-content-text tile-text-light-colors'
+            }
+          >
+            {rightText}
+          </div>
           <div className="tile-content-button">
-            <Button text="find out more" style={"loud-link"} link={props.rightLink} target={props.rightButtonTarget} />
+            <Button
+              text="find out more"
+              style="loud-link"
+              link={rightLink}
+              target={rightButtonTarget}
+            />
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Tile;
