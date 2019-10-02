@@ -11,22 +11,12 @@ const Email = () => {
   function onSubscribeClick(event) {
     setEmailSendStatus(true);
     event.preventDefault();
-    console.log('works perfectly fine');
+    ('works perfectly fine');
     const data = {};
     const formElements = Array.from(event.target);
     formElements.map(input => (data[input.name] = input.value));
 
     console.log(JSON.stringify(data));
-    // fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
-    // fetch('http://localhost:3000/', {
-    //   method: 'POST',
-    //   headers: {
-    //     accept: 'application/json; charset=utf-8',
-    //     'content-type': 'application/json; charset=UTF-8',
-    //   },
-    //   body: JSON.stringify(data),
-    // });
-    // window.location.href = '/thanks';
   }
 
   return (

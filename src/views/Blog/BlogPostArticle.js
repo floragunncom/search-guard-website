@@ -99,7 +99,6 @@ const BlogPostArticle = ({ posts, match }) => {
   if (!postContent) {
     return <h1>Loading ...</h1>;
   }
-  console.log('postContent.fields', postContent.fields)
 
   return (
     <div className="blogpost-container">
