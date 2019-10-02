@@ -11,7 +11,6 @@ const Email = () => {
   function onSubscribeClick(event) {
     setEmailSendStatus(true);
     event.preventDefault();
-    ('works perfectly fine');
     const data = {};
     const formElements = Array.from(event.target);
     formElements.map(input => (data[input.name] = input.value));
