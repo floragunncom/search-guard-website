@@ -117,7 +117,9 @@ const BlogPostArticle = ({ posts, match }) => {
         <div className="col s12 offset-l2 l8">
           {/* {documentToReactComponents(this.state.documentContent, options)} */}
           <Markdown options={options}>
-            {postContent.fields.postContent}
+            {
+              postContent.fields.postContent.replace(/https\:\/\/search\-guard\.com/g, "").replace(/http\:\/\/localhost\:8080/g, "")
+            }
           </Markdown>
         </div>
         <div className="col s12 offset-l1 l1 blogpost-sidebar-container">
