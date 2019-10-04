@@ -81,5 +81,8 @@
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack-command": "^0.4.2",
     "webpack-merge": "^4.2.1"
+  },
+  "reactSnap": {
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   }
 }
