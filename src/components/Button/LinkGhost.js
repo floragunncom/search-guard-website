@@ -23,7 +23,7 @@ const ButtonGhost = ({ link, color, text }) => {
   }
   return (
     <NavLink
-      to={`/${link}/`}
+      to={link}
       className="arrow-link-ghost-container"
       style={{ borderColor: `${color || '#00FCE5'}` }}
     >

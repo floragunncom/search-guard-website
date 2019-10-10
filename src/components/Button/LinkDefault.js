@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './LinkDefault.scss';
 import arrowRight from '../../images/arrow-right-white.svg';
 
-const LinkLoud = ({ link, target, text }) => {
+const LinkDefault = ({ link, target, text }) => {
   if (target === '_blank') {
     return (
       <a href={link} target={target} className="arrow-link-default-container">
@@ -18,7 +18,7 @@ const LinkLoud = ({ link, target, text }) => {
     );
   }
   return (
-    <NavLink to={`/${link}/`}>
+    <NavLink to={`${link}`} className="arrow-link-default-container">
       <div className="arrow-link-default-text">{text}</div>
       <img
         src={arrowRight}
@@ -29,4 +29,4 @@ const LinkLoud = ({ link, target, text }) => {
   );
 };
 
-export default LinkLoud;
+export default LinkDefault;

@@ -143,8 +143,8 @@ const Security = () => {
         rightHeadline="Disclosure Policy"
         leftText="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
         rightText="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
-        leftLink="/cve-advisory"
-        rightLink="/disclosure-policy"
+        leftLink="/cve-advisory/"
+        rightLink="/disclosure-policy/"
       />
       <PreFooter />
       <Footer />

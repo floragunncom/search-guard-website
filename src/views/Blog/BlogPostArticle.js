@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import {
   FacebookShareButton,
@@ -18,6 +19,7 @@ import iconTwitter from '../../images/icon-tw-loud.svg';
 import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
+import NotFound from '../../views/NotFound/NotFound';
 import './BlogPostArticle.scss';
 
 const BlogPostArticle = ({ posts, match }) => {
@@ -97,7 +99,7 @@ const BlogPostArticle = ({ posts, match }) => {
     },
   };
   if (!postContent) {
-    return <h1>Loading ...</h1>;
+    return <NotFound />;
   }
 
   return (
@@ -117,9 +119,9 @@ const BlogPostArticle = ({ posts, match }) => {
         <div className="col s12 offset-l2 l8">
           {/* {documentToReactComponents(this.state.documentContent, options)} */}
           <Markdown options={options}>
-            {
-              postContent.fields.postContent.replace(/https\:\/\/search\-guard\.com/g, "").replace(/http\:\/\/localhost\:8080/g, "")
-            }
+            {postContent.fields.postContent
+              .replace(/https\:\/\/search\-guard\.com/g, '')
+              .replace(/http\:\/\/localhost\:8080/g, '')}
           </Markdown>
         </div>
         <div className="col s12 offset-l1 l1 blogpost-sidebar-container">
@@ -137,7 +139,7 @@ const BlogPostArticle = ({ posts, match }) => {
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               quote={postContent.fields.title}
               onShareWindowClose
-              >
+            >
               <img src={iconFb} alt="facebook icon" />
             </FacebookShareButton>
             <TwitterShareButton

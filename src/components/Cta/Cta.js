@@ -15,7 +15,7 @@ const Cta = props => {
           <div className="cta-text-container">
             <div className="cta-headline">{props.headline}</div>
             <div className="cta-text">{props.text}</div>
-            <Button text={props.ctaText} style={"loud-link"} link={props.link} />
+            <Button text={props.ctaText} style="loud-link" link={props.link} />
           </div>
         </div>
       </div>

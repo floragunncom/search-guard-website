@@ -61,11 +61,11 @@ const Resource = () => {
           rightHeadline="TLS Certificate Generator"
           rightText="If you need TLS certificates for testing or a PoC, our generator web service is here to ease the pain."
           leftLink="https://github.com/floragunncom"
-          rightLink="/tls-certificate-generator"
+          rightLink="/tls-certificate-generator/"
           leftButtonTarget="_blank"
         />
       </div>
-      <BlogBox intro headline={'Blog'} />
+      <BlogBox teaser headline="Blog" />
       <div id="whitePapers">
         <Tile
           leftDark={false}
@@ -75,8 +75,8 @@ const Resource = () => {
           rightHeadline="White Papers"
           leftText="Browse our library of presentations on all Search Guard features."
           rightText="Download our whitepapers on Search Guard use cases and implementation examples."
-          leftLink="/presentations"
-          rightLink="/white-papers"
+          leftLink="/presentations/"
+          rightLink="/white-papers/"
         />
       </div>
       <Tile
@@ -87,8 +87,8 @@ const Resource = () => {
         leftText="We are the official CVE numbering authority for Search Guard. Browse the list of known issues."
         rightHeadline="Disclosure Policy"
         rightText="If you have found a security related issue, please read our disclosure policy."
-        leftLink="/cve-advisory"
-        rightLink="/disclosure-policy"
+        leftLink="/cve-advisory/"
+        rightLink="/disclosure-policy/"
       />
       <Video playlist />
       <Cta

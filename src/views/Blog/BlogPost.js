@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './BlogPost.scss';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 
-const BlogPost = ({ post, intro }) => {
+const BlogPost = ({ post }) => {
   const blogPost = post.fields;
   let infoTextLength = 165;
   while (blogPost.postContent[infoTextLength] !== ' ') {
@@ -23,7 +23,7 @@ const BlogPost = ({ post, intro }) => {
           <img
             src={blogPost.postImage.fields.file.url}
             className="blogpost-feed-image"
-            alt="Post Header"
+            alt={blogPost.postImage.fields.title}
           />
         </div>
         <div className="blog-text-content">
@@ -51,11 +51,7 @@ const BlogPost = ({ post, intro }) => {
     );
   }
 
-  return (
-    <div className={intro ? 'blog-wrapper' : 'blog-wrapper-intro'}>
-      {BlogPostContent}
-    </div>
-  );
+  return <div className="blog-wrapper">{BlogPostContent}</div>;
 };
 
 export default BlogPost;

@@ -77,7 +77,7 @@ class LicensingModel extends Component {
                   <Button
                     text="get a quote"
                     style="ghost-link"
-                    link="contacts"
+                    link="/contacts/"
                     color="#00C9B7"
                   />
                 </div>
@@ -111,7 +111,7 @@ class LicensingModel extends Component {
                   <Button
                     text="get a quote"
                     style="ghost-link"
-                    link="contacts"
+                    link="/contacts/"
                     color="#009688"
                   />
                 </div>
@@ -180,7 +180,7 @@ class LicensingModel extends Component {
                   <Button
                     text="find out more"
                     style="ghost-link"
-                    link="faq"
+                    link="/faq/"
                     color="#246E94"
                   />
                 </div>
@@ -209,7 +209,7 @@ class LicensingModel extends Component {
                   <Button
                     text="find out more"
                     style="ghost-link"
-                    link="faq"
+                    link="/faq/"
                     color="#246E94"
                   />
                 </div>
