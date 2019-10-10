@@ -7,8 +7,9 @@ import './BlogBox.scss';
 
 const BlogBox = ({ teaser, headline }) => {
   const posts = useContext(BlogContext);
-  const startPoint = Math.floor(Math.random() * posts.length);
+  const startPoint = Math.floor(Math.random() * posts.length - 6);
   const endPoint = teaser ? startPoint + 6 : startPoint + 3;
+
   const morePostsButton = teaser ? (
     <div className="blogbox-button">
       <Button text="see more" link="/blog/" />
@@ -42,7 +43,7 @@ const BlogBox = ({ teaser, headline }) => {
         {posts.slice(startPoint, endPoint).map(post => {
           return (
             <Link
-              to={{ pathname: `/${post.fields.slug}`, state: { status: 302 } }}
+              to={{ pathname: `/${post.fields.slug}` }}
               className="blogbox-post-wrapper"
               onPress={window.scrollTo(0, 0)}
             >

@@ -7,7 +7,6 @@
 }
   
 .boxblog-posts {
-    // padding-top: 64px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -46,26 +45,8 @@
 .blogbox-post-wrapper {
   max-width: 33.3vw;
   background-color: $lightGrey;
-}
-
-img.blogbox-post-image {
-  max-width: 33.3vw;
-  width: 100%;
-  max-height: 200px;
-  overflow: hidden;
-  position: relative;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
-  &:hover {
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
-    transform: scale(1.05);
-  }
   @media only screen and (max-width: $tabletBig) {
-    width: 100%;
-    max-height: auto;
+    min-width: 100%;
   }
 }
 
