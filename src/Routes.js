@@ -27,6 +27,7 @@ import { BlogContext } from './contexts/BlogContext';
 
 const Routes = () => {
   const posts = useContext(BlogContext);
+
   return (
     <div>
       <Switch>

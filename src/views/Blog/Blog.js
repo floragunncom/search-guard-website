@@ -11,36 +11,25 @@ import BlogPost from './BlogPost';
 import SearchBlogPost from './SearchBlogPost';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 
-const Blog = ({ posts }) => {
+const Blog = ({ posts, match, history }) => {
+  const [searchResultsPresented, setSearchResultsPresented] = useState(false);
+  const [categoryResultsPresented, setCategoryResultsPresented] = useState(false);
+  const [defaultResultsPresented, setDefaultResultsPresented] = useState(true);
   const [searchResultPosts, setSearchResultPosts] = useState([]);
   const [categoryPosts, setCategoryPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
-  const [loading, setLoading] = useState(false);
 
-  function onSearchTermChange(query) {
-    const searchedWord = `${query.target.value.trim()}*`;
-    setSearchTerm(searchedWord);
-    let searchResultPosts = [];
-    const searchResult = searchIndexGeneral.search(searchTerm);
-    searchResult.map(res => {
-      searchResultPosts.push(posts.find(post => post.sys.id === res.ref));
-    });
-    setSearchResultPosts(searchResultPosts);
-  }
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts =
+    posts !== undefined ? posts.slice(indexOfFirstPost, indexOfLastPost) : null;
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
-  // function onCategoryClick(tag) {
-  //   let fetchCategoryPosts = [];
-  //   const categorySearchResult = searchIndexTags.search(tag);
-  //   categorySearchResult.map(res => {
-  //     fetchCategoryPosts.push(posts.find(post => post.sys.id === res.ref));
-  //   });
-  //   setCategoryPosts(fetchCategoryPosts);
-  // }
-
-  let documentsGeneral = [];
-  let documentsTags = [];
+  const documentsGeneral = [];
+  const documentsTags = [];
   const fetchTags = {};
 
   if (posts !== undefined) {
@@ -52,14 +41,14 @@ const Blog = ({ posts }) => {
         content: post.fields.postContent,
       });
 
-      // documentsTags.push({
-      //   id: post.sys.id,
-      //   tags: post.fields.tags,
-      // });
+      documentsTags.push({
+        id: post.sys.id,
+        tags: post.fields.tags,
+      });
 
-      // post.fields.tags.map(tag => {
-      //   fetchTags[tag] ? (fetchTags[tag] += 1) : (fetchTags[tag] = 1);
-      // });
+      post.fields.tags.map(tag => {
+        fetchTags[tag] ? (fetchTags[tag] += 1) : (fetchTags[tag] = 1);
+      });
     });
   }
 
@@ -77,99 +66,159 @@ const Blog = ({ posts }) => {
     });
   });
 
-  // const searchIndexTags = lunr(function() {
-  //   this.ref('id');
-  //   this.field('tags');
+  const searchIndexTags = lunr(function() {
+    this.ref('id');
+    this.field('tags');
 
-  //   this.pipeline.remove(lunr.stemmer);
-  //   this.searchPipeline.remove(lunr.stemmer);
+    this.pipeline.remove(lunr.stemmer);
+    this.searchPipeline.remove(lunr.stemmer);
 
-  //   documentsTags.forEach(doc => {
-  //     this.add(doc);
-  //   });
-  // });
+    documentsTags.forEach(doc => {
+      this.add(doc);
+    });
+  });
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts !== undefined ? posts.slice(indexOfFirstPost, indexOfLastPost) : null;
-  const paginate = pageNumber => setCurrentPage(pageNumber);
-  let postsToRender;
+  const onClearSearch = () => {
+    setSearchResultsPresented(false);
+    setDefaultResultsPresented(true);
+    setSearchTerm('');
+  };
 
-  // if (posts === undefined) {
-  //   postsToRender = (
-  //     <div className="searchblogpost-no-results">Loading ...</div>
-  //   );
-  // } else if (searchTerm.length > 1) {
-  if (searchTerm.length > 1) {
+  const onBackToBlogClick = () => {
+    setCategoryResultsPresented(false);
+    setDefaultResultsPresented(true);
+  };
+
+  function onSearchTermChange(query) {
+    if (history.location.pathname !== '/blog') {
+      history.replace('/blog');
+    }
+    setSearchResultsPresented(true);
+    setDefaultResultsPresented(false);
+    setCategoryResultsPresented(false);
+    const searchedWord = `${query.target.value.trim()}*`;
+    setSearchTerm(query.target.value);
+    setSearchQuery(searchedWord);
+    let searchResultPosts = [];
+    const searchResult = searchIndexGeneral.search(searchQuery);
+    searchResult.map(res => {
+      searchResultPosts.push(posts.find(post => post.sys.id === res.ref));
+    });
+    setSearchResultPosts(searchResultPosts);
+  }
+
+  function onCategoryClick(tag) {
+    onClearSearch();
+    setCategoryResultsPresented(true);
+    setDefaultResultsPresented(false);
+    let fetchCategoryPosts = [];
+    const categorySearchResult = searchIndexTags.search(tag);
+    categorySearchResult.map(res => {
+      fetchCategoryPosts.push(posts.find(post => post.sys.id === res.ref));
+    });
+    setCategoryPosts(fetchCategoryPosts);
+  }
+
+  const renderTags = (
+    <div className="row">
+      <div className="blog-tags-headline">tags</div>
+      <div className="blog-tags-wrapper">
+        {Object.keys(fetchTags).map(tag => {
+          const tagUrl = tag
+            .split(' ')
+            .join('-')
+            .toLowerCase();
+          if (fetchTags[tag] > 3) {
+            return (
+              <Link
+                to={`/category/${tagUrl}`}
+                className="blog-tags-tag"
+                onClick={() => onCategoryClick(tag)}
+              >
+                {tag}
+              </Link>
+            );
+          }
+        })}
+      </div>
+    </div>
+  );
+
+  let renderSearchResultPosts;
+  if (searchResultsPresented && searchQuery.length > 1 && !categoryResultsPresented) {
     if (searchResultPosts.length === 0) {
-      postsToRender = (
+      renderSearchResultPosts = (
         <div className="searchblogpost-no-results">
           No results for "{searchTerm.substring(0, searchTerm.length - 1)}"
         </div>
       );
     } else {
-      postsToRender = (
+      renderSearchResultPosts = (
         <div>
           <div className="searchblogpost-result-headline">
             {searchResultPosts.length}{' '}
             {searchResultPosts.length !== 1 ? 'results' : 'result'} found for "
-            {searchTerm.substring(0, searchTerm.length - 1)}"
+            {searchTerm}"
           </div>
-          {searchResultPosts.map((post, index) => {
+          {searchResultPosts.map(post => {
             return (
               <div className="col m12 l8 offset-l2 searchblogpost-wrapper">
-                <SearchBlogPost key={index} post={post} />
+                <SearchBlogPost key={post.sys.id} post={post} />
               </div>
             );
           })}
         </div>
       );
     }
-  } else {
-    // if (categoryPosts.length > 0) {
-    //   postsToRender = (
-    //     <div style={{ display: 'flex', flexDirection: 'column' }}>
-    //       <div>
-    //         {categoryPosts.map((post, index) => {
-    //           return (
-    //             <div className="col s12 l6 blogpost-column-wrapper">
-    //               <BlogPost key={index} post={post} intro />
-    //             </div>
-    //           );
-    //         })}
-    //       </div>
-    //       <div className="col s12 blogpost-link">
-    //         <a href="/blog">
-    //           <img
-    //             src={infoArrowBack}
-    //             className="blogpost-arrow-back"
-    //             alt="arrow icon"
-    //           />
-    //           <span>back to blog</span>
-    //         </a>
-    //       </div>
-    //     </div>
-    //   );
-    // } else {
-      postsToRender = (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <div>
-            {posts.map((post, index) => {
-              return (
-                <div className="col s12 l6 blogpost-column-wrapper">
-                  <BlogPost key={index} post={post} intro />
-                </div>
-              );
-            })}
-          </div>
-          {/* <Pagination
-            postsPerPage={postsPerPage}
-            totalPosts={posts.length}
-            paginate={paginate}
-          /> */}
+  }
+
+  let renderCategoryPosts;
+  if (categoryResultsPresented) {
+    renderCategoryPosts = (
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div>
+          {categoryPosts.map(post => {
+            return (
+              <div className="col s12 l6 blogpost-column-wrapper">
+                <BlogPost key={post.sys.id} post={post} intro />
+              </div>
+            );
+          })}
         </div>
-      );
-    // }
+        <div className="col s12 blogpost-link">
+          <Link to="/blog" onClick={onBackToBlogClick}>
+            <img
+              src={infoArrowBack}
+              className="blogpost-arrow-back"
+              alt="arrow icon"
+            />
+            <span>back to blog</span>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  let renderPosts;
+  if (defaultResultsPresented && !searchResultsPresented && !categoryResultsPresented) {
+    renderPosts = (
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div>
+          {currentPosts.map(post => {
+            return (
+              <div className="col s12 l6 blogpost-column-wrapper">
+                <BlogPost key={post.sys.id} post={post} intro />
+              </div>
+            );
+          })}
+        </div>
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={posts.length}
+          paginate={paginate}
+        />
+      </div>
+    );
   }
 
   return (
@@ -190,45 +239,28 @@ const Blog = ({ posts }) => {
         <div>
           <div className="blog-searchbar">
             <div className="row">
-              <form>
-                <div className="row">
-                  <div className="input-field col m8 offset-m2 s12 center">
-                    <i className="material-icons prefix">search</i>
-                    <input
-                      id="search"
-                      type="text"
-                      className="validate dark-blue blog-search"
-                      onChange={query => onSearchTermChange(query)}
-                      placeholder="Search blog ..."
-                    />
-                    {/* <div onPress={query => onClearSearch(query)}>
-                      <i className="material-icons">close</i>
-                    </div> */}
+              <div className="row">
+                <div className="input-field col m8 offset-m2 s12 center">
+                  <i className="material-icons prefix">search</i>
+                  <input
+                    id="search"
+                    type="text"
+                    className="validate dark-blue blog-search"
+                    value={searchTerm}
+                    onChange={value => onSearchTermChange(value)}
+                    placeholder="Search blog ..."
+                  />
+                  <div onClick={onClearSearch}>
+                    <i className="material-icons">close</i>
                   </div>
                 </div>
-                {/* <div className="row">
-                  <div className="blog-tags-headline">tags</div>
-                  <div className="blog-tags-wrapper">
-                    {Object.keys(fetchTags).map(tag => {
-                      const tagUrl = tag.split(' ').join('-').toLowerCase();
-                      if (fetchTags[tag] > 3) {
-                        return (
-                          <Link
-                            to={`/category/${tagUrl}`}
-                            className="blog-tags-tag"
-                            onClick={() => onCategoryClick(tag)}
-                          >
-                            {tag}
-                          </Link>
-                        );
-                      }
-                    })}
-                  </div>
-                </div> */}
-              </form>
+              </div>
+              {renderTags}
             </div>
           </div>
-          {postsToRender}
+          {renderPosts}
+          {renderCategoryPosts}
+          {renderSearchResultPosts}
         </div>
       </div>
       <PreFooter />

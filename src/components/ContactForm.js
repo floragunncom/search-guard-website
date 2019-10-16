@@ -6,7 +6,7 @@ import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
   const [newsletterValue, setNewsletterValue] = useState(false);
-  
+
   function changeNewsletterValue() {
     setNewsletterValue(!newsletterValue);
   }
@@ -19,16 +19,16 @@ const ContactForm = () => {
 
     // Log what our lambda function will receive
     console.log(JSON.stringify(data));
-    fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
-        // fetch('http://localhost:3000/', {
-        method: 'POST',
-        headers: {
-          accept: 'application/json; charset=utf-8',
-          'content-type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify(data),
-      });
-    // window.location.href="/thanks";
+    // fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
+      fetch('http://localhost:3000/', {
+      method: 'POST',
+      headers: {
+        accept: 'application/json; charset=utf-8',
+        'content-type': 'application/json; charset=UTF-8',
+      },
+      body: JSON.stringify(data),
+    });
+    // window.location.href = '/thanks';
   }
 
   return (
@@ -80,7 +80,9 @@ const ContactForm = () => {
           <form onSubmit={handleSubmit}>
             <div className="contact-info-wrapper">
               <div className="contact-information-headline">
-                contact information<br />(Fields marked with an (*) are required)
+                contact information
+                <br />
+                (Fields marked with an (*) are required)
               </div>
               <div className="contact-info-input-fields">
                 <div className="input-field col s12 m6">
@@ -90,10 +92,7 @@ const ContactForm = () => {
                     type="text"
                     required
                   />
-                  <label
-                    htmlFor="first_name"
-                    className="input-field-label"
-                  >
+                  <label htmlFor="first_name" className="input-field-label">
                     First Name *
                   </label>
                 </div>

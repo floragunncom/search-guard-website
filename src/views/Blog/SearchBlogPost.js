@@ -6,6 +6,7 @@ const SearchBlogPost = ({ post }) => {
   while (post.fields.postContent[previewContentTextLength] !== ' ') {
     previewContentTextLength -= 1;
   }
+
   return (
     <Link
       to={{
