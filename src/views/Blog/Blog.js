@@ -41,14 +41,14 @@ const Blog = ({ posts, match, history }) => {
         content: post.fields.postContent,
       });
 
-      documentsTags.push({
-        id: post.sys.id,
-        tags: post.fields.tags,
-      });
+      // documentsTags.push({
+      //   id: post.sys.id,
+      //   tags: post.fields.tags,
+      // });
 
-      post.fields.tags.map(tag => {
-        fetchTags[tag] ? (fetchTags[tag] += 1) : (fetchTags[tag] = 1);
-      });
+      // post.fields.tags.map(tag => {
+      //   fetchTags[tag] ? (fetchTags[tag] += 1) : (fetchTags[tag] = 1);
+      // });
     });
   }
 
@@ -66,17 +66,17 @@ const Blog = ({ posts, match, history }) => {
     });
   });
 
-  const searchIndexTags = lunr(function() {
-    this.ref('id');
-    this.field('tags');
+  // const searchIndexTags = lunr(function() {
+  //   this.ref('id');
+  //   this.field('tags');
 
-    this.pipeline.remove(lunr.stemmer);
-    this.searchPipeline.remove(lunr.stemmer);
+  //   this.pipeline.remove(lunr.stemmer);
+  //   this.searchPipeline.remove(lunr.stemmer);
 
-    documentsTags.forEach(doc => {
-      this.add(doc);
-    });
-  });
+  //   documentsTags.forEach(doc => {
+  //     this.add(doc);
+  //   });
+  // });
 
   const onClearSearch = () => {
     setSearchResultsPresented(false);
@@ -84,10 +84,10 @@ const Blog = ({ posts, match, history }) => {
     setSearchTerm('');
   };
 
-  const onBackToBlogClick = () => {
-    setCategoryResultsPresented(false);
-    setDefaultResultsPresented(true);
-  };
+  // const onBackToBlogClick = () => {
+  //   setCategoryResultsPresented(false);
+  //   setDefaultResultsPresented(true);
+  // };
 
   function onSearchTermChange(query) {
     if (history.location.pathname !== '/blog') {
@@ -107,42 +107,42 @@ const Blog = ({ posts, match, history }) => {
     setSearchResultPosts(searchResultPosts);
   }
 
-  function onCategoryClick(tag) {
-    onClearSearch();
-    setCategoryResultsPresented(true);
-    setDefaultResultsPresented(false);
-    let fetchCategoryPosts = [];
-    const categorySearchResult = searchIndexTags.search(tag);
-    categorySearchResult.map(res => {
-      fetchCategoryPosts.push(posts.find(post => post.sys.id === res.ref));
-    });
-    setCategoryPosts(fetchCategoryPosts);
-  }
+  // function onCategoryClick(tag) {
+  //   onClearSearch();
+  //   setCategoryResultsPresented(true);
+  //   setDefaultResultsPresented(false);
+  //   let fetchCategoryPosts = [];
+  //   const categorySearchResult = searchIndexTags.search(tag);
+  //   categorySearchResult.map(res => {
+  //     fetchCategoryPosts.push(posts.find(post => post.sys.id === res.ref));
+  //   });
+  //   setCategoryPosts(fetchCategoryPosts);
+  // }
 
-  const renderTags = (
-    <div className="row">
-      <div className="blog-tags-headline">tags</div>
-      <div className="blog-tags-wrapper">
-        {Object.keys(fetchTags).map(tag => {
-          const tagUrl = tag
-            .split(' ')
-            .join('-')
-            .toLowerCase();
-          if (fetchTags[tag] > 3) {
-            return (
-              <Link
-                to={`/category/${tagUrl}`}
-                className="blog-tags-tag"
-                onClick={() => onCategoryClick(tag)}
-              >
-                {tag}
-              </Link>
-            );
-          }
-        })}
-      </div>
-    </div>
-  );
+  // const renderTags = (
+  //   <div className="row">
+  //     <div className="blog-tags-headline">tags</div>
+  //     <div className="blog-tags-wrapper">
+  //       {Object.keys(fetchTags).map(tag => {
+  //         const tagUrl = tag
+  //           .split(' ')
+  //           .join('-')
+  //           .toLowerCase();
+  //         if (fetchTags[tag] > 3) {
+  //           return (
+  //             <Link
+  //               to={`/category/${tagUrl}`}
+  //               className="blog-tags-tag"
+  //               onClick={() => onCategoryClick(tag)}
+  //             >
+  //               {tag}
+  //             </Link>
+  //           );
+  //         }
+  //       })}
+  //     </div>
+  //   </div>
+  // );
 
   let renderSearchResultPosts;
   if (searchResultsPresented && searchQuery.length > 1 && !categoryResultsPresented) {
@@ -172,32 +172,32 @@ const Blog = ({ posts, match, history }) => {
     }
   }
 
-  let renderCategoryPosts;
-  if (categoryResultsPresented) {
-    renderCategoryPosts = (
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <div>
-          {categoryPosts.map(post => {
-            return (
-              <div className="col s12 l6 blogpost-column-wrapper">
-                <BlogPost key={post.sys.id} post={post} intro />
-              </div>
-            );
-          })}
-        </div>
-        <div className="col s12 blogpost-link">
-          <Link to="/blog" onClick={onBackToBlogClick}>
-            <img
-              src={infoArrowBack}
-              className="blogpost-arrow-back"
-              alt="arrow icon"
-            />
-            <span>back to blog</span>
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  // let renderCategoryPosts;
+  // if (categoryResultsPresented) {
+  //   renderCategoryPosts = (
+  //     <div style={{ display: 'flex', flexDirection: 'column' }}>
+  //       <div>
+  //         {categoryPosts.map(post => {
+  //           return (
+  //             <div className="col s12 l6 blogpost-column-wrapper">
+  //               <BlogPost key={post.sys.id} post={post} intro />
+  //             </div>
+  //           );
+  //         })}
+  //       </div>
+  //       <div className="col s12 blogpost-link">
+  //         <Link to="/blog" onClick={onBackToBlogClick}>
+  //           <img
+  //             src={infoArrowBack}
+  //             className="blogpost-arrow-back"
+  //             alt="arrow icon"
+  //           />
+  //           <span>back to blog</span>
+  //         </Link>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   let renderPosts;
   if (defaultResultsPresented && !searchResultsPresented && !categoryResultsPresented) {
@@ -255,11 +255,11 @@ const Blog = ({ posts, match, history }) => {
                   </div>
                 </div>
               </div>
-              {renderTags}
+              {/* {renderTags} */}
             </div>
           </div>
           {renderPosts}
-          {renderCategoryPosts}
+          {/* {renderCategoryPosts} */}
           {renderSearchResultPosts}
         </div>
       </div>
