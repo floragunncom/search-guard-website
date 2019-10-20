@@ -13,7 +13,9 @@ import infoArrowBack from '../../images/info-arrow-back.svg';
 
 const Blog = ({ posts, match, history }) => {
   const [searchResultsPresented, setSearchResultsPresented] = useState(false);
-  const [categoryResultsPresented, setCategoryResultsPresented] = useState(false);
+  const [categoryResultsPresented, setCategoryResultsPresented] = useState(
+    false,
+  );
   const [defaultResultsPresented, setDefaultResultsPresented] = useState(true);
   const [searchResultPosts, setSearchResultPosts] = useState([]);
   const [categoryPosts, setCategoryPosts] = useState([]);
@@ -99,7 +101,7 @@ const Blog = ({ posts, match, history }) => {
     const searchedWord = `${query.target.value.trim()}*`;
     setSearchTerm(query.target.value);
     setSearchQuery(searchedWord);
-    let searchResultPosts = [];
+    const searchResultPosts = [];
     const searchResult = searchIndexGeneral.search(searchQuery);
     searchResult.map(res => {
       searchResultPosts.push(posts.find(post => post.sys.id === res.ref));
@@ -145,7 +147,11 @@ const Blog = ({ posts, match, history }) => {
   // );
 
   let renderSearchResultPosts;
-  if (searchResultsPresented && searchQuery.length > 1 && !categoryResultsPresented) {
+  if (
+    searchResultsPresented &&
+    searchQuery.length > 1 &&
+    !categoryResultsPresented
+  ) {
     if (searchResultPosts.length === 0) {
       renderSearchResultPosts = (
         <div className="searchblogpost-no-results">
@@ -200,7 +206,11 @@ const Blog = ({ posts, match, history }) => {
   // }
 
   let renderPosts;
-  if (defaultResultsPresented && !searchResultsPresented && !categoryResultsPresented) {
+  if (
+    defaultResultsPresented &&
+    !searchResultsPresented &&
+    !categoryResultsPresented
+  ) {
     renderPosts = (
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div>
@@ -240,19 +250,33 @@ const Blog = ({ posts, match, history }) => {
           <div className="blog-searchbar">
             <div className="row">
               <div className="row">
-                <div className="input-field col m8 offset-m2 s12 center">
+                <div
+                  className="input-field col m8 offset-m2 s12 center"
+                  style={{ display: 'flex', alignItems: 'center' }}
+                >
                   <i className="material-icons prefix">search</i>
                   <input
                     id="search"
                     type="text"
-                    className="validate dark-blue blog-search"
+                    className="dark-blue blog-search"
                     value={searchTerm}
                     onChange={value => onSearchTermChange(value)}
                     placeholder="Search blog ..."
                   />
-                  <div onClick={onClearSearch}>
-                    <i className="material-icons">close</i>
-                  </div>
+                  {searchResultsPresented ? (
+                    <div onClick={onClearSearch}>
+                      <i
+                        className="material-icons"
+                        style={{
+                          color: '#246E94',
+                          opacity: '0.25',
+                          cursor: 'pointer',
+                        }}
+                      >
+                        close
+                      </i>
+                    </div>
+                  ) : null}
                 </div>
               </div>
               {/* {renderTags} */}
