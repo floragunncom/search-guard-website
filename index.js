@@ -8,6 +8,13 @@ const options = {
     { source: '/partners', destination: '/company#partners', type: 301 },
     { source: '/integrators', destination: '/product#integrators', type: 301 },
     { source: '/collaborators', destination: '/product#integrators', type: 301 },
+    { source: '/floragunn-page/', destination: '/company/', type: 301 },
+    { source: '/grownow/', destination: '/company/', type: 301 },
+    { source: '/kunstlerfreunde/', destination: '/company/', type: 301 },
+    { source: '/our-services/*', destination: '/company/', type: 301 },
+    { source: '/search-guard-elasticsearch-faq/', destination: '/company/', type: 301 },
+    { source: '/category/*', destination: '/blog/', type: 301 },
+    { source: '/author/*', destination: '/blog/', type: 301 },
   ],
 };
 
