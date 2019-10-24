@@ -214,7 +214,7 @@ const Blog = ({ posts, match, history }) => {
     renderPosts = (
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <div>
-          {currentPosts.map(post => {
+          {posts.map(post => {
             return (
               <div className="col s12 l6 blogpost-column-wrapper">
                 <BlogPost key={post.sys.id} post={post} intro />
@@ -222,11 +222,11 @@ const Blog = ({ posts, match, history }) => {
             );
           })}
         </div>
-        <Pagination
+        {/* <Pagination
           postsPerPage={postsPerPage}
           totalPosts={posts.length}
           paginate={paginate}
-        />
+        /> */}
       </div>
     );
   }

@@ -9,7 +9,7 @@
 .boxblog-posts {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   @media only screen and (max-width: $tabletBig) {
     flex-direction: column;
   }
@@ -43,7 +43,7 @@
 }
 
 .blogbox-post-wrapper {
-  max-width: 33vw;
+  // max-width: 33.3vw;
   background-color: $lightGrey;
   @media only screen and (max-width: $tabletBig) {
     min-width: 100%;
