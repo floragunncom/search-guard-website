@@ -40,6 +40,12 @@ module.exports = merge(common, {
     new ExtractTextPlugin('styles.css'),
   ],
   module: {
+    loaders: [
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
+      },
+    ],
     rules: [
       {
         // look for .js or .jsx files

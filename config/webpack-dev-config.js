@@ -28,6 +28,12 @@ module.exports = merge(common, {
     })
   ],
   module: {
+    loaders: [
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
+      }
+    ],
     rules: [
       {
         // look for .js or .jsx files
@@ -81,6 +87,7 @@ module.exports = merge(common, {
               },
             },
           },
+          // { test: /\.json$/, loader: 'json-loader' },
           // Add additional loaders here. (e.g. sass-loader)
         ]
       }
