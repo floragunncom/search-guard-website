@@ -1,57 +1,22 @@
 const handler = require('serve-handler');
 const http = require('http');
-// const fetch = require('node-fetch');
 const data = require('./data/redirects.json');
 
-// const setRedirectRule = (oldUrl, newUrl, urlStatus) => {
-//   if (oldUrl && newUrl && urlStatus) {
-//     if (urlStatus.gs$cell.inputValue !== 'Good') {
-//       return {
-//         source: `${oldUrl.gs$cell.inputValue}`,
-//         destination: `${newUrl.gs$cell.$t}`,
-//         type: 301,
-//       };
-//     }
-//     return {
-//       source: `${oldUrl.gs$cell.inputValue}`,
-//       destination: `${oldUrl.gs$cell.inputValue}`,
-//       type: 301,
-//     };
-//   }
-// };
+const port = process.env.PORT || 4444;
 
-// const buildOptions = async res => {
-//   const resEntries = await res.feed.entry;
-//   const entryListLength = await res.feed.entry[res.feed.entry.length - 1].gs$cell.row;
-//   const redirectRules = [];
-//   const rules = await resEntries.forEach(async (entry, index) => {
-//     if (index <= entryListLength) {
-//       const oldUrl = await resEntries.filter(entry => entry.gs$cell.col === '1' && entry.gs$cell.row === `${index}`)[0];
-//       const urlStatus = await resEntries.filter(entry => entry.gs$cell.col === '8' && entry.gs$cell.row === `${index}`)[0];
-//       const newUrl = await resEntries.filter(entry => entry.gs$cell.col === '12' && entry.gs$cell.row === `${index}`)[0];
-
-//       redirectRules.push(setRedirectRule(oldUrl, newUrl, urlStatus));
-//     }
-//   });
-//   return { public: './build', redirects: redirectRules };
-// };
-
-// const startServer = async res => {
-const startServer = async () => {
-  const redirectLinks = await data.redirects.filter(link => link !== null);
-  const links = redirectLinks.map(link => {
-    link.source = link.source.slice(24);
-    link.destination = link.destination.slice(34);
-  });
-  const options = await { public: './build', redirects: redirectLinks };
-  const server = http.createServer((request, response) => {
-    return handler(request, response, options);
-  });
-
-  const port = process.env.PORT || 4444;
-  server.listen(port, () => {
-    console.log(`Running at http://localhost:${port}`);
-  });
+const redirectRules = data.filter(redirect => redirect !== null);
+redirectRules.map(link => link.source = link.source.slice(-1) === '/' ? link.source.slice(0, link.source.length -1) : link.source);
+const options = {
+  public: './build',
+  redirects: redirectRules,
 };
+console.log('options', options)
+const server = http.createServer((request, response) => {
+  // You pass two more arguments for config and middleware
+  // More details here: https://github.com/zeit/serve-handler#options
+  return handler(request, response, options);
+});
 
-startServer();
+server.listen(port, () => {
+  console.log(`Running at http://localhost:${port}`);
+});
