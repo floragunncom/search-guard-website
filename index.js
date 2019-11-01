@@ -38,19 +38,20 @@ const data = require('./data/redirects.json');
 
 // const startServer = async res => {
 const startServer = async () => {
-  console.log('starting build');
   const redirectLinks = await data.redirects.filter(link => link !== null);
+  const links = redirectLinks.map(link => {
+    link.source = link.source.slice(24);
+    link.destination = link.destination.slice(34);
+  });
   const options = await { public: './build', redirects: redirectLinks };
-  console.log('options', options)
   const server = http.createServer((request, response) => {
     return handler(request, response, options);
   });
-  
+
   const port = process.env.PORT || 4444;
   server.listen(port, () => {
     console.log(`Running at http://localhost:${port}`);
   });
-  console.log('finished build');
 };
 
 startServer();

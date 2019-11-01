@@ -45,7 +45,6 @@ const buildOptions = async res => {
 
 const startServer = async res => {
   const options = await buildOptions(res);
-  // console.log('options', options)
   fs.writeFileSync('redirects.json', JSON.stringify(options));
   // const arry = options.redirects;
   // console.log('options', arry.length);
