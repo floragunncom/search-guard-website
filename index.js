@@ -6,13 +6,14 @@ const port = process.env.PORT || 4444;
 
 const redirectRules = data.filter(redirect => redirect !== null);
 redirectRules.map(link => {
-  link.source = link.source.replace(/^(.*?)com/, '');
-  link.destination = link.destination.replace(/^(.*?)com/, '');
+  const sourceLink = link.source.replace(/^(.*?)com/, '');
+  link.source = link.source.slice(-1) === '/' ? sourceLink.slice(0, -1) : sourceLink;
+  // link.destination = link.destination.replace(/^(.*?)com/, '');
 });
 
 const options = {
   public: './build',
-  redirects: [],
+  redirects: redirectRules,
 };
 const server = http.createServer((request, response) => {
   // You pass two more arguments for config and middleware
