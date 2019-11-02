@@ -7,14 +7,14 @@ const setRedirectRule = (oldUrl, newUrl, urlStatus) => {
   if (oldUrl && newUrl && urlStatus) {
     if (urlStatus.gs$cell.inputValue !== 'Good') {
       return {
-        source: `${oldUrl.gs$cell.inputValue.slice(24)}`,
-        destination: `${newUrl.gs$cell.$t.slice(34)}`,
+        source: `${oldUrl.gs$cell.inputValue}`,
+        destination: `${newUrl.gs$cell.$t}`,
         type: 301,
       };
     }
     return {
-      source: `${oldUrl.gs$cell.inputValue.slice(24)}`,
-      destination: `${oldUrl.gs$cell.inputValue.slice(24)}`,
+      source: `${oldUrl.gs$cell.inputValue}`,
+      destination: `${oldUrl.gs$cell.inputValue}`,
       type: 301,
     };
   }

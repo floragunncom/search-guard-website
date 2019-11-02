@@ -40,7 +40,8 @@
     "extract:messages": "react-intl-cra 'src/**/*.{js,jsx}' -o 'src/i18n/messages/messages.json'",
     "manage:translations": "node ./translationRunner.js",
     "lint": "eslint src -c .eslintrc --ext js,jsx",
-    "deploy": "npm run build && aws s3 sync ./build/ s3://www.search-guard.com --profile=searchguard && open http://www.search-guard.com.s3-website.eu-central-1.amazonaws.com/ "
+    "deploy": "npm run build && aws s3 sync ./build/ s3://www.search-guard.com --profile=searchguard && open http://www.search-guard.com.s3-website.eu-central-1.amazonaws.com/ ",
+    "fetch data": "cd ./data && rm redirects.json && node createRedirects.js"
   },
   "eslintConfig": {
     "extends": "react-app"
