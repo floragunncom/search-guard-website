@@ -12,7 +12,7 @@ redirectRules.map(link => {
 
 const options = {
   public: './build',
-  redirects: redirectRules,
+  redirects: [],
 };
 const server = http.createServer((request, response) => {
   // You pass two more arguments for config and middleware
