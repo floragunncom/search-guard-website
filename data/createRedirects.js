@@ -9,13 +9,11 @@ const setRedirectRule = (oldUrl, newUrl, urlStatus) => {
       return {
         source: `${oldUrl.gs$cell.inputValue}`,
         destination: `${newUrl.gs$cell.$t}`,
-        type: 301,
       };
     }
     return {
       source: `${oldUrl.gs$cell.inputValue}`,
       destination: `${oldUrl.gs$cell.inputValue}`,
-      type: 301,
     };
   }
 };
