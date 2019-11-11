@@ -18,6 +18,7 @@ const options = {
   redirects: [
     { source: '/floragunn-page', destination: '/company/' },
     { source: '/grownow', destination: '/company/' },
+    { source: '/contact', destination: '/contacts/' },
     { source: '/kunstlerfreunde', destination: '/company/' },
     { source: '/our-services/**', destination: '/company/' },
     { source: '/search-guard-elasticsearch-faq', destination: '/company/' },
@@ -29,14 +30,17 @@ const options = {
       destination: '/company/',
     },
     { source: '/wp-content/**/:id', destination: '/product/' },
+    { source: '/wp-includes/**/:id', destination: '/product/' },
     { source: '/no-nonsense-it', destination: '/company/' },
     { source: '/search-guard-customers', destination: '/company/' },
     { source: '/*.zip', destination: '/' },
     { source: '/author/**/:id', destination: '/blog/' },
     { source: '/category/**/:id', destination: '/blog/' },
+    { source: '/tag/**/:id', destination: '/blog/' },
     { source: '/blog/page/**/:id', destination: '/blog/' },
     { source: '/immutable-indices-gdpr/**', destination: '/' },
     { source: '/oxy_testimonial/arno-has', destination: '/' },
+    { source: '/oxy_testimonial/yasvanth-babu', destination: '/' },
     { source: '/careers', destination: '/' },
     { source: '/elastic-floragunn-dmca*', destination: '/' },
     {
@@ -56,17 +60,19 @@ const options = {
     { source: '/collaborators', destination: '/' },
     { source: '/es/*', destination: '/' },
     { source: '/faq-2', destination: '/faq/' },
-    // { source: '/?p=1134', destination: '/' },
-
-    // {
-    //   source: '/document-field-level-security-search-guard/:id',
-    //   destination: '/',
-    // },
-    // {
-    //   source:
-    //     '/product/?utm_source=sgdocs&utm_medium=additional_resources&utm_content=search-guard-community-edition',
-    //   destination: '/product/',
-    // },
+    { source: '/licencia', destination: '/licensing/' },
+    { source: '/searchguard-license-support', destination: '/licensing/' },
+    { source: '/es/licencia', destination: '/licensing/' },
+    {
+      source: '/generador-de-certificados-tls',
+      destination: '/tls-certificate-generator/',
+    },
+    {
+      source: '/search-guard-provides-gdpr-compliance-for-elasticsearch',
+      destination: '/gdpr-compliance-elasticsearch',
+    },
+    { source: '/read-history-gdpr*', destination: '/' },
+    { source: '/search-guard-elastic', destination: '/' },
   ],
 };
 const server = http.createServer((request, response) => {

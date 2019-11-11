@@ -26,7 +26,7 @@ const BlogPostArticle = ({ posts, match }) => {
   const postContent = posts.find(
     entry => entry.fields.slug === `${match.url.substring(1)}`,
   );
-
+  console.log('slug', postContent)
   const options = {
     overrides: {
       h1: {
@@ -107,7 +107,10 @@ const BlogPostArticle = ({ posts, match }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{postContent.fields.htmlTitle}</title>
-        <link rel="canonical" href={`http://search-guard.com/${postContent.fields.slug}`} />
+        <link
+          rel="canonical"
+          href={`http://search-guard.com/${postContent.fields.slug}`}
+          />
         <meta name="description" content={postContent.fields.htmlDescription} />
       </Helmet>
       <NavBar />
@@ -115,7 +118,7 @@ const BlogPostArticle = ({ posts, match }) => {
         text={postContent.fields.title}
         subText={`${postContent.fields.author} || ${postContent.fields.date}`}
         tags={postContent.fields.tags.join(', ')}
-      />
+        />
       <div className="row">
         <div className="col s12 offset-l2 l8">
           {/* {documentToReactComponents(this.state.documentContent, options)} */}
