@@ -102,6 +102,11 @@ const server = http.createServer((request, response) => {
       return redirect(response, attachmentIds[query.attachment_id] || pathname)
     }
 
+    // handle ?lang=
+    if (query.lang) {
+      return redirect(response, pathname)
+    }
+
     // Other parameters we simply allow, otherwise to strip them, uncomment this line
     // return redirect(response, pathname)
   }
