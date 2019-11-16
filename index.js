@@ -74,6 +74,11 @@ for (const rule of options.redirects) {
 }
 
 const redirect = (response, path) => {
+    path = redirectLookup[path] || path
+    if (!path) {
+      console.log("no path for redirect, falling back to /")
+      path = "/"
+    }
     response.writeHead(301, {'Location': path});
     return response.end();
 }
@@ -100,17 +105,17 @@ const server = http.createServer((request, response) => {
 
     // handle ?p=1134
     if (query.p) {
-      return redirect(response, pageIds[query.p] || redirectLookup[pathname])
+      return redirect(response, pageIds[query.p], pathname)
     }
 
     // handle ?attachment_id=4221
     if (query.attachment_id) {
-      return redirect(response, attachmentIds[query.attachment_id] || redirectLookup[pathname])
+      return redirect(response, attachmentIds[query.attachment_id], pathname)
     }
 
     // handle ?lang=
     if (query.lang) {
-      return redirect(response, redirectLookup[pathname])
+      return redirect(response, pathname)
     }
 
     // Other parameters we simply allow, otherwise to strip them, uncomment this line
