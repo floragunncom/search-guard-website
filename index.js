@@ -64,8 +64,13 @@ const options = {
     },
     { source: '/read-history-gdpr*', destination: '/' },
     { source: '/search-guard-elastic', destination: '/' },
+    { source: '/mentions-legales', destinations: '/impressum'}
   ],
 };
+let redirectLookup = {}
+for (const rule of options.redirects) {
+  redirectLookup[rule.source] = rule.destination
+}
 
 const redirect = (response, path) => {
     response.writeHead(301, {'Location': path});
@@ -94,17 +99,17 @@ const server = http.createServer((request, response) => {
 
     // handle ?p=1134
     if (query.p) {
-      return redirect(response, pageIds[query.p] || pathname)
+      return redirect(response, pageIds[query.p] || redirectLookup[pathname])
     }
 
     // handle ?attachment_id=4221
     if (query.attachment_id) {
-      return redirect(response, attachmentIds[query.attachment_id] || pathname)
+      return redirect(response, attachmentIds[query.attachment_id] || redirectLookup[pathname])
     }
 
     // handle ?lang=
     if (query.lang) {
-      return redirect(response, pathname)
+      return redirect(response, redirectLookup[pathname])
     }
 
     // Other parameters we simply allow, otherwise to strip them, uncomment this line
