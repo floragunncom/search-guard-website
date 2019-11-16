@@ -105,12 +105,12 @@ const server = http.createServer((request, response) => {
 
     // handle ?p=1134
     if (query.p) {
-      return redirect(response, pageIds[query.p], pathname)
+      return redirect(response, pageIds[query.p] || pathname)
     }
 
     // handle ?attachment_id=4221
     if (query.attachment_id) {
-      return redirect(response, attachmentIds[query.attachment_id], pathname)
+      return redirect(response, attachmentIds[query.attachment_id] || pathname)
     }
 
     // handle ?lang=
