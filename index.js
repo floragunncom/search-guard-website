@@ -1,18 +1,8 @@
 const handler = require('serve-handler');
 const http = require('http');
-const data = require('./data/redirects.json');
 
 const port = process.env.PORT || 4444;
 
-// const redirectRules = data.filter(redirect => redirect !== null);
-// redirectRules.map(link => {
-//   const sourceLink = link.source.replace(/^(.*?)com/, '');
-//   link.source = link.source.slice(-1) === '/' ? sourceLink.slice(0, -1) : sourceLink;
-//   // link.destination = link.destination.replace(/^(.*?)com/, '');
-//   link.destination = link.destination;
-// });
-
-// console.log('redirectRules', redirectRules)
 const options = {
   public: './build',
   redirects: [

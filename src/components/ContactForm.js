@@ -36,7 +36,7 @@ const ContactForm = () => {
       <div className="col s12 l4" id="contact">
         <div className="company-information-container">
           <p className="company-information-header">
-            Serach Guard Headquarters
+            Search Guard Headquarters
           </p>
           <p className="company-information-text">
             floragunn GmbH
