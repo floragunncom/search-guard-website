@@ -64,9 +64,10 @@ const options = {
     },
     { source: '/read-history-gdpr*', destination: '/' },
     { source: '/search-guard-elastic', destination: '/' },
-    { source: '/mentions-legales', destinations: '/impressum'}
+    { source: '/mentions-legales', destination: '/impressum'}
   ],
 };
+
 let redirectLookup = {}
 for (const rule of options.redirects) {
   redirectLookup[rule.source] = rule.destination
