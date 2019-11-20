@@ -1,5 +1,6 @@
 const handler = require('serve-handler');
 const http = require('http');
+const URL = require('url');
 
 const port = process.env.PORT || 4444;
 
@@ -47,7 +48,13 @@ const options = {
       source: '/tls-certificate-generator/embed',
       destination: '/tls-certificate-generator/',
     },
-    { source: '/collaborators', destination: '/' },
+    { source: '/colaboradores', destination: '/' },
+    { source: '/integradores', destination: '/product#integrators' },
+    { source: '/integrateurs', destination: '/product#integrators' },
+    { source: '/partenaires', destination: '/company#partners' },
+    { source: '/contacto', destination: '/contacts/' },
+    { source: '/protection-des-donnees', destination: '/datenschutz/' },
+    { source: '/education-program', destination: '/contacts/' },
     { source: '/es/*', destination: '/' },
     { source: '/faq-2', destination: '/faq/' },
     { source: '/licencia', destination: '/licensing/' },
@@ -63,11 +70,72 @@ const options = {
     },
     { source: '/read-history-gdpr*', destination: '/' },
     { source: '/search-guard-elastic', destination: '/' },
+    { source: '/7171-2', destination: '/' },
+    { source: '/home-2', destination: '/' },
+    { source: '/mentions-legales', destination: '/impressum/' },
+    { source: '/producto', destination: '/product/' },
+    { source: '/produit', destination: '/product/' },
+    { source: '/security-information', destination: '/security/' },
+    {
+      source: '/generateur-de-certificats-tls',
+      destination: '/tls-certificate-generator/',
+    },
   ],
 };
+
+const redirectLookup = {};
+for (const rule of options.redirects) {
+  redirectLookup[rule.source] = rule.destination;
+}
+
+const redirect = (response, path) => {
+  path = redirectLookup[path] || path;
+  if (!path) {
+    console.log('no path for redirect, falling back to /');
+    path = '/';
+  }
+  response.writeHead(301, { Location: path });
+  return response.end();
+};
+
+const pageIds = {
+  1134: '/elasticsearch-compliance-preview/',
+};
+
+const attachmentIds = {
+  4174: '/wp-content/uploads/2018/07/keycloak_add_client.png',
+  4220: '/wp-content/uploads/2018/07/Keycloak_assign_roles.png',
+  4183: '/wp-content/uploads/2018/07/keycloak_client_secret.png',
+  4208: '/wp-content/uploads/2018/07/keycloak_client_settings.png',
+  4221: '/wp-content/uploads/2018/07/Keycloak_mapper.png',
+  4222: '/wp-content/uploads/2018/07/Log_in_to_Keycloak.png',
+  4708: '/wp-content/uploads/2018/08/image1.png',
+};
+
 const server = http.createServer((request, response) => {
   // You pass two more arguments for config and middleware
   // More details here: https://github.com/zeit/serve-handler#options
+  const { pathname, search, query } = URL.parse(request.url, true);
+  if (search && query) {
+    // handle ?p=1134
+    if (query.p) {
+      return redirect(response, pageIds[query.p] || pathname);
+    }
+
+    // handle ?attachment_id=4221
+    if (query.attachment_id) {
+      return redirect(response, attachmentIds[query.attachment_id] || pathname);
+    }
+
+    // handle ?lang=
+    if (query.lang) {
+      return redirect(response, pathname);
+    }
+
+    // Other parameters we simply allow, otherwise to strip them, uncomment this line
+    // return redirect(response, pathname)
+  }
+
   return handler(request, response, options);
 });
 
