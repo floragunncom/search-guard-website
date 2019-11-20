@@ -110,6 +110,7 @@ const attachmentIds = {
   4221: '/wp-content/uploads/2018/07/Keycloak_mapper.png',
   4222: '/wp-content/uploads/2018/07/Log_in_to_Keycloak.png',
   4708: '/wp-content/uploads/2018/08/image1.png',
+  // 4708: '/wp-content/uploads/2018/08/image1.png',
 };
 
 const server = http.createServer((request, response) => {
