@@ -8,7 +8,6 @@ class Journey extends Component {
 
   onInViewChange = inview => {
     if (!this.state.showH1 && inview) this.setState({ showH1: true });
-    console.log('inview, this.state.showH1', inview, this.state.showH1)
   };
   
   render() {

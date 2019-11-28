@@ -11,6 +11,8 @@ const options = {
     { source: '/grownow', destination: '/company/' },
     { source: '/contact', destination: '/contacts/' },
     { source: '/kunstlerfreunde', destination: '/company/' },
+    { source: '/search-guard-public-key', destination: '/company/' },
+    { source: '/search-guard-tools-tutorials', destination: '/company/' },
     { source: '/our-services/**', destination: '/company/' },
     { source: '/search-guard-elasticsearch-faq', destination: '/company/' },
     { source: '/searchguard_*', destination: '/company/' },
@@ -29,7 +31,6 @@ const options = {
     { source: '/category/**/:id', destination: '/blog/' },
     { source: '/tag/**/:id', destination: '/blog/' },
     { source: '/blog/page/**/:id', destination: '/blog/' },
-    { source: '/immutable-indices-gdpr/**', destination: '/' },
     { source: '/oxy_testimonial/arno-has', destination: '/' },
     { source: '/oxy_testimonial/yasvanth-babu', destination: '/' },
     { source: '/careers', destination: '/' },
@@ -48,10 +49,12 @@ const options = {
       source: '/tls-certificate-generator/embed',
       destination: '/tls-certificate-generator/',
     },
-    { source: '/colaboradores', destination: '/' },
+    { source: '/collaborators', destination: '/' },
     { source: '/integradores', destination: '/product#integrators' },
     { source: '/integrateurs', destination: '/product#integrators' },
+    { source: '/integrators', destination: '/product#integrators' },
     { source: '/partenaires', destination: '/company#partners' },
+    { source: '/partners', destination: '/company#partners' },
     { source: '/contacto', destination: '/contacts/' },
     { source: '/protection-des-donnees', destination: '/datenschutz/' },
     { source: '/education-program', destination: '/contacts/' },
@@ -110,13 +113,13 @@ const attachmentIds = {
   4221: '/wp-content/uploads/2018/07/Keycloak_mapper.png',
   4222: '/wp-content/uploads/2018/07/Log_in_to_Keycloak.png',
   4708: '/wp-content/uploads/2018/08/image1.png',
-  // 4708: '/wp-content/uploads/2018/08/image1.png',
 };
 
 const server = http.createServer((request, response) => {
   // You pass two more arguments for config and middleware
   // More details here: https://github.com/zeit/serve-handler#options
   const { pathname, search, query } = URL.parse(request.url, true);
+
   if (search && query) {
     // handle ?p=1134
     if (query.p) {
@@ -130,6 +133,10 @@ const server = http.createServer((request, response) => {
 
     // handle ?lang=
     if (query.lang) {
+      return redirect(response, pathname);
+    }
+    // handle ?utm_source=
+    if (query.utm_source) {
       return redirect(response, pathname);
     }
 
