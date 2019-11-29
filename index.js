@@ -34,7 +34,6 @@ const options = {
     { source: '/oxy_testimonial/arno-has', destination: '/' },
     { source: '/oxy_testimonial/yasvanth-babu', destination: '/' },
     { source: '/careers', destination: '/' },
-    { source: '/elastic-floragunn-dmca*', destination: '/' },
     {
       source:
         '/https://search-guard.com/elasticsearch-anonymous-authentication',
