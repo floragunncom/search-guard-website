@@ -1,5 +1,4 @@
 import React from 'react';
-import LanguagePicker from '../LanguagePicker/LanguagePicker';
 import './PreFooter.scss';
 import Email from '../Email/Email';
 import twitter from '../../images/tw-dark.svg';

@@ -11,6 +11,8 @@ const options = {
     { source: '/grownow', destination: '/company/' },
     { source: '/contact', destination: '/contacts/' },
     { source: '/kunstlerfreunde', destination: '/company/' },
+    { source: '/search-guard-public-key', destination: '/company/' },
+    { source: '/search-guard-tools-tutorials', destination: '/company/' },
     { source: '/our-services/**', destination: '/company/' },
     { source: '/search-guard-elasticsearch-faq', destination: '/company/' },
     { source: '/searchguard_*', destination: '/company/' },
@@ -29,14 +31,15 @@ const options = {
     { source: '/category/**/:id', destination: '/blog/' },
     { source: '/tag/**/:id', destination: '/blog/' },
     { source: '/blog/page/**/:id', destination: '/blog/' },
-    { source: '/immutable-indices-gdpr/**', destination: '/' },
     { source: '/oxy_testimonial/arno-has', destination: '/' },
     { source: '/oxy_testimonial/yasvanth-babu', destination: '/' },
+    // {
+    //   source: '/elastic-floragunn-dmca/embed/*',
+    //   destination: '/test',
+    // },
     { source: '/careers', destination: '/' },
-    { source: '/elastic-floragunn-dmca*', destination: '/' },
     {
-      source:
-        '/https://search-guard.com/elasticsearch-anonymous-authentication',
+      source: '/elasticsearch-anonymous-authentication',
       destination: '/blog/',
     },
     { source: '/elasticsearch-kibana-security', destination: '/blog/' },
@@ -48,10 +51,12 @@ const options = {
       source: '/tls-certificate-generator/embed',
       destination: '/tls-certificate-generator/',
     },
-    { source: '/colaboradores', destination: '/' },
+    { source: '/collaborators', destination: '/' },
     { source: '/integradores', destination: '/product#integrators' },
     { source: '/integrateurs', destination: '/product#integrators' },
+    { source: '/integrators', destination: '/product#integrators' },
     { source: '/partenaires', destination: '/company#partners' },
+    { source: '/partners', destination: '/company#partners' },
     { source: '/contacto', destination: '/contacts/' },
     { source: '/protection-des-donnees', destination: '/datenschutz/' },
     { source: '/education-program', destination: '/contacts/' },
@@ -64,10 +69,10 @@ const options = {
       source: '/generador-de-certificados-tls',
       destination: '/tls-certificate-generator/',
     },
-    {
-      source: '/search-guard-provides-gdpr-compliance-for-elasticsearch',
-      destination: '/gdpr-compliance-elasticsearch',
-    },
+    // {
+    //   source: '/search-guard-provides-gdpr-compliance-for-elasticsearch',
+    //   destination: '/gdpr-compliance-elasticsearch/',
+    // },
     { source: '/read-history-gdpr*', destination: '/' },
     { source: '/search-guard-elastic', destination: '/' },
     { source: '/7171-2', destination: '/' },
@@ -79,6 +84,10 @@ const options = {
     {
       source: '/generateur-de-certificats-tls',
       destination: '/tls-certificate-generator/',
+    },
+    {
+      source: '/**.zip',
+      destination: '/',
     },
   ],
 };
@@ -116,6 +125,7 @@ const server = http.createServer((request, response) => {
   // You pass two more arguments for config and middleware
   // More details here: https://github.com/zeit/serve-handler#options
   const { pathname, search, query } = URL.parse(request.url, true);
+
   if (search && query) {
     // handle ?p=1134
     if (query.p) {
@@ -129,6 +139,10 @@ const server = http.createServer((request, response) => {
 
     // handle ?lang=
     if (query.lang) {
+      return redirect(response, pathname);
+    }
+    // handle ?utm_source=
+    if (query.utm_source) {
       return redirect(response, pathname);
     }
 

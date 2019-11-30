@@ -26,7 +26,6 @@ const BlogPostArticle = ({ posts, match }) => {
   const postContent = posts.find(
     entry => entry.fields.slug === `${match.url.substring(1)}`,
   );
-  console.log('slug', postContent)
   const options = {
     overrides: {
       h1: {

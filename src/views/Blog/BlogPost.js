@@ -12,7 +12,6 @@ const BlogPost = ({ post }) => {
 
   let BlogPostContent;
   if (blogPost !== undefined) {
-    console.log('blogPost.slug', blogPost.slug)
     BlogPostContent = (
       <Link
         to={{ pathname: `/${blogPost.slug}` }}

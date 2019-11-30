@@ -14,8 +14,6 @@ const Email = () => {
     const data = {};
     const formElements = Array.from(event.target);
     formElements.map(input => (data[input.name] = input.value));
-
-    console.log(JSON.stringify(data));
   }
 
   return (
