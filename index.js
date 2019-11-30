@@ -33,10 +33,13 @@ const options = {
     { source: '/blog/page/**/:id', destination: '/blog/' },
     { source: '/oxy_testimonial/arno-has', destination: '/' },
     { source: '/oxy_testimonial/yasvanth-babu', destination: '/' },
+    // {
+    //   source: '/elastic-floragunn-dmca/embed/*',
+    //   destination: '/test',
+    // },
     { source: '/careers', destination: '/' },
     {
-      source:
-        '/https://search-guard.com/elasticsearch-anonymous-authentication',
+      source: '/elasticsearch-anonymous-authentication',
       destination: '/blog/',
     },
     { source: '/elasticsearch-kibana-security', destination: '/blog/' },
@@ -66,10 +69,10 @@ const options = {
       source: '/generador-de-certificados-tls',
       destination: '/tls-certificate-generator/',
     },
-    {
-      source: '/search-guard-provides-gdpr-compliance-for-elasticsearch',
-      destination: '/gdpr-compliance-elasticsearch',
-    },
+    // {
+    //   source: '/search-guard-provides-gdpr-compliance-for-elasticsearch',
+    //   destination: '/gdpr-compliance-elasticsearch/',
+    // },
     { source: '/read-history-gdpr*', destination: '/' },
     { source: '/search-guard-elastic', destination: '/' },
     { source: '/7171-2', destination: '/' },
@@ -81,6 +84,10 @@ const options = {
     {
       source: '/generateur-de-certificats-tls',
       destination: '/tls-certificate-generator/',
+    },
+    {
+      source: '/**.zip',
+      destination: '/',
     },
   ],
 };
