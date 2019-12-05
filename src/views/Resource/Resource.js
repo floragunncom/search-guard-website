@@ -56,11 +56,11 @@ const Resource = () => {
           leftDark
           leftIcon={iconDownload}
           rightIcon={iconCertificate}
-          leftHeadline="GitHub repo"
-          leftText="Access, download and inspect all our code on GitHub, report any issue you find or request a feature."
+          leftHeadline="Source Code"
+          leftText="Access, download and inspect all our code on Gitlab, report any issue you find or request a feature."
           rightHeadline="TLS Certificate Generator"
           rightText="If you need TLS certificates for testing or a PoC, our generator web service is here to ease the pain."
-          leftLink="https://github.com/floragunncom"
+          leftLink="https://git.floragunn.com/"
           rightLink="/tls-certificate-generator/"
           leftButtonTarget="_blank"
         />
@@ -96,6 +96,7 @@ const Resource = () => {
         text="No worries, maybe we can help you find the answer."
         ctaText="contact us"
         icon={envelope}
+        link="/contacts/"
       />
       <PreFooter />
       <Footer />

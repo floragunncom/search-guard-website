@@ -18,7 +18,7 @@ const NotFound = () => {
               have never existed.
             </div>
             <div className="notfound-button">
-              <Button text="go home" link="/" />
+              <Button text="home" link="/" />
             </div>
           </div>
         </div>

@@ -91,7 +91,7 @@ const Advisory = () => {
           </a>
         </div>
       ),
-      date: '2019-03-19',
+      date: '2018-03-19',
       vul: 'Possible URL injection on login page when basePath is set',
       rem: 'Update',
       fix: 'Kibana plugin 6.x-16',
@@ -247,18 +247,7 @@ const Advisory = () => {
       id: 'SGSA 2',
       cve: 'n/a',
       date: '2016-11-25',
-      vul: (
-        <div>
-          DLS not picked up when getting documents by ID
-          <a
-            href="https://github.com/floragunncom/search-guard-module-dlsfls/issues/1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            #1
-          </a>
-        </div>
-      ),
+      vul: 'DLS not picked up when getting documents by ID',
       rem: 'Update',
       fix: 'SG v9 and DLS/FLS module v5',
       report: 'Fabio Corneti',
@@ -267,18 +256,7 @@ const Advisory = () => {
       id: 'SGSA 1',
       cve: 'n/a',
       date: '2016-07-28',
-      vul: (
-        <div>
-          Authentication cache lead to password hashcode vulnerability{' '}
-          <a
-            href="https://github.com/floragunncom/search-guard/issues/186"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            #186
-          </a>
-        </div>
-      ),
+      vul: 'Authentication cache lead to password hashcode vulnerability',
       rem: 'Update',
       fix: 'SG V4',
       report: 'Vladimir Gordiychuk',

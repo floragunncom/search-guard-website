@@ -47,7 +47,7 @@ const Faq = () => {
                 rel="noopener noreferrer"
               >
                 Search Guard Demo Installer
-              </a>
+              </a>{' '}
               The installer comes with a trial license that enables all
               Enterprise and Compliance features for 60 days. If you need to
               extend your Search Guard trial, just{' '}

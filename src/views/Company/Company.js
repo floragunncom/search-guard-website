@@ -43,6 +43,7 @@ const Company = () => {
         text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
         ctaText="start free trial"
         icon={ctaIcon}
+        link="/contacts/"
       />
       <PreFooter />
       <Footer />

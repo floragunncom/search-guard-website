@@ -73,23 +73,23 @@ const Disclosure = () => {
             </div>
             <div className="disclosure-headline">Scope</div>
             <div className="disclosure-text">
-              Source code of the following public GitHub repos:
+              Source code of the following public Git repositories:
               <br />
               <ul className="disclosure-list">
                 <li>
-                  <a href="">Search Guard</a>
+                  <a href="https://git.floragunn.com/search-guard/search-guard" target="_blank" rel="noreferrer noopener">Search Guard</a>
                 </li>
                 <li>
-                  <a href="">Search Guard SSL</a>
+                  <a href="https://git.floragunn.com/search-guard/search-guard-ssl" target="_blank" rel="noreferrer noopener">Search Guard SSL</a>
                 </li>
                 <li>
-                  <a href="">Search Guard Enterprise Modules</a>
+                  <a href="https://git.floragunn.com/search-guard/search-guard-enterprise-modules" target="_blank" rel="noreferrer noopener">Search Guard Enterprise Modules</a>
                 </li>
                 <li>
-                  <a href="">Search Guard Kibana Plugin</a>
+                  <a href="https://git.floragunn.com/search-guard/search-guard-kibana-plugin" target="_blank" rel="noreferrer noopener">Search Guard Kibana Plugin</a>
                 </li>
                 <li>
-                  <a href="">Search Guard Offline TLS Tool</a>
+                  <a href="" target="_blank" rel="noreferrer noopener">Search Guard Offline TLS Tool</a>
                 </li>
               </ul>
             </div>
@@ -103,10 +103,9 @@ const Disclosure = () => {
               <br />
               <br />
               <ul className="disclosure-list">
-                <li>Github itself</li>
                 <li>The Search Guard Website</li>
                 <li>The Search Guard Documentation Website</li>
-                <li>Private github repos</li>
+                <li>Private Gitlab repos</li>
               </ul>
               <br />
               In the interest of the safety of our users, staff, the Internet at

@@ -46,7 +46,7 @@ const TlsGenerator = () => {
       <NavBar />
       <Title
         headline="TLS Certificate Generator"
-        text="If you need TLS certificates for setting up Search Guard, our certificate generator is here to ease the pain."
+        text="Use our generator service to create all certificates required for configuring Search Guard."
       />
       <div className="row">
         <div className="col s12 l8 offset-l2" id="tls">
@@ -88,10 +88,10 @@ const TlsGenerator = () => {
                 </li>
                 <li>
                   Organization name becomes part of the certificate and must not
-                  contain special characters (e.g. ‘&’)
+                  contain special characters (e.g. ‘&’).
                 </li>
                 <li>
-                  The download link is sent to the email address you provided
+                  The download link is sent to the email address you provided.
                 </li>
               </ul>
             </div>
@@ -244,7 +244,7 @@ const TlsGenerator = () => {
                     </label>
                   </div>
                   <div className="privacy-policy">
-                    This form collects your name and email. PLease take a look
+                    This form collects your name and email. Please take a look
                     in our privacy policy for a better understanding on how we
                     protect and manage your submitted data.
                   </div>

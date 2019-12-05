@@ -16,17 +16,13 @@ class Journey extends Component {
         year: 2019,
         events: [
           {
-            headline: 'March',
-            text: 'We present Search Guard at the Intersec conference in Dubai',
-          },
-          {
             headline: 'January',
-            text: 'Hendrik Saly joins Search Guard as our new CTO',
+            text: 'We present Search Guard at the Intersec conference in Dubai',
           },
           {
             headline: 'March',
             text:
-              'We present Search Guard at the RSA conference in San Franciso',
+              'We present Search Guard at the RSA conference in San Francisco',
           },
           {
             headline: 'April',
@@ -34,16 +30,21 @@ class Journey extends Component {
           },
           {
             headline: 'May',
-            text: 'We begin working on Signals - Insights for Elasticsearch',
+            text: 'We begin working on Signals - Alerting for Elasticsearch',
           },
           {
-            headline: 'March',
+            headline: 'June',
             text:
               'We present Search Guard at the Infosecurity conference in London',
           },
           {
-            headline: 'August',
-            text: 'We released Kibana role based access control',
+            headline: 'November',
+            text:
+                'We present Search Guard at the Big Data World in Paris',
+          },
+          {
+            headline: 'December',
+            text: 'We release Signals Beta',
           },
         ],
       },
@@ -77,6 +78,10 @@ class Journey extends Component {
             headline: 'November',
             text: 'We participate in the Open Source conference in Bordeaux.',
           },
+          {
+            headline: 'December',
+            text: 'Hendrik Saly joins Search Guard as our new CTO',
+          }
         ],
       },
       {
@@ -106,7 +111,7 @@ class Journey extends Component {
           {
             headline: 'November',
             text:
-              'Search Guard released, including Audit Logging and the new REST management API.',
+              'Search Guard 5 released, including Audit Logging and the new REST management API.',
           },
         ],
       },
@@ -126,9 +131,9 @@ class Journey extends Component {
             headline: 'Spring/ Summer',
             text: 'Search Guard 1.x for Elasticsearch 1.x released on GitHub',
           },
-          {
-            highlight: 'Source code is available',
-          },
+          // {
+          //   highlight: 'Source code is available',
+          // },
           {
             headline: 'Winter',
             text:
