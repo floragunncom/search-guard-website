@@ -4,10 +4,19 @@ import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import './Disclosure.scss';
+import {Helmet} from "react-helmet";
 
 const Disclosure = () => {
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Search Guard Disclosure Policy</title>
+        <meta
+          name="description"
+          content="We take security seriously. Our policy for reporting security related issues found in Search Guard."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="disclosure policy"
@@ -73,7 +82,7 @@ const Disclosure = () => {
             </div>
             <div className="disclosure-headline">Scope</div>
             <div className="disclosure-text">
-              Source code of the following public GitHub repos:
+              Source code of the following public Gitlab repos:
               <br />
               <ul className="disclosure-list">
                 <li>
@@ -103,7 +112,7 @@ const Disclosure = () => {
               <br />
               <br />
               <ul className="disclosure-list">
-                <li>Github itself</li>
+                <li>Gitlab itself</li>
                 <li>The Search Guard Website</li>
                 <li>The Search Guard Documentation Website</li>
                 <li>Private github repos</li>
@@ -167,7 +176,7 @@ const Disclosure = () => {
               </ul>
               <br />
               If you’d like to encrypt the information, please use our{' '}
-              <a href="/">[PGP key].</a>
+              <a href="/security/">[PGP key].</a>
             </div>
           </div>
         </div>
