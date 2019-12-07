@@ -1,10 +1,10 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import './Imprint.scss';
-import { Helmet } from 'react-helmet';
 
 const Imprint = () => {
   return (

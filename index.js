@@ -52,6 +52,7 @@ const options = {
       destination: '/tls-certificate-generator/',
     },
     { source: '/collaborators', destination: '/' },
+    { source: '/colaboradores', destination: '/' },
     { source: '/integradores', destination: '/product#integrators' },
     { source: '/integrateurs', destination: '/product#integrators' },
     { source: '/integrators', destination: '/product#integrators' },
@@ -63,6 +64,7 @@ const options = {
     { source: '/es/*', destination: '/' },
     { source: '/faq-2', destination: '/faq/' },
     { source: '/licencia', destination: '/licensing/' },
+    { source: '/licences', destination: '/licensing/' },
     { source: '/searchguard-license-support', destination: '/licensing/' },
     { source: '/es/licencia', destination: '/licensing/' },
     {
@@ -81,6 +83,7 @@ const options = {
     { source: '/producto', destination: '/product/' },
     { source: '/produit', destination: '/product/' },
     { source: '/security-information', destination: '/security/' },
+    { source: '/cle-publique-securite', destination: '/security/' },
     {
       source: '/generateur-de-certificats-tls',
       destination: '/tls-certificate-generator/',
