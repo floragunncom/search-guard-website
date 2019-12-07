@@ -14,13 +14,13 @@ const Imprint = () => {
         <title>Impressum - Search Guard</title>
         <meta
           name="description"
-          content="Company information and liability for content and links."
+          content="Search Guard company information, contact details and VAT ID."
         />
       </Helmet>
       <NavBar />
       <Title
         headline="Imprint"
-        // text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
+        text="Company information, contact details and VAT ID."
       />
       <div className="row">
         <div className="col s12 l8 offset-l2">

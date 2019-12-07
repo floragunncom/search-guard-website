@@ -11,7 +11,7 @@ const BlogContextProvider = ({ children }) => {
     const fetchPosts = async () => {
       setLoading(true);
       const fetch = await client
-        .getEntries({ content_type: 'post', order: 'sys.createdAt' })
+        .getEntries({ content_type: 'post', order: '-fields.date' })
         .then(response => {
           setPosts(response.items);
         });
