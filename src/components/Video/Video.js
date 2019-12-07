@@ -13,6 +13,19 @@ const Video = props => {
         <div className="video-playlist">
           <div className="video-playlist-item col l4">
             <iframe
+                className="responsive-video"
+                src="https://www.youtube.com/embed/Big_niMxQJ4"
+                frameBorder="0"
+                title="Introducing Signals - Free Alerting for Elasticsearch"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            />
+            <div className="video-playlist-text">
+              Introducing Signals - Free Alerting for Elasticsearch
+            </div>
+          </div>
+          <div className="video-playlist-item col l4">
+            <iframe
               className="responsive-video"
               src="https://www.youtube.com/embed/qiRgy5FcsnI"
               title="Search Guard - Compliance Module"
@@ -29,26 +42,12 @@ const Video = props => {
               className="responsive-video"
               src="https://www.youtube.com/embed/1uWGqcy5PeQ"
               frameBorder="0"
-              title="Search Guard - Orci varius natoque penatibus et magnis dis parturient"
+              title="Search Guard puts security first"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
             <div className="video-playlist-text">
-              Search Guard - Orci varius natoque penatibus et magnis dis
-              parturient
-            </div>
-          </div>
-          <div className="video-playlist-item col l4">
-            <iframe
-              className="responsive-video"
-              src="https://www.youtube.com/embed/C_pWD-gaJow"
-              frameBorder="0"
-              title="Search Guard - Suspendisse nibh libero"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-            <div className="video-playlist-text">
-              Search Guard - Suspendisse nibh libero
+              Search Guard puts security first
             </div>
           </div>
         </div>
@@ -56,7 +55,7 @@ const Video = props => {
     );
     playlistButton = (
       <div className="video-button">
-        <Button text="see more videos" />
+        <Button text="see more videos" link="https://www.youtube.com/channel/UCUw93I0DHMvoA8HNQ31AeJw" target="_blank"/>
       </div>
     );
   }

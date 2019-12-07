@@ -3,6 +3,7 @@ import claudia from '../../images/claudia.svg';
 import jochen from '../../images/jochen.svg';
 import hendrik from '../../images/hendrik.svg';
 import mechthild from '../../images/mechthild.svg';
+import thomas from '../../images/thomas.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import './Team.scss';
 
@@ -26,7 +27,14 @@ const Team = () => {
       pic: hendrik,
       link: 'https://www.linkedin.com/in/salyh/',
     },
-    { name: 'Mechthild Wetekam', position: 'COO', pic: mechthild, link: '' },
+    { name: 'Mechthild Wetekam',
+      position: 'COO',
+      pic: mechthild, link: ''
+    },
+    { name: 'Thomas Mahler',
+      position: 'Head of Sales & Marketing',
+      pic: thomas, link: 'https://www.linkedin.com/in/thmahler/'
+    },
   ];
 
   return (
@@ -35,7 +43,7 @@ const Team = () => {
         <div className="company-team-headline">Management team</div>
         {team.map(person => {
           return (
-            <div className="col s6 m3 company-team-profile">
+            <div className="col s12 m6 company-team-profile">
               <img src={person.pic} alt="person" className="profile-pic" />
               <div className="profile-name">{person.name}</div>
               <div className="profile-position">{person.position}</div>

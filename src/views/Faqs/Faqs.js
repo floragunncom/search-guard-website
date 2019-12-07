@@ -34,7 +34,7 @@ const Faqs = () => {
               companies from the finance, healthcare, telecommunications, big
               data, legal and aerospace sectors. We also work together with
               governmental agencies and provide security for scientific and
-              educational institutions
+              educational institutions.
             </p>
           ),
           anchor: 'two',
@@ -167,7 +167,7 @@ const Faqs = () => {
           anchor: 'ten',
         },
         {
-          question: 'My company  is non-profit, do you offer any discounts?',
+          question: 'My company is non-profit, do you offer any discounts?',
           answer: (
             <p>
               Absolutely. We want to give back to education and science and
@@ -278,7 +278,7 @@ const Faqs = () => {
       <NavBar />
       <Title
         headline="Frequently asked questions"
-        text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
+        text="Find answers to the most frequently asked questions about Search Guard and Signals."
       />
       <div className="row faq-row-wrapper">
         <div className="col s12 l4">

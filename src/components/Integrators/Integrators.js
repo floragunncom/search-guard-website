@@ -16,7 +16,7 @@ const Integrators = () => {
     {
       headline: 'IBM',
       text:
-        'IBM uses Search Guard in the StoredIQ and Spectrum Conductor products. and two more words',
+        'IBM uses Search Guard in the StoredIQ and Spectrum Conductor products for securing the underlying Elasticsearch cluster.',
       pic: ibm,
       link: 'https://www.ibm.com/',
     },
@@ -37,7 +37,7 @@ const Integrators = () => {
     {
       headline: 'Würth Phoenix',
       text:
-        'Würth Phoenix is a software company belonging to the Würth-Group, world market leader in the trade of assembly and fastening materials, offering business software for ERP, CRM and IT System Management. With its Unified monitoring solution NetEye, the company developed a best-of-breed approach of tried-and-trusted open source tools with external cloud applications that can be monitored just easily as services in data centers or hybrid services. Würth Phoenix completes its service offer with project planning, consulting, implementation and continuous assistance – combining thought leadership, experience, and newest technologies.',
+        'Würth Phoenix is a software company belonging to the Würth-Group, world market leader in the trade of assembly and fastening materials, offering business software for ERP, CRM and IT System Management. With its Unified monitoring solution NetEye, the company developed a best-of-breed approach of tried-and-trusted open source tools with external cloud applications that can be monitored just easily as services in data centers or hybrid services. ',
       pic: wuerthPhoenix,
       link: 'https://wuerth-phoenix.com/en/',
     },
