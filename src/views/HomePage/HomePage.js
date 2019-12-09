@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import NavBar from '../../components/NavBar/NavBar';
 import Hero from '../../components/Hero/Hero';
 import TileSimple from '../../components/TileSimple/TileSimple';
@@ -14,7 +15,6 @@ import lock from '../../images/tile-icon-wheel.svg';
 import multilevel from '../../images/multilevel-security.svg';
 import disk from '../../images/disk.svg';
 import ctaIcon from '../../images/icon-sg.svg';
-import { Helmet } from 'react-helmet';
 
 const HomePage = () => {
   return (
@@ -24,6 +24,7 @@ const HomePage = () => {
         <title>
           Search Guard | Security for Elasticsearch and the ELK stack
         </title>
+        <link rel="canonical" href="http://search-guard.com/" />
         <meta
           name="description"
           content="Search Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."
@@ -56,8 +57,8 @@ const HomePage = () => {
       <Labels />
       <Services />
       <LicensingModel
+        topButtons
         headline="Licensing models"
-        topButtons={true}
         tableView={false}
       />
       <Cta

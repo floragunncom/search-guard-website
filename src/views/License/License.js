@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
@@ -11,7 +12,6 @@ import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
 import iconBook from '../../images/icon-book.svg';
 import iconWheels from '../../images/icon-wheels.svg';
-import { Helmet } from 'react-helmet';
 
 const License = () => {
   const anchors = [
@@ -27,6 +27,7 @@ const License = () => {
         <title>
           Licensing | Search Guard Community, Enterprise and Compliance Edition
         </title>
+        <link rel="canonical" href="http://search-guard.com/licensing/" />
         <meta
           name="description"
           content="Get to know more about the Search Guard Editions and pricing. Fair licensing and secure your Elasticsearch cluster with an unlimited amount of nodes - scale your cluster not your costs."

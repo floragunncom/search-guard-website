@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './LicensingModel.scss';
-import TableEditions from '../../components/TableEditions/TableEditions';
+import TableEditions from '../TableEditions/TableEditions';
 import enterprise from '../../images/icon-enterprise.svg';
 import compliance from '../../images/icon-compliance.svg';
 import community from '../../images/icon-community.svg';
@@ -8,273 +8,284 @@ import academic from '../../images/icon-academic.svg';
 import custom from '../../images/icon-custom.svg';
 import Button from '../Button/Button';
 
-class LicensingModel extends Component {
-  state = {
-    standardButton: true,
-    tableVisible: false,
+const LicensingModel = ({ tableView, topButtons, headline }) => {
+  const [standardButton, setStandardButton] = useState(true);
+  const [tableVisible, setTableVisible] = useState(false);
+
+  const onButtonPress = () => {
+    setStandardButton(!standardButton);
   };
 
-  onButtonPress() {
-    const standardButton = !this.state.standardButton;
-    this.setState({ standardButton });
+  const ontableViewPress = () => {
+    setTableVisible(tableVisible);
+  };
+
+  let infoButton;
+  if (topButtons) {
+    infoButton = (
+      <div className="licensing-info-wrapper">
+        <div className="licensing-info-text">
+          We offer an{' '}
+          <div style={{ fontWeight: 'bold', display: 'inline' }}>
+            Academic & Scientific License
+          </div>
+          , as well as{' '}
+          <div style={{ fontWeight: 'bold', display: 'inline' }}>
+            Custom Licenses
+          </div>{' '}
+          for your personal needs.
+        </div>
+        <div className="liccensing-info-button">
+          <Button text="see all license models" link="/licensing/" />
+        </div>
+      </div>
+    );
   }
-  
-  ontableViewPress() {
-    const tableVisible = !this.state.tableVisible;
-    this.setState({ tableVisible });
-  }
+  let renderContent;
 
-  renderContent() {
-    let infoButton = undefined;
-
-    if (this.props.topButtons) {
-      infoButton = (
-        <div className="licensing-info-wrapper">
-          <div className="licensing-info-text">
-            We offer an{' '}
-            <div style={{ fontWeight: 'bold', display: 'inline' }}>
-              Academic & Scientific License
-                  </div>
-            , as well as{' '}
-            <div style={{ fontWeight: 'bold', display: 'inline' }}>
-              Custom Licenses
-                  </div>{' '}
-            for your personal needs.
+  if (standardButton) {
+    renderContent = (
+      <div className="licensing-editions-wrapper">
+        <div className="row">
+          <div className="col s12 l4 licensing-right-border">
+            <div className="licensing-edition">
+              <div className="licensing-editions-icon">
+                <img
+                  src={community}
+                  alt="community icon"
+                  className="licensing-icon"
+                />
+              </div>
+              <div className="licensing-editions-headline community-border">
+                Community edition
+              </div>
+              <div className="licensing-editions-text-wrapper">
+                <div className="licensing-editions-text">
+                  Covers all your basic security needs
                 </div>
-          <div className="liccensing-info-button">
-            <Button text="see all license models" />
-          </div>
-        </div>
-      );
-    }
-    
-    if (this.state.standardButton) {
-      return (
-        <div className="licensing-editions-wrapper">
-          <div className="row">
-            <div className="col s12 l4 licensing-right-border">
-              <div className="licensing-edition">
-                <div className="licensing-editions-icon">
-                  <img
-                    src={community}
-                    alt="community icon"
-                    className="licensing-icon"
-                  />
-                </div>
-                <div className="licensing-editions-headline community-border">
-                  Community edition
-                </div>
-                <div className="licensing-editions-text-wrapper">
-                  <div className="licensing-editions-text">
-                    Covers all your basic security needs
-                  </div>
-                  <div className="licensing-editions-text">Free of charge</div>
-                  <div className="licensing-editions-text">
-                    Integrated with the entire Elastic Stack
-                  </div>
-                </div>
-                <div className="licensing-editions-button">
-                  <Button
-                    text="get a quote"
-                    style="ghost-link"
-                    link="/contacts/"
-                    color="#00C9B7"
-                  />
+                <div className="licensing-editions-text">Free of charge</div>
+                <div className="licensing-editions-text">
+                  Integrated with the entire Elastic Stack
                 </div>
               </div>
-            </div>
-            <div className="col s12 l4 licensing-right-border">
-              <div className="licensing-edition">
-                <div className="licensing-editions-icon">
-                  <img
-                    src={enterprise}
-                    alt="enterprise icon"
-                    className="licensing-icon"
-                  />
-                </div>
-                <div className="licensing-editions-headline enterprise-border">
-                  Enterprise edition
-                </div>
-                <div className="licensing-editions-text-wrapper">
-                  <div className="licensing-editions-text">
-                    Integrates with major security standards e.g. Active
-                    Directory
-                  </div>
-                  <div className="licensing-editions-text">
-                    Control access to data to document and field level
-                  </div>
-                  <div className="licensing-editions-text">
-                    Professional management API and Kibana multitenancy
-                  </div>
-                </div>
-                <div className="licensing-editions-button">
-                  <Button
-                    text="get a quote"
-                    style="ghost-link"
-                    link="/contacts/"
-                    color="#009688"
-                  />
-                </div>
+              <div className="licensing-editions-button">
+                <Button
+                  text="get a quote"
+                  style="ghost-link"
+                  link="/contacts/"
+                  color="#00C9B7"
+                />
               </div>
-            </div>
-            <div className="col s12 l4 licensing-right-border">
-              <div className="licensing-edition">
-                <div className="licensing-editions-icon">
-                  <img
-                    src={compliance}
-                    alt="compliance icon"
-                    className="licensing-icon"
-                  />
-                </div>
-                <div className="licensing-editions-headline compliance-border">
-                  Compliance edition
-                </div>
-                <div className="licensing-editions-text-wrapper">
-                  <div className="licensing-editions-text">
-                    Designed for meeting compliance regulations e.g. GDPR
-                  </div>
-                  <div className="licensing-editions-text">
-                    Record all read-and-write access to data
-                  </div>
-                  <div className="licensing-editions-text">
-                    Monitor integrity of Elasticsearch installation
-                  </div>
-                </div>
-                <div className="licensing-editions-button">
-                  <Button
-                    text="install now"
-                    style="ghost-link"
-                    link="https://docs.search-guard.com/latest/demo-installer"
-                    color="#009688"
-                  />
-                </div>
-              </div>
-              {infoButton}
             </div>
           </div>
-        </div>
-      );
-    } else {
-      return (
-        <div className="licensing-editions-wrapper">
-          <div className="row">
-            <div className="col s12 l6 licensing-right-border">
-              <div className="licensing-edition">
-                <div className="licensing-editions-icon">
-                  <img src={academic} alt="academic icon" className="licensing-icon" />
+          <div className="col s12 l4 licensing-right-border">
+            <div className="licensing-edition">
+              <div className="licensing-editions-icon">
+                <img
+                  src={enterprise}
+                  alt="enterprise icon"
+                  className="licensing-icon"
+                />
+              </div>
+              <div className="licensing-editions-headline enterprise-border">
+                Enterprise edition
+              </div>
+              <div className="licensing-editions-text-wrapper">
+                <div className="licensing-editions-text">
+                  Integrates with major security standards e.g. Active Directory
                 </div>
-                <div className="licensing-editions-headline academic-border">
-                  Academic & Scientific edition
+                <div className="licensing-editions-text">
+                  Control access to data to document and field level
                 </div>
-                <div className="licensing-editions-text-wrapper">
-                  <div className="licensing-editions-text">
-                    Etiam vitae dolor eu felis porttitor
-                  </div>
-                  <div className="licensing-editions-text">In quam neque</div>
-                  <div className="licensing-editions-text">
-                    Quisque ut eros sit amet ex convallis condimentum lobortis
-                    eu ante
-                  </div>
-                </div>
-                <div className="licensing-editions-button">
-                  <Button
-                    text="find out more"
-                    style="ghost-link"
-                    link="/faq/"
-                    color="#246E94"
-                  />
+                <div className="licensing-editions-text">
+                  Professional management API and Kibana multitenancy
                 </div>
               </div>
+              <div className="licensing-editions-button">
+                <Button
+                  text="get a quote"
+                  style="ghost-link"
+                  link="/contacts/"
+                  color="#009688"
+                />
+              </div>
             </div>
-            <div className="col s12 l6 licensing-right-border">
-              <div className="licensing-edition">
-                <div className="licensing-editions-icon">
-                  <img src={custom} alt="custom icon" className="licensing-icon" />
+          </div>
+          <div className="col s12 l4 licensing-right-border">
+            <div className="licensing-edition">
+              <div className="licensing-editions-icon">
+                <img
+                  src={compliance}
+                  alt="compliance icon"
+                  className="licensing-icon"
+                />
+              </div>
+              <div className="licensing-editions-headline compliance-border">
+                Compliance edition
+              </div>
+              <div className="licensing-editions-text-wrapper">
+                <div className="licensing-editions-text">
+                  Designed for meeting compliance regulations e.g. GDPR
                 </div>
-                <div className="licensing-editions-headline custom-border">
-                  Custom edition
+                <div className="licensing-editions-text">
+                  Record all read-and-write access to data
                 </div>
-                <div className="licensing-editions-text-wrapper">
-                  <div className="licensing-editions-text">
-                    Integer fermentum et ipsum
-                  </div>
-                  <div className="licensing-editions-text">
-                    Nunc eu augue ullamcorper, ornare nibh maximus
-                  </div>
-                  <div className="licensing-editions-text">
-                    Amet ex convallis condimentum lobortis eu ante
-                  </div>
-                </div>
-                <div className="licensing-editions-button">
-                  <Button
-                    text="find out more"
-                    style="ghost-link"
-                    link="/faq/"
-                    color="#246E94"
-                  />
+                <div className="licensing-editions-text">
+                  Monitor integrity of Elasticsearch installation
                 </div>
               </div>
-              {infoButton}
+              <div className="licensing-editions-button">
+                <Button
+                  text="install now"
+                  style="ghost-link"
+                  link="https://docs.search-guard.com/latest/demo-installer"
+                  color="#009688"
+                />
+              </div>
             </div>
+            {infoButton}
           </div>
         </div>
-      );
-    }
-  }
-
-  render() {
-    let buttons = undefined;
-    let tableView = undefined;
-
-    if (this.props.topButtons) {
-      buttons = (
-        <div className="licensing-buttons">
-          <div
-            className={this.state.standardButton ? 'licensing-button-active' : 'licensing-button'}
-            onClick={() => this.onButtonPress()}
-          >
-            standard edition
-            </div>
-          <div
-            className={this.state.standardButton ? 'licensing-button' : 'licensing-button-active'}
-            onClick={() => this.onButtonPress()}
-          >
-            academic & custom
-            </div>
-        </div>
-      );
-    }
-
-    if (this.props.tableView) {
-      tableView = (
-        <div className="licensing-comparison-wrapper" id="feature">
-          <div className="licensing-comparison-headline" onClick={() => this.ontableViewPress()}>Standard edition feature breakdown</div>
-          <TableEditions />
-        </div>
-      );
-    }
-
-    return (
-      <div>
-        <div className={this.props.tableView ? "licensing-wrapper-expanded" : "licensing-wrapper"} id="standard">
-          <div className="row">
-            <div className="col s12">
-              <div className="licensing-headline">{this.props.headline}</div>
-              {buttons}
-              {this.renderContent()}
+      </div>
+    );
+  } else {
+    renderContent = (
+      <div className="licensing-editions-wrapper">
+        <div className="row">
+          <div className="col s12 l6 licensing-right-border">
+            <div className="licensing-edition" id="custom-edition">
+              <div className="licensing-editions-icon">
+                <img
+                  src={academic}
+                  alt="academic icon"
+                  className="licensing-icon"
+                />
+              </div>
+              <div className="licensing-editions-headline academic-border">
+                Academic & Scientific edition
+              </div>
+              <div className="licensing-editions-text-wrapper">
+                <div className="licensing-editions-text">
+                  Etiam vitae dolor eu felis porttitor
+                </div>
+                <div className="licensing-editions-text">In quam neque</div>
+                <div className="licensing-editions-text">
+                  Quisque ut eros sit amet ex convallis condimentum lobortis eu
+                  ante
+                </div>
+              </div>
+              <div className="licensing-editions-button">
+                <Button
+                  text="find out more"
+                  style="ghost-link"
+                  link="/faq/"
+                  color="#246E94"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div style={{backgroundColor: 'white'}}>
-          <div className="row">
-            <div className="col s12">
-              {tableView}
+          <div className="col s12 l6 licensing-right-border">
+            <div className="licensing-edition">
+              <div className="licensing-editions-icon">
+                <img
+                  src={custom}
+                  alt="custom icon"
+                  className="licensing-icon"
+                />
+              </div>
+              <div className="licensing-editions-headline custom-border">
+                Custom edition
+              </div>
+              <div className="licensing-editions-text-wrapper">
+                <div className="licensing-editions-text">
+                  Integer fermentum et ipsum
+                </div>
+                <div className="licensing-editions-text">
+                  Nunc eu augue ullamcorper, ornare nibh maximus
+                </div>
+                <div className="licensing-editions-text">
+                  Amet ex convallis condimentum lobortis eu ante
+                </div>
+              </div>
+              <div className="licensing-editions-button">
+                <Button
+                  text="find out more"
+                  style="ghost-link"
+                  link="/faq/"
+                  color="#246E94"
+                />
+              </div>
             </div>
+            {infoButton}
           </div>
         </div>
       </div>
     );
   }
-}
+
+  let buttons;
+  let renderTableView;
+
+  if (topButtons) {
+    buttons = (
+      <div className="licensing-buttons">
+        <div
+          className={
+            standardButton ? 'licensing-button-active' : 'licensing-button'
+          }
+          onClick={onButtonPress}
+        >
+          standard edition
+        </div>
+        <div
+          className={
+            standardButton ? 'licensing-button' : 'licensing-button-active'
+          }
+          onClick={onButtonPress}
+        >
+          academic & custom
+        </div>
+      </div>
+    );
+  }
+
+  if (tableView) {
+    renderTableView = (
+      <div className="licensing-comparison-wrapper" id="feature">
+        <div
+          className="licensing-comparison-headline"
+          onClick={ontableViewPress}
+        >
+          Standard edition feature breakdown
+        </div>
+        <TableEditions />
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div
+        className={
+          tableView ? 'licensing-wrapper-expanded' : 'licensing-wrapper'
+        }
+        id="standard"
+      >
+        <div className="row">
+          <div className="col s12">
+            <div className="licensing-headline">{headline}</div>
+            {buttons}
+            {renderContent}
+          </div>
+        </div>
+      </div>
+      <div style={{ backgroundColor: 'white' }}>
+        <div className="row">
+          <div className="col s12">{renderTableView}</div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default LicensingModel;

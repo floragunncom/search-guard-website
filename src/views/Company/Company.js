@@ -24,6 +24,7 @@ const Company = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Team | Get to know the minds behind Search Guard</title>
+        <link rel="canonical" href="http://search-guard.com/company/" />
         <meta
           name="description"
           content="Our mission is to shape IT security and Open Source business models. From day 1 until today, we follow our principles of putting security first and providing no-nonsense IT."

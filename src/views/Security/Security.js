@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import './Security.scss';
 import Navbar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
@@ -7,7 +8,6 @@ import Footer from '../../components/Footer/Footer';
 import Tile from '../../components/Tile/Tile';
 import iconLock from '../../images/icon-multilayer-security.svg';
 import iconShield from '../../images/icon-wheel-shield.svg';
-import { Helmet } from 'react-helmet';
 
 const Security = () => {
   return (
@@ -15,6 +15,7 @@ const Security = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Security Information - Search Guard</title>
+        <link rel="canonical" href="http://search-guard.com/security/" />
         <meta
           name="description"
           content="Our public key and the Search Guard code signing key you can use to check the validity of each Search Guard binary."

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import HomePage from './views/HomePage/HomePage';
-import ContactUs from './views/ContactUs';
+import ContactUs from './views/ContactUs/ContactUs';
 import Blog from './views/Blog/Blog';
 import Resource from './views/Resource/Resource';
 import Company from './views/Company/Company';
@@ -49,7 +49,7 @@ const Routes = () => {
         <Route exact path="/disclosure-policy/" component={Disclosure} />
         <Route
           exact
-          path="/tls-certificate-generator"
+          path="/tls-certificate-generator/"
           component={TlsGenerator}
         />
         <Route exact path="/certificates/" component={Certifications} />

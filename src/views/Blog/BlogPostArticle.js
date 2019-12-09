@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import {
   FacebookShareButton,
@@ -109,7 +108,7 @@ const BlogPostArticle = ({ posts, match }) => {
         <link
           rel="canonical"
           href={`http://search-guard.com/${postContent.fields.slug}`}
-          />
+        />
         <meta name="description" content={postContent.fields.htmlDescription} />
       </Helmet>
       <NavBar />
@@ -117,7 +116,7 @@ const BlogPostArticle = ({ posts, match }) => {
         text={postContent.fields.title}
         subText={`${postContent.fields.author} || ${postContent.fields.date}`}
         tags={postContent.fields.tags.join(', ')}
-        />
+      />
       <div className="row">
         <div className="col s12 offset-l2 l8">
           {/* {documentToReactComponents(this.state.documentContent, options)} */}

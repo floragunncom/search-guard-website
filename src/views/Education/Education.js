@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 // import Cta from '../../components/Cta/Cta';
@@ -10,6 +11,18 @@ import './Education.scss';
 const Education = () => {
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Search Guard Education Program</title>
+        <link
+          rel="canonical"
+          href="http://search-guard.com/education-program/"
+        />
+        <meta
+          name="description"
+          content="We take security seriously. Our policy for reporting security related issues found in Search Guard."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="Education program"

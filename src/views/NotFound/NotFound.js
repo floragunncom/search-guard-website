@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
 import Button from '../../components/Button/Button';
@@ -7,6 +8,15 @@ import './NotFound.scss';
 const NotFound = () => {
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>404 - Page not found</title>
+        <link rel="canonical" href="http://search-guard.com/404.html" />
+        <meta
+          name="description"
+          content="The page you tried to access could not be found."
+        />
+      </Helmet>
       <NavBar />
       <div className="notfound-wrapper">
         <div className="row">

@@ -12,6 +12,10 @@ const Disclosure = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Search Guard Disclosure Policy</title>
+        <link
+          rel="canonical"
+          href="http://search-guard.com/disclosure-policy/"
+        />
         <meta
           name="description"
           content="We take security seriously. Our policy for reporting security related issues found in Search Guard."
@@ -86,19 +90,45 @@ const Disclosure = () => {
               <br />
               <ul className="disclosure-list">
                 <li>
-                  <a href="https://git.floragunn.com/search-guard/search-guard" target="_blank" rel="noreferrer noopener">Search Guard</a>
+                  <a
+                    href="https://git.floragunn.com/search-guard/search-guard"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    Search Guard
+                  </a>
                 </li>
                 <li>
-                  <a href="https://git.floragunn.com/search-guard/search-guard-ssl" target="_blank" rel="noreferrer noopener">Search Guard SSL</a>
+                  <a
+                    href="https://git.floragunn.com/search-guard/search-guard-ssl"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    Search Guard SSL
+                  </a>
                 </li>
                 <li>
-                  <a href="https://git.floragunn.com/search-guard/search-guard-enterprise-modules" target="_blank" rel="noreferrer noopener">Search Guard Enterprise Modules</a>
+                  <a
+                    href="https://git.floragunn.com/search-guard/search-guard-enterprise-modules"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    Search Guard Enterprise Modules
+                  </a>
                 </li>
                 <li>
-                  <a href="https://git.floragunn.com/search-guard/search-guard-kibana-plugin" target="_blank" rel="noreferrer noopener">Search Guard Kibana Plugin</a>
+                  <a
+                    href="https://git.floragunn.com/search-guard/search-guard-kibana-plugin"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    Search Guard Kibana Plugin
+                  </a>
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="noreferrer noopener">Search Guard Offline TLS Tool</a>
+                  <a href="" target="_blank" rel="noreferrer noopener">
+                    Search Guard Offline TLS Tool
+                  </a>
                 </li>
               </ul>
             </div>

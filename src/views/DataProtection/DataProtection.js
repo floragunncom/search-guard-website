@@ -12,8 +12,9 @@ const DataProtection = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Datenschutz - Search Guard</title>
+        <link rel="canonical" href="http://search-guard.com/datenschutz/" />
         <meta
-            name="description"
+          name="description"
           content="Our policy regarding the collection and usage of personal data in accordance with GDPR."
         />
       </Helmet>
