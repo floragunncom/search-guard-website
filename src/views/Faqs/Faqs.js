@@ -61,6 +61,7 @@ const Faqs = () => {
             </p>
           ),
           anchor: 'three',
+          paddingClass: 'jumptarget',
         },
       ],
     },
@@ -76,7 +77,7 @@ const Faqs = () => {
                 href="https://forum.search-guard.com/latest/"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
+                >
                 Search Guard community
               </a>{' '}
               as well as paid support for our customers. As paying customer you
@@ -85,6 +86,7 @@ const Faqs = () => {
             </p>
           ),
           anchor: 'four',
+          paddingClass: 'jumptarget',
         },
         {
           question: 'Do you offer 24x7 support?',
@@ -95,6 +97,7 @@ const Faqs = () => {
             </p>
           ),
           anchor: 'five',
+          paddingClass: 'jumptarget',
         },
         {
           question: 'Do you offer Elastic Stack support?',
@@ -106,6 +109,7 @@ const Faqs = () => {
             </p>
           ),
           anchor: 'six',
+          paddingClass: 'jumptarget',
         },
       ],
     },
@@ -123,6 +127,7 @@ const Faqs = () => {
             </p>
           ),
           anchor: 'seven',
+          paddingClass: 'jumptarget',
         },
         {
           question: 'Does Search Guard offer Alerting?',
@@ -139,6 +144,7 @@ const Faqs = () => {
           question: 'Does Search Guard offer Machine Learning?',
           answer: <p>Not yet, but we are working on it.</p>,
           anchor: 'nine',
+          paddingClass: 'jumptarget',
         },
       ],
     },
@@ -306,8 +312,8 @@ const Faqs = () => {
                 </div>
                 {category.faq.map(faq => {
                   return (
-                    <div>
-                      <div className="faq-answer-headline" id={`${faq.anchor}`}>
+                    <div id={`${faq.anchor}`}>
+                      <div className={`faq-answer-headline ${faq.paddingClass}`}>
                         {faq.question}
                       </div>
                       <div className="faq-answer-text">{faq.answer}</div>
