@@ -11,7 +11,7 @@ const NotFound = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Security Information - Search Guard</title>
-        <link rel="canonical" href="http://search-guard.com/thanks/" />
+        <link rel="canonical" href="https://search-guard.com/thanks/" />
         <meta
           name="description"
           content="Our public key and the Search Guard code signing key you can use to check the validity of each Search Guard binary."

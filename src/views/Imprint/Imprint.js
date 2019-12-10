@@ -14,7 +14,7 @@ const Imprint = () => {
         <title>Impressum - Search Guard</title>
         <link
           rel="canonical"
-          href="http://search-guard.com/datenschutz/impressum/"
+          href="https://search-guard.com/datenschutz/impressum/"
         />
         <meta
           name="description"

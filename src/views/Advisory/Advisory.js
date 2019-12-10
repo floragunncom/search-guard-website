@@ -268,7 +268,7 @@ const Advisory = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>CVE - advisory - Search Guard</title>
-        <link rel="canonical" href="http://search-guard.com/cve-advisory/" />
+        <link rel="canonical" href="https://search-guard.com/cve-advisory/" />
         <meta
           name="description"
           content="Search Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."

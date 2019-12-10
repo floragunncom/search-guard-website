@@ -24,7 +24,7 @@ const HomePage = () => {
         <title>
           Search Guard | Security for Elasticsearch and the ELK stack
         </title>
-        <link rel="canonical" href="http://search-guard.com/" />
+        <link rel="canonical" href="https://search-guard.com/" />
         <meta
           name="description"
           content="Search Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."

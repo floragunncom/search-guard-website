@@ -38,7 +38,7 @@ const Resource = () => {
           Product | Search Guard product overview for securing Elasticsearch
           cluster
         </title>
-        <link rel="canonical" href="http://search-guard.com/resource/" />
+        <link rel="canonical" href="https://search-guard.com/resource/" />
         <meta
           name="description"
           content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
