@@ -1,10 +1,10 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import './DataProtection.scss';
 import Navbar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-import { Helmet } from 'react-helmet';
 
 const DataProtection = () => {
   return (
@@ -12,7 +12,7 @@ const DataProtection = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Datenschutz - Search Guard</title>
-        <link rel="canonical" href="http://search-guard.com/datenschutz/" />
+        <link rel="canonical" href="https://search-guard.com/datenschutz/" />
         <meta
           name="description"
           content="Our policy regarding the collection and usage of personal data in accordance with GDPR."

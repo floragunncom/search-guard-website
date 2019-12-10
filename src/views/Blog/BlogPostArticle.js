@@ -107,7 +107,7 @@ const BlogPostArticle = ({ posts, match }) => {
         <title>{postContent.fields.htmlTitle}</title>
         <link
           rel="canonical"
-          href={`http://search-guard.com/${postContent.fields.slug}`}
+          href={`https://search-guard.com/${postContent.fields.slug}`}
         />
         <meta name="description" content={postContent.fields.htmlDescription} />
       </Helmet>

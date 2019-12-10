@@ -11,7 +11,7 @@ const NotFound = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>404 - Page not found</title>
-        <link rel="canonical" href="http://search-guard.com/404.html" />
+        <link rel="canonical" href="https://search-guard.com/404.html" />
         <meta
           name="description"
           content="The page you tried to access could not be found."
