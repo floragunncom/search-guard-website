@@ -1,8 +1,10 @@
 @import '../src/styles/Colors.scss';
+@import '../src/styles/Breakpoints.scss';
 
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 body, h1, h2 {
@@ -42,6 +44,36 @@ li a {
 .hidden {
   display: none;
 }
+
+// custom grid
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.custom-row {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: inline-block;
+  // flex-wrap: wrap;
+
+  @include clearfix;
+
+  [class^='col-'] {
+    float: left;
+  }
+}
+  
+// .col-1-of-3 {
+//   width: calc(100% / 3);
+//   display: inline-block;
+//   @media only screen and (max-width: $tabletBig) {
+//     width: 100%;
+//   }
+// }
 
 // * {
 //   background-color: rgba(255, 0, 0, .2);

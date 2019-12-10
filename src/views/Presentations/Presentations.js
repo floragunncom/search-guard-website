@@ -5,7 +5,6 @@ import Navbar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-import cheffo from '../../images/cheffo.jpeg';
 import pdf from '../../images/pdf-download.svg';
 
 const Presentations = () => {

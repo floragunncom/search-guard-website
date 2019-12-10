@@ -78,7 +78,7 @@ const Resource = () => {
           leftButtonTarget="_blank"
         />
       </div>
-      <BlogBox teaser headline="Blog" />
+      <BlogBox overview headline="Blog" />
       <div id="whitePapers">
         <Tile
           leftDark={false}
