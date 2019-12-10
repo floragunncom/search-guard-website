@@ -5,84 +5,91 @@ import { BlogContext } from '../../contexts/BlogContext';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import './BlogBox.scss';
 
-const BlogBox = ({ teaser, headline }) => {
+const BlogBox = ({ overview, headline }) => {
   const posts = useContext(BlogContext);
-  const startPoint = Math.floor(Math.random() * posts.length - 6);
-  const endPoint = teaser ? startPoint + 6 : startPoint + 3;
 
-  const morePostsButton = teaser ? (
+  const startPoint1 = Math.floor(Math.random() * (posts.length - 6));
+  const startPoint2 = Math.floor(Math.random() * (posts.length - 6));
+
+  const morePostsButton = overview ? (
     <div className="blogbox-button">
       <Button text="see more" link="/blog/" />
     </div>
   ) : null;
 
-  function titleLength(title) {
-    let titleChars = 45;
-    if (title.length < 46) {
-      while (title[titleChars] !== ' ') {
-        titleChars -= 1;
-      }
+  const textLength = (text, limit) => {
+    while (text[limit] !== ' ') {
+      limit -= 1;
     }
-    return titleChars;
-  }
+    return limit;
+  };
 
-  function textLength(content) {
-    let contentChars = 165;
-    while (content[contentChars] !== ' ') {
-      contentChars -= 1;
-    }
-    return contentChars;
-  }
+  const previewPosts = startPoint => {
+    return posts.slice(startPoint, startPoint + 3).map(post => {
+      const fittedTitle =
+        post.fields.title.length > 45
+          ? `${post.fields.title.substring(
+              0,
+              textLength(post.fields.title, 45),
+            )} ...`
+          : post.fields.title;
+      const fittedContent = `${post.fields.postContent.substring(
+        0,
+        textLength(post.fields.postContent, 160),
+      )} ...`;
+      return (
+        <Link
+          to={{ pathname: `/${post.fields.slug}` }}
+          onPress={window.scrollTo(0, 0)}
+          className="blog-box__box"
+          key={post.sys.id}
+        >
+          <div className="blog-box__box-image-container">
+            <img
+              src={post.fields.postImage.fields.file.url}
+              alt="Blog Teaser"
+              className="blog-box__box-image"
+            />
+          </div>
+          <div className="blog-box__box-content">
+            <div className="blog-box__box-content-headline">{fittedTitle}</div>
+            <div className="blog-box__box-content-info">
+              {post.fields.author} || {post.fields.date}
+            </div>
+            <div className="blog-box__box-content-text">{fittedContent}</div>
+          </div>
+          <div className="blog-box__box-content-link">
+            <div className="blog-info-link">
+              <span>read more</span>
+              <img
+                src={infoArrowForward}
+                className="blog-arrow"
+                alt="arrow icon"
+              />
+            </div>
+          </div>
+        </Link>
+      );
+    });
+  };
 
   return (
-    <div className="boxblog-wrapper" id="blog">
-      <div className={teaser ? 'boxblog-headline-intro' : 'boxblog-headline'}>
+    <div className="blog-box__wrapper" id="blog">
+      <div
+        className={
+          overview ? 'blog-box__headline-overview' : 'blog-box__headline'
+        }
+      >
         {headline}
       </div>
-      <div className="boxblog-posts">
-        {posts.slice(startPoint, endPoint).map(post => {
-          return (
-            <Link
-              to={{ pathname: `/${post.fields.slug}` }}
-              className="blogbox-post-wrapper"
-              onPress={window.scrollTo(0, 0)}
-            >
-              <div className="blog-image-wrapper">
-                <img
-                  src={post.fields.postImage.fields.file.url}
-                  className="blogpost-feed-image"
-                  alt={post.fields.postImage.fields.title}
-                />
-              </div>
-              <div className="blog-text-content">
-                <div className="blog-headline">
-                  {post.fields.title.substring(
-                    0,
-                    titleLength(post.fields.title),
-                  )}
-                </div>
-                <div className="blog-info-headline">
-                  {post.fields.author} || {post.fields.date}
-                </div>
-                <div className="blog-paragraph">
-                  {post.fields.postContent.substring(
-                    0,
-                    textLength(post.fields.postContent),
-                  )}
-                </div>
-                <div className="blog-info-link">
-                  <span>read more</span>
-                  <img
-                    src={infoArrowForward}
-                    className="blog-arrow"
-                    alt="arrow icon"
-                  />
-                </div>
-              </div>
-            </Link>
-          );
-        })}
+      <div className={overview ? '' : 'custom-row'} id="blog-box__table">
+        {previewPosts(startPoint1)}
       </div>
+      {overview ? (
+        <div className={overview ? '' : 'custom-row'} id="blog-box__table">
+          {previewPosts(startPoint2)}
+        </div>
+      ) : null}
       {morePostsButton}
     </div>
   );

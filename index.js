@@ -33,10 +33,6 @@ const options = {
     { source: '/blog/page/**/:id', destination: '/blog/' },
     { source: '/oxy_testimonial/arno-has', destination: '/' },
     { source: '/oxy_testimonial/yasvanth-babu', destination: '/' },
-    // {
-    //   source: '/elastic-floragunn-dmca/embed/*',
-    //   destination: '/test',
-    // },
     { source: '/careers', destination: '/' },
     {
       source: '/elasticsearch-anonymous-authentication',
@@ -71,10 +67,6 @@ const options = {
       source: '/generador-de-certificados-tls',
       destination: '/tls-certificate-generator/',
     },
-    // {
-    //   source: '/search-guard-provides-gdpr-compliance-for-elasticsearch',
-    //   destination: '/gdpr-compliance-elasticsearch/',
-    // },
     { source: '/read-history-gdpr*', destination: '/' },
     { source: '/search-guard-elastic', destination: '/' },
     { source: '/7171-2', destination: '/' },
