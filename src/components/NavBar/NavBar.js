@@ -37,7 +37,6 @@ export default class NavBar extends Component {
 
   handleScroll = () => {
     const prevScrollpos = window.pageYOffset;
-    console.log('prevSCrollPos', prevScrollpos)
     this.setState({ prevScrollpos });
   }
 

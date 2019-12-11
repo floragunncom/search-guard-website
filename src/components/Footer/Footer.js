@@ -27,11 +27,7 @@ const Footer = ({ landing }) => {
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink
-                    to="/certificates/"
-                    className="footer-links"
-                    onClick={window.scrollTo(0, 0)}
-                  >
+                  <NavLink to="/certificates/" className="footer-links">
                     Certifications
                   </NavLink>
                 </div>
@@ -59,7 +55,7 @@ const Footer = ({ landing }) => {
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/licensing#academic" className="footer-links">
+                  <HashLink to="/licensing#custom" className="footer-links">
                     Custom edition
                   </HashLink>
                 </div>
@@ -153,10 +149,7 @@ const Footer = ({ landing }) => {
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink
-                    to="/product#integrators"
-                    className="footer-links"
-                  >
+                  <HashLink to="/product#integrators" className="footer-links">
                     Integrators
                   </HashLink>
                 </div>
