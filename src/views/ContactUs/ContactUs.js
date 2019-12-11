@@ -32,6 +32,7 @@ const ContactUs = () => {
         text="From documentation and blog posts, to FAQs and more about our TLS certificate generator, take a look at our resource hub."
         ctaText="see ressource hub"
         icon={folderGlass}
+        link="/resource/"
       />
       <PreFooter />
       <Footer />

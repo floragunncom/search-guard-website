@@ -10,11 +10,11 @@ const NotFound = () => {
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Security Information - Search Guard</title>
+        <title>Search Guard | Thanks for your message</title>
         <link rel="canonical" href="https://search-guard.com/thanks/" />
         <meta
           name="description"
-          content="Our public key and the Search Guard code signing key you can use to check the validity of each Search Guard binary."
+          content="Thank you very much for getting in contact with Search Guard and our team."
         />
       </Helmet>
       <NavBar />

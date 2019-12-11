@@ -17,10 +17,10 @@ const Hero = ({landing}) => {
             <div className="hero-col-wrapper">
               <div className="hero-text-wrapper">
                 <div className="hero-text-wrapper-headline">
-                  Security for Elasticsearch
+                  Security and Alerting for Elasticsearch
                 </div>
                 <div className="hero-text-wrapper-text">
-                  Search Guard is an Enterprise Security Suite that encrypts and
+                  Search Guard is an Enterprise Security and Alerting Suite that encrypts and
                   protects your data and data flows in the entire Elastic Stack,
                   including Kibana, Logstash and Beats.
                 </div>

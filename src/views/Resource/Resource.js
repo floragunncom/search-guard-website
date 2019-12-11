@@ -35,19 +35,18 @@ const Resource = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Product | Search Guard product overview for securing Elasticsearch
-          cluster
+          Resources | Search Guard blog posts, faq, documentation, presentations and whitepapers
         </title>
         <link rel="canonical" href="https://search-guard.com/resource/" />
         <meta
           name="description"
-          content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
+          content="Search Guard resource hub including blog posts, faq, documentation, presentations and whitepapers"
         />
       </Helmet>
       <NavBar />
       <Title
         headline="resource hub"
-        // text="Suspendisse potenti. Nunc imperdiet molestie elit, a auctor enim vestibulum rutrum. Aliquam non tempus elit. Mauris ut accumsan libero."
+        text="Search Guard resource hub including blog posts, faq, documentation, presentations and whitepapers."
       />
       <AnchorNavBar anchors={anchors} />
       <Tile
