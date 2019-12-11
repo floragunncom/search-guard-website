@@ -5,6 +5,7 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import client from '../../components/Client/Client';
 import WhitePaper from './WhitePaper';
+import Button from '../../components/Button/Button';
 
 class WhitePapers extends Component {
   constructor() {
@@ -36,8 +37,23 @@ class WhitePapers extends Component {
           headline="White Papers"
           text="As the pioneers in securing Elasticsearch clusters, all decisions about our technology have the same purpose, to make your Elasticsearch environment more secure."
         />
-        <div className="whitepaper-wrapper">
+        {/* <div className="whitepaper-wrapper">
           <div className="row">{whitePapers}</div>
+        </div> */}
+        <div className="notfound-wrapper">
+          <div className="row">
+            <div className="col s12 m10 offset-m1 l8 offset-l2">
+              <div className="notfound-warning">COMING SOON</div>
+              <div className="notfound-text">
+                Kindly,
+                <br />
+                Search Guard team
+              </div>
+              <div className="notfound-button">
+                <Button text="go home" link="/" />
+              </div>
+            </div>
+          </div>
         </div>
         <PreFooter />
         <Footer />

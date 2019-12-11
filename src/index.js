@@ -10,7 +10,7 @@ const rootElement = document.getElementById('root');
 if (rootElement.hasChildNodes()) {
   hydrate(
     <BlogContextProvider>
-      <Router onUpdate={() => window.scrollTo(0, 0)}>
+      <Router>
         <Routes />
       </Router>
     </BlogContextProvider>,
@@ -19,7 +19,7 @@ if (rootElement.hasChildNodes()) {
 } else {
   render(
     <BlogContextProvider>
-      <Router onUpdate={() => window.scrollTo(0, 0)}>
+      <Router>
         <Routes />
       </Router>
     </BlogContextProvider>,

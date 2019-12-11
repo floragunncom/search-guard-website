@@ -40,7 +40,7 @@ const BlogBox = ({ overview, headline }) => {
       return (
         <Link
           to={{ pathname: `/${post.fields.slug}` }}
-          onPress={window.scrollTo(0, 0)}
+          onClick={window.scrollTo(0, 0)}
           className="blog-box__box"
           key={post.sys.id}
         >

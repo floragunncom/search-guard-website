@@ -103,7 +103,9 @@ const Resource = () => {
         leftLink="/cve-advisory/"
         rightLink="/disclosure-policy/"
       />
-      <Video playlist />
+      <div id="videos">
+        <Video playlist />
+      </div>
       <Cta
         headline="Can’t find what you’re looking for?"
         text="No worries, maybe we can help you find the answer."

@@ -12,7 +12,9 @@ const Footer = ({ landing }) => {
             <div className="row footer-row">
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/product/">product</NavLink>
+                  <NavLink to="/product/" onClick={window.scrollTo(0, 0)}>
+                    product
+                  </NavLink>
                 </div>
                 <div className="footer-list-item">
                   <HashLink to="/product#concept" className="footer-links">
@@ -25,7 +27,11 @@ const Footer = ({ landing }) => {
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/certificates/" className="footer-links">
+                  <NavLink
+                    to="/certificates/"
+                    className="footer-links"
+                    onClick={window.scrollTo(0, 0)}
+                  >
                     Certifications
                   </NavLink>
                 </div>
@@ -33,7 +39,9 @@ const Footer = ({ landing }) => {
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/licensing/">license</NavLink>
+                  <NavLink to="/licensing/" onClick={window.scrollTo(0, 0)}>
+                    license
+                  </NavLink>
                 </div>
                 <div className="footer-list-item">
                   <HashLink to="/licensing#standard" className="footer-links">
@@ -64,11 +72,13 @@ const Footer = ({ landing }) => {
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/resource/">resource hub</NavLink>
+                  <NavLink to="/resource/" onClick={window.scrollTo(0, 0)}>
+                    resource hub
+                  </NavLink>
                 </div>
                 <div className="footer-list-item">
                   <a
-                    to="https://docs.search-guard.com/latest/"
+                    href="https://docs.search-guard.com/latest/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="footer-links"
@@ -128,7 +138,9 @@ const Footer = ({ landing }) => {
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/company/">company</NavLink>
+                  <NavLink to="/company/" onClick={window.scrollTo(0, 0)}>
+                    company
+                  </NavLink>
                 </div>
                 <div className="footer-list-item">
                   <HashLink to="/company#team" className="footer-links">
@@ -141,7 +153,10 @@ const Footer = ({ landing }) => {
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/product#integrators" className="footer-links">
+                  <HashLink
+                    to="/product#integrators"
+                    className="footer-links"
+                  >
                     Integrators
                   </HashLink>
                 </div>
