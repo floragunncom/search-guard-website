@@ -60,7 +60,7 @@ const Video = props => {
     );
   }
   return (
-    <div id="videos" className="hide-on-med-and-down">
+    <div className="hide-on-med-and-down">
       <div
         className={
           props.playlist ? 'video-wrapper video-wrapper-long' : 'video-wrapper'
