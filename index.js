@@ -22,6 +22,10 @@ const options = {
       source: '/tls-certificate-generator/上申请密钥。',
       destination: '/company/',
     },
+    {
+      source: '/search-guard-provides-gdpr-compliance-for-elasticsearch',
+      destination: '/gdpr-compliance-elasticsearch/',
+    },
     { source: '/wp-content/**/:id', destination: '/product/' },
     { source: '/wp-includes/**/:id', destination: '/product/' },
     { source: '/no-nonsense-it', destination: '/company/' },

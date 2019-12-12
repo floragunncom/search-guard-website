@@ -4,7 +4,7 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
-import Tile from '../../components/Tile/Tile';
+import Card from '../../components/Card/Card';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
 import References from '../../components/References/References';
@@ -45,16 +45,16 @@ const License = () => {
         tableView
       />
       <div id="academic">
-        <Tile
-          leftDark={false}
-          leftIcon={iconBook}
-          rightIcon={iconWheels}
-          leftHeadline="Academic & Scientific edition"
-          rightHeadline="OEM, integrators & resellers"
-          leftText="Because we love to support education and science, we offer a special license model for non-profit academic and scientific purposes. If you think your project/institution is eligible for this program, please contact us."
-          rightText="We provide tailor made custom licenses for system integrators, OEM partners and resellers."
-          leftLink="/contacts/"
-          rightLink="/contacts/"
+        <Card
+          bgLeftDark
+          iconLeft={iconBook}
+          iconRight={iconWheels}
+          headlineLeft="Academic & Scientific edition"
+          headlineRight="OEM, integrators & resellers"
+          textLeft="Because we love to support education and science, we offer a special license model for non-profit academic and scientific purposes. If you think your project/institution is eligible for this program, please contact us."
+          textRight="We provide tailor made custom licenses for system integrators, OEM partners and resellers."
+          linkLeft="/contacts/"
+          linkRight="/contacts/"
         />
       </div>
       <References />

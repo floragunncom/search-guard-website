@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Button from '../../components/Button/Button';
+import Button from '../Button/Button';
 import heroCertificates from '../../images/hero-certificates.svg';
 import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
 import './Hero.scss';
 
-const Hero = ({landing}) => {
+const Hero = ({ landing }) => {
   return (
     <div>
       <div className="hero-wrapper">
@@ -20,9 +20,9 @@ const Hero = ({landing}) => {
                   Security and Alerting for Elasticsearch
                 </div>
                 <div className="hero-text-wrapper-text">
-                  Search Guard is an Enterprise Security and Alerting Suite that encrypts and
-                  protects your data and data flows in the entire Elastic Stack,
-                  including Kibana, Logstash and Beats.
+                  Search Guard is an Enterprise Security and Alerting Suite that
+                  encrypts and protects your data and data flows in the entire
+                  Elastic Stack, including Kibana, Logstash and Beats.
                 </div>
               </div>
               <div

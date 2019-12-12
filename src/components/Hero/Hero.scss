@@ -39,7 +39,7 @@ div.col.s12.m5.l6 {
 }
 
 .hero-text-wrapper-headline {
-  margin-top: 106px;
+  margin-top: 32px;
   margin-bottom: 16px;
   text-transform: uppercase;
   font-size: 60px;
@@ -47,15 +47,14 @@ div.col.s12.m5.l6 {
   font-weight: 500;
   color: $white;
   letter-spacing: 2px;
-
   @media only screen and (max-width: $tabletBig) {
-    margin-top: 64px;
+    margin-top: 32px;
     font-size: 30px;
     line-height: 36px;
     letter-spacing: 1px;
   }
   @media only screen and (max-width: $mobile) {
-    margin-top: -68px;
+    margin-top: -72px;
     margin-bottom: 85%;
     text-align: center;
   }

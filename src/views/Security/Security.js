@@ -5,7 +5,7 @@ import Navbar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-import Tile from '../../components/Tile/Tile';
+import Card from '../../components/Card/Card';
 import iconLock from '../../images/icon-multilayer-security.svg';
 import iconShield from '../../images/icon-wheel-shield.svg';
 
@@ -137,15 +137,15 @@ const Security = () => {
           </div>
         </div>
       </div>
-      <Tile
-        leftIcon={iconShield}
-        rightIcon={iconLock}
-        leftHeadline="CVE advisory"
-        rightHeadline="Disclosure Policy"
-        leftText="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
-        rightText="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
-        leftLink="/cve-advisory/"
-        rightLink="/disclosure-policy/"
+      <Card
+        iconLeft={iconShield}
+        iconRight={iconLock}
+        headlineLeft="CVE advisory"
+        headlineRight="Disclosure Policy"
+        textLeft="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
+        textRight="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
+        linkLeft="/cve-advisory/"
+        linkRight="/disclosure-policy/"
       />
       <PreFooter />
       <Footer />

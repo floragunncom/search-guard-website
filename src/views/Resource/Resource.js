@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-import Tile from '../../components/Tile/Tile';
+import Card from '../../components/Card/Card';
 import NavBar from '../../components/NavBar/NavBar';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import Title from '../../components/Title/Title';
@@ -35,7 +35,8 @@ const Resource = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Resources | Search Guard blog posts, faq, documentation, presentations and whitepapers
+          Resources | Search Guard blog posts, faq, documentation, presentations
+          and whitepapers
         </title>
         <link rel="canonical" href="https://search-guard.com/resource/" />
         <meta
@@ -49,58 +50,58 @@ const Resource = () => {
         text="Search Guard resource hub including blog posts, faq, documentation, presentations and whitepapers."
       />
       <AnchorNavBar anchors={anchors} />
-      <Tile
-        leftDark={false}
-        leftIcon={iconFolder}
-        rightIcon={iconPeople}
-        leftHeadline="Documentation"
-        leftText="Get the official technical documentation for all Search Guard versions."
-        rightHeadline="Community forum"
-        rightText="Any questions on installation or configuration? Ask our community forum."
-        leftLink="https://docs.search-guard.com/latest/"
-        rightLink="https://forum.search-guard.com/latest/"
-        leftButtonTarget="_blank"
-        rightButtonTarget="_blank"
+      <Card
+        bgLeftDark={false}
+        iconLeft={iconFolder}
+        iconRight={iconPeople}
+        headlineLeft="Documentation"
+        headlineRight="Community forum"
+        textLeft="Get the official technical documentation for all Search Guard versions."
+        textRight="Any questions on installation or configuration? Ask our community forum."
+        linkLeft="https://docs.search-guard.com/latest/"
+        linkRight="https://forum.search-guard.com/latest/"
+        buttonTargetLeft="_blank"
+        buttonTargetRight="_blank"
       />
       <Faq />
       <div id="github">
-        <Tile
-          leftDark
-          leftIcon={iconDownload}
-          rightIcon={iconCertificate}
-          leftHeadline="Source Code"
-          leftText="Access, download and inspect all our code on Gitlab, report any issue you find or request a feature."
-          rightHeadline="TLS Certificate Generator"
-          rightText="If you need TLS certificates for testing or a PoC, our generator web service is here to ease the pain."
-          leftLink="https://git.floragunn.com/"
-          rightLink="/tls-certificate-generator/"
-          leftButtonTarget="_blank"
+        <Card
+          bgLeftDark
+          iconLeft={iconDownload}
+          iconRight={iconCertificate}
+          headlineLeft="Source Code"
+          headlineRight="TLS Certificate Generator"
+          textLeft="Access, download and inspect all our code on Gitlab, report any issue you find or request a feature."
+          textRight="If you need TLS certificates for testing or a PoC, our generator web service is here to ease the pain."
+          linkLeft="https://git.floragunn.com/"
+          linkRight="/tls-certificate-generator/"
+          buttonTargetLeft="_blank"
         />
       </div>
       <BlogBox overview headline="Blog" />
       <div id="whitePapers">
-        <Tile
-          leftDark={false}
-          leftIcon={iconSpeaker}
-          rightIcon={iconNote}
-          leftHeadline="Presentations"
-          rightHeadline="White Papers"
-          leftText="Browse our library of presentations on all Search Guard features."
-          rightText="Download our whitepapers on Search Guard use cases and implementation examples."
-          leftLink="/presentations/"
-          rightLink="/white-papers/"
+        <Card
+          bgLeftDark={false}
+          iconLeft={iconSpeaker}
+          iconRight={iconNote}
+          headlineLeft="Presentations"
+          headlineRight="White Papers"
+          textLeft="Browse our library of presentations on all Search Guard features."
+          textRight="Download our whitepapers on Search Guard use cases and implementation examples."
+          linkLeft="/presentations/"
+          linkRight="/white-papers/"
         />
       </div>
-      <Tile
-        leftDark
-        leftIcon={iconShield}
-        rightIcon={iconLock}
-        leftHeadline="CVE advisory"
-        leftText="We are the official CVE numbering authority for Search Guard. Browse the list of known issues."
-        rightHeadline="Disclosure Policy"
-        rightText="If you have found a security related issue, please read our disclosure policy."
-        leftLink="/cve-advisory/"
-        rightLink="/disclosure-policy/"
+      <Card
+        bgLeftDark
+        iconLeft={iconShield}
+        iconRight={iconLock}
+        headlineLeft="CVE advisory"
+        headlineRight="Disclosure Policy"
+        textLeft="We are the official CVE numbering authority for Search Guard. Browse the list of known issues."
+        textRight="If you have found a security related issue, please read our disclosure policy."
+        linkLeft="/cve-advisory/"
+        linkRight="/disclosure-policy/"
       />
       <div id="videos">
         <Video playlist />
