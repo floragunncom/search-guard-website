@@ -36,11 +36,11 @@ const License = () => {
       <NavBar />
       <Title
         headline="licensing model"
-        text="Non-productive systems are included in the license free of charge."
+        text="Unlimited nodes licensing for all security and alerting features. Scale your cluster, not your cost!"
       />
       <AnchorNavBar anchors={anchors} />
       <LicensingModel
-        headline="Standard editions"
+        headline="Search Guard Editions"
         topButtons={false}
         tableView
       />
@@ -53,16 +53,17 @@ const License = () => {
           rightHeadline="OEM, integrators & resellers"
           leftText="Because we love to support education and science, we offer a special license model for non-profit academic and scientific purposes. If you think your project/institution is eligible for this program, please contact us."
           rightText="We provide tailor made custom licenses for system integrators, OEM partners and resellers."
-          leftLink="/"
-          rightLink="/"
+          leftLink="/contacts/"
+          rightLink="/contacts/"
         />
       </div>
       <References />
       <Cta
         headline="Interested?"
         text="Then you can either get in touch to find out more or start a 60-day trial with our Compliance edition."
-        ctaText="primary cta"
+        ctaText="Contact Us"
         icon={ctaIcon}
+        link="/contacts/"
       />
       <PreFooter />
       <Footer />

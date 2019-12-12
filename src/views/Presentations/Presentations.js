@@ -87,18 +87,18 @@ const Presentations = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Licensing | Search Guard Community, Enterprise and Compliance Edition
+          Search Guard Security and Alerting Slide Decks for Elasticsearch
         </title>
         <link rel="canonical" href="https://search-guard.com/presentations/" />
         <meta
           name="description"
-          content="Get to know more about the Search Guard Editions and pricing. Fair licensing and secure your Elasticsearch cluster with an unlimited amount of nodes - scale your cluster not your costs."
+          content="Search Guard slide decks regarding various topics around security and alerting for Elasticsearch"
         />
       </Helmet>
       <Navbar />
       <Title
         headline="Presentations"
-        text="As the pioneers in securing Elasticsearch clusters, all decisions about our technology have the same purpose, to make your Elasticsearch environment more secure."
+        text="Search Guard slide decks regarding various topics around security and alerting for Elasticsearch"
       />
       <div className="row presentations-wrapper">
         {presentations.map(item => {

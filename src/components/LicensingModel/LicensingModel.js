@@ -70,10 +70,10 @@ const LicensingModel = ({ tableView, topButtons, headline }) => {
               </div>
               <div className="licensing-editions-button">
                 <Button
-                  text="get a quote"
-                  style="ghost-link"
-                  link="/contacts/"
-                  color="#00C9B7"
+                    text="install now"
+                    style="ghost-link"
+                    link="https://docs.search-guard.com/latest/demo-installer"
+                    color="#009688"
                 />
               </div>
             </div>
@@ -136,10 +136,10 @@ const LicensingModel = ({ tableView, topButtons, headline }) => {
               </div>
               <div className="licensing-editions-button">
                 <Button
-                  text="install now"
-                  style="ghost-link"
-                  link="https://docs.search-guard.com/latest/demo-installer"
-                  color="#009688"
+                    text="get a quote"
+                    style="ghost-link"
+                    link="/contacts/"
+                    color="#009688"
                 />
               </div>
             </div>
@@ -166,19 +166,18 @@ const LicensingModel = ({ tableView, topButtons, headline }) => {
               </div>
               <div className="licensing-editions-text-wrapper">
                 <div className="licensing-editions-text">
-                  Etiam vitae dolor eu felis porttitor
+                  Search Guard Enterprise and Compliance licenses free of charge
                 </div>
-                <div className="licensing-editions-text">In quam neque</div>
+                <div className="licensing-editions-text">For all non-profit academic and scientific projects</div>
                 <div className="licensing-editions-text">
-                  Quisque ut eros sit amet ex convallis condimentum lobortis eu
-                  ante
+                  Unlimited clusters, unlimited nodes.
                 </div>
               </div>
               <div className="licensing-editions-button">
                 <Button
-                  text="find out more"
+                  text="Contact us"
                   style="ghost-link"
-                  link="/faq/"
+                  link="/contacts/"
                   color="#246E94"
                 />
               </div>
@@ -198,20 +197,20 @@ const LicensingModel = ({ tableView, topButtons, headline }) => {
               </div>
               <div className="licensing-editions-text-wrapper">
                 <div className="licensing-editions-text">
-                  Integer fermentum et ipsum
+                  For OEM partners and system integrators
                 </div>
                 <div className="licensing-editions-text">
-                  Nunc eu augue ullamcorper, ornare nibh maximus
+                  No upfront fees
                 </div>
                 <div className="licensing-editions-text">
-                  Amet ex convallis condimentum lobortis eu ante
+                  Direct support from the Search Guard team
                 </div>
               </div>
               <div className="licensing-editions-button">
                 <Button
-                  text="find out more"
+                  text="Contact us"
                   style="ghost-link"
-                  link="/faq/"
+                  link="/contacts/"
                   color="#246E94"
                 />
               </div>
@@ -256,7 +255,7 @@ const LicensingModel = ({ tableView, topButtons, headline }) => {
           className="licensing-comparison-headline"
           onClick={ontableViewPress}
         >
-          Standard edition feature breakdown
+          Feature breakdown
         </div>
         <TableEditions />
       </div>

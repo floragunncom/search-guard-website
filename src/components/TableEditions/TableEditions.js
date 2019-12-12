@@ -123,7 +123,7 @@ const TableEditions = () => {
         },
         {
           type: 'Kerberos / SPNEGO',
-          community: true,
+          community: false,
           enterprise: true,
           compliance: true,
         },
@@ -209,6 +209,53 @@ const TableEditions = () => {
           type: 'System change tracking',
           community: false,
           enterprise: false,
+          compliance: true,
+        },
+      ],
+    },
+    {
+      name: 'Alerting',
+      content: [
+        {
+          type: 'Elasticsearch data sources',
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: 'External data sources',
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: 'Escalation levels',
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: 'Throttling and Acknowledgement',
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: 'Email, Slack and Webhook actions',
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: 'PagerDuty action',
+          community: false,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: 'JIRA action',
+          community: false,
+          enterprise: true,
           compliance: true,
         },
       ],
