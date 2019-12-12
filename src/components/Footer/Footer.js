@@ -55,7 +55,7 @@ const Footer = ({ landing }) => {
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/licensing#custom" className="footer-links">
+                  <HashLink to="/licensing#academic" className="footer-links">
                     Custom edition
                   </HashLink>
                 </div>

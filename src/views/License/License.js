@@ -44,7 +44,7 @@ const License = () => {
         topButtons={false}
         tableView
       />
-      <div id="academic custom">
+      <div id="academic">
         <Tile
           leftDark={false}
           leftIcon={iconBook}
