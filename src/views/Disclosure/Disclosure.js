@@ -126,7 +126,7 @@ const Disclosure = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="" target="_blank" rel="noreferrer noopener">
+                  <a href="https://github.com/floragunncom/search-guard-tlstool/" target="_blank" rel="noreferrer noopener">
                     Search Guard Offline TLS Tool
                   </a>
                 </li>

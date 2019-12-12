@@ -255,7 +255,7 @@ const LicensingModel = ({ tableView, topButtons, headline }) => {
           className="licensing-comparison-headline"
           onClick={ontableViewPress}
         >
-          Standard edition feature breakdown
+          Feature breakdown
         </div>
         <TableEditions />
       </div>

@@ -53,8 +53,8 @@ const License = () => {
           rightHeadline="OEM, integrators & resellers"
           leftText="Because we love to support education and science, we offer a special license model for non-profit academic and scientific purposes. If you think your project/institution is eligible for this program, please contact us."
           rightText="We provide tailor made custom licenses for system integrators, OEM partners and resellers."
-          leftLink="/"
-          rightLink="/"
+          leftLink="/contacts/"
+          rightLink="/contacts/"
         />
       </div>
       <References />
