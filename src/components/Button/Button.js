@@ -6,7 +6,7 @@ import LinkDefault from './LinkDefault';
 import LinkGhost from './LinkGhost';
 
 const Button = props => {
-  switch (props.style) {
+  switch (props.buttonStyle) {
     case 'loud-button':
       return <ButtonLoud text={props.text} onPress={props.onPress} />;
     case 'default-button':

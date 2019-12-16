@@ -253,7 +253,7 @@ const TlsGenerator = () => {
                     protect and manage your submitted data.
                   </div>
                   <div className="cta-wrapper">
-                    <Button style="default-button" text="send message" />
+                    <Button buttonStyle="default-button" text="send message" />
                   </div>
                 </div>
               </form>

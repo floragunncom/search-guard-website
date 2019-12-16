@@ -18,9 +18,9 @@ const ContactForm = () => {
     formElements.map(input => (data[input.name] = input.value));
 
     // Log what our lambda function will receive
-    console.log(JSON.stringify(data));
-    // fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
-      fetch('http://localhost:3000/', {
+    // console.log(JSON.stringify(data));
+    fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
+      // fetch('http://localhost:3000/', {
       method: 'POST',
       headers: {
         accept: 'application/json; charset=utf-8',
@@ -28,7 +28,7 @@ const ContactForm = () => {
       },
       body: JSON.stringify(data),
     });
-    // window.location.href = '/thanks';
+    window.location.href = '/thanks';
   }
 
   return (
@@ -114,7 +114,6 @@ const ContactForm = () => {
                     name="company"
                     type="text"
                     className="input-field-contact"
-                    required
                   />
                   <label htmlFor="company" className="input-field-label">
                     Company *
@@ -273,7 +272,7 @@ const ContactForm = () => {
                 and manage your submitted data.
               </div>
               <div className="cta-wrapper">
-                <Button style="default-button" text="send message" />
+                <Button buttonStyle="default-button" text="send message" />
               </div>
             </div>
           </form>

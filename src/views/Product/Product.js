@@ -1,4 +1,6 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import { v4 } from 'uuid';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
@@ -12,14 +14,13 @@ import ctaIcon from '../../images/icon-sg.svg';
 import fileCode from '../../images/file-code.svg';
 import worldLock from '../../images/world-lock.svg';
 import certificate from '../../images/certificate-big.svg';
-import { Helmet } from 'react-helmet';
 
 const Product = () => {
   const anchors = [
-    { anchor: 'concept', name: 'what it is' },
-    { anchor: 'integrators', name: 'integrators' },
-    { anchor: 'certified', name: 'certified' },
-    { anchor: 'quote', name: 'get a quote' },
+    { id: v4(), anchor: 'concept', name: 'what it is' },
+    { id: v4(), anchor: 'integrators', name: 'integrators' },
+    { id: v4(), anchor: 'certified', name: 'certified' },
+    { id: v4(), anchor: 'quote', name: 'get a quote' },
   ];
 
   return (

@@ -44,7 +44,7 @@ const Email = () => {
             />
           </div>
           <div className="input-field col s12 m6 l4">
-            <Button text="subscribe" style="default-button" />
+            <Button text="subscribe" buttonStyle="default-button" />
           </div>
         </form>
       )}

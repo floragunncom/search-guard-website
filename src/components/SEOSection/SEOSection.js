@@ -75,10 +75,14 @@ const SEOSection = () => {
             return (
               <div className="col s12 m4">
                 <div className="seo-content-link">
-                  <a href={link.link} target="_blank">
+                  <a href={link.link} target="_blank" rel="noopener noreferrer">
                     {link.text}
                   </a>
-                  <img src={arrow} alt="arrow icon" className="seo-content-arrow" />
+                  <img
+                    src={arrow}
+                    alt="arrow icon"
+                    className="seo-content-arrow"
+                  />
                 </div>
               </div>
             );

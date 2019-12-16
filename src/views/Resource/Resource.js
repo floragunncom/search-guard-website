@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { v4 } from 'uuid';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import Card from '../../components/Card/Card';
@@ -22,12 +23,12 @@ import iconDownload from '../../images/icon-download.svg';
 
 const Resource = () => {
   const anchors = [
-    { anchor: 'faq', name: 'faq' },
-    { anchor: 'github', name: 'github' },
-    { anchor: 'github', name: 'tls certificates' },
-    { anchor: 'blog', name: 'blog' },
-    { anchor: 'whitePapers', name: 'Presentations & white papers' },
-    { anchor: 'videos', name: 'videos' },
+    { id: v4(), anchor: 'faq', name: 'faq' },
+    { id: v4(), anchor: 'github', name: 'github' },
+    { id: v4(), anchor: 'github', name: 'tls certificates' },
+    { id: v4(), anchor: 'blog', name: 'blog' },
+    { id: v4(), anchor: 'whitePapers', name: 'Presentations & white papers' },
+    { id: v4(), anchor: 'videos', name: 'videos' },
   ];
 
   return (

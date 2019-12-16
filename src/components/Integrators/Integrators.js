@@ -8,7 +8,7 @@ import objectRocket from '../../images/objectRocket.svg';
 import mitratech from '../../images/mitratech.svg';
 import siren from '../../images/siren.svg';
 import kubedb from '../../images/kubedb.svg';
-import Button from '../../components/Button/Button';
+import Button from '../Button/Button';
 import './Integrators.scss';
 
 const Integrators = () => {
@@ -82,9 +82,9 @@ const Integrators = () => {
     <div className="company-integrators-wrapper" id="integrators">
       <div className="row company-integrators">
         <div className="company-integrators-headline">Integrators</div>
-        {integrators.map(profile => {
+        {integrators.map((profile, index) => {
           return (
-            <div className="company-integrators-section">
+            <div className="company-integrators-section" key={index}>
               <div className="integrators-pic">
                 <img src={profile.pic} alt="integrator icon" />
               </div>

@@ -10,7 +10,7 @@ const AnchorNavBar = ({ anchors }) => {
         <div className="product-anchor-wrapper">
           {anchors.map(item => {
             return (
-              <div className="product-anchor-item">
+              <div className="product-anchor-item" key={item.id}>
                 <HashLink
                   to={`#${item.anchor}`}
                   className="product-anchor-link"

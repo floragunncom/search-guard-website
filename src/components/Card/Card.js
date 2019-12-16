@@ -49,7 +49,7 @@ const Card = ({
           <div className="card__col-button">
             <Button
               text="find out more"
-              style="loud-link"
+              buttonStyle="loud-link"
               link={linkLeft}
               target={buttonTargetLeft}
             />
@@ -80,7 +80,7 @@ const Card = ({
           <div className="card__col-button">
             <Button
               text="find out more"
-              style="loud-link"
+              buttonStyle="loud-link"
               link={linkRight}
               target={buttonTargetRight}
             />
