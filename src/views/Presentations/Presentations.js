@@ -107,7 +107,7 @@ const Presentations = () => {
               <img
                 src={item.image}
                 className="presentations-image"
-                alt="preview image"
+                alt="preview imaginery"
               />
               <div className="presentations-headline">{item.headline}</div>
               <div className="presentations-text">{item.text}</div>
@@ -115,6 +115,7 @@ const Presentations = () => {
                 <a
                   href={item.link}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="presentations-button"
                 >
                   <img

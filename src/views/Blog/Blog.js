@@ -1,38 +1,38 @@
 import React, { useState } from 'react';
 import * as lunr from 'lunr';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Pagination from '../../components/Pagination/Pagination';
+// import Pagination from '../../components/Pagination/Pagination';
 import Footer from '../../components/Footer/Footer';
 import BlogPost from './BlogPost';
 import SearchBlogPost from './SearchBlogPost';
-import infoArrowBack from '../../images/info-arrow-back.svg';
+// import infoArrowBack from '../../images/info-arrow-back.svg';
 
-const Blog = ({ posts, match, history }) => {
+const Blog = ({ posts, history }) => {
   const [searchResultsPresented, setSearchResultsPresented] = useState(false);
   const [categoryResultsPresented, setCategoryResultsPresented] = useState(
     false,
   );
   const [defaultResultsPresented, setDefaultResultsPresented] = useState(true);
   const [searchResultPosts, setSearchResultPosts] = useState([]);
-  const [categoryPosts, setCategoryPosts] = useState([]);
+  // const [categoryPosts, setCategoryPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [postsPerPage] = useState(10);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts =
-    posts !== undefined ? posts.slice(indexOfFirstPost, indexOfLastPost) : null;
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+  // const indexOfLastPost = currentPage * postsPerPage;
+  // const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  // const currentPosts =
+  //   posts !== undefined ? posts.slice(indexOfFirstPost, indexOfLastPost) : null;
+  // const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const documentsGeneral = [];
-  const documentsTags = [];
-  const fetchTags = {};
+  // const documentsTags = [];
+  // const fetchTags = {};
 
   if (posts !== undefined) {
     posts.map(post => {
@@ -101,12 +101,12 @@ const Blog = ({ posts, match, history }) => {
     const searchedWord = `${query.target.value.trim()}*`;
     setSearchTerm(query.target.value);
     setSearchQuery(searchedWord);
-    const searchResultPosts = [];
+    const createSearchResultPosts = [];
     const searchResult = searchIndexGeneral.search(searchQuery);
-    searchResult.map(res => {
-      searchResultPosts.push(posts.find(post => post.sys.id === res.ref));
+    searchResult.forEach(res => {
+      createSearchResultPosts.push(posts.find(post => post.sys.id === res.ref));
     });
-    setSearchResultPosts(searchResultPosts);
+    setSearchResultPosts(createSearchResultPosts);
   }
 
   // function onCategoryClick(tag) {
@@ -155,7 +155,8 @@ const Blog = ({ posts, match, history }) => {
     if (searchResultPosts.length === 0) {
       renderSearchResultPosts = (
         <div className="searchblogpost-no-results">
-          No results for "{searchTerm.substring(0, searchTerm.length - 1)}"
+          No results for &apos;{searchTerm.substring(0, searchTerm.length - 1)}
+          &apos;
         </div>
       );
     } else {
@@ -163,8 +164,8 @@ const Blog = ({ posts, match, history }) => {
         <div>
           <div className="searchblogpost-result-headline">
             {searchResultPosts.length}{' '}
-            {searchResultPosts.length !== 1 ? 'results' : 'result'} found for "
-            {searchTerm}"
+            {searchResultPosts.length !== 1 ? 'results' : 'result'} found for
+            &apos;{searchTerm}&apos;
           </div>
           {searchResultPosts.map(post => {
             return (
@@ -216,8 +217,11 @@ const Blog = ({ posts, match, history }) => {
         <div>
           {posts.map(post => {
             return (
-              <div className="col s12 l6 blogpost-column-wrapper">
-                <BlogPost key={post.sys.id} post={post} intro />
+              <div
+                className="col s12 l6 blogpost-column-wrapper"
+                key={post.sys.id}
+              >
+                <BlogPost post={post} intro />
               </div>
             );
           })}

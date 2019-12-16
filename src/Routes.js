@@ -11,7 +11,7 @@ import License from './views/License/License';
 import BlogPostArticle from './views/Blog/BlogPostArticle';
 import Imprint from './views/Imprint/Imprint';
 import WhitePapers from './views/WhitePapers/WhitePapers';
-import WhitePaperDetail from './views/WhitePapers/WhitePaperDetail';
+// import WhitePaperDetail from './views/WhitePapers/WhitePaperDetail';
 import Presentations from './views/Presentations/Presentations';
 import DataProtection from './views/DataProtection/DataProtection';
 import Security from './views/Security/Security';
@@ -32,7 +32,7 @@ const Routes = () => {
     <div>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/landing-page/" component={LandingPage} />
+        <Route exact path="/marketing/" component={LandingPage} />
         <Route exact path="/contacts/" component={ContactUs} />
         <Route exact path="/product/" component={Product} />
         <Route exact path="/company/" component={Company} />
@@ -65,7 +65,7 @@ const Routes = () => {
           render={props => <BlogPostArticle {...props} posts={posts} />}
         />
         <Route exact path="/white-papers/" component={WhitePapers} />
-        <Route path="/white-papers/:slug" component={WhitePaperDetail} />
+        {/* <Route path="/white-papers/:slug" component={WhitePaperDetail} /> */}
         {/* <Route path="/404/" component={NotFound} /> */}
       </Switch>
     </div>

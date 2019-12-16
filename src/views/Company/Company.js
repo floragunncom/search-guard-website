@@ -1,22 +1,22 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import { v4 } from 'uuid';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
 import Journey from '../../components/Journey/Journey';
-import Button from '../../components/Button/Button';
 import Cta from '../../components/Cta/Cta';
 import Partners from '../../components/Partners/Partners';
 import ctaIcon from '../../images/icon-sg.svg';
 import Title from '../../components/Title/Title';
 import Team from '../../components/Team/Team';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
-import { Helmet } from 'react-helmet';
 
 const Company = () => {
   const anchors = [
-    { anchor: 'team', name: 'management team' },
-    { anchor: 'partners', name: 'partners' },
-    { anchor: 'journey', name: 'journey' },
+    { id: v4(), anchor: 'team', name: 'management team' },
+    { id: v4(), anchor: 'partners', name: 'partners' },
+    { id: v4(), anchor: 'journey', name: 'journey' },
   ];
 
   return (

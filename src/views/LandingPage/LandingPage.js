@@ -18,16 +18,16 @@ const LandingPage = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          {/* Product | Search Guard product overview for securing Elasticsearch
-          cluster */}
+          Product | Search Guard product overview for securing Elasticsearch
+          cluster
         </title>
         <meta
           name="description"
-          // content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
+          content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
         />
       </Helmet>
       <NavBar background="#184962" landing />
-      <Hero landing />
+      <Hero />
       <LandingUSP />
       <Services landing />
       <SEOSection />
@@ -38,6 +38,7 @@ const LandingPage = () => {
         headline="What would you like to know?"
         text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
         ctaText="start free trial"
+        link="/contacts/"
         icon={shield}
       />
       <Footer landing />

@@ -31,7 +31,7 @@ const Hero = ({ landing }) => {
               >
                 <Button
                   text="start free trial"
-                  style="loud-link"
+                  buttonStyle="loud-link"
                   link="https://docs.search-guard.com/latest/demo-installer"
                   target="_blank"
                 />

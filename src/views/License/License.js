@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { v4 } from 'uuid';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
@@ -15,9 +16,9 @@ import iconWheels from '../../images/icon-wheels.svg';
 
 const License = () => {
   const anchors = [
-    { anchor: 'standard', name: 'standard editions' },
-    { anchor: 'feature', name: 'feature breakdown' },
-    { anchor: 'academic', name: 'Academic and Custom editions' },
+    { id: v4(), anchor: 'standard', name: 'standard editions' },
+    { id: v4(), anchor: 'feature', name: 'feature breakdown' },
+    { id: v4(), anchor: 'academic', name: 'Academic and Custom editions' },
   ];
 
   return (

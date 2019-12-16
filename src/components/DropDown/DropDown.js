@@ -1,6 +1,5 @@
 import React from 'react';
 import './DropDown.scss';
-// import arrowDown from '../../images/arrow-down-green-full.svg';
 
 const DropDowm = ({ category, options, name }) => {
   return (
@@ -10,8 +9,12 @@ const DropDowm = ({ category, options, name }) => {
           {category} {category === 'Country' ? '*' : ''}
         </div>
         <select name={name} className="browser-default">
-          {options.map(option => {
-            return <option value={option}>{option}</option>;
+          {options.map((option, index) => {
+            return (
+              <option value={option} key={index}>
+                {option}
+              </option>
+            );
           })}
         </select>
       </div>
