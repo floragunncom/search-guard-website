@@ -3,9 +3,9 @@ import { Helmet } from 'react-helmet';
 import Button from '../../components/Button/Button';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
-import '../NotFound/NotFound.scss';
+import './Thanks.scss';
 
-const NotFound = () => {
+const Thanks = () => {
   return (
     <div>
       <Helmet>
@@ -18,11 +18,11 @@ const NotFound = () => {
         />
       </Helmet>
       <NavBar />
-      <div className="notfound-wrapper">
+      <div className="thanks-wrapper">
         <div className="row">
           <div className="col s12 m10 offset-m1 l8 offset-l2">
-            <div className="notfound-warning">Thank you!</div>
-            <div className="notfound-text">
+            <div className="thanks-warning">Thank you!</div>
+            <div className="thanks-text">
               Your contact form was successfully submitted.
               <br />
               Thank you for your interest in Search Guard, we will get back to
@@ -33,7 +33,7 @@ const NotFound = () => {
               <br />
               Search Guard team
             </div>
-            <div className="notfound-button">
+            <div className="thanks-button">
               <Button text="go home" link="/" />
             </div>
           </div>
@@ -44,4 +44,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default Thanks;
