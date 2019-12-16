@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Hero from '../../components/Hero/Hero';
+import HeroLandingPage from '../../components/HeroLandingPage/HeroLandingPage';
 import NavBar from '../../components/NavBar/NavBar';
 import Certified from '../../components/Certified/Certified';
 import References from '../../components/References/References';
@@ -27,7 +27,7 @@ const LandingPage = () => {
         />
       </Helmet>
       <NavBar background="#184962" landing />
-      <Hero />
+      <HeroLandingPage />
       <LandingUSP />
       <Services landing />
       <SEOSection />

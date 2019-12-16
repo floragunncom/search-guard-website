@@ -242,6 +242,7 @@ const Blog = ({ posts, history }) => {
         <title>
           Official Search Guard blog - news about security for Elasticsearch
         </title>
+        <link rel="canonical" href="https://search-guard.com/blog/" />
         <meta
           name="description"
           content="This is the official Search Guard blog. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch."

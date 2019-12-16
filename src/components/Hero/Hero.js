@@ -7,7 +7,7 @@ import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
 import './Hero.scss';
 
-const Hero = ({ landing }) => {
+const Hero = () => {
   return (
     <div>
       <div className="hero-wrapper">
@@ -25,10 +25,7 @@ const Hero = ({ landing }) => {
                   Elastic Stack, including Kibana, Logstash and Beats.
                 </div>
               </div>
-              <div
-                className="hero-button-wrapper"
-                style={landing ? { visibility: 'hidden' } : null}
-              >
+              <div className="hero-button-wrapper">
                 <Button
                   text="start free trial"
                   buttonStyle="loud-link"
@@ -36,18 +33,14 @@ const Hero = ({ landing }) => {
                   target="_blank"
                 />
               </div>
-              <NavLink
-                to="/certificates/"
-                className="hero-certificate-wrapper"
-                style={landing ? { visibility: 'hidden' } : null}
-              >
+              <NavLink to="/certificates/" className="hero-certificate-wrapper">
                 <img src={heroCertificates} alt="certificate icon" />
               </NavLink>
             </div>
           </div>
         </div>
       </div>
-      <div className={landing ? 'hidden' : 'hero-certificate-wrapper-hidden'}>
+      <div className="hero-certificate-wrapper-hidden">
         <img src={veracode} alt="veracode logo" />
         <img src={alliance} alt="alliance logo" />
         <img src={security} alt="security logo" />
