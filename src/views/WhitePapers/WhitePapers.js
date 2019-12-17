@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -31,6 +32,15 @@ const WhitePapers = () => {
 
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Official Search Guard White Papers</title>
+        <link rel="canonical" href="https://search-guard.com/white-papers/" />
+        <meta
+          name="description"
+          content="Find answers to frequently asked questions about Search Guard, the rock-solid and battle proven security suite for Elasticsearch."
+        />
+      </Helmet>
       <NavBar />
       <Title
         headline="White Papers"

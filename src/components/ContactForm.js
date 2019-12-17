@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import './ContactForm.scss';
-// import { throws } from 'assert';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
-  const history = useHistory();
   const [newsletterValue, setNewsletterValue] = useState(false);
 
   function changeNewsletterValue() {
@@ -16,8 +13,10 @@ const ContactForm = () => {
   const handleSubmit = async event => {
     event.preventDefault();
     const data = {};
-    const formElements = await Array.from(event.target);
-    formElements.map(input => (data[input.name] = input.value)); 
+    const formElements = Array.from(event.target);
+    formElements.forEach(input => {
+      data[input.name] = input.value;
+    });
     // Log what our lambda function will receive
     // console.log(JSON.stringify(data));
     await fetch(
@@ -32,7 +31,7 @@ const ContactForm = () => {
         body: JSON.stringify(data),
       },
     );
-    history.push('/thanks/');
+    window.location.href = '/thanks/';
   };
 
   return (
