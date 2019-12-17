@@ -12,7 +12,7 @@ import LandingUSP from '../../components/LandingUSP/LandingUSP';
 import LicensingInfo from '../../components/LicensingInfo/LicensingInfo';
 import shield from '../../images/icon-wheel-shield.svg';
 
-const LandingPage = () => {
+const HomePageTwo = () => {
   return (
     <div>
       <Helmet>
@@ -46,4 +46,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default HomePageTwo;

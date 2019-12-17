@@ -22,7 +22,7 @@ import TlsGenerator from './views/TlsGenerator/TlsGenerator';
 import NotFound from './views/NotFound/NotFound';
 import Thanks from './views/Thanks/Thanks';
 import Certifications from './views/Certifications/Certifications';
-import LandingPage from './views/LandingPage/LandingPage';
+import HomePageTwo from './views/HomePageTwo/HomePageTwo';
 import { BlogContext } from './contexts/BlogContext';
 
 const Routes = () => {
@@ -32,7 +32,6 @@ const Routes = () => {
     <div>
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route exact path="/marketing/" component={LandingPage} />
         <Route exact path="/contacts/" component={ContactUs} />
         <Route exact path="/product/" component={Product} />
         <Route exact path="/company/" component={Company} />
@@ -44,6 +43,7 @@ const Routes = () => {
         <Route exact path="/presentations/" component={Presentations} />
         <Route exact path="/datenschutz/" component={DataProtection} />
         <Route exact path="/education-program/" component={Education} />
+        <Route exact path="/landing/" component={HomePageTwo} />
         <Route exact path="/thanks/" component={Thanks} />
         <Route exact path="/security/" component={Security} />
         <Route exact path="/cve-advisory/" component={Advisory} />
