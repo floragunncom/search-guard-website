@@ -276,6 +276,7 @@ const Faqs = () => {
         <title>
           Frequently asked questions | Search Guard | Security for Elasticsearch
         </title>
+        <link rel="canonical" href="https://search-guard.com/faq/" />
         <meta
           name="description"
           content="Find answers to frequently asked questions about Search Guard, the rock-solid and battle proven security suite for Elasticsearch."
@@ -313,7 +314,9 @@ const Faqs = () => {
                 {category.faq.map(faq => {
                   return (
                     <div id={`${faq.anchor}`}>
-                      <div className={`faq-answer-headline ${faq.paddingClass}`}>
+                      <div
+                        className={`faq-answer-headline ${faq.paddingClass}`}
+                      >
                         {faq.question}
                       </div>
                       <div className="faq-answer-text">{faq.answer}</div>

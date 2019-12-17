@@ -6,6 +6,7 @@ const port = process.env.PORT || 4444;
 
 const options = {
   public: './build',
+  trailingSlash: true,
   redirects: [
     { source: '/floragunn-page', destination: '/company/' },
     { source: '/grownow', destination: '/company/' },
@@ -53,11 +54,11 @@ const options = {
     },
     { source: '/collaborators', destination: '/' },
     { source: '/colaboradores', destination: '/' },
-    { source: '/integradores', destination: '/product#integrators' },
-    { source: '/integrateurs', destination: '/product#integrators' },
-    { source: '/integrators', destination: '/product#integrators' },
-    { source: '/partenaires', destination: '/company#partners' },
-    { source: '/partners', destination: '/company#partners' },
+    { source: '/integradores', destination: '/product/#integrators' },
+    { source: '/integrateurs', destination: '/product/#integrators' },
+    { source: '/integrators', destination: '/product/#integrators' },
+    { source: '/partenaires', destination: '/company/#partners' },
+    { source: '/partners', destination: '/company/#partners' },
     { source: '/contacto', destination: '/contacts/' },
     { source: '/protection-des-donnees', destination: '/datenschutz/' },
     { source: '/education-program', destination: '/contacts/' },
@@ -71,7 +72,7 @@ const options = {
       source: '/generador-de-certificados-tls',
       destination: '/tls-certificate-generator/',
     },
-    { source: '/read-history-gdpr*', destination: '/' },
+    // { source: '/read-history-gdpr*', destination: '/' },
     { source: '/search-guard-elastic', destination: '/' },
     { source: '/7171-2', destination: '/' },
     { source: '/home-2', destination: '/' },

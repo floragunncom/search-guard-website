@@ -14,24 +14,30 @@ const TlsGenerator = () => {
     setNewsletterValue(!newsletterValue);
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = async event => {
     event.preventDefault();
     const data = {};
     const formElements = Array.from(event.target);
-    formElements.map(input => (data[input.name] = input.value));
+    formElements.forEach(input => {
+      data[input.name] = input.value;
+    });
 
     // Log what our lambda function will receive
-    console.log(JSON.stringify(data));
-    fetch('http://localhost:3000/', {
-      method: 'POST',
-      headers: {
-        accept: 'application/json; charset=utf-8',
-        'content-type': 'application/json; charset=UTF-8',
+    // console.log(JSON.stringify(data));
+    // fetch('http://localhost:3000/', {
+    await fetch(
+      'https://vtup10xka0.execute-api.eu-central-1.amazonaws.com/dev/',
+      {
+        method: 'POST',
+        headers: {
+          accept: 'application/json; charset=utf-8',
+          'content-type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    });
-    // window.location.href = '/thanks';
-  }
+    );
+    window.location.href = '/thanks/';
+  };
 
   return (
     <div>

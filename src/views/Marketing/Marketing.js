@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import HeroLandingPage from '../../components/HeroLandingPage/HeroLandingPage';
+import HeroMarketing from '../../components/HeroMarketing/HeroMarketing';
 import NavBar from '../../components/NavBar/NavBar';
 import Certified from '../../components/Certified/Certified';
 import References from '../../components/References/References';
@@ -12,7 +12,7 @@ import LandingUSP from '../../components/LandingUSP/LandingUSP';
 import LicensingInfo from '../../components/LicensingInfo/LicensingInfo';
 import shield from '../../images/icon-wheel-shield.svg';
 
-const HomePageTwo = () => {
+const Marketing = () => {
   return (
     <div>
       <Helmet>
@@ -21,13 +21,14 @@ const HomePageTwo = () => {
           Product | Search Guard product overview for securing Elasticsearch
           cluster
         </title>
+        <link rel="canonical" href="https://search-guard.com/marketing/" />
         <meta
           name="description"
           content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
         />
       </Helmet>
       <NavBar background="#184962" landing />
-      <HeroLandingPage />
+      <HeroMarketing />
       <LandingUSP />
       <Services landing />
       <SEOSection />
@@ -46,4 +47,4 @@ const HomePageTwo = () => {
   );
 };
 
-export default HomePageTwo;
+export default Marketing;
