@@ -12,7 +12,7 @@ const AnchorNavBar = ({ anchors }) => {
             return (
               <div className="product-anchor-item" key={item.id}>
                 <HashLink
-                  to={`/#${item.anchor}`}
+                  to={`#${item.anchor}`}
                   className="product-anchor-link"
                 >
                   <img

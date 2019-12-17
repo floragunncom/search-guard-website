@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './ContactForm.scss';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
+  const history = useHistory();
   const [newsletterValue, setNewsletterValue] = useState(false);
 
   function changeNewsletterValue() {
@@ -19,8 +21,8 @@ const ContactForm = () => {
     });
     // Log what our lambda function will receive
     // console.log(JSON.stringify(data));
+    // await fetch('http://localhost:3000/', {
     await fetch(
-      // fetch('http://localhost:3000/', {
       'https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/',
       {
         method: 'POST',
@@ -31,7 +33,7 @@ const ContactForm = () => {
         body: JSON.stringify(data),
       },
     );
-    window.location.href = '/thanks/';
+    return history.push('/thanks/');
   };
 
   return (
