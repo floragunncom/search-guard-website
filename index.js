@@ -27,7 +27,7 @@ const options = {
       destination: '/gdpr-compliance-elasticsearch/',
     },
     // { source: '/wp-content/**/:id', destination: '/product/' },
-    { source: '/wp-includes/**/:id', destination: '/product/' },
+    // { source: '/wp-includes/**/:id', destination: '/product/' },
     { source: '/no-nonsense-it', destination: '/company/' },
     { source: '/search-guard-customers', destination: '/company/' },
     { source: '/*.zip', destination: '/' },
