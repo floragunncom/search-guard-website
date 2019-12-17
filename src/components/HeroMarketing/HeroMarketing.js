@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeroLandingPage.scss';
+import './HeroMarketing.scss';
 
 const HeroLandingPage = () => {
   return (

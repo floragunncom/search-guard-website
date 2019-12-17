@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import HeroLandingPage from '../../components/HeroLandingPage/HeroLandingPage';
+import HeroMarketing from '../../components/HeroMarketing/HeroMarketing';
 import NavBar from '../../components/NavBar/NavBar';
 import Certified from '../../components/Certified/Certified';
 import References from '../../components/References/References';
@@ -12,7 +12,7 @@ import LandingUSP from '../../components/LandingUSP/LandingUSP';
 import LicensingInfo from '../../components/LicensingInfo/LicensingInfo';
 import shield from '../../images/icon-wheel-shield.svg';
 
-const HomePageTwo = () => {
+const Marketing = () => {
   return (
     <div>
       <Helmet>
@@ -28,7 +28,7 @@ const HomePageTwo = () => {
         />
       </Helmet>
       <NavBar background="#184962" landing />
-      <HeroLandingPage />
+      <HeroMarketing />
       <LandingUSP />
       <Services landing />
       <SEOSection />
@@ -47,4 +47,4 @@ const HomePageTwo = () => {
   );
 };
 
-export default HomePageTwo;
+export default Marketing;
