@@ -33,7 +33,7 @@ const ContactForm = () => {
         body: JSON.stringify(data),
       },
     );
-    return history.push('/thanks/');
+    history.push('/thanks/');
   };
 
   return (
