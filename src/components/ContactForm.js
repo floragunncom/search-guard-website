@@ -28,7 +28,7 @@ const ContactForm = () => {
       },
       body: JSON.stringify(data),
     });
-    window.location.href = '/thanks';
+    // window.location.href = '/thanks';
   }
 
   return (
