@@ -6,6 +6,7 @@ const port = process.env.PORT || 4444;
 
 const options = {
   public: './build',
+  trailingSlash: true,
   redirects: [
     { source: '/floragunn-page', destination: '/company/' },
     { source: '/grownow', destination: '/company/' },
@@ -71,7 +72,7 @@ const options = {
       source: '/generador-de-certificados-tls',
       destination: '/tls-certificate-generator/',
     },
-    { source: '/read-history-gdpr*', destination: '/' },
+    // { source: '/read-history-gdpr*', destination: '/' },
     { source: '/search-guard-elastic', destination: '/' },
     { source: '/7171-2', destination: '/' },
     { source: '/home-2', destination: '/' },

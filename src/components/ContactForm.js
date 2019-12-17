@@ -1,35 +1,39 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './ContactForm.scss';
 // import { throws } from 'assert';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
+  const history = useHistory();
   const [newsletterValue, setNewsletterValue] = useState(false);
 
   function changeNewsletterValue() {
     setNewsletterValue(!newsletterValue);
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = async event => {
     event.preventDefault();
     const data = {};
-    const formElements = Array.from(event.target);
-    formElements.map(input => (data[input.name] = input.value));
-
+    const formElements = await Array.from(event.target);
+    formElements.map(input => (data[input.name] = input.value)); 
     // Log what our lambda function will receive
     // console.log(JSON.stringify(data));
-    fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
+    await fetch(
       // fetch('http://localhost:3000/', {
-      method: 'POST',
-      headers: {
-        accept: 'application/json; charset=utf-8',
-        'content-type': 'application/json; charset=UTF-8',
+      'https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/',
+      {
+        method: 'POST',
+        headers: {
+          accept: 'application/json; charset=utf-8',
+          'content-type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    });
-    // window.location.href = '/thanks';
-  }
+    );
+    history.push('/thanks/');
+  };
 
   return (
     <div className="row contact-wrapper">
@@ -103,7 +107,7 @@ const ContactForm = () => {
                     type="text"
                     className="input-field-contact"
                     required
-                  />
+                    />
                   <label htmlFor="last_name" className="input-field-label">
                     Last Name *
                   </label>
@@ -114,6 +118,7 @@ const ContactForm = () => {
                     name="company"
                     type="text"
                     className="input-field-contact"
+                    required
                   />
                   <label htmlFor="company" className="input-field-label">
                     Company *
