@@ -31,8 +31,8 @@ const Routes = () => {
   return (
     <div>
       <Switch>
-        <Route exact path="/marketing/" component={LandingPage} />
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/marketing/" component={LandingPage} />
         <Route exact path="/contacts/" component={ContactUs} />
         <Route exact path="/product/" component={Product} />
         <Route exact path="/company/" component={Company} />

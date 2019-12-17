@@ -26,7 +26,7 @@ const options = {
       source: '/search-guard-provides-gdpr-compliance-for-elasticsearch',
       destination: '/gdpr-compliance-elasticsearch/',
     },
-    { source: '/wp-content/**/:id', destination: '/product/' },
+    // { source: '/wp-content/**/:id', destination: '/product/' },
     { source: '/wp-includes/**/:id', destination: '/product/' },
     { source: '/no-nonsense-it', destination: '/company/' },
     { source: '/search-guard-customers', destination: '/company/' },
