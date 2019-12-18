@@ -21,10 +21,10 @@ const ContactForm = () => {
     });
     // Log what our lambda function will receive
     // console.log(JSON.stringify(data));
-    await fetch('http://localhost:3000/', {
-    // await fetch(
-    //   'https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/',
-    //   {
+    // await fetch('http://localhost:3000/', {
+    await fetch(
+      'https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/',
+      {
         method: 'POST',
         headers: {
           accept: 'application/json; charset=utf-8',
