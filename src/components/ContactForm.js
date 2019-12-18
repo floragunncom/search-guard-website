@@ -12,7 +12,7 @@ const ContactForm = () => {
     setNewsletterValue(!newsletterValue);
   }
 
-  const handleSubmit = async event => {
+  const handleSubmit = event => {
     event.preventDefault();
     const data = {};
     const formElements = Array.from(event.target);
@@ -21,18 +21,21 @@ const ContactForm = () => {
     });
     // Log what our lambda function will receive
     // console.log(JSON.stringify(data));
-    // await fetch('http://localhost:3000/', {
-    await fetch(
-      'https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/',
-      {
-        method: 'POST',
-        headers: {
-          accept: 'application/json; charset=utf-8',
-          'content-type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify(data),
+    fetch('http://localhost:3000/', {
+      // await fetch(
+      //   'https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/',
+      //   {
+      method: 'POST',
+      headers: {
+        accept: 'application/json; charset=utf-8',
+        'content-type': 'application/json; charset=UTF-8',
       },
-    );
+      body: JSON.stringify(data),
+    });
+  };
+
+  const postDataToCRM = async event => {
+    await handleSubmit(event);
     history.push('/thanks/');
   };
 
@@ -82,7 +85,7 @@ const ContactForm = () => {
       </div>
       <div className="col s12 l8" id="contact">
         <div className="contact-info-container">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={postDataToCRM}>
             <div className="contact-info-wrapper">
               <div className="contact-information-headline">
                 contact information
@@ -108,7 +111,7 @@ const ContactForm = () => {
                     type="text"
                     className="input-field-contact"
                     required
-                    />
+                  />
                   <label htmlFor="last_name" className="input-field-label">
                     Last Name *
                   </label>
