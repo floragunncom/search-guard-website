@@ -139,17 +139,17 @@ const Footer = ({ landing }) => {
                   </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/company#team" className="footer-links">
+                  <HashLink to="/company/#team" className="footer-links">
                     Who we are
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/company#partners" className="footer-links">
+                  <HashLink to="/company/#partners" className="footer-links">
                     Partners
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/product#integrators" className="footer-links">
+                  <HashLink to="/product/#integrators" className="footer-links">
                     Integrators
                   </HashLink>
                 </div>
