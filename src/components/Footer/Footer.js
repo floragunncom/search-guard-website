@@ -17,12 +17,12 @@ const Footer = ({ landing }) => {
                   </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/product#concept" className="footer-links">
+                  <HashLink to="/product/#concept" className="footer-links">
                     What it is
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/resource#videos" className="footer-links">
+                  <HashLink to="/resource/#videos" className="footer-links">
                     How it works
                   </HashLink>
                 </div>
@@ -40,22 +40,22 @@ const Footer = ({ landing }) => {
                   </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/licensing#standard" className="footer-links">
+                  <HashLink to="/licensing/#standard" className="footer-links">
                     Standard editions
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/licensing#feature" className="footer-links">
+                  <HashLink to="/licensing/#feature" className="footer-links">
                     Feature breakdown
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/licensing#academic" className="footer-links">
+                  <HashLink to="/licensing/#academic" className="footer-links">
                     Academic edition
                   </HashLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/licensing#academic" className="footer-links">
+                  <HashLink to="/licensing/#academic" className="footer-links">
                     Custom edition
                   </HashLink>
                 </div>
