@@ -223,23 +223,6 @@ const ContactForm = () => {
                 />
               </div>
             </div>
-            <div className="contact-tech-wrapper">
-              <div className="contact-information-headline">
-                technical information
-              </div>
-              <div className="contact-tech-input-fields">
-                <DropDown
-                  category="Elasticsearch Version"
-                  name="version"
-                  options={['1', '2', '3', '4', '5']}
-                />
-                <DropDown
-                  category="Current Stage"
-                  name="stage"
-                  options={['1', '2', '3', '4', '5']}
-                />
-              </div>
-            </div>
             <div className="contact-message-wrapper">
               <div className="contact-information-headline">your message</div>
               <div className="input-field col s12">
