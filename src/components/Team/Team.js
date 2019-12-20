@@ -4,15 +4,16 @@ import jochen from '../../images/jochen.svg';
 import hendrik from '../../images/hendrik.svg';
 import mechthild from '../../images/mechthild.svg';
 import thomas from '../../images/thomas.svg';
+import andreas from '../../images/andreas.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import './Team.scss';
 
 const Team = () => {
   const team = [
     {
-      name: 'Claudia Kressin',
-      position: 'Founder & CEO',
-      pic: claudia,
+      name: 'Andreas Riedel',
+      position: 'CEO',
+      pic: andreas,
       link: 'https://www.linkedin.com/in/searchguard/',
     },
     {
@@ -20,6 +21,12 @@ const Team = () => {
       position: 'Founder & CEO',
       pic: jochen,
       link: 'https://www.linkedin.com/in/jkressin/',
+    },
+    {
+      name: 'Claudia Kressin',
+      position: 'Founder & CEO',
+      pic: claudia,
+      link: 'https://www.linkedin.com/in/searchguard/',
     },
     {
       name: 'Hendrik Saly',
