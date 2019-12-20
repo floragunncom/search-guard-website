@@ -16,8 +16,8 @@ const LandingUSP = () => {
                 Multilevel security
               </div>
               <div className="landing-usp-text-box-text">
-                Mauris ullamcorper commodo eros a cursus. Mauris est sapien,
-                lobortis ac orci non, mollis semper diam.
+                Protect your sensitive data on all levels by using role-based access control to your clusters, indices, documents and fields.
+                Search Guard covers it all and adds encryption, authentication, authorization, audit logging, multi tenancy and compliance features.
               </div>
             </div>
           </div>
@@ -27,11 +27,10 @@ const LandingUSP = () => {
             <img src={shield} alt="shield icon" />
             <div className="landing-usp-text-box">
               <div className="landing-usp-text-box-headline">
-                Support industry standards
+                Industry standards
               </div>
               <div className="landing-usp-text-box-text">
-                Mauris ullamcorper commodo eros a cursus. Mauris est sapien,
-                lobortis ac orci non, mollis semper diam.
+                Search Guard supports all industry standards for authentication and authorization like LDAP, Active Directory, OpenID, SAML, Kerberos, JSON web tokens or client certificates.
               </div>
             </div>
           </div>
@@ -42,8 +41,7 @@ const LandingUSP = () => {
             <div className="landing-usp-text-box">
               <div className="landing-usp-text-box-headline">Elastic Stack</div>
               <div className="landing-usp-text-box-text">
-                Mauris ullamcorper commodo eros a cursus. Mauris est sapien,
-                lobortis ac orci non, mollis semper diam.
+                Search Guard gives you full security control over your entire Elastisearch environment. Protect the complete Elastic stack, including Kibana, Logstash and Beats.
               </div>
             </div>
           </div>

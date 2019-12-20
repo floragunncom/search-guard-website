@@ -8,7 +8,7 @@ import academic from '../../images/icon-academic.svg';
 import custom from '../../images/icon-custom.svg';
 import Button from '../Button/Button';
 
-const LicensingModel = ({ tableView, topButtons, headline }) => {
+const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
   const [standardButton, setStandardButton] = useState(true);
   const [tableVisible, setTableVisible] = useState(false);
 
@@ -273,6 +273,7 @@ const LicensingModel = ({ tableView, topButtons, headline }) => {
         <div className="row">
           <div className="col s12">
             <div className="licensing-headline">{headline}</div>
+            <div className="licensing-subheadline">{subheadline}</div>
             {buttons}
             {renderContent}
           </div>

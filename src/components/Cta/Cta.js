@@ -15,7 +15,9 @@ const Cta = ({ icon, ctaText, headline, link, text }) => {
           <div className="cta-text-container">
             <div className="cta-headline">{headline}</div>
             <div className="cta-text">{text}</div>
-            <Button text={ctaText} buttonStyle="loud-link" link={link} />
+            {link && link.length > 0 && ctaText && ctaText.length > 0 &&
+             <Button text={ctaText} buttonStyle="loud-link" link={link} />
+            }
           </div>
         </div>
       </div>
