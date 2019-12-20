@@ -88,7 +88,7 @@ const BlogPostArticle = ({ posts, match }) => {
       img: {
         component: 'img',
         props: {
-          className: 'blogpost-image-wrapper, blogpost-image',
+          className: 'blogpost-image-wrapper blogpost-image',
         },
       },
       blockquote: {

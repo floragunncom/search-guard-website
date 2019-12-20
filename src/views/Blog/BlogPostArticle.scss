@@ -82,15 +82,12 @@
   };
 }
 
-.blogpost-image-wrapper {
-  margin: 64px 0px;
-  @media only screen and (max-width: $mobile) {
-    margin: 32px 0px;
-  };
-}
-
-.blogpost-image {
-  width: 100%;
+.blogpost-image-wrapper.blogpost-image {
+  display: block;
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-height: 350px;
 }
 
 .blogpost-image-description {
