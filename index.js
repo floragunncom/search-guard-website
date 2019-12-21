@@ -42,10 +42,6 @@ const options = {
       destination: '/blog/',
     },
     {
-      source: '/elasticsearch-ldap-authentication-authorisation',
-      destination: '/blog/',
-    },
-    {
       source: '/tls-certificate-generator/embed',
       destination: '/tls-certificate-generator/',
     },
@@ -69,8 +65,6 @@ const options = {
       source: '/generador-de-certificados-tls',
       destination: '/tls-certificate-generator/',
     },
-    // { source: '/read-history-gdpr*', destination: '/' },
-    { source: '/search-guard-elastic', destination: '/' },
     { source: '/7171-2', destination: '/' },
     { source: '/home-2', destination: '/' },
     { source: '/mentions-legales', destination: '/impressum/' },

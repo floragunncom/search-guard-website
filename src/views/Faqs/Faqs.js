@@ -77,7 +77,7 @@ const Faqs = () => {
                 href="https://forum.search-guard.com/latest/"
                 target="_blank"
                 rel="noopener noreferrer"
-                >
+              >
                 Search Guard community
               </a>{' '}
               as well as paid support for our customers. As paying customer you
@@ -296,7 +296,7 @@ const Faqs = () => {
                 {category.faq.map(faq => {
                   return (
                     <div className="faq-question-text">
-                      <a href={`#${faq.anchor}`}>{faq.question}</a>
+                      <a href={`/faq/#${faq.anchor}`}>{faq.question}</a>
                     </div>
                   );
                 })}

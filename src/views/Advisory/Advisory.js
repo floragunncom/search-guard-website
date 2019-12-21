@@ -293,7 +293,7 @@ const Advisory = () => {
             <br />
             <br />
             For how to report a security issue please see{' '}
-            <a href="/disclosure-policy">Disclosure Policy</a>.
+            <a href="/disclosure-policy/">Disclosure Policy</a>.
           </div>
         </div>
         <div className="col s12 advisory-table-wrapper">

@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 import Button from '../Button/Button';
 import './Faq.scss';
 
@@ -10,14 +9,14 @@ const Faq = () => {
       <div className="row faq-row">
         <div className="faq-headline">Frequently asked questions</div>
         <div className="faq-info-boxes">
-          <HashLink to="/faq#one" className="faq-info-box">
+          <div className="faq-info-box">
             <div className="faq-info-box-headline">What is Search Guard?</div>
             <div className="faq-info-box-text">
               Search Guard is an Enterprise Security Suite that encrypts and
               protects your data and data flows in the entire Elastic Stack,
               including Kibana, Logstash and Beats.
             </div>
-          </HashLink>
+          </div>
           <div className="faq-info-box">
             <div className="faq-info-box-headline">Do you offer support?</div>
             <div className="faq-info-box-text">
