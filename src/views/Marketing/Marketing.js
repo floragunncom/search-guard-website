@@ -24,7 +24,10 @@ const Marketing = () => {
           Product | Search Guard product overview for securing Elasticsearch
           cluster
         </title>
-        <link rel="canonical" href="https://search-guard.com/marketing/" />
+        <link
+          rel="canonical"
+          href="https://search-guard.com/security-for-elasticsearch/"
+        />
         <meta
           name="description"
           content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
@@ -34,15 +37,15 @@ const Marketing = () => {
       <HeroMarketing />
       <TrustedBy />
       <LicensingModel
-          topButtons
-          headline="Licensing models"
-          subheadline="Unlimited nodes - Scale your cluster, not your cost!"
-          tableView={false}
+        topButtons
+        headline="Licensing models"
+        subheadline="Unlimited nodes - Scale your cluster, not your cost!"
+        tableView={false}
       />
       <Cta
-          headline="Questions?"
-          text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
-          icon={shield}
+        headline="Questions?"
+        text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
+        icon={shield}
       />
       <ContactFormSuperSlim />
       <Footer landing />
