@@ -4,11 +4,18 @@ import jochen from '../../images/jochen.svg';
 import hendrik from '../../images/hendrik.svg';
 import mechthild from '../../images/mechthild.svg';
 import thomas from '../../images/thomas.svg';
+import andreas from '../../images/andreas.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import './Team.scss';
 
 const Team = () => {
   const team = [
+    {
+      name: 'Andreas Riedel',
+      position: 'CEO',
+      pic: andreas,
+      link: 'https://www.linkedin.com/in/searchguard/',
+    },
     {
       name: 'Claudia Kressin',
       position: 'Founder & CEO',
@@ -43,7 +50,7 @@ const Team = () => {
         <div className="company-team-headline">Management team</div>
         {team.map(person => {
           return (
-            <div className="col s12 m6 company-team-profile">
+            <div className="col s12 m4 company-team-profile">
               <img src={person.pic} alt="person" className="profile-pic" />
               <div className="profile-name">{person.name}</div>
               <div className="profile-position">{person.position}</div>

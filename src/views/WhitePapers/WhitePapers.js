@@ -38,13 +38,13 @@ const WhitePapers = () => {
         <link rel="canonical" href="https://search-guard.com/white-papers/" />
         <meta
           name="description"
-          content="Find answers to frequently asked questions about Search Guard, the rock-solid and battle proven security suite for Elasticsearch."
+          content="How to use Search Guard to stay compliant with regulations like GDPR, HIPAA, PCI and SOX."
         />
       </Helmet>
       <NavBar />
       <Title
         headline="White Papers"
-        text="As the pioneers in securing Elasticsearch clusters, all decisions about our technology have the same purpose, to make your Elasticsearch environment more secure."
+        text="How to use Search Guard to stay compliant with regulations like GDPR, HIPAA, PCI and SOX."
       />
       {/* <div className="whitepaper-wrapper">
           <div className="row">{whitePapers}</div>
@@ -56,10 +56,10 @@ const WhitePapers = () => {
             <div className="notfound-text">
               Kindly,
               <br />
-              Search Guard team
+              Your Search Guard team
             </div>
             <div className="notfound-button">
-              <Button text="go home" link="/" />
+              <Button text="Home" link="/" />
             </div>
           </div>
         </div>

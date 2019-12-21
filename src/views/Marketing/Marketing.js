@@ -11,6 +11,9 @@ import Footer from '../../components/Footer/Footer';
 import LandingUSP from '../../components/LandingUSP/LandingUSP';
 import LicensingInfo from '../../components/LicensingInfo/LicensingInfo';
 import shield from '../../images/icon-wheel-shield.svg';
+import ContactFormSuperSlim from '../../components/ContactFormSuperSlim';
+import TrustedBy from "../../components/TrustedBy/TrustedBy";
+import LicensingModel from "../../components/LicensingModel/LicensingModel";
 
 const Marketing = () => {
   return (
@@ -29,19 +32,19 @@ const Marketing = () => {
       </Helmet>
       <NavBar background="#184962" landing />
       <HeroMarketing />
-      <LandingUSP />
-      <Services landing />
-      <SEOSection />
-      <LicensingInfo />
-      <References />
-      <Certified />
-      <Cta
-        headline="What would you like to know?"
-        text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
-        ctaText="start free trial"
-        link="/contacts/"
-        icon={shield}
+      <TrustedBy />
+      <LicensingModel
+          topButtons
+          headline="Licensing models"
+          subheadline="Unlimited nodes - Scale your cluster, not your cost!"
+          tableView={false}
       />
+      <Cta
+          headline="Questions?"
+          text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
+          icon={shield}
+      />
+      <ContactFormSuperSlim />
       <Footer landing />
     </div>
   );

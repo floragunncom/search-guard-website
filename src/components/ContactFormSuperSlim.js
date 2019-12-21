@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory, withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './ContactForm.scss';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
@@ -12,7 +12,7 @@ const ContactForm = () => {
     setNewsletterValue(!newsletterValue);
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault();
     const data = {};
     const formElements = Array.from(event.target);
@@ -21,20 +21,19 @@ const ContactForm = () => {
     });
     // Log what our lambda function will receive
     // console.log(JSON.stringify(data));
-    // fetch('http://localhost:3000/', {
-    fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
-      method: 'POST',
-      headers: {
-        accept: 'application/json; charset=utf-8',
-        'content-type': 'application/json; charset=UTF-8',
+    // await fetch('http://localhost:3000/', {
+    await fetch(
+      'https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/',
+      {
+        method: 'POST',
+        headers: {
+          accept: 'application/json; charset=utf-8',
+          'content-type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    });
-  };
-
-  const postDataToCRM = async event => {
-    await handleSubmit(event);
-    history.push('/thanks/');
+    );
+    return history.push('/thanks/');
   };
 
   return (
@@ -83,7 +82,7 @@ const ContactForm = () => {
       </div>
       <div className="col s12 l8" id="contact">
         <div className="contact-info-container">
-          <form onSubmit={postDataToCRM}>
+          <form onSubmit={handleSubmit}>
             <div className="contact-info-wrapper">
               <div className="contact-information-headline">
                 contact information
@@ -93,10 +92,10 @@ const ContactForm = () => {
               <div className="contact-info-input-fields">
                 <div className="input-field col s12 m6">
                   <input
-                    id="first_name"
-                    name="first_name"
-                    type="text"
-                    required
+                      id="first_name"
+                      name="first_name"
+                      type="text"
+                      required
                   />
                   <label htmlFor="first_name" className="input-field-label">
                     First Name *
@@ -104,11 +103,11 @@ const ContactForm = () => {
                 </div>
                 <div className="input-field col s12 m6">
                   <input
-                    id="last_name"
-                    name="last_name"
-                    type="text"
-                    className="input-field-contact"
-                    required
+                      id="last_name"
+                      name="last_name"
+                      type="text"
+                      className="input-field-contact"
+                      required
                   />
                   <label htmlFor="last_name" className="input-field-label">
                     Last Name *
@@ -116,114 +115,52 @@ const ContactForm = () => {
                 </div>
                 <div className="input-field col s12 m6">
                   <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    className="input-field-contact"
-                    required
-                  />
-                  <label htmlFor="company" className="input-field-label">
-                    Company *
-                  </label>
-                </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="address"
-                    name="address"
-                    type="text"
-                    className="input-field-contact"
-                  />
-                  <label htmlFor="address" className="input-field-label">
-                    Address
-                  </label>
-                </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="zipcode"
-                    name="zip"
-                    type="text"
-                    className="input-field-contact"
-                  />
-                  <label htmlFor="zipcode" className="input-field-label">
-                    Zipcode
-                  </label>
-                </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="city"
-                    name="city"
-                    type="text"
-                    className="input-field-contact"
-                    required
-                  />
-                  <label htmlFor="city" className="input-field-label">
-                    City *
-                  </label>
-                </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="website"
-                    name="website"
-                    type="text"
-                    className="input-field-contact"
-                  />
-                  <label htmlFor="website" className="input-field-label">
-                    Website
-                  </label>
-                </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="email2"
-                    name="email"
-                    type="email"
-                    className="validate"
-                    required
+                      id="email2"
+                      name="email"
+                      type="email"
+                      className="validate"
+                      required
                   />
                   <label htmlFor="email2" id="email-input">
                     Email address *
                   </label>
                   <span
-                    className="helper-text"
-                    data-error="Please type in a valid email address!"
+                      className="helper-text"
+                      data-error="Please type in a valid email address!"
                   />
                 </div>
                 <div className="input-field col s12 m6">
                   <input
-                    id="job_title"
-                    name="job_position"
-                    type="text"
-                    className="input-field-contact"
+                      id="company"
+                      name="company"
+                      type="text"
+                      className="input-field-contact"
+                      required
                   />
-                  <label htmlFor="job_title" className="input-field-label">
-                    Job title (optional)
+                  <label htmlFor="company" className="input-field-label">
+                    Company *
                   </label>
                 </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="phone_number"
-                    name="phone"
-                    type="text"
-                    className="input-field-contact"
-                  />
-                  <label htmlFor="phone_number" className="input-field-label">
-                    Phone number (optional)
-                  </label>
-                </div>
+              </div>
+              <div className="contact-info-input-fields">
                 <DropDown
-                  category="Country"
-                  name="country"
-                  options={[
-                    'Germany',
-                    'France',
-                    'Italy',
-                    'England',
-                    'United States',
-                    'Netherlands',
-                    'Ghana',
-                  ]}
+                    category="Country"
+                    name="country"
+                    options={[
+                      'Germany',
+                      'France',
+                      'Italy',
+                      'England',
+                      'United States',
+                      'Netherlands',
+                      'Ghana',
+                    ]}
                 />
+
+
               </div>
             </div>
+
             <div className="contact-message-wrapper">
               <div className="contact-information-headline">your message</div>
               <div className="input-field col s12">
@@ -272,4 +209,4 @@ const ContactForm = () => {
   );
 };
 
-export default withRouter(ContactForm);
+export default ContactForm;
