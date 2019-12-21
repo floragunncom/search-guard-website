@@ -30,7 +30,6 @@ const ContactForm = () => {
       },
       body: JSON.stringify(data),
     });
-    console.log('got here!');
   };
 
   const postDataToCRM = async event => {

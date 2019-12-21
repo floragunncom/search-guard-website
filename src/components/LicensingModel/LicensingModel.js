@@ -73,7 +73,7 @@ const LicensingModel = ({ tableView, topButtons, headline }) => {
                   text="install now"
                   buttonStyle="ghost-link"
                   link="https://docs.search-guard.com/latest/demo-installer"
-                  color="#009688"
+                  color="#00C9B7"
                 />
               </div>
             </div>
@@ -139,7 +139,7 @@ const LicensingModel = ({ tableView, topButtons, headline }) => {
                   text="get a quote"
                   buttonStyle="ghost-link"
                   link="/contacts/"
-                  color="#009688"
+                  color="#007D71"
                 />
               </div>
             </div>

@@ -12,14 +12,17 @@
 }
 
 #blog-box__table {
-  display: table;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
   @media only screen and (max-width: $tabletBig) {
     display: inline-block;
+    margin-bottom: 0;
   }
 }
 #blog-box__table .blog-box__box {
   display: table-cell;
-  width: 33.333333%;
+  width: 32%;
   @media only screen and (max-width: $tabletBig) {
     width: 100%;
     display: inline-block;

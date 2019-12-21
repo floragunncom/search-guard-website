@@ -174,7 +174,7 @@ const BlogPostArticle = ({ posts, match }) => {
       <BlogBox headline="Other posts you may like" />
       <div className="col s12 l4" />
       <div className="col s12 blogpost-link">
-        <a href="/blog">
+        <a href="/blog/">
           <img
             src={infoArrowBack}
             className="blogpost-arrow-back"
