@@ -27,8 +27,6 @@ const options = {
       source: '/search-guard-provides-gdpr-compliance-for-elasticsearch',
       destination: '/gdpr-compliance-elasticsearch/',
     },
-    // { source: '/wp-content/**/:id', destination: '/product/' },
-    // { source: '/wp-includes/**/:id', destination: '/product/' },
     { source: '/no-nonsense-it', destination: '/company/' },
     { source: '/search-guard-customers', destination: '/company/' },
     { source: '/*.zip', destination: '/' },
@@ -43,7 +41,6 @@ const options = {
       source: '/elasticsearch-anonymous-authentication',
       destination: '/blog/',
     },
-    { source: '/elasticsearch-kibana-security', destination: '/blog/' },
     {
       source: '/elasticsearch-ldap-authentication-authorisation',
       destination: '/blog/',

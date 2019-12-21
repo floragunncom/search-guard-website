@@ -186,8 +186,15 @@ const Footer = ({ landing }) => {
             HDFS and the yellow elephant logo are trademarks of the Apache
             Software Foundation in the United States and/or other countries.
           </p>
-          <NavLink className="hidden" to="/marketing/">m</NavLink>
-          <NavLink className="hidden" to="/thanks/">t</NavLink>
+          <NavLink className="hidden" to="/security-for-elasticsearch/">
+            m
+          </NavLink>
+          <NavLink className="hidden" to="/elasticsearch-kibana-security/">
+            m
+          </NavLink>
+          <NavLink className="hidden" to="/thanks/">
+            t
+          </NavLink>
         </div>
       </div>
     </div>
