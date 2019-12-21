@@ -43,7 +43,16 @@ const Routes = () => {
         <Route exact path="/presentations/" component={Presentations} />
         <Route exact path="/datenschutz/" component={DataProtection} />
         <Route exact path="/education-program/" component={Education} />
-        <Route exact path="/marketing/" component={Marketing} />
+        <Route
+          exact
+          path="/security-for-elasticsearch/"
+          component={Marketing}
+        />
+        <Route
+          exact
+          path="/elasticsearch-kibana-security/"
+          component={Marketing}
+        />
         <Route exact path="/thanks/" component={Thanks} />
         <Route exact path="/security/" component={Security} />
         <Route exact path="/cve-advisory/" component={Advisory} />
