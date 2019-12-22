@@ -35,7 +35,7 @@ const BlogPost = ({ post }) => {
             {blogPost.author} || {blogPost.date}
           </div>
           <div className="blog-paragraph">
-            {blogPost.postContent.substring(0, infoTextLength)} ...
+            {blogPost.htmlDescription.substring(0, infoTextLength)} ...
           </div>
           <div className="blog-info-link">
             <span>read more</span>
