@@ -31,10 +31,10 @@ const Thanks = () => {
               <br />
               Kindly,
               <br />
-              Search Guard team
+              Your Search Guard team
             </div>
             <div className="thanks-button">
-              <Button text="go home" link="/" />
+              <Button text="home" link="/" />
             </div>
           </div>
         </div>
