@@ -4,32 +4,9 @@ import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-// import client from '../../components/Client/Client';
-// import WhitePaper from './WhitePaper';
 import Button from '../../components/Button/Button';
 
 const WhitePapers = () => {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     whitePapers: [],
-  //   };
-  // }
-
-  // componentDidMount() {
-  //   client.getEntries({ content_type: 'whitePaper' }).then((response) => {
-  //     this.setState({ whitePapers: response.items });
-  //   });
-  // };
-
-  // const whitePapers = this.state.whitePapers.map((whitePaper, index) => {
-  //   return (
-  //     <div className="col s12 whitepaper-column-wrapper">
-  //       <WhitePaper key={index} whitePaper={whitePaper} />
-  //     </div>
-  //   );
-  // });
-
   return (
     <div>
       <Helmet>
@@ -46,9 +23,6 @@ const WhitePapers = () => {
         headline="White Papers"
         text="How to use Search Guard to stay compliant with regulations like GDPR, HIPAA, PCI and SOX."
       />
-      {/* <div className="whitepaper-wrapper">
-          <div className="row">{whitePapers}</div>
-        </div> */}
       <div className="notfound-wrapper">
         <div className="row">
           <div className="col s12 m10 offset-m1 l8 offset-l2">

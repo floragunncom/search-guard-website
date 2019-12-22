@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import * as lunr from 'lunr';
-// import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-// import Pagination from '../../components/Pagination/Pagination';
 import Footer from '../../components/Footer/Footer';
 import BlogPost from './BlogPost';
 import SearchBlogPost from './SearchBlogPost';
-// import infoArrowBack from '../../images/info-arrow-back.svg';
 
 const Blog = ({ posts, history }) => {
   const [searchResultsPresented, setSearchResultsPresented] = useState(false);
@@ -18,21 +15,10 @@ const Blog = ({ posts, history }) => {
   );
   const [defaultResultsPresented, setDefaultResultsPresented] = useState(true);
   const [searchResultPosts, setSearchResultPosts] = useState([]);
-  // const [categoryPosts, setCategoryPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [postsPerPage] = useState(10);
-
-  // const indexOfLastPost = currentPage * postsPerPage;
-  // const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  // const currentPosts =
-  //   posts !== undefined ? posts.slice(indexOfFirstPost, indexOfLastPost) : null;
-  // const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const documentsGeneral = [];
-  // const documentsTags = [];
-  // const fetchTags = {};
 
   if (posts !== undefined) {
     posts.map(post => {
@@ -42,15 +28,6 @@ const Blog = ({ posts, history }) => {
         title: post.fields.title,
         content: post.fields.postContent,
       });
-
-      // documentsTags.push({
-      //   id: post.sys.id,
-      //   tags: post.fields.tags,
-      // });
-
-      // post.fields.tags.map(tag => {
-      //   fetchTags[tag] ? (fetchTags[tag] += 1) : (fetchTags[tag] = 1);
-      // });
     });
   }
 
@@ -68,28 +45,11 @@ const Blog = ({ posts, history }) => {
     });
   });
 
-  // const searchIndexTags = lunr(function() {
-  //   this.ref('id');
-  //   this.field('tags');
-
-  //   this.pipeline.remove(lunr.stemmer);
-  //   this.searchPipeline.remove(lunr.stemmer);
-
-  //   documentsTags.forEach(doc => {
-  //     this.add(doc);
-  //   });
-  // });
-
   const onClearSearch = () => {
     setSearchResultsPresented(false);
     setDefaultResultsPresented(true);
     setSearchTerm('');
   };
-
-  // const onBackToBlogClick = () => {
-  //   setCategoryResultsPresented(false);
-  //   setDefaultResultsPresented(true);
-  // };
 
   function onSearchTermChange(query) {
     if (history.location.pathname !== '/blog') {
@@ -108,43 +68,6 @@ const Blog = ({ posts, history }) => {
     });
     setSearchResultPosts(createSearchResultPosts);
   }
-
-  // function onCategoryClick(tag) {
-  //   onClearSearch();
-  //   setCategoryResultsPresented(true);
-  //   setDefaultResultsPresented(false);
-  //   let fetchCategoryPosts = [];
-  //   const categorySearchResult = searchIndexTags.search(tag);
-  //   categorySearchResult.map(res => {
-  //     fetchCategoryPosts.push(posts.find(post => post.sys.id === res.ref));
-  //   });
-  //   setCategoryPosts(fetchCategoryPosts);
-  // }
-
-  // const renderTags = (
-  //   <div className="row">
-  //     <div className="blog-tags-headline">tags</div>
-  //     <div className="blog-tags-wrapper">
-  //       {Object.keys(fetchTags).map(tag => {
-  //         const tagUrl = tag
-  //           .split(' ')
-  //           .join('-')
-  //           .toLowerCase();
-  //         if (fetchTags[tag] > 3) {
-  //           return (
-  //             <Link
-  //               to={`/category/${tagUrl}`}
-  //               className="blog-tags-tag"
-  //               onClick={() => onCategoryClick(tag)}
-  //             >
-  //               {tag}
-  //             </Link>
-  //           );
-  //         }
-  //       })}
-  //     </div>
-  //   </div>
-  // );
 
   let renderSearchResultPosts;
   if (
@@ -179,33 +102,6 @@ const Blog = ({ posts, history }) => {
     }
   }
 
-  // let renderCategoryPosts;
-  // if (categoryResultsPresented) {
-  //   renderCategoryPosts = (
-  //     <div style={{ display: 'flex', flexDirection: 'column' }}>
-  //       <div>
-  //         {categoryPosts.map(post => {
-  //           return (
-  //             <div className="col s12 l6 blogpost-column-wrapper">
-  //               <BlogPost key={post.sys.id} post={post} intro />
-  //             </div>
-  //           );
-  //         })}
-  //       </div>
-  //       <div className="col s12 blogpost-link">
-  //         <Link to="/blog" onClick={onBackToBlogClick}>
-  //           <img
-  //             src={infoArrowBack}
-  //             className="blogpost-arrow-back"
-  //             alt="arrow icon"
-  //           />
-  //           <span>back to blog</span>
-  //         </Link>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
   let renderPosts;
   if (
     defaultResultsPresented &&
@@ -226,11 +122,6 @@ const Blog = ({ posts, history }) => {
             );
           })}
         </div>
-        {/* <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
-          paginate={paginate}
-        /> */}
       </div>
     );
   }
@@ -284,11 +175,9 @@ const Blog = ({ posts, history }) => {
                   ) : null}
                 </div>
               </div>
-              {/* {renderTags} */}
             </div>
           </div>
           {renderPosts}
-          {/* {renderCategoryPosts} */}
           {renderSearchResultPosts}
         </div>
       </div>
