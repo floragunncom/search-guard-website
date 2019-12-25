@@ -42,7 +42,7 @@ const Services = ({ landing }) => {
           <div className="security-detail-icon">
             <img src={key} alt="key icon" />
           </div>
-          <div className="security-detail-title">Authorisation</div>
+          <div className="security-detail-title">Authorization</div>
         </div>
         <div className="col s6 m3 security-detail-light-mobile">
           <div className="security-detail-icon">

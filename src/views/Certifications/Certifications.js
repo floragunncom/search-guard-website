@@ -170,8 +170,8 @@ const Certifications = () => {
         })}
       </div>
       <Cta
-        headline="Free 60-day trial"
-        text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
+        headline="60-day PoC License"
+        text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day PoC trial, completely free of charge."
         ctaText="start free trial"
         icon={ctaIcon}
       />

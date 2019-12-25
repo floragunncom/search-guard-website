@@ -15,11 +15,10 @@ const Labels = () => {
           <div className="securityinfo-text-wrapper">
             <div className="securityinfo-headline">Certified</div>
             <div className="securityinfo-content">
-              Search Guard puts “Security First”, your data is too valuable and
-              sensitive to take any shortcut. Our code is being verified and
-              certified from some of the industry leaders, like CA Veracode or
-              NCC, which empowers us to demonstrate our commitment to creating
-              truely secure software.
+              Search Guard puts “Security First”. Your data is too valuable to take any security shortcut,
+              which is why our code is rigorously tested by industry leaders, like CA Veracode and NCC.
+              We have been committed to creating truly secure software for elasticsearch since 2013
+              when no security solution existed for the Elastic Stack.
             </div>
           </div>
         </div>
@@ -30,9 +29,8 @@ const Labels = () => {
           <div className="securityinfo-text-wrapper">
             <div className="securityinfo-headline">Priority support</div>
             <div className="securityinfo-content">
-              Besides our community forum, where our technical team is very
-              active, helping to solve any issue. We also offer first hand
-              support to our costumers with a 48h response time, guaranteed.
+              Besides our active community forum we also offer priority support to our costumers with a 48h response time, guaranteed.
+              Custom support plans, including follow-the-sun, and Elastic Stack support plans are also available
             </div>
           </div>
         </div>
@@ -43,9 +41,8 @@ const Labels = () => {
           <div className="securityinfo-text-wrapper">
             <div className="securityinfo-headline">Trusted by</div>
             <div className="securityinfo-content">
-              A wide variety of enterprises, from Fortune 500 companies to the
-              most innovative start-ups around the world, are trusting in Search
-              Guard to secure their environments, and for good reason.
+              We are used in production environments by Fortune 500, federal sector, and innovative start-ups.
+              Our clients span all across the world.
             </div>
           </div>
         </div>

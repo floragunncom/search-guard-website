@@ -36,8 +36,8 @@ const HomePage = () => {
         icon={multilevel}
         iconPosition="left"
         backgroundColor="dark"
-        headline="Multilevel security"
-        text="Protect your sensitive data on all levels by using role-based access control to your clusters, indices, documents and fields. Search Guard covers it all, from top to bottom, and adds encryption, authentication, authorization, audit logging, multi tenancy and compliance features to Elasticsearch and Kibana."
+        headline="Multilayer security"
+        text="Protect your most sensitive data on all levels using role-based access control (RBAC) on your clusters, indices, fields and documents. From top to bottom Search Guard covers it all adding encryption, authentication, authorization, audit logging, multi tenancy and extended features to meet your compliance needs."
       />
       <TileSimple
         icon={lock}
@@ -51,7 +51,7 @@ const HomePage = () => {
         iconPosition="left"
         backgroundColor="dark"
         headline="Elastic Stack"
-        text="Search Guard gives you full security control over your entire Elastisearch environment. Protect the complete Elastic stack, including Kibana, logstash and beats."
+        text="Search Guard gives you full control over your entire Elastisearch environment. Protect all components of the Elastic stack, including Kibana, Logstash and Beats."
       />
       <TrustedBy />
       <Labels />
@@ -62,7 +62,7 @@ const HomePage = () => {
         tableView={false}
       />
       <Cta
-        headline="Free 60-day trial"
+        headline="60-day PoC License"
         text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
         ctaText="start free trial"
         icon={ctaIcon}

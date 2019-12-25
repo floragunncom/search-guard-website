@@ -20,9 +20,8 @@ const Hero = () => {
                   Security and Alerting for Elasticsearch
                 </div>
                 <div className="hero-text-wrapper-text">
-                  Search Guard is an Enterprise Security and Alerting Suite that
-                  encrypts and protects your data and data flows in the entire
-                  Elastic Stack, including Kibana, Logstash and Beats.
+                  Search Guard is a security and alerting plug-in that encrypts and protects your data
+                  and data flows in the entire Elastic Stack designed for the modern enterprise.
                 </div>
               </div>
               <div className="hero-button-wrapper">
