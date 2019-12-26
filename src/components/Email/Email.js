@@ -4,16 +4,16 @@ import Button from '../Button/Button';
 
 const Email = () => {
   const [emailSendStatus, setEmailSendStatus] = useState(false);
-  // componentDidMount() {
-  //   M.AutoInit();
-  // }
 
   function onSubscribeClick(event) {
     setEmailSendStatus(true);
     event.preventDefault();
+    Event('NEWSLETTER', 'Newsletter Subscription required', 'PREFOOTER');
     const data = {};
     const formElements = Array.from(event.target);
-    formElements.map(input => (data[input.name] = input.value));
+    formElements.forEach(input => {
+      data[input.name] = input.value;
+    });
   }
 
   return (

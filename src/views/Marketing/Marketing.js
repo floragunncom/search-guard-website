@@ -2,18 +2,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import HeroMarketing from '../../components/HeroMarketing/HeroMarketing';
 import NavBar from '../../components/NavBar/NavBar';
-import Certified from '../../components/Certified/Certified';
-import References from '../../components/References/References';
 import Cta from '../../components/Cta/Cta';
-import Services from '../../components/Services/Services';
-import SEOSection from '../../components/SEOSection/SEOSection';
 import Footer from '../../components/Footer/Footer';
-import LandingUSP from '../../components/LandingUSP/LandingUSP';
-import LicensingInfo from '../../components/LicensingInfo/LicensingInfo';
 import shield from '../../images/icon-wheel-shield.svg';
 import ContactFormSuperSlim from '../../components/ContactFormSuperSlim';
-import TrustedBy from "../../components/TrustedBy/TrustedBy";
-import LicensingModel from "../../components/LicensingModel/LicensingModel";
+import TrustedBy from '../../components/TrustedBy/TrustedBy';
+import LicensingModel from '../../components/LicensingModel/LicensingModel';
 
 const Marketing = () => {
   return (
