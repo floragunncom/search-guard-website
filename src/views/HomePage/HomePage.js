@@ -19,12 +19,8 @@ import ctaIcon from '../../images/icon-sg.svg';
 
 const HomePage = () => {
   useEffect(() => {
-    const initTracking = () => {
-      initGA();
-      PageView();
-      console.log('GA', initGA(), PageView());
-    };
-    initTracking();
+    initGA();
+    PageView();
   }, []);
 
   return (
