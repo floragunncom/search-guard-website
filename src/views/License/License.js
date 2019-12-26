@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { v4 } from 'uuid';
+import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
@@ -15,6 +16,11 @@ import iconBook from '../../images/icon-book.svg';
 import iconWheels from '../../images/icon-wheels.svg';
 
 const License = () => {
+  useEffect(() => {
+    initGA();
+    PageView();
+  }, []);
+
   const anchors = [
     { id: v4(), anchor: 'standard', name: 'standard editions' },
     { id: v4(), anchor: 'feature', name: 'feature breakdown' },

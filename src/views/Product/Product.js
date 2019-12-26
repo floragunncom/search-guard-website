@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { v4 } from 'uuid';
+import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
@@ -16,6 +17,11 @@ import worldLock from '../../images/world-lock.svg';
 import certificate from '../../images/certificate-big.svg';
 
 const Product = () => {
+  useEffect(() => {
+    initGA();
+    PageView();
+  }, []);
+
   const anchors = [
     { id: v4(), anchor: 'concept', name: 'what it is' },
     { id: v4(), anchor: 'integrators', name: 'integrators' },
