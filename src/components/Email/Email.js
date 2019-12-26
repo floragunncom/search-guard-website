@@ -8,7 +8,6 @@ const Email = () => {
   function onSubscribeClick(event) {
     setEmailSendStatus(true);
     event.preventDefault();
-    Event('NEWSLETTER', 'Newsletter Subscription required', 'PREFOOTER');
     const data = {};
     const formElements = Array.from(event.target);
     formElements.forEach(input => {
