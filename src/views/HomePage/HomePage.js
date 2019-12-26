@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { initGA, PageView } from '../../components/Tracking/Tracking';
 import NavBar from '../../components/NavBar/NavBar';
 import Hero from '../../components/Hero/Hero';
 import TileSimple from '../../components/TileSimple/TileSimple';
@@ -17,6 +18,15 @@ import disk from '../../images/disk.svg';
 import ctaIcon from '../../images/icon-sg.svg';
 
 const HomePage = () => {
+  useEffect(() => {
+    const initTracking = () => {
+      initGA();
+      PageView();
+      console.log('GA', initGA(), PageView());
+    };
+    initTracking();
+  }, []);
+
   return (
     <div>
       <Helmet>
