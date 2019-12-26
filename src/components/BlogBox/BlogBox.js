@@ -33,7 +33,7 @@ const BlogBox = ({ overview, headline }) => {
               textLength(post.fields.title, 45),
             )} ...`
           : post.fields.title;
-      const fittedContent = `${post.fields.postContent.substring(
+      const fittedContent = `${post.fields.htmlDescription.substring(
         0,
         textLength(post.fields.postContent, 160),
       )} ...`;

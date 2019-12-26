@@ -95,7 +95,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   Integrates with major security standards e.g. Active Directory
                 </div>
                 <div className="licensing-editions-text">
-                  Control access to data to document and field level
+                  Field and Document-level Security and access control
                 </div>
                 <div className="licensing-editions-text">
                   Professional management API and Kibana multitenancy

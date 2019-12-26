@@ -116,6 +116,22 @@ const ContactForm = () => {
                 </div>
                 <div className="input-field col s12 m6">
                   <input
+                      id="email2"
+                      name="email"
+                      type="email"
+                      className="validate"
+                      required
+                  />
+                  <label htmlFor="email2" id="email-input">
+                    Email address *
+                  </label>
+                  <span
+                      className="helper-text"
+                      data-error="Please type in a valid email address!"
+                  />
+                </div>
+                <div className="input-field col s12 m6">
+                  <input
                     id="company"
                     name="company"
                     type="text"
@@ -126,67 +142,8 @@ const ContactForm = () => {
                     Company *
                   </label>
                 </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="address"
-                    name="address"
-                    type="text"
-                    className="input-field-contact"
-                  />
-                  <label htmlFor="address" className="input-field-label">
-                    Address
-                  </label>
-                </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="zipcode"
-                    name="zip"
-                    type="text"
-                    className="input-field-contact"
-                  />
-                  <label htmlFor="zipcode" className="input-field-label">
-                    Zipcode
-                  </label>
-                </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="city"
-                    name="city"
-                    type="text"
-                    className="input-field-contact"
-                    required
-                  />
-                  <label htmlFor="city" className="input-field-label">
-                    City *
-                  </label>
-                </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="website"
-                    name="website"
-                    type="text"
-                    className="input-field-contact"
-                  />
-                  <label htmlFor="website" className="input-field-label">
-                    Website
-                  </label>
-                </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="email2"
-                    name="email"
-                    type="email"
-                    className="validate"
-                    required
-                  />
-                  <label htmlFor="email2" id="email-input">
-                    Email address *
-                  </label>
-                  <span
-                    className="helper-text"
-                    data-error="Please type in a valid email address!"
-                  />
-                </div>
+              </div>
+              <div className="contact-info-input-fields">
                 <div className="input-field col s12 m6">
                   <input
                     id="job_title"
@@ -213,13 +170,136 @@ const ContactForm = () => {
                   category="Country"
                   name="country"
                   options={[
-                    'Germany',
-                    'France',
-                    'Italy',
-                    'England',
                     'United States',
-                    'Netherlands',
+                    'Argentina',
+                    'Australia',
+                    'Austria',
+                    'Bahrain',
+                    'Bangladesh',
+                    'Barbados',
+                    'Belarus',
+                    'Belgium',
+                    'Belize',
+                    'Benin',
+                    'Bermuda',
+                    'Bolivia',
+                    'Bosnia and Herzegovina',
+                    'Botswana',
+                    'Brazil',
+                    'Bulgaria',
+                    'Burkina Faso',
+                    'Burundi',
+                    'Cambodia',
+                    'Cameroon',
+                    'Canada',
+                    'Cape Verde',
+                    'Cayman Islands',
+                    'Central African Republic',
+                    'Chile',
+                    'China',
+                    'Colombia',
+                    'Congo',
+                    'Costa Rica',
+                    'Croatia',
+                    'Cuba',
+                    'Cyprus',
+                    'Czech Republic',
+                    'Denmark',
+                    'Dominican Republic',
+                    'Ecuador',
+                    'Egypt',
+                    'Estonia',
+                    'Faroe Islands',
+                    'Fiji',
+                    'Finland',
+                    'France',
+                    'Gabon',
+                    'Gambia',
+                    'Georgia',
+                    'Germany',
                     'Ghana',
+                    'Gibraltar',
+                    'Greece',
+                    'Greenland',
+                    'Grenada',
+                    'Honduras',
+                    'Hong Kong',
+                    'Hungary',
+                    'Iceland',
+                    'India',
+                    'Indonesia',
+                    'Iran',
+                    'Iraq',
+                    'Ireland',
+                    'Isle of Man',
+                    'Israel',
+                    'Italy',
+                    'Jamaica',
+                    'Japan',
+                    'Jordan',
+                    'Kazakhstan',
+                    'Kuwait',
+                    'Kyrgyzstan',
+                    'Latvia',
+                    'Liechtenstein',
+                    'Lithuania',
+                    'Luxembourg',
+                    'Macedonia',
+                    'Malaysia',
+                    'Maldives',
+                    'Malta',
+                    'Mexico',
+                    'Moldova',
+                    'Monaco',
+                    'Mongolia',
+                    'Montenegro',
+                    'Montserrat',
+                    'Morocco',
+                    'Myanmar',
+                    'Nepal',
+                    'Netherlands',
+                    'New Zealand',
+                    'Norway',
+                    'Oman',
+                    'Pakistan',
+                    'Palestine',
+                    'Panama',
+                    'Paraguay',
+                    'Peru',
+                    'Philippines',
+                    'Poland',
+                    'Portugal',
+                    'Puerto Rico',
+                    'Qatar',
+                    'Romania',
+                    'Russian Federation',
+                    'San Marino',
+                    'Saudi Arabia',
+                    'Serbia',
+                    'Singapore',
+                    'Slovakia',
+                    'Slovenia',
+                    'Solomon Islands',
+                    'South Africa',
+                    'South Korea',
+                    'Spain',
+                    'Sri Lanka',
+                    'Sweden',
+                    'Switzerland',
+                    'Syrian Arab Republic',
+                    'Taiwan',
+                    'Tajikistan',
+                    'Thailand',
+                    'Tunisia',
+                    'Turkey',
+                    'Turkmenistan',
+                    'Ukraine',
+                    'United Arab Emirates',
+                    'United Kingdom',
+                    'Uruguay',
+                    'Uzbekistan',
+                    'Venezuela',
+                    'Viet Nam',
                   ]}
                 />
               </div>
