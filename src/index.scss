@@ -1,6 +1,11 @@
 @import '../src/styles/Colors.scss';
 @import '../src/styles/Breakpoints.scss';
 
+::selection {
+  background-color: $turkisActive;
+  color: $white;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -62,7 +67,6 @@ li a {
   max-width: 1180px;
   margin: 0 auto;
   display: inline-block;
-  // flex-wrap: wrap;
 
   @include clearfix;
 
@@ -70,47 +74,3 @@ li a {
     float: left;
   }
 }
-  
-// .col-1-of-3 {
-//   width: calc(100% / 3);
-//   display: inline-block;
-//   @media only screen and (max-width: $tabletBig) {
-//     width: 100%;
-//   }
-// }
-
-// * {
-//   background-color: rgba(255, 0, 0, .2);
-// }
-
-// * * {
-//   background-color: rgba(0, 255, 0, .2);
-// }
-
-// * * * {
-//   background-color: rgba(0, 0, 255, .2);
-// }
-
-// * * * * {
-//   background-color: rgba(255, 0, 255, .2);
-// }
-
-// * * * * * {
-//   background-color: rgba(0, 255, 255, .2);
-// }
-
-// * * * * * * {
-//   background-color: rgba(255, 255, 0, .2);
-// }
-
-// * * * * * * * {
-//   background-color: rgba(255, 0, 0, .2);
-// }
-
-// * * * * * * * * {
-//   background-color: rgba(0, 255, 0, .2);
-// }
-
-// * * * * * * * * * {
-//   background-color: rgba(0, 0, 255, .2);
-// }

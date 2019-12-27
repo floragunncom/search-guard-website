@@ -1,24 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { initGA, Event, PageView } from '../Tracking/Tracking';
+import React, { useState } from 'react';
 import './Email.scss';
 import Button from '../Button/Button';
 
 const Email = () => {
-  useEffect(() => {
-    initGA();
-    PageView();
-  }, []);
-
   const [emailSendStatus, setEmailSendStatus] = useState(false);
 
   function onSubscribeClick(event) {
-    Event('Email', 'Click on Newsletter Subscription', 'any page');
-    console.log(
-      'GA',
-      initGA(),
-      PageView(),
-      Event('Email', 'Click on Newsletter Subscription', 'any page'),
-    );
     setEmailSendStatus(true);
     event.preventDefault();
     const data = {};
