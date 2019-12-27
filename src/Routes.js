@@ -21,6 +21,7 @@ import Education from './views/Education/Education';
 import TlsGenerator from './views/TlsGenerator/TlsGenerator';
 import NotFound from './views/NotFound/NotFound';
 import Thanks from './views/Thanks/Thanks';
+import CertificatesOnTheWay from './views/CertificatesOnTheWay/CertificatesOnTheWay';
 import Certifications from './views/Certifications/Certifications';
 import Marketing from './views/Marketing/Marketing';
 import { BlogContext } from './contexts/BlogContext';
@@ -54,6 +55,7 @@ const Routes = () => {
           component={Marketing}
         />
         <Route exact path="/thanks/" component={Thanks} />
+        <Route exact path="/certificates-on-the-way/" component={CertificatesOnTheWay} />
         <Route exact path="/security/" component={Security} />
         <Route exact path="/cve-advisory/" component={Advisory} />
         <Route exact path="/disclosure-policy/" component={Disclosure} />
