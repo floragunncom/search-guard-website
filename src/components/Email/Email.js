@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Event } from '../Tracking/Tracking';
 import './Email.scss';
 import Button from '../Button/Button';
 
@@ -6,6 +7,7 @@ const Email = () => {
   const [emailSendStatus, setEmailSendStatus] = useState(false);
 
   function onSubscribeClick(event) {
+    Event('Email', 'Click on Newsletter Subscription', 'any page');
     setEmailSendStatus(true);
     event.preventDefault();
     const data = {};
