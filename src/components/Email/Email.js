@@ -13,6 +13,12 @@ const Email = () => {
 
   function onSubscribeClick(event) {
     Event('Email', 'Click on Newsletter Subscription', 'any page');
+    console.log(
+      'GA',
+      initGA(),
+      PageView(),
+      Event('Email', 'Click on Newsletter Subscription', 'any page'),
+    );
     setEmailSendStatus(true);
     event.preventDefault();
     const data = {};
