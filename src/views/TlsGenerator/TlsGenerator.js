@@ -26,7 +26,7 @@ const TlsGenerator = () => {
     // console.log(JSON.stringify(data));
     // fetch('http://localhost:3000/', {
     await fetch(
-      'https://vtup10xka0.execute-api.eu-central-1.amazonaws.com/dev/',
+      'https://eq7lfmuqm7.execute-api.eu-central-1.amazonaws.com/dev/',
       {
         method: 'POST',
         headers: {
