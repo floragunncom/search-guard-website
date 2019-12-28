@@ -272,6 +272,7 @@ const Faqs = () => {
   return (
     <div>
       <Helmet>
+        <html lang="en" itemScope itemType="https://schema.org/FAQPage" />
         <meta charSet="utf-8" />
         <title>
           Frequently asked questions | Search Guard | Security for Elasticsearch
@@ -313,13 +314,16 @@ const Faqs = () => {
                 </div>
                 {category.faq.map(faq => {
                   return (
-                    <div id={`${faq.anchor}`}>
+                    <div id={`${faq.anchor}`} itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
                       <div
                         className={`faq-answer-headline ${faq.paddingClass}`}
+                        itemProp="name"
                       >
                         {faq.question}
                       </div>
-                      <div className="faq-answer-text">{faq.answer}</div>
+                        <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
+                            <div className="faq-answer-text" itemprop="text">{faq.answer}</div>
+                        </div>
                     </div>
                   );
                 })}
