@@ -24,7 +24,7 @@ import iconDownload from '../../images/icon-download.svg';
 const Resource = () => {
   const anchors = [
     { id: v4(), anchor: 'faq', name: 'faq' },
-    { id: v4(), anchor: 'github', name: 'github' },
+    { id: v4(), anchor: 'github', name: 'gitlab' },
     { id: v4(), anchor: 'github', name: 'tls certificates' },
     { id: v4(), anchor: 'blog', name: 'blog' },
     { id: v4(), anchor: 'whitePapers', name: 'Presentations & white papers' },
