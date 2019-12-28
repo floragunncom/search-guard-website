@@ -26,7 +26,7 @@ const TlsGenerator = () => {
     // Log what our lambda function will receive
     //console.log(JSON.stringify(data));
     // fetch('http://localhost:3000/', {
-    fetch('https://vtup10xka0.execute-api.eu-central-1.amazonaws.com/dev/', {
+    fetch('https://eq7lfmuqm7.execute-api.eu-central-1.amazonaws.com/dev/', {
       method: 'POST',
       headers: {
         accept: 'application/json; charset=utf-8',
@@ -38,7 +38,7 @@ const TlsGenerator = () => {
 
   const postDataToCI = async event => {
     await handleSubmit(event);
-    //history.push('/certificates-on-the-way/');
+    history.push('/certificates-on-the-way/');
   };
 
   return (
