@@ -33,7 +33,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && react-snap-sitemap --base-url='https://search-guard.com/'",
+    "build": "react-scripts build",
     "postbuild": "react-snap",
     "clean": "rm -rf build/*",
     "start:dev": "node config/webpack-dev-server.js",
