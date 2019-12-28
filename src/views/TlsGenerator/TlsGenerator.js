@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory, withRouter } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
@@ -8,35 +9,36 @@ import DropDown from '../../components/DropDown/DropDown';
 import './TlsGenerator.scss';
 
 const TlsGenerator = () => {
+  const history = useHistory();
   const [newsletterValue, setNewsletterValue] = useState(false);
 
   function changeNewsletterValue() {
     setNewsletterValue(!newsletterValue);
   }
 
-  const handleSubmit = async event => {
+  const handleSubmit = event => {
     event.preventDefault();
     const data = {};
     const formElements = Array.from(event.target);
     formElements.forEach(input => {
       data[input.name] = input.value;
     });
-
     // Log what our lambda function will receive
-    // console.log(JSON.stringify(data));
+    //console.log(JSON.stringify(data));
     // fetch('http://localhost:3000/', {
-    await fetch(
-      'https://eq7lfmuqm7.execute-api.eu-central-1.amazonaws.com/dev/',
-      {
-        method: 'POST',
-        headers: {
-          accept: 'application/json; charset=utf-8',
-          'content-type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify(data),
+    fetch('https://eq7lfmuqm7.execute-api.eu-central-1.amazonaws.com/dev/', {
+      method: 'POST',
+      headers: {
+        accept: 'application/json; charset=utf-8',
+        'content-type': 'application/json; charset=UTF-8',
       },
-    );
-    window.location.href = '/thanks/';
+      body: JSON.stringify(data),
+    });
+  };
+
+  const postDataToCI = async event => {
+    await handleSubmit(event);
+    history.push('/certificates-on-the-way/');
   };
 
   return (
@@ -110,7 +112,7 @@ const TlsGenerator = () => {
               Fields marked with an (*) are required
             </div>
             <div className="tls-info-wrapper">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={postDataToCI}>
                 <div className="contact-info-wrapper">
                   <div className="contact-information-headline">
                     contact information
@@ -151,13 +153,136 @@ const TlsGenerator = () => {
                       category="Country"
                       name="country"
                       options={[
-                        'Germany',
-                        'France',
-                        'Italy',
-                        'England',
                         'United States',
-                        'Netherlands',
+                        'Argentina',
+                        'Australia',
+                        'Austria',
+                        'Bahrain',
+                        'Bangladesh',
+                        'Barbados',
+                        'Belarus',
+                        'Belgium',
+                        'Belize',
+                        'Benin',
+                        'Bermuda',
+                        'Bolivia',
+                        'Bosnia and Herzegovina',
+                        'Botswana',
+                        'Brazil',
+                        'Bulgaria',
+                        'Burkina Faso',
+                        'Burundi',
+                        'Cambodia',
+                        'Cameroon',
+                        'Canada',
+                        'Cape Verde',
+                        'Cayman Islands',
+                        'Central African Republic',
+                        'Chile',
+                        'China',
+                        'Colombia',
+                        'Congo',
+                        'Costa Rica',
+                        'Croatia',
+                        'Cuba',
+                        'Cyprus',
+                        'Czech Republic',
+                        'Denmark',
+                        'Dominican Republic',
+                        'Ecuador',
+                        'Egypt',
+                        'Estonia',
+                        'Faroe Islands',
+                        'Fiji',
+                        'Finland',
+                        'France',
+                        'Gabon',
+                        'Gambia',
+                        'Georgia',
+                        'Germany',
                         'Ghana',
+                        'Gibraltar',
+                        'Greece',
+                        'Greenland',
+                        'Grenada',
+                        'Honduras',
+                        'Hong Kong',
+                        'Hungary',
+                        'Iceland',
+                        'India',
+                        'Indonesia',
+                        'Iran',
+                        'Iraq',
+                        'Ireland',
+                        'Isle of Man',
+                        'Israel',
+                        'Italy',
+                        'Jamaica',
+                        'Japan',
+                        'Jordan',
+                        'Kazakhstan',
+                        'Kuwait',
+                        'Kyrgyzstan',
+                        'Latvia',
+                        'Liechtenstein',
+                        'Lithuania',
+                        'Luxembourg',
+                        'Macedonia',
+                        'Malaysia',
+                        'Maldives',
+                        'Malta',
+                        'Mexico',
+                        'Moldova',
+                        'Monaco',
+                        'Mongolia',
+                        'Montenegro',
+                        'Montserrat',
+                        'Morocco',
+                        'Myanmar',
+                        'Nepal',
+                        'Netherlands',
+                        'New Zealand',
+                        'Norway',
+                        'Oman',
+                        'Pakistan',
+                        'Palestine',
+                        'Panama',
+                        'Paraguay',
+                        'Peru',
+                        'Philippines',
+                        'Poland',
+                        'Portugal',
+                        'Puerto Rico',
+                        'Qatar',
+                        'Romania',
+                        'Russian Federation',
+                        'San Marino',
+                        'Saudi Arabia',
+                        'Serbia',
+                        'Singapore',
+                        'Slovakia',
+                        'Slovenia',
+                        'Solomon Islands',
+                        'South Africa',
+                        'South Korea',
+                        'Spain',
+                        'Sri Lanka',
+                        'Sweden',
+                        'Switzerland',
+                        'Syrian Arab Republic',
+                        'Taiwan',
+                        'Tajikistan',
+                        'Thailand',
+                        'Tunisia',
+                        'Turkey',
+                        'Turkmenistan',
+                        'Ukraine',
+                        'United Arab Emirates',
+                        'United Kingdom',
+                        'Uruguay',
+                        'Uzbekistan',
+                        'Venezuela',
+                        'Viet Nam',
                       ]}
                     />
                   </div>

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Search Guard",
+  "name": "Search Guard - Security and Alerting for Elasticsearch",
   "icons": [
     {
       "src": "favicon.ico",
