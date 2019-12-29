@@ -24,7 +24,7 @@ const TlsGenerator = () => {
       data[input.name] = input.value;
     });
     // Log what our lambda function will receive
-    //console.log(JSON.stringify(data));
+    // console.log(JSON.stringify(data));
     // fetch('http://localhost:3000/', {
     fetch('https://eq7lfmuqm7.execute-api.eu-central-1.amazonaws.com/dev/', {
       method: 'POST',

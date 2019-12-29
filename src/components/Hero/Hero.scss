@@ -4,7 +4,7 @@
 .hero-wrapper {
   background-color: $darkBlue;
   width: 100%;
-  background-image: url('../../images/hero-animation.svg'), url('../../images/hero-background.svg');
+  background-image: url('../../images/hero-static.svg'), url('../../images/hero-background.svg');
   background-size: 100% 100%;
   background-repeat: no-repeat, no-repeat;
   @media only screen and (max-width: $mobile) {
