@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import sgLogo from '../../images/sg_dlic_small.png';
 import './Footer.scss';
 
 const Footer = ({ landing }) => {
@@ -177,7 +178,7 @@ const Footer = ({ landing }) => {
           className="footer-text"
           style={landing ? { paddingTop: '64px' } : null}
         >
-          <p>© 2018 floragunn GmbH - All Rights Reserved</p>
+          <p>© 2019 floragunn GmbH - All Rights Reserved</p>
           <p>
             Search Guard is a trademark of floragunn GmbH, registered in the
             U.S. and in other countries. Elasticsearch, Kibana, Logstash, and
@@ -196,6 +197,14 @@ const Footer = ({ landing }) => {
             t
           </NavLink>
         </div>
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "url": "https://search-guard.com",
+            "logo": "${sgLogo}"
+          }
+        `}</script>
       </div>
     </div>
   );
