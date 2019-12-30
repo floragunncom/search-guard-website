@@ -203,6 +203,7 @@ const BlogPostArticle = ({ posts, match }) => {
                "name": "${postContent.fields.author}"
             },
             "datePublished": "${postContent.fields.date}",
+            "dateModified": "${postContent.sys.updatedAt}",
             "publisher": {
               "@type": "Organization",
               "name": "Search Guard",
