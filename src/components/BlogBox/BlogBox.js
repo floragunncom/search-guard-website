@@ -47,7 +47,7 @@ const BlogBox = ({ overview, headline }) => {
           <div className="blog-box__box-image-container">
             <img
               src={post.fields.postImage.fields.file.url}
-              alt="Blog Teaser"
+              alt={post.fields.postImage.fields.title}
               className="blog-box__box-image"
             />
           </div>
