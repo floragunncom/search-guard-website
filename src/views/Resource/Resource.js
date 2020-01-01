@@ -74,7 +74,7 @@ const Resource = () => {
           headlineRight="TLS Certificate Generator"
           textLeft="Access, download and inspect all our code on Gitlab, report any issue you find or request a feature."
           textRight="If you need TLS certificates for testing or a PoC, our generator web service is here to ease the pain."
-          linkLeft="https://git.floragunn.com/"
+          linkLeft="https://git.floragunn.com/public/"
           linkRight="/tls-certificate-generator/"
           buttonTargetLeft="_blank"
         />

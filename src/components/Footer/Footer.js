@@ -85,7 +85,7 @@ const Footer = ({ landing }) => {
                 </div>
                 <div className="footer-list-item">
                   <a
-                    href="https://git.floragunn.com/"
+                    href="https://git.floragunn.com/public/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="footer-links"
