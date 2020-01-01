@@ -150,7 +150,7 @@ const Blog = ({ posts, history }) => {
                   className="input-field col m8 offset-m2 s12 center"
                   style={{ display: 'flex', alignItems: 'center' }}
                 >
-                  <i className="material-icons prefix">search</i>
+                  {/*<i className="material-icons prefix">search</i>*/}
                   <input
                     id="search"
                     type="text"
