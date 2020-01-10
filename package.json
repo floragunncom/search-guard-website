@@ -34,7 +34,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "react-snap && react-snap-sitemap --base-url='https://search-guard.com/'",
+    "sitemap": "./scripts/sitemap.js",
+    "postbuild": "react-snap && ./scripts/sitemap.js -- --base-url='https://search-guard.com/'",
     "clean": "rm -rf build/*",
     "start:dev": "node config/webpack-dev-server.js",
     "start:prod": "npm build; serve build",
