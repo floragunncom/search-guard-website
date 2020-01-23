@@ -98,7 +98,7 @@ const BlogPostArticle = ({ posts, match }) => {
     },
   };
   if (!postContent) {
-    return <NotFound />;
+    return '';
   }
 
   return (
