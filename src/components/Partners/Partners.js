@@ -3,6 +3,10 @@ import excelerate from '../../images/ref2.svg';
 import excelerateMobile from '../../images/excelerate-mobile.svg';
 import sirenPartnerMobile from '../../images/siren-mobile.svg';
 import sirenPartner from '../../images/ref3.svg';
+import cleverdataPartnerMobile from '../../images/cleverdata-mobile.svg';
+import cleverdataPartner from '../../images/cleverdata.svg';
+import factorgroupPartnerMobile from '../../images/factorgroup-mobile.svg';
+import factorgroupPartner from '../../images/factorgroup.svg';
 import './Partners.scss';
 
 const Partners = () => {
@@ -12,19 +16,52 @@ const Partners = () => {
         <div className="company-partners-headline">Partners</div>
         <div className="company-partners-pic-wrapper">
           <div className="col s12 m4 offset-m2 company-partners-pic hide-on-small-only">
-            <img src={excelerate} alt="excelerate logo" />{' '}
+            <a href="https://www.exceleratesystems.com/">
+              <img src={excelerate} alt="Search Guard Partner Excelerate Systems" />{' '}
+            </a>
           </div>
           <div className="col s12 m4 offset-m2 company-partners-pic-mobile hide-on-med-and-up">
-            <img src={excelerateMobile} alt="excelerate logo" />{' '}
+            <a href="https://www.exceleratesystems.com/">
+              <img src={excelerateMobile} alt="Search Guard Partner Excelerate Systems" />{' '}
+            </a>
           </div>
           <div className="col s12 m4 company-partners-pic hide-on-small-only">
-            <img src={sirenPartner} alt="siren logo" />{' '}
+            <a href="https://siren.io/">
+              <img src={sirenPartner} alt="Search Guard Partner Siren Solutions" />{' '}
+            </a>
           </div>
           <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
-            <img src={sirenPartnerMobile} alt="siren logo" />{' '}
+            <a href="https://siren.io/">
+              <img src={sirenPartnerMobile} alt="Search Guard Partner Siren Solutions" />{' '}
+            </a>
           </div>
         </div>
       </div>
+      <div className="row">
+        <div className="company-partners-pic-wrapper">
+          <div className="col s12 m4 offset-m2 company-partners-pic hide-on-small-only">
+            <a href="https://www.cleverdata.at/">
+              <img src={cleverdataPartner} alt="Search Guard Partner Cleverdata" />{' '}
+            </a>
+          </div>
+          <div className="col s12 m4 offset-m2 company-partners-pic-mobile hide-on-med-and-up">
+            <a href="https://www.cleverdata.at/">
+              <img src={cleverdataPartnerMobile} alt="Search Guard Partner Cleverdata" />{' '}
+            </a>
+          </div>
+          <div className="col s12 m4 company-partners-pic hide-on-small-only">
+            <a href="https://www.fgts.ru/">
+              <img src={factorgroupPartner} alt="Search Guard Partner Factor Group" />{' '}
+            </a>
+          </div>
+          <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
+            <a href="https://www.fgts.ru/">
+              <img src={factorgroupPartnerMobile} alt="Search Guard Partner Factor Group" />{' '}
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

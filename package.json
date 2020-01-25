@@ -86,6 +86,11 @@
     "webpack-merge": "^4.2.1"
   },
   "reactSnap": {
+    "concurrency": 8,
+    "viewport": {
+      "width": 1280,
+      "height": 767
+    },
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"

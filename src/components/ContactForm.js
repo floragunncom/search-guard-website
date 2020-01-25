@@ -51,33 +51,61 @@ const ContactForm = () => {
             <br />
             10963 Berlin
             <br />
-            Germnay
+            Germany
+          <br />
+            <a href="mailto:info@floragunn.com">
+                info@floragunn.com
+            </a>
           </p>
           <p className="company-information-header">Authorized Partners</p>
           <p className="company-information-text">
-            USA and Canada
+            <b>Austria and Switzerland</b>
+            <br />
+            clever data GmbH
+            <br /> Danhausergasse 9/Top 3
+            <br /> 1040 Vienna
+            <br />
+            <a href="mailto:office@cleverdata.at">office@cleverdata.at</a>
+          </p>
+          <p className="company-information-text">
+            <b>USA and Canada</b>
             <br />
             Excelerate Systems LLC
             <br /> 2205 152nd Avenue NE Redmond
             <br />
             WA 98052
-            <br /> david.bennett@exceleratesystems.net
+            <br />
+            <a href="mailto:david.bennett@exceleratesystems.net">
+              david.bennett@exceleratesystems.net
+            </a>
           </p>
           <p className="company-information-text">
-            France
+            <b>France</b>
             <br /> Excelerate Systems France
             <br /> Les Bureaux du Lac II, Rue Robert Caumont, Imm P<br /> 33049
             Bordeaux
             <br />
-            aadel.benyoussef@exceleratesystems.net
+            <a href="mailto:aadel.benyoussef@exceleratesystems.net">
+              david.bennett@exceleratesystems.net
+            </a>
           </p>
           <p className="company-information-text">
-            South America
+            <b>South America</b>
             <br /> Excelerate Systems S de R.L. de C.V.
             <br /> Córdoba 42, Roma Norte, Cuauhtémoc, C.P.
             <br /> 06700, Ciudad de México
             <br />
-            victor.pichardo@exceleratesystems.net
+            <a href="mailto:victor.pichardo@exceleratesystems.net">
+              victor.pichardo@exceleratesystems.net
+            </a>
+          </p>
+          <p className="company-information-text">
+            <b>Russia</b>
+            <br /> Factor Group
+            <br /> Shchukinskaya Ulitsa, 2
+            <br /> Moscow, 123182
+            <br />
+            <a href="mailto:info@fgts.ru">info@fgts.ru</a>
           </p>
         </div>
       </div>
@@ -116,18 +144,18 @@ const ContactForm = () => {
                 </div>
                 <div className="input-field col s12 m6">
                   <input
-                      id="email2"
-                      name="email"
-                      type="email"
-                      className="validate"
-                      required
+                    id="email2"
+                    name="email"
+                    type="email"
+                    className="validate"
+                    required
                   />
                   <label htmlFor="email2" id="email-input">
                     Email address *
                   </label>
                   <span
-                      className="helper-text"
-                      data-error="Please type in a valid email address!"
+                    className="helper-text"
+                    data-error="Please type in a valid email address!"
                   />
                 </div>
                 <div className="input-field col s12 m6">
