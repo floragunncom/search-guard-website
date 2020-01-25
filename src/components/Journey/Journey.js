@@ -4,24 +4,28 @@ import './Journey.scss';
 const Journey = () => {
   const timelineContent = [
     {
+      year: 2020,
+      events: [
+        {
+          headline: 'February',
+          text: 'Meet us at the RSA conference San Francisco, booth 2450',
+        },
+        {
+          headline: 'January',
+          text: 'Signals Alerting for Elasticsearch GA released',
+        },
+      ],
+    },
+    {
       year: 2019,
       events: [
         {
-          headline: 'January',
-          text: 'We present Search Guard at the Intersec conference in Dubai',
+          headline: 'December',
+          text: 'We release Signals Beta',
         },
         {
-          headline: 'March',
-          text:
-            'We present Search Guard at the RSA conference in San Francisco',
-        },
-        {
-          headline: 'April',
-          text: 'Search Guard 7 was released',
-        },
-        {
-          headline: 'May',
-          text: 'We begin working on Signals - Alerting for Elasticsearch',
+          headline: 'November',
+          text: 'We present Search Guard at the Big Data World in Paris',
         },
         {
           headline: 'June',
@@ -29,12 +33,21 @@ const Journey = () => {
             'We present Search Guard at the Infosecurity conference in London',
         },
         {
-          headline: 'November',
-          text: 'We present Search Guard at the Big Data World in Paris',
+          headline: 'May',
+          text: 'We begin working on Signals - Alerting for Elasticsearch',
         },
         {
-          headline: 'December',
-          text: 'We release Signals Beta',
+          headline: 'April',
+          text: 'Search Guard 7 was released',
+        },
+        {
+          headline: 'March',
+          text:
+            'We present Search Guard at the RSA conference in San Francisco',
+        },
+        {
+          headline: 'January',
+          text: 'We present Search Guard at the Intersec conference in Dubai',
         },
       ],
     },
@@ -42,22 +55,12 @@ const Journey = () => {
       year: 2018,
       events: [
         {
-          headline: 'February',
-          text:
-            'TLS Tool for easy creation of production ready TLS certificates released',
+          headline: 'December',
+          text: 'Hendrik Saly joins Search Guard as our new CTO',
         },
         {
-          headline: 'April',
-          text:
-            'We presented Search Guard at the RSA conference in San Francisco',
-        },
-        {
-          headline: 'May',
-          text: 'We added SAML and OpenID support',
-        },
-        {
-          headline: 'June',
-          text: 'First Search Guard global offsite',
+          headline: 'November',
+          text: 'We participate in the Open Source conference in Bordeaux.',
         },
         {
           headline: 'August',
@@ -65,12 +68,22 @@ const Journey = () => {
             'We visit our business partners in Mexico City, New York, Washington and Seattle.',
         },
         {
-          headline: 'November',
-          text: 'We participate in the Open Source conference in Bordeaux.',
+          headline: 'June',
+          text: 'First Search Guard global offsite',
         },
         {
-          headline: 'December',
-          text: 'Hendrik Saly joins Search Guard as our new CTO',
+          headline: 'May',
+          text: 'We added SAML and OpenID support',
+        },
+        {
+          headline: 'April',
+          text:
+            'We presented Search Guard at the RSA conference in San Francisco',
+        },
+        {
+          headline: 'February',
+          text:
+            'TLS Tool for easy creation of production ready TLS certificates released',
         },
       ],
     },
@@ -78,16 +91,16 @@ const Journey = () => {
       year: 2017,
       events: [
         {
-          headline: 'January',
-          text: 'The Search Guard Kibana plugin was officially released.',
+          headline: 'December',
+          text: 'Search Guard 6 was released',
         },
         {
           headline: 'April',
           text: 'We presented Search Guard at the Big Data Paris conference',
         },
         {
-          headline: 'December',
-          text: 'Search Guard 6 was released',
+          headline: 'January',
+          text: 'The Search Guard Kibana plugin was officially released.',
         },
       ],
     },
@@ -95,13 +108,13 @@ const Journey = () => {
       year: 2016,
       events: [
         {
-          headline: 'June',
-          text: 'Search Guard 2 released',
-        },
-        {
           headline: 'November',
           text:
             'Search Guard 5 released, including Audit Logging and the new REST management API.',
+        },
+        {
+          headline: 'June',
+          text: 'Search Guard 2 released',
         },
       ],
     },
@@ -109,8 +122,16 @@ const Journey = () => {
       year: 2015,
       events: [
         {
-          headline: 'January',
-          text: 'Elastic Defender by Hendrik Saly',
+          headline: 'Winter',
+          text:
+            'Search Guard SSL for Elasticsearch 2.2.0 was officially released',
+        },
+        {
+          highlight: 'Source code is available',
+        },
+        {
+          headline: 'Spring/ Summer',
+          text: 'Search Guard 1.x for Elasticsearch 1.x released on GitHub',
         },
         {
           headline: 'May',
@@ -118,16 +139,8 @@ const Journey = () => {
             'Elastic Defender released as Search Guard 1.x TLS is mandatory',
         },
         {
-          headline: 'Spring/ Summer',
-          text: 'Search Guard 1.x for Elasticsearch 1.x released on GitHub',
-        },
-        // {
-        //   highlight: 'Source code is available',
-        // },
-        {
-          headline: 'Winter',
-          text:
-            'Search Guard SSL for Elasticsearch 2.2.0 was officially released',
+          headline: 'January',
+          text: 'Elastic Defender by Hendrik Saly',
         },
       ],
     },
