@@ -80,7 +80,7 @@ const ContactForm = () => {
             </a>
           </p>
           <p className="company-information-text">
-            <b>France</b>
+            <b>France & North Africa</b>
             <br /> Excelerate Systems France
             <br /> Les Bureaux du Lac II, Rue Robert Caumont, Imm P<br /> 33049
             Bordeaux
