@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import './Footer.scss';
+import RichSnippetCompany from '../RichSnippets/RichSnippetCompany';
 
 const Footer = ({ landing }) => {
   return (
@@ -84,7 +85,7 @@ const Footer = ({ landing }) => {
                 </div>
                 <div className="footer-list-item">
                   <a
-                    href="https://git.floragunn.com/"
+                    href="https://git.floragunn.com/public/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="footer-links"
@@ -177,7 +178,7 @@ const Footer = ({ landing }) => {
           className="footer-text"
           style={landing ? { paddingTop: '64px' } : null}
         >
-          <p>© 2018 floragunn GmbH - All Rights Reserved</p>
+          <p>© 2019 floragunn GmbH - All Rights Reserved</p>
           <p>
             Search Guard is a trademark of floragunn GmbH, registered in the
             U.S. and in other countries. Elasticsearch, Kibana, Logstash, and
@@ -197,6 +198,7 @@ const Footer = ({ landing }) => {
           </NavLink>
         </div>
       </div>
+      <RichSnippetCompany />
     </div>
   );
 };

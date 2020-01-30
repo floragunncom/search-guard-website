@@ -1,7 +1,4 @@
-User-agent: Googlebot
-Disallow:
-
-User-agent: * 
-Disallow: /
+User-agent: *
+Allow: /
 
 Sitemap: https://search-guard.com/sitemap.xml

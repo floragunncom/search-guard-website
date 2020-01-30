@@ -18,6 +18,7 @@ import iconTwitter from '../../images/icon-tw-loud.svg';
 import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
+import sgLogo from '../../images/sg_dlic_small.png';
 import NotFound from '../../views/NotFound/NotFound';
 import './BlogPostArticle.scss';
 
@@ -97,7 +98,7 @@ const BlogPostArticle = ({ posts, match }) => {
     },
   };
   if (!postContent) {
-    return <NotFound />;
+    return '';
   }
 
   return (
@@ -185,6 +186,35 @@ const BlogPostArticle = ({ posts, match }) => {
       </div>
       <PreFooter />
       <Footer />
+
+      <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://www.search-guard.com/${postContent.fields.slug}"
+            },            
+            "headline": "${postContent.fields.htmlTitle}",
+            "description": "${postContent.fields.htmlDescription}",            
+            "image": "${postContent.fields.postImage.fields.file.url}",
+            "author": {
+               "@type": "Person",
+               "name": "${postContent.fields.author}"
+            },
+            "datePublished": "${postContent.fields.date}",
+            "dateModified": "${postContent.sys.updatedAt}",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Search Guard",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "${sgLogo}"
+              }
+            }
+          }
+        `}</script>
+
     </div>
   );
 };
