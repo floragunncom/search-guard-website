@@ -93,11 +93,14 @@
       "width": 1280,
       "height": 767
     },
+<<<<<<< HEAD
     "include": [
       "/security-for-elasticsearch/",
       "/elasticsearch-kibana-security/",
       "/thanks/"
     ],
+=======
+>>>>>>> master merged
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
