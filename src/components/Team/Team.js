@@ -14,7 +14,7 @@ const Team = () => {
       name: 'Andreas Riedel',
       position: 'CEO',
       pic: andreas,
-      link: 'https://www.linkedin.com/in/searchguard/',
+      link: 'https://www.linkedin.com/in/anriedel/',
     },
     {
       name: 'Claudia Kressin',
