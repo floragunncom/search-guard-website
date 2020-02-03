@@ -108,10 +108,16 @@ const Blog = ({ history }) => {
       <div className="blog-categories-title">Tags</div>
       <div className="blog-categories-items-wrapper">
         {categoryNameTags(5).map(tag => {
-          const slugName = tag.name.replace(/ /g, '-').toLowerCase();
+          const slug = tag.name.replace(/[ /]/g, '-').toLowerCase();
+          const categoryPosts = posts.filter(post => post.fields.tags.includes(tag.name));
           return (
             <Link
-              to={{ pathname: `/category/${slugName}` }}
+              to={{
+                pathname: `/category/${slug}/`,
+                categoryName: tag.name,
+                categoryPosts,
+                slug,
+              }}
               className="blog-categories-item"
             >
               {tag.name} ({tag.count})
