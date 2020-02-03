@@ -10,6 +10,7 @@
     "country-list": "^2.2.0",
     "eslint-plugin-react-hooks": "0.0.0-b53ea6ca0",
     "font-awesome": "^4.7.0",
+    "fs": "0.0.1-security",
     "lunr": "^2.3.6",
     "markdown-to-jsx": "^6.10.3",
     "materialize-css": "^1.0.0",
@@ -33,7 +34,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "fetch": "node ./src/Api/fetchContentfulPosts.js",
+    "build": "npm run fetch && react-scripts build",
     "sitemap": "./scripts/sitemap.js",
     "postbuild": "react-snap && ./scripts/sitemap.js -- --base-url='https://search-guard.com/'",
     "clean": "rm -rf build/*",
@@ -91,6 +93,11 @@
       "width": 1280,
       "height": 767
     },
+    "include": [
+      "/security-for-elasticsearch/",
+      "/elasticsearch-kibana-security/",
+      "/thanks/"
+    ],
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"

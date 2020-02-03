@@ -1,13 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import { BlogContext } from '../../contexts/BlogContext';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import './BlogBox.scss';
+import posts from '../../Api/contentfulPosts.json';
 
 const BlogBox = ({ overview, headline }) => {
-  const posts = useContext(BlogContext);
-
   const startPoint1 = Math.floor(Math.random() * (posts.length - 6));
   const startPoint2 = Math.floor(Math.random() * (posts.length - 6));
 
