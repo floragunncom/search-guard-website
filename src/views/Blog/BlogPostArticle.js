@@ -107,7 +107,9 @@ const BlogPostArticle = ({ match }) => {
         <meta charSet="utf-8" />
         <title>{postContent.fields.htmlTitle}</title>
         <link
-          rel="canonical"
+          rel="
+          
+          ical"
           href={`https://search-guard.com/${postContent.fields.slug}`}
         />
         <meta name="description" content={postContent.fields.htmlDescription} />

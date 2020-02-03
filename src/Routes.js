@@ -1,14 +1,15 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import HomePage from './views/HomePage/HomePage';
 import ContactUs from './views/ContactUs/ContactUs';
 import Blog from './views/Blog/Blog';
+import BlogPostArticle from './views/Blog/BlogPostArticle';
+import BlogCategory from './views/Blog/BlogCategory';
 import Resource from './views/Resource/Resource';
 import Company from './views/Company/Company';
 import Product from './views/Product/Product';
 import Faqs from './views/Faqs/Faqs';
 import License from './views/License/License';
-import BlogPostArticle from './views/Blog/BlogPostArticle';
 import Imprint from './views/Imprint/Imprint';
 import WhitePapers from './views/WhitePapers/WhitePapers';
 import Presentations from './views/Presentations/Presentations';
@@ -61,9 +62,9 @@ const Routes = () => {
           component={TlsGenerator}
         />
         <Route exact path="/certificates/" component={Certifications} />
-        <Route exact path="/category/:slug" component={Blog} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/:slug" component={BlogPostArticle} />
+        <Route exact path="/category/:slug" component={BlogCategory} />
         <Route exact path="/white-papers/" component={WhitePapers} />
         <Route path="/404/" component={NotFound} />
       </Switch>
