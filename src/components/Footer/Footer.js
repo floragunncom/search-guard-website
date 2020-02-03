@@ -60,11 +60,6 @@ const Footer = ({ landing }) => {
                     Custom edition
                   </HashLink>
                 </div>
-                {/* <div className="footer-list-item">
-                  <NavLink to="/education-program/" className="footer-links">
-                    Education program
-                  </NavLink>
-                </div> */}
               </div>
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
@@ -187,15 +182,6 @@ const Footer = ({ landing }) => {
             HDFS and the yellow elephant logo are trademarks of the Apache
             Software Foundation in the United States and/or other countries.
           </p>
-          <NavLink className="hidden" to="/security-for-elasticsearch/">
-            m
-          </NavLink>
-          <NavLink className="hidden" to="/elasticsearch-kibana-security/">
-            m
-          </NavLink>
-          <NavLink className="hidden" to="/thanks/">
-            t
-          </NavLink>
         </div>
       </div>
       <RichSnippetCompany />

@@ -11,7 +11,6 @@ import License from './views/License/License';
 import BlogPostArticle from './views/Blog/BlogPostArticle';
 import Imprint from './views/Imprint/Imprint';
 import WhitePapers from './views/WhitePapers/WhitePapers';
-// import WhitePaperDetail from './views/WhitePapers/WhitePaperDetail';
 import Presentations from './views/Presentations/Presentations';
 import DataProtection from './views/DataProtection/DataProtection';
 import Security from './views/Security/Security';
@@ -24,11 +23,8 @@ import Thanks from './views/Thanks/Thanks';
 import CertificatesOnTheWay from './views/CertificatesOnTheWay/CertificatesOnTheWay';
 import Certifications from './views/Certifications/Certifications';
 import Marketing from './views/Marketing/Marketing';
-import { BlogContext } from './contexts/BlogContext';
 
 const Routes = () => {
-  const posts = useContext(BlogContext);
-
   return (
     <div>
       <Switch>
@@ -66,17 +62,9 @@ const Routes = () => {
         />
         <Route exact path="/certificates/" component={Certifications} />
         <Route exact path="/category/:slug" component={Blog} />
-        <Route
-          exact
-          path="/blog"
-          render={props => <Blog {...props} posts={posts} />}
-        />
-        <Route
-          path="/:slug"
-          render={props => <BlogPostArticle {...props} posts={posts} />}
-        />
+        <Route exact path="/blog" component={Blog} />
+        <Route exact path="/:slug" component={BlogPostArticle} />
         <Route exact path="/white-papers/" component={WhitePapers} />
-        {/* <Route path="/white-papers/:slug" component={WhitePaperDetail} /> */}
         <Route path="/404/" component={NotFound} />
       </Switch>
     </div>

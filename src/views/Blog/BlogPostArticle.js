@@ -19,10 +19,10 @@ import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
-import NotFound from '../../views/NotFound/NotFound';
 import './BlogPostArticle.scss';
+import posts from '../../Api/contentfulPosts.json';
 
-const BlogPostArticle = ({ posts, match }) => {
+const BlogPostArticle = ({ match }) => {
   const postContent = posts.find(
     entry => entry.fields.slug === `${match.url.substring(1)}`,
   );
