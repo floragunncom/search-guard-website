@@ -9,6 +9,7 @@ import Footer from '../../components/Footer/Footer';
 import BlogPost from './BlogPost';
 import SearchBlogPost from './SearchBlogPost';
 import posts from '../../Api/contentfulPosts.json';
+import Pagination from '../../components/Pagination/Pagination';
 
 const Blog = ({ history }) => {
   const [searchResultsPresented, setSearchResultsPresented] = useState(false);
@@ -19,6 +20,15 @@ const Blog = ({ history }) => {
   const [searchResultPosts, setSearchResultPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const documentsGeneral = [];
 
@@ -100,7 +110,9 @@ const Blog = ({ history }) => {
       (x, y) => (x.findIndex(e => e.name === y.name) < 0 ? [...x, y] : x),
       [],
     );
-    return final.filter(tag => tag.count >= minCount);
+    return final
+      .filter(tag => tag.count >= minCount)
+      .sort((a, b) => b.count - a.count);
   };
 
   const categories = (
@@ -109,7 +121,9 @@ const Blog = ({ history }) => {
       <div className="blog-categories-items-wrapper">
         {categoryNameTags(5).map(tag => {
           const slug = tag.name.replace(/[ /]/g, '-').toLowerCase();
-          const categoryPosts = posts.filter(post => post.fields.tags.includes(tag.name));
+          const categoryPosts = posts.filter(post =>
+            post.fields.tags.includes(tag.name),
+          );
           return (
             <Link
               to={{
@@ -186,19 +200,10 @@ const Blog = ({ history }) => {
     !categoryResultsPresented
   ) {
     renderPosts = (
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <div>
-          {posts.map(post => {
-            return (
-              <div
-                className="col s12 l6 blogpost-column-wrapper"
-                key={post.sys.id}
-              >
-                <BlogPost post={post} intro />
-              </div>
-            );
-          })}
-        </div>
+      <div className="blog-wrapper">
+        {currentPosts.map(post => {
+          return <BlogPost post={post} key={post.sys.id} intro />;
+        })}
       </div>
     );
   }
@@ -224,6 +229,13 @@ const Blog = ({ history }) => {
         {renderPosts}
         {renderSearchResultPosts}
       </div>
+      {!searchResultsPresented &&
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={posts.length}
+          paginate={paginate}
+        />
+      }
       <PreFooter />
       <Footer />
     </div>

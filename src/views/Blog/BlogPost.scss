@@ -2,8 +2,17 @@
 @import '../../styles/Breakpoints';
 
 .blog-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.blogpost-wrapper {
   margin: 32px 0px;
   background-color: $lightGrey;
+  max-width: 500px;
+  // display: flex;
+  // flex-wrap: wrap;
   @media only screen and (max-width: $tabletBig) {
     margin: 0px;
   };
@@ -29,10 +38,17 @@
   }
 }
 
-.col.s12.l6.blogpost-column-wrapper {
+.blogpost-column-wrapper {
+  display: flex;
+  // max-width: 400px;
   @media only screen and (max-width: $tabletBig) {
     padding: 0px;
   };
+}
+
+.blog-link-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-image-wrapper {
@@ -68,6 +84,8 @@ img.blogpost-feed-image {
 
 .blog-text-content {
   padding: 32px;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-headline {
@@ -110,6 +128,7 @@ img.blogpost-feed-image {
   line-height: 15px;
   font-weight: bold;
   letter-spacing: 1.5px;
+  margin-top: auto;
 }
 
 img.blog-arrow {

@@ -50,7 +50,7 @@ const BlogPost = ({ post }) => {
     );
   }
 
-  return <div className="blog-wrapper">{BlogPostContent}</div>;
+  return <div className="blogpost-wrapper">{BlogPostContent}</div>;
 };
 
 export default BlogPost;
