@@ -1,5 +1,5 @@
-import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import React from 'react';
 import HomePage from './views/HomePage/HomePage';
 import ContactUs from './views/ContactUs/ContactUs';
 import Blog from './views/Blog/Blog';
@@ -52,7 +52,11 @@ const Routes = () => {
           component={Marketing}
         />
         <Route exact path="/thanks/" component={Thanks} />
-        <Route exact path="/certificates-on-the-way/" component={CertificatesOnTheWay} />
+        <Route
+          exact
+          path="/certificates-on-the-way/"
+          component={CertificatesOnTheWay}
+        />
         <Route exact path="/security/" component={Security} />
         <Route exact path="/cve-advisory/" component={Advisory} />
         <Route exact path="/disclosure-policy/" component={Disclosure} />
@@ -62,9 +66,10 @@ const Routes = () => {
           component={TlsGenerator}
         />
         <Route exact path="/certificates/" component={Certifications} />
-        <Route exact path="/blog" component={Blog} />
-        <Route exact path="/:slug" component={BlogPostArticle} />
         <Route exact path="/category/:slug" component={BlogCategory} />
+        <Route exact path="/blog/" component={Blog} />
+        <Route exact path="/blog/page/:slug" component={Blog} />
+        <Route exact path="/:slug" component={BlogPostArticle} />
         <Route exact path="/white-papers/" component={WhitePapers} />
         <Route path="/404/" component={NotFound} />
       </Switch>

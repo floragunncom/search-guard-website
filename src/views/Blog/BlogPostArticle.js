@@ -122,7 +122,6 @@ const BlogPostArticle = ({ match }) => {
       />
       <div className="row">
         <div className="col s12 offset-l2 l8">
-          {/* {documentToReactComponents(this.state.documentContent, options)} */}
           <Markdown options={options}>
             {postContent.fields.postContent
               .replace(/https\:\/\/search\-guard\.com/g, '')
@@ -132,18 +131,10 @@ const BlogPostArticle = ({ match }) => {
         <div className="col s12 offset-l1 l1 blogpost-sidebar-container">
           <div className="blogpost-sidebar-title">share</div>
           <div className="blogpost-sidebar-icons-container">
-            {/* <a
-              href={`https://twitter.com/intent/tweet?url=https://www.search-guard.com/${postContent.fields.slug}&text=${postContent.fields.title}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              >
-              <img src={iconFb} alt="facebook icon" />
-            </a> */}
             <FacebookShareButton
               className="blogpost-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               quote={postContent.fields.title}
-              onShareWindowClose
             >
               <img src={iconFb} alt="facebook icon" />
             </FacebookShareButton>
@@ -152,14 +143,12 @@ const BlogPostArticle = ({ match }) => {
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
               hastags={postContent.fields.tags}
-              onShareWindowClose
             >
               <img src={iconTwitter} alt="twitter icon" />
             </TwitterShareButton>
             <LinkedinShareButton
               className="blogpost-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
-              onShareWindowClose
             >
               <img src={iconIn} alt="linkedIn icon" />
             </LinkedinShareButton>
@@ -167,7 +156,6 @@ const BlogPostArticle = ({ match }) => {
               className="blogpost-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
-              onShareWindowClose
             >
               <img src={iconY} alt="y icon" />
             </RedditShareButton>
@@ -216,7 +204,6 @@ const BlogPostArticle = ({ match }) => {
             }
           }
         `}</script>
-
     </div>
   );
 };
