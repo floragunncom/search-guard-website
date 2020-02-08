@@ -3,11 +3,42 @@ import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import './BlogBox.scss';
-import posts from '../../Api/contentfulPosts.json';
+import allPosts from '../../Api/contentfulPosts.json';
 
-const BlogBox = ({ overview, headline }) => {
-  const startPoint1 = Math.floor(Math.random() * (posts.length - 6));
-  const startPoint2 = Math.floor(Math.random() * (posts.length - 6));
+const BlogBox = ({ overview, headline, randomize, category }) => {
+  function shuffle(array) {
+    // Fisher-Yates Shuffle
+    let counter = array.length;
+
+    // While there are elements in the array
+    while (counter > 0) {
+      // Pick a random index
+      const index = Math.floor(Math.random() * counter);
+      counter--;
+      const temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
+    }
+
+    return array;
+  }
+
+  let posts;
+
+  if (category !== undefined) {
+    posts = allPosts.filter(post =>
+        post.fields.tags.includes(category),
+    );
+  } else {
+    posts = allPosts;
+  }
+
+  if (randomize) {
+    posts = shuffle(posts);
+  }
+
+  const startPoint1 = 0;
+  const startPoint2 = 3;
 
   const morePostsButton = overview ? (
     <div className="blogbox-button">
