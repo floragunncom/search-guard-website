@@ -119,7 +119,7 @@ const Blog = ({ history }) => {
     <div className="blog-categories-wrapper">
       <div className="blog-categories-title">Tags</div>
       <div className="blog-categories-items-wrapper">
-        {categoryNameTags(5).map(tag => {
+        {categoryNameTags(3).map(tag => {
           const slug = tag.name.replace(/[ /]/g, '-').toLowerCase();
           const categoryPosts = posts.filter(post =>
             post.fields.tags.includes(tag.name),

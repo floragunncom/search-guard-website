@@ -107,9 +107,7 @@ const BlogPostArticle = ({ match }) => {
         <meta charSet="utf-8" />
         <title>{postContent.fields.htmlTitle}</title>
         <link
-          rel="
-          
-          ical"
+          rel="canonical"
           href={`https://search-guard.com/${postContent.fields.slug}`}
         />
         <meta name="description" content={postContent.fields.htmlDescription} />
@@ -124,8 +122,8 @@ const BlogPostArticle = ({ match }) => {
         <div className="col s12 offset-l2 l8">
           <Markdown options={options}>
             {postContent.fields.postContent
-              .replace(/https\:\/\/search\-guard\.com/g, '')
-              .replace(/http\:\/\/localhost\:8080/g, '')}
+              .replace(/https:\/\/search-guard\.com/g, '')
+              .replace(/http:\/\/localhost:8080/g, '')}
           </Markdown>
         </div>
         <div className="col s12 offset-l1 l1 blogpost-sidebar-container">
@@ -162,7 +160,7 @@ const BlogPostArticle = ({ match }) => {
           </div>
         </div>
       </div>
-      <BlogBox headline="Other posts you may like" />
+      <BlogBox headline="Other posts you may like" randomize category={postContent.fields.tags[0]}/>
       <div className="col s12 l4" />
       <div className="col s12 blogpost-link">
         <a href="/blog/">
