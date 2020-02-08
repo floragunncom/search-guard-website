@@ -19,10 +19,10 @@ import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
-import NotFound from '../../views/NotFound/NotFound';
 import './BlogPostArticle.scss';
+import posts from '../../Api/contentfulPosts.json';
 
-const BlogPostArticle = ({ posts, match }) => {
+const BlogPostArticle = ({ match }) => {
   const postContent = posts.find(
     entry => entry.fields.slug === `${match.url.substring(1)}`,
   );
@@ -107,7 +107,9 @@ const BlogPostArticle = ({ posts, match }) => {
         <meta charSet="utf-8" />
         <title>{postContent.fields.htmlTitle}</title>
         <link
-          rel="canonical"
+          rel="
+          
+          ical"
           href={`https://search-guard.com/${postContent.fields.slug}`}
         />
         <meta name="description" content={postContent.fields.htmlDescription} />
@@ -120,7 +122,6 @@ const BlogPostArticle = ({ posts, match }) => {
       />
       <div className="row">
         <div className="col s12 offset-l2 l8">
-          {/* {documentToReactComponents(this.state.documentContent, options)} */}
           <Markdown options={options}>
             {postContent.fields.postContent
               .replace(/https\:\/\/search\-guard\.com/g, '')
@@ -130,18 +131,10 @@ const BlogPostArticle = ({ posts, match }) => {
         <div className="col s12 offset-l1 l1 blogpost-sidebar-container">
           <div className="blogpost-sidebar-title">share</div>
           <div className="blogpost-sidebar-icons-container">
-            {/* <a
-              href={`https://twitter.com/intent/tweet?url=https://www.search-guard.com/${postContent.fields.slug}&text=${postContent.fields.title}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              >
-              <img src={iconFb} alt="facebook icon" />
-            </a> */}
             <FacebookShareButton
               className="blogpost-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               quote={postContent.fields.title}
-              onShareWindowClose
             >
               <img src={iconFb} alt="facebook icon" />
             </FacebookShareButton>
@@ -150,14 +143,12 @@ const BlogPostArticle = ({ posts, match }) => {
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
               hastags={postContent.fields.tags}
-              onShareWindowClose
             >
               <img src={iconTwitter} alt="twitter icon" />
             </TwitterShareButton>
             <LinkedinShareButton
               className="blogpost-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
-              onShareWindowClose
             >
               <img src={iconIn} alt="linkedIn icon" />
             </LinkedinShareButton>
@@ -165,7 +156,6 @@ const BlogPostArticle = ({ posts, match }) => {
               className="blogpost-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
-              onShareWindowClose
             >
               <img src={iconY} alt="y icon" />
             </RedditShareButton>
@@ -214,7 +204,6 @@ const BlogPostArticle = ({ posts, match }) => {
             }
           }
         `}</script>
-
     </div>
   );
 };

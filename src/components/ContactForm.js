@@ -39,7 +39,7 @@ const ContactForm = () => {
 
   return (
     <div className="row contact-wrapper">
-      <div className="col s12 l4" id="contact">
+      <div className="col s12 l5" id="contact">
         <div className="company-information-container">
           <p className="company-information-header">
             Search Guard Headquarters
@@ -52,10 +52,8 @@ const ContactForm = () => {
             10963 Berlin
             <br />
             Germany
-          <br />
-            <a href="mailto:info@floragunn.com">
-                info@floragunn.com
-            </a>
+            <br />
+            <a href="mailto:info@floragunn.com">info@floragunn.com</a>
           </p>
           <p className="company-information-header">Authorized Partners</p>
           <p className="company-information-text">
@@ -109,7 +107,7 @@ const ContactForm = () => {
           </p>
         </div>
       </div>
-      <div className="col s12 l8" id="contact">
+      <div className="col s12 l7" id="contact">
         <div className="contact-info-container">
           <form onSubmit={postDataToCRM}>
             <div className="contact-info-wrapper">

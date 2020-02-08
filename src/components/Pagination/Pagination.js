@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Pagination.scss';
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
@@ -14,7 +15,12 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
         {pageNumbers.map(number => {
           return (
             <li key={number} className="pagination-number">
-              <a onClick={() => paginate(number)}>{number}</a>
+              <Link
+                to={{ pathname: `/blog/page/${number}` }}
+                onClick={() => paginate(number)}
+              >
+                {number}
+              </Link>
             </li>
           );
         })}

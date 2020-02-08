@@ -8,6 +8,12 @@
   }
 }
 
+.company-information-container {
+  border-right: 3px solid $grey;
+  margin-right: 40px;
+  padding-right: 32px;
+}
+
 .company-information-header {
   font-size: 24px;
   text-align: left;
@@ -37,8 +43,7 @@
 }
 
 .contact-info-container {
-  border-left: 3px solid $grey;
-  padding-left: 100px;
+  padding-left: 32px;
   display: flex;
   flex-direction: column;
   @media only screen and (max-width: $tabletBig) {
