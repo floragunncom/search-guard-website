@@ -35,6 +35,11 @@ const Company = () => {
         headline="company"
         text="We shape IT security and Open Source business models."
       />
+      <div className="logo__wrapper">
+        <span className="logo__logo1"></span>
+        <span className="logo__logo2"></span>
+        <span className="logo__logo3"></span>
+      </div>
       <AnchorNavBar anchors={anchors} />
       <Team />
       <Partners />

@@ -19,8 +19,8 @@ import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
-import './BlogPostArticle.scss';
 import posts from '../../Api/contentfulPosts.json';
+import './BlogPostArticle.scss';
 
 const BlogPostArticle = ({ match }) => {
   const postContent = posts.find(
@@ -163,10 +163,10 @@ const BlogPostArticle = ({ match }) => {
       <BlogBox headline="Other posts you may like" randomize category={postContent.fields.tags[0]}/>
       <div className="col s12 l4" />
       <div className="col s12 blogpost-link">
-        <a href="/blog/">
+        <a href="/blog/" className="blog-back">
           <img
             src={infoArrowBack}
-            className="blogpost-arrow-back"
+            className="blog-arrow-back"
             alt="arrow icon"
           />
           <span>back to blog</span>

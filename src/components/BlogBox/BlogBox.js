@@ -41,7 +41,7 @@ const BlogBox = ({ overview, headline, randomize, category }) => {
   const startPoint2 = 3;
 
   const morePostsButton = overview ? (
-    <div className="blogbox-button">
+    <div className="blog-box-button">
       <Button text="see more" link="/blog/" />
     </div>
   ) : null;
@@ -87,15 +87,13 @@ const BlogBox = ({ overview, headline, randomize, category }) => {
             </div>
             <div className="blog-box__box-content-text">{fittedContent}</div>
           </div>
-          <div className="blog-box__box-content-link">
-            <div className="blog-info-link">
-              <span>read more</span>
-              <img
-                src={infoArrowForward}
-                className="blog-arrow"
-                alt="arrow icon"
-              />
-            </div>
+          <div className="blog-box-info-link">
+            <span>read more</span>
+            <img
+              src={infoArrowForward}
+              className="blogpost-arrow"
+              alt="arrow icon"
+            />
           </div>
         </Link>
       );
