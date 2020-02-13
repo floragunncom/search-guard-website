@@ -34,13 +34,12 @@ const Team = () => {
       pic: hendrik,
       link: 'https://www.linkedin.com/in/salyh/',
     },
-    { name: 'Mechthild Wetekam',
-      position: 'COO',
-      pic: mechthild, link: ''
-    },
-    { name: 'Thomas Mahler',
+    { name: 'Mechthild Wetekam', position: 'COO', pic: mechthild, link: '' },
+    {
+      name: 'Thomas Mahler',
       position: 'Head of Sales & Marketing',
-      pic: thomas, link: 'https://www.linkedin.com/in/thmahler/'
+      pic: thomas,
+      link: 'https://www.linkedin.com/in/thmahler/',
     },
   ];
 
@@ -50,7 +49,7 @@ const Team = () => {
         <div className="company-team-headline">Management team</div>
         {team.map(person => {
           return (
-            <div className="col s12 m4 company-team-profile">
+            <div className="col s12 m4 company-team-profile" key={person.link}>
               <img src={person.pic} alt="person" className="profile-pic" />
               <div className="profile-name">{person.name}</div>
               <div className="profile-position">{person.position}</div>
