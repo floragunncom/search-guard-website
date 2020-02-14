@@ -6,10 +6,11 @@ import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Footer from '../../components/Footer/Footer';
-import BlogPost from './BlogPost';
-import SearchBlogPost from './SearchBlogPost';
+import BlogPost from '../../components/BlogPost/BlogPost';
+import SearchBlogPost from '../../components/SearchBlogPost/SearchBlogPost';
 import posts from '../../Api/contentfulPosts.json';
 import Pagination from '../../components/Pagination/Pagination';
+import './Blog.scss';
 
 const Blog = ({ history }) => {
   const [searchResultsPresented, setSearchResultsPresented] = useState(false);
@@ -132,6 +133,7 @@ const Blog = ({ history }) => {
                 categoryPosts,
                 slug,
               }}
+              key={tag.name}
               className="blog-categories-item"
             >
               {tag.name} ({tag.count})
@@ -143,9 +145,6 @@ const Blog = ({ history }) => {
   );
 
   function onSearchTermChange(query) {
-    if (history.location.pathname !== '/blog') {
-      history.replace('/blog');
-    }
     setSearchResultsPresented(true);
     setDefaultResultsPresented(false);
     setCategoryResultsPresented(false);
@@ -163,7 +162,7 @@ const Blog = ({ history }) => {
   let renderSearchResultPosts;
   if (
     searchResultsPresented &&
-    searchQuery.length > 1 &&
+    searchQuery.length > 3 &&
     !categoryResultsPresented
   ) {
     if (searchResultPosts.length === 0) {
@@ -191,6 +190,13 @@ const Blog = ({ history }) => {
         </div>
       );
     }
+  } else {
+    renderSearchResultPosts = (
+      <div className="searchblogpost-result-headline">
+        Please provide more than 2 characters for a proper search result, thank
+        you.
+      </div>
+    );
   }
 
   let renderPosts;
@@ -229,13 +235,13 @@ const Blog = ({ history }) => {
         {renderPosts}
         {renderSearchResultPosts}
       </div>
-      {!searchResultsPresented &&
+      {!searchResultsPresented && (
         <Pagination
           postsPerPage={postsPerPage}
           totalPosts={posts.length}
           paginate={paginate}
         />
-      }
+      )}
       <PreFooter />
       <Footer />
     </div>

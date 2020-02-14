@@ -1,0 +1,30 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.blog-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.blog-searchbar {
+  margin: 32px;
+}
+
+.blog-back {
+  text-align: center;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $backButton;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  text-align: center;
+  margin: 32px 0;
+}
+
+.blog-arrow-back {
+  margin-right: 8px;
+}

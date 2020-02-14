@@ -176,20 +176,6 @@
   }
 }
 
-a.blogpost-link {
-  // text-transform: uppercase;
-  // font-weight: bold;
-  align-items: center;
-  text-decoration: underline;
-  margin: 32px 0px;
-  text-align: -webkit-center;
-  color: $green;
-}
-
-.blogpost-arrow-back {
-  margin-right: 8px;
-}
-
 .blogpost-recommended-headline {
   margin: 124px 0px 64px 0px;
   font-size: 24px;
@@ -215,7 +201,6 @@ a.blogpost-link {
 }
 
 .blogpost-listitem {
-  // margin: 16px;
   color: $darkGrey;
   font-size: 18px;
   line-height: 27px;

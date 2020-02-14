@@ -1,16 +1,6 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
-.blog-box__wrapper {
-  padding: 128px 0;
-  @media only screen and (max-width: $tabletBig) {
-    padding: 64px 0;
-  }
-  @media only screen and (max-width: $mobile) {
-    padding: 0;
-  }
-}
-
 #blog-box__table {
   display: flex;
   justify-content: space-between;
@@ -19,79 +9,108 @@
     display: inline-block;
     margin-bottom: 0;
   }
-}
-#blog-box__table .blog-box__box {
-  display: table-cell;
-  width: 32%;
-  @media only screen and (max-width: $tabletBig) {
-    width: 100%;
-    display: inline-block;
-  }
-}
-
-.blog-box__headline,
-.blog-box__headline-overview {
-  color: $darkBlue;
-  text-align: center;
-  padding: 64px 0;
-  font-weight: 300;
-}
-
-.blog-box__headline {
-  font-size: 24px;
-  line-height: 30px;
-}
-
-.blog-box__headline-overview {
-  font-size: 48px;
-  line-height: 57px;
-}
-
-.blog-box__box {
-  background-color: $grey;
-  position: relative;
-  &-content {
-    cursor: pointer;
-    padding: 24px 32px;
-    overflow: hidden;
-    text-decoration: none;
-    color: $darkBlue;
-    line-height: 27px;
-    font-size: 18px;
+  & .blog-box__box {
+    display: table-cell;
+    width: 32%;
     @media only screen and (max-width: $tabletBig) {
-      line-height: 24px;
-      font-size: 16px;
+      width: 100%;
       display: inline-block;
     }
-    &-headline {
-      font-weight: bold;
-    }
-    &-info {
-      font-size: 12px;
-      line-height: 32px;
-      letter-spacing: 3.3px;
-    }
-    &-text {
-      margin-bottom: 24px;
-    }
-    &-link {
-      margin-top: auto;
-      position: absolute;
-      bottom: 24px;
-      right: 32px;
-    }
   }
 }
+  
+.blog-box {
+  &__wrapper {
+    padding: 128px 0;
+    @media only screen and (max-width: $tabletBig) {
+      padding: 64px 0;
+    }
+    @media only screen and (max-width: $mobile) {
+      padding: 0;
+    }
+  }
 
-.blog-box__box-image-container {
-  overflow: hidden;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  -webkit-transition: .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  &:hover {
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
+  &__headline, &__headline-overview {
+    color: $darkBlue;
+    text-align: center;
+    padding: 64px 0;
+    font-weight: 300;
+  }
+
+  &__headline {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  &__headline-overview {
+    font-size: 48px;
+    line-height: 57px;
+  }
+
+  &__box {
+    padding-bottom: 12px;
+    background-color: $grey;
+    position: relative;
+    &-content {
+      cursor: pointer;
+      padding: 24px 32px;
+      overflow: hidden;
+      text-decoration: none;
+      color: $darkBlue;
+      line-height: 27px;
+      font-size: 18px;
+      @media only screen and (max-width: $tabletBig) {
+        line-height: 24px;
+        font-size: 16px;
+        display: inline-block;
+      }
+      &-headline {
+        font-weight: bold;
+      }
+      &-info {
+        font-size: 12px;
+        line-height: 32px;
+        letter-spacing: 3.3px;
+      }
+      &-text {
+        margin-bottom: 24px;
+      }
+    }
+  }
+  
+  &-info-link {
+    position: absolute;
+    bottom: 32px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    color: $backButton;
+    padding-right: 32px;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 700;
+  }
+  
+  &__box-image-container {
+    overflow: hidden;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &:hover {
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+  }
+  
+  &-button {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    @media only screen and (max-width: $mobile) {
+      margin: 32px 24px;
+    }
   }
 }
 
@@ -102,14 +121,5 @@ img.blog-box__box-image {
   transition: all .3s ease-in-out;
   &:hover {
     transform: scale(1.05);
-  }
-}
-
-.blogbox-button {
-  margin-top: 64px;
-  display: flex;
-  justify-content: center;
-  @media only screen and (max-width: $mobile) {
-    margin: 32px 24px;
   }
 }
