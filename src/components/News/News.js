@@ -30,8 +30,8 @@ const News = () => {
             const year = startDate.getFullYear();
             const startMonth = monthNames[startDate.getMonth()];
             const endMonth = monthNames[endDate.getMonth()];
-            const startDay = startDate.getDay();
-            const endDay = endDate.getDay();
+            const startDay = startDate.getDate();
+            const endDay = endDate.getDate();
             let date;
             if (item.endDate !== undefined) {
               if (startMonth === endMonth) {
