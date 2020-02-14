@@ -10,10 +10,12 @@ import Partners from '../../components/Partners/Partners';
 import ctaIcon from '../../images/icon-sg.svg';
 import Title from '../../components/Title/Title';
 import Team from '../../components/Team/Team';
+import News from '../../components/News/News';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 
 const Company = () => {
   const anchors = [
+    { id: v4(), anchor: 'news', name: 'News & Events' },
     { id: v4(), anchor: 'team', name: 'management team' },
     { id: v4(), anchor: 'partners', name: 'partners' },
     { id: v4(), anchor: 'journey', name: 'journey' },
@@ -36,6 +38,7 @@ const Company = () => {
         text="We shape IT security and Open Source business models."
       />
       <AnchorNavBar anchors={anchors} />
+      <News />
       <Team />
       <Partners />
       <Journey />
