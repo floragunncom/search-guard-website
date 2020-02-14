@@ -4,9 +4,10 @@ import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import Footer from '../../components/Footer/Footer';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import BlogPost from './BlogPost';
+import BlogPost from '../../components/BlogPost/BlogPost';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 import posts from '../../Api/contentfulPosts.json';
+import './BlogCategory.scss';
 
 const BlogCategory = ({ location }) => {
   const { slug, categoryName } = location;
@@ -32,27 +33,20 @@ const BlogCategory = ({ location }) => {
       </Helmet>
       <NavBar />
       <Title headline={categoryName} />
-      <div className="row">
+      <div className="blog-wrapper">
         {categoryPosts.map(post => {
-          return (
-            <div
-              className="col s12 l6 blogpost-column-wrapper"
-              key={post.sys.id}
-            >
-              <BlogPost post={post} />
-            </div>
-          );
+          return <BlogPost key={post.sys.id} post={post} />;
         })}
-        <div className="col s12 blogpost-link">
-          <a href="/blog/">
-            <img
-              src={infoArrowBack}
-              className="blogpost-arrow-back"
-              alt="arrow icon"
-            />
-            <span>back to blog</span>
-          </a>
-        </div>
+      </div>
+      <div className="col s12 blogpost-link">
+        <a href="/blog/" className="blog-back">
+          <img
+            src={infoArrowBack}
+            className="blog-arrow-back"
+            alt="arrow icon"
+          />
+          <span>back to blog</span>
+        </a>
       </div>
       <PreFooter />
       <Footer />

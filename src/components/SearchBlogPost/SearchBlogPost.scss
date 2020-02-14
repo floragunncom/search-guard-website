@@ -1,0 +1,64 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.searchblogpost-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchblogpost-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px 64px 20px;
+
+  @media only screen and (max-width: $mobile) {
+    margin: 16px 4px;
+  }
+}
+
+.searchblogpost-title,
+.searchblogpost-result-headline {
+  color: $darkBlue;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 20px;
+    letter-spacing: 0.67px;
+  }
+}
+
+.searchblogpost-result-headline {
+  padding: 0px 20px 32px 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.searchblogpost-author {
+  color: $darkBlue;
+  font-size: 12px;
+  line-height: 32px;
+  letter-spacing: 3.3px;
+  margin-bottom: 8px;
+}
+
+.searchblogpost-content {
+  color: $darkBlue;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.searchblogpost-no-results {
+  text-align: center;
+  margin: 64px;
+  color: $darkBlue;
+  font-size: 48px;
+  line-height: 57px;
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 27px;
+    line-height: 32px;
+  }
+}

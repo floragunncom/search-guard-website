@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './SearchBlogPost.scss';
 
 const SearchBlogPost = ({ post }) => {
   let previewContentTextLength = 165;
@@ -11,9 +12,7 @@ const SearchBlogPost = ({ post }) => {
     <Link
       to={{
         pathname: `/${post.fields.slug}`,
-        // state: { content: post.fields },
       }}
-      // className="blog-link-wrapper"
     >
       <div className="searchblogpost-item">
         <div className="searchblogpost-title">{post.fields.title}</div>

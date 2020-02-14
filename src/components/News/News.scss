@@ -1,0 +1,98 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.news {
+  &__wrapper {
+    padding: 64px 32px;
+    background-color: $lightGrey;
+    @media only screen and (max-width: $tabletBig) {
+      padding: 32px 0;
+    }
+  }
+  &__headline {
+    margin-bottom: 10px;
+    font-size: 48px;
+    line-height: 57px;
+    text-align: center;
+    color: $darkBlue;
+    font-weight: 300;
+    @media only screen and (max-width: $tabletBig) {
+      font-size: 36px;
+      line-height: 43px;
+    }
+    @media only screen and (max-width: $mobile) {
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 0px;
+    }
+  }
+  &__items-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    @media only screen and (max-width: $tabletBig) {
+      flex-direction: column; 
+    }
+  }
+  &-item {
+    flex: 1 1 400px;
+    margin: 16px;
+    background-color: $grey;
+    max-width: 550px;
+    min-width: 400px;
+    height: 425px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    text-decoration: none;
+    transition: all .2s;
+    &:hover {
+      opacity: .95;
+    }
+    @media only screen and (max-width: $tabletBig) {
+      background-size: cover;
+      max-width: 100%;
+      min-width: 200px;
+      height: 100%;
+      flex: 1; 
+    }
+    &__info {
+      width: 67%;
+      flex: 1 0 85%;
+      background-color: $white;
+      padding: 16px 8px;
+      font-size: 18px;
+      min-height: 85%;
+      @media only screen and (max-width: $tabletBig) {
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+      }
+      &-date {
+        color: $navyBlue;
+        display: flex;
+        align-items: center;
+      }
+      &-labels {
+        color: $turkis;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      &-headline {
+        color: $darkBlue;
+        font-weight: 700;
+        line-height: 20px;
+        margin: 8px 0;
+        }
+        &-description {
+          color: $darkGrey;
+          font-size: 15px;
+      }
+      &-booth {
+        color: $navyBlue;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-top: 8px;
+      }
+    }
+  }
+}

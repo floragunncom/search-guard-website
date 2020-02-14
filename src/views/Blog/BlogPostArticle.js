@@ -163,10 +163,10 @@ const BlogPostArticle = ({ match }) => {
       <BlogBox headline="Other posts you may like" randomize category={postContent.fields.tags[0]}/>
       <div className="col s12 l4" />
       <div className="col s12 blogpost-link">
-        <a href="/blog/">
+        <a href="/blog/" className="blog-back">
           <img
             src={infoArrowBack}
-            className="blogpost-arrow-back"
+            className="blog-arrow-back"
             alt="arrow icon"
           />
           <span>back to blog</span>
