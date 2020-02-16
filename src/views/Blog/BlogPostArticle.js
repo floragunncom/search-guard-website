@@ -19,8 +19,8 @@ import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
-import posts from '../../Api/contentfulPosts.json';
 import './BlogPostArticle.scss';
+import posts from '../../Api/contentfulPosts.json';
 
 const BlogPostArticle = ({ match }) => {
   const postContent = posts.find(
