@@ -160,12 +160,15 @@ const Blog = ({ history }) => {
   }
 
   let renderSearchResultPosts;
-  if (
-    searchResultsPresented &&
-    searchQuery.length > 3 &&
-    !categoryResultsPresented
-  ) {
-    if (searchResultPosts.length === 0) {
+  if (searchResultsPresented && !categoryResultsPresented) {
+    if (searchQuery.length < 4) {
+      renderSearchResultPosts = (
+        <div className="searchblogpost-result-headline">
+          Please provide more than 2 characters for a proper search result,
+          thank you.
+        </div>
+      );
+    } else if (searchResultPosts.length === 0) {
       renderSearchResultPosts = (
         <div className="searchblogpost-no-results">
           No results for &apos;{searchTerm.substring(0, searchTerm.length - 1)}
@@ -190,13 +193,6 @@ const Blog = ({ history }) => {
         </div>
       );
     }
-  } else {
-    renderSearchResultPosts = (
-      <div className="searchblogpost-result-headline">
-        Please provide more than 2 characters for a proper search result, thank
-        you.
-      </div>
-    );
   }
 
   let renderPosts;
