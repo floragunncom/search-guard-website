@@ -116,7 +116,7 @@ const BlogPostArticle = ({ match }) => {
       <BlogTitle
         text={postContent.fields.title}
         subText={`${postContent.fields.author} || ${postContent.fields.date}`}
-        tags={postContent.fields.tags.join(', ')}
+        tags={postContent.fields.tags}
       />
       <div className="row">
         <div className="col s12 offset-l2 l8">

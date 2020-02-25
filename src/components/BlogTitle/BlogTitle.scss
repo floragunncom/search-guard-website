@@ -58,6 +58,7 @@
 }
 
 .blogtitle-sub-text {
+  display: flex;
   text-transform: uppercase;
   margin: 0px;
   font-size: 12px;
@@ -66,7 +67,23 @@
   text-align: center;
   color: $white;
   @media only screen and (max-width: $tabletBig) {
-    // background-color: $white;
+    color: $navyBlue;
+  };
+}
+
+.blogtitle-tag {
+  padding: 0 4px;
+  color: $white;
+  transition: all .2s;
+  &:not(:last-child) {
+    &::after {
+      content: ', '
+    }
+  }
+  &:hover {
+    color: $turkis;
+  }
+  @media only screen and (max-width: $tabletBig) {
     color: $navyBlue;
   };
 }
