@@ -30,23 +30,23 @@ const BlogPostArticle = ({ match }) => {
     overrides: {
       h1: {
         props: {
-          className: 'blogpost-headline1',
+          className: 'blogpostarticle-headline1',
         },
       },
       h2: {
         props: {
-          className: 'blogpost-headline2',
+          className: 'blogpostarticle-headline2',
         },
       },
       h3: {
         props: {
-          className: 'blogpost-headline2',
+          className: 'blogpostarticle-headline2',
         },
       },
       p: {
         component: 'div',
         props: {
-          className: 'blogpost-text',
+          className: 'blogpostarticle-text',
         },
       },
       b: {
@@ -70,26 +70,26 @@ const BlogPostArticle = ({ match }) => {
       code: {
         component: 'div',
         props: {
-          className: 'blogpost-code-snippet',
+          className: 'blogpostarticle-code-snippet',
           id: 'post-code',
         },
       },
       a: {
         component: 'a',
         props: {
-          className: 'blogpost-link',
+          className: 'blogpostarticle-link',
         },
       },
       li: {
         component: 'div',
         props: {
-          className: 'blogpost-listitem',
+          className: 'blogpostarticle-listitem',
         },
       },
       img: {
         component: 'img',
         props: {
-          className: 'blogpost-image-wrapper blogpost-image',
+          className: 'blogpostarticle-image-wrapper blogpostarticle-image',
         },
       },
       blockquote: {
@@ -102,7 +102,7 @@ const BlogPostArticle = ({ match }) => {
   }
 
   return (
-    <div className="blogpost-container">
+    <div className="blogpostarticle-container">
       <Helmet>
         <meta charSet="utf-8" />
         <title>{postContent.fields.htmlTitle}</title>
@@ -126,18 +126,18 @@ const BlogPostArticle = ({ match }) => {
               .replace(/http:\/\/localhost:8080/g, '')}
           </Markdown>
         </div>
-        <div className="col s12 offset-l1 l1 blogpost-sidebar-container">
-          <div className="blogpost-sidebar-title">share</div>
-          <div className="blogpost-sidebar-icons-container">
+        <div className="col s12 offset-l1 l1 blogpostarticle-sidebar-container">
+          <div className="blogpostarticle-sidebar-title">share</div>
+          <div className="blogpostarticle-sidebar-icons-container">
             <FacebookShareButton
-              className="blogpost-sidebar-icon"
+              className="blogpostarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               quote={postContent.fields.title}
             >
               <img src={iconFb} alt="facebook icon" />
             </FacebookShareButton>
             <TwitterShareButton
-              className="blogpost-sidebar-icon"
+              className="blogpostarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
               hastags={postContent.fields.tags}
@@ -145,13 +145,13 @@ const BlogPostArticle = ({ match }) => {
               <img src={iconTwitter} alt="twitter icon" />
             </TwitterShareButton>
             <LinkedinShareButton
-              className="blogpost-sidebar-icon"
+              className="blogpostarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
             >
               <img src={iconIn} alt="linkedIn icon" />
             </LinkedinShareButton>
             <RedditShareButton
-              className="blogpost-sidebar-icon"
+              className="blogpostarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
             >
@@ -162,7 +162,7 @@ const BlogPostArticle = ({ match }) => {
       </div>
       <BlogBox headline="Other posts you may like" randomize category={postContent.fields.tags[0]}/>
       <div className="col s12 l4" />
-      <div className="col s12 blogpost-link">
+      <div className="col s12 blogpostarticle-link">
         <a href="/blog/" className="blog-back">
           <img
             src={infoArrowBack}
