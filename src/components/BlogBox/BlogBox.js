@@ -26,9 +26,7 @@ const BlogBox = ({ overview, headline, randomize, category }) => {
   let posts;
 
   if (category !== undefined) {
-    posts = allPosts.filter(post =>
-        post.fields.tags.includes(category),
-    );
+    posts = allPosts.filter(post => post.fields.tags.includes(category));
   } else {
     posts = allPosts;
   }
@@ -109,13 +107,9 @@ const BlogBox = ({ overview, headline, randomize, category }) => {
       >
         {headline}
       </div>
-      <div className={overview ? '' : 'custom-row'} id="blog-box__table">
-        {previewPosts(startPoint1)}
-      </div>
+      <div className="blog-box__container">{previewPosts(startPoint1)}</div>
       {overview ? (
-        <div className={overview ? '' : 'custom-row'} id="blog-box__table">
-          {previewPosts(startPoint2)}
-        </div>
+        <div className="blog-box__container">{previewPosts(startPoint2)}</div>
       ) : null}
       {morePostsButton}
     </div>
