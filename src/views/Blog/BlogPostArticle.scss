@@ -1,7 +1,7 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
-.blogpost-headline1 {
+.blogpostarticle-headline1 {
   color: $darkBlue;
   margin-top: 64px;
   margin-bottom: 32px;
@@ -18,7 +18,7 @@
   };
 }
 
-.blogpost-headline2 {
+.blogpostarticle-headline2 {
   margin-top: 32px;
   margin-bottom: 32px;
   color: $darkBlue;
@@ -27,7 +27,7 @@
   line-height: 30px;
 }
 
-.blogpost-code-snippet {
+.blogpostarticle-code-snippet {
   background-color: $lightGrey;
   font-family: Courier;
   font-size: 16px;
@@ -38,7 +38,7 @@
 }
 
 
-.blogpost-quote-wrapper {
+.blogpostarticle-quote-wrapper {
   margin: 26px 30px 30px -15vw;
   max-width: 425px;
   float: left;
@@ -52,7 +52,7 @@
   };
 }
 
-.blogpost-quote-image {
+.blogpostarticle-quote-image {
   float: left;
   @media only screen and (max-width: $mobile) {
     width: 26px;
@@ -60,7 +60,7 @@
   };
 }
 
-.blogpost-quote-text .blogpost-text {
+.blogpostarticle-quote-text .blogpostarticle-text {
   margin: 0px;
   max-width: 360px;
   margin-left: 70px;
@@ -82,7 +82,7 @@
   };
 }
 
-.blogpost-image-wrapper.blogpost-image {
+.blogpostarticle-image-wrapper.blogpostarticle-image {
   display: block;
   margin: auto;
   width: auto;
@@ -91,14 +91,14 @@
   max-width: 100%;
 }
 
-.blogpost-image-description {
+.blogpostarticle-image-description {
   color: $darkGrey;
   font-size: 14px;
   line-height: 20px;
   text-align: center;
 }
 
-.blogpost-text {
+.blogpostarticle-text {
   margin-bottom: 32px;
   margin-top: 32px;
   color: $darkGrey;
@@ -112,7 +112,7 @@
   };
 }
 
-.blogpost-sidebar-container {
+.blogpostarticle-sidebar-container {
   margin: 64px 0px;
   border-top: 6px solid $grey;
   border-bottom: 6px solid $grey;
@@ -125,7 +125,7 @@
   }
 }
 
-.blogpost-sidebar-icons-container {
+.blogpostarticle-sidebar-icons-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -140,7 +140,7 @@
   }
 }
 
-.blogpost-sidebar-title {
+.blogpostarticle-sidebar-title {
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -157,7 +157,7 @@
   }
 }
 
-.blogpost-sidebar-icon {
+.blogpostarticle-sidebar-icon {
   margin: 8px 16px;
   cursor: pointer;
   &:last-child {
@@ -176,7 +176,7 @@
   }
 }
 
-.blogpost-recommended-headline {
+.blogpostarticle-recommended-headline {
   margin: 124px 0px 64px 0px;
   font-size: 24px;
   line-height: 30px;
@@ -200,7 +200,7 @@
   display: inline;
 }
 
-.blogpost-listitem {
+.blogpostarticle-listitem {
   color: $darkGrey;
   font-size: 18px;
   line-height: 27px;

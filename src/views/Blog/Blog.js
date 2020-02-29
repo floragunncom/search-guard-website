@@ -12,7 +12,7 @@ import posts from '../../Api/contentfulPosts.json';
 import Pagination from '../../components/Pagination/Pagination';
 import './Blog.scss';
 
-const Blog = ({ history }) => {
+const Blog = () => {
   const [searchResultsPresented, setSearchResultsPresented] = useState(false);
   const [categoryResultsPresented, setCategoryResultsPresented] = useState(
     false,
@@ -98,7 +98,7 @@ const Blog = ({ history }) => {
     </div>
   );
 
-  const categoryNameTags = minCount => {
+  const categoryNameTags = () => {
     const tags = [];
     posts.map(post => post.fields.tags.map(tag => tags.push(tag)));
     const tagsObj = tags.map(tagName => {
@@ -111,16 +111,14 @@ const Blog = ({ history }) => {
       (x, y) => (x.findIndex(e => e.name === y.name) < 0 ? [...x, y] : x),
       [],
     );
-    return final
-      .filter(tag => tag.count >= minCount)
-      .sort((a, b) => b.count - a.count);
+    return final.sort((a, b) => b.count - a.count);
   };
 
   const categories = (
     <div className="blog-categories-wrapper">
       <div className="blog-categories-title">Tags</div>
       <div className="blog-categories-items-wrapper">
-        {categoryNameTags(3).map(tag => {
+        {categoryNameTags().map(tag => {
           const slug = tag.name.replace(/[ /]/g, '-').toLowerCase();
           const categoryPosts = posts.filter(post =>
             post.fields.tags.includes(tag.name),

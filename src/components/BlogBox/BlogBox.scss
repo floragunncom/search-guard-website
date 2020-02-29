@@ -1,23 +1,23 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
-#blog-box__table {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 32px;
-  @media only screen and (max-width: $tabletBig) {
-    display: inline-block;
-    margin-bottom: 0;
-  }
-  & .blog-box__box {
-    display: table-cell;
-    width: 32%;
-    @media only screen and (max-width: $tabletBig) {
-      width: 100%;
-      display: inline-block;
-    }
-  }
-}
+// #blog-box__table {
+//   display: flex;
+//   justify-content: space-between;
+//   margin-bottom: 32px;
+//   @media only screen and (max-width: $tabletBig) {
+//     display: inline-block;
+//     margin-bottom: 0;
+//   }
+//   & .blog-box__box {
+//     display: table-cell;
+//     width: 32%;
+//     @media only screen and (max-width: $tabletBig) {
+//       width: 100%;
+//       display: inline-block;
+//     }
+//   }
+// }
   
 .blog-box {
   &__wrapper {
@@ -36,21 +36,49 @@
     padding: 64px 0;
     font-weight: 300;
   }
-
+  
   &__headline {
     font-size: 24px;
     line-height: 30px;
   }
-
+  
   &__headline-overview {
     font-size: 48px;
     line-height: 57px;
   }
 
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    @media only screen and (max-width: $tabletBig) {
+      flex-direction: column;
+    }
+  }
+  
+  
   &__box {
     padding-bottom: 12px;
     background-color: $grey;
+    display: flex;
+    flex: 1 1 300px;
     position: relative;
+    flex-direction: column;
+    max-width: 500px;
+    margin-bottom: 12px;
+    &:nth-child(2) {
+      margin: 0 12px;
+      margin-bottom: 12px;
+    }
+    @media only screen and (max-width: $tabletBig) {
+      &:nth-child(2) {
+        margin: 0;
+      }
+      max-width: 100%;
+      margin-bottom: 0px;
+    }
     &-content {
       cursor: pointer;
       padding: 24px 32px;
@@ -98,6 +126,7 @@
     filter: grayscale(100%);
     -webkit-transition: .3s ease-in-out;
     transition: all .3s ease-in-out;
+    height: 220px;
     &:hover {
       -webkit-filter: grayscale(0);
       filter: grayscale(0);
@@ -115,8 +144,10 @@
 }
 
 img.blog-box__box-image {
-  height: 220px;
+  height: 100%;
   width: 100%;
+  object-fit: cover;
+  object-position: top;
   display: block;
   transition: all .3s ease-in-out;
   &:hover {

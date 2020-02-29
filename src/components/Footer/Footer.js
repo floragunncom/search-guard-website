@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
 import './Footer.scss';
 import RichSnippetCompany from '../RichSnippets/RichSnippetCompany';
 
@@ -18,14 +17,14 @@ const Footer = ({ landing }) => {
                   </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/product/#concept" className="footer-links">
+                  <a href="/product/#concept" className="footer-links">
                     What it is
-                  </HashLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/resource/#videos" className="footer-links">
+                  <a href="/resource/#videos" className="footer-links">
                     How it works
-                  </HashLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
                   <NavLink to="/certificates/" className="footer-links">
@@ -41,24 +40,24 @@ const Footer = ({ landing }) => {
                   </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/licensing/#standard" className="footer-links">
+                  <a href="/licensing/#standard" className="footer-links">
                     Standard editions
-                  </HashLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/licensing/#feature" className="footer-links">
+                  <a href="/licensing/#feature" className="footer-links">
                     Feature breakdown
-                  </HashLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/licensing/#academic" className="footer-links">
+                  <a href="/licensing/#academic" className="footer-links">
                     Academic edition
-                  </HashLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/licensing/#academic" className="footer-links">
+                  <a href="/licensing/#academic" className="footer-links">
                     Custom edition
-                  </HashLink>
+                  </a>
                 </div>
               </div>
               <div className="filler-class" />
@@ -135,19 +134,19 @@ const Footer = ({ landing }) => {
                   </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/company/#team" className="footer-links">
+                  <a href="/company/#team" className="footer-links">
                     Who we are
-                  </HashLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/company/#partners" className="footer-links">
+                  <a href="/company/#partners" className="footer-links">
                     Partners
-                  </HashLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <HashLink to="/product/#integrators" className="footer-links">
+                  <a href="/product/#integrators" className="footer-links">
                     Integrators
-                  </HashLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
                   <NavLink to="/datenschutz/" className="footer-links">
