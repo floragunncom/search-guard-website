@@ -54,3 +54,13 @@
     padding: 0;
   }
 }
+
+.tls-icon-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.icon-style {
+  color: $navyBlue;
+  cursor: pointer;
+  transition: all .2s;
+}
