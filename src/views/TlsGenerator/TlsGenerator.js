@@ -18,13 +18,12 @@ const TlsGenerator = () => {
     initialLoad ? firstPageVisit() : window.scrollTo(0, 1500);
   }, [showAllHosts]);
 
-  const changeNewsletterValue = e => {
-    e.preventScroll();
+  const changeNewsletterValue = () => {
     setNewsletterValue(!newsletterValue);
-  }
+  };
 
   const firstPageVisit = () => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     setInitialLoad(false);
   };
 
