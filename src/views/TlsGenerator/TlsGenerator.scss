@@ -65,3 +65,25 @@
   cursor: pointer;
   transition: all .2s;
 }
+
+.dialog-enter {
+  opacity: 0.01;
+  transform: scale(1.05);
+}
+
+.dialog-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms;
+}
+
+.dialog-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dialog-exit-active {
+  opacity: 0.01;
+  transform: scale(1.05);
+  transition: all 300ms;
+}

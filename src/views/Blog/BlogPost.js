@@ -16,7 +16,6 @@ const BlogPost = ({ post }) => {
       <Link
         to={{ pathname: `/${blogPost.slug}` }}
         className="blog-link-wrapper"
-        onClick={window.scrollTo(0, 0)}
       >
         <div className="blog-image-wrapper">
           <img

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { CSSTransition } from 'react-transition-group';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
@@ -12,19 +13,9 @@ const TlsGenerator = () => {
   const history = useHistory();
   const [newsletterValue, setNewsletterValue] = useState(false);
   const [showAllHosts, setShowAllHosts] = useState(false);
-  const [initialLoad, setInitialLoad] = useState(true);
-
-  useEffect(() => {
-    initialLoad ? firstPageVisit() : window.scrollTo(0, 1500);
-  }, [showAllHosts]);
 
   const changeNewsletterValue = () => {
     setNewsletterValue(!newsletterValue);
-  };
-
-  const firstPageVisit = () => {
-    // window.scrollTo(0, 0);
-    setInitialLoad(false);
   };
 
   const changeShowALlHostsState = () => {
@@ -322,7 +313,12 @@ const TlsGenerator = () => {
                       Hostname 1 *
                     </label>
                   </div>
-                  {showAllHosts && (
+                  <CSSTransition
+                    in={showAllHosts}
+                    timeout={300}
+                    classNames="dialog"
+                    unmountOnExit
+                  >
                     <div className="tls-allHosts-wrapper">
                       <div className="input-field col s12">
                         <input id="host2" name="host2" type="text" />
@@ -379,7 +375,7 @@ const TlsGenerator = () => {
                         </label>
                       </div>
                     </div>
-                  )}
+                  </CSSTransition>
                   <div className="tls-icon-wrapper">
                     <i
                       className="small material-icons icon-style"

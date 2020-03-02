@@ -67,7 +67,6 @@ const BlogBox = ({ overview, headline, randomize, category }) => {
       return (
         <Link
           to={{ pathname: `/${post.fields.slug}` }}
-          onClick={window.scrollTo(0, 0)}
           className="blog-box__box"
           key={post.sys.id}
         >

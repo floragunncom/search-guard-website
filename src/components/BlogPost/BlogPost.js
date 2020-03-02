@@ -16,11 +16,7 @@ const BlogPost = ({ post }) => {
 
   if (blogPost !== undefined) {
     return (
-      <Link
-        to={{ pathname: `/${blogPost.slug}` }}
-        className="blogpost-wrapper"
-        onClick={window.scrollTo(0, 0)}
-      >
+      <Link to={{ pathname: `/${blogPost.slug}` }} className="blogpost-wrapper">
         <div className="blogpost-image-wrapper">
           <img
             src={blogPost.postImage.fields.file.url}
