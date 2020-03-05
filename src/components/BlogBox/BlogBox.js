@@ -67,7 +67,6 @@ const BlogBox = ({ overview, headline, randomize, category }) => {
       return (
         <Link
           to={{ pathname: `/${post.fields.slug}` }}
-          onClick={window.scrollTo(0, 0)}
           className="blog-box__box"
           key={post.sys.id}
         >
@@ -78,13 +77,11 @@ const BlogBox = ({ overview, headline, randomize, category }) => {
               className="blog-box__box-image"
             />
           </div>
-          <div className="blog-box__box-content">
-            <div className="blog-box__box-content-headline">{fittedTitle}</div>
-            <div className="blog-box__box-content-info">
-              {post.fields.author} || {post.fields.date}
-            </div>
-            <div className="blog-box__box-content-text">{fittedContent}</div>
+          <div className="blog-box__box-content-headline">{fittedTitle}</div>
+          <div className="blog-box__box-content-info">
+            {post.fields.author} || {post.fields.date}
           </div>
+          <div className="blog-box__box-content-text">{fittedContent}</div>
           <div className="blog-box-info-link">
             <span>read more</span>
             <img

@@ -12,9 +12,7 @@ const Footer = ({ landing }) => {
             <div className="row footer-row">
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/product/" onClick={window.scrollTo(0, 0)}>
-                    product
-                  </NavLink>
+                  <NavLink to="/product/">product</NavLink>
                 </div>
                 <div className="footer-list-item">
                   <a href="/product/#concept" className="footer-links">
@@ -35,9 +33,7 @@ const Footer = ({ landing }) => {
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/licensing/" onClick={window.scrollTo(0, 0)}>
-                    license
-                  </NavLink>
+                  <NavLink to="/licensing/">license</NavLink>
                 </div>
                 <div className="footer-list-item">
                   <a href="/licensing/#standard" className="footer-links">
@@ -63,9 +59,7 @@ const Footer = ({ landing }) => {
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/resource/" onClick={window.scrollTo(0, 0)}>
-                    resource hub
-                  </NavLink>
+                  <NavLink to="/resource/">resource hub</NavLink>
                 </div>
                 <div className="footer-list-item">
                   <a
@@ -129,9 +123,7 @@ const Footer = ({ landing }) => {
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/company/" onClick={window.scrollTo(0, 0)}>
-                    company
-                  </NavLink>
+                  <NavLink to="/company/">company</NavLink>
                 </div>
                 <div className="footer-list-item">
                   <a href="/company/#team" className="footer-links">
