@@ -1,6 +1,10 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
+.row.blogpostarticle-wrapper {
+  padding: 0 12px;
+}
+
 .blogpostarticle-headline1 {
   color: $darkBlue;
   margin-top: 64px;

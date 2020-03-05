@@ -1,23 +1,5 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
-
-// #blog-box__table {
-//   display: flex;
-//   justify-content: space-between;
-//   margin-bottom: 32px;
-//   @media only screen and (max-width: $tabletBig) {
-//     display: inline-block;
-//     margin-bottom: 0;
-//   }
-//   & .blog-box__box {
-//     display: table-cell;
-//     width: 32%;
-//     @media only screen and (max-width: $tabletBig) {
-//       width: 100%;
-//       display: inline-block;
-//     }
-//   }
-// }
   
 .blog-box {
   &__wrapper {
@@ -60,14 +42,19 @@
   
   
   &__box {
-    padding-bottom: 12px;
+    padding-bottom: 32px;
     background-color: $grey;
     display: flex;
     flex: 1 1 300px;
-    position: relative;
     flex-direction: column;
     max-width: 500px;
     margin-bottom: 12px;
+    // overflow: hidden;
+    text-decoration: none;
+    color: $darkBlue;
+    line-height: 27px;
+    font-size: 18px;
+    cursor: pointer;
     &:nth-child(2) {
       margin: 0 12px;
       margin-bottom: 12px;
@@ -80,40 +67,30 @@
       margin-bottom: 0px;
     }
     &-content {
-      cursor: pointer;
-      padding: 24px 32px;
-      overflow: hidden;
-      text-decoration: none;
-      color: $darkBlue;
-      line-height: 27px;
-      font-size: 18px;
-      @media only screen and (max-width: $tabletBig) {
-        line-height: 24px;
-        font-size: 16px;
-        display: inline-block;
-      }
       &-headline {
         font-weight: bold;
+        padding: 32px 32px 0 32px;
       }
       &-info {
         font-size: 12px;
         line-height: 32px;
         letter-spacing: 3.3px;
+        padding: 0 32px;
       }
       &-text {
         margin-bottom: 24px;
+        padding: 0 32px;
       }
     }
   }
   
   &-info-link {
-    position: absolute;
-    bottom: 32px;
-    right: 0;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     color: $backButton;
     padding-right: 32px;
+    margin-top: auto;
     text-transform: uppercase;
     font-size: 13px;
     line-height: 15px;
@@ -121,12 +98,14 @@
   }
   
   &__box-image-container {
+    width: 100%;
+    height: 200px;
     overflow: hidden;
+    position: relative;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     -webkit-transition: .3s ease-in-out;
     transition: all .3s ease-in-out;
-    height: 220px;
     &:hover {
       -webkit-filter: grayscale(0);
       filter: grayscale(0);

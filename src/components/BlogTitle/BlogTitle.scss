@@ -59,12 +59,12 @@
 
 .blogtitle-sub-text {
   display: flex;
+  justify-content: space-evenly;
   text-transform: uppercase;
   margin: 0px;
   font-size: 12px;
   line-height: 22px;
   letter-spacing: 3.3px;
-  text-align: center;
   color: $white;
   @media only screen and (max-width: $tabletBig) {
     color: $navyBlue;

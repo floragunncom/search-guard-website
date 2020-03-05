@@ -77,13 +77,11 @@ const BlogBox = ({ overview, headline, randomize, category }) => {
               className="blog-box__box-image"
             />
           </div>
-          <div className="blog-box__box-content">
-            <div className="blog-box__box-content-headline">{fittedTitle}</div>
-            <div className="blog-box__box-content-info">
-              {post.fields.author} || {post.fields.date}
-            </div>
-            <div className="blog-box__box-content-text">{fittedContent}</div>
+          <div className="blog-box__box-content-headline">{fittedTitle}</div>
+          <div className="blog-box__box-content-info">
+            {post.fields.author} || {post.fields.date}
           </div>
+          <div className="blog-box__box-content-text">{fittedContent}</div>
           <div className="blog-box-info-link">
             <span>read more</span>
             <img

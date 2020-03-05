@@ -118,7 +118,7 @@ const BlogPostArticle = ({ match }) => {
         subText={`${postContent.fields.author} || ${postContent.fields.date}`}
         tags={postContent.fields.tags}
       />
-      <div className="row">
+      <div className="row blogpostarticle-wrapper">
         <div className="col s12 offset-l2 l8">
           <Markdown options={options}>
             {postContent.fields.postContent
