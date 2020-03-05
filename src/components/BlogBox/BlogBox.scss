@@ -35,9 +35,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    @media only screen and (max-width: $tabletBig) {
-      flex-direction: column;
-    }
   }
   
   
@@ -101,7 +98,6 @@
     width: 100%;
     height: 200px;
     overflow: hidden;
-    position: relative;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     -webkit-transition: .3s ease-in-out;
@@ -123,13 +119,17 @@
 }
 
 img.blog-box__box-image {
-  height: 100%;
-  width: 100%;
+  max-height: auto;
+  max-width: 100%;
   object-fit: cover;
   object-position: top;
   display: block;
   transition: all .3s ease-in-out;
   &:hover {
     transform: scale(1.05);
+  }
+  @media only screen and (max-width: $tabletBig) {
+    width: 100%;
+    max-height: auto;
   }
 }
