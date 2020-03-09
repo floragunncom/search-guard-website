@@ -1,5 +1,6 @@
 import React from 'react';
 import events from '../../Api/contentfulEvents.json';
+import Markdown from 'markdown-to-jsx';
 import './News.scss';
 
 const News = () => {
@@ -62,7 +63,7 @@ const News = () => {
                     {item.headline}
                   </div>
                   <div className="news-item__info-description">
-                    {item.description}
+                      <Markdown>{item.description}</Markdown>
                   </div>
                   <div className="news-item__info-booth">
                     {item.boothNumber}
