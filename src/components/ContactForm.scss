@@ -12,6 +12,11 @@
   border-right: 3px solid $grey;
   margin-right: 40px;
   padding-right: 32px;
+  @media only screen and (max-width: $tabletBig) {
+    border-right: unset;
+    margin-right: 0;
+    padding-right: 0;
+  }
 }
 
 .company-information-header {
