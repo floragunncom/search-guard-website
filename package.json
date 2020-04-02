@@ -97,7 +97,8 @@
     "include": [
       "/security-for-elasticsearch/",
       "/elasticsearch-kibana-security/",
-      "/thanks/"
+      "/thanks/",
+      "/category/*"
     ],
     "puppeteerArgs": [
       "--no-sandbox",
