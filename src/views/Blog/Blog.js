@@ -123,11 +123,7 @@ const Blog = () => {
           return (
             <Link
               to={{
-                pathname: `/category/${slug}/`,
-                state: {
-                  categoryName: tag.name,
-                  slug,
-                },
+                pathname: `/category/${slug}/`
               }}
               key={tag.name}
               className="blog-categories-item"

@@ -9,11 +9,12 @@ import infoArrowBack from '../../images/info-arrow-back.svg';
 import posts from '../../Api/contentfulPosts.json';
 import './BlogCategory.scss';
 
-const BlogCategory = ({ location }) => {
-  const { slug, categoryName } = location.state;
-  const categoryPosts = posts.filter(post =>
-    post.fields.tags.includes(categoryName),
-  );
+const BlogCategory = ({ match }) => {
+  const categoryName = match.params.slug.replace('-ssl', '/ssl').replace(/-/g, ' ').toLowerCase();
+  const categoryPosts = posts.filter(post => {
+    const tagsToLowercase = post.fields.tags.map(tag => tag.toLowerCase());
+    return tagsToLowercase.includes(categoryName)
+  });
 
   return (
     <div>
@@ -24,7 +25,7 @@ const BlogCategory = ({ location }) => {
         </title>
         <link
           rel="canonical"
-          href={`https://search-guard.com/blog/category/${slug}/`}
+          href={`https://search-guard.com/blog/${match.url}`}
         />
         <meta
           name="description"
