@@ -10,7 +10,7 @@ import posts from '../../Api/contentfulPosts.json';
 import './BlogCategory.scss';
 
 const BlogCategory = ({ location }) => {
-  const { slug, categoryName } = location;
+  const { slug, categoryName } = location.state;
   const categoryPosts = posts.filter(post =>
     post.fields.tags.includes(categoryName),
   );

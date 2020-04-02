@@ -120,16 +120,14 @@ const Blog = () => {
       <div className="blog-categories-items-wrapper">
         {categoryNameTags().map(tag => {
           const slug = tag.name.replace(/[ /]/g, '-').toLowerCase();
-          const categoryPosts = posts.filter(post =>
-            post.fields.tags.includes(tag.name),
-          );
           return (
             <Link
               to={{
                 pathname: `/category/${slug}/`,
-                categoryName: tag.name,
-                categoryPosts,
-                slug,
+                state: {
+                  categoryName: tag.name,
+                  slug,
+                },
               }}
               key={tag.name}
               className="blog-categories-item"
