@@ -1,10 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { v4 } from 'uuid';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
 import Card from '../../components/Card/Card';
-import NavBar from '../../components/NavBar/NavBar';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import Title from '../../components/Title/Title';
 import Cta from '../../components/Cta/Cta';
@@ -32,7 +31,7 @@ const Resource = () => {
   ];
 
   return (
-    <div id="top">
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>
@@ -45,7 +44,6 @@ const Resource = () => {
           content="Search Guard resource hub including blog posts, faq, documentation, presentations and whitepapers"
         />
       </Helmet>
-      <NavBar />
       <Title
         headline="resource hub"
         text="Search Guard resource hub including blog posts, faq, documentation, presentations and whitepapers."
@@ -115,8 +113,7 @@ const Resource = () => {
         link="/contacts/"
       />
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

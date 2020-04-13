@@ -6,11 +6,10 @@ import {
   LinkedinShareButton,
   RedditShareButton,
 } from 'react-share';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Markdown from 'markdown-to-jsx';
-import NavBar from '../../components/NavBar/NavBar';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
 import BlogBox from '../../components/BlogBox/BlogBox';
 import Blockquote from '../../components/Blockquote/Blockquote';
 import infoArrowBack from '../../images/info-arrow-back.svg';
@@ -102,7 +101,7 @@ const BlogPostArticle = ({ match }) => {
   }
 
   return (
-    <div className="blogpostarticle-container">
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{postContent.fields.htmlTitle}</title>
@@ -112,7 +111,6 @@ const BlogPostArticle = ({ match }) => {
         />
         <meta name="description" content={postContent.fields.htmlDescription} />
       </Helmet>
-      <NavBar />
       <BlogTitle
         text={postContent.fields.title}
         subText={`${postContent.fields.author} || ${postContent.fields.date}`}
@@ -177,8 +175,6 @@ const BlogPostArticle = ({ match }) => {
         </a>
       </div>
       <PreFooter />
-      <Footer />
-
       <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
@@ -206,7 +202,7 @@ const BlogPostArticle = ({ match }) => {
             }
           }
         `}</script>
-    </div>
+    </PageWrapper>
   );
 };
 

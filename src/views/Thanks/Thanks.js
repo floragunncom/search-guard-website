@@ -1,13 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Button from '../../components/Button/Button';
-import NavBar from '../../components/NavBar/NavBar';
-import Footer from '../../components/Footer/Footer';
 import './Thanks.scss';
 
 const Thanks = () => {
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Search Guard | Thanks for your message</title>
@@ -17,7 +16,6 @@ const Thanks = () => {
           content="Thank you very much for getting in contact with Search Guard and our team."
         />
       </Helmet>
-      <NavBar />
       <div className="thanks-wrapper">
         <div className="row">
           <div className="col s12 m10 offset-m1 l8 offset-l2">
@@ -39,8 +37,7 @@ const Thanks = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

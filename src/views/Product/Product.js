@@ -3,8 +3,7 @@ import { Helmet } from 'react-helmet';
 import { v4 } from 'uuid';
 import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
-import NavBar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
@@ -30,7 +29,7 @@ const Product = () => {
   ];
 
   return (
-    <div id="top">
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>
@@ -43,7 +42,6 @@ const Product = () => {
           content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
         />
       </Helmet>
-      <NavBar />
       <Title
         headline="search guard security plugin"
         text="As the pioneers in securing Elasticsearch clusters, all decisions about our technology have the same purpose, to make your Elasticsearch environment more secure."
@@ -84,8 +82,7 @@ const Product = () => {
         />
       </div>
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

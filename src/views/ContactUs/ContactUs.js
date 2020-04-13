@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Footer from '../../components/Footer/Footer';
-import NavBar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Cta from '../../components/Cta/Cta';
@@ -11,7 +10,7 @@ import './contactUs.scss';
 
 const ContactUs = () => {
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Contact the Search Guard team - get in touch with us</title>
@@ -21,7 +20,6 @@ const ContactUs = () => {
           content="Any questions regarding Search Guard licensing or pricing? Do you need OEM licenses or want to partner with us? Please fill out the contact form and we will get back to you as soon as possible."
         />
       </Helmet>
-      <NavBar />
       <Title
         headline="Get in touch"
         text="Any questions regarding Search Guard licensing or pricing? Do you need OEM licenses or want to partner with us? Please fill out the contact form and we will get back to you as soon as possible."
@@ -35,8 +33,7 @@ const ContactUs = () => {
         link="/resource/"
       />
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

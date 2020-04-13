@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { initGA, PageView } from '../../components/Tracking/Tracking';
-import NavBar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Hero from '../../components/Hero/Hero';
 import TileSimple from '../../components/TileSimple/TileSimple';
 import Labels from '../../components/Labels/Labels';
 import TrustedBy from '../../components/TrustedBy/TrustedBy';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
 import Cta from '../../components/Cta/Cta';
 import Services from '../../components/Services/Services';
 import Quotes from '../../components/Quotes/Quotes';
@@ -24,7 +23,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
+    <PageWrapper background="#184962">
       <Helmet>
         <meta charSet="utf-8" />
         <title>
@@ -36,7 +35,6 @@ const HomePage = () => {
           content="Search Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."
         />
       </Helmet>
-      <NavBar background="#184962" />
       <Hero />
       <TileSimple
         icon={multilevel}
@@ -76,8 +74,7 @@ const HomePage = () => {
       />
       <Quotes />
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

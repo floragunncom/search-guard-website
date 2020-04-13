@@ -17,22 +17,34 @@ const Partners = () => {
         <div className="company-partners-pic-wrapper">
           <div className="col s12 m4 offset-m2 company-partners-pic hide-on-small-only">
             <a href="https://www.exceleratesystems.com/">
-              <img src={excelerate} alt="Search Guard Partner Excelerate Systems" />{' '}
+              <img
+                src={excelerate}
+                alt="Search Guard Partner Excelerate Systems"
+              />{' '}
             </a>
           </div>
           <div className="col s12 m4 offset-m2 company-partners-pic-mobile hide-on-med-and-up">
             <a href="https://www.exceleratesystems.com/">
-              <img src={excelerateMobile} alt="Search Guard Partner Excelerate Systems" />{' '}
+              <img
+                src={excelerateMobile}
+                alt="Search Guard Partner Excelerate Systems"
+              />{' '}
             </a>
           </div>
           <div className="col s12 m4 company-partners-pic hide-on-small-only">
             <a href="https://siren.io/">
-              <img src={sirenPartner} alt="Search Guard Partner Siren Solutions" />{' '}
+              <img
+                src={sirenPartner}
+                alt="Search Guard Partner Siren Solutions"
+              />{' '}
             </a>
           </div>
           <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
             <a href="https://siren.io/">
-              <img src={sirenPartnerMobile} alt="Search Guard Partner Siren Solutions" />{' '}
+              <img
+                src={sirenPartnerMobile}
+                alt="Search Guard Partner Siren Solutions"
+              />{' '}
             </a>
           </div>
         </div>
@@ -41,27 +53,38 @@ const Partners = () => {
         <div className="company-partners-pic-wrapper">
           <div className="col s12 m4 offset-m2 company-partners-pic hide-on-small-only">
             <a href="https://www.cleverdata.at/">
-              <img src={cleverdataPartner} alt="Search Guard Partner Cleverdata" />{' '}
+              <img
+                src={cleverdataPartner}
+                alt="Search Guard Partner Cleverdata"
+              />{' '}
             </a>
           </div>
           <div className="col s12 m4 offset-m2 company-partners-pic-mobile hide-on-med-and-up">
             <a href="https://www.cleverdata.at/">
-              <img src={cleverdataPartnerMobile} alt="Search Guard Partner Cleverdata" />{' '}
+              <img
+                src={cleverdataPartnerMobile}
+                alt="Search Guard Partner Cleverdata"
+              />{' '}
             </a>
           </div>
           <div className="col s12 m4 company-partners-pic hide-on-small-only">
             <a href="https://www.fgts.ru/">
-              <img src={factorgroupPartner} alt="Search Guard Partner Factor Group" />{' '}
+              <img
+                src={factorgroupPartner}
+                alt="Search Guard Partner Factor Group"
+              />{' '}
             </a>
           </div>
           <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
             <a href="https://www.fgts.ru/">
-              <img src={factorgroupPartnerMobile} alt="Search Guard Partner Factor Group" />{' '}
+              <img
+                src={factorgroupPartnerMobile}
+                alt="Search Guard Partner Factor Group"
+              />{' '}
             </a>
           </div>
         </div>
       </div>
-
     </div>
   );
 };

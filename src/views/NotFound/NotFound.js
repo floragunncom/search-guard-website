@@ -1,13 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import Footer from '../../components/Footer/Footer';
-import NavBar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Button from '../../components/Button/Button';
 import './NotFound.scss';
 
 const NotFound = () => {
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>404 - Page not found</title>
@@ -17,7 +16,6 @@ const NotFound = () => {
           content="The page you tried to access could not be found."
         />
       </Helmet>
-      <NavBar />
       <div className="notfound-wrapper">
         <div className="row">
           <div className="col s12 m10 offset-m1 l8 offset-l2">
@@ -33,8 +31,7 @@ const NotFound = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

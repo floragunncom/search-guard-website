@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { v4 } from 'uuid';
 import { initGA, PageView } from '../../components/Tracking/Tracking';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
-import NavBar from '../../components/NavBar/NavBar';
 import Title from '../../components/Title/Title';
 import Card from '../../components/Card/Card';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
@@ -28,7 +27,7 @@ const License = () => {
   ];
 
   return (
-    <div id="top">
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>
@@ -40,7 +39,6 @@ const License = () => {
           content="Get to know more about the Search Guard Editions and pricing. Fair licensing and secure your Elasticsearch cluster with an unlimited amount of nodes - scale your cluster not your costs."
         />
       </Helmet>
-      <NavBar />
       <Title
         headline="licensing model"
         text="Unlimited nodes licensing for all security and alerting features. Scale your cluster, not your cost!"
@@ -73,8 +71,7 @@ const License = () => {
         link="/contacts/"
       />
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

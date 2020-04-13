@@ -1,14 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import NavBar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
 import './Imprint.scss';
 
 const Imprint = () => {
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Impressum - Search Guard</title>
@@ -21,7 +20,6 @@ const Imprint = () => {
           content="Search Guard company information, contact details and VAT ID."
         />
       </Helmet>
-      <NavBar />
       <Title
         headline="Imprint"
         text="Company information, contact details and VAT ID."
@@ -130,8 +128,7 @@ const Imprint = () => {
         </div>
       </div>
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

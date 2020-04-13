@@ -1,14 +1,13 @@
 import React from 'react';
-import NavBar from '../../components/NavBar/NavBar';
+import {Helmet} from "react-helmet";
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
 import './Disclosure.scss';
-import {Helmet} from "react-helmet";
 
 const Disclosure = () => {
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Search Guard Disclosure Policy</title>
@@ -21,7 +20,6 @@ const Disclosure = () => {
           content="We take security seriously. Our policy for reporting security related issues found in Search Guard."
         />
       </Helmet>
-      <NavBar />
       <Title
         headline="disclosure policy"
         text="Before reporting, please read our disclosure policy on how we handle security related bugs and issues."
@@ -212,8 +210,7 @@ const Disclosure = () => {
         </div>
       </div>
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 
