@@ -1,14 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import NavBar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 
 const WhitePapers = () => {
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Official Search Guard White Papers</title>
@@ -18,7 +17,6 @@ const WhitePapers = () => {
           content="How to use Search Guard to stay compliant with regulations like GDPR, HIPAA, PCI and SOX."
         />
       </Helmet>
-      <NavBar />
       <Title
         headline="White Papers"
         text="How to use Search Guard to stay compliant with regulations like GDPR, HIPAA, PCI and SOX."
@@ -39,8 +37,7 @@ const WhitePapers = () => {
         </div>
       </div>
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

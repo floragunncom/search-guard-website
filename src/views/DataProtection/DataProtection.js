@@ -1,14 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import './DataProtection.scss';
-import Navbar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
 
 const DataProtection = () => {
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Datenschutz - Search Guard</title>
@@ -18,7 +17,6 @@ const DataProtection = () => {
           content="Our policy regarding the collection and usage of personal data in accordance with GDPR."
         />
       </Helmet>
-      <Navbar />
       <Title
         headline="Data Protection"
         text="Our policy regarding the collection and usage of personal data in accordance with GDPR."
@@ -497,8 +495,7 @@ const DataProtection = () => {
         </div>
       </div>
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

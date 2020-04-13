@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { CSSTransition } from 'react-transition-group';
-import Footer from '../../components/Footer/Footer';
-import NavBar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
 import DropDown from '../../components/DropDown/DropDown';
@@ -48,7 +47,7 @@ const TlsGenerator = () => {
   };
 
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>TLS Certificate Generator - Search Guard</title>
@@ -61,7 +60,6 @@ const TlsGenerator = () => {
           content="Search Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."
         />
       </Helmet>
-      <NavBar />
       <Title
         headline="TLS Certificate Generator"
         text="Use our generator service to create all certificates required for configuring Search Guard."
@@ -415,8 +413,7 @@ const TlsGenerator = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

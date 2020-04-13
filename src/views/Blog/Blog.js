@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as lunr from 'lunr';
 import { Helmet } from 'react-helmet';
-import NavBar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
 import BlogPost from '../../components/BlogPost/BlogPost';
 import SearchBlogPost from '../../components/SearchBlogPost/SearchBlogPost';
 import posts from '../../Api/contentfulPosts.json';
@@ -203,7 +202,7 @@ const Blog = () => {
   }
 
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>
@@ -215,7 +214,6 @@ const Blog = () => {
           content="This is the official Search Guard blog. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch."
         />
       </Helmet>
-      <NavBar />
       <Title headline="Blog" />
       <div className="row">
         {searchBar}
@@ -231,8 +229,7 @@ const Blog = () => {
         />
       )}
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

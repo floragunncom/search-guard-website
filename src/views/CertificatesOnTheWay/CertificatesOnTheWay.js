@@ -1,13 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Button from '../../components/Button/Button';
-import NavBar from '../../components/NavBar/NavBar';
-import Footer from '../../components/Footer/Footer';
 import './CertificatesOnTheWay.scss';
 
 const CertificatesOnTheWay = () => {
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Search Guard | Thanks for using the certificate generator</title>
@@ -17,7 +16,6 @@ const CertificatesOnTheWay = () => {
           content="Thank you very much for using the Search Gard Certificate Generator service."
         />
       </Helmet>
-      <NavBar />
       <div className="cow-wrapper">
         <div className="row">
           <div className="col s12 m10 offset-m1 l8 offset-l2">
@@ -38,8 +36,7 @@ const CertificatesOnTheWay = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import NavBar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
-import Footer from '../../components/Footer/Footer';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import BlogPost from '../../components/BlogPost/BlogPost';
 import infoArrowBack from '../../images/info-arrow-back.svg';
@@ -17,7 +16,7 @@ const BlogCategory = ({ match }) => {
   });
 
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>
@@ -32,7 +31,6 @@ const BlogCategory = ({ match }) => {
           content="This is the official Search Guard blog. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch."
         />
       </Helmet>
-      <NavBar />
       <Title headline={categoryName} />
       <div className="blog-wrapper">
         {categoryPosts.map(post => {
@@ -50,8 +48,7 @@ const BlogCategory = ({ match }) => {
         </a>
       </div>
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

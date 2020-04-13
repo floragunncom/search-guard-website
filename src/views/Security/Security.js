@@ -1,17 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import './Security.scss';
-import Navbar from '../../components/NavBar/NavBar';
+import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Footer from '../../components/Footer/Footer';
 import Card from '../../components/Card/Card';
 import iconLock from '../../images/icon-multilayer-security.svg';
 import iconShield from '../../images/icon-wheel-shield.svg';
 
 const Security = () => {
   return (
-    <div>
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Security Information - Search Guard</title>
@@ -21,7 +20,6 @@ const Security = () => {
           content="Our public key and the Search Guard code signing key you can use to check the validity of each Search Guard binary."
         />
       </Helmet>
-      <Navbar />
       <Title
         headline="Security information"
         text="You can use our public keys to send us confidential information and to verify the integrity of any Search Guard download."
@@ -148,8 +146,7 @@ const Security = () => {
         linkRight="/disclosure-policy/"
       />
       <PreFooter />
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 
