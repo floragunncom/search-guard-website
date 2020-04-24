@@ -9,7 +9,7 @@ const News = () => {
       <div className="row">
         <div className="news__headline">News & Events</div>
         <div className="news__items-wrapper">
-          {events.slice(0, 4).map(event => {
+          {events.slice(0, 6).map(event => {
             const item = event.fields;
             const monthNames = [
               'Jan',
