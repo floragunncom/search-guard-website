@@ -5,37 +5,37 @@ import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
-  const history = useHistory();
-  const [newsletterValue, setNewsletterValue] = useState(false);
+    const history = useHistory();
+    const [newsletterValue, setNewsletterValue] = useState(false);
 
-  function changeNewsletterValue() {
-    setNewsletterValue(!newsletterValue);
-  }
+    function changeNewsletterValue() {
+        setNewsletterValue(!newsletterValue);
+    }
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    const data = {};
-    const formElements = Array.from(event.target);
-    formElements.forEach(input => {
-      data[input.name] = input.value;
-    });
-    // Log what our lambda function will receive
-    // console.log(JSON.stringify(data));
-    // fetch('http://localhost:3000/', {
-    fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
-      method: 'POST',
-      headers: {
-        accept: 'application/json; charset=utf-8',
-        'content-type': 'application/json; charset=UTF-8',
-      },
-      body: JSON.stringify(data),
-    });
-  };
+    const handleSubmit = event => {
+        event.preventDefault();
+        const data = {};
+        const formElements = Array.from(event.target);
+        formElements.forEach(input => {
+            data[input.name] = input.value;
+        });
+        // Log what our lambda function will receive
+        // console.log(JSON.stringify(data));
+        // fetch('http://localhost:3000/', {
+        fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
+            method: 'POST',
+            headers: {
+                accept: 'application/json; charset=utf-8',
+                'content-type': 'application/json; charset=UTF-8',
+            },
+            body: JSON.stringify(data),
+        });
+    };
 
-  const postDataToCRM = async event => {
-      await handleSubmit(event);
-      window.location.href= "/thanks/"
-  };
+    const postDataToCRM = async event => {
+        await handleSubmit(event);
+        history.push('/thanks/');
+    };
 
   return (
     <div className="row contact-wrapper">
