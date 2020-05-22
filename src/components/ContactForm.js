@@ -33,7 +33,7 @@ const ContactForm = () => {
   };
 
   const postDataToCRM = async event => {
-      event.preventDefault();
+      await handleSubmit(event);
       window.location.href= "/thanks/"
   };
 
