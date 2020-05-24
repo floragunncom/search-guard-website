@@ -164,7 +164,7 @@ const Footer = ({ landing }) => {
           className="footer-text"
           style={landing ? { paddingTop: '64px' } : null}
         >
-          <p>© 2019 floragunn GmbH - All Rights Reserved</p>
+          <p>© 2020 floragunn GmbH - All Rights Reserved</p>
           <p>
             Search Guard is a trademark of floragunn GmbH, registered in the
             U.S. and in other countries. Elasticsearch, Kibana, Logstash, and
