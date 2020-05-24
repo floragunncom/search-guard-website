@@ -5,36 +5,50 @@ import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
-  const history = useHistory();
-  const [newsletterValue, setNewsletterValue] = useState(false);
+    const history = useHistory();
+    const [newsletterValue, setNewsletterValue,] = useState(false);
+    const [sendbuttonValue, setSendbuttonValue] = useState("send message");
 
-  function changeNewsletterValue() {
-    setNewsletterValue(!newsletterValue);
-  }
+    function changeNewsletterValue() {
+        setNewsletterValue(!newsletterValue);
+    }
 
-  const handleSubmit = async event => {
-    event.preventDefault();
-    const data = {};
-    const formElements = Array.from(event.target);
-    formElements.forEach(input => {
-      data[input.name] = input.value;
-    });
-    // Log what our lambda function will receive
-    // console.log(JSON.stringify(data));
-    // await fetch('http://localhost:3000/', {
-    await fetch(
-      'https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/',
-      {
-        method: 'POST',
-        headers: {
-          accept: 'application/json; charset=utf-8',
-          'content-type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify(data),
-      },
-    );
-    return history.push('/thanks/');
-  };
+    async function handleSubmit(formElements) {
+        const data = {};
+        formElements.forEach(input => {
+            data[input.name] = input.value;
+        });
+        // Default options are marked with *
+        return fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
+            method: 'POST',
+            cache: 'no-cache',
+            headers: {
+                accept: 'application/json; charset=utf-8',
+                'content-type': 'application/json; charset=UTF-8',
+            },
+            body: JSON.stringify(data)
+        });
+    }
+
+    const postDataToCRM = async event => {
+
+        event.preventDefault();
+
+        setSendbuttonValue("Processing ...");
+
+        const formElements = Array.from(event.target);
+
+        handleSubmit(formElements)
+            .then(response => {
+                if (response && response.ok) {
+                    window.location.href = "/thanks/";
+                } else {
+                    window.location.href = "/thanks/";
+                }
+            }).catch(function (error) {
+            window.location.href = "/thanks/";
+        });
+    };
 
   return (
     <div className="row contact-wrapper">
@@ -82,7 +96,7 @@ const ContactForm = () => {
       </div>
       <div className="col s12 l8" id="contact">
         <div className="contact-info-container">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={postDataToCRM}>
             <div className="contact-info-wrapper">
               <div className="contact-information-headline">
                 contact information
@@ -322,7 +336,7 @@ const ContactForm = () => {
                 and manage your submitted data.
               </div>
               <div className="cta-wrapper">
-                <Button buttonStyle="default-button" text="send message" />
+                <Button buttonStyle="default-button" text={sendbuttonValue}  />
               </div>
             </div>
           </form>

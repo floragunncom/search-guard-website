@@ -6,35 +6,48 @@ import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
     const history = useHistory();
-    const [newsletterValue, setNewsletterValue] = useState(false);
+    const [newsletterValue, setNewsletterValue,] = useState(false);
+    const [sendbuttonValue, setSendbuttonValue] = useState("send message");
 
     function changeNewsletterValue() {
         setNewsletterValue(!newsletterValue);
     }
 
-    const handleSubmit = event => {
-        event.preventDefault();
+    async function handleSubmit(formElements) {
         const data = {};
-        const formElements = Array.from(event.target);
         formElements.forEach(input => {
             data[input.name] = input.value;
         });
-        // Log what our lambda function will receive
-        // console.log(JSON.stringify(data));
-        // fetch('http://localhost:3000/', {
-        fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
+        // Default options are marked with *
+        return fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
             method: 'POST',
+            cache: 'no-cache',
             headers: {
                 accept: 'application/json; charset=utf-8',
                 'content-type': 'application/json; charset=UTF-8',
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(data)
         });
-    };
+    }
 
     const postDataToCRM = async event => {
-        await handleSubmit(event);
-        history.push('/thanks/');
+
+        event.preventDefault();
+
+        setSendbuttonValue("Processing ...");
+
+        const formElements = Array.from(event.target);
+
+        handleSubmit(formElements)
+            .then(response => {
+                if (response && response.ok) {
+                    window.location.href = "/thanks/";
+                } else {
+                    window.location.href = "/thanks/";
+                }
+            }).catch(function (error) {
+                window.location.href = "/thanks/";
+        });
     };
 
   return (
@@ -368,7 +381,7 @@ const ContactForm = () => {
                 and manage your submitted data.
               </div>
               <div className="cta-wrapper">
-                <Button buttonStyle="default-button" text="send message" />
+                <Button buttonStyle="default-button"  text={sendbuttonValue} />
               </div>
             </div>
           </form>
