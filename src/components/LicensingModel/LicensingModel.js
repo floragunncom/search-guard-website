@@ -72,7 +72,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                 <Button
                   text="install now"
                   buttonStyle="ghost-link"
-                  link="https://docs.search-guard.com/latest/demo-installer"
+                  link="/search-guard-free-trial/"
                   color="#00C9B7"
                 />
               </div>
@@ -103,9 +103,9 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
               </div>
               <div className="licensing-editions-button">
                 <Button
-                  text="get a quote"
+                  text="start free trial"
                   buttonStyle="ghost-link"
-                  link="/contacts/"
+                  link="/search-guard-free-trial/"
                   color="#009688"
                 />
               </div>
@@ -136,9 +136,9 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
               </div>
               <div className="licensing-editions-button">
                 <Button
-                  text="get a quote"
+                  text="start free trial"
                   buttonStyle="ghost-link"
-                  link="/contacts/"
+                  link="/search-guard-free-trial/"
                   color="#007D71"
                 />
               </div>

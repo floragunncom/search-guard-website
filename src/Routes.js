@@ -26,6 +26,7 @@ import Error from './views/Error/Error';
 import CertificatesOnTheWay from './views/CertificatesOnTheWay/CertificatesOnTheWay';
 import Certifications from './views/Certifications/Certifications';
 import Marketing from './views/Marketing/Marketing';
+import FreeTrial from './views/FreeTrial/FreeTrial';
 
 const Routes = () => {
   return (
@@ -60,6 +61,11 @@ const Routes = () => {
             exact
             path="/certificates-on-the-way/"
             component={CertificatesOnTheWay}
+          />
+          <Route
+              exact
+              path="/search-guard-free-trial/"
+              component={FreeTrial}
           />
           <Route exact path="/security/" component={Security} />
           <Route exact path="/cve-advisory/" component={Advisory} />

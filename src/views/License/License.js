@@ -65,10 +65,10 @@ const License = () => {
       <References />
       <Cta
         headline="Interested?"
-        text="Then you can either get in touch to find out more or start a 60-day trial with our Compliance edition."
-        ctaText="Contact Us"
+        text="Get in touch wit us, or start your free 60-day trial."
+        ctaText="Start free trial"
         icon={ctaIcon}
-        link="/contacts/"
+        link="/search-guard-free-trial/"
       />
       <PreFooter />
     </PageWrapper>

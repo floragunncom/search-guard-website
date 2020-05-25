@@ -41,7 +41,7 @@ const LandingUSP = () => {
             <div className="landing-usp-text-box">
               <div className="landing-usp-text-box-headline">Elastic Stack</div>
               <div className="landing-usp-text-box-text">
-                Search Guard gives you full security control over your entire Elastisearch environment. Protect the complete Elastic stack, including Kibana, Logstash and Beats.
+                Search Guard gives you full security control over your entire Elasticsearch environment. Protect the complete Elastic stack, including Kibana, Logstash and Beats.
               </div>
             </div>
           </div>
