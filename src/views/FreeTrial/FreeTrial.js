@@ -52,7 +52,7 @@ const FreeTrial = () => {
                                 <div className="free-trial-content-button">
                                     <Button
                                         text="visit our downloads page"
-                                        link="link"
+                                        link="https://docs.search-guard.com/latest/search-guard-versions"
                                         target="_blank"
                                         rel="noopener norefferrer"
                                     />

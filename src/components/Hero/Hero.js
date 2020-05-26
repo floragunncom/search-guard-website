@@ -28,8 +28,7 @@ const Hero = () => {
                 <Button
                   text="start free trial"
                   buttonStyle="loud-link"
-                  link="https://docs.search-guard.com/latest/demo-installer"
-                  target="_blank"
+                  link="/search-guard-free-trial/"
                 />
               </div>
               <NavLink to="/certificates/" className="hero-certificate-wrapper">
