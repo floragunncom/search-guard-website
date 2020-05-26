@@ -50,7 +50,7 @@ const Header = ({ background = '#246E94', landing }) => {
         {landing ? '' : 'company'}
       </NavLink>
       <NavLink
-        to="/contacts/"
+        to={landing ? '/search-guard-free-trial/' : '/contacts/'}
         className="header__navbar--item"
         activeStyle={style.activeContact}
       >
