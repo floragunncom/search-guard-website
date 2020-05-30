@@ -11,12 +11,6 @@ import './Team.scss';
 const Team = () => {
   const team = [
     {
-      name: 'Andreas Riedel',
-      position: 'CEO',
-      pic: andreas,
-      link: 'https://www.linkedin.com/in/anriedel/',
-    },
-    {
       name: 'Claudia Kressin',
       position: 'Founder & CEO',
       pic: claudia,
