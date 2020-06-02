@@ -11,7 +11,7 @@ const BlogBox = ({ overview, headline, randomize, category }) => {
     let counter = array.length;
 
     // While there are elements in the array
-    while (counter > 0) {
+    while (counter > 1) {
       // Pick a random index
       const index = Math.floor(Math.random() * counter);
       counter--;
