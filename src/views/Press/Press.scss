@@ -1,0 +1,222 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.row.pressarticle-wrapper {
+  padding: 0 12px;
+}
+
+.pressarticle-headline1 {
+  color: $darkBlue;
+  margin-top: 64px;
+  margin-bottom: 32px;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 57px;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 36px;
+    line-height: 43px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 24px;
+    margin-top: 32px;
+  };
+}
+
+.pressarticle-headline2 {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  color: $darkBlue;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  line-height: 30px;
+}
+
+.pressarticle-code-snippet {
+  background-color: $lightGrey;
+  font-family: Courier;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 16px;
+  word-break: break-all;
+  overflow: scroll;
+}
+
+
+.pressarticle-quote-wrapper {
+  margin: 26px 30px 30px -15vw;
+  max-width: 425px;
+  float: left;
+  @media only screen and (max-width: $tabletBig) {
+    margin-left: 0px;
+    float: none;
+    max-width: unset;
+  };
+  @media only screen and (max-width: $mobile) {
+    margin-right: 0px;
+  };
+}
+
+.pressarticle-quote-image {
+  float: left;
+  @media only screen and (max-width: $mobile) {
+    width: 26px;
+    height: 29px;
+  };
+}
+
+.pressarticle-quote-text .pressarticle-text {
+  margin: 0px;
+  max-width: 360px;
+  margin-left: 70px;
+  color: $navyBlue;
+  padding: 16px 0px;
+  font-size: 24px;
+  letter-spacing: 0.8px;
+  line-height: 27px;
+  border-top: 10px solid $grey;
+  border-bottom: 10px solid $grey;
+  @media only screen and (max-width: $tabletBig) {
+    max-width: 85%;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 18px;
+    line-height: 20px;
+    max-width: 100%;
+    margin-left: 40px;
+  };
+}
+
+.pressarticle-image-wrapper.pressarticle-image {
+  display: block;
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-height: 350px;
+  max-width: 100%;
+}
+
+.pressarticle-image-description {
+  color: $darkGrey;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.pressarticle-text {
+  margin-bottom: 32px;
+  margin-top: 32px;
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  };
+}
+
+.pressarticle-sidebar-container {
+  margin: 64px 0px;
+  border-top: 6px solid $grey;
+  border-bottom: 6px solid $grey;
+  max-width: 68px;
+  position: sticky;
+  top: 64px;
+  @media only screen and (max-width: $tabletBig) {
+    position: unset;
+    max-width: 100%;
+  }
+}
+
+.pressarticle-sidebar-icons-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  align-items: center;
+  position: relative;
+  @media only screen and (max-width: $tabletBig) {
+    flex-direction: row;
+    border-bottom: 6px solid $grey;
+    border: unset;
+  }
+}
+
+.pressarticle-sidebar-title {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  max-width: 68px;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 3.3px;
+  color: $navyBlue;
+  @media only screen and (max-width: $tabletBig) {
+    display: none;
+  }
+}
+
+.pressarticle-sidebar-icon {
+  margin: 8px 16px;
+  cursor: pointer;
+  &:last-child {
+    margin-bottom: 16px;
+    @media only screen and (max-width: $tabletBig) {
+      margin-bottom: 8px;
+    };
+  };
+  @media only screen and (max-width: $tabletBig) {
+    display: flex;
+  };
+  img {
+    &:hover, &:focus, &:active {
+      opacity: 0.8
+    }
+  }
+}
+
+.pressarticle-recommended-headline {
+  margin: 124px 0px 64px 0px;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: $darkBlue;
+}
+
+.bold {
+  font-weight: bold;
+  display: inline;
+}
+
+.underline {
+ text-decoration: underline;
+ display: inline;
+}
+
+.italic {
+  font-style: italic;
+  display: inline;
+}
+
+.pressarticle-listitem {
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  &:before {
+    content: '•';
+    margin-left: -20px;
+    padding-right: 13px;
+  }
+}

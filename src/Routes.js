@@ -27,6 +27,7 @@ import CertificatesOnTheWay from './views/CertificatesOnTheWay/CertificatesOnThe
 import Certifications from './views/Certifications/Certifications';
 import Marketing from './views/Marketing/Marketing';
 import FreeTrial from './views/FreeTrial/FreeTrial';
+import PressDEDach from './views/Press/DE/20200620_Vertrieb_Dach/20200620_Vertrieb_Dach';
 
 const Routes = () => {
   return (
@@ -82,6 +83,8 @@ const Routes = () => {
           <Route exact path="/:slug" component={BlogPostArticle} />
           <Route exact path="/white-papers/" component={WhitePapers} />
           <Route path="/404/" component={NotFound} />
+
+          <Route exact path="/press/de/search-guard-vertrieb-dach/" component={PressDEDach} />
         </Switch>
       </ScrollToTop>
     </React.Fragment>
