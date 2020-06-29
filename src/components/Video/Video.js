@@ -68,27 +68,26 @@ const Video = props => {
       >
         <div className="row">
           <div className="video-headline">Instructional videos</div>
-          {/* <div className="video-description">
+           <div className="video-description">
             <div className="video-description-video">
               <iframe
                 className="video-iframe-video"
-                src="https://www.youtube.com/embed/0vCqFtFd5B8"
+                src="https://www.youtube.com/embed/ewM9glvw0E4"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
             <div className="video-description-headline">
-              Search Guard - Open Source Software
+              Search Guard - Security and Alerting for Elasticsearch
             </div>
+
             <div className="video-description-text">
-              Security-related software has to be Open Source by definition.
-              Since it is such a crucial and sensitive part of your
-              infrastructure, you need to be able to inspect, audit and compile
-              the code yourself. The complete code of Search Guard has always
-              been openly available, and will always be.
+              Data breaches happen all the time and will cost your business reputation, customers, and money.
+              That's why you should protect your sensitive data in Elasticsearch by using Search Guard,
+              the free security and alerting suite for the Elastic stack!
             </div>
-          </div> */}
+          </div> }
           {playlist}
         </div>
         {playlistButton}
