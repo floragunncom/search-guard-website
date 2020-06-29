@@ -31,13 +31,13 @@ const Company = () => {
             </Helmet>
             <Title
                 headline="Search Guard weitet Vertriebsaktivitäten in DACH aus"
-                text="Berlin, 17.06.2020"
+                text="Berlin, 29.06.2020"
             />
 
             <div className="row pressarticle-wrapper">
                 <div className="col s12 offset-l2 l8">
                     <div className="pressarticle-text">
-                        <b>Berlin, 17.06.2020. Die floragunn GmbH, Hersteller des Sicherheits-Plug-Ins Search Guard mit Sitz in Berlin, stärkt ihre Geschäftsaktivitäten auf
+                        <b>Berlin, 29.06.2020. Die floragunn GmbH, Hersteller des Sicherheits-Plug-Ins Search Guard mit Sitz in Berlin, stärkt ihre Geschäftsaktivitäten auf
                             dem deutschsprachigen Markt. Software-Reseller und Distributoren in Deutschland, Österreich und der Schweiz,
                             die ihr Portfolio im Bereich Big Data Security um eine anwenderfreundliche Lösung Made in Germany erweitern wollen,
                             haben nun einen direkten Ansprechpartner. Search Guard ist ein Open-Source-Plug-In zum Einsatz in der Enterprise Search für den Schutz von Elasticsearch-Clustern.</b>
