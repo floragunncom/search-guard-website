@@ -87,7 +87,7 @@ const Video = props => {
               That's why you should protect your sensitive data in Elasticsearch by using Search Guard,
               the free security and alerting suite for the Elastic stack!
             </div>
-          </div> }
+          </div>
           {playlist}
         </div>
         {playlistButton}
