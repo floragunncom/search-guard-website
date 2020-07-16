@@ -5,7 +5,7 @@ import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import './BlogBox.scss';
 import allPosts from '../../Api/contentfulPosts.json';
 
-const BlogBox = ({ overview, headline, randomize, category }) => {
+const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
   function shuffle(array) {
     // Fisher-Yates Shuffle
     let counter = array.length;
@@ -96,7 +96,11 @@ const BlogBox = ({ overview, headline, randomize, category }) => {
   };
 
   return (
-    <div className="blog-box__wrapper" id="blog">
+    <div
+        className={
+          postsyoulike ? 'blog-box__postsyoulike' : 'blog-box__wrapper'
+        }
+    >
       <div
         className={
           overview ? 'blog-box__headline-overview' : 'blog-box__headline'

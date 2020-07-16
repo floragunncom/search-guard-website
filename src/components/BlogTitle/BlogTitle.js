@@ -34,7 +34,7 @@ const Title = ({ text, subText, tags }) => {
     <div>
       <div className="blogtitle-container">
         <div className="blogtitle-wrapper">
-          <div className="blogtitle-text">{text}</div>
+          <h1 className="blogtitle-text">{text}</h1>
         </div>
       </div>
       <div className="blogtitle-subtext-container">

@@ -110,6 +110,16 @@ const BlogPostArticle = ({ match }) => {
           href={`https://search-guard.com/${postContent.fields.slug}`}
         />
         <meta name="description" content={postContent.fields.htmlDescription} />
+
+        <meta property="og:title" content={postContent.fields.htmlTitle} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://search-guard.com/${postContent.fields.slug}`} />
+        <meta property="og:description" content={postContent.fields.htmlDescription}/>
+        <meta property="og:image" content={postContent.fields.postImage.fields.file.url}/>
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:creator" content="@searchguard" />
+        <meta name="twitter:site" content="@searchguard" />
       </Helmet>
       <BlogTitle
         text={postContent.fields.title}
@@ -160,6 +170,7 @@ const BlogPostArticle = ({ match }) => {
       </div>
       <BlogBox
         headline="Other posts you may like"
+        postsyoulike
         randomize
         category={postContent.fields.tags[0]}
       />
@@ -174,6 +185,7 @@ const BlogPostArticle = ({ match }) => {
           <span>back to blog</span>
         </a>
       </div>
+
       <PreFooter />
       <script type="application/ld+json">{`
           {

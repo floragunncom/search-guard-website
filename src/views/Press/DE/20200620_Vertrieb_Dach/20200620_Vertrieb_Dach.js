@@ -7,6 +7,7 @@ import PreFooter from '../../../../components/PreFooter/PreFooter';
 import Cta from '../../../../components/Cta/Cta';
 import ctaIcon from '../../../../images/icon-sg.svg';
 import Title from '../../../../components/Title/Title';
+import tmahler from "../../../../images/tmahler_press.jpg";
 
 
 
@@ -35,7 +36,16 @@ const Company = () => {
             />
 
             <div className="row pressarticle-wrapper">
-                <div className="col s12 offset-l2 l8">
+                <div className="col l4 hide-on-med-and-down">
+                    <img src={tmahler} className="profile-pic"/>
+                    <div className="pressarticle-text">
+                        floragunn GmbH<br />
+                        Thomas Mahler<br />
+                        Tel: 01522/ 1950326<br />
+                        Email: <a href="mailto:tmahler@search-guard.com">tmahler@search-guard.com</a>
+                    </div>
+                </div>
+                <div className="col s12 l8">
                     <div className="pressarticle-text">
                         <b>Berlin, 29.06.2020. Die floragunn GmbH, Hersteller des Sicherheits-Plug-Ins Search Guard mit Sitz in Berlin, stärkt ihre Geschäftsaktivitäten auf
                             dem deutschsprachigen Markt. Software-Reseller und Distributoren in Deutschland, Österreich und der Schweiz,

@@ -12,6 +12,16 @@
     }
   }
 
+  &__postsyoulike {
+    padding: 0px 0;
+    @media only screen and (max-width: $tabletBig) {
+      padding: 0px 0;
+    }
+    @media only screen and (max-width: $mobile) {
+      padding: 0;
+    }
+  }
+
   &__headline, &__headline-overview {
     color: $darkBlue;
     text-align: center;
