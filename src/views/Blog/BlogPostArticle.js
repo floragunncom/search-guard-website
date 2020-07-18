@@ -22,6 +22,7 @@ import './BlogPostArticle.scss';
 import posts from '../../Api/contentfulPosts.json';
 
 const BlogPostArticle = ({ match }) => {
+
   const postContent = posts.find(
     entry => entry.fields.slug === `${match.url.substring(1)}`,
   );
@@ -116,6 +117,7 @@ const BlogPostArticle = ({ match }) => {
         <meta property="og:url" content={`https://search-guard.com/${postContent.fields.slug}`} />
         <meta property="og:description" content={postContent.fields.htmlDescription}/>
         <meta property="og:image" content={postContent.fields.postImage.fields.file.url}/>
+        <meta property="og:image:alt" content={postContent.fields.htmlDescription}/>
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content="@searchguard" />
@@ -193,7 +195,7 @@ const BlogPostArticle = ({ match }) => {
             "@type": "Article",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://www.search-guard.com/${postContent.fields.slug}"
+              "@id": "https://search-guard.com/${postContent.fields.slug}"
             },            
             "headline": "${postContent.fields.htmlTitle}",
             "description": "${postContent.fields.htmlDescription}",            

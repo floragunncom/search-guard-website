@@ -4,7 +4,12 @@ import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import './BlogPost.scss';
 
 const BlogPost = ({ post }) => {
-  const blogPost = post.fields;
+
+    // let CDN scale images for blogbox
+    const imageParameters = "?fm=jpg&fl=progressive&w=500&fit=scale";
+
+    const blogPost = post.fields;
+
   let infoTextIndex = 165;
   let infoHeadlineIndex = 42;
   while (blogPost.postContent[infoTextIndex] !== ' ') {
@@ -19,7 +24,7 @@ const BlogPost = ({ post }) => {
       <Link to={{ pathname: `/${blogPost.slug}` }} className="blogpost-wrapper">
         <div className="blogpost-image-wrapper">
           <img
-            src={blogPost.postImage.fields.file.url}
+            src={blogPost.postImage.fields.file.url + imageParameters }
             className="blogpost-feed-image"
             alt={blogPost.postImage.fields.title}
           />

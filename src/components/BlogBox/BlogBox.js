@@ -6,6 +6,10 @@ import './BlogBox.scss';
 import allPosts from '../../Api/contentfulPosts.json';
 
 const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
+
+  // let CDN scale images for blogbox
+  const imageParameters = "?fm=jpg&fl=progressive&w=500&fit=scale";
+
   function shuffle(array) {
     // Fisher-Yates Shuffle
     let counter = array.length;
@@ -72,7 +76,7 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
         >
           <div className="blog-box__box-image-container">
             <img
-              src={post.fields.postImage.fields.file.url}
+              src={post.fields.postImage.fields.file.url+ imageParameters }
               alt={post.fields.postImage.fields.title}
               className="blog-box__box-image"
             />
