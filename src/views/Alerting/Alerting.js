@@ -30,7 +30,7 @@ const Alerting = () => {
     { id: v4(), anchor: 'concept', name: 'what it is' },
     { id: v4(), anchor: 'connectors', name: 'connectors' },
     { id: v4(), anchor: 'escalationmodel', name: 'escalation model' },
-    { id: v4(), anchor: 'quote', name: 'get a quote' },
+    { id: v4(), anchor: 'tryit', name: 'Try it' },
   ];
 
   return (
@@ -264,7 +264,7 @@ const Alerting = () => {
               </div>
           </div>
 
-      <div id="quote">
+      <div id="tryit">
         <Cta
           headline="Give Signals Alerting a spin!"
           text="Follow these simple steps to install Signals Alerting to your Elasticsearch cluster. "
