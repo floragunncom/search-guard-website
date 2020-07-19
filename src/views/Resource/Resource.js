@@ -23,8 +23,8 @@ import iconDownload from '../../images/icon-download.svg';
 const Resource = () => {
   const anchors = [
     { id: v4(), anchor: 'faq', name: 'faq' },
-    { id: v4(), anchor: 'github', name: 'gitlab' },
-    { id: v4(), anchor: 'github', name: 'tls certificates' },
+    { id: v4(), anchor: 'git', name: 'gitlab' },
+    { id: v4(), anchor: 'git', name: 'tls certificates' },
     { id: v4(), anchor: 'blog', name: 'blog' },
     { id: v4(), anchor: 'whitePapers', name: 'Presentations & white papers' },
     { id: v4(), anchor: 'videos', name: 'videos' },
@@ -63,7 +63,7 @@ const Resource = () => {
         buttonTargetRight="_blank"
       />
       <Faq />
-      <div id="github">
+      <div id="git">
         <Card
           bgLeftDark
           iconLeft={iconDownload}
@@ -77,7 +77,11 @@ const Resource = () => {
           buttonTargetLeft="_blank"
         />
       </div>
-      <BlogBox overview headline="Blog" />
+
+        <div id="blog">
+        <BlogBox overview headline="Blog" />
+        </div>
+
       <div id="whitePapers">
         <Card
           bgLeftDark={false}
@@ -107,7 +111,7 @@ const Resource = () => {
       </div>
       <Cta
         headline="Can’t find what you’re looking for?"
-        text="No worries, maybe we can help you find the answer."
+        text="No worries,we're here to help!."
         ctaText="contact us"
         icon={envelope}
         link="/contacts/"

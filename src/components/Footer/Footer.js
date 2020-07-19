@@ -12,10 +12,10 @@ const Footer = ({ landing }) => {
             <div className="row footer-row">
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/product/">product</NavLink>
+                  <NavLink to="/security/">security</NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/product/#concept" className="footer-links">
+                  <a href="/security/#concept" className="footer-links">
                     What it is
                   </a>
                 </div>
@@ -27,6 +27,26 @@ const Footer = ({ landing }) => {
                 <div className="footer-list-item">
                   <NavLink to="/certificates/" className="footer-links">
                     Certifications
+                  </NavLink>
+                </div>
+                <div className="footer-list-headline">
+                </div>
+                <div className="footer-list-headline">
+                  <NavLink to="/security/">alerting</NavLink>
+                </div>
+                <div className="footer-list-item">
+                  <a href="/alerting/#concept" className="footer-links">
+                    What it is
+                  </a>
+                </div>
+                <div className="footer-list-item">
+                  <a href="/alerting/#connectors" className="footer-links">
+                    Connectors
+                  </a>
+                </div>
+                <div className="footer-list-item">
+                  <NavLink to="/alerting/#escalationmodel" className="footer-links">
+                    Escalation model
                   </NavLink>
                 </div>
               </div>
@@ -136,7 +156,7 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <a href="/product/#integrators" className="footer-links">
+                  <a href="/security/#integrators" className="footer-links">
                     Integrators
                   </a>
                 </div>
@@ -151,7 +171,7 @@ const Footer = ({ landing }) => {
                   </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/security/" className="footer-links">
+                  <NavLink to="/security-information/" className="footer-links">
                     Public key & security
                   </NavLink>
                 </div>

@@ -31,7 +31,7 @@ const FreeTrial = () => {
             />
 
 
-            <div className="free-trial-wrapper" id="integrators">
+            <div className="free-trial-wrapper" >
 
                 <div className="row free-trial">
                     <div className="free-trial-headline">Start your free Search Guard Enterprise trial</div>

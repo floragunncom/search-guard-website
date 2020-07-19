@@ -46,14 +46,17 @@ const Card = ({
               {textLeft}
             </div>
           </div>
+          {linkLeft?
           <div className="card__col-button">
             <Button
-              text="find out more"
-              buttonStyle="loud-link"
-              link={linkLeft}
-              target={buttonTargetLeft}
+                text="find out more"
+                buttonStyle="loud-link"
+                link={linkLeft}
+                target={buttonTargetLeft}
             />
           </div>
+              : ""
+          }
         </div>
         <div className="card__col card__col-right">
           <img src={iconRight} alt="Card Icon" className="card__col-img" />
@@ -77,6 +80,7 @@ const Card = ({
               {textRight}
             </div>
           </div>
+          {linkRight?
           <div className="card__col-button">
             <Button
               text="find out more"
@@ -85,6 +89,8 @@ const Card = ({
               target={buttonTargetRight}
             />
           </div>
+              : ""
+          }
         </div>
       </div>
     </div>

@@ -332,7 +332,7 @@ const Advisory = () => {
         text="Access public keys, CVE advisory and disclosure policy."
         ctaText="see security information"
         icon={folderGlass}
-        link="/security/"
+        link="/security-information/"
       />
       <PreFooter />
     </PageWrapper>

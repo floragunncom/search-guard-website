@@ -204,7 +204,7 @@ const Disclosure = () => {
               </ul>
               <br />
               If you’d like to encrypt the information, please use our{' '}
-              <a href="/security/">[PGP key].</a>
+              <a href="/security-information/">[PGP key].</a>
             </div>
           </div>
         </div>

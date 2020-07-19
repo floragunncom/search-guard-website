@@ -8,14 +8,15 @@ import BlogPostArticle from './views/Blog/BlogPostArticle';
 import BlogCategory from './views/Blog/BlogCategory';
 import Resource from './views/Resource/Resource';
 import Company from './views/Company/Company';
-import Product from './views/Product/Product';
+import Security from './views/Security/Security';
+import Alerting from './views/Alerting/Alerting';
 import Faqs from './views/Faqs/Faqs';
 import License from './views/License/License';
 import Imprint from './views/Imprint/Imprint';
 import WhitePapers from './views/WhitePapers/WhitePapers';
 import Presentations from './views/Presentations/Presentations';
 import DataProtection from './views/DataProtection/DataProtection';
-import Security from './views/Security/Security';
+import SecurityInformation from './views/SecurityInformation/SecurityInformation';
 import Advisory from './views/Advisory/Advisory';
 import Disclosure from './views/Disclosure/Disclosure';
 import Education from './views/Education/Education';
@@ -37,7 +38,8 @@ const Routes = () => {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/contacts/" component={ContactUs} />
-          <Route exact path="/product/" component={Product} />
+          <Route exact path="/security/" component={Security} />
+          <Route exact path="/alerting/" component={Alerting} />
           <Route exact path="/company/" component={Company} />
           <Route exact path="/resource/" component={Resource} />
           <Route exact path="/licensing/" component={License} />
@@ -69,7 +71,7 @@ const Routes = () => {
               path="/search-guard-free-trial/"
               component={FreeTrial}
           />
-          <Route exact path="/security/" component={Security} />
+          <Route exact path="/security-information/" component={SecurityInformation} />
           <Route exact path="/cve-advisory/" component={Advisory} />
           <Route exact path="/disclosure-policy/" component={Disclosure} />
           <Route

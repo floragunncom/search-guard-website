@@ -22,12 +22,19 @@ const Header = ({ background = '#246E94', landing }) => {
   const navbarLinks = (
     <>
       <NavLink
-        to="/product/"
+        to="/security/"
         className="header__navbar--item"
         activeStyle={style.active}
       >
-        {landing ? '' : 'product'}
+        {landing ? '' : 'security'}
       </NavLink>
+        <NavLink
+            to="/alerting/"
+            className="header__navbar--item"
+            activeStyle={style.active}
+        >
+            {landing ? '' : 'alerting'}
+        </NavLink>
       <NavLink
         to="/licensing/"
         className="header__navbar--item"

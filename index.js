@@ -10,6 +10,8 @@ const options = {
   redirects: [
     { source: '/search-guard-43-for-elasticsearch-7.8.0/', destination: '/search-guard-43-released/' },
     { source: '/search-guard-43-for-elasticsearch-7.8.0', destination: '/search-guard-43-released/' },
+    { source: '/product/', destination: '/security/' },
+    { source: '/product', destination: '/security/' },
     { source: '/floragunn-page', destination: '/company/' },
     { source: '/grownow', destination: '/company/' },
     { source: '/contact', destination: '/contacts/' },
