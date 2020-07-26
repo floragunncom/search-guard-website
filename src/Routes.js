@@ -91,6 +91,7 @@ const Routes = () => {
           <Route exact path="/press/en/search-guard-sales-dach/" component={PressENDach} />
 
           <Route exact path="/press/de/search-guard-alerting/" component={PressDEAlerting} />
+          <Route exact path="/press/en/search-guard-alerting/" component={PressENAlerting} />
 
           <Route path="/404/" component={NotFound} />
 

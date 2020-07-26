@@ -1,13 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { v4 } from 'uuid';
-import '../../Press.scss';
+import '../../PressArticle.scss';
 import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../../../components/PreFooter/PreFooter';
 import Cta from '../../../../components/Cta/Cta';
 import ctaIcon from '../../../../images/icon-sg.svg';
 import Title from '../../../../components/Title/Title';
 import tmahler from '../../../../images/tmahler_press.jpg';
+import infoArrowBack from "../../../../images/info-arrow-back.svg";
 
 
 const Company = () => {
@@ -122,6 +123,18 @@ const Company = () => {
                         Thomas Mahler<br />
                         Tel: 01522/ 1950326<br />
                         Email: <a href="mailto:tmahler@search-guard.com">tmahler@search-guard.com</a>
+
+                        <div className="col s12 blogpostarticle-link">
+                            <a href="/resource/#press" className="blog-back">
+                                <img
+                                    src={infoArrowBack}
+                                    className="blog-arrow-back"
+                                    alt="arrow icon"
+                                />
+                                <span>back</span>
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </div>

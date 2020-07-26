@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { v4 } from 'uuid';
-import '../../Press.scss';
+import '../../PressArticle.scss';
 import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../../../components/PreFooter/PreFooter';
 import Cta from '../../../../components/Cta/Cta';
@@ -11,6 +11,7 @@ import watches from "../../../../images/Alerting_Watches.png";
 import watches_small from "../../../../images/Alerting_Watches_Small.png";
 import graph from "../../../../images/Alerting_Graph.png";
 import graph_small from "../../../../images/Alerting_Graph_Small.png";
+import infoArrowBack from "../../../../images/info-arrow-back.svg";
 
 const Alerting = () => {
     return (
@@ -156,6 +157,18 @@ const Alerting = () => {
                         Thomas Mahler<br />
                         Tel: 01522/ 1950326<br />
                         Email: <a href="mailto:tmahler@search-guard.com">tmahler@search-guard.com</a>
+
+                        <div className="col s12 blogpostarticle-link">
+                            <a href="/resource/#press" className="blog-back">
+                                <img
+                                    src={infoArrowBack}
+                                    className="blog-arrow-back"
+                                    alt="arrow icon"
+                                />
+                                <span>back</span>
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </div>
