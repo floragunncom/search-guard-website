@@ -40,8 +40,8 @@ const Alerting = () => {
                     </div>
                     <a href={graph} target="_blank"><img src={graph_small} className="profile-pic"/></a>
                     <div className="pressarticle-image-subline">
-                        Der Grafikmodus in Signals zeigt, wie sich Daten einer definierten Bedingung im Vergleich zum Schwellwert verhalten
-                        und wie sich diese im Zeitverlauf ändern. Die Definition des Schwellenwertes ist der Ausgangspunkt für die Alerting-Strategie.
+                        The graphic mode in Signals shows how data of a defined condition behave in comparison to the threshold value and how they change over time.
+                        The definition of the threshold value is the starting point for the alerting strategy.
                     </div>
                 </div>
                 <div className="col s12 l8">
