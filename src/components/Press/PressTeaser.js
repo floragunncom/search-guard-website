@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import './PressTeaser.scss';
 import alerting from "../../images/press_teaser_alerting.png";
 import tmahler from "../../images/tmahler_press.jpg";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const PressTeaser = () => {
 
@@ -14,7 +15,9 @@ const PressTeaser = () => {
 
         <div className="company-press-teaser-section">
           <div className="press-teaser-pic">
-            <img src={alerting} alt="integrator icon" />
+            <LazyLoadImage
+                src={alerting}
+            />
           </div>
           <div className="press-teaser-content">
             <div className="press-teaser-content-headline">
@@ -48,7 +51,9 @@ const PressTeaser = () => {
 
             <div className="company-press-teaser-section">
               <div className="press-teaser-pic">
-                <img src={tmahler} alt="integrator icon" />
+                <LazyLoadImage
+                    src={tmahler}
+                />
               </div>
               <div className="press-teaser-content">
                 <div className="press-teaser-content-headline">
