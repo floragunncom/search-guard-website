@@ -14,7 +14,7 @@ const PressTeaser = () => {
 
 
         <div className="company-press-teaser-section">
-          <div className="press-teaser-pic">
+          <div className="press-teaser-pic hide-on-med-and-down">
             <LazyLoadImage
                 src={alerting}
             />
@@ -50,7 +50,7 @@ const PressTeaser = () => {
         </div>
 
             <div className="company-press-teaser-section">
-              <div className="press-teaser-pic">
+              <div className="press-teaser-pic hide-on-med-and-down">
                 <LazyLoadImage
                     src={tmahler}
                 />

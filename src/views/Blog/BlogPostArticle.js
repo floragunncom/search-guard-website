@@ -125,7 +125,7 @@ const BlogPostArticle = ({ match }) => {
       </Helmet>
       <BlogTitle
         text={postContent.fields.title}
-        subText={`${postContent.fields.author} || ${postContent.fields.date}`}
+        subText={`${postContent.fields.author} `}
         tags={postContent.fields.tags}
       />
       <div className="row blogpostarticle-wrapper">
@@ -135,6 +135,7 @@ const BlogPostArticle = ({ match }) => {
               .replace(/https:\/\/search-guard\.com/g, '')
               .replace(/http:\/\/localhost:8080/g, '')}
           </Markdown>
+          <div className="blogpostarticle-text">Published: {postContent.fields.date}</div>
         </div>
         <div className="col s12 offset-l1 l1 blogpostarticle-sidebar-container">
           <div className="blogpostarticle-sidebar-title">share</div>
