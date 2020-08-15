@@ -52,7 +52,7 @@
 }
 
 .video-description {
-  margin: 0px 32px 128px 32px;
+  margin: 0px 32px 96px 32px;
   @media only screen and (max-width: $tabletBig) {
     margin: 0px;
   };
@@ -103,6 +103,7 @@
   @media only screen and (max-width: $tabletBig) {
     display: none;
   }
+  margin-bottom: 42px;
 }
 
 .video-playlist-item {
