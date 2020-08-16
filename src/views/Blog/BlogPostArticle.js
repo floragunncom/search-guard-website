@@ -20,6 +20,7 @@ import iconFb from '../../images/icon-fb-loud.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
 import './BlogPostArticle.scss';
 import posts from '../../Api/contentfulPosts.json';
+import Button from "../../components/Button/Button";
 
 const BlogPostArticle = ({ match }) => {
 
@@ -136,6 +137,32 @@ const BlogPostArticle = ({ match }) => {
               .replace(/http:\/\/localhost:8080/g, '')}
           </Markdown>
           <div className="blogpostarticle-text">Published: {postContent.fields.date}</div>
+
+          <div className="row blogpostarticle-wrapper">
+            <div className="col s6">
+              <div className="valign-wrapper">
+              <Button
+                  text="start free trial"
+                  buttonStyle="loud-link"
+                  link="/search-guard-free-trial/"
+              />
+              </div>
+            </div>
+
+            <div className="col s6  ">
+              <div className="valign-wrapper">
+              <Button
+                  text="Contact us!"
+                  buttonStyle="loud-link"
+                  link="/contacts/"
+              />
+              </div>
+            </div>
+
+          </div>
+
+
+
         </div>
         <div className="col s12 offset-l1 l1 blogpostarticle-sidebar-container">
           <div className="blogpostarticle-sidebar-title">share</div>
@@ -171,6 +198,8 @@ const BlogPostArticle = ({ match }) => {
           </div>
         </div>
       </div>
+
+
       <BlogBox
         headline="Other posts you may like"
         postsyoulike
@@ -188,6 +217,8 @@ const BlogPostArticle = ({ match }) => {
           <span>back to blog</span>
         </a>
       </div>
+
+
 
       <PreFooter />
       <script type="application/ld+json">{`
