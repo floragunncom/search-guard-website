@@ -27,7 +27,7 @@ const HomePage = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Search Guard | Security for Elasticsearch and the ELK stack
+          Security and Alerting for Elasticsearch and Kibana | Search Guard
         </title>
         <link rel="canonical" href="https://search-guard.com/" />
         <meta

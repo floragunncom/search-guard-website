@@ -16,9 +16,9 @@ const Hero = () => {
           <div className="col s12 m5 l6">
             <div className="hero-col-wrapper">
               <div className="hero-text-wrapper">
-                <div className="hero-text-wrapper-headline">
-                  Security and Alerting for Elasticsearch
-                </div>
+                <h1 className="hero-text-wrapper-headline">
+                  Security and Alerting for Elasticsearch and Kibana
+                </h1>
                 <div className="hero-text-wrapper-text">
                   Search Guard is a security and alerting plug-in that encrypts and protects your data
                   and data flows in the entire Elastic Stack designed for the modern enterprise.
