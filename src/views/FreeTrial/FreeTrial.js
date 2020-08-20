@@ -207,7 +207,7 @@ const FreeTrial = () => {
                                 <br />
                                 <a href="https://forum.search-guard.com/" target="_blank">Search Guard Community Forum</a>
                                 <br />
-                                <a href="https://git.search-guard.com/" target="_blank">GitLab repositories</a>
+                                <a href="https://git.floragunn.com/" target="_blank">GitLab repositories</a>
                                 <br />
                                 <a href="/blog/" target="_blank">Search Guard Blog</a>
                             </div>
