@@ -90,7 +90,7 @@ const Header = ({ background = '#246E94', landing }) => {
             <div className="header__wrapper">
               <div className="header__controls">
                 <NavLink to="/">
-                  <img src={logo} alt="logo" className="header__icon" />
+                  <img src={logo} alt="Search Guard" className="header__icon" />
                 </NavLink>
                 <div
                   className="header__menu"

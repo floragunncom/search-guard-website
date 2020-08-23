@@ -65,7 +65,7 @@ const TileSimple = ({
           </div>
           <div className="col s12 pull-l6 l6">
             <div className={contentStyle}>
-              <div className="tilesimple-headline">{headline}</div>
+              <h2 className="tilesimple-headline">{headline}</h2>
               <div className="tilesimple-text">{text}</div>
             </div>
           </div>

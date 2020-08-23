@@ -40,21 +40,21 @@ const HomePage = () => {
         icon={multilevel}
         iconPosition="left"
         backgroundColor="dark"
-        headline="Multilayer security"
-        text="Protect your most sensitive data on all levels using role-based access control (RBAC) on your clusters, indices, fields and documents. From top to bottom Search Guard covers it all adding encryption, authentication, authorization, audit logging, multi tenancy and extended features to meet your compliance needs."
+        headline="Search Guard provides Multilayer security"
+        text="Search Guard protects your most sensitive data on all levels using role-based access control (RBAC) on your clusters, indices, fields and documents. From top to bottom Search Guard covers it all adding encryption, authentication, authorization, audit logging, multi tenancy and extended features to meet your compliance needs."
       />
       <TileSimple
         icon={lock}
         iconPosition="right"
         backgroundColor="light"
-        headline="Industry standards"
+        headline="Search Guard supports all industry standards"
         text="Search Guard supports all industry standards for authentication and authorization like LDAP, Active Directory, OpenID, SAML, Kerberos, JSON web tokens or client certificates. By using OpenSSL you can chose from a wide variety of modern and highly secure cipher suites."
       />
       <TileSimple
         icon={disk}
         iconPosition="left"
         backgroundColor="dark"
-        headline="Elastic Stack"
+        headline="Search Guard protects all components of the Elastic Stack"
         text="Search Guard gives you full control over your entire Elastisearch environment. Protect all components of the Elastic stack, including Kibana, Logstash and Beats."
       />
       <TrustedBy />
@@ -66,9 +66,9 @@ const HomePage = () => {
         tableView={false}
       />
       <Cta
-        headline="60-day PoC License"
+        headline="60-day Trial License"
         text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
-        ctaText="start free trial"
+        ctaText="start free search guard trial"
         icon={ctaIcon}
         link="/contacts/"
       />

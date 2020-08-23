@@ -17,7 +17,7 @@ const Hero = () => {
             <div className="hero-col-wrapper">
               <div className="hero-text-wrapper">
                 <h1 className="hero-text-wrapper-headline">
-                  Security and Alerting for Elasticsearch and Kibana
+                  Security and Alerting for Elasticsearch by Search Guard
                 </h1>
                 <div className="hero-text-wrapper-text">
                   Search Guard is a security and alerting plug-in that encrypts and protects your data
@@ -26,7 +26,7 @@ const Hero = () => {
               </div>
               <div className="hero-button-wrapper">
                 <Button
-                  text="start free trial"
+                  text="Free Search Guard Trial"
                   buttonStyle="loud-link"
                   link="/search-guard-free-trial/"
                 />

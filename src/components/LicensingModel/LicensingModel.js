@@ -56,9 +56,9 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   className="licensing-icon"
                 />
               </div>
-              <div className="licensing-editions-headline community-border">
-                Community edition
-              </div>
+              <h3 className="licensing-editions-headline community-border">
+                Search Guard Community Edition
+              </h3>
               <div className="licensing-editions-text-wrapper">
                 <div className="licensing-editions-text">
                   Covers all your basic security needs
@@ -70,7 +70,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
               </div>
               <div className="licensing-editions-button">
                 <Button
-                  text="install now"
+                  text="install community edition"
                   buttonStyle="ghost-link"
                   link="/search-guard-free-trial/"
                   color="#00C9B7"
@@ -87,9 +87,9 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   className="licensing-icon"
                 />
               </div>
-              <div className="licensing-editions-headline enterprise-border">
-                Enterprise edition
-              </div>
+              <h3 className="licensing-editions-headline enterprise-border">
+                Search Guard Enterprise Edition
+              </h3>
               <div className="licensing-editions-text-wrapper">
                 <div className="licensing-editions-text">
                   Integrates with major security standards e.g. Active Directory
@@ -120,9 +120,9 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   className="licensing-icon"
                 />
               </div>
-              <div className="licensing-editions-headline compliance-border">
-                Compliance edition
-              </div>
+              <h3 className="licensing-editions-headline compliance-border">
+                Search Guard Compliance Edition
+              </h3>
               <div className="licensing-editions-text-wrapper">
                 <div className="licensing-editions-text">
                   Designed for meeting compliance regulations e.g. GDPR

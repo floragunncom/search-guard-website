@@ -58,7 +58,7 @@ const Info = () => {
           </div>
           <div className="prefooter-content-wrapper col s12 m12 l6">
             <div className="prefooter-col-content">
-              <div className="prefooter-headline">stay updated</div>
+              <div className="prefooter-headline">Search Guard Newsletter</div>
               <div className="prefooter-content">
                 <div className="prefooter-content-text">
                   For the latest product developments, new versions and
