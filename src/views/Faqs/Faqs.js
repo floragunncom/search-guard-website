@@ -369,13 +369,6 @@ const Faqs = () => {
         link="/contacts/"
       />
       <PreFooter />
-
-        <script type="application/ld+json">
-            {JSON.stringify(jsonld)}
-        </script>
-
-
-
     </PageWrapper>
   );
 };
