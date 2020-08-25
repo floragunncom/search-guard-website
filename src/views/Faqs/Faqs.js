@@ -7,6 +7,7 @@ import Cta from '../../components/Cta/Cta';
 import Title from '../../components/Title/Title';
 import envelope from '../../images/icon-envelope.svg';
 import './Faqs.scss';
+import sgLogo from "../../images/sg_dlic_small.png";
 
 const faqItems = [
   {
@@ -14,18 +15,18 @@ const faqItems = [
     faq: [
       {
         question: 'What is Search Guard?',
-        answer: (
+        answer: `
           <p>
             Search Guard is an Enterprise Security Suite that encrypts and
             protects your data and data flows in the entire Elastic Stack,
             including Kibana, Logstash and Beats.
           </p>
-        ),
+        `,
         anchor: 'one',
       },
       {
         question: 'Who is using Search Guard?',
-        answer: (
+        answer: `
           <p>
             A wide variety of enterprises, from Fortune 500 companies to the
             most innovative start-ups around the world, are trusting in Search
@@ -35,12 +36,12 @@ const faqItems = [
             governmental agencies and provide security for scientific and
             educational institutions.
           </p>
-        ),
+        `,
         anchor: 'two',
       },
       {
         question: 'Is your code secure and audited?',
-        answer: (
+        answer: `
           <p>
             Yes, the complete code base of Search Guard is constantly audited
             for security issues by ourselves and independent security experts of
@@ -58,7 +59,7 @@ const faqItems = [
             pre-packaged components, and code introduced by compiler or
             platform-specific interpretations.
           </p>
-        ),
+        `,
         anchor: 'three',
       },
     ],
@@ -68,42 +69,42 @@ const faqItems = [
     faq: [
       {
         question: 'Do you offer support?',
-        answer: (
+        answer: `
           <p>
-            Of course. We offer both free support for the{' '}
+            Of course. We offer both free support for the 
             <a
               href="https://forum.search-guard.com/latest/"
               target="_blank"
               rel="noopener noreferrer"
             >
               Search Guard community
-            </a>{' '}
+            </a> 
             as well as paid support for our customers. As paying customer you
             get direct access to the core Search Guard developers and we also
             guarantee SLAs via our support portal.
           </p>
-        ),
+        `,
         anchor: 'four',
       },
       {
         question: 'Do you offer 24x7 support?',
-        answer: (
+        answer: `
           <p>
             Yes, we offer 24x7 support. Please get in contact with us to discuss
             a support plan that fits your requirements.
           </p>
-        ),
+        `,
         anchor: 'five',
       },
       {
         question: 'Do you offer Elastic Stack support?',
-        answer: (
+        answer: `
           <p>
             Yes, we offer support for the Elastic stack in collaboration with
             our authorized partners around the world. Please get in contact with
             us to discuss a support plan that fits your requirements.
           </p>
-        ),
+        `,
         anchor: 'six',
       },
     ],
@@ -113,30 +114,30 @@ const faqItems = [
     faq: [
       {
         question: 'Does Search Guard support feature XYZ?',
-        answer: (
+        answer: `
           <p>
             Please refer to our feature matrix for an overview of our features.
             If you are missing a feature for your specific use case, please get
             in contact with us. We work closely together with our customers to
             make sure Search Guard meets their needs.
           </p>
-        ),
+        `,
         anchor: 'seven',
       },
       {
         question: 'Does Search Guard offer Alerting?',
-        answer: (
+        answer: `
           <p>
             Yes, we are offering alerting capabilities via our Signals for
             Elasticsearch plugin. Signals is included in any Enterprise license
             subscription and offers a free community as well.
           </p>
-        ),
+        `,
         anchor: 'eight',
       },
       {
         question: 'Does Search Guard offer Machine Learning?',
-        answer: <p>Not yet, but we are working on it.</p>,
+        answer: `<p>Not yet, but we are working on it.</p>`,
         anchor: 'nine',
       },
     ],
@@ -146,11 +147,11 @@ const faqItems = [
     faq: [
       {
         question: 'What is your licensing model?',
-        answer: (
+        answer: `
           <p>
             Search Guard is dual licensed. All basic security features in the
             Community Edition are free, while you need to obtain a license in
-            order to use the Enterprise or Compliance Edition in production.{' '}
+            order to use the Enterprise or Compliance Edition in production.
             <br /> We license Search Guard per production cluster, not number of
             nodes. The regular license has no limits regarding the number of
             nodes, so you can scale your cluster indefinitely without additional
@@ -162,19 +163,19 @@ const faqItems = [
             nodes or less. Get <a href="/contacts/">in contact with us</a> and
             we will work out a licensing model that fits your needs.
           </p>
-        ),
+        `,
         anchor: 'ten',
       },
       {
         question: 'My company is non-profit, do you offer any discounts?',
-        answer: (
+        answer: `
           <p>
             Absolutely. We want to give back to education and science and
             provide special discounts and free licenses for eligible
             institutions. <a href="/contacts/">Get in touch with us</a> to learn
             more about our education & scientific licensing.
           </p>
-        ),
+        `,
         anchor: 'eleven',
       },
     ],
@@ -184,24 +185,24 @@ const faqItems = [
     faq: [
       {
         question: 'Is Search Guard compatible with the complete Elastic Stack?',
-        answer: (
+        answer: `
           <p>
             Yes, Search Guard is compatible with the complete Elastic stack and
             can be used to secure Elasticseach, Kibana, Logstash and Beats. We
             are also compatible with the Elastic subscription based features
             like monitoring, alerting and machine learning.
           </p>
-        ),
+        `,
         anchor: 'twelve',
       },
       {
         question: 'Is Search Guard compatible with tool  XYZ?',
-        answer: (
+        answer: `
           <p>
             Search Guard is compatible with most third party plugins and tools,
             including Grafana, Cerebro and fluentd.
           </p>
-        ),
+        `,
         anchor: 'thirteen',
       },
     ],
@@ -211,7 +212,7 @@ const faqItems = [
     faq: [
       {
         question: 'What is the easiest way to set up a PoC?',
-        answer: (
+        answer: `
           <p>
             The easiest way to set up a PoC and try out all Search Guard
             features is to use the Search Guard Demo Installer:
@@ -228,11 +229,11 @@ const faqItems = [
             <br />
             The installer comes with a trial license that enables all Enterprise
             and Compliance features for 60 days. If you need to extend your
-            Search Guard trial, just{' '}
+            Search Guard trial, just 
             <a href="/contacts/">get in contact with us</a> and we’re happy to
             provide you with an extended license.
           </p>
-        ),
+        `,
         anchor: 'fourteen',
       },
     ],
@@ -242,19 +243,19 @@ const faqItems = [
     faq: [
       {
         question: 'Can I run Search Guard on Kubernetes?',
-        answer: (
+        answer: `
           <p>
-            Absolutely. We provide{' '}
+            Absolutely. We provide 
             <a
               href="https://docs.search-guard.com/latest/search-guard-kubernetes-helm"
               target="_blank"
               rel="noopener noreferrer"
             >
               K8s helm charts
-            </a>{' '}
+            </a>
             for Kubernetes and also work on a Kubernetes operator.
           </p>
-        ),
+        `,
         anchor: 'fifteen',
       },
     ],
@@ -262,7 +263,34 @@ const faqItems = [
 ];
 
 const Faqs = () => {
-  return (
+
+    var htmlTags = /(<([^>]+)>)/ig;
+    var newlines = /(\r\n|\n|\r)/gm;
+    var whitespaces = /  +/g;
+    let jsonld = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": []
+    };
+
+    faqItems.map(category => {
+        category.faq.map(faqItem => {
+           let faqLd = {
+               "@type": "Question"
+           };
+
+           faqLd["name"] = faqItem.question;
+
+           let answer = {
+                "@type": "Answer"
+           };
+
+           answer["text"] = faqItem.answer.toString().replace(htmlTags, "").replace(newlines, "").replace(whitespaces, "");
+            faqLd["acceptedAnswer"] = answer;
+            jsonld.mainEntity.push(faqLd);
+        });
+    })
+    return (
     <PageWrapper>
       <Helmet>
         <html lang="en" itemScope itemType="https://schema.org/FAQPage" />
@@ -323,9 +351,7 @@ const Faqs = () => {
                         itemProp="acceptedAnswer"
                         itemType="https://schema.org/Answer"
                       >
-                        <div className="faq-answer-text" itemProp="text">
-                          {faq.answer}
-                        </div>
+                        <div className="faq-answer-text" itemProp="text" dangerouslySetInnerHTML={ {__html: faq.answer} }></div>
                       </div>
                     </div>
                   );
@@ -340,8 +366,16 @@ const Faqs = () => {
         text="No worries, maybe we can help you find the answer."
         ctaText="contact us"
         icon={envelope}
+        link="/contacts/"
       />
       <PreFooter />
+
+        <script type="application/ld+json">
+            {JSON.stringify(jsonld)}
+        </script>
+
+
+
     </PageWrapper>
   );
 };
