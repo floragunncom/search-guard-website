@@ -287,7 +287,7 @@ const ContactForm = () => {
                       'Puerto Rico',
                       'Qatar',
                       'Romania',
-                      'Russian Federation',
+                      'Russia',
                       'San Marino',
                       'Saudi Arabia',
                       'Serbia',
