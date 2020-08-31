@@ -9,12 +9,12 @@ const client = contentful.createClient({
     'e374194597d1e72907428441d7ffe9f2ef9486dc92b23a733d9ca02d87e4da3c',
 });
 
-const fetchPosts = async () => {
+const fetchWhitepapers = async () => {
   await client
-    .getEntries({ content_type: 'post', order: '-fields.date' })
+    .getEntries({ content_type: 'whitePaper', order: 'fields.date' })
     .then((res, err) => {
       fs.writeFile(
-        './src/Api/contentfulPosts.json',
+        './src/Api/contentfulWhitepapers.json',
         JSON.stringify(res.items),
         error => {
           if (error) throw err;
@@ -23,4 +23,4 @@ const fetchPosts = async () => {
     });
 };
 
-fetchPosts();
+fetchWhitepapers();

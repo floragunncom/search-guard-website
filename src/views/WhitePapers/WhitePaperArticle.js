@@ -10,7 +10,6 @@ import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Markdown from 'markdown-to-jsx';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import BlogBox from '../../components/BlogBox/BlogBox';
 import Blockquote from '../../components/Blockquote/Blockquote';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 import iconTwitter from '../../images/icon-tw-loud.svg';
@@ -18,36 +17,40 @@ import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
-import './BlogPostArticle.scss';
-import posts from '../../Api/contentfulPosts.json';
+import './WhitePaperArticle.scss';
+import articles from '../../Api/contentfulWhitepapers.json';
 import Button from "../../components/Button/Button";
+import posts from "../../Api/contentfulPosts";
 
-const BlogPostArticle = ({ match }) => {
+const WhitePaperArticle = ({ match }) => {
 
-  const postContent = posts.find(
-    entry => entry.fields.slug === `${match.url.substring(1)}`,
+  const slug = match.url.split("/")[2] + "/";
+  const postContent = articles.find(
+    entry => entry.fields.slug === `${slug}`,
   );
+console.log(postContent)
+
   const options = {
     overrides: {
       h1: {
         props: {
-          className: 'blogpostarticle-headline1',
+          className: 'whitepaperarticle-headline1',
         },
       },
       h2: {
         props: {
-          className: 'blogpostarticle-headline2',
+          className: 'whitepaperarticle-headline2',
         },
       },
       h3: {
         props: {
-          className: 'blogpostarticle-headline2',
+          className: 'whitepaperarticle-headline2',
         },
       },
       p: {
         component: 'div',
         props: {
-          className: 'blogpostarticle-text',
+          className: 'whitepaperarticle-text',
         },
       },
       b: {
@@ -71,26 +74,26 @@ const BlogPostArticle = ({ match }) => {
       code: {
         component: 'div',
         props: {
-          className: 'blogpostarticle-code-snippet',
+          className: 'whitepaperarticle-code-snippet',
           id: 'post-code',
         },
       },
       a: {
         component: 'a',
         props: {
-          className: 'blogpostarticle-link',
+          className: 'whitepaperarticle-link',
         },
       },
       li: {
         component: 'div',
         props: {
-          className: 'blogpostarticle-listitem',
+          className: 'whitepaperarticle-listitem',
         },
       },
       img: {
         component: 'img',
         props: {
-          className: 'blogpostarticle-image-wrapper blogpostarticle-image',
+          className: 'whitepaperarticle-image-wrapper whitepaperarticle-image',
         },
       },
       blockquote: {
@@ -106,19 +109,19 @@ const BlogPostArticle = ({ match }) => {
     <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{postContent.fields.htmlTitle}</title>
+        <title>{postContent.fields.title}</title>
         <link
           rel="canonical"
           href={`https://search-guard.com/${postContent.fields.slug}`}
         />
-        <meta name="description" content={postContent.fields.htmlDescription} />
+        <meta name="description" content={postContent.fields.description} />
 
-        <meta property="og:title" content={postContent.fields.htmlTitle} />
+        <meta property="og:title" content={postContent.fields.title} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://search-guard.com/${postContent.fields.slug}`} />
-        <meta property="og:description" content={postContent.fields.htmlDescription}/>
-        <meta property="og:image" content={postContent.fields.postImage.fields.file.url}/>
-        <meta property="og:image:alt" content={postContent.fields.htmlDescription}/>
+        <meta property="og:description" content={postContent.fields.description}/>
+        <meta property="og:image" content={postContent.fields.cover.fields.file.url}/>
+        <meta property="og:image:alt" content={postContent.fields.description}/>
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content="@searchguard" />
@@ -126,70 +129,65 @@ const BlogPostArticle = ({ match }) => {
       </Helmet>
       <BlogTitle
         text={postContent.fields.title}
-        subText={`${postContent.fields.author} `}
         tags={postContent.fields.tags}
       />
-      <div className="row blogpostarticle-wrapper">
+
+      <div className="row whitepaperarticle-wrapper">
         <div className="col s12 offset-l2 l8">
           <Markdown options={options}>
-            {postContent.fields.postContent
+            {postContent.fields.content
               .replace(/https:\/\/search-guard\.com/g, '')
               .replace(/http:\/\/localhost:8080/g, '')}
           </Markdown>
-          <div className="blogpostarticle-text">Published: {postContent.fields.date}</div>
 
-          <div className="row blogpostarticle-wrapper">
-            <div className="col s6">
-              <div className="valign-wrapper">
-              <Button
-                  text="start free trial"
-                  buttonStyle="loud-link"
-                  link="/search-guard-free-trial/"
-              />
+          <div>
+            <div className="col m6 s12">
+              <div className="valign-wrapper center-align">
+                <Button
+                    text="start free trial"
+                    buttonStyle="loud-link"
+                    link="/search-guard-free-trial/"
+                />
               </div>
             </div>
 
-            <div className="col s6  ">
-              <div className="valign-wrapper">
-              <Button
-                  text="Contact us!"
-                  buttonStyle="loud-link"
-                  link="/contacts/"
-              />
+            <div className="col m6 s12  ">
+              <div className="valign-wrapper center-align">
+                <Button
+                    text="Contact us!"
+                    buttonStyle="loud-link"
+                    link="/contacts/"
+                />
               </div>
             </div>
 
           </div>
-
-
-
         </div>
-        <div className="col s12 offset-l1 l1 blogpostarticle-sidebar-container">
-          <div className="blogpostarticle-sidebar-title">share</div>
-          <div className="blogpostarticle-sidebar-icons-container">
+        <div className="col s12 offset-l1 l1 whitepaperarticle-sidebar-container">
+          <div className="whitepaperarticle-sidebar-title">share</div>
+          <div className="whitepaperarticle-sidebar-icons-container">
             <FacebookShareButton
-              className="blogpostarticle-sidebar-icon"
+              className="whitepaperarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               quote={postContent.fields.title}
             >
               <img src={iconFb} alt="facebook icon" />
             </FacebookShareButton>
             <TwitterShareButton
-              className="blogpostarticle-sidebar-icon"
+              className="whitepaperarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
-              hastags={postContent.fields.tags}
             >
               <img src={iconTwitter} alt="twitter icon" />
             </TwitterShareButton>
             <LinkedinShareButton
-              className="blogpostarticle-sidebar-icon"
+              className="whitepaperarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
             >
               <img src={iconIn} alt="linkedIn icon" />
             </LinkedinShareButton>
             <RedditShareButton
-              className="blogpostarticle-sidebar-icon"
+              className="whitepaperarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
             >
@@ -200,21 +198,15 @@ const BlogPostArticle = ({ match }) => {
       </div>
 
 
-      <BlogBox
-        headline="Other posts you may like"
-        postsyoulike
-        randomize
-        category={postContent.fields.tags[0]}
-      />
       <div className="col s12 l4" />
-      <div className="col s12 blogpostarticle-link">
-        <a href="/blog/" className="blog-back ">
+      <div className="col s12 whitepaperarticle-link">
+        <a href="/whitepapers/" className="blog-back">
           <img
             src={infoArrowBack}
             className="blog-arrow-back"
             alt="arrow icon"
           />
-          <span>back to blog</span>
+          <span>back to whitepapers</span>
         </a>
       </div>
 
@@ -229,15 +221,13 @@ const BlogPostArticle = ({ match }) => {
               "@type": "WebPage",
               "@id": "https://search-guard.com/${postContent.fields.slug}"
             },            
-            "headline": "${postContent.fields.htmlTitle}",
-            "description": "${postContent.fields.htmlDescription}",            
-            "image": "${postContent.fields.postImage.fields.file.url}",
+            "headline": "${postContent.fields.title}",
+            "description": "${postContent.fields.description}",            
+            "image": "${postContent.fields.cover.fields.file.url}",
             "author": {
                "@type": "Person",
-               "name": "${postContent.fields.author}"
+               "name": "Jochen Kressin"
             },
-            "datePublished": "${postContent.fields.date}",
-            "dateModified": "${postContent.sys.updatedAt}",
             "publisher": {
               "@type": "Organization",
               "name": "Search Guard",
@@ -252,4 +242,4 @@ const BlogPostArticle = ({ match }) => {
   );
 };
 
-export default BlogPostArticle;
+export default WhitePaperArticle;

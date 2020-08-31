@@ -14,6 +14,7 @@ import Faqs from './views/Faqs/Faqs';
 import License from './views/License/License';
 import Imprint from './views/Imprint/Imprint';
 import WhitePapers from './views/WhitePapers/WhitePapers';
+import WhitePaperArticle from './views/WhitePapers/WhitePaperArticle';
 import Presentations from './views/Presentations/Presentations';
 import DataProtection from './views/DataProtection/DataProtection';
 import SecurityInformation from './views/SecurityInformation/SecurityInformation';
@@ -41,12 +42,12 @@ const Routes = () => {
           <Route exact path="/contacts/" component={ContactUs} />
           <Route exact path="/security/" component={Security} />
           <Route exact path="/alerting/" component={Alerting} />
+          <Route exact path="/whitepapers/" component={WhitePapers} />
           <Route exact path="/company/" component={Company} />
           <Route exact path="/resource/" component={Resource} />
           <Route exact path="/licensing/" component={License} />
           <Route exact path="/faq/" component={Faqs} />
           <Route exact path="/impressum/" component={Imprint} />
-          <Route exact path="/white-papers/" component={WhitePapers} />
           <Route exact path="/presentations/" component={Presentations} />
           <Route exact path="/datenschutz/" component={DataProtection} />
           <Route exact path="/education-program/" component={Education} />
@@ -85,8 +86,7 @@ const Routes = () => {
           <Route exact path="/blog/" component={Blog} />
           <Route exact path="/blog/page/:slug" component={Blog} />
           <Route exact path="/:slug" component={BlogPostArticle} />
-          <Route exact path="/white-papers/" component={WhitePapers} />
-
+          <Route exact path="/whitepapers/:slug" component={WhitePaperArticle} />
           <Route exact path="/press/de/search-guard-vertrieb-dach/" component={PressDEDach} />
           <Route exact path="/press/en/search-guard-sales-dach/" component={PressENDach} />
 

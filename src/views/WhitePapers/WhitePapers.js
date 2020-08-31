@@ -1,44 +1,111 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import './WhitePapers.scss';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Button from '../../components/Button/Button';
+import pdf from '../../images/pdf-download.svg';
+import whitepaperarticles from '../../Api/contentfulWhitepapers.json';
 
-const WhitePapers = () => {
+const whitepapers = [
+  {
+    image: require("../../images/20200831_HIPAA_Elastic_Stack.jpg"),
+    download: require("../../downloads/20200831_HIPAA_Elastic_Stack.pdf"),
+    slug: 'hipaa-compliance-elastic-slack/'
+  }
+];
+
+const Whitepapers = () => {
   return (
     <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Official Search Guard White Papers</title>
-        <link rel="canonical" href="https://search-guard.com/white-papers/" />
+        <title>
+          Search Guard Whitepapers for Elasticsearch
+        </title>
+        <link rel="canonical" href="https://search-guard.com/whitepapers/" />
         <meta
           name="description"
-          content="How to use Search Guard to stay compliant with regulations like GDPR, HIPAA, PCI and SOX."
+          content="Search Guard whitepapers about security and alerting for Elasticsearch and Kibana"
         />
       </Helmet>
       <Title
-        headline="White Papers"
-        text="How to use Search Guard to stay compliant with regulations like GDPR, HIPAA, PCI and SOX."
+        headline="whitepapers"
+        text="Search Guard whitepapers about Security and Alerting for Elasticsearch and Kibana"
       />
-      <div className="notfound-wrapper">
-        <div className="row">
-          <div className="col s12 m10 offset-m1 l8 offset-l2">
-            <div className="notfound-warning">COMING SOON</div>
-            <div className="notfound-text">
-              Kindly,
-              <br />
-              Your Search Guard team
-            </div>
-            <div className="notfound-button">
-              <Button text="Home" link="/" />
-            </div>
-          </div>
-        </div>
+      <div className="row whitepapers-wrapper">
+        {whitepapers.map(item => {
+
+            const whitepaperContent = whitepaperarticles.find(
+                entry => entry.fields.slug === item.slug
+            );
+
+          return (
+            <div className="col m6 s12 center-align">
+
+                <a
+                    href={item.download}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=""
+                >
+              <img
+                src={item.image}
+                className="whitepapers-image "
+                alt="preview imaginery"
+              />
+                </a>
+              <div className="whitepapers-headline">{whitepaperContent.fields.title}</div>
+              <div className="whitepapers-text">{whitepaperContent.fields.description}</div>
+
+                <div className="col m6 s12 center-align">
+
+
+                    <div className="whitepapers-download ">
+                        <a
+                            href={item.download}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="whitepapers-button"
+                        >
+                            <img
+                                src={pdf}
+                                alt="download icon"
+                                className="whitepapers-button-icon"
+                            />
+                            <div className="whitepapers-button-text">download pdf</div>
+                        </a>
+                    </div>
+                </div>
+                <div className="col m6 s12 ">
+                    <div className="whitepapers-download ">
+                        <a
+                            href={`/whitepapers/${whitepaperContent.fields.slug}` }
+                            rel="noopener noreferrer"
+                            className="whitepapers-button"
+                        >
+                            <img
+                                src={pdf}
+                                alt="download icon"
+                                className="whitepapers-button-icon"
+                            />
+                            <div className="whitepapers-button-text">read online</div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                </div>
+
+
+
+          );
+        })}
       </div>
       <PreFooter />
     </PageWrapper>
   );
 };
 
-export default WhitePapers;
+export default Whitepapers;

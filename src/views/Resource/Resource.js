@@ -94,7 +94,7 @@ const Resource = () => {
           textLeft="Browse our library of presentations on all Search Guard features."
           textRight="Download our whitepapers on Search Guard use cases and implementation examples."
           linkLeft="/presentations/"
-          linkRight="/white-papers/"
+          linkRight="/whitepapers/"
         />
       </div>
       <Card
