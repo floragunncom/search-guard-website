@@ -35,8 +35,7 @@ const WhitePaperArticle = ({ match }) => {
   const postContent = articles.find(
     entry => entry.fields.slug === `${slug}`,
   );
-console.log(postContent)
-
+  
   const options = {
     overrides: {
       h1: {
