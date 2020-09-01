@@ -1,6 +1,12 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
+.flex-center {
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+}
+
 .row.blogpostarticle-wrapper {
   padding: 0 12px;
 }

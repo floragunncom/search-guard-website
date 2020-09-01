@@ -138,27 +138,26 @@ const BlogPostArticle = ({ match }) => {
           </Markdown>
           <div className="blogpostarticle-text">Published: {postContent.fields.date}</div>
 
-          <div className="row blogpostarticle-wrapper">
-            <div className="col s6">
-              <div className="valign-wrapper">
-              <Button
-                  text="start free trial"
-                  buttonStyle="loud-link"
-                  link="/search-guard-free-trial/"
-              />
+          <div>
+            <div className="flex-center">
+              <div className="col m6 s12 flex-center">
+                <div className="valign-wrapper">
+                  <Button
+                      text="start free trial"
+                      link="/search-guard-free-trial/"
+                  />
+                </div>
+              </div>
+
+              <div className="col m6 s12 flex-center ">
+                <div className="valign-wrapper">
+                  <Button
+                      text="Contact us!"
+                      link="/contacts/"
+                  />
+                </div>
               </div>
             </div>
-
-            <div className="col s6  ">
-              <div className="valign-wrapper">
-              <Button
-                  text="Contact us!"
-                  buttonStyle="loud-link"
-                  link="/contacts/"
-              />
-              </div>
-            </div>
-
           </div>
 
 

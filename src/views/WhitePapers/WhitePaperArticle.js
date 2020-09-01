@@ -21,8 +21,15 @@ import './WhitePaperArticle.scss';
 import articles from '../../Api/contentfulWhitepapers.json';
 import Button from "../../components/Button/Button";
 import posts from "../../Api/contentfulPosts";
+import pdf from "../../images/pdf-download.svg";
 
 const WhitePaperArticle = ({ match }) => {
+  // cannot dynamic require, so we need to define twice :(
+
+  const whitepaperDownloads =
+    {
+      "hipaa-compliance-elastic-slack/": require("../../downloads/20200831_HIPAA_Elastic_Stack.pdf"),
+    };
 
   const slug = match.url.split("/")[2] + "/";
   const postContent = articles.find(
@@ -134,6 +141,25 @@ console.log(postContent)
 
       <div className="row whitepaperarticle-wrapper">
         <div className="col s12 offset-l2 l8">
+          <div className="flex-center">
+            <div className="whitepaperarticle-text flex-center">
+              <a
+                  href={whitepaperDownloads[slug]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="whitepapers-button"
+              >
+                <img
+                    src={pdf}
+                    alt="download icon"
+                    className="whitepapers-button-icon"
+                />
+                <div className="whitepapers-button-text">read online</div>
+              </a>
+            </div>
+          </div>
+
+
           <Markdown options={options}>
             {postContent.fields.content
               .replace(/https:\/\/search-guard\.com/g, '')
@@ -141,27 +167,34 @@ console.log(postContent)
           </Markdown>
 
           <div>
-            <div className="col m6 s12">
-              <div className="valign-wrapper center-align">
-                <Button
-                    text="start free trial"
-                    buttonStyle="loud-link"
-                    link="/search-guard-free-trial/"
-                />
-              </div>
-            </div>
+            <div className="flex-center">
+                <div className="col m6 s12 flex-center">
+                  <div className="valign-wrapper">
+                    <Button
+                        text="start free trial"
+                        link="/search-guard-free-trial/"
+                    />
+                  </div>
+                </div>
 
-            <div className="col m6 s12  ">
-              <div className="valign-wrapper center-align">
-                <Button
-                    text="Contact us!"
-                    buttonStyle="loud-link"
-                    link="/contacts/"
-                />
-              </div>
+                <div className="col m6 s12 flex-center ">
+                  <div className="valign-wrapper">
+                    <Button
+                        text="Contact us!"
+                        link="/contacts/"
+                    />
+                  </div>
+                </div>
             </div>
-
           </div>
+
+
+
+
+
+
+
+
         </div>
         <div className="col s12 offset-l1 l1 whitepaperarticle-sidebar-container">
           <div className="whitepaperarticle-sidebar-title">share</div>

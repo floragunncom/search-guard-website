@@ -1,6 +1,12 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
+.flex-center {
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+}
+
 .whitepaperarticle-even {
   margin-left: 0px !important;
   margin-right: 0px !important;
