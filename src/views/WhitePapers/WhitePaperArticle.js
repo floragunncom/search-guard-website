@@ -154,7 +154,7 @@ console.log(postContent)
                     alt="download icon"
                     className="whitepapers-button-icon"
                 />
-                <div className="whitepapers-button-text">read online</div>
+                <div className="whitepapers-button-text">Download PDF</div>
               </a>
             </div>
           </div>
