@@ -140,8 +140,8 @@ const Security = () => {
         iconRight={iconLock}
         headlineLeft="CVE advisory"
         headlineRight="Disclosure Policy"
-        textLeft="Etiam vitae dolor eu felis porttitor placerat. In quam neque, euismod sed diam auctor."
-        textRight="Etiam vitae dolor eu felis porttitor placerat. In quam dsrd dneque, euismod sed diam auctor."
+        textLeft="floragunn GmbH has been named as a CVE numbering authority by MITRE for all issues related to Search Guard."
+        textRight="How we handle security related bugs and issues in Search Guard. If you have found one, please read this first."
         linkLeft="/cve-advisory/"
         linkRight="/disclosure-policy/"
       />

@@ -226,7 +226,7 @@ const BlogPostArticle = ({ match }) => {
             "@type": "Article",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://search-guard.com/${postContent.fields.slug}"
+              "@id": "https://search-guard.com/${postContent.fields.slug}/"
             },            
             "headline": "${postContent.fields.htmlTitle}",
             "description": "${postContent.fields.htmlDescription}",            

@@ -35,7 +35,7 @@ const WhitePaperArticle = ({ match }) => {
   const postContent = articles.find(
     entry => entry.fields.slug === `${slug}`,
   );
-  
+
   const options = {
     overrides: {
       h1: {
@@ -251,7 +251,7 @@ const WhitePaperArticle = ({ match }) => {
             "@type": "Article",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://search-guard.com/${postContent.fields.slug}"
+              "@id": "https://search-guard.com/whitepapers/${postContent.fields.slug}/"
             },            
             "headline": "${postContent.fields.title}",
             "description": "${postContent.fields.description}",            
