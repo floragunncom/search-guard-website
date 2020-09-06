@@ -16,6 +16,32 @@ const Video = props => {
               <div className="video-playlist-item col l4">
                   <iframe
                       className="responsive-video"
+                      src="https://www.youtube.com/embed/SMaxuNPc2CI"
+                      frameBorder="0"
+                      title="Monitoring Elasticsearch by using Signals Alerting"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                  />
+                  <div className="video-playlist-text">
+                      Monitoring Elasticsearch by using Signals Alerting
+                  </div>
+              </div>
+              <div className="video-playlist-item col l4">
+                  <iframe
+                      className="responsive-video"
+                      src="https://www.youtube.com/embed/lQNauVac8tw"
+                      title="Creating Elasticsearch Watches using the Signals Blocks Mode"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                  />
+                  <div className="video-playlist-text">
+                      Creating Elasticsearch Watches using the Signals Blocks Mode
+                  </div>
+              </div>
+              <div className="video-playlist-item col l4">
+                  <iframe
+                      className="responsive-video"
                       src="https://www.youtube.com/embed/Wqk0m8ibNnM"
                       frameBorder="0"
                       title="Signals Alerting for Elasticsearch: Creating a simple alert"
@@ -26,6 +52,11 @@ const Video = props => {
                       Signals Alerting for Elasticsearch: Creating a simple alert
                   </div>
               </div>
+          </div>
+
+
+
+          <div className="video-playlist">
               <div className="video-playlist-item col l4">
                   <iframe
                       className="responsive-video"
@@ -52,49 +83,60 @@ const Video = props => {
                       Securing Elasticsearch and Kibana with the Zero Trusted Networks approach
                   </div>
               </div>
+              <div className="video-playlist-item col l4">
+                  <iframe
+                      className="responsive-video"
+                      src="https://www.youtube.com/embed/Big_niMxQJ4"
+                      frameBorder="0"
+                      title="Introducing Signals - Free Alerting for Elasticsearch"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                  />
+                  <div className="video-playlist-text">
+                      Introducing Signals - Free Alerting for Elasticsearch
+                  </div>
+              </div>
           </div>
 
-        <div className="video-playlist">
           <div className="video-playlist-item col l4">
-            <iframe
-                className="responsive-video"
-                src="https://www.youtube.com/embed/Big_niMxQJ4"
-                frameBorder="0"
-                title="Introducing Signals - Free Alerting for Elasticsearch"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-            />
-            <div className="video-playlist-text">
-              Introducing Signals - Free Alerting for Elasticsearch
-            </div>
+              <iframe
+                  className="responsive-video"
+                  src="https://www.youtube.com/embed/OQqF8kJ6QKM"
+                  frameBorder="0"
+                  title="Keep your Elasticsearch GDPR compliant with Search Guard"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+              />
+              <div className="video-playlist-text">
+                  Keep your Elasticsearch GDPR compliant with Search Guard
+              </div>
           </div>
           <div className="video-playlist-item col l4">
-            <iframe
-              className="responsive-video"
-              src="https://www.youtube.com/embed/qiRgy5FcsnI"
-              title="Search Guard - Compliance Module"
-              frameBorder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-            <div className="video-playlist-text">
-              Search Guard - Compliance Module
-            </div>
+              <iframe
+                  className="responsive-video"
+                  src="https://www.youtube.com/embed/qiRgy5FcsnI"
+                  title="Search Guard - Compliance Module"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+              />
+              <div className="video-playlist-text">
+                  Search Guard - Compliance Module
+              </div>
           </div>
           <div className="video-playlist-item col l4">
-            <iframe
-              className="responsive-video"
-              src="https://www.youtube.com/embed/1uWGqcy5PeQ"
-              frameBorder="0"
-              title="Search Guard puts security first"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-            <div className="video-playlist-text">
-              Search Guard puts security first
-            </div>
+              <iframe
+                  className="responsive-video"
+                  src="https://www.youtube.com/embed/1uWGqcy5PeQ"
+                  frameBorder="0"
+                  title="Search Guard puts security first"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+              />
+              <div className="video-playlist-text">
+                  Search Guard puts security first
+              </div>
           </div>
-        </div>
       </div>
     );
     playlistButton = (
