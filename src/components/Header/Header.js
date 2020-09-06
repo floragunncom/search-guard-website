@@ -42,6 +42,13 @@ const Header = ({ background = '#246E94', landing }) => {
       >
         {landing ? '' : 'licensing'}
       </NavLink>
+        <NavLink
+            to="/compliance/"
+            className="header__navbar--item"
+            activeStyle={style.active}
+        >
+            {landing ? '' : 'compliance'}
+        </NavLink>
       <NavLink
         to="/resource/"
         className="header__navbar--item"
