@@ -9,6 +9,7 @@ import Title from '../../components/Title/Title';
 import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
+import Contact from '../../components/ContactFormSuperSlimOnly';
 import ctaIcon from '../../images/icon-sg.svg';
 import fileCode from '../../images/file-code.svg';
 import worldLock from '../../images/world-lock.svg';
@@ -32,9 +33,9 @@ const Compliance = () => {
 
   const anchors = [
     { id: v4(), anchor: 'concept', name: 'what it is' },
-    { id: v4(), anchor: 'connectors', name: 'connectors' },
-    { id: v4(), anchor: 'escalationmodel', name: 'escalation model' },
-    { id: v4(), anchor: 'tryit', name: 'Try it' },
+    { id: v4(), anchor: 'features', name: 'features' },
+    { id: v4(), anchor: 'highlights', name: 'highlights' },
+    { id: v4(), anchor: 'contact', name: 'contact us' },
   ];
 
   return (
@@ -52,26 +53,95 @@ const Compliance = () => {
       </Helmet>
       <Title
         headline="Compliance for Elasticsearch"
-        text="Keep your Elasticsearch and Kibana stack compliant with regulations like GDPR, PCI, SOX, HIPAA and ISO"
+        text="Keep Elasticsearch and Kibana compliant with regulations like GDPR, PCI, SOX, HIPAA and ISO"
       />
       <AnchorNavBar anchors={anchors} />
 
 
-          <div className="alerting-wrapper" >
+          <div className="compliance-wrapper" id="concept">
 
-              <div className="row alerting">
-                  <div className="alerting-headline">Search Guard Compliance Edition</div>
-                  <div className="alerting-content-text">
-                        While the importance of data privacy is ever increasing, the burden that compliance regulations like
-                        GDPR, PCI, HIPAA or SOX put on CISOs and IT operators is high.
-                        <br /><br  />
-                        The Search Guard Compliance Edition offers features that make it easy to implement compliance rules and
-                        regulations for any Elasticsearch cluster.
+              <div className="row compliance">
+                  <div className="compliance-headline">Search Guard Compliance Edition</div>
+
+                  <div className="compliance-content-headline">
+                      The challenges of data compliance
+                  </div>
+                  <div className="compliance-content-text">
+                    While the importance of data privacy and compliance is ever increasing, the burden that compliance regulations like
+                    GDPR, PCI, HIPAA or SOX put on CISOs and IT operators is high. The regulations cover topics such as data encryption,
+                    data integrity, access control, data anonymization, access tracking, data retention and many more.
+                    Failure to implement those regulations can lead to fines and damages, and actual data breaches may have a permanent
+                    impact on the reputation and business of any company.
+                  </div>
+
+                  <div className="compliance-content-headline">
+                      Search Guard Compliance Edition
+                  </div>
+                  <div className="compliance-content-text">
+                      The Search Guard Compliance Edition offers features that make it easy to implement compliance regulations for
+                       Elasticsearch, Kibana and the entire Elastic Stack. Sophisticated tools like document change tracking, document integrity protection
+                      and field anonymization significantly ease the pain of adhering to GDPR, PCI, HIPAA or SOX.
                   </div>
               </div>
           </div>
 
-          <div className="securityinfo-wrapper" id="concept">
+          <div id="features">
+              <TileSimple
+                  icon={lock}
+                  iconPosition="right"
+                  backgroundColor="light"
+                  headline="Data encryption"
+                  text="
+                    Search Guard enforces TLS encryption for all data in transit. This ensures data protection and data integrity, and makes sure only
+                    trusted parties are able to read sensitive data. Search Guard also supports like dm-crypt, EcryptFS for encryption at rest."
+              />
+          </div>
+
+          <div id="concept">
+              <TileSimple
+                  icon={lock}
+                  iconPosition="left"
+                  backgroundColor="dark"
+                  headline="Fine-grained access control to all data"
+                  text="
+            Search Guard blocks any unauthorized access to any information inside Elasticsearch. With our fine-grained role-based
+            access control system you are always in control over who is able to read and modify data. This applies to indices, documents, and even single fields.
+          "
+              />
+          </div>
+          <TileSimple
+              icon={complianceDataChanges}
+              iconPosition="right"
+              backgroundColor="light"
+              headline="Data access tracking and change tracking"
+              text="
+                Search Guard produces and audit trail that records who has created, accessed and modified senstive data. In an compliance audit you can
+                exactly state when, by whom and why this data has been entered and processed.
+              "
+          />
+          <TileSimple
+              icon={complianceEscalation}
+              iconPosition="left"
+              backgroundColor="dark"
+              headline="Data anonymization"
+              text="
+                Not all data that is being recorded has to present for everyone to see in clear text at all times. Search Guard supports on-the-fly data
+                anonymization on a per-role basis. At any time you decide who is allowed to see clear text data and who should see anonymized data only. All
+                Elasticsearch data aggregation and analysis features continue to work also on anonymized data.
+        "
+          />
+          <TileSimple
+              icon={complianceEscalation}
+              iconPosition="right"
+              backgroundColor="light"
+              headline="Right to be forgotten"
+              text="
+                Customers can demand that PII data that is not required for ongoing business activites must be deleted. With the Search Guard Compliance
+                Edition you can now record any PII data deletion for future proof this 'right to be forgotten has' been applied correctly.
+        "
+          />
+
+          <div className="securityinfo-wrapper" id="highlights">
               <div className="row">
 
                   <div className="col s12 m4">
@@ -115,222 +185,12 @@ const Compliance = () => {
               </div>
           </div>
 
-
-
-      <div id="concept">
-        <TileSimple
-          icon={lock}
-          iconPosition="right"
-          backgroundColor="light"
-          headline="Fine-grained access control to all your data"
-          text="
-            Search Guard blocks any unauthorized access to any information inside Elasticsearch. With our fine-grained role-based
-            access controls you are always in control over your data.
-          "
-        />
-      </div>
-      <TileSimple
-        icon={complianceDataChanges}
-        iconPosition="left"
-        backgroundColor="dark"
-        headline="Access tracking and change tracking"
-        text="
-            You need to ne
-        "
-      />
-      <TileSimple
-        icon={complianceEscalation}
-        iconPosition="right"
-        backgroundColor="light"
-        headline="Right to be forgotten"
-        text="
-            The Signals compliance escalation model makes it possible to tailor notifications and actions to your specific use case. Define how often
-            notifications are sent to which connector, configure different thresholds and escalation levels and trigger one or more actions for each level.
-            If a detected anomaly is resolved, you can send out additional notfications as well.
-        "
-      />
-        <TileSimple
-            icon={complianceUI}
-            iconPosition="right"
-            backgroundColor="dark"
-            headline="User Interface & REST API"
-            text="
-            Signals compliance ships with a fully fledged Kibana user interface which only requires a couple of clicks to set up alerts. You can use the
-            Graph mode, Blocks mode or JSON mode based on the complexity of your use case. The extensive REST API makes it possible to fully
-            automate configuration.
-
-        "
-        />
-
-
-
-        <div className="certified-wrapper" id="connectors">
-            <div className="certified-headline">Connectors</div>
-            <div className="row certified-row-wrapper">
-                <div className="col s12 m4">
-                    <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-compliance-actions-email"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="certified-col-img"
-                    >
-                        <i className="material-icons md-96 md-dark">mail_outline</i>
-                    </a>
-                    <div className="certified-col-headline">Email</div>
-                    <div className="certified-col-text">
-                        Send out Email notifications by connecting to any
-                        SMTP provider. Supports TLS, StartTLS, Proxies and
-                        default fields.
-                    </div>
-                </div>
-                <div className="col s12 m4">
-                    <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-compliance-actions-slack"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="certified-col-img"
-                    >
-                        <i className="material-icons md-96 md-dark">message</i>
-                    </a>
-                    <div className="certified-col-headline">
-                        Slack
-                    </div>
-                    <div className="certified-col-text">
-                        Inform your team or individuals about anomalies by sending out
-                        a message on Slack.
-                    </div>
-                </div>
-                <div className="col s12 m4">
-                    <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-compliance-actions-pagerduty"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="certified-col-img"
-                    >
-                        <i className="material-icons md-96 md-dark">phone_callback</i>
-                    </a>
-                    <div className="certified-col-headline">
-                        PagerDuty
-                    </div>
-                    <div className="certified-col-text">
-                        Open PagerDuty incidents from Signals compliance automatically. The connnector supports resolving incidents
-                        in PagerDuty as soon as the watch has left alert state.
-                    </div>
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col s12 m4">
-                    <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-compliance-actions-jira"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="certified-col-img"
-                    >
-                        <i className="material-icons md-96 md-dark">people_alt</i>
-                    </a>
-                    <div className="certified-col-headline">JIRA</div>
-                    <div className="certified-col-text">
-                        Create, open or resolve JIRA issues based on the state of an alert. Supports labels, components, priorities and subtasks.
-                    </div>
-                </div>
-                <div className="col s12 m4">
-                    <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-compliance-actions-webhook"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="certified-col-img"
-                    >
-                        <i className="material-icons md-96 md-dark">http</i>
-                    </a>
-                    <div className="certified-col-headline">Webhooks</div>
-                    <div className="certified-col-text">
-                        Post data generated by an alert to any system that supports Webhooks. Includes full control over
-                        all HTTP headers.
-                    </div>
-                </div>
-                <div className="col s12 m4">
-                    <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-compliance-actions-index"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="certified-col-img"
-                    >
-                        <i className="material-icons md-96 md-dark">storage</i>
-                    </a>
-                    <div className="certified-col-headline">Elasticsearch</div>
-                    <div className="certified-col-text">
-                        Write any data back to a local or remote Elasticsearch index for building time-series based datapoints.
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-          <div id="escalationmodel">
-              <Card
-                  bgLeftDark={false}
-                  iconLeft={iconSpeaker}
-                  iconRight={iconNote}
-                  headlineLeft="Escalation by Severity Levels"
-                  headlineRight="Resolve Notifications"
-                  textLeft="Define severity levels and get notified on different channels for different levels. Send out Slack notifications for error conditions, and additional Email and PagerDuty alerts for critical conditions."
-                  textRight="A critical system condition is hopefully just temporary: Get notified once an alert is resolved and everything is back to normal."
-              />
-          </div>
-
-          <div className="compliance-wrapper" >
-
-              <div className="row compliance">
-                  <div className="compliance-headline">Free compliance for Elasticsearch.<br />Bundled and integrated with Search Guard.</div>
-
-                  <div className="compliance-section" >
-                      <div className="compliance-content">
-                          <div className="compliance-content-headline">
-                              Single download and install
-                          </div>
-                          <div className="compliance-content-text">
-                              Signals compliance is bundled with any Search Guard download for Elasticsearch > 7.4. A single plugin install
-                              that provides both Security and compliance features. It was never easier to supercharge your Elasticsearch cluster
-                          </div>
-                      </div>
-                  </div>
-
-                  <div className="compliance-section" >
-                      <div className="compliance-content">
-                          <div className="compliance-content-headline">
-                              Free Community Edition - forever
-                          </div>
-                          <div className="compliance-content-text">
-                              The Community Edition of Signals compliance is free and will always be. Signals compliance is ASL2 licensed, so you can use
-                              it for any project, commercial or other, and even bundle it with your own projects.
-                          </div>
-                      </div>
-                  </div>
-
-                  <div className="compliance-section" >
-                      <div className="compliance-content">
-                          <div className="compliance-content-headline">
-                              Fully integrated with Search Guard Security
-                          </div>
-                          <div className="compliance-content-text">
-                              Signals compliance is fully integrated with all Search Guard Security features. Control access to alerts, configure
-                              who can receive notifications, separate alert access by using Search Guard Multi Tenancy and leverage advanced features like
-                              Document- and Field-level security.
-                          </div>
-                      </div>
-                  </div>
-
-              </div>
-          </div>
-
+          <div className="compliance-headline-form" id="contact">Questions? Contact Us!</div>
+    <Contact/>
       <div id="tryit">
         <Cta
-          headline="Give Signals compliance a spin!"
-          text="Follow these simple steps to install Signals compliance to your Elasticsearch cluster. "
+          headline="Give the Search Guard Compliance Edition a spin!"
+          text="Follow these simple steps to install Search Guard on your Elasticsearch cluster. "
           ctaText="Installation"
           icon={ctaIcon}
           link="/search-guard-free-trial/"

@@ -29,6 +29,11 @@ const Footer = ({ landing }) => {
                     Certifications
                   </NavLink>
                 </div>
+                <div className="footer-list-item">
+                  <NavLink to="/compliance/" className="footer-links">
+                    Compliance
+                  </NavLink>
+                </div>
                 <div className="footer-list-headline">
                 </div>
                 <div className="footer-list-headline">
