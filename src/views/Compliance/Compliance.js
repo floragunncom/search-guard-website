@@ -14,8 +14,10 @@ import ctaIcon from '../../images/icon-sg.svg';
 import fileCode from '../../images/file-code.svg';
 import worldLock from '../../images/world-lock.svg';
 import complianceDataChanges from '../../images/compliance_change_tracking.svg';
-import complianceFailedLogins from '../../images/compliance_failed_logins.svg';
+import complianceAnon from '../../images/compliance_anon.svg';
 import complianceEscalation from '../../images/alerting_escalation.svg';
+import complianceForgotten from '../../images/compliance_forgotten.svg';
+import multilevel from '../../images/multilevel-security.svg';
 import complianceUI from '../../images/alerting_ui.svg';
 import Card from "../../components/Card/Card";
 import iconSpeaker from "../../images/icon-speaker.svg";
@@ -99,7 +101,7 @@ const Compliance = () => {
 
           <div id="concept">
               <TileSimple
-                  icon={lock}
+                  icon={multilevel}
                   iconPosition="left"
                   backgroundColor="dark"
                   headline="Fine-grained access control to all data"
@@ -120,7 +122,7 @@ const Compliance = () => {
               "
           />
           <TileSimple
-              icon={complianceEscalation}
+              icon={complianceAnon}
               iconPosition="left"
               backgroundColor="dark"
               headline="Data anonymization"
@@ -131,7 +133,7 @@ const Compliance = () => {
         "
           />
           <TileSimple
-              icon={complianceEscalation}
+              icon={complianceForgotten}
               iconPosition="right"
               backgroundColor="light"
               headline="Right to be forgotten"
@@ -146,7 +148,7 @@ const Compliance = () => {
 
                   <div className="col s12 m4">
                       <div className="securityinfo-icon-wrapper">
-                          <img src={check} alt="checkmark icon" />
+                          <img src={shieldWheel} alt="checkmark icon" />
                       </div>
                       <div className="securityinfo-text-wrapper">
                           <div className="securityinfo-headline">Data Encryption</div>

@@ -140,8 +140,13 @@ const Footer = ({ landing }) => {
                   </NavLink>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/white-papers/" className="footer-links">
+                  <NavLink to="/whitepapers/" className="footer-links">
                     White papers
+                  </NavLink>
+                </div>
+                <div className="footer-list-item">
+                  <NavLink to="/compliance/" className="footer-links">
+                    Compliance
                   </NavLink>
                 </div>
               </div>
