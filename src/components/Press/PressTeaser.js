@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import './PressTeaser.scss';
 import alerting from "../../images/press_teaser_alerting.png";
 import tmahler from "../../images/tmahler_press.jpg";
+import dsgvo from "../../images/elasticsearch_dsgvo.jpeg";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const PressTeaser = () => {
@@ -12,6 +13,34 @@ const PressTeaser = () => {
       <div className="row company-press-teaser">
         <div className="company-press-teaser-headline">Press</div>
 
+        <div className="company-press-teaser-section">
+          <div className="press-teaser-pic hide-on-med-and-down">
+            <LazyLoadImage
+                src={dsgvo}
+            />
+          </div>
+          <div className="press-teaser-content">
+            <div className="press-teaser-content-headline">
+              Mit Search Guard sensible Daten in Elasticsearch-Clustern DSGVO-konform speichern
+            </div>
+            <div className="press-teaser-content-text">
+              Berlin, 09/10/2020. Datenpannen und Verstöße gegen die DSGVO sind immer häufiger miteinander verknüpft und aufgrund der Menge und Sensibilität der
+              Informationen besonders kritisch. Mit der Compliance Edition des Security Plug-Ins Search Guard können personenbezogene und sensible Kunden- und Mitarbeiterdaten
+              gesetzeskonform in Elasticsearch-Clustern gespeichert, bearbeitet und verwaltet werden. Durch rollenbasierte Zugriffsrechte, Write History
+              und Feldanonymisierung erfüllen Unternehmen die Anforderungen der DSGVO und dokumentieren lückenlos die Einhaltung von Compliance-Richtlinien.
+              Search Guard ist der einzige Anbieter, der DSGVO-Features für den Umgang mit sensiblen sowie PII Daten in Elasticsearch-Clustern anbietet.
+            </div>
+            <div className="press-teaser-content-button">
+              <Button
+                  text="German"
+                  link="/press/de/elasticsearch-dsgvo/"
+                  rel="noopener norefferrer"
+                  buttonStyle="loud-link"
+              />
+
+            </div>
+          </div>
+        </div>
 
         <div className="company-press-teaser-section">
           <div className="press-teaser-pic hide-on-med-and-down">

@@ -34,6 +34,7 @@ import PressDEDach from './views/Press/DE/20200620_Vertrieb_Dach/20200620_Vertri
 import PressENDach from './views/Press/EN/20200620_Sales_Activities_Dach/20200620_Sales_Activities_Dach';
 import PressDEAlerting from './views/Press/DE/20200723_Alerting/20200723_Alerting';
 import PressENAlerting from './views/Press/EN/20200723_Alerting/20200723_Alerting';
+import PressDECompliance from './views/Press/DE/20200910_DSGVO/20200723_DSGVO';
 const Routes = () => {
   return (
     <React.Fragment>
@@ -94,6 +95,8 @@ const Routes = () => {
 
           <Route exact path="/press/de/search-guard-alerting/" component={PressDEAlerting} />
           <Route exact path="/press/en/search-guard-alerting/" component={PressENAlerting} />
+
+          <Route exact path="/press/de/elasticsearch-dsgvo/" component={PressDECompliance} />
 
           <Route path="/404/" component={NotFound} />
 
