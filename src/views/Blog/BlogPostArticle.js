@@ -21,6 +21,7 @@ import sgLogo from '../../images/sg_dlic_small.png';
 import './BlogPostArticle.scss';
 import posts from '../../Api/contentfulPosts.json';
 import Button from "../../components/Button/Button";
+import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 
 const BlogPostArticle = ({ match }) => {
 
@@ -138,6 +139,8 @@ const BlogPostArticle = ({ match }) => {
           </Markdown>
           <div className="blogpostarticle-text">Published: {postContent.fields.date}</div>
 
+
+          {/*
           <div>
             <div className="flex-center">
               <div className="col m6 s12 flex-center">
@@ -159,10 +162,10 @@ const BlogPostArticle = ({ match }) => {
               </div>
             </div>
           </div>
-
-
+           */}
 
         </div>
+
         <div className="col s12 offset-l1 l1 blogpostarticle-sidebar-container">
           <div className="blogpostarticle-sidebar-title">share</div>
           <div className="blogpostarticle-sidebar-icons-container">
@@ -198,6 +201,16 @@ const BlogPostArticle = ({ match }) => {
         </div>
       </div>
 
+      <div className="row blogpostarticle-wrapper">
+        <div className="col s12 offset-l2 l8">
+          <div>
+            <div className="flex-center blogpostarticle-headline2">
+              Questions? Drop us a line!
+            </div>
+          </div>
+          <ContactFormSlimOnly/>
+        </div>
+      </div>
 
       <BlogBox
         headline="Other posts you may like"
@@ -205,7 +218,9 @@ const BlogPostArticle = ({ match }) => {
         randomize
         category={postContent.fields.tags[0]}
       />
+
       <div className="col s12 l4" />
+
       <div className="col s12 blogpostarticle-link">
         <a href="/blog/" className="blog-back ">
           <img
