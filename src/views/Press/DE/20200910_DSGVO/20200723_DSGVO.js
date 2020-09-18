@@ -28,7 +28,7 @@ const Alerting = () => {
 
             <div className="row pressarticle-wrapper">
                 <div className="col l4 hide-on-med-and-down">
-                    <a href={dsgvo} target="_blank"><img src={dsgvo} className="profile-pic"/></a>
+                    <a href={dsgvo} target="_blank" rel="noopener noreferrer"><img src={dsgvo} className="profile-pic" alt="GDPR for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">
                         Mit der Compliance Edition des Security Plug-Ins Search Guard können
                         personenbezogene und sensible Kunden- und Mitarbeiterdaten gesetzeskonform in Elasticsearch-Clustern gespeichert, bearbeitet

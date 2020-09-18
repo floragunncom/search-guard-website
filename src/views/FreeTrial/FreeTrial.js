@@ -9,9 +9,6 @@ import two from '../../images/2.svg';
 import three from '../../images/3.svg';
 import four from '../../images/4.svg';
 import './FreeTrial.scss';
-import Cta from "../../components/Cta/Cta";
-import shield from "../../images/icon-wheel-shield.svg";
-import ContactFormSuperSlim from "../../components/ContactFormSuperSlim";
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 
 const FreeTrial = () => {
@@ -149,7 +146,7 @@ const FreeTrial = () => {
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                We provide a <a href="https://docs.search-guard.com/latest/docker" target="_blank">Docker based demo</a> including Elasticsearch and Kibana with Search Guard and Signas Alerting pre-installed:
+                                We provide a <a href="https://docs.search-guard.com/latest/docker" target="_blank" rel="noopener noreferrer">Docker based demo</a> including Elasticsearch and Kibana with Search Guard and Signas Alerting pre-installed:
 
                                 To start the image, run:
 
@@ -188,9 +185,7 @@ const FreeTrial = () => {
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                We provide <a href="https://docs.search-guard.com/latest/search-guard-kubernetes-helm" target="_blank">Helm Charts</a> for running Search Guard on Kubernetes.
-
-
+                                We provide <a href="https://docs.search-guard.com/latest/search-guard-kubernetes-helm" target="_blank" rel="noopener noreferrer">Helm Charts</a> for running Search Guard on Kubernetes.
                             </div>
 
                         </div>
@@ -204,13 +199,13 @@ const FreeTrial = () => {
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                <a href="https://docs.search-guard.com/" target="_blank">Search Guard Documentation</a>
+                                <a href="https://docs.search-guard.com/" target="_blank" rel="noopener noreferrer">Search Guard Documentation</a>
                                 <br />
-                                <a href="https://forum.search-guard.com/" target="_blank">Search Guard Community Forum</a>
+                                <a href="https://forum.search-guard.com/" target="_blank" rel="noopener noreferrer">Search Guard Community Forum</a>
                                 <br />
-                                <a href="https://git.floragunn.com/" target="_blank">GitLab repositories</a>
+                                <a href="https://git.floragunn.com/" target="_blank" rel="noopener noreferrer">GitLab repositories</a>
                                 <br />
-                                <a href="/blog/" target="_blank">Search Guard Blog</a>
+                                <a href="/blog/" target="_blank" rel="noopener noreferrer">Search Guard Blog</a>
                             </div>
 
                         </div>

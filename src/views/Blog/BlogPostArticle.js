@@ -21,7 +21,6 @@ import iconFb from '../../images/icon-fb-loud.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
 import './BlogPostArticle.scss';
 import posts from '../../Api/contentfulPosts.json';
-import Button from "../../components/Button/Button";
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 
 const BlogPostArticle = ({ match }) => {

@@ -11,20 +11,11 @@ import Cta from '../../components/Cta/Cta';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import Contact from '../../components/ContactFormSuperSlimOnly';
 import ctaIcon from '../../images/icon-sg.svg';
-import fileCode from '../../images/file-code.svg';
-import worldLock from '../../images/world-lock.svg';
 import complianceDataChanges from '../../images/compliance_change_tracking.svg';
 import complianceAnon from '../../images/compliance_anon.svg';
-import complianceEscalation from '../../images/alerting_escalation.svg';
 import complianceForgotten from '../../images/compliance_forgotten.svg';
 import multilevel from '../../images/multilevel-security.svg';
-import complianceUI from '../../images/alerting_ui.svg';
-import Card from "../../components/Card/Card";
-import iconSpeaker from "../../images/icon-speaker.svg";
-import iconNote from "../../images/icon-note.svg";
-import certificate from "../../images/icon-certificate.svg";
 import shieldWheel from "../../images/shield-wheel.svg";
-import check from "../../images/icon-check.svg";
 import lock from '../../images/tile-icon-wheel.svg';
 
 const Compliance = () => {

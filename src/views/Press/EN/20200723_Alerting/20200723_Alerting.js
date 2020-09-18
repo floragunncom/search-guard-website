@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { v4 } from 'uuid';
 import '../../PressArticle.scss';
 import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../../../components/PreFooter/PreFooter';
@@ -32,13 +31,13 @@ const Alerting = () => {
 
             <div className="row pressarticle-wrapper">
                 <div className="col l4 hide-on-med-and-down">
-                    <a href={watches} target="_blank"><img src={watches_small} className="profile-pic"/></a>
+                    <a href={watches} target="_blank" rel="noopener noreferrer"><img src={watches_small} className="profile-pic" alt="Free Alerting for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">
                         Watches are the essential component in Signals. They consist of three parts:
                         Triggers that determine when a watch is performed. Checks, which monitor and analyze the defined situation.
                         Actions that are executed when all previous conditions are met.
                     </div>
-                    <a href={graph} target="_blank"><img src={graph_small} className="profile-pic"/></a>
+                    <a href={graph} target="_blank" rel="noopener noreferrer"><img src={graph_small} className="profile-pic" alt="Free Alerting for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">
                         The graphic mode in Signals shows how data of a defined condition behave in comparison to the threshold value and how they change over time.
                         The definition of the threshold value is the starting point for the alerting strategy.
@@ -113,8 +112,8 @@ const Alerting = () => {
 
                         <p><b>Outlook</b></p>
                         Signals is available for free in the Community Edition and can be installed and tested without any effort.
-                        Instructions and downloads for developers can be found ​<a href="https://docs.search-guard.com/latest/elasticsearch-alerting-getting-started" target="_blank">in the documentation</a>.
-                        All questions and requests around the feature are answered in ​<a href="https://forum.search-guard.com/c/alerting-signals/12" target="_blank">Signals Community Forum​</a>.
+                        Instructions and downloads for developers can be found ​<a href="https://docs.search-guard.com/latest/elasticsearch-alerting-getting-started" target="_blank" rel="noopener noreferrer">in the documentation</a>.
+                        All questions and requests around the feature are answered in ​<a href="https://forum.search-guard.com/c/alerting-signals/12" target="_blank" rel="noopener noreferrer">Signals Community Forum​</a>.
 
                         <br /><br />
 

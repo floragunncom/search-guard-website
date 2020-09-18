@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import './ContactForm.scss';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
-    const history = useHistory();
+
     const [newsletterValue, setNewsletterValue,] = useState(false);
     const [sendbuttonValue, setSendbuttonValue] = useState("send message");
 

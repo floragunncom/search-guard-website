@@ -44,8 +44,8 @@ const Video = props => {
                       className="responsive-video"
                       src="https://www.youtube.com/embed/Wqk0m8ibNnM"
                       frameBorder="0"
-                      title="Signals Alerting for Elasticsearch: Creating a simple alert"
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      title="Signals Alerting for Elasticsearch: Creating a simple alert"
                       allowFullScreen
                   />
                   <div className="video-playlist-text">
@@ -161,11 +161,12 @@ const Video = props => {
                 src="https://www.youtube.com/embed/ewM9glvw0E4"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                title="Search Guard - Security and Alerting for Elasticsearch and Kibana"
                 allowFullScreen
               />
             </div>
             <div className="video-description-headline">
-              Search Guard - Security and Alerting for Elasticsearch
+              Search Guard - Security and Alerting for Elasticsearch and Kibana
             </div>
 
             <div className="video-description-text">

@@ -382,7 +382,7 @@ const TableEditions = () => {
         </thead>
         {matrixContent.map(service => {
           return (
-            <tbody className="licensing-table-body">
+            <tbody className="licensing-table-body" key={service.name}>
               <tr style={{ backgroundColor: '#E8ECED' }}>
                 <td>
                   <div className="licensing-table-subheadline">
@@ -395,7 +395,7 @@ const TableEditions = () => {
               </tr>
               {service.content.map(serviceItem => {
                 return (
-                  <tr>
+                  <tr key={serviceItem.type}>
                     <td>
                       <div
                         className="licensing-table-left"
@@ -437,14 +437,14 @@ const TableEditions = () => {
         <div className="licensing-overview-headline">Community Edition</div>
         {matrixContent.map(service => {
           return (
-            <div className="col s12 m6 licensing-overview-content">
+            <div className="col s12 m6 licensing-overview-content" key={service.name}>
               <div className="licensing-overview-content-box">
                 <div className="licensing-overview-content-headline">
                   {service.name}
                 </div>
                 {service.content.map(serviceItem => {
                   return (
-                    <div className="licensing-overview-content-text">
+                    <div className="licensing-overview-content-text" key={serviceItem.type}>
                       {serviceItem.community ? serviceItem.type : null}
                     </div>
                   );
@@ -458,14 +458,14 @@ const TableEditions = () => {
         <div className="licensing-overview-headline">Enterprise Edition</div>
         {matrixContent.map(service => {
           return (
-            <div className="col s12 m6 licensing-overview-content">
+            <div className="col s12 m6 licensing-overview-content" key={service.name}>
               <div className="licensing-overview-content-box">
                 <div className="licensing-overview-content-headline">
                   {service.name}
                 </div>
                 {service.content.map(serviceItem => {
                   return (
-                    <div className="licensing-overview-content-text">
+                    <div className="licensing-overview-content-text" key={serviceItem.type}>
                       {serviceItem.enterprise ? serviceItem.type : null}
                     </div>
                   );
@@ -479,14 +479,14 @@ const TableEditions = () => {
         <div className="licensing-overview-headline">Compliance Edition</div>
         {matrixContent.map(service => {
           return (
-            <div className="col s12 m6 licensing-overview-content">
+            <div className="col s12 m6 licensing-overview-content" key={service.name}>
               <div className="licensing-overview-content-box">
                 <div className="licensing-overview-content-headline">
                   {service.name}
                 </div>
                 {service.content.map(serviceItem => {
                   return (
-                    <div className="licensing-overview-content-text">
+                    <div className="licensing-overview-content-text" key={serviceItem.type}>
                       {serviceItem.compliance ? serviceItem.type : null}
                     </div>
                   );

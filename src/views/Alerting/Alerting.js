@@ -10,8 +10,6 @@ import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import ctaIcon from '../../images/icon-sg.svg';
-import fileCode from '../../images/file-code.svg';
-import worldLock from '../../images/world-lock.svg';
 import alertingAnomalies from '../../images/alerting_anomalies.svg';
 import alertingNotifications from '../../images/alerting_notifications.svg';
 import alertingEscalation from '../../images/alerting_escalation.svg';

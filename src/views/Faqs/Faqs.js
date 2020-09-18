@@ -7,7 +7,6 @@ import Cta from '../../components/Cta/Cta';
 import Title from '../../components/Title/Title';
 import envelope from '../../images/icon-envelope.svg';
 import './Faqs.scss';
-import sgLogo from "../../images/sg_dlic_small.png";
 
 const faqItems = [
   {
@@ -289,7 +288,8 @@ const Faqs = () => {
             faqLd["acceptedAnswer"] = answer;
             jsonld.mainEntity.push(faqLd);
         });
-    })
+    });
+
     return (
     <PageWrapper>
       <Helmet>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { v4 } from 'uuid';
 import '../../PressArticle.scss';
 import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../../../components/PreFooter/PreFooter';
@@ -12,13 +11,7 @@ import infoArrowBack from "../../../../images/info-arrow-back.svg";
 
 
 
-const Company = () => {
-    const anchors = [
-        { id: v4(), anchor: 'news', name: 'News & Events' },
-        { id: v4(), anchor: 'team', name: 'management team' },
-        { id: v4(), anchor: 'partners', name: 'partners' },
-        { id: v4(), anchor: 'journey', name: 'journey' },
-    ];
+const Article = () => {
 
     return (
         <PageWrapper>
@@ -38,7 +31,7 @@ const Company = () => {
 
             <div className="row pressarticle-wrapper">
                 <div className="col l4 hide-on-med-and-down">
-                    <img src={tmahler} className="profile-pic"/>
+                    <img src={tmahler} className="profile-pic" alt="Security for Elasticsearch Thomas Mahler"/>
                     <div className="pressarticle-text">
                         floragunn GmbH<br />
                         Thomas Mahler<br />
@@ -143,4 +136,4 @@ const Company = () => {
     );
 };
 
-export default Company;
+export default Article;

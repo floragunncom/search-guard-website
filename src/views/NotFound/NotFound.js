@@ -1,7 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
-import Button from '../../components/Button/Button';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 import './NotFound.scss';
 
@@ -35,7 +34,7 @@ const NotFound = () => {
                 <li><a href="/alerting/">Search Guard Alerting</a></li>
                 <li><a href="/blog/">Search Guard Blog</a></li>
                 <li><a href="/faq/">Search Guard FAQ</a></li>
-                <li><a href="https://docs.search-guard.com" target="_blank">Search Guard Documentation</a></li>
+                <li><a href="https://docs.search-guard.com" target="_blank" rel="noopener noreferrer">Search Guard Documentation</a></li>
               </ul>
             </div>
 

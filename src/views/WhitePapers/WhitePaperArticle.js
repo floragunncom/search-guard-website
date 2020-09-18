@@ -20,7 +20,6 @@ import sgLogo from '../../images/sg_dlic_small.png';
 import './WhitePaperArticle.scss';
 import articles from '../../Api/contentfulWhitepapers.json';
 import Button from "../../components/Button/Button";
-import posts from "../../Api/contentfulPosts";
 import pdf from "../../images/pdf-download.svg";
 
 const WhitePaperArticle = ({ match }) => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { v4 } from 'uuid';
 import '../../PressArticle.scss';
 import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../../../components/PreFooter/PreFooter';
@@ -32,14 +31,14 @@ const Alerting = () => {
 
             <div className="row pressarticle-wrapper">
                 <div className="col l4 hide-on-med-and-down">
-                    <a href={watches} target="_blank"><img src={watches_small} className="profile-pic"/></a>
+                    <a href={watches} target="_blank" rel="noopener noreferrer"><img src={watches_small} className="profile-pic" alt="Free Alerting for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">
                         Watches sind der wesentliche Bestandteil in Signals. Sie bestehen aus drei Bausteinen:
                         Trigger, die festlegen, wann ein Watch durchgeführt wird.
                         Checks, die die definierte Situation überwachen und analysieren.
                         Aktionen, die ausgeführt werden, wenn alle vorangegangenen Bedingungen erfüllt sind.
                     </div>
-                    <a href={graph} target="_blank"><img src={graph_small} className="profile-pic"/></a>
+                    <a href={graph} target="_blank" rel="noopener noreferrer"><img src={graph_small} className="profile-pic" alt="Free Alerting for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">
                         Der Grafikmodus in Signals zeigt, wie sich Daten einer definierten Bedingung im Vergleich zum Schwellwert verhalten
                         und wie sich diese im Zeitverlauf ändern. Die Definition des Schwellenwertes ist der Ausgangspunkt für die Alerting-Strategie.

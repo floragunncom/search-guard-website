@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo-white.svg';
 import cross from '../../images/cross-white.svg';
 import './Header.scss';
-import { NavHashLink } from 'react-router-hash-link';
+
 
 const Header = ({ background = '#246E94', landing }) => {
   const [showMenu, setShowMenu] = useState(false);
