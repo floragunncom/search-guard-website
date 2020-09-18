@@ -9,8 +9,7 @@
   width: 100%;
   height: calc(100vh - 115px);
   max-height: 900px;
-  background-image: url('../../images/hero-animation.svg'),
-  url('../../images/hero-background.svg');
+  background-image: url('../../images/hero-static.svg'), url('../../images/hero-background.svg');
   background-size: 100% 100%;
   background-repeat: no-repeat,
   no-repeat;
@@ -43,6 +42,7 @@
   	letter-spacing: 2px;
     line-height: 72px;
     margin-bottom: 16px;
+    margin-top: 0px;
     @media only screen and (max-width: $tabletBig) {
       font-size: 30px;
     	letter-spacing: 1px;

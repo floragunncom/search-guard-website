@@ -6,9 +6,9 @@ const HeroLandingPage = () => {
     <div className="hero-landing__wrapper">
       <div className="row">
         <div className="hero-landing__content-container">
-          <div className="hero-landing__content-container-headline">
-            Security and Alerting for Elasticsearch
-          </div>
+          <h1 className="hero-landing__content-container-headline">
+            Enterprise Security and Alerting for Elasticsearch
+          </h1>
           <div className="hero-landing__content-container-text">
             Search Guard is an Enterprise Security and Alerting Suite that
             encrypts and protects your data and data flows in the entire Elastic

@@ -7,6 +7,7 @@ import shield from '../../images/icon-wheel-shield.svg';
 import ContactFormSuperSlim from '../../components/ContactFormSuperSlim';
 import TrustedBy from '../../components/TrustedBy/TrustedBy';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
+import Labels from "../../components/Labels/Labels";
 
 const Marketing = () => {
   return (
@@ -14,8 +15,7 @@ const Marketing = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Product | Search Guard product overview for securing Elasticsearch
-          cluster
+          Search Guard | Security and Alerting for Elasticsearch and Kibana
         </title>
         <link
           rel="canonical"
@@ -23,10 +23,11 @@ const Marketing = () => {
         />
         <meta
           name="description"
-          content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
+          content="Search Guard is an Enterprise Security and Alerting Suite that encrypts and protects your data and data flows in the entire Elastic Stack, including Kibana, Logstash and Beats."
         />
       </Helmet>
       <HeroMarketing />
+      <Labels />
       <TrustedBy />
       <LicensingModel
         topButtons
@@ -35,7 +36,7 @@ const Marketing = () => {
         tableView={false}
       />
       <Cta
-        headline="Questions?"
+        headline="Free Trial"
         text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
         icon={shield}
       />

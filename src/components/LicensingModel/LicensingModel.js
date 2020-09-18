@@ -234,7 +234,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
           }
           onClick={onButtonPress}
         >
-          standard edition
+          standard editions
         </div>
         <div
           className={
