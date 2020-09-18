@@ -1,4 +1,5 @@
 import { Route, Switch } from 'react-router-dom';
+import  { Redirect } from 'react-router-dom'
 import React from 'react';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import HomePage from './views/HomePage/HomePage';
@@ -40,6 +41,7 @@ const Routes = () => {
     <React.Fragment>
       <ScrollToTop>
         <Switch>
+
           <Route exact path="/" component={HomePage} />
           <Route exact path="/contacts/" component={ContactUs} />
           <Route exact path="/security/" component={Security} />
@@ -84,11 +86,12 @@ const Routes = () => {
             path="/tls-certificate-generator/"
             component={TlsGenerator}
           />
+
           <Route exact path="/certificates/" component={Certifications} />
           <Route exact path="/category/:slug" component={BlogCategory} />
           <Route exact path="/blog/" component={Blog} />
           <Route exact path="/blog/page/:slug" component={Blog} />
-          <Route exact path="/:slug" component={BlogPostArticle} />
+
           <Route exact path="/whitepapers/:slug" component={WhitePaperArticle} />
           <Route exact path="/press/de/search-guard-vertrieb-dach/" component={PressDEDach} />
           <Route exact path="/press/en/search-guard-sales-dach/" component={PressENDach} />
@@ -98,9 +101,13 @@ const Routes = () => {
 
           <Route exact path="/press/de/elasticsearch-dsgvo/" component={PressDECompliance} />
 
-          <Route path="/404/" component={NotFound} />
+          <Route exact path="/404/" component={NotFound} />
 
-          <Route component={NotFound} />
+          {/* this is not really good, it interferes with the 404 page! Need to handle that explicitely on BlogPostArticle Page now. Otherwise, we need to change all URLs for all blog posts :( */}
+          <Route exact path="/:slug" component={BlogPostArticle} />
+
+          <Redirect to="/404/" />
+
         </Switch>
       </ScrollToTop>
     </React.Fragment>

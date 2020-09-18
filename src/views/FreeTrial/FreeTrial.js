@@ -12,6 +12,7 @@ import './FreeTrial.scss';
 import Cta from "../../components/Cta/Cta";
 import shield from "../../images/icon-wheel-shield.svg";
 import ContactFormSuperSlim from "../../components/ContactFormSuperSlim";
+import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 
 const FreeTrial = () => {
     return (
@@ -46,7 +47,7 @@ const FreeTrial = () => {
                                 </div>
                                 <div className="free-trial-content-text">
                                     Download the Search Guard plugin matching the Elasticsearch version you are running. For example, if you are
-                                    running Elasticsearch 7.7.0, you need to download Search Guard 7.7.0 as well.
+                                    running Elasticsearch 7.9.1, you need to download Search Guard 7.9.1 as well.
                                     The download is platform-independant.
                                 </div>
                                 <div className="free-trial-content-button">
@@ -214,16 +215,23 @@ const FreeTrial = () => {
 
                         </div>
                     </div>
-
+                    <hr />
                 </div>
             </div>
 
-            <Cta
-                headline="Questions?"
-                text="Drop us a message and we will get back to you as soon as possible"
-                icon={shield}
-            />
-            <ContactFormSuperSlim />
+            <div className="row free-trial">
+                <div className="free-trial-headline">Any Questions? Drop us a line!</div>
+
+                <div className="free-trial-section" >
+                    <div className="free-trial-content">
+                        <div className="free-trial-content-text">
+                            <ContactFormSlimOnly/>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
             <PreFooter />
         </PageWrapper>
     );

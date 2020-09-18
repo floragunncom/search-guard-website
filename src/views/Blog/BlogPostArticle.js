@@ -1,4 +1,5 @@
 import React from 'react';
+import  { Redirect } from 'react-router-dom'
 import { Helmet } from 'react-helmet';
 import {
   FacebookShareButton,
@@ -28,6 +29,7 @@ const BlogPostArticle = ({ match }) => {
   const postContent = posts.find(
     entry => entry.fields.slug === `${match.url.substring(1)}`,
   );
+
   const options = {
     overrides: {
       h1: {
@@ -100,7 +102,7 @@ const BlogPostArticle = ({ match }) => {
     },
   };
   if (!postContent) {
-    return '';
+    return (<Redirect to="/404/" />);
   }
 
   return (

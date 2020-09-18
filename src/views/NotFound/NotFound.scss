@@ -3,33 +3,32 @@
 
 .notfound-wrapper {
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
   justify-content: center;
   text-align: center;
   flex-direction: column;
-  margin: 0 24px;
+  margin: 32px 24px;
 }
 
 .notfound-warning {
   color: $turkisHover;
-  font-size: 120px;
+  font-size: 64px;
   line-height: 140px;
   font-weight: 500;
   letter-spacing: 4px;
-  margin-bottom: 32px;
   @media only screen and (max-width: $tabletBig) {
-    font-size: 60px;
+    font-size: 32px;
     line-height: 72px;
     letter-spacing: 2px;
   }
 }
 
+
 .notfound-headline {
-  color: $darkBlue;
-  font-size: 48px;
-  line-height: 57px;
-  font-weight: 300;
+  color: $turkisHover;
+  font-size: 42px;
   margin-bottom: 16px;
+  margin-top: 32px;
   @media only screen and (max-width: $tabletBig) {
     font-size: 36px;
     line-height: 43px;
@@ -45,13 +44,22 @@
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.8px;
-  margin-bottom: 64px;
+  margin-bottom: 12px;
   @media only screen and (max-width: $tabletBig) {
     font-size: 20px;
     line-height: 30px;
     letter-spacing: 0.67px;
   }
 }
+
+.notfound-text-list {
+  @extend .notfound-text;
+  line-height: 48px;
+  @media only screen and (max-width: $tabletBig) {
+    line-height: 40px;
+  }
+}
+
 .notfound-button {
   display: flex;
   justify-content: center;
