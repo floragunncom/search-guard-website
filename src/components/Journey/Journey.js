@@ -7,13 +7,33 @@ const Journey = () => {
       year: 2020,
       events: [
         {
+          headline: 'September',
+          text: 'Released Search Guard v45 which includes TLS certificate hot reload'
+        },
+        {
+          headline: 'July',
+          text: 'Released Search Guard v45 which includes TLS certificate hot reload'
+        },
+        {
+          headline: 'June',
+          text: 'Added dynamic salts for field anonymization and attachement support for Alerting Email actions'
+        },
+        {
+          headline: 'May',
+          text: 'Introduced user filters, IP filters and JWT nested keys'
+        },
+        {
           headline: 'February',
-          text: 'Meet us at the RSA conference San Francisco, booth 2450',
+          text: 'Meet us at the RSA conference San Francisco, booth 2450'
         },
         {
           headline: 'January',
-          text: 'Signals Alerting for Elasticsearch GA released',
+          text: 'Signals Alerting for Elasticsearch GA released'
         },
+        {
+          headline: 'January',
+          text: 'Andreas Riedel joins as CEO'
+        }
       ],
     },
     {
