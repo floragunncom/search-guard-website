@@ -11,6 +11,10 @@ import four from '../../images/4.svg';
 import './FreeTrial.scss';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 
+const breadcrumb = [
+    { anchor: '/', name: 'Home' },
+    { anchor: '/search-guard-free-trial/', name: 'Start free trial' }
+];
 const FreeTrial = () => {
     return (
         <PageWrapper>
@@ -26,6 +30,7 @@ const FreeTrial = () => {
             <Title
                 headline="Start your free trial"
                 text="You can use the completely Open Source and forever-free Community Edition, or start your 60 day Search Guard Enterprise trial"
+                breadcrumb={breadcrumb}
             />
 
 

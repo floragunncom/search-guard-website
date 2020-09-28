@@ -16,6 +16,8 @@ import multilevel from '../../images/multilevel-security.svg';
 import disk from '../../images/disk.svg';
 import ctaIcon from '../../images/icon-sg.svg';
 
+
+
 const HomePage = () => {
   useEffect(() => {
     initGA();

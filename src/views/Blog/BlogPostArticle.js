@@ -103,7 +103,6 @@ const BlogPostArticle = ({ match }) => {
   if (!postContent) {
     return (<Redirect to="/404/" />);
   }
-
   return (
     <PageWrapper>
       <Helmet>
@@ -130,6 +129,7 @@ const BlogPostArticle = ({ match }) => {
         text={postContent.fields.title}
         subText={`${postContent.fields.author} `}
         tags={postContent.fields.tags}
+        link={postContent.fields.slug}
       />
       <div className="row blogpostarticle-wrapper">
         <div className="col s12 offset-l2 l8">

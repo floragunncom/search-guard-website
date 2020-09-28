@@ -9,6 +9,13 @@ import iconLock from '../../images/icon-multilayer-security.svg';
 import iconShield from '../../images/icon-wheel-shield.svg';
 
 const Security = () => {
+
+  const breadcrumb = [
+    { anchor: '/', name: 'Home' },
+    { anchor: '/security/', name: 'Security' },
+    { anchor: '/security-information/', name: 'Security Information' },
+  ];
+
   return (
     <PageWrapper>
       <Helmet>
@@ -23,6 +30,7 @@ const Security = () => {
       <Title
         headline="Security information"
         text="You can use our public keys to send us confidential information and to verify the integrity of any Search Guard download."
+        breadcrumb={breadcrumb}
       />
       <div className="row">
         <div className="col s12 l8 offset-l2 security-wrapper">

@@ -8,6 +8,11 @@ import folderGlass from '../../images/folder-glass.svg';
 import ContactForm from '../../components/ContactForm';
 import './contactUs.scss';
 
+const breadcrumb = [
+    { anchor: '/', name: 'Home' },
+    { anchor: '/contacts/', name: 'Contact Us' },
+];
+
 const ContactUs = () => {
   return (
     <PageWrapper>
@@ -23,6 +28,7 @@ const ContactUs = () => {
       <Title
         headline="Get in touch"
         text="Any questions regarding Search Guard licensing or pricing? Do you need OEM licenses or want to partner with us? Please fill out the contact form and we will get back to you as soon as possible."
+        breadcrumb={breadcrumb}
       />
       <ContactForm />
       <Cta

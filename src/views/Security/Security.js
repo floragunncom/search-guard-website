@@ -28,6 +28,11 @@ const Security = () => {
     { id: v4(), anchor: 'quote', name: 'get a quote' },
   ];
 
+    const breadcrumb = [
+        { id: 1, anchor: '/', name: 'Home' },
+        { id: 1, anchor: '/security/', name: 'Security' },
+    ];
+
   return (
     <PageWrapper>
       <Helmet>
@@ -44,6 +49,7 @@ const Security = () => {
       <Title
         headline="search guard security plugin"
         text="As the pioneers in securing Elasticsearch clusters, all decisions about our technology have the same purpose, to make your Elasticsearch environment more secure."
+        breadcrumb={breadcrumb}
       />
       <AnchorNavBar anchors={anchors} />
       <div id="concept">

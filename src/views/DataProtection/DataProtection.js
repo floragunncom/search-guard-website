@@ -5,6 +5,13 @@ import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 
+const breadcrumb = [
+  { anchor: '/', name: 'Home' },
+  { anchor: '/company/', name: 'Company' },
+  { anchor: '/datenschutz/', name: 'Data Protection' }
+];
+
+
 const DataProtection = () => {
   return (
     <PageWrapper>
@@ -20,6 +27,7 @@ const DataProtection = () => {
       <Title
         headline="Data Protection"
         text="Our policy regarding the collection and usage of personal data in accordance with GDPR."
+        breadcrumb={breadcrumb}
       />
       <div className="row">
         <div className="col s12 l8 offset-l2">

@@ -8,6 +8,12 @@ import Title from '../../components/Title/Title';
 import envelope from '../../images/icon-envelope.svg';
 import './Faqs.scss';
 
+const breadcrumb = [
+  { anchor: '/', name: 'Home' },
+  { anchor: '/resource/', name: 'Resource Hub' },
+  { anchor: '/faq/', name: 'FAQ' },
+];
+
 const faqItems = [
   {
     section: 'General',
@@ -307,6 +313,7 @@ const Faqs = () => {
       <Title
         headline="Frequently asked questions"
         text="Find answers to the most frequently asked questions about Search Guard and Signals."
+        breadcrumb={breadcrumb}
       />
       <div className="row faq-row-wrapper">
         <div className="col s12 l4">

@@ -7,6 +7,12 @@ import './Thanks.scss';
 
 const Thanks = () => {
 
+  const breadcrumb = [
+    { anchor: '/', name: 'Home' },
+    { anchor: '/contacts/', name: 'Contact Us' },
+    { anchor: '/thanks/', name: 'Thanks' },
+  ];
+
   useEffect(() => {
     initGA();
     PageView();

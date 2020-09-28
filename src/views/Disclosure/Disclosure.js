@@ -6,6 +6,13 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import './Disclosure.scss';
 
 const Disclosure = () => {
+
+  const breadcrumb = [
+    { anchor: '/', name: 'Home' },
+    { anchor: '/security/', name: 'Security' },
+    { anchor: '/disclosure-policy/', name: 'Disclosure Policy' },
+  ];
+
   return (
     <PageWrapper>
       <Helmet>
@@ -23,6 +30,7 @@ const Disclosure = () => {
       <Title
         headline="disclosure policy"
         text="Before reporting, please read our disclosure policy on how we handle security related bugs and issues."
+        breadcrumb={breadcrumb}
       />
       <div className="row">
         <div className="col s12 l8 offset-l2">

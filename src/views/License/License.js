@@ -26,6 +26,11 @@ const License = () => {
     { id: v4(), anchor: 'academic', name: 'Academic and Custom editions' },
   ];
 
+  const breadcrumb = [
+      { id: 1, anchor: '/', name: 'Home' },
+      { id: 1, anchor: '/licensing/', name: 'Licensing' },
+  ];
+
   return (
     <PageWrapper>
       <Helmet>
@@ -42,6 +47,7 @@ const License = () => {
       <Title
         headline="licensing model"
         text="Unlimited nodes licensing for all security and alerting features. Scale your cluster, not your cost!"
+        breadcrumb={breadcrumb}
       />
       <AnchorNavBar anchors={anchors} />
       <LicensingModel

@@ -20,6 +20,11 @@ const Company = () => {
     { id: v4(), anchor: 'journey', name: 'journey' },
   ];
 
+    const breadcrumb = [
+        { id: 1, anchor: '/', name: 'Home' },
+        { id: 1, anchor: '/company/', name: 'Company' },
+    ];
+
   return (
     <PageWrapper>
       <Helmet>
@@ -33,7 +38,8 @@ const Company = () => {
       </Helmet>
       <Title
         headline="company"
-        text="We shape IT security and Open Source business models."
+        text="We shape IT security and Open Source business models since 2013."
+        breadcrumb={breadcrumb}
       />
       <AnchorNavBar anchors={anchors} />
       <News />

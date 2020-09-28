@@ -32,6 +32,11 @@ const Resource = () => {
     { id: v4(), anchor: 'press', name: 'press' }
   ];
 
+    const breadcrumb = [
+        { id: 1, anchor: '/', name: 'Home' },
+        { id: 1, anchor: '/resource/', name: 'Resource Hub' },
+    ];
+
   return (
     <PageWrapper>
       <Helmet>
@@ -49,6 +54,7 @@ const Resource = () => {
       <Title
         headline="resource hub"
         text="Search Guard resource hub including blog posts, faq, documentation, presentations and whitepapers."
+        breadcrumb={breadcrumb}
       />
       <AnchorNavBar anchors={anchors} />
       <Card

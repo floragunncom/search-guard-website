@@ -7,6 +7,12 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import Cta from '../../components/Cta/Cta';
 import folderGlass from '../../images/folder-glass.svg';
 
+const breadcrumb = [
+  { anchor: '/', name: 'Home' },
+  { anchor: '/security/', name: 'Security' },
+  { anchor: '/cve-advisory/', name: 'CVE Advisory' },
+];
+
 const bugs = [
   {
     id: 'SGSA 16',
@@ -276,6 +282,7 @@ const Advisory = () => {
       <Title
         headline="cve advisory"
         text="floragunn GmbH is the official CVE numbering authority for Search Guard. Any security related issue is published here."
+        breadcrumb={breadcrumb}
       />
       <div className="row advisory-wrapper">
         <div className="col s12 l8 offset-l2 advisory-info-wrapper">

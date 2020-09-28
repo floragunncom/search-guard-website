@@ -6,6 +6,12 @@ import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import pdf from '../../images/pdf-download.svg';
 
+const breadcrumb = [
+  { anchor: '/', name: 'Home' },
+  { anchor: '/resource/', name: 'Resource Hub' },
+  { anchor: '/presentations/', name: 'Presentations' },
+];
+
 const presentations = [
   {
     image:

@@ -8,11 +8,11 @@ const Journey = () => {
       events: [
         {
           headline: 'September',
-          text: 'Released Search Guard v45 which includes TLS certificate hot reload'
+          text: 'Released Search Guard v45 which includes attribute based access control'
         },
         {
           headline: 'July',
-          text: 'Released Search Guard v45 which includes TLS certificate hot reload'
+          text: 'Released Search Guard v43 which includes TLS certificate hot reload'
         },
         {
           headline: 'June',

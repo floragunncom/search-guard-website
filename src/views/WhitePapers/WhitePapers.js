@@ -15,6 +15,12 @@ const whitepapers = [
   }
 ];
 
+const breadcrumb = [
+    { anchor: '/', name: 'Home' },
+    { anchor: '/resource/', name: 'Resource Hub' },
+    { anchor: '/whitepapers/', name: 'Whitepapers' },
+];
+
 const Whitepapers = () => {
   return (
     <PageWrapper>
@@ -32,6 +38,7 @@ const Whitepapers = () => {
       <Title
         headline="whitepapers"
         text="Search Guard whitepapers about Security and Alerting for Elasticsearch and Kibana"
+        breadcrumb={breadcrumb}
       />
       <div className="row whitepapers-wrapper">
         {whitepapers.map(item => {

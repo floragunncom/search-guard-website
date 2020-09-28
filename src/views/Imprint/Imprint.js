@@ -5,6 +5,12 @@ import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import './Imprint.scss';
 
+const breadcrumb = [
+  { anchor: '/', name: 'Home' },
+  { anchor: '/company/', name: 'Company' },
+  { anchor: '/imprint/', name: 'Imprint' }
+];
+
 const Imprint = () => {
   return (
     <PageWrapper>
@@ -23,6 +29,7 @@ const Imprint = () => {
       <Title
         headline="Imprint"
         text="Company information, contact details and VAT ID."
+        breadcrumb={breadcrumb}
       />
       <div className="row">
         <div className="col s12 l8 offset-l2">

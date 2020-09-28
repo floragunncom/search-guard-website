@@ -8,6 +8,7 @@ import ContactFormSuperSlim from '../../components/ContactFormSuperSlim';
 import TrustedBy from '../../components/TrustedBy/TrustedBy';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
 import Labels from "../../components/Labels/Labels";
+import TableEditions from '../../components/TableEditions/TableEditions';
 
 const Marketing = () => {
   return (
@@ -29,6 +30,16 @@ const Marketing = () => {
       <HeroMarketing />
       <Labels />
       <TrustedBy />
+
+      <div className="row">
+        <div className="col s12">
+            <div className="licensing-comparison-headline">
+                Features
+            </div>
+            <TableEditions/>
+        </div>
+      </div>
+
       <LicensingModel
         topButtons
         headline="Licensing models"

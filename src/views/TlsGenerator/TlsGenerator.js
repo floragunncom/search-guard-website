@@ -9,6 +9,13 @@ import DropDown from '../../components/DropDown/DropDown';
 import './TlsGenerator.scss';
 
 const TlsGenerator = () => {
+
+    const breadcrumb = [
+        { anchor: '/', name: 'Home' },
+        { anchor: '/resource/', name: 'Resource Hub' },
+        { anchor: '/tls-certificate-generator/', name: 'TLS certificate generator' },
+    ];
+
   const history = useHistory();
   const [newsletterValue, setNewsletterValue] = useState(false);
   const [showAllHosts, setShowAllHosts] = useState(false);
@@ -63,6 +70,7 @@ const TlsGenerator = () => {
       <Title
         headline="TLS Certificate Generator"
         text="Use our generator service to create all certificates required for configuring Search Guard."
+        breadcrumb={breadcrumb}
       />
       <div className="row">
         <div className="col s12 l8 offset-l2" id="tls">

@@ -12,6 +12,13 @@ import Pagination from '../../components/Pagination/Pagination';
 import './Blog.scss';
 
 const Blog = () => {
+
+  const breadcrumb = [
+    { anchor: '/', name: 'Home' },
+    { anchor: '/resource/', name: 'Resource Hub' },
+    { anchor: '/blog/', name: 'Blog' },
+  ];
+
   const [searchResultsPresented, setSearchResultsPresented] = useState(false);
   const [categoryResultsPresented, setCategoryResultsPresented] = useState(
     false,
@@ -214,7 +221,7 @@ const Blog = () => {
           content="This is the official Search Guard blog. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch."
         />
       </Helmet>
-      <Title headline="Blog" />
+      <Title headline="Blog" breadcrumb={breadcrumb}/>
       <div className="row">
         {searchBar}
         {categories}

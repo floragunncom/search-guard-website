@@ -333,15 +333,8 @@ const TableEditions = () => {
           enterprise: true,
           compliance: true,
         },
-        { type: 'SIEM', community: true, enterprise: true, compliance: true },
         {
           type: 'Elastic Stack Monitoring',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'Elastic Stack Alerting',
           community: true,
           enterprise: true,
           compliance: true,

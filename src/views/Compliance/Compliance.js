@@ -18,6 +18,12 @@ import multilevel from '../../images/multilevel-security.svg';
 import shieldWheel from "../../images/shield-wheel.svg";
 import lock from '../../images/tile-icon-wheel.svg';
 
+const breadcrumb = [
+    { anchor: '/', name: 'Home' },
+    { anchor: '/compliance/', name: 'Compliance' }
+
+];
+
 const Compliance = () => {
   useEffect(() => {
     initGA();
@@ -47,6 +53,7 @@ const Compliance = () => {
       <Title
         headline="Compliance for Elasticsearch"
         text="Keep Elasticsearch and Kibana compliant with regulations like GDPR, PCI, SOX, HIPAA and ISO"
+        breadcrumb={breadcrumb}
       />
       <AnchorNavBar anchors={anchors} />
 

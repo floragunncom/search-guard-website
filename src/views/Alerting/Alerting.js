@@ -31,22 +31,28 @@ const Alerting = () => {
     { id: v4(), anchor: 'tryit', name: 'Try it' },
   ];
 
+    const breadcrumb = [
+        { id: 1, anchor: '/', name: 'Home' },
+        { id: 1, anchor: '/alerting/', name: 'Alerting' },
+    ];
+
   return (
       <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-            Search Guard Alerting | Detect anomalies in your Elasticsearch cluster for free
+            Free Alerting for Elasticsearch and Kibana | Search Guard
         </title>
         <link rel="canonical" href="https://search-guard.com/alerting/" />
         <meta
           name="description"
-          content="Signals Alerting detects data anomalies in your Elasticsearch cluster and sends notifications on various channels. Fully integrated with Search Guard Security. For free."
+          content="Signals Alerting for Elasticsearch and Kibana detects data anomalies in your Elasticsearch cluster and sends notifications on various channels. Fully integrated with Search Guard Security. For free."
         />
       </Helmet>
       <Title
-        headline="Signals Alerting for Elasticsearch"
-        text="Signals Alerting detects data anomalies in your Elasticsearch cluster and sends notifications by using a fully fledged escalation model. Perfectly integrated with Search Guard Security."
+        headline="Alerting for Elasticsearch and Kibana"
+        text="Signals Alerting for Elasticsearch and Kibana detects data anomalies in your Elasticsearch cluster and sends notifications on various channels. Fully integrated with Search Guard Security. For free."
+        breadcrumb={breadcrumb}
       />
       <AnchorNavBar anchors={anchors} />
       <div id="concept">
@@ -54,9 +60,9 @@ const Alerting = () => {
           icon={alertingAnomalies}
           iconPosition="left"
           backgroundColor="light"
-          headline="Anomaly detection"
+          headline="Elasticsearch Anomaly detection"
           text="
-            Signals Alerting can detect anomalies in data stored in Elasticsearch and other IT systems.
+            Signals Alerting for Elasticsearch can detect anomalies in data stored in Elasticsearch and other IT systems.
             Correlate your already existing Elasticsearch data with data from any REST endpoint, run calculations and statistics,
             and trigger notification if an anomaly was detected. Fully integrated with Search Guard Security.
           "
@@ -66,10 +72,10 @@ const Alerting = () => {
         icon={alertingNotifications}
         iconPosition="right"
         backgroundColor="dark"
-        headline="Actions & Notifications"
+        headline="Alerting Actions & Notifications"
         text="
-            If an anomaly is detected you can use a wide range of connectors to trigger an action: Create messages on Slack, send out an email,
-            trigger a Pager Duty event, open a JIRA issue, write data back to Elasticsearch or post to a Webhook. Signals supports multiple
+            If an anomaly is detected in your Elasticsearch data you can use a wide range of connectors send alerting notifications: Create messages on Slack, send out an email,
+            trigger a Pager Duty event, open a JIRA issue, write data back to Elasticsearch or post to a Webhook. Supports multiple
             connectors per Alert.
         "
       />
@@ -79,28 +85,27 @@ const Alerting = () => {
         backgroundColor="light"
         headline="Escalation levels"
         text="
-            The Signals Alerting escalation model makes it possible to tailor notifications and actions to your specific use case. Define how often
-            notifications are sent to which connector, configure different thresholds and escalation levels and trigger one or more actions for each level.
-            If a detected anomaly is resolved, you can send out additional notfications as well.
+            The Signals Alerting for Elasticsearch escalation model makes it possible to tailor notifications and actions to your specific use case. Define how often
+            alerts are sent to which connector, configure different thresholds and escalation levels and trigger one or more alerts for each level.
+            If a detected anomaly is resolved, you can send out additional notifications as well.
         "
       />
         <TileSimple
             icon={alertingUI}
             iconPosition="right"
             backgroundColor="dark"
-            headline="User Interface & REST API"
+            headline="Kibana User Interface & REST API"
             text="
-            Signals Alerting ships with a fully fledged Kibana user interface which only requires a couple of clicks to set up alerts. You can use the
-            Graph mode, Blocks mode or JSON mode based on the complexity of your use case. The extensive REST API makes it possible to fully
-            automate configuration.
-
+            Signals Alerting for Elasticsearch ships with a fully fledged Kibana user interface which only requires a couple of clicks to set up alerts.
+            You can use the Graph mode, Blocks mode or JSON mode based on the complexity of your use case. Use the extensive REST API to fully
+            automate your alerts configuration.
         "
         />
 
 
 
-        <div className="certified-wrapper" id="connectors">
-            <div className="certified-headline">Connectors</div>
+        <div className="connectors-wrapper" id="connectors">
+            <h2 className="certified-headline">Connectors</h2>
             <div className="row certified-row-wrapper">
                 <div className="col s12 m4">
                     <a
@@ -220,7 +225,7 @@ const Alerting = () => {
           <div className="alerting-wrapper" >
 
               <div className="row alerting">
-                  <div className="alerting-headline">Free Alerting for Elasticsearch.<br />Bundled and integrated with Search Guard.</div>
+                  <h2 className="alerting-headline">Free Alerting for Elasticsearch and Kibana.<br />Bundled and integrated with Search Guard.</h2>
 
                   <div className="alerting-section" >
                       <div className="alerting-content">
