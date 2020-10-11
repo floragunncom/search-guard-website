@@ -29,7 +29,7 @@ import Thanks from './views/Thanks/Thanks';
 import Error from './views/Error/Error';
 import CertificatesOnTheWay from './views/CertificatesOnTheWay/CertificatesOnTheWay';
 import Certifications from './views/Certifications/Certifications';
-import Marketing from './views/Marketing/Marketing';
+import SecurityForElasticsearch from './views/SecurityForElasticsearch/SecurityForElasticsearch';
 import FreeTrial from './views/FreeTrial/FreeTrial';
 import PressDEDach from './views/Press/DE/20200620_Vertrieb_Dach/20200620_Vertrieb_Dach';
 import PressENDach from './views/Press/EN/20200620_Sales_Activities_Dach/20200620_Sales_Activities_Dach';
@@ -59,12 +59,12 @@ const Routes = () => {
           <Route
             exact
             path="/security-for-elasticsearch/"
-            component={Marketing}
+            component={SecurityForElasticsearch}
           />
           <Route
             exact
             path="/elasticsearch-kibana-security/"
-            component={Marketing}
+            component={SecurityForElasticsearch}
           />
           <Route exact path="/thanks/" component={Thanks} />
           <Route exact path="/error/" component={Error} />
