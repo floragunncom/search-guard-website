@@ -11,7 +11,7 @@ const client = contentful.createClient({
 
 const fetchWhitepapers = async () => {
   await client
-    .getEntries({ content_type: 'whitePaper', order: 'fields.date' })
+    .getEntries({ content_type: 'whitePaper', order: '-fields.date' })
     .then((res, err) => {
       fs.writeFile(
         './src/Api/contentfulWhitepapers.json',

@@ -11,7 +11,7 @@ const client = contentful.createClient({
 
 const fetchEvents = async () => {
   await client
-    .getEntries({ content_type: 'event', order: 'fields.date' })
+    .getEntries({ content_type: 'event', order: '-fields.date' })
     .then((res, err) => {
       fs.writeFile(
         './src/Api/contentfulEvents.json',
