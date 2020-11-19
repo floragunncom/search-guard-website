@@ -14,10 +14,6 @@ import './TrustedBy.scss';
 const TrustedBy = () => {
   const icons = [
     {
-      name: 'IBM',
-      logo: ibm
-    },
-    {
       name: 'Red Hat',
       logo: redHat
     },
