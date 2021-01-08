@@ -3,7 +3,6 @@ import sieMonster from '../../images/sie-monster.svg';
 import pivotal from '../../images/pivotal.svg';
 import wuerthPhoenix from '../../images/wuerth-phoenix.svg';
 import redHat from '../../images/redHatNew.svg';
-import ibm from '../../images/IBM.svg';
 import objectRocket from '../../images/objectRocket.svg';
 import mitratech from '../../images/mitratech.svg';
 import siren from '../../images/siren.svg';
