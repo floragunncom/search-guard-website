@@ -1,6 +1,48 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
+.news-plain-headline {
+  margin-bottom: 32px;
+  margin-top: 64px;
+  font-size: 24px;
+  line-height: 30px;
+  color: $darkBlue;
+  letter-spacing: 0.8px;
+  text-align: center;
+  @media only screen and (max-width: $tabletBig) {
+    padding-left: 24px;
+    padding-right: 24px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 20px;
+    letter-spacing: 0.67px;
+    margin-bottom: 16px;
+  }
+}
+
+.news-plain-text {
+  font-size: 18px;
+  line-height: 27px;
+  color: $darkGrey;
+
+  @media only screen and (max-width: $tabletBig) {
+    padding-left: 24px;
+    padding-right: 24px;
+
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+  };
+  ul {
+    li:before {
+      content: '•';
+      margin-right: 20px;
+      margin-left: -10px;
+    }
+  }
+}
+
 .news {
   &__wrapper {
     padding: 64px 32px;

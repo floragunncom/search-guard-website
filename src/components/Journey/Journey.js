@@ -4,11 +4,40 @@ import './Journey.scss';
 const Journey = () => {
   const timelineContent = [
     {
+      year: 2021,
+      events: [
+        {
+          headline: 'June',
+          text: 'Announced LTS support for Elasticsearch 7.10.2, the last version that is available under Apache2 license.'
+        },
+        {
+          headline: 'May',
+          text: 'Started to work on a new Kibana Session Management architecture based on the Search Gaurd Token Service.'
+        },
+        {
+          headline: 'March',
+          text: 'Kubernetes Support: Search Guard Helm Charts are now available.'
+        },
+        {
+          headline: 'March',
+          text: 'Released major improvements to Signals Alerting, improving the stability and footprint when running a lot of watches.'
+        },
+        {
+          headline: 'February',
+          text: 'New API Auth Token Service released which allows for creating individual access tokens for users.'
+        },
+      ],
+    },
+    {
       year: 2020,
       events: [
         {
           headline: 'September',
           text: 'Released Search Guard v45 which includes attribute based access control'
+        },
+        {
+          headline: 'August',
+          text: 'Meet us at the virtual BlackHat conference.'
         },
         {
           headline: 'July',

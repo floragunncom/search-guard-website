@@ -21,13 +21,11 @@ const Team = () => {
       pic: jochen,
       link: 'https://www.linkedin.com/in/jkressin/',
     },
-    {
-      name: 'Hendrik Saly',
-      position: 'CTO',
-      pic: hendrik,
-      link: 'https://www.linkedin.com/in/salyh/',
+    { name: 'Mechthild Wetekam',
+      position: 'COO',
+      pic: mechthild,
+      link: ''
     },
-    { name: 'Mechthild Wetekam', position: 'COO', pic: mechthild, link: '' },
     {
       name: 'Thomas Mahler',
       position: 'Head of Sales & Marketing',
@@ -38,11 +36,11 @@ const Team = () => {
 
   return (
     <div className="company-team-wrapper" id="team">
+      <div className="company-team-headline">Management team</div>
       <div className="row">
-        <div className="company-team-headline">Management team</div>
         {team.map(person => {
           return (
-            <div className="col s12 m4 company-team-profile" key={person.link}>
+            <div className="col s12 l6 company-team-profile" key={person.link}>
               <img src={person.pic} alt="person" className="profile-pic" />
               <div className="profile-name">{person.name}</div>
               <div className="profile-position">{person.position}</div>
