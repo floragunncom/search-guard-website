@@ -118,7 +118,7 @@ const BlogPostArticle = ({ match }) => {
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://search-guard.com/${postContent.fields.slug}`} />
         <meta property="og:description" content={postContent.fields.htmlDescription}/>
-        <meta property="og:image" content={postContent.fields.postImage.fields.file.url}/>
+        <meta property="og:image" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
         <meta property="og:image:alt" content={postContent.fields.htmlDescription}/>
         <meta property="og:locale" content="en_US" />
 
@@ -127,9 +127,10 @@ const BlogPostArticle = ({ match }) => {
         <meta name="twitter:creator" content="@searchguard"/>
         <meta name="twitter:title" content={postContent.fields.htmlTitle} />
         <meta name="twitter:description" content={postContent.fields.htmlDescription} />
-        <meta name="twitter:image" content={postContent.fields.postImage.fields.file.url} />
-        <meta name="twitter:image:src" content={postContent.fields.postImage.fields.file.url} />
-        <meta name="twitter:image:alt" content={postContent.fields.htmlTitle} />
+
+        <meta name="twitter:image" content={`https:${postContent.fields.postImage.fields.file.url}`} />
+        <meta name="twitter:image:src" content={`https:${postContent.fields.postImage.fields.file.url}`} />
+        <meta name="twitter:image:alt" content={`https:${postContent.fields.postImage.fields.file.url}`} />
 
       </Helmet>
       <BlogTitle
