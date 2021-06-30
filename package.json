@@ -94,7 +94,7 @@
     "webpack-merge": "^4.2.1"
   },
   "reactSnap": {
-    "concurrency": 8,
+    "concurrency": 2,
     "viewport": {
       "width": 1280,
       "height": 767
