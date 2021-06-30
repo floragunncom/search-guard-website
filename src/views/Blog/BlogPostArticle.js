@@ -121,9 +121,16 @@ const BlogPostArticle = ({ match }) => {
         <meta property="og:image" content={postContent.fields.postImage.fields.file.url}/>
         <meta property="og:image:alt" content={postContent.fields.htmlDescription}/>
         <meta property="og:locale" content="en_US" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:creator" content="@searchguard" />
-        <meta name="twitter:site" content="@searchguard" />
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="@searchguard"/>
+        <meta name="twitter:creator" content="@searchguard"/>
+        <meta name="twitter:title" content={postContent.fields.htmlTitle} />
+        <meta name="twitter:description" content={postContent.fields.htmlDescription} />
+        <meta name="twitter:image" content={postContent.fields.postImage.fields.file.url} />
+        <meta name="twitter:image:src" content={postContent.fields.postImage.fields.file.url} />
+        <meta name="twitter:image:alt" content={postContent.fields.htmlTitle} />
+
       </Helmet>
       <BlogTitle
         text={postContent.fields.title}
