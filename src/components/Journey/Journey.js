@@ -7,6 +7,10 @@ const Journey = () => {
       year: 2021,
       events: [
         {
+          headline: 'July',
+          text: 'Published a cumulative bugfix release that backports many fixes down to Elasticsearch 7.4.0'
+        },
+        {
           headline: 'June',
           text: 'Announced LTS support for Elasticsearch 7.10.2, the last version that is available under Apache2 license.'
         },
