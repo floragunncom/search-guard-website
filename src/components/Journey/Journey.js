@@ -4,8 +4,37 @@ import './Journey.scss';
 const Journey = () => {
   const timelineContent = [
     {
+      year: 2022,
+      events: [
+        {
+          headline: 'February',
+          text: 'Released a new technical preview for the next generation of Search Guard which also supports OpenSearch.'
+        },
+      ],
+    },
+    {
       year: 2021,
       events: [
+        {
+          headline: 'December',
+          text: 'We end the year with the infamous Log4j Vulnerabilities CVE-2021-44228, CVE-2021-45046 and CVE-2021-45105! We release Search Guard for Elasticsearch 7.16.1 and 7.16.2 which mitigates the issue'
+        },
+        {
+          headline: 'November',
+          text: 'Sponsoring the Open Source Monitoring Conference (OSMC) in Nuremberg for the second time. We held a talk entitled, "An introduction to OpenSearch and its impact on FOSS".'
+        },
+        {
+          headline: 'October',
+          text: 'Attended our first in person conference of the year, B-Boost in La Rochelle, France. Picture perfect weather with like minded people - what more could we ask for in a two day event. '
+        },
+        {
+          headline: 'September',
+          text: 'Search Guard for OpenSearch is here! We have published a pre-release version that we would love you to test!'
+        },
+        {
+          headline: 'August',
+          text: 'We started to work on the next major version of Search Guard, introducing a plethora of improvements and fixes.'
+        },
         {
           headline: 'July',
           text: 'Published a cumulative bugfix release that backports many fixes down to Elasticsearch 7.4.0'
