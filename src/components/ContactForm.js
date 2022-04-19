@@ -70,15 +70,6 @@ const ContactForm = () => {
           </p>
           <p className="company-information-header">Authorized Partners</p>
           <p className="company-information-text">
-            <b>Austria and Switzerland</b>
-            <br />
-            clever data GmbH
-            <br /> Danhausergasse 9/Top 3
-            <br /> 1040 Vienna
-            <br />
-            <a href="mailto:office@cleverdata.at">office@cleverdata.at</a>
-          </p>
-          <p className="company-information-text">
             <b>USA and Canada</b>
             <br />
             Excelerate Systems LLC
@@ -91,13 +82,21 @@ const ContactForm = () => {
             </a>
           </p>
           <p className="company-information-text">
+              <b>Austria and Switzerland</b>
+              <br />
+              clever data GmbH
+              <br /> Danhausergasse 9/Top 3
+              <br /> 1040 Vienna
+              <br />
+              <a href="mailto:office@cleverdata.at">office@cleverdata.at</a>
+          </p>
+          <p className="company-information-text">
             <b>France & North Africa</b>
-            <br /> Excelerate Systems France
-            <br /> Les Bureaux du Lac II, Rue Robert Caumont, Imm P<br /> 33049
-            Bordeaux
             <br />
-            <a href="mailto:contact-fr@exceleratesystems.net">
-              contact-fr@exceleratesystems.net
+            Ian Quakenbos
+            <br />
+            <a href="mailto:iquackenbos@search-guard.com">
+                iquackenbos@search-guard.com
             </a>
           </p>
           <p className="company-information-text">

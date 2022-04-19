@@ -89,12 +89,11 @@ const ContactForm = () => {
             </p>
             <p className="company-information-text">
                 <b>France & North Africa</b>
-                <br /> Excelerate Systems France
-                <br /> Les Bureaux du Lac II, Rue Robert Caumont, Imm P<br /> 33049
-                Bordeaux
                 <br />
-                <a href="mailto:contact-fr@exceleratesystems.net">
-                    contact-fr@exceleratesystems.net
+                Ian Quakenbos
+                <br />
+                <a href="mailto:iquackenbos@search-guard.com">
+                    iquackenbos@search-guard.com
                 </a>
             </p>
             <p className="company-information-text">
