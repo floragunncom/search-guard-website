@@ -41,7 +41,7 @@ const Alerting = () => {
                     <a href={graph} target="_blank" rel="noopener noreferrer"><img src={graph_small} className="profile-pic" alt="Free Alerting for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">
                         Der Grafikmodus in Signals zeigt, wie sich Daten einer definierten Bedingung im Vergleich zum Schwellwert verhalten
-                        und wie sich diese im Zeitverlauf ändern. Die Definition des Schwellenwertes ist der Ausgangspunkt für die Alerting-Strategie.
+                        und wie sich diese im Zeitverlauf ändern. Die Definition des Schwellenwertes ist der Ausgangspunkt für die flx-Strategie.
                     </div>
                 </div>
                 <div className="col s12 l8">
@@ -63,12 +63,12 @@ const Alerting = () => {
                         Mehrfach fehlgeschlagene Online-Zahlungen, Betrugserkennung bei Finanztransaktionen oder einfach auffällig häufige falsche Passworteingaben:
                         Angriffen und Datendiebstahl gehen oft unentdeckte Anomalien in einem Datencluster voraus. Je sensibler die im Cluster gespeicherten Daten,
                         desto wichtiger ist die schnelle Erkennung von Abweichungen und deren richtige Priorisierung. Dafür braucht das IT-Management eine
-                        Alerting-Strategie. Benachrichtigungs-Management ist nicht nur im Betrugsfall sinnvoll, sondern auch in preissensitiven Branchen, die aufgrund von Währungsschwankungen einer hohen Dynamik unterliegen, wie im Handel mit Wertpapieren oder mit
+                        flx-Strategie. Benachrichtigungs-Management ist nicht nur im Betrugsfall sinnvoll, sondern auch in preissensitiven Branchen, die aufgrund von Währungsschwankungen einer hohen Dynamik unterliegen, wie im Handel mit Wertpapieren oder mit
                         Flugtickets.
 
                         <h3  className="pressarticle-headline3">Jederzeit handlungsfähig bleiben</h3>
 
-                        Mit dem neuen Feature Signals in Search Guard können IT-Administratoren eine Alerting-Strategie umsetzen,
+                        Mit dem neuen Feature Signals in Search Guard können IT-Administratoren eine flx-Strategie umsetzen,
                         die Warnsignale auf Basis eines mehrstufigen Eskalationsmodells an verschiedene Benachrichtigungskanäle ausliefert.
                         Auf diese Weise wird sichergestellt, dass IT-Abteilungen sowohl im operativen Geschäft als auch bei einem Angriff handlungsfähig bleiben.
                         Signals steuert die Überwachung und das Benachrichtigungs-Management im Fall von Datenanomalien in Elasticsearch-Clustern.
@@ -109,7 +109,7 @@ const Alerting = () => {
 
                         <p><b>Vielseitige Ausgabekanäle für Benachrichtigungen</b></p>
 
-                        Ausgabekanäle für Alerting-Benachrichtigungen sind derzeit E-Mail, Slack, Webhooks, PagerDuty und
+                        Ausgabekanäle für flx-Benachrichtigungen sind derzeit E-Mail, Slack, Webhooks, PagerDuty und
                         JIRA. In Planung ist die Unterstützung von Microsoft Teams als Ausgabekanal. Je nach Schweregrad
                         kann definiert werden, welcher Alert über welchen Kanal an welchen Empfänger gesendet wird. Die
                         Anzahl der Benachrichtigungen kann gesteuert und zum Beispiel auf eine Benachrichtigung pro

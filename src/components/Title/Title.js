@@ -1,8 +1,9 @@
 import React from 'react';
 import './Title.scss';
 import iconIn from "../../images/icon-in-loud.svg";
+import Button from "../Button/Button";
 
-const Title = ({ headline, text, breadcrumb }) => {
+const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink, buttontarget }) => {
   return (
     <div className="title-wrapper-style">
 
@@ -31,8 +32,17 @@ const Title = ({ headline, text, breadcrumb }) => {
 
         <h1 className="title-headline-style">{headline}</h1>
         <h2 className="title-text-style">{text}</h2>
-
-
+          {buttonstyle ?
+              <div className="col s4 offset-s4 title-button-wrapper">
+                  <Button
+                      text={buttontext}
+                      buttonStyle={buttonstyle}
+                      link={buttonlink}
+                      target={buttontarget}
+                  />
+              </div>
+              : ""
+          }
       </div>
     </div>
   );

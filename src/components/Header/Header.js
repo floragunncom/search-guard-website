@@ -3,6 +3,7 @@ import Headroom from 'react-headroom';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo-white.svg';
 import cross from '../../images/cross-white.svg';
+import arrow from '../../images/arrow-right-dark-blue.svg';
 import './Header.scss';
 
 
@@ -84,6 +85,11 @@ const Header = ({ background = '#246E94', landing }) => {
   return (
     <>
       <Headroom disableInlineStyles={showMenu ? true : false}>
+        <a href="/search-guard-flx/">
+            <div className="header__announcement">
+              Discover Search Guard FLX – Security Better Than Ever <img src={arrow} className="header__announcementArrow" />
+            </div>
+        </a>
         <div style={{ backgroundColor: background }}>
           <div className="row">
             {showMenu && menu}

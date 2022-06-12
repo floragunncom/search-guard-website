@@ -4,6 +4,7 @@ import ButtonLoud from './ButtonLoud';
 import ButtonDefault from './ButtonDefault';
 import LinkDefault from './LinkDefault';
 import LinkGhost from './LinkGhost';
+import ButtonSand from './ButtonSand';
 
 const Button = props => {
   switch (props.buttonStyle) {
@@ -15,6 +16,8 @@ const Button = props => {
       return (
         <LinkLoud text={props.text} target={props.target} link={props.link} />
       );
+    case 'sand-button':
+      return <ButtonSand text={props.text} target={props.target} link={props.link} />;
     case 'default-link':
       return (
         <LinkDefault

@@ -7,6 +7,19 @@ const Journey = () => {
       year: 2022,
       events: [
         {
+          headline: 'Jun',
+          text: 'Search Guard FLX Beta 2 for Elasticsearch and OpenSearch released'
+        },
+        {
+          headline: 'Jun',
+          text: 'Working on Search Guard for Elasticsearch 8. Search Guard 8 will be based on the Search Guard FLX codebase.'
+        },
+
+        {
+          headline: 'May',
+          text: 'Search Guard FLX Beta 1 for Elasticsearch and OpenSearch released'
+        },
+        {
           headline: 'February',
           text: 'Released a new technical preview for the next generation of Search Guard which also supports OpenSearch.'
         },

@@ -2,6 +2,22 @@
 @import '../../styles/Breakpoints';
 
 .header {
+  &__announcement {
+    background-color: $announcementHighlight;
+    height: 40px;
+    font-size: 14px;
+    color: $navyBlueActive !important;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__announcementArrow {
+    opacity: 0.6;
+    margin-left: 10px;
+  }
+
   &__wrapper {
     display: flex;
     align-items: center;

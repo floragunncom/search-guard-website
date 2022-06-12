@@ -28,8 +28,7 @@ const Resource = () => {
     { id: v4(), anchor: 'git', name: 'tls certificates' },
     { id: v4(), anchor: 'blog', name: 'blog' },
     { id: v4(), anchor: 'whitePapers', name: 'Presentations & white papers' },
-    { id: v4(), anchor: 'videos', name: 'videos' },
-    { id: v4(), anchor: 'press', name: 'press' }
+    { id: v4(), anchor: 'videos', name: 'videos' }
   ];
 
     const breadcrumb = [
@@ -117,9 +116,7 @@ const Resource = () => {
       <div id="videos">
         <Video playlist />
       </div>
-        <div id="press">
-            <PressTeaser />
-        </div>
+
       <Cta
         headline="Can’t find what you’re looking for?"
         text="No worries,we're here to help!."

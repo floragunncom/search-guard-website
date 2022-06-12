@@ -112,8 +112,8 @@ const Alerting = () => {
 
                         <p><b>Outlook</b></p>
                         Signals is available for free in the Community Edition and can be installed and tested without any effort.
-                        Instructions and downloads for developers can be found ​<a href="https://docs.search-guard.com/latest/elasticsearch-alerting-getting-started" target="_blank" rel="noopener noreferrer">in the documentation</a>.
-                        All questions and requests around the feature are answered in ​<a href="https://forum.search-guard.com/c/alerting-signals/12" target="_blank" rel="noopener noreferrer">Signals Community Forum​</a>.
+                        Instructions and downloads for developers can be found ​<a href="https://docs.search-guard.com/latest/elasticsearch-flx-getting-started" target="_blank" rel="noopener noreferrer">in the documentation</a>.
+                        All questions and requests around the feature are answered in ​<a href="https://forum.search-guard.com/c/flx-signals/12" target="_blank" rel="noopener noreferrer">Signals Community Forum​</a>.
 
                         <br /><br />
 

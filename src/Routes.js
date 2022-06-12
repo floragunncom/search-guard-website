@@ -36,6 +36,8 @@ import PressENDach from './views/Press/EN/20200620_Sales_Activities_Dach/2020062
 import PressDEAlerting from './views/Press/DE/20200723_Alerting/20200723_Alerting';
 import PressENAlerting from './views/Press/EN/20200723_Alerting/20200723_Alerting';
 import PressDECompliance from './views/Press/DE/20200910_DSGVO/20200723_DSGVO';
+import FlxLandingPage from './views/FLXLandingPage/FLXLandingPage';
+
 const Routes = () => {
   return (
     <React.Fragment>
@@ -100,6 +102,9 @@ const Routes = () => {
           <Route exact path="/press/en/search-guard-alerting/" component={PressENAlerting} />
 
           <Route exact path="/press/de/elasticsearch-dsgvo/" component={PressDECompliance} />
+
+          <Route exact path="/search-guard-flx/" component={FlxLandingPage} />
+
 
           <Route exact path="/404/" component={NotFound} />
 
