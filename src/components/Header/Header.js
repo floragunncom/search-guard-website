@@ -85,11 +85,13 @@ const Header = ({ background = '#246E94', landing }) => {
   return (
     <>
       <Headroom disableInlineStyles={showMenu ? true : false}>
-        <a href="/search-guard-flx/">
-            <div className="header__announcement">
-              Discover Search Guard FLX – Security Better Than Ever <img src={arrow} className="header__announcementArrow" />
-            </div>
-        </a>
+
+        {/*<a href="/search-guard-flx/">*/}
+        {/*    <div className="header__announcement">*/}
+        {/*      Discover Search Guard FLX – Security Better Than Ever <img src={arrow} className="header__announcementArrow" />*/}
+        {/*    </div>*/}
+        {/*</a>*/}
+
         <div style={{ backgroundColor: background }}>
           <div className="row">
             {showMenu && menu}
