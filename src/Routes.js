@@ -58,6 +58,8 @@ const Routes = () => {
           <Route exact path="/presentations/" component={Presentations} />
           <Route exact path="/datenschutz/" component={DataProtection} />
           <Route exact path="/education-program/" component={Education} />
+          <Route exact path="/search-guard-flx/" component={FlxLandingPage} />
+          
           <Route
             exact
             path="/security-for-elasticsearch/"
@@ -102,9 +104,6 @@ const Routes = () => {
           <Route exact path="/press/en/search-guard-alerting/" component={PressENAlerting} />
 
           <Route exact path="/press/de/elasticsearch-dsgvo/" component={PressDECompliance} />
-
-          <Route exact path="/search-guard-flx/" component={FlxLandingPage} />
-
 
           <Route exact path="/404/" component={NotFound} />
 
