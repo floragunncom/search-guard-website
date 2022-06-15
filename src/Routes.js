@@ -45,6 +45,8 @@ const Routes = () => {
         <Switch>
 
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/search-guard-flx/" component={FlxLandingPage} />
+          <Route exact path="/flx/" component={FlxLandingPage} />
           <Route exact path="/contacts/" component={ContactUs} />
           <Route exact path="/security/" component={Security} />
           <Route exact path="/alerting/" component={Alerting} />
@@ -58,8 +60,7 @@ const Routes = () => {
           <Route exact path="/presentations/" component={Presentations} />
           <Route exact path="/datenschutz/" component={DataProtection} />
           <Route exact path="/education-program/" component={Education} />
-          <Route exact path="/search-guard-flx/" component={FlxLandingPage} />
-          
+
           <Route
             exact
             path="/security-for-elasticsearch/"
