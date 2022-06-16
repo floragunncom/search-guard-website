@@ -45,6 +45,11 @@ const Routes = () => {
         <Switch>
 
           <Route exact path="/" component={HomePage} />
+
+          <Route exact path="/search-guard-flx/">
+            <FlxLandingPage />
+          </Route>          
+
           <Route exact path="/search-guard-flx/" component={FlxLandingPage} />
           <Route exact path="/contacts1/" component={ContactUs} />
           <Route exact path="/contacts/" component={ContactUs} />
