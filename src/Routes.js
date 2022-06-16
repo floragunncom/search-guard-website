@@ -111,7 +111,7 @@ const Routes = () => {
           {/* this is not really good, it interferes with the 404 page! Need to handle that explicitely on BlogPostArticle Page now. Otherwise, we need to change all URLs for all blog posts :( */}
           <Route exact path="/:slug" component={BlogPostArticle} />
 
-          {/*<Redirect to="/404/" />*/}
+          <Redirect to="/404/" />
 
         </Switch>
       </ScrollToTop>
