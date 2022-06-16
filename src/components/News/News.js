@@ -11,6 +11,21 @@ const News = () => {
 
           <div className="row">
               <div className="col s12 l8 offset-l2">
+                  <div className="news-plain-headline">Search Guard FLX Beta announced</div>
+                  <div>
+                      <div className="news-plain-text" itemProp="text">
+                          <p>
+                              floragunn announces <a href="/search-guard-flx/">Search Guard FLX Beta 2</a>, the next generation of Search Guard.
+                              Search Guard FLX offers a new and concise configuration format, an easy-to-use and lightweight command line administration tool
+                              which replaces sgadmin, faster performance in many areas, and last but not least support for <a href="https://opensearch.org/">OpenSearch</a>.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div className="row">
+              <div className="col s12 l8 offset-l2">
                   <div className="news-plain-headline">LTS support for Elasticsearch 7.10.2</div>
                   <div>
                       <div className="news-plain-text" itemProp="text">
