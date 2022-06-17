@@ -106,7 +106,7 @@ const breadcrumb = [
                           </div>
                           <div className="flx-content-text">
                               The Kibana plugin now supports multiple authentication methods for a single Kibana installation at the same time.
-                              Users need to be able to log in with either Okta, Active Directory or TLS client certificates.
+                              Users need to be able to log in with either Okta, Active Directory or TLS client certificates?
                               Search Guard FLX supports it all.
                           </div>
                       </div>
