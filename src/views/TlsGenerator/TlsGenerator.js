@@ -15,7 +15,7 @@ const TlsGenerator = () => {
         { anchor: '/resource/', name: 'Resource Hub' },
         { anchor: '/tls-certificate-generator/', name: 'TLS certificate generator' },
     ];
-    
+
   return (
     <PageWrapper>
       <Helmet>
