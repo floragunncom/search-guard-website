@@ -39,7 +39,7 @@ const breadcrumb = [
             buttonstyle="sand-button"
             buttontext="Try it out for free"
             buttontarget="_blank"
-            buttonlink="https://docs.search-guard.com/flx/"
+            buttonlink="https://docs.search-guard.com/latest/"
         />
 
           <div className="flx-wrapper" >
@@ -145,7 +145,7 @@ const breadcrumb = [
                               <Button
                                   text="Try it out for free"
                                   buttonStyle="sand-button"
-                                  link="https://docs.search-guard.com/flx/"
+                                  link="https://docs.search-guard.com/latest/"
                                   target="_blank"
                               />
                           </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Headroom from 'react-headroom';
 import { NavLink } from 'react-router-dom';
+import {useLocation} from "react-router-dom";
 import logo from '../../images/logo-white.svg';
 import cross from '../../images/cross-white.svg';
 import arrow from '../../images/arrow-right-dark-blue.svg';
@@ -10,7 +11,9 @@ import './Header.scss';
 const Header = ({ background = '#246E94', landing }) => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const style = {
+    const location = useLocation();
+
+    const style = {
     active: {
       borderBottom: '2px solid #00FCE5',
       marginBottom: 0,
@@ -86,11 +89,13 @@ const Header = ({ background = '#246E94', landing }) => {
     <>
       <Headroom disableInlineStyles={showMenu ? true : false}>
 
-        <a href="/search-guard-flx/">
-            <div className="header__announcement">
-              Discover Search Guard FLX – Security Better Than Ever <img src={arrow} className="header__announcementArrow" />
-            </div>
-        </a>
+          {!location.pathname.includes("/search-guard-flx/") &&
+              <a href="/search-guard-flx/">
+                  <div className="header__announcement">
+                      Discover Search Guard FLX – Security Better Than Ever <img src={arrow} className="header__announcementArrow" />
+                  </div>
+              </a>
+          }
 
         <div style={{ backgroundColor: background }}>
           <div className="row">
