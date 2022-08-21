@@ -1,0 +1,62 @@
+@import '../../styles/Colors.scss';
+@import '../../styles/Breakpoints';
+
+.prefooter-announcement-container {
+  background-color: #f5f7f7;
+}
+
+.prefooter-announcement-button-spacer {
+ margin-top: 30px;
+}
+
+.prefooter-announcement-row {
+  padding: 64px 32px;
+  @media only screen and (max-width: $tabletBig) {
+    padding: 0px 16px 32px 16px;
+  };
+}
+
+.prefooter-announcement-content-wrapper {
+  padding: 0px;
+  @media only screen and (max-width: $tabletBig) {
+    margin: 32px 0px;
+  };
+  @media only screen and (max-width: $mobile) {
+    margin: 16px 0px;
+  };
+};
+
+.prefooter-announcement-col-content {
+  @media only screen and (max-width: $tabletBig) and (min-width: $mobile) {
+    padding: 0 12px;
+  }
+}
+
+.prefooter-announcement-headline {
+  color: $darkBlue;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-style: normal;
+  letter-spacing: normal;
+  text-align: center;
+  font-weight: 200;
+}
+
+.prefooter-announcement-content {
+  margin: 8px 0px 0px 0px;
+  @media only screen and (max-width: 600px) {
+    margin-top: 8px;
+  };
+}
+
+.prefooter-announcement-content-text {
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  padding-top: 4px;
+  margin-bottom: 32px;
+  @media only screen and (max-width: $tabletBig) and (min-width: $mobile) {
+    padding-top: 8px;
+    margin-bottom: 12px;
+  };
+}

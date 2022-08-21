@@ -38,6 +38,15 @@ h1.title-headline-style {
   };
 }
 
+h1.title-headline-style-flx {
+  @extend h1, .title-headline-style;
+  color: $flxText;
+  text-align: left;
+  text-transform: none;
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+
 h2.title-text-style {
   font-size: 24px;
   line-height: 30px;
@@ -52,12 +61,18 @@ h2.title-text-style {
   };
 }
 
+h2.title-text-style-flx {
+  @extend h2, .title-text-style;
+  text-align: left;
+}
+
 .title-button-wrapper {
   margin-top: 50px;
    @media only screen and (max-width: $mobile) {
     margin-top: 20px;
   };
 }
+
 
 .title-breadcrumb-item {
   color: $turkis;

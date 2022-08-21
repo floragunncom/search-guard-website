@@ -1,10 +1,22 @@
 import React from 'react';
 import './Title.scss';
-import iconIn from "../../images/icon-in-loud.svg";
 import Button from "../Button/Button";
 
-const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink, buttontarget }) => {
-  return (
+const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink, buttontarget, titlestyle }) => {
+
+    let titleHeadlineStyle = "title-headline-style";
+    let titleTextStyle = "title-text-style";
+    let breadcrumbStyle = "title-text-style";
+    let breadcrumbItemStyle = "title-breadcrumb-item";
+    let buttonWrapperStyle="col s4 offset-s4 title-button-wrapper"
+
+    if (titlestyle === 'flx') {
+        titleHeadlineStyle = 'title-headline-style-flx';
+        titleTextStyle = 'title-text-style-flx';
+        buttonWrapperStyle="col s4 title-button-wrapper"
+    }
+
+    return (
     <div className="title-wrapper-style">
 
       <div className="row">
@@ -30,10 +42,10 @@ const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink
               : ""
           }
 
-        <h1 className="title-headline-style">{headline}</h1>
-        <h2 className="title-text-style">{text}</h2>
+        <h1 className={titleHeadlineStyle} dangerouslySetInnerHTML={{__html: headline}}></h1>
+        <h2 className={titleTextStyle}>{text}</h2>
           {buttonstyle ?
-              <div className="col s4 offset-s4 title-button-wrapper">
+              <div className={buttonWrapperStyle}>
                   <Button
                       text={buttontext}
                       buttonStyle={buttonstyle}
