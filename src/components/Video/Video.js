@@ -11,8 +11,33 @@ const Video = props => {
       <div>
         {/* <div className="video-playlist-headline">Other videos you may like</div> */}
 
-
           <div className="video-playlist">
+
+              <div className="video-playlist-item col l4">
+                  <iframe
+                      className="responsive-video"
+                      src="https://www.youtube.com/embed/whNdYp9dhJU"
+                      title="Using sgctl to configure security"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                  />
+                  <div className="video-playlist-text">
+                      How to use the sgctl command line interface to change the security configuration of an Elasticsearch cluster.
+                  </div>
+              </div>
+              <div className="video-playlist-item col l4">
+                  <iframe
+                      className="responsive-video"
+                      src="https://www.youtube.com/embed/sq87TJBMlLM"
+                      title="Generate TLS certificates for Elasticsearch"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                  />
+                  <div className="video-playlist-text">
+                      How to use the Search Guard TLS Tool to generate TLS certificates for Elasticsearch.
+                  </div>
+              </div>
               <div className="video-playlist-item col l4">
                   <iframe
                       className="responsive-video"
@@ -26,6 +51,10 @@ const Video = props => {
                       Monitoring Elasticsearch by using Signals Alerting
                   </div>
               </div>
+          </div>
+
+          <div className="video-playlist">
+
               <div className="video-playlist-item col l4">
                   <iframe
                       className="responsive-video"
@@ -52,11 +81,6 @@ const Video = props => {
                       Signals Alerting for Elasticsearch: Creating a simple alert
                   </div>
               </div>
-          </div>
-
-
-
-          <div className="video-playlist">
               <div className="video-playlist-item col l4">
                   <iframe
                       className="responsive-video"
@@ -70,6 +94,12 @@ const Video = props => {
                       Creating Search Guard Users and Roles
                   </div>
               </div>
+          </div>
+
+
+
+          <div className="video-playlist">
+
               <div className="video-playlist-item col l4">
                   <iframe
                       className="responsive-video"
@@ -96,21 +126,23 @@ const Video = props => {
                       Introducing Signals - Free Alerting for Elasticsearch
                   </div>
               </div>
-          </div>
 
-          <div className="video-playlist-item col l4">
-              <iframe
-                  className="responsive-video"
-                  src="https://www.youtube.com/embed/OQqF8kJ6QKM"
-                  frameBorder="0"
-                  title="Keep your Elasticsearch GDPR compliant with Search Guard"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-              />
-              <div className="video-playlist-text">
-                  Keep your Elasticsearch GDPR compliant with Search Guard
+              <div className="video-playlist-item col l4">
+                  <iframe
+                      className="responsive-video"
+                      src="https://www.youtube.com/embed/OQqF8kJ6QKM"
+                      frameBorder="0"
+                      title="Keep your Elasticsearch GDPR compliant with Search Guard"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                  />
+                  <div className="video-playlist-text">
+                      Keep your Elasticsearch GDPR compliant with Search Guard
+                  </div>
               </div>
           </div>
+
+
           <div className="video-playlist-item col l4">
               <iframe
                   className="responsive-video"

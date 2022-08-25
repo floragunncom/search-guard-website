@@ -17,11 +17,11 @@ const TileSimple = ({
   if (iconPosition === 'left') {
     wrapperStyle = 'tilesimple-flx-container-left-' + backgroundColor;
     contentStyle = 'tilesimple-flx-content-wrapper-left';
-    iconStyle = 'tilesimple-icon-style-left';
+    iconStyle = 'tilesimple-flx-icon-style-left';
   } else {
     wrapperStyle = 'tilesimple-flx-container-right-' + backgroundColor;
     contentStyle = 'tilesimple-flx-content-wrapper-right';
-    iconStyle = 'tilesimple-icon-style-right';
+    iconStyle = 'tilesimple-flx-icon-style-right';
   }
 
   if (iconPosition === 'left') {

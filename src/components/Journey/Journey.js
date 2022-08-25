@@ -7,8 +7,12 @@ const Journey = () => {
       year: 2022,
       events: [
         {
+          headline: 'Aug',
+          text: 'Search Guard FLX GA released.'
+        },
+        {
           headline: 'Jun',
-          text: 'Search Guard FLX Beta 2 for Elasticsearch and OpenSearch released'
+          text: 'Search Guard FLX Beta 2 for Elasticsearch released'
         },
         {
           headline: 'Jun',
