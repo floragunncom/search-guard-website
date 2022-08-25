@@ -78,7 +78,7 @@ img.tilesimple-flx-icon-style-left {
 }
 
 .tilesimple-flx-content-wrapper-left {
-  padding-top: 210px;
+  padding-top: 128px;
   padding-left: 135px;
   padding-right: 230px;
   @media only screen and (max-width: $xl) {
@@ -92,7 +92,7 @@ img.tilesimple-flx-icon-style-left {
 }
 
 .tilesimple-flx-content-wrapper-right {
-  padding-top: 210px;
+  padding-top: 128px;
   padding-right: 135px;
   padding-left: 230px;
   text-align: right;
@@ -122,8 +122,16 @@ img.tilesimple-flx-icon-style-left {
   font-size: 18px;
   line-height: 27px;
   color: $darkGrey;
+  margin-bottom: 24px;
   @media only screen and (max-width: $mobile) {
     font-size: 16px;
     line-height: 24px;
   };
+}
+
+.tilesimple-flx-readmore {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
 }

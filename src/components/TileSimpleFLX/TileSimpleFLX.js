@@ -8,6 +8,8 @@ const TileSimple = ({
   icon,
   headline,
   text,
+    linktext,
+    linkurl,
 }) => {
   let tilePosition;
   let wrapperStyle;
@@ -39,6 +41,7 @@ const TileSimple = ({
             <div className={contentStyle}>
               <h2 className="tilesimple-headline">{headline}</h2>
               <div className="tilesimple-text">{text}</div>
+              <a href={linkurl} className="tilesimple-flx-readmore">{linktext}</a>
             </div>
           </div>
         </div>
@@ -57,6 +60,7 @@ const TileSimple = ({
             <div className={contentStyle}>
               <h2 className="tilesimple-headline">{headline}</h2>
               <div className="tilesimple-text">{text}</div>
+              <a href={linkurl} className="tilesimple-flx-readmore">{linktext}</a>
             </div>
           </div>
         </div>

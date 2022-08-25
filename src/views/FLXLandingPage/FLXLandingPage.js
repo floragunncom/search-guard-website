@@ -47,6 +47,8 @@ const Security = () => {
           backgroundColor="control"
           headline="Improved Control: New Command Line Interface "
           text="Configuring security for Elasticsearch has never been easier. sgadmin becomes sgctl."
+          linktext="Read more"
+          linkurl="/sgctl-elasticsearch/"
         />
       </div>
       <TileSimpleFLX
@@ -55,6 +57,8 @@ const Security = () => {
         backgroundColor="variables"
         headline="Search Guard FLX Ships with Built-in Variables Store "
         text="With our new Variables Store you can now manage your sensitive configuration variables in a central place: Your Elasticsearch cluster."
+        linktext="Read more"
+        linkurl="/handling-configuration-variables-search-guard-flx/"
       />
       <TileSimpleFLX
         icon={kibana}
@@ -62,6 +66,8 @@ const Security = () => {
         backgroundColor="kibana"
         headline="Kibana multiauth: New Configuration Structure"
         text="All configuration settings stored in one central place. Hot-reloadable: change your frontend settings in real time without restarting Kibana. Support for multiple authentication types."
+        linktext="Read more"
+        linkurl="/kibana-multiple-authentication-search-guard/"
       />
         <PreFooterAnnouncement
             headline="Learn everything about Search Guard FLX"
