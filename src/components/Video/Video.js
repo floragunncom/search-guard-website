@@ -3,177 +3,90 @@ import Button from '../Button/Button';
 import './Video.scss';
 
 const Video = props => {
+
   let playlist;
   let playlistButton;
 
-  if (props.playlist) {
+    const videos = [
+        {
+            'source': 'https://www.youtube.com/embed/ZK5hC_o_vAM',
+            'title': "Kibana multiple authentication",
+            'description': 'Search Guard FLX supports multiple authentication methods for Kibana, so users can choose how they would like to authenticate.'
+        },
+        {
+            'source': 'https://www.youtube.com/embed/whNdYp9dhJU',
+            'title': "Using sgctl to configure security",
+            'description': 'How to use the sgctl command line interface to change the security configuration of an Elasticsearch cluster.'
+        },
+        {
+            'source': 'https://www.youtube.com/embed/sq87TJBMlLM',
+            'title': "Generate TLS certificates for Elasticsearch",
+            'description': 'How to use the Search Guard TLS Tool to generate TLS certificates for Elasticsearch.'
+        },
+        {
+            'source': 'https://www.youtube.com/embed/SMaxuNPc2CI',
+            'title': "Monitoring Elasticsearch by using Signals Alerting",
+            'description': 'Monitoring Elasticsearch by using Signals Alerting'
+        },
+        {
+            'source': 'https://www.youtube.com/embed/lQNauVac8tw',
+            'title': "Creating Elasticsearch Watches using the Signals Blocks Mode",
+            'description': 'Creating Elasticsearch Watches using the Signals Blocks Mode'
+        },
+        {
+            'source': 'https://www.youtube.com/embed/Wqk0m8ibNnM',
+            'title': "Signals Alerting for Elasticsearch: Creating a simple alert",
+            'description': 'Signals Alerting for Elasticsearch: Creating a simple alert'
+        },
+        {
+            'source': 'https://www.youtube.com/embed/TIpN413V1gQ',
+            'title': "Creating Search Guard Users and Roles",
+            'description': 'Creating Search Guard Users and Roles'
+        },
+        {
+            'source': 'https://www.youtube.com/embed/gdtrphHWK7M',
+            'title': "Securing Elasticsearch and Kibana with the Zero Trusted Networks approach",
+            'description': 'Securing Elasticsearch and Kibana with the Zero Trusted Networks approach'
+        },
+        {
+            'source': 'https://www.youtube.com/embed/Big_niMxQJ4',
+            'title': "Introducing Signals - Free Alerting for Elasticsearch",
+            'description': 'Introducing Signals - Free Alerting for Elasticsearch'
+        },
+    ];
+
+    /**
+     *         {
+     *             'source': 'https://www.youtube.com/embed/OQqF8kJ6QKM',
+     *             'title': "Keep your Elasticsearch GDPR compliant with Search Guard",
+     *             'description': 'Keep your Elasticsearch GDPR compliant with Search Guard'
+     *         },
+     */
+
+    if (props.playlist) {
+
     playlist = (
-      <div>
-        {/* <div className="video-playlist-headline">Other videos you may like</div> */}
-
-          <div className="video-playlist">
-
+      <div class="video-playlist-wrapper">
+          {videos.map((item) => (
               <div className="video-playlist-item col l4">
                   <iframe
                       className="responsive-video"
-                      src="https://www.youtube.com/embed/whNdYp9dhJU"
-                      title="Using sgctl to configure security"
+                      src={item.source}
+                      title={item.title}
                       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                   />
                   <div className="video-playlist-text">
-                      How to use the sgctl command line interface to change the security configuration of an Elasticsearch cluster.
+                      {item.description}
                   </div>
               </div>
-              <div className="video-playlist-item col l4">
-                  <iframe
-                      className="responsive-video"
-                      src="https://www.youtube.com/embed/sq87TJBMlLM"
-                      title="Generate TLS certificates for Elasticsearch"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                  />
-                  <div className="video-playlist-text">
-                      How to use the Search Guard TLS Tool to generate TLS certificates for Elasticsearch.
-                  </div>
-              </div>
-              <div className="video-playlist-item col l4">
-                  <iframe
-                      className="responsive-video"
-                      src="https://www.youtube.com/embed/SMaxuNPc2CI"
-                      frameBorder="0"
-                      title="Monitoring Elasticsearch by using Signals Alerting"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                  />
-                  <div className="video-playlist-text">
-                      Monitoring Elasticsearch by using Signals Alerting
-                  </div>
-              </div>
-          </div>
-
-          <div className="video-playlist">
-
-              <div className="video-playlist-item col l4">
-                  <iframe
-                      className="responsive-video"
-                      src="https://www.youtube.com/embed/lQNauVac8tw"
-                      title="Creating Elasticsearch Watches using the Signals Blocks Mode"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                  />
-                  <div className="video-playlist-text">
-                      Creating Elasticsearch Watches using the Signals Blocks Mode
-                  </div>
-              </div>
-              <div className="video-playlist-item col l4">
-                  <iframe
-                      className="responsive-video"
-                      src="https://www.youtube.com/embed/Wqk0m8ibNnM"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      title="Signals Alerting for Elasticsearch: Creating a simple alert"
-                      allowFullScreen
-                  />
-                  <div className="video-playlist-text">
-                      Signals Alerting for Elasticsearch: Creating a simple alert
-                  </div>
-              </div>
-              <div className="video-playlist-item col l4">
-                  <iframe
-                      className="responsive-video"
-                      src="https://www.youtube.com/embed/TIpN413V1gQ"
-                      title="Creating Search Guard Users and Roles"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                  />
-                  <div className="video-playlist-text">
-                      Creating Search Guard Users and Roles
-                  </div>
-              </div>
-          </div>
-
-
-
-          <div className="video-playlist">
-
-              <div className="video-playlist-item col l4">
-                  <iframe
-                      className="responsive-video"
-                      src="https://www.youtube.com/embed/gdtrphHWK7M"
-                      frameBorder="0"
-                      title="Securing Elasticsearch and Kibana with the Zero Trusted Networks approach"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                  />
-                  <div className="video-playlist-text">
-                      Securing Elasticsearch and Kibana with the Zero Trusted Networks approach
-                  </div>
-              </div>
-              <div className="video-playlist-item col l4">
-                  <iframe
-                      className="responsive-video"
-                      src="https://www.youtube.com/embed/Big_niMxQJ4"
-                      frameBorder="0"
-                      title="Introducing Signals - Free Alerting for Elasticsearch"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                  />
-                  <div className="video-playlist-text">
-                      Introducing Signals - Free Alerting for Elasticsearch
-                  </div>
-              </div>
-
-              <div className="video-playlist-item col l4">
-                  <iframe
-                      className="responsive-video"
-                      src="https://www.youtube.com/embed/OQqF8kJ6QKM"
-                      frameBorder="0"
-                      title="Keep your Elasticsearch GDPR compliant with Search Guard"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                  />
-                  <div className="video-playlist-text">
-                      Keep your Elasticsearch GDPR compliant with Search Guard
-                  </div>
-              </div>
-          </div>
-
-
-          <div className="video-playlist-item col l4">
-              <iframe
-                  className="responsive-video"
-                  src="https://www.youtube.com/embed/qiRgy5FcsnI"
-                  title="Search Guard - Compliance Module"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-              />
-              <div className="video-playlist-text">
-                  Search Guard - Compliance Module
-              </div>
-          </div>
-          <div className="video-playlist-item col l4">
-              <iframe
-                  className="responsive-video"
-                  src="https://www.youtube.com/embed/1uWGqcy5PeQ"
-                  frameBorder="0"
-                  title="Search Guard puts security first"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-              />
-              <div className="video-playlist-text">
-                  Search Guard puts security first
-              </div>
-          </div>
+          ))}
       </div>
     );
+
     playlistButton = (
       <div className="video-button">
-        <Button text="see more videos" link="https://www.youtube.com/channel/UCUw93I0DHMvoA8HNQ31AeJw" target="_blank"/>
+        <Button text="Visit our channel" link="https://www.youtube.com/channel/UCUw93I0DHMvoA8HNQ31AeJw" target="_blank"/>
       </div>
     );
   }
@@ -191,7 +104,6 @@ const Video = props => {
               <iframe
                 className="video-iframe-video"
                 src="https://www.youtube.com/embed/ewM9glvw0E4"
-                frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 title="Search Guard - Security and Alerting for Elasticsearch and Kibana"
                 allowFullScreen
