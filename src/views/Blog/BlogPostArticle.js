@@ -43,7 +43,7 @@ const BlogPostArticle = ({ match }) => {
       },
       h3: {
         props: {
-          className: 'blogpostarticle-headline2',
+          className: 'blogpostarticle-headline3',
         },
       },
       p: {

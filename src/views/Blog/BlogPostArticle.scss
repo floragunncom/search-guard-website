@@ -29,14 +29,22 @@
 }
 
 .blogpostarticle-headline2 {
-  margin-top: 32px;
+  margin-top: 48px;
   margin-bottom: 32px;
+  color: $darkBlue;
+  font-size: 32px;
+  letter-spacing: 0.8px;
+  line-height: 30px;
+}
+
+.blogpostarticle-headline3 {
+  margin-top: 32px;
+  margin-bottom: 16px;
   color: $darkBlue;
   font-size: 24px;
   letter-spacing: 0.8px;
   line-height: 30px;
 }
-
 .blogpostarticle-code-snippet {
   background-color: $lightGrey;
   font-family: Courier;
