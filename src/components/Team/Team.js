@@ -26,12 +26,6 @@ const Team = () => {
       pic: mechthild,
       link: ''
     },
-    {
-      name: 'Thomas Mahler',
-      position: 'Head of Sales & Marketing',
-      pic: thomas,
-      link: 'https://www.linkedin.com/in/thmahler/',
-    },
   ];
 
   return (
