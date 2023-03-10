@@ -15,10 +15,9 @@ const Labels = () => {
           <div className="securityinfo-text-wrapper">
             <div className="securityinfo-headline">Certified</div>
             <div className="securityinfo-content">
-              Search Guard puts <a href="/search-guard-puts-security-first/" target="_blank" rel="noopener nofollow">Security First</a>. Your data is too valuable to take any security shortcut.
-              Our code is rigorously tested and verified by industry leaders like CA Veracode and NCC.
-              We are committed to creating truly secure software for Elasticsearch since 2013
-              when no security solution existed for the Elastic Stack.
+              Since 2013, Search Guard has been pushing the boundaries of Elastic Stack security.
+              We don't take any shortcuts when it comes to data protection - our code is rigorously tested and verified by
+              leading industry experts like CA Veracode and NCC for maximum assurance that your valuable data is safe and secure.
             </div>
           </div>
         </div>
@@ -29,8 +28,9 @@ const Labels = () => {
           <div className="securityinfo-text-wrapper">
             <div className="securityinfo-headline">Priority support</div>
             <div className="securityinfo-content">
-              Besides our active <a href="https://forum.search-guard.com" target="_blank" rel="noopener nofollow">Community Forum</a> we offer priority support to our costumers with guaranteed SLAs and direct access to the Search Guard developer team.
-              Custom support plans, including follow-the-sun and Elastic Stack support plans are available.
+              Our customers enjoy priority support with guaranteed service-level agreements and direct access to the Search Guard developer team.
+              Custom plans that include 24/7 coverage and  Elastic Stack support are available for maximum peace of mind.
+              Get connected today on our active  <a href="https://forum.search-guard.com" target="_blank" rel="noopener nofollow">Community Forum</a>!
             </div>
           </div>
         </div>
@@ -41,8 +41,8 @@ const Labels = () => {
           <div className="securityinfo-text-wrapper">
             <div className="securityinfo-headline">Trusted by</div>
             <div className="securityinfo-content">
-              We are used in production environments by Fortune 500 companies, the federal sector, and innovative start-ups.
-              Our clients span all across the world.
+              Our clients span the globe, from Fortune 500s and federal entities to groundbreaking start-ups.
+              They trust us with their most important projects - no matter the size or type.
             </div>
           </div>
         </div>

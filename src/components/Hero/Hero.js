@@ -17,12 +17,12 @@ const Hero = () => {
             <div className="hero-col-wrapper">
               <div className="hero-text-wrapper">
                 <h1 className="hero-text-wrapper-headline">
-                  Security and Alerting for Elasticsearch by Search Guard
+                  Security and Alerting for Elasticsearch and Kibana
                 </h1>
-                <div className="hero-text-wrapper-text">
-                  Search Guard is a security and alerting plug-in that encrypts and protects your data
-                  and data flows in the entire Elastic Stack designed for the modern enterprise.
-                </div>
+                <h2 className="hero-text-wrapper-text">
+                  Search Guard is a security and alerting plugin that encrypts and protects your data
+                  and data flows from unauthorized access in the entire Elastic Stack.
+                </h2>
               </div>
               <div className="hero-button-wrapper">
                 <Button

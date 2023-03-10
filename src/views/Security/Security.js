@@ -48,7 +48,7 @@ const Security = () => {
       </Helmet>
       <Title
         headline="search guard security plugin"
-        text="As the pioneers in securing Elasticsearch clusters, all decisions about our technology have the same purpose, to make your Elasticsearch environment more secure."
+        text="Pioneering the way forward in security, our technology is engineered to ensure a safe environment around your Elastic Stack - safeguarding data and granting peace of mind."
         breadcrumb={breadcrumb}
       />
       <AnchorNavBar anchors={anchors} />
