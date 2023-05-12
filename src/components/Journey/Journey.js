@@ -4,8 +4,33 @@ import './Journey.scss';
 const Journey = () => {
   const timelineContent = [
     {
+      year: 2023,
+      events: [
+        {
+          headline: 'February',
+          text: 'Search Guard for Elasticsearch 8.6.x released'
+        },
+      ],
+    },
+    {
       year: 2022,
       events: [
+        {
+          headline: 'Dec',
+          text: 'We celebrate the 10th anniversary of floragunn'
+        },
+        {
+          headline: 'Dec',
+          text: 'Search Guard FLX 1.1.1 for Elasticsearch 7.17.8 and 8.5.0 released'
+        },
+        {
+          headline: 'Nov',
+          text: 'We sponsored and attended the OSMC conference in Nuremberg'
+        },
+        {
+          headline: 'sep',
+          text: 'Search Guard FLX for Elasticsearch 8 released'
+        },
         {
           headline: 'Aug',
           text: 'Search Guard FLX GA released.'

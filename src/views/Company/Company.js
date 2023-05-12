@@ -14,7 +14,6 @@ import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 
 const Company = () => {
   const anchors = [
-    { id: v4(), anchor: 'news', name: 'News & Events' },
     { id: v4(), anchor: 'team', name: 'management team' },
     { id: v4(), anchor: 'partners', name: 'partners' },
     { id: v4(), anchor: 'journey', name: 'journey' },
@@ -42,7 +41,6 @@ const Company = () => {
         breadcrumb={breadcrumb}
       />
       <AnchorNavBar anchors={anchors} />
-      <News />
       <Team />
       <Partners />
       <Journey />
