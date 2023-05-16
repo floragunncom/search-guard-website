@@ -26,7 +26,7 @@ import Education from './views/Education/Education';
 import TlsGenerator from './views/TlsGenerator/TlsGenerator';
 import NotFound from './views/NotFound/NotFound';
 import Thanks from './views/Thanks/Thanks';
-import Error from './views/Error/Error';
+import Heise from './views/Heise/Heise';
 import CertificatesOnTheWay from './views/CertificatesOnTheWay/CertificatesOnTheWay';
 import Certifications from './views/Certifications/Certifications';
 import SecurityForElasticsearch from './views/SecurityForElasticsearch/SecurityForElasticsearch';
@@ -37,6 +37,7 @@ import PressDEAlerting from './views/Press/DE/20200723_Alerting/20200723_Alertin
 import PressENAlerting from './views/Press/EN/20200723_Alerting/20200723_Alerting';
 import PressDECompliance from './views/Press/DE/20200910_DSGVO/20200723_DSGVO';
 import FlxLandingPage from './views/FLXLandingPage/FLXLandingPage';
+import Error from './views/Error/Error';
 
 const Routes = () => {
   return (
@@ -110,6 +111,8 @@ const Routes = () => {
           <Route exact path="/press/en/search-guard-alerting/" component={PressENAlerting} />
 
           <Route exact path="/press/de/elasticsearch-dsgvo/" component={PressDECompliance} />
+
+          <Route exact path="/heise/" component={Heise} />
 
           <Route exact path="/404/" component={NotFound} />
 
