@@ -194,7 +194,7 @@ const Footer = ({ landing }) => {
           className="footer-text"
           style={landing ? { paddingTop: '64px' } : null}
         >
-          <p>© 2020 floragunn GmbH - All Rights Reserved</p>
+          <p>© 2022 floragunn GmbH - All Rights Reserved</p>
           <p>
             Search Guard is a trademark of floragunn GmbH, registered in the
             U.S. and in other countries. Elasticsearch, Kibana, Logstash, and
@@ -202,6 +202,10 @@ const Footer = ({ landing }) => {
             in other countries. Apache, Apache Lucene, Apache Hadoop, Hadoop,
             HDFS and the yellow elephant logo are trademarks of the Apache
             Software Foundation in the United States and/or other countries.
+            <br />
+            <NavLink to="/heise/" className="footer-links">
+              Lower your TCO
+            </NavLink>
           </p>
         </div>
       </div>
