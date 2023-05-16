@@ -49,7 +49,10 @@ const Routes = () => {
 
           <Route exact path="/search-guard-flx/">
             <FlxLandingPage />
-          </Route>          
+          </Route>
+
+          <Route exact path="/heise/" component={Heise} />
+          <Route exact path="/heise" component={Heise} />
 
           <Route exact path="/search-guard-flx/" component={FlxLandingPage} />
           <Route exact path="/contacts1/" component={ContactUs} />
@@ -111,8 +114,6 @@ const Routes = () => {
           <Route exact path="/press/en/search-guard-alerting/" component={PressENAlerting} />
 
           <Route exact path="/press/de/elasticsearch-dsgvo/" component={PressDECompliance} />
-
-          <Route exact path="/heise/" component={Heise} />
 
           <Route exact path="/404/" component={NotFound} />
 
