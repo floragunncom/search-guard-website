@@ -10,9 +10,17 @@
   @media only screen and (max-width: $mobile) {
     padding: 32px 24px;
   };
+
+  &-heise {
+    @extend .title-wrapper-style;
+    background-color: $navyBlue;
+  }
+
 }
 
-h1.title-headline-style {
+
+
+.title-headline-style {
   text-transform: uppercase;
   font-size: 60px;
   line-height: 72px;
@@ -36,10 +44,17 @@ h1.title-headline-style {
     letter-spacing: 1px;
     margin-top: 15px;
   };
+
+  &-heise {
+    @extend .title-headline-style;
+    background-color: $navyBlue;
+    color: white;
+  }
+
 }
 
-h1.title-headline-style-flx {
-  @extend h1, .title-headline-style;
+.title-headline-style-flx {
+  @extend .title-headline-style;
   color: $flxText;
   text-align: left;
   text-transform: none;
@@ -47,7 +62,7 @@ h1.title-headline-style-flx {
   letter-spacing: 2px;
 }
 
-h2.title-text-style {
+.title-text-style {
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.8px;
@@ -59,10 +74,16 @@ h2.title-text-style {
     font-size: 20px;
     line-height: 25px;
   };
+
+  &-heise {
+    @extend .title-text-style;
+    background-color: $navyBlue;
+    color: white;
+  }
 }
 
-h2.title-text-style-flx {
-  @extend h2, .title-text-style;
+.title-text-style-flx {
+  @extend .title-text-style;
   text-align: left;
 }
 

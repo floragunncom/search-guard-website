@@ -4,6 +4,7 @@ import Button from "../Button/Button";
 
 const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink, buttontarget, titlestyle }) => {
 
+    let titleWrapperStyle = "title-wrapper-style";
     let titleHeadlineStyle = "title-headline-style";
     let titleTextStyle = "title-text-style";
     let breadcrumbStyle = "title-text-style";
@@ -16,8 +17,14 @@ const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink
         buttonWrapperStyle="col s4 title-button-wrapper"
     }
 
+    if (titlestyle === 'heise') {
+        titleWrapperStyle = "title-wrapper-style-heise";
+        titleHeadlineStyle = 'title-headline-style-heise';
+        titleTextStyle = 'title-text-style-heise';
+    }
+
     return (
-    <div className="title-wrapper-style">
+    <div className={titleWrapperStyle}>
 
       <div className="row">
 
@@ -43,7 +50,7 @@ const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink
           }
 
         <h1 className={titleHeadlineStyle} dangerouslySetInnerHTML={{__html: headline}}></h1>
-        <h2 className={titleTextStyle}>{text}</h2>
+        <h2 className={titleTextStyle} dangerouslySetInnerHTML={{__html: text}}></h2>
           {buttonstyle ?
               <div className={buttonWrapperStyle}>
                   <Button

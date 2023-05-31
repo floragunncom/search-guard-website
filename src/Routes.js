@@ -55,7 +55,6 @@ const Routes = () => {
           <Route exact path="/heise" component={Heise} />
 
           <Route exact path="/search-guard-flx/" component={FlxLandingPage} />
-          <Route exact path="/contacts1/" component={ContactUs} />
           <Route exact path="/contacts/" component={ContactUs} />
           <Route exact path="/security/" component={Security} />
           <Route exact path="/alerting/" component={Alerting} />

@@ -8,7 +8,7 @@ import academic from '../../images/icon-academic.svg';
 import custom from '../../images/icon-custom.svg';
 import Button from '../Button/Button';
 
-const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
+const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline }) => {
   const [standardButton, setStandardButton] = useState(true);
   const [tableVisible, setTableVisible] = useState(false);
 
@@ -61,7 +61,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
               </h3>
               <div className="licensing-editions-text-wrapper">
                 <div className="licensing-editions-text">
-                  Covers all your basic security needs
+                  Covers all your basic Security and Alerting needs
                 </div>
                 <div className="licensing-editions-text">Free of charge</div>
                 <div className="licensing-editions-text">
@@ -266,7 +266,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
     <div>
       <div
         className={
-          tableView ? 'licensing-wrapper-expanded' : 'licensing-wrapper'
+          tableView ? 'licensing-wrapper-expanded' : plain ? '' : 'licensing-wrapper'
         }
         id="standard"
       >
