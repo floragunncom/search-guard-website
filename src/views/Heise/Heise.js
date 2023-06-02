@@ -5,25 +5,18 @@ import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import './Heise.scss';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnlyNoNL";
-import Labels from "../../components/SecurityForElasticsearch/Labels";
 import certificate from "../../images/icon-certificate.svg";
 import shieldWheel from "../../images/shield-wheel.svg";
 import check from "../../images/icon-check.svg";
 import scale from "../../images/scale_your_cluster.svg";
-import TableEditions from "../../components/SecurityForElasticsearch/TableEditions";
 import LicensingModel from "../../components/LicensingModel/LicensingModel";
-
-const breadcrumb = [
-    { anchor: '/', name: 'Home' },
-    { anchor: '/search-guard-free-trial/', name: 'Start free trial' }
-];
 
 const Heise = () => {
     return (
         <PageWrapper>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Start your free Search Guard Trial now</title>
+                <title>Search Guard reduces your TCO of Elasticsearch and Kibana</title>
                 <link rel="canonical" href="https://search-guard.com/elasticsearch-reduce-cost/" />
                 <meta
                     name="description"
@@ -31,7 +24,7 @@ const Heise = () => {
                 />
             </Helmet>
             <Title
-                headline="Scale your cluster,<br/> not your cost"
+                headline="Scale your cluster,<br/> not your cost."
                 titlestyle="heise"
             />
 
