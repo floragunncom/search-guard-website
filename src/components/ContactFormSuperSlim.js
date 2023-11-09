@@ -79,15 +79,6 @@ const ContactForm = () => {
                 </a>
             </p>
             <p className="company-information-text">
-                <b>Austria and Switzerland</b>
-                <br />
-                clever data GmbH
-                <br /> Danhausergasse 9/Top 3
-                <br /> 1040 Vienna
-                <br />
-                <a href="mailto:office@cleverdata.at">office@cleverdata.at</a>
-            </p>
-            <p className="company-information-text">
                 <b>France & North Africa</b>
                 <br />
                 Ian Quakenbos

@@ -52,22 +52,6 @@ const Partners = () => {
       <div className="row">
         <div className="company-partners-pic-wrapper">
           <div className="col s12 m4 offset-m2 company-partners-pic hide-on-small-only">
-            <a href="https://www.cleverdata.at/">
-              <img
-                src={cleverdataPartner}
-                alt="Search Guard Partner Cleverdata"
-              />{' '}
-            </a>
-          </div>
-          <div className="col s12 m4 offset-m2 company-partners-pic-mobile hide-on-med-and-up">
-            <a href="https://www.cleverdata.at/">
-              <img
-                src={cleverdataPartnerMobile}
-                alt="Search Guard Partner Cleverdata"
-              />{' '}
-            </a>
-          </div>
-          <div className="col s12 m4 company-partners-pic hide-on-small-only">
             <a href="https://www.fgts.ru/">
               <img
                 src={factorgroupPartner}
@@ -75,7 +59,7 @@ const Partners = () => {
               />{' '}
             </a>
           </div>
-          <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
+          <div className="col s12 m4 offset-m2 company-partners-pic-mobile hide-on-med-and-up">
             <a href="https://www.fgts.ru/">
               <img
                 src={factorgroupPartnerMobile}
