@@ -4,11 +4,36 @@ import './Journey.scss';
 const Journey = () => {
   const timelineContent = [
     {
+      year: 2024,
+      events: [
+        {
+          headline: 'January',
+          text: 'Search Guard FLX 1.5.0 released'
+        },
+      ],
+    },
+    {
       year: 2023,
       events: [
         {
+          headline: 'December',
+          text: 'We conclude a year of growth, new team additions and a lot of releases and improvements. '
+        },
+        {
+          headline: 'October',
+          text: 'Our company offsite brings together the complete Search Guard team from Europe, USA and Latin America'
+        },
+        {
+          headline: 'August',
+          text: 'Search Guard FLX 1.3.0 released which brings new Audit Logging features'
+        },
+        {
+          headline: 'June',
+          text: 'Search Guard FLX 1.2.0 released with a lot of Signals improvements and features'
+        },
+        {
           headline: 'February',
-          text: 'Search Guard for Elasticsearch 8.6.x released'
+          text: 'Search Guard FLX 1.1.1 for Elasticsearch 8.6.x released'
         },
       ],
     },
