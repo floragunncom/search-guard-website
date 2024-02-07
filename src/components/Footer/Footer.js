@@ -206,6 +206,10 @@ const Footer = ({ landing }) => {
             <NavLink to="/heise/" className="footer-links">
               Lower your TCO
             </NavLink>
+            <NavLink to="/outdated-elasticsearch-versions-suppport/" className="footer-links">
+              Older Versions Support
+            </NavLink>
+
           </p>
         </div>
       </div>
