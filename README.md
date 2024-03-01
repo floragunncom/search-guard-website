@@ -13,6 +13,7 @@ This repo contains the source code for the Search Guard website owned by Floragu
 1. Clone the repo
 2. `npm install`
 3. `npm start`
+4. Go to localhost:3000
 
 ## Deployment ##
 The website is hosted on [Heroku](https://herokuapp.com/), if you have admin rights you can push with
