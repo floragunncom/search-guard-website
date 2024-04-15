@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 import { Helmet } from 'react-helmet';
-import { CSSTransition } from 'react-transition-group';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import Button from '../../components/Button/Button';
-import DropDown from '../../components/DropDown/DropDown';
 import './TlsGenerator.scss';
 
 const TlsGenerator = () => {

@@ -1,4 +1,6 @@
 import React from 'react';
+import eliatra from '../../images/eliatra.svg';
+import eliatraMobile from '../../images/eliatra-mobile.svg';
 import excelerate from '../../images/ref2.svg';
 import excelerateMobile from '../../images/excelerate-mobile.svg';
 import sirenPartnerMobile from '../../images/siren-mobile.svg';
@@ -44,26 +46,6 @@ const Partners = () => {
               <img
                 src={sirenPartnerMobile}
                 alt="Search Guard Partner Siren Solutions"
-              />{' '}
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="row">
-        <div className="company-partners-pic-wrapper">
-          <div className="col s12 m4 offset-m2 company-partners-pic hide-on-small-only">
-            <a href="https://www.fgts.ru/">
-              <img
-                src={factorgroupPartner}
-                alt="Search Guard Partner Factor Group"
-              />{' '}
-            </a>
-          </div>
-          <div className="col s12 m4 offset-m2 company-partners-pic-mobile hide-on-med-and-up">
-            <a href="https://www.fgts.ru/">
-              <img
-                src={factorgroupPartnerMobile}
-                alt="Search Guard Partner Factor Group"
               />{' '}
             </a>
           </div>

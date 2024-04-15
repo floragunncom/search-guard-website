@@ -1,5 +1,8 @@
 import React from 'react';
 import './Journey.scss';
+import M from 'materialize-css';
+import { useRef } from "react";
+
 
 const Journey = () => {
   const timelineContent = [
@@ -313,6 +316,35 @@ const Journey = () => {
     },
   ];
 
+  const documentRef = useRef(document); // document here is window.document
+  documentRef.current.addEventListener("DOMContentLoaded", () => {
+
+    var elements = document.querySelectorAll('.collapse-header');
+
+    elements.forEach((element) => {
+      element.addEventListener('click', () => {
+        var collapseBody = element.nextSibling
+        var icon = element.querySelector("#icon")
+        if (collapseBody.classList.contains("hidden")) {
+          // up and down arrow
+          icon.innerHTML = "keyboard_arrow_down";
+          collapseBody.classList.remove("hidden");
+          setTimeout(() => {
+            collapseBody.classList.add("fadein");
+            collapseBody.classList.remove("hidden");
+          }, "100");
+        } else {
+          // up and down arrow
+          icon.innerHTML = "keyboard_arrow_up";
+          collapseBody.classList.remove("fadein");
+          setTimeout(() => {
+            collapseBody.classList.add("hidden");
+          }, "200");
+        }
+      });
+    });
+  });
+
   return (
     <div className="journey-wrapper" id="journey">
       <div className="row">
@@ -320,14 +352,14 @@ const Journey = () => {
         <div className="journey-timeline-wrapper">
           <section className="timeline">
             <ul>
-              {timelineContent.map(event => {
+              {timelineContent.map((event, index) => {
                 return (
                   <li>
                     <div className="content no-hide">
-                      <h2>
-                        <time>{event.year}</time>
+                      <h2 className="collapse-header">
+                        <time>{event.year}</time><i id="icon" className="material-icons">{`${index > 1 ? "keyboard_arrow_up" : "keyboard_arrow_down"}`}</i>
                       </h2>
-                      <p>
+                      <p className={`details ${index > 1 ? "hidden" : "show fadein"}`}>
                         {event.events.map(content => {
                           return (
                             <div>

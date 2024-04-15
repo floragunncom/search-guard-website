@@ -179,3 +179,29 @@
     }
   }
 }
+
+.collapse-header {
+ cursor: pointer;
+}
+
+.details {
+  opacity: 0;
+  transition: opacity 250ms ease-in-out;
+}
+
+.details.fadein {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+
+.updown {
+
+  &:nth-child(odd) {
+    left: -38px;
+  }
+
+  &:nth-child(even) {
+    left: 38px;
+  }
+
+}

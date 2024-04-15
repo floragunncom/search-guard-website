@@ -23,13 +23,6 @@ const OldElasticsearchVersions = () => {
     PageView();
   }, []);
 
-  const anchors = [
-    { id: v4(), anchor: 'concept', name: 'what it is' },
-    { id: v4(), anchor: 'connectors', name: 'connectors' },
-    { id: v4(), anchor: 'escalationmodel', name: 'escalation model' },
-    { id: v4(), anchor: 'tryit', name: 'Try it' },
-  ];
-
     const breadcrumb = [
         { id: 1, anchor: '/', name: 'Home' },
         { id: 1, anchor: '/outdated-elasticsearch-versions-suppport/', name: 'Outdated Elasticsearch Versions Support' },

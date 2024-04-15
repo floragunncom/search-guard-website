@@ -10,7 +10,6 @@ import Cta from '../../components/Cta/Cta';
 import Faq from '../../components/Faq/Faq';
 import Video from '../../components/Video/Video';
 import BlogBox from '../../components/BlogBox/BlogBox';
-import PressTeaser from '../../components/Press/PressTeaser';
 import envelope from '../../images/icon-envelope.svg';
 import iconNote from '../../images/icon-note.svg';
 import iconPeople from '../../images/icon-people.svg';

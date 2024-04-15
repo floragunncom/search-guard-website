@@ -7,8 +7,8 @@ const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink
     let titleWrapperStyle = "title-wrapper-style";
     let titleHeadlineStyle = "title-headline-style";
     let titleTextStyle = "title-text-style";
-    let breadcrumbStyle = "title-text-style";
-    let breadcrumbItemStyle = "title-breadcrumb-item";
+    // let breadcrumbStyle = "title-text-style";
+    // let breadcrumbItemStyle = "title-breadcrumb-item";
     let buttonWrapperStyle="col s4 offset-s4 title-button-wrapper"
 
     if (titlestyle === 'flx') {
@@ -33,7 +33,7 @@ const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink
                   {
 
                       breadcrumb.map((item, i) => {
-                            const separator = (i == breadcrumb.length - 1? "" : " >")
+                            const separator = (i === breadcrumb.length - 1? "" : " >")
                           return (
                               <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                                   <a itemProp="item" href={item.anchor} className="title-breadcrumb-item">

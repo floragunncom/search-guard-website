@@ -30,7 +30,7 @@ const Labels = () => {
             <div className="securityinfo-content">
               Our customers enjoy priority support with guaranteed service-level agreements and direct access to the Search Guard developer team.
               Custom plans that include 24/7 coverage and  Elastic Stack support are available for maximum peace of mind.
-              Get connected today on our active  <a href="https://forum.search-guard.com" target="_blank" rel="noopener nofollow">Community Forum</a>!
+              Get connected today on our active  <a href="https://forum.search-guard.com" target="_blank" rel="noopener noreferrer">Community Forum</a>!
             </div>
           </div>
         </div>

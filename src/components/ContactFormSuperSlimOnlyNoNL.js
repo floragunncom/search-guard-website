@@ -5,12 +5,7 @@ import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
 
-    const [newsletterValue, setNewsletterValue,] = useState(false);
     const [sendbuttonValue, setSendbuttonValue] = useState("send message");
-
-    function changeNewsletterValue() {
-        setNewsletterValue(!newsletterValue);
-    }
 
     async function handleSubmit(formElements) {
         const data = {};

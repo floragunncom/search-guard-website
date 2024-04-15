@@ -3,7 +3,9 @@ import claudia from '../../images/claudia.svg';
 import jochen from '../../images/jochen.svg';
 import hendrik from '../../images/hendrik.svg';
 import mechthild from '../../images/mechthild.svg';
-import thomas from '../../images/thomas.svg';
+import anja from '../../images/anja.svg';
+import bud from '../../images/bud.svg'
+
 import iconIn from '../../images/icon-in-loud.svg';
 import './Team.scss';
 
@@ -26,6 +28,11 @@ const Team = () => {
       pic: mechthild,
       link: ''
     },
+    { name: 'Anja Glauch',
+      position: 'CMO',
+      pic: anja,
+      link: 'https://www.linkedin.com/in/anjaglauch/'
+    }
   ];
 
   return (
