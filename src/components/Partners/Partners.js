@@ -17,7 +17,23 @@ const Partners = () => {
       <div className="row">
         <div className="company-partners-headline">Partners</div>
         <div className="company-partners-pic-wrapper">
-          <div className="col s12 m4 offset-m2 company-partners-pic hide-on-small-only">
+          <div className="col s12 m4 company-partners-pic hide-on-small-only">
+            <a href="https://eliatra.com/">
+              <img
+                  src={eliatra}
+                  alt="Eliatra - The OpenSearch Experts"
+              />{' '}
+            </a>
+          </div>
+          <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
+            <a href="https://eliatra.com/">
+              <img
+                  src={eliatraMobile}
+                  alt="Eliatra - The OpenSearch Experts"
+              />{' '}
+            </a>
+          </div>
+          <div className="col s12 m4 company-partners-pic hide-on-small-only">
             <a href="https://www.exceleratesystems.com/">
               <img
                 src={excelerate}
@@ -25,7 +41,7 @@ const Partners = () => {
               />{' '}
             </a>
           </div>
-          <div className="col s12 m4 offset-m2 company-partners-pic-mobile hide-on-med-and-up">
+          <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
             <a href="https://www.exceleratesystems.com/">
               <img
                 src={excelerateMobile}
