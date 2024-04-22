@@ -84,7 +84,7 @@ const Footer = ({ landing }) => {
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/resource/">resource hub</NavLink>
+                  <NavLink to="/resource/">resources</NavLink>
                 </div>
                 <div className="footer-list-item">
                   <a

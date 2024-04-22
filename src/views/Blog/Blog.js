@@ -15,7 +15,7 @@ const Blog = () => {
 
   const breadcrumb = [
     { anchor: '/', name: 'Home' },
-    { anchor: '/resource/', name: 'Resource Hub' },
+    { anchor: '/resource/', name: 'Resources' },
     { anchor: '/blog/', name: 'Blog' },
   ];
 
@@ -224,7 +224,6 @@ const Blog = () => {
       <Title headline="Blog" breadcrumb={breadcrumb}/>
       <div className="row">
         {searchBar}
-        {categories}
         {renderPosts}
         {renderSearchResultPosts}
       </div>

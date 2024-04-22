@@ -24,13 +24,6 @@ const Alerting = () => {
     PageView();
   }, []);
 
-  const anchors = [
-    { id: v4(), anchor: 'concept', name: 'what it is' },
-    { id: v4(), anchor: 'connectors', name: 'connectors' },
-    { id: v4(), anchor: 'escalationmodel', name: 'escalation model' },
-    { id: v4(), anchor: 'tryit', name: 'Try it' },
-  ];
-
     const breadcrumb = [
         { id: 1, anchor: '/', name: 'Home' },
         { id: 1, anchor: '/alerting/', name: 'Alerting' },
@@ -54,7 +47,6 @@ const Alerting = () => {
         text="Signals Alerting for Elasticsearch and Kibana detects data anomalies in your Elasticsearch cluster and sends notifications on various channels. Fully integrated with Search Guard Security. For free."
         breadcrumb={breadcrumb}
       />
-      <AnchorNavBar anchors={anchors} />
       <div id="concept">
         <TileSimple
           icon={alertingAnomalies}

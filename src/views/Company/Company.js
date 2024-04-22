@@ -13,11 +13,6 @@ import News from '../../components/News/News';
 import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 
 const Company = () => {
-  const anchors = [
-    { id: v4(), anchor: 'team', name: 'management team' },
-    { id: v4(), anchor: 'partners', name: 'partners' },
-    { id: v4(), anchor: 'journey', name: 'journey' },
-  ];
 
     const breadcrumb = [
         { id: 1, anchor: '/', name: 'Home' },
@@ -40,7 +35,6 @@ const Company = () => {
         text="We shape IT security and Open Source business models since 2013."
         breadcrumb={breadcrumb}
       />
-      <AnchorNavBar anchors={anchors} />
       <Team />
       <Partners />
       <Journey />

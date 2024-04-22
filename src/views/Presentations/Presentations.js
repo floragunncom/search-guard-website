@@ -8,7 +8,7 @@ import pdf from '../../images/pdf-download.svg';
 
 const breadcrumb = [
   { anchor: '/', name: 'Home' },
-  { anchor: '/resource/', name: 'Resource Hub' },
+  { anchor: '/resource/', name: 'Resources' },
   { anchor: '/presentations/', name: 'Presentations' },
 ];
 
@@ -103,6 +103,7 @@ const Presentations = () => {
       <Title
         headline="Presentations"
         text="Search Guard slide decks regarding various topics around security and alerting for Elasticsearch"
+        breadcrumb={breadcrumb}
       />
       <div className="row presentations-wrapper">
         {presentations.map(item => {

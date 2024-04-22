@@ -30,13 +30,6 @@ const Compliance = () => {
     PageView();
   }, []);
 
-  const anchors = [
-    { id: v4(), anchor: 'concept', name: 'what it is' },
-    { id: v4(), anchor: 'features', name: 'features' },
-    { id: v4(), anchor: 'highlights', name: 'highlights' },
-    { id: v4(), anchor: 'contact', name: 'contact us' },
-  ];
-
   return (
       <PageWrapper>
       <Helmet>
@@ -55,8 +48,6 @@ const Compliance = () => {
         text="Keep Elasticsearch and Kibana compliant with regulations like GDPR, PCI, SOX, HIPAA and ISO"
         breadcrumb={breadcrumb}
       />
-      <AnchorNavBar anchors={anchors} />
-
 
           <div className="compliance-wrapper" id="concept">
 

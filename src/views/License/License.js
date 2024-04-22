@@ -20,12 +20,6 @@ const License = () => {
     PageView();
   }, []);
 
-  const anchors = [
-    { id: v4(), anchor: 'standard', name: 'standard editions' },
-    { id: v4(), anchor: 'feature', name: 'feature breakdown' },
-    { id: v4(), anchor: 'academic', name: 'Academic and Custom editions' },
-  ];
-
   const breadcrumb = [
       { id: 1, anchor: '/', name: 'Home' },
       { id: 1, anchor: '/licensing/', name: 'Licensing' },
@@ -36,7 +30,7 @@ const License = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Licensing | Search Guard Community, Enterprise and Compliance Edition
+          Pricing | Search Guard Community, Enterprise and Compliance Edition
         </title>
         <link rel="canonical" href="https://search-guard.com/licensing/" />
         <meta
@@ -45,11 +39,10 @@ const License = () => {
         />
       </Helmet>
       <Title
-        headline="licensing model"
-        text="Unlimited nodes licensing for all security and alerting features. Scale your cluster, not your cost!"
+        headline="Pricing"
+        text="Unlimited nodes licensing for all Security and Alerting features. Scale your cluster, not your cost!"
         breadcrumb={breadcrumb}
       />
-      <AnchorNavBar anchors={anchors} />
       <LicensingModel
         headline="Search Guard Editions"
         topButtons={false}

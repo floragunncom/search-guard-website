@@ -21,18 +21,10 @@ import iconFolder from '../../images/icon-folder.svg';
 import iconDownload from '../../images/icon-download.svg';
 
 const Resource = () => {
-  const anchors = [
-    { id: v4(), anchor: 'faq', name: 'faq' },
-    { id: v4(), anchor: 'git', name: 'gitlab' },
-    { id: v4(), anchor: 'git', name: 'tls certificates' },
-    { id: v4(), anchor: 'blog', name: 'blog' },
-    { id: v4(), anchor: 'whitePapers', name: 'Presentations & white papers' },
-    { id: v4(), anchor: 'videos', name: 'videos' }
-  ];
 
     const breadcrumb = [
         { id: 1, anchor: '/', name: 'Home' },
-        { id: 1, anchor: '/resource/', name: 'Resource Hub' },
+        { id: 1, anchor: '/resource/', name: 'Resources' },
     ];
 
   return (
@@ -50,11 +42,10 @@ const Resource = () => {
         />
       </Helmet>
       <Title
-        headline="resource hub"
+        headline="resources"
         text="Search Guard resource hub including blog posts, faq, documentation, presentations and whitepapers."
         breadcrumb={breadcrumb}
       />
-      <AnchorNavBar anchors={anchors} />
       <Card
         bgLeftDark={false}
         iconLeft={iconFolder}

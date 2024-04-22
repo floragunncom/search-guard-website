@@ -21,13 +21,6 @@ const Security = () => {
     PageView();
   }, []);
 
-  const anchors = [
-    { id: v4(), anchor: 'concept', name: 'what it is' },
-    { id: v4(), anchor: 'integrators', name: 'integrators' },
-    { id: v4(), anchor: 'certified', name: 'certified' },
-    { id: v4(), anchor: 'quote', name: 'get a quote' },
-  ];
-
     const breadcrumb = [
         { id: 1, anchor: '/', name: 'Home' },
         { id: 1, anchor: '/security/', name: 'Security' },
@@ -51,7 +44,7 @@ const Security = () => {
         text="Pioneering the way forward in security, our technology is engineered to ensure a safe environment around your Elastic Stack - safeguarding data and granting peace of mind."
         breadcrumb={breadcrumb}
       />
-      <AnchorNavBar anchors={anchors} />
+
       <div id="concept">
         <TileSimple
           icon={fileCode}

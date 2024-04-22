@@ -10,7 +10,7 @@ import './Faqs.scss';
 
 const breadcrumb = [
   { anchor: '/', name: 'Home' },
-  { anchor: '/resource/', name: 'Resource Hub' },
+  { anchor: '/resource/', name: 'Resources' },
   { anchor: '/faq/', name: 'FAQ' },
 ];
 

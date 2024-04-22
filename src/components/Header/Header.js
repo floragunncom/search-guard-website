@@ -39,27 +39,41 @@ const Header = ({ background = '#246E94', landing }) => {
         >
             {landing ? '' : 'alerting'}
         </NavLink>
-      <NavLink
-        to="/licensing/"
-        className="header__navbar--item"
-        activeStyle={style.active}
-      >
-        {landing ? '' : 'licensing'}
-      </NavLink>
+        <NavLink
+            to="/licensing/"
+            className="header__navbar--item"
+            activeStyle={style.active}
+        >
+            {landing ? '' : 'pricing'}
+        </NavLink>
+        <NavLink
+            to="/search-guard-free-trial/"
+            className="header__navbar--item"
+            activeStyle={style.active}
+        >
+            {landing ? '' : 'download'}
+        </NavLink>
+        <NavLink
+            to="/blog/"
+            className="header__navbar--item"
+            activeStyle={style.active}
+        >
+            {landing ? '' : 'blog'}
+        </NavLink>
       <NavLink
         to="/resource/"
         className="header__navbar--item"
         activeStyle={style.active}
       >
-        {landing ? '' : 'resource hub'}
+        {landing ? '' : 'resources'}
       </NavLink>
-      <NavLink
-        to="/company/"
-        className="header__navbar--item"
-        activeStyle={style.active}
-      >
-        {landing ? '' : 'company'}
-      </NavLink>
+        <NavLink
+            to="/company/"
+            className="header__navbar--item"
+            activeStyle={style.active}
+        >
+            {landing ? '' : 'about'}
+        </NavLink>
       <NavLink
         to={landing ? '/search-guard-free-trial/' : '/contacts/'}
         className="header__navbar--item"
@@ -88,15 +102,6 @@ const Header = ({ background = '#246E94', landing }) => {
   return (
     <>
       <Headroom disableInlineStyles={showMenu ? true : false}>
-
-          {!location.pathname.includes("/search-guard-flx/") &&
-              <a href="/search-guard-flx/">
-                  <div className="header__announcement">
-                      Discover Search Guard FLX – Security Better Than Ever <img src={arrow} className="header__announcementArrow" />
-                  </div>
-              </a>
-          }
-
         <div style={{ backgroundColor: background }}>
           <div className="row">
             {showMenu && menu}
