@@ -23,6 +23,12 @@ const Team = () => {
       pic: jochen,
       link: 'https://www.linkedin.com/in/jkressin/',
     },
+    {
+      name: 'Hendrik Saly',
+      position: 'Co-Founder',
+      pic: hendrik,
+      link: 'https://www.linkedin.com/in/salyh/',
+    },
     { name: 'Mechthild Wetekam',
       position: 'COO',
       pic: mechthild,
