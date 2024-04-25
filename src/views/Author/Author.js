@@ -217,7 +217,7 @@ const Author = ({ match }) => {
       "dateModified": "${person.sys.updatedAt}",
       "mainEntity": {
         "@type": "Person",
-        "name": "${person.fields.firstName} ${person.fields.lastName}"
+        "name": "${person.fields.firstName} ${person.fields.lastName}",
         "identifier": "${person.sys.id}",
         "description": "${person.fields.htmlDescription}",
         "image": "${person.fields.avatar.fields.file.url}"
