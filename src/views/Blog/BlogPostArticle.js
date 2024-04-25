@@ -299,7 +299,8 @@ const BlogPostArticle = ({ match }) => {
             "image": "${postContent.fields.postImage.fields.file.url}",
             "author": {
                "@type": "Person",
-               "name": "${postContent.fields.author}"
+               "name": "${postContent.fields.author}",
+               "url": "https://search-guard.com/author/${postContent.fields.slug}/"
             },
             "datePublished": "${postContent.fields.date}",
             "dateModified": "${postContent.sys.updatedAt}",

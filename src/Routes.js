@@ -104,6 +104,8 @@ const Routes = () => {
             component={TlsGenerator}
           />
 
+          <Route exact path="/author/:slug" component={Author} />
+
           <Route exact path="/certificates/" component={Certifications} />
           <Route exact path="/category/:slug" component={BlogCategory} />
           <Route exact path="/blog/" component={Blog} />
@@ -111,7 +113,7 @@ const Routes = () => {
 
           <Route exact path="/whitepapers/:slug" component={WhitePaperArticle} />
 
-          <Route exact path="/author/:slug" component={Author} />
+
 
           <Route exact path="/press/de/search-guard-vertrieb-dach/" component={PressDEDach} />
           <Route exact path="/press/en/search-guard-sales-dach/" component={PressENDach} />

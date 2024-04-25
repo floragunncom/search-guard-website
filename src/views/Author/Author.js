@@ -6,23 +6,10 @@ import  { Redirect } from 'react-router-dom'
 import { Helmet } from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Markdown from 'markdown-to-jsx';
-import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import BlogBox from '../../components/BlogBox/BlogBox';
 import Blockquote from '../../components/Blockquote/Blockquote';
-import infoArrowBack from '../../images/info-arrow-back.svg';
-import iconTwitter from '../../images/icon-tw-loud.svg';
-import iconY from '../../images/icon-y-loud.svg';
-import iconIn from '../../images/icon-in-loud.svg';
-import iconFb from '../../images/icon-fb-loud.svg';
-import sgLogo from '../../images/sg_dlic_small.png';
-import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
-import Button from "../../components/Button/Button";
 import Title from "../../components/Title/Title";
 import BlogPostSmall from "../../components/BlogPost/BlogPostSmall";
-import allPosts from "../../Api/contentfulPosts.json";
-import BlogPost from "../../components/BlogPost/BlogPost";
-
 const Author = ({ match }) => {
 
   const slug = match.url.split("/")[2] + "/";
