@@ -1,6 +1,92 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
+.authors-wrapper {
+  padding-top: 64px;
+}
+
+.authors-headline {
+  color: $darkBlue;
+  font-size: 32px;
+  line-height: 30px;
+  text-align: left;
+  letter-spacing: 0.8px;
+  margin-bottom: 16px;
+  @media only screen and (max-width: $mobile) {
+    margin: 16px 0px;
+    font-size: 24px;
+  }
+}
+
+.authors-bio-headline {
+  @extend .authors-headline;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.authors-bio-content {
+  @media only screen and (max-width: $mobile) {
+    margin: 32px 0px;
+  }
+}
+
+.authors-position {
+  @extend .authors-headline;
+  font-size: 24px;
+  @media only screen and (max-width: $mobile) {
+    margin: 16px 0px;
+    font-size: 18px;
+  }
+}
+
+.authors-description {
+  @extend .authors-headline;
+  font-size: 18px;
+  line-height: 24px;
+  @media only screen and (max-width: $mobile) {
+    margin: 16px 0px;
+    font-size: 14px;
+  }
+}
+
+.authors-profiles {
+  @extend .authors-headline;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  text-decoration: underline;
+  @media only screen and (max-width: $mobile) {
+    margin: 16px 0px;
+    font-size: 14px;
+  }
+  a {
+    cursor: pointer !important;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.authors-pic {
+  margin-right: 32px;
+  display: flex;
+  justify-content: left;
+  @media only screen and (max-width: $mobile) {
+    margin-right: 0px;
+    justify-content: center;
+  }
+}
+
+.authors-posts-wrapper {
+  max-width: 1180px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+
+
 .flex-center {
   justify-content: center;
   justify-items: center;
@@ -9,17 +95,6 @@
 
 .row.blogpostarticle-wrapper {
   padding: 0 12px;
-}
-
-.row.blogpostarticle-author {
-  margin-top: 32px;
-  font-size: 18px;
-  font-weight: 300;
-
-}
-
-.blogpostarticle-avatar {
-  border-radius: 50%;
 }
 
 .blogpostarticle-headline1 {

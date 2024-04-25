@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './BlogTitle.scss';
 import posts from '../../Api/contentfulPosts';
+import BlogPostSmall from "../BlogPost/BlogPostSmall";
 
-const Title = ({ text, subText, tags, link }) => {
+const Title = ({ text, subText, tags, link, authorProfile }) => {
   const renderTags = (
     <div className="blogtitle-sub-text">
       Tags:{' '}
@@ -69,8 +70,7 @@ const Title = ({ text, subText, tags, link }) => {
         </div>
       </div>
       <div className="blogtitle-subtext-container">
-        <div className="blogtitle-sub-text">{subText}</div>
-        {renderTags}
+          {renderTags}
       </div>
     </div>
   );

@@ -1,0 +1,109 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.blogpost-small-wrapper {
+  display: flex;
+  flex: 1 1 250px;
+  flex-direction: column;
+  margin: 32px 16px;
+  padding-bottom: 32px;
+  background-color: $lightGrey;
+  max-width: 500px;
+
+  @media only screen and (max-width: $tabletBig) {
+    max-width: 100%;
+  }
+
+}
+
+.blogpost-small-image-wrapper {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+
+  @media only screen and (max-width: $tabletBig) {
+    height: 200px;
+  }
+
+  &:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+}
+
+img.blogpost-feed-image {
+  margin: auto;
+  max-height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+
+  &:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+  }
+
+  @media only screen and (max-width: $tabletBig) {
+    // width: 100%;
+    // max-height: auto;
+    object-fit: scale-down;
+  }
+}
+
+.blogpost-headline {
+  padding: 32px 32px 0 32px;
+  color: $navyBlueActive;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: bold;
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+;
+}
+
+.blogpost-info-headline {
+  padding: 0 32px;
+  color: $navyBlueActive;
+  font-size: 12px;
+  line-height: 32px;
+  letter-spacing: 3.3px;
+}
+
+.blogpost-paragraph {
+  color: $navyBlueActive;
+  padding: 0 32px;
+  margin-bottom: 36px;
+  font-size: 18px;
+  line-height: 27px;
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+;
+}
+
+.blogpost-info-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: $backButton;
+  padding-right: 32px;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+.blogpost-arrow {
+  margin-left: 8px;
+}

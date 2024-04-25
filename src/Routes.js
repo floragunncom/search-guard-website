@@ -17,6 +17,7 @@ import License from './views/License/License';
 import Imprint from './views/Imprint/Imprint';
 import WhitePapers from './views/WhitePapers/WhitePapers';
 import WhitePaperArticle from './views/WhitePapers/WhitePaperArticle';
+import Author from './views/Author/Author';
 import Presentations from './views/Presentations/Presentations';
 import DataProtection from './views/DataProtection/DataProtection';
 import SecurityInformation from './views/SecurityInformation/SecurityInformation';
@@ -109,6 +110,9 @@ const Routes = () => {
           <Route exact path="/blog/page/:slug" component={Blog} />
 
           <Route exact path="/whitepapers/:slug" component={WhitePaperArticle} />
+
+          <Route exact path="/author/:slug" component={Author} />
+
           <Route exact path="/press/de/search-guard-vertrieb-dach/" component={PressDEDach} />
           <Route exact path="/press/en/search-guard-sales-dach/" component={PressENDach} />
 

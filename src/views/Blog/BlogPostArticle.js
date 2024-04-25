@@ -103,6 +103,41 @@ const BlogPostArticle = ({ match }) => {
   if (!postContent) {
     return (<Redirect to="/404/" />);
   }
+
+  let authorProfile = postContent.fields.authorProfile;
+  let renderAuthor;
+
+  if (
+      authorProfile
+  ) {
+    renderAuthor = (
+        <>
+          <div className="row">
+            <div className="col">
+              <a href={`/author/${authorProfile.fields.slug}`}>
+                <img src={`https:${authorProfile.fields.avatar.fields.file.url}?w=80&fit=scale`}
+                     alt="{authorProfile.fields.avatar.fields.title}"
+                     className="blogpostarticle-avatar"/>
+              </a>
+            </div>
+            <div className="col">
+                <span className="blogpostarticle-authorname">
+                  By&nbsp;
+                  <a href={`/author/${authorProfile.fields.slug}`}>
+                      <b>{authorProfile.fields.firstName} {authorProfile.fields.lastName}</b>
+                    </a>
+                </span>
+              <div>{authorProfile.fields.position}</div>
+            </div>
+          </div>
+        </>
+    );
+  } else {
+    renderAuthor = (
+        <div className="blogpostarticle-authorname">By <b>{postContent.fields.author}</b></div>
+    )
+  };
+
   return (
     <PageWrapper>
       <Helmet>
@@ -138,7 +173,14 @@ const BlogPostArticle = ({ match }) => {
         subText={`${postContent.fields.author} `}
         tags={postContent.fields.tags}
         link={postContent.fields.slug}
+        authorProfile={postContent.fields.authorProfile}
       />
+      <div className="row blogpostarticle-wrapper blogpostarticle-author">
+        <div className="col s12 offset-l2 l8">
+          {renderAuthor}
+        </div>
+      </div>
+
       <div className="row blogpostarticle-wrapper">
         <div className="col s12 offset-l2 l8">
           <Markdown options={options}>
