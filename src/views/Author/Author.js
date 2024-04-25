@@ -136,7 +136,7 @@ const Author = ({ match }) => {
         <title>{person.fields.firstName} {person.fields.lastName}</title>
         <link
           rel="canonical"
-          href={`https://search-guard.com/author/${person.fields.slug}`}
+          href={`https://search-guard.com/authors/${person.fields.slug}`}
         />
 
         <meta name="description" content={person.fields.htmlDescription} />

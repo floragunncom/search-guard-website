@@ -114,7 +114,7 @@ const BlogPostArticle = ({ match }) => {
         <>
           <div className="row">
             <div className="col">
-              <a href={`/author/${authorProfile.fields.slug}`}>
+              <a href={`/authors/${authorProfile.fields.slug}`}>
                 <img src={`https:${authorProfile.fields.avatar.fields.file.url}?w=80&fit=scale`}
                      alt="{authorProfile.fields.avatar.fields.title}"
                      className="blogpostarticle-avatar"/>
@@ -123,7 +123,7 @@ const BlogPostArticle = ({ match }) => {
             <div className="col">
                 <span className="blogpostarticle-authorname">
                   By&nbsp;
-                  <a href={`/author/${authorProfile.fields.slug}`}>
+                  <a href={`/authors/${authorProfile.fields.slug}`}>
                       <b>{authorProfile.fields.firstName} {authorProfile.fields.lastName}</b>
                     </a>
                 </span>
@@ -300,7 +300,7 @@ const BlogPostArticle = ({ match }) => {
             "author": {
                "@type": "Person",
                "name": "${postContent.fields.author}",
-               "url": "https://search-guard.com/author/${postContent.fields.slug}/"
+               "url": "https://search-guard.com/authors/${postContent.fields.slug}/"
             },
             "datePublished": "${postContent.fields.date}",
             "dateModified": "${postContent.sys.updatedAt}",

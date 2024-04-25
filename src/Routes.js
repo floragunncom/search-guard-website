@@ -104,7 +104,7 @@ const Routes = () => {
             component={TlsGenerator}
           />
 
-          <Route exact path="/author/:slug" component={Author} />
+          <Route exact path="/authors/:slug" component={Author} />
 
           <Route exact path="/certificates/" component={Certifications} />
           <Route exact path="/category/:slug" component={BlogCategory} />

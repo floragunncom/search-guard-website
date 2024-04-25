@@ -36,7 +36,6 @@ const options = {
     { source: '/no-nonsense-it', destination: '/company/' },
     { source: '/search-guard-customers', destination: '/company/' },
     { source: '/*.zip', destination: '/' },
-    { source: '/author/**/:id', destination: '/blog/' },
     { source: '/tag/**/:id', destination: '/blog/' },
     { source: '/oxy_testimonial/arno-has', destination: '/' },
     { source: '/oxy_testimonial/yasvanth-babu', destination: '/' },
