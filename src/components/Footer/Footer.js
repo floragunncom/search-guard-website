@@ -4,6 +4,9 @@ import './Footer.scss';
 import RichSnippetCompany from '../RichSnippets/RichSnippetCompany';
 
 const Footer = ({ landing }) => {
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="footer-container">
       <div className="footer-wrapper">
@@ -194,7 +197,7 @@ const Footer = ({ landing }) => {
           className="footer-text"
           style={landing ? { paddingTop: '64px' } : null}
         >
-          <p>© 2022 floragunn GmbH - All Rights Reserved</p>
+          <p>© {currentYear} floragunn GmbH - All Rights Reserved</p>
           <p>
             Search Guard is a trademark of floragunn GmbH, registered in the
             U.S. and in other countries. Elasticsearch, Kibana, Logstash, and
@@ -204,10 +207,10 @@ const Footer = ({ landing }) => {
             Software Foundation in the United States and/or other countries.
             <br />
             <NavLink to="/heise/" className="footer-links">
-              Lower your TCO
+              Lower your TCO |
             </NavLink>
             <NavLink to="/outdated-elasticsearch-versions-suppport/" className="footer-links">
-              Older Versions Support
+              &nbsp; Older Versions Support
             </NavLink>
 
           </p>
