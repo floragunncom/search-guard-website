@@ -53,9 +53,9 @@ const License = () => {
           bgLeftDark
           iconLeft={iconBook}
           iconRight={iconWheels}
-          headlineLeft="Academic & Scientific edition"
-          headlineRight="OEM, integrators & resellers"
-          textLeft="Because we love to support education and science, we offer a special license model for non-profit academic and scientific purposes. If you think your project/institution is eligible for this program, please contact us."
+          headlineLeft="Academic & Scientific Programme"
+          headlineRight="OEM, Integrators & Resellers"
+          textLeft="We want to give back to education and science and provide free licenses and special discounts for eligible institutions. Get in touch with us to learn more."
           textRight="We provide tailor made custom licenses for system integrators, OEM partners and resellers."
           linkLeft="/contacts/"
           linkRight="/contacts/"
