@@ -122,7 +122,7 @@ const Author = ({ match }) => {
         {person.fields.socialNetworks.map(network => {
           return (
               <div className="authors-profiles">
-                <a href={network.fields.url} style={{cursor: 'crosshair'}}>{network.fields.type}</a>
+                <a href={network.fields.url} style={{cursor: 'crosshair'}} rel="author">{network.fields.type}</a>
               </div>
           );
         })}
@@ -141,18 +141,18 @@ const Author = ({ match }) => {
 
         <meta name="description" content={person.fields.htmlDescription} />
 
-        <meta property="og:title" content="{person.fields.firstName} {person.fields.lastName}"/>
+        <meta property="og:title" content={`${person.fields.firstName} ${person.fields.lastName}`}/>
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://search-guard.com/${person.fields.slug}`} />
         <meta property="og:description" content={person.fields.htmlDescription}/>
         <meta property="og:image" content={`https:${person.fields.avatar.fields.file.url}`}/>
-        <meta property="og:image:alt" content="{person.fields.firstName} {person.fields.lastName}"/>
+        <meta property="og:image:alt" content={`${person.fields.firstName} ${person.fields.lastName}`}/>
         <meta property="og:locale" content="en_US" />
 
         <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:site" content="@searchguard"/>
         <meta name="twitter:creator" content="@searchguard"/>
-        <meta name="twitter:title" content="{person.fields.firstName} {person.fields.lastName}" />
+        <meta name="twitter:title" content={`${person.fields.firstName} ${person.fields.lastName}`} />
         <meta name="twitter:description" content={person.fields.htmlDescription} />
 
         <meta name="twitter:image" content={`https:${person.fields.avatar.fields.file.url}`} />
@@ -170,7 +170,7 @@ const Author = ({ match }) => {
         <div className="row">
                 <div className="col s12 offset-l2 l5" >
                   <div className="authors-pic">
-                    <img src={`https:${person.fields.avatar.fields.file.url}?w=300&fit=scale`} alt="{person.fields.avatar.fields.title}" />
+                    <img src={`https:${person.fields.avatar.fields.file.url}?w=300&fit=scale`} alt="{person.fields.htmlDescription}" />
                   </div>
                 </div>
                 <div className="col s12 l5" >

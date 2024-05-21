@@ -40,7 +40,7 @@ const Security = () => {
         />
       </Helmet>
       <Title
-        headline="search guard security plugin"
+        headline="search guard security"
         text="Pioneering the way forward in security, our technology is engineered to ensure a safe environment around your Elastic Stack - safeguarding data and granting peace of mind."
         breadcrumb={breadcrumb}
       />
@@ -50,30 +50,30 @@ const Security = () => {
           icon={fileCode}
           iconPosition="left"
           backgroundColor="light"
-          headline="Completely Open Source"
-          text="Closed source security is no security, never leave the control of your data to a third party. Zero trust in networks, zero trust in closed source. We think that security software has to be Open Source by definition, so all of our code is available for you to download, inspect, evaluate and audit."
+          headline="Protect Your Data with Confidence"
+          text="Search Guard's battle-proven security features ensure that your Elasticsearch cluster is safeguarded from unauthorized access, data breaches, and cyber threats. With advanced authentication, role-based access control, and document-level security, you can rest assured that your sensitive data is protected."
         />
       </div>
       <TileSimple
         icon={certificate}
         iconPosition="right"
         backgroundColor="dark"
-        headline="Compliance ready"
-        text="Security compliance regulations like GDPR, HIPAA, PCI-DSS or SOX require a business to protect, track and control access to sensitive data. Search Guard offers an extensive range of features that will help you to meet the technical requirements of compliance regulations."
+        headline="Lock Down Your Elasticsearch Cluster"
+        text="Search Guard's comprehensive security suite provides end-to-end protection for your Elasticsearch data. From encryption to audit logging, our features ensure that your data is secure in transit and at rest. Don't leave your cluster vulnerable - secure it with Search Guard today!"
       />
       <TileSimple
         icon={worldLock}
         iconPosition="left"
         backgroundColor="light"
-        headline="All industry sectors"
-        text="Search Guard runs on high-scale mission-critical production clusters protecting sensitive data in the finance, healthcare, pharmaceutical, aviation, telecommunications, security, and data intelligence sectors."
+        headline="Advanced Security Made Simple"
+        text="Search Guard simplifies advanced security for your Elasticsearch cluster. With easy-to-implement features and seamless integration, you can secure your data without compromising on performance or usability."
       />
       <Integrators />
       <Certified />
       <div id="quote">
         <Cta
-          headline="60-day PoC License"
-          text="Want to see how your company can benefit from our Compliance edition? Sign up to our 60-day trial, completely free of charge."
+          headline="Free 60-day Trial"
+          text="Want to see how your company can benefit from Search Guard? Give our 60-day trial a spin, free of charge, no credit card required."
           ctaText="start free trial"
           icon={ctaIcon}
           link="/search-guard-free-trial/"

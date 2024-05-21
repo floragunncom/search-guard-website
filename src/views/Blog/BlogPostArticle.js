@@ -116,7 +116,7 @@ const BlogPostArticle = ({ match }) => {
             <div className="col">
               <a href={`/authors/${authorProfile.fields.slug}`}>
                 <img src={`https:${authorProfile.fields.avatar.fields.file.url}?w=80&fit=scale`}
-                     alt="{authorProfile.fields.avatar.fields.title}"
+                     alt={`${authorProfile.fields.avatar.fields.title}`}
                      className="blogpostarticle-avatar"/>
               </a>
             </div>
@@ -294,7 +294,7 @@ const BlogPostArticle = ({ match }) => {
               "@type": "WebPage",
               "@id": "https://search-guard.com/${postContent.fields.slug}/"
             },            
-            "headline": "${postContent.fields.htmlTitle}",
+            "headline": "${postContent.fields.title}",
             "description": "${postContent.fields.htmlDescription}",            
             "image": "${postContent.fields.postImage.fields.file.url}",
             "author": {
