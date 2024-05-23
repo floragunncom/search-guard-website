@@ -20,7 +20,7 @@ const TlsGenerator = () => {
         <title>TLS Certificate Generator - Search Guard</title>
         <link
           rel="canonical"
-          href="https://search-guard.com/tls-certificate-generator/"
+          href="https://preview.search-guard.com/tls-certificate-generator/"
         />
         <meta
           name="description"

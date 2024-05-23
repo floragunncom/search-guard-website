@@ -35,7 +35,7 @@ const Compliance = () => {
         <title>
             Elasticsearch Compliance | Stay compliant with GDPR, HIPAA, PCI, SOX and ISO
         </title>
-        <link rel="canonical" href="https://search-guard.com/compliance/" />
+        <link rel="canonical" href="https://preview.search-guard.com/compliance/" />
         <meta
           name="description"
           content="Keep your Elasticsearch and Kibana stack compliant with regulations like GDPR, PCI, SOX, HIPAA and ISO by using Search Guard"

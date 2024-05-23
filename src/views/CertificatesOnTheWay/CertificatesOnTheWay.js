@@ -10,7 +10,7 @@ const CertificatesOnTheWay = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Search Guard | Thanks for using the certificate generator</title>
-        <link rel="canonical" href="https://search-guard.com/thanks/" />
+        <link rel="canonical" href="https://preview.search-guard.com/thanks/" />
         <meta
           name="description"
           content="Thank you very much for using the Search Gard Certificate Generator service."

@@ -55,7 +55,7 @@ const Faqs = () => {
         <title>
           Frequently asked questions | Search Guard | Security for Elasticsearch
         </title>
-        <link rel="canonical" href="https://search-guard.com/faq/" />
+        <link rel="canonical" href="https://preview.search-guard.com/faq/" />
         <meta
           name="description"
           content="Find answers to frequently asked questions about Search Guard, the rock-solid and battle proven security suite for Elasticsearch."

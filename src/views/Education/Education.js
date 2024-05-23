@@ -13,7 +13,7 @@ const Education = () => {
         <title>Search Guard Education Program</title>
         <link
           rel="canonical"
-          href="https://search-guard.com/education-program/"
+          href="https://preview.search-guard.com/education-program/"
         />
         <meta
           name="description"

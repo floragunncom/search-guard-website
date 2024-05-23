@@ -24,7 +24,7 @@ const BlogCategory = ({ match }) => {
         </title>
         <link
           rel="canonical"
-          href={`https://search-guard.com/blog/${match.url}`}
+          href={`https://preview.search-guard.com/blog/${match.url}`}
         />
         <meta
           name="description"

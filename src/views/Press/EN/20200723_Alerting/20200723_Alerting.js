@@ -18,7 +18,7 @@ const Alerting = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Efficient alert management for Big Data and IT infrastructures</title>
-                <link rel="canonical" href="https://search-guard.com/press/en/search-guard-alerting/" />
+                <link rel="canonical" href="https://preview.search-guard.com/press/en/search-guard-alerting/" />
                 <meta
                     name="description"
                     content="Efficient alert management for Elasticsearch and IT infrastructures"
@@ -133,7 +133,7 @@ const Alerting = () => {
                         Community Edition and in the Enterprise and Compliance Edition license versions.
                         The plug-in can be tested free of charge for 60 days.
 
-                        Further information is available at <a href="https://search-guard.com/alerting/">search-guard.com/alerting/</a>.
+                        Further information is available at <a href="https://preview.search-guard.com/alerting/">search-guard.com/alerting/</a>.
 
                         <br /><br />
 

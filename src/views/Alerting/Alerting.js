@@ -34,7 +34,7 @@ const Alerting = () => {
         <title>
             Free Alerting for Elasticsearch and Kibana | Search Guard
         </title>
-        <link rel="canonical" href="https://search-guard.com/alerting/" />
+        <link rel="canonical" href="https://preview.search-guard.com/alerting/" />
         <meta
           name="description"
           content="Signals Alerting for Elasticsearch and Kibana detects data anomalies in your Elasticsearch cluster and sends notifications on various channels. Fully integrated with Search Guard Security. For free."

@@ -23,7 +23,7 @@ const SecurityForElasticsearch = () => {
         </title>
         <link
           rel="canonical"
-          href="https://search-guard.com/security-for-elasticsearch/"
+          href="https://preview.search-guard.com/security-for-elasticsearch/"
         />
         <meta
           name="description"

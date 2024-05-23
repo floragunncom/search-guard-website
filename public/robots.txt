@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://search-guard.com/sitemap.xml
+Sitemap: https://preview.search-guard.com/sitemap.xml

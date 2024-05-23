@@ -32,7 +32,7 @@ const OldElasticsearchVersions = () => {
         <title>
             Support for Outdated Elasticsearch Versions | Search Guard
         </title>
-        <link rel="canonical" href="https://search-guard.com/alerting/" />
+        <link rel="canonical" href="https://preview.search-guard.com/alerting/" />
         <meta
           name="description"
           content="Search Guard still supports and provides Security and Alerting for outdated Elasticsearch Versions."

@@ -117,7 +117,7 @@ const Certifications = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>certificates Archives - Search Guard</title>
-        <link rel="canonical" href="https://search-guard.com/certificates/" />
+        <link rel="canonical" href="https://preview.search-guard.com/certificates/" />
         <meta
           name="description"
           // content="Search Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."

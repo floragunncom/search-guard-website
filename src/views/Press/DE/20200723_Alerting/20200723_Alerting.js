@@ -18,7 +18,7 @@ const Alerting = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Effizientes Alert-Management für Big Data und IT-Infrastruktur</title>
-                <link rel="canonical" href="https://search-guard.com/press/de/search-guard-alerting/" />
+                <link rel="canonical" href="https://preview.search-guard.com/press/de/search-guard-alerting/" />
                 <meta
                     name="description"
                     content="Effizientes Alert-Management für Elasticsearch und IT-Infrastruktur"
@@ -140,7 +140,7 @@ const Alerting = () => {
                         sowie im TeleTrusT, dem Bundesverband für IT Sicherheit e.V.. Fortune 500 Unternehmen, Bildungsträger und Behörden
                         weltweit setzen Search Guard® zum Schutz ihrer Cluster ein. Search Guard® ist erhältlich in der kostenlosen
                         Community Edition sowie in den Lizenz-Versionen Enterprise und Compliance Edition.
-                        Das Plug-In kann 60 Tage kostenlos getestet werden. Weitere Informationen unter <a href="https://search-guard.com/alerting/">search-guard.com/alerting/</a>.
+                        Das Plug-In kann 60 Tage kostenlos getestet werden. Weitere Informationen unter <a href="https://preview.search-guard.com/alerting/">search-guard.com/alerting/</a>.
 
                         <br /><br />
 

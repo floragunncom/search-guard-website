@@ -31,7 +31,7 @@ const HomePage = () => {
         <title>
           Security and Alerting for Elasticsearch and Kibana | Search Guard
         </title>
-        <link rel="canonical" href="https://search-guard.com/" />
+        <link rel="canonical" href="https://preview.search-guard.com/" />
         <meta
           name="description"
           content="Search Guard is an Open Source security plugin for Elasticsearch, Kibana and the entire ELK stack. Search Guard offers encryption, authentication, authorization, audit logging, compliance as well as alerting and anomaly detection features."

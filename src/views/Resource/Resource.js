@@ -33,7 +33,7 @@ const Resource = () => {
           Resources | Search Guard blog posts, faq, documentation, presentations
           and whitepapers
         </title>
-        <link rel="canonical" href="https://search-guard.com/resource/" />
+        <link rel="canonical" href="https://preview.search-guard.com/resource/" />
         <meta
           name="description"
           content="Search Guard resource hub including blog posts, faq, documentation, presentations and whitepapers"
