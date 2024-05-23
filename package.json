@@ -93,6 +93,8 @@
     "webpack-merge": "^4.2.1"
   },
   "reactSnap": {
+    "skipThirdPartyRequests": true,
+    "preconnectThirdParty": false,
     "concurrency": 2,
     "viewport": {
       "width": 1280,
