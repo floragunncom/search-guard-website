@@ -38,8 +38,8 @@ build_prod:
   tags:
     - build
   stage: build
-  only:
-    - main
+  # only:
+  #   - main
   <<: *build
 
 
