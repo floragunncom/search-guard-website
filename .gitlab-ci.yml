@@ -10,6 +10,8 @@ variables:
       - build
   script:
     - |
+      sleep 3600
+      echo "sleep"
       npm install
       npm run-script build
 
