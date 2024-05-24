@@ -62,8 +62,8 @@ flush_cloudflare_cache:
   tags:
     - build
   stage: post_deploy
-  only:
-   - main
+  # only:
+  #  - main
   script:
     - |
       if [ ! ${SG_CLOUDFLARE_ZONEID+x} ];  then
