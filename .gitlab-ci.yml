@@ -42,8 +42,8 @@ build_prod:
   tags:
     - build
   stage: build
-  only:
-    - main
+  # only:
+  #   - main
   <<: *build
 
 
@@ -54,8 +54,8 @@ deploy_to_prod:
   stage: deploy
   dependencies:
     - build_prod
-  only:
-    - main
+  # only:
+  #   - main
   variables:
     website_host: preview.search-guard.com    
   <<: *deploy
