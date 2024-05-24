@@ -42,8 +42,8 @@ build_prod:
   tags:
     - build
   stage: build
-  # only:
-  #   - main
+  only:
+    - main
   <<: *build
 
 
@@ -54,16 +54,18 @@ deploy_to_prod:
   stage: deploy
   dependencies:
     - build_prod
-  # only:
-  #   - main
+  only:
+    - main
+  variables:
+    website_host: preview.search-guard.com    
   <<: *deploy
 
 flush_cloudflare_cache:
   tags:
     - build
   stage: post_deploy
-  # only:
-  #  - main
+  only:
+   - main
   script:
     - |
       if [ ! ${SG_CLOUDFLARE_ZONEID+x} ];  then
