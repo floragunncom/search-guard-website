@@ -1,0 +1,79 @@
+image: node:20.11.1
+variables:
+  LC_ALL: "C.UTF-8"
+  LANG: "en_US.UTF-8"
+  LANGUAGE: "en_US.UTF-8"
+
+.build: &build
+  artifacts:
+    paths:
+      - build
+  script:
+    - |
+      npm install
+      npm run-script build
+
+.deploy: &deploy
+  before_script:
+    - apt-get update -yqq
+    - apt-get install -yqq lftp openssh-client
+    - echo "Building branch $CI_COMMIT_REF_NAME"
+    - echo "Set SSH configuration for SFTP"
+    - eval $(ssh-agent -s)
+    - echo "$sftp_user_private_key_base64" | base64 -d | tr -d '\r' | ssh-add -
+  script:
+    - |
+      echo "Uploading files to SFTP server $sftp_server for host: $website_host"
+      lftp --version
+      echo "Start SFTP upload"
+      lftp -u $sftp_user_name, -e "set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no'; mirror --reverse --delete --parallel=20 --verbose build/ /var/www/$website_host/html/; quit" sftp://$sftp_server
+
+stages:
+  - build
+  - deploy
+  - post_deploy
+
+
+build_prod:
+  tags:
+    - build
+  stage: build
+  only:
+    - main
+  <<: *build
+
+
+
+deploy_to_prod:
+  tags:
+    - build
+  stage: deploy
+  dependencies:
+    - build_prod
+  # only:
+  #   - main
+  <<: *deploy
+
+flush_cloudflare_cache:
+  tags:
+    - build
+  stage: post_deploy
+  only:
+   - main
+  script:
+    - |
+      if [ ! ${SG_CLOUDFLARE_ZONEID+x} ];  then
+        SG_CLOUDFLARE_ZONEID=89658e7735c4e114cd3132d456dd763d
+      fi
+      if [ ! ${REMOVE_CLOUDFLARE_CACHE+x} ];  then
+        REMOVE_CLOUDFLARE_CACHE=true
+      fi
+
+      if $REMOVE_CLOUDFLARE_CACHE ; then
+         echo "Deleting Cloudflare Cache"
+         curl  \
+         -X POST "https://api.cloudflare.com/client/v4/zones/$SG_CLOUDFLARE_ZONEID/purge_cache" \
+         -H "Authorization: Bearer $SG_CLOUDFLARE_DECACHE_TOKEN" \
+         -H "Content-Type: application/json" \
+         --data '{"purge_everything":true}'
+      fi
