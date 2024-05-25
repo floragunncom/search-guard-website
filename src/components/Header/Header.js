@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Headroom from 'react-headroom';
 import { NavLink } from 'react-router-dom';
+import Markdown from 'markdown-to-jsx';
 import {useLocation} from "react-router-dom";
 import logo from '../../images/logo-white.svg';
 import cross from '../../images/cross-white.svg';
 import arrow from '../../images/arrow-right-dark-blue.svg';
+import banner from '../../Api/pagecontent/topBanner.json';
 import './Header.scss';
 
 
@@ -99,9 +101,28 @@ const Header = ({ background = '#246E94', landing }) => {
     </div>
   );
 
+  let renderBanner;
+  if (
+      banner && banner.length > 0 && banner[0].fields.enabled
+  ) {
+
+    if (banner[0].fields.showOnAllPages || location.pathname === "/") {
+      renderBanner = (
+          <>
+            <div className="header__announcement">
+              <Markdown>
+                {banner[0].fields.text}
+              </Markdown>
+            </div>
+          </>
+      );
+    }
+  };
+
   return (
     <>
       <Headroom disableInlineStyles={showMenu ? true : false}>
+        {renderBanner}
         <div style={{ backgroundColor: background }}>
           <div className="row">
             {showMenu && menu}

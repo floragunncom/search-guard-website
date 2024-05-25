@@ -105,8 +105,8 @@ const BlogPostArticle = ({ match }) => {
   }
 
   let authorProfile = postContent.fields.authorProfile;
-  let renderAuthor;
 
+  let renderAuthor;
   if (
       authorProfile
   ) {
@@ -135,6 +135,21 @@ const BlogPostArticle = ({ match }) => {
   } else {
     renderAuthor = (
         <div className="blogpostarticle-authorname">By <b>{postContent.fields.author}</b></div>
+    )
+  };
+
+  let renderAuthorMetaTag;
+  if (
+      authorProfile
+  ) {
+    renderAuthorMetaTag = (
+        <>
+          <meta name="description" content={`${authorProfile.fields.firstName} ${authorProfile.fields.lastName}`} />
+        </>
+    );
+  } else {
+    renderAuthorMetaTag = (
+        <meta name="description" content={`${postContent.fields.author}`} />
     )
   };
 
@@ -167,6 +182,8 @@ const BlogPostArticle = ({ match }) => {
         <meta name="twitter:image:src" content={`https:${postContent.fields.postImage.fields.file.url}`} />
         <meta name="twitter:image:alt" content={`https:${postContent.fields.postImage.fields.file.url}`} />
 
+        {renderAuthorMetaTag}
+
       </Helmet>
       <BlogTitle
         text={postContent.fields.title}
@@ -180,14 +197,6 @@ const BlogPostArticle = ({ match }) => {
           {renderAuthor}
         </div>
       </div>
-
-      <div className="row blogpostarticle-wrapper">
-        <div className="col s12 offset-l2 l8">
-          <div id="elevenlabs-audionative-widget" data-height="90" data-width="100%" data-frameborder="no" data-scrolling="no" data-publicuserid="41a67bfbd237a76026e8622869d6f02ffbdcc474266a147d928051bbe7748d11" data-playerurl="https://elevenlabs.io/player/index.html" >Loading the <a href="https://elevenlabs.io/text-to-speech" target="_blank" rel="noopener">Elevenlabs Text to Speech</a> AudioNative Player...</div><script src="https://elevenlabs.io/player/audioNativeHelper.js" type="text/javascript"></script>
-        </div>
-      </div>
-
-
 
       <div className="row blogpostarticle-wrapper">
         <div className="col s12 offset-l2 l8">
