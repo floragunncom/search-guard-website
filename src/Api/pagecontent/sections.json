@@ -1,0 +1,211 @@
+[
+  {
+    "metadata": {
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "section"
+          }
+        }
+      ]
+    },
+    "sys": {
+      "space": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Space",
+          "id": "mdpbh289a0mx"
+        }
+      },
+      "id": "3oSjLyXNMLXHgIkcyKGp24",
+      "type": "Entry",
+      "createdAt": "2024-05-25T15:38:10.408Z",
+      "updatedAt": "2024-05-25T16:34:38.944Z",
+      "environment": {
+        "sys": {
+          "id": "master",
+          "type": "Link",
+          "linkType": "Environment"
+        }
+      },
+      "revision": 6,
+      "contentType": {
+        "sys": {
+          "type": "Link",
+          "linkType": "ContentType",
+          "id": "sectionTopFaq"
+        }
+      },
+      "locale": "en-US"
+    },
+    "fields": {
+      "sectionIdentifier": "FAQ Section",
+      "entries": [
+        {
+          "metadata": {
+            "tags": []
+          },
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "mdpbh289a0mx"
+              }
+            },
+            "id": "RMDnaXGj10frqHwONfE1R",
+            "type": "Entry",
+            "createdAt": "2024-05-25T15:18:43.443Z",
+            "updatedAt": "2024-05-25T15:18:43.443Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 1,
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "faqEntry"
+              }
+            },
+            "locale": "en-US"
+          },
+          "fields": {
+            "question": "What is Search Guard?",
+            "answer": "Search Guard is an Enterprise Security Suite that encrypts and protects your data and data flows in the entire Elastic Stack, including Kibana, Logstash and Beats."
+          }
+        },
+        {
+          "metadata": {
+            "tags": []
+          },
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "mdpbh289a0mx"
+              }
+            },
+            "id": "4eFjMiDN8nCaUYScIZTPOc",
+            "type": "Entry",
+            "createdAt": "2024-05-25T15:35:30.922Z",
+            "updatedAt": "2024-05-25T15:35:30.922Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 1,
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "faqEntry"
+              }
+            },
+            "locale": "en-US"
+          },
+          "fields": {
+            "question": "What is your licensing model?",
+            "answer": "Search Guard is dual licensed. All basic security features in the Community Edition are free, while you need to obtain a license in order to use the Enterprise or Compliance Edition in production.\nWe license Search Guard per production cluster, not number of nodes. The regular license has no limits regarding the number of nodes, so you can scale your cluster indefinitely without additional costs. All other systems, like development, staging, integration, test and the like are included in the license. Scale your cluster, not your cost!\nWe also offer discounted licenses for small installations with 5 nodes or less. [Get in contact with us](https://search-guard.com/contacts/) and we will work out a licensing model that fits your needs."
+          }
+        },
+        {
+          "metadata": {
+            "tags": []
+          },
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "mdpbh289a0mx"
+              }
+            },
+            "id": "3Q6PY1Bp9Mvmzwoz9eIq0n",
+            "type": "Entry",
+            "createdAt": "2024-05-25T15:36:14.026Z",
+            "updatedAt": "2024-05-25T15:36:14.026Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 1,
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "faqEntry"
+              }
+            },
+            "locale": "en-US"
+          },
+          "fields": {
+            "question": "My company is non-profit, do you offer any discounts?",
+            "answer": "Absolutely. We want to give back to education and science and provide special discounts and free licenses for eligible institutions. [Get in touch with us](https://search-guard.com/contacts/) to learn more about our education & scientific licensing."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "tags": [
+        {
+          "sys": {
+            "type": "Link",
+            "linkType": "Tag",
+            "id": "section"
+          }
+        }
+      ]
+    },
+    "sys": {
+      "space": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Space",
+          "id": "mdpbh289a0mx"
+        }
+      },
+      "id": "65C8yETGYRVelZ3QfB4hhm",
+      "type": "Entry",
+      "createdAt": "2024-05-25T14:16:51.240Z",
+      "updatedAt": "2024-05-25T16:33:02.600Z",
+      "environment": {
+        "sys": {
+          "id": "master",
+          "type": "Link",
+          "linkType": "Environment"
+        }
+      },
+      "revision": 9,
+      "contentType": {
+        "sys": {
+          "type": "Link",
+          "linkType": "ContentType",
+          "id": "topBanner"
+        }
+      },
+      "locale": "en-US"
+    },
+    "fields": {
+      "enabled": true,
+      "text": "Meet is at the OSMC 2024 in Nürnberg. [Contact us](https://search-guard.com/contacts/) and let us know you are coming!",
+      "showOnAllPages": false,
+      "sectionIdentifier": "Top Banner"
+    }
+  }
+]
