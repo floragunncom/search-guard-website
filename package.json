@@ -36,7 +36,8 @@
     "react-transition-group": "^4.3.0",
     "serve": "^11.1.0",
     "serve-handler": "^6.1.2",
-    "uuid": "^3.3.3"
+    "uuid": "^3.3.3",
+    "react-slugify": "^3.0.3"
   },
   "scripts": {
     "start": "react-scripts start",

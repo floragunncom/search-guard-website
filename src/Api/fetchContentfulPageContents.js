@@ -9,21 +9,39 @@ const client = contentful.createClient({
     'ts3-M4yqLGqXCjDvYPL8UZfQES4gZC06lW3efVPKQNg',
 });
 
-const fetchWhitepapers = async () => {
-  await client
-    .getEntries({ content_type: 'topBanner' })
-    .then((res, err) => {
-      fs.writeFile(
-        './src/Api/pagecontent/topBanner.json',
-        JSON.stringify(res.items),
-        error => {
-            if (error) {
-                console.log(error)
-                throw err;
-            }
-        },
-      );
-    });
+const fetchPageContent = async () => {
+
+    // complete pages
+    await client
+        .getEntries({ "metadata.tags.sys.id[in]": 'page', include: 3 })
+        .then((res, err) => {
+            fs.writeFile(
+                './src/Api/pagecontent/pages.json',
+                JSON.stringify(res.items),
+                error => {
+                    if (error) {
+                        console.log(error)
+                        throw err;
+                    }
+                },
+            );
+        });
+
+    // page sections
+    await client
+        .getEntries({ "metadata.tags.sys.id[in]": 'section', include: 3 })
+        .then((res, err) => {
+            fs.writeFile(
+                './src/Api/pagecontent/sections.json',
+                JSON.stringify(res.items),
+                error => {
+                    if (error) {
+                        console.log(error)
+                        throw err;
+                    }
+                },
+            );
+        });
 };
 
-fetchWhitepapers();
+fetchPageContent();

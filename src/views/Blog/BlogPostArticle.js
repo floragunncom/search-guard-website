@@ -22,12 +22,23 @@ import sgLogo from '../../images/sg_dlic_small.png';
 import './BlogPostArticle.scss';
 import posts from '../../Api/contentfulPosts.json';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
+import M from "materialize-css";
 
 const BlogPostArticle = ({ match }) => {
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, options);
+  });
 
   const postContent = posts.find(
     entry => entry.fields.slug === `${match.url.substring(1)}`,
   );
+
+  if (!postContent) {
+    return (<Redirect to="/404/" />);
+  }
 
   const options = {
     overrides: {
@@ -92,7 +103,7 @@ const BlogPostArticle = ({ match }) => {
       img: {
         component: 'img',
         props: {
-          className: 'blogpostarticle-image-wrapper blogpostarticle-image',
+          className: 'blogpostarticle-image-wrapper blogpostarticle-image materialboxed',
         },
       },
       blockquote: {
@@ -100,9 +111,6 @@ const BlogPostArticle = ({ match }) => {
       },
     },
   };
-  if (!postContent) {
-    return (<Redirect to="/404/" />);
-  }
 
   let authorProfile = postContent.fields.authorProfile;
 
@@ -143,14 +151,20 @@ const BlogPostArticle = ({ match }) => {
       authorProfile
   ) {
     renderAuthorMetaTag = (
-        <>
-          <meta name="description" content={`${authorProfile.fields.firstName} ${authorProfile.fields.lastName}`} />
-        </>
+          <meta name="author" content={`${authorProfile.fields.firstName} ${authorProfile.fields.lastName}`} />
     );
   } else {
     renderAuthorMetaTag = (
-        <meta name="description" content={`${postContent.fields.author}`} />
+          <meta name="author" content={`${postContent.fields.author}`} />
     )
+  };
+
+  let video = postContent.fields.video;
+  let renderVideo = '';
+  if (
+      video
+  ) {
+    renderVideo = '<div className="video-container"> <iframe width="560" height="315" src="' + video.fields.embedUrl +'" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div>'
   };
 
   return (
@@ -162,7 +176,10 @@ const BlogPostArticle = ({ match }) => {
           rel="canonical"
           href={`https://search-guard.com/${postContent.fields.slug}`}
         />
+
         <meta name="description" content={postContent.fields.htmlDescription} />
+        <meta name="copyright" content="floragunn GmbH" />
+        {renderAuthorMetaTag}
 
         <meta property="og:title" content={postContent.fields.htmlTitle} />
         <meta property="og:type" content="article" />
@@ -182,8 +199,6 @@ const BlogPostArticle = ({ match }) => {
         <meta name="twitter:image:src" content={`https:${postContent.fields.postImage.fields.file.url}`} />
         <meta name="twitter:image:alt" content={`https:${postContent.fields.postImage.fields.file.url}`} />
 
-        {renderAuthorMetaTag}
-
       </Helmet>
       <BlogTitle
         text={postContent.fields.title}
@@ -200,8 +215,10 @@ const BlogPostArticle = ({ match }) => {
 
       <div className="row blogpostarticle-wrapper">
         <div className="col s12 offset-l2 l8">
+
           <Markdown options={options}>
             {postContent.fields.postContent
+                .replace('<video/>', renderVideo)
               .replace(/https:\/\/search-guard\.com/g, '')
               .replace(/http:\/\/localhost:8080/g, '')}
           </Markdown>
