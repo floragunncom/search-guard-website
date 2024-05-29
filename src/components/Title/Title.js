@@ -35,7 +35,7 @@ const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink
                       breadcrumb.map((item, i) => {
                             const separator = (i === breadcrumb.length - 1? "" : " >")
                           return (
-                              <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                              <span key={i} itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                                   <a itemProp="item" href={item.anchor} className="title-breadcrumb-item">
                                       <span itemProp="name">{item.name}{separator}</span>
                                       <meta itemProp="position" content={i + 1}/>

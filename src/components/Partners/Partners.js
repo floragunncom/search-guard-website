@@ -5,10 +5,6 @@ import excelerate from '../../images/ref2.svg';
 import excelerateMobile from '../../images/excelerate-mobile.svg';
 import sirenPartnerMobile from '../../images/siren-mobile.svg';
 import sirenPartner from '../../images/ref3.svg';
-import cleverdataPartnerMobile from '../../images/cleverdata-mobile.svg';
-import cleverdataPartner from '../../images/cleverdata.svg';
-import factorgroupPartnerMobile from '../../images/factorgroup-mobile.svg';
-import factorgroupPartner from '../../images/factorgroup.svg';
 import './Partners.scss';
 
 const Partners = () => {

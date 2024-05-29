@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { v4 } from 'uuid';
 import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
@@ -8,7 +7,6 @@ import Title from '../../components/Title/Title';
 import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
 import Certified from '../../components/Certified/Certified';
-import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import Integrators from '../../components/Integrators/Integrators';
 import ctaIcon from '../../images/icon-sg.svg';
 import fileCode from '../../images/file-code.svg';

@@ -1,6 +1,5 @@
 import React from 'react';
 import './Journey.scss';
-import M from 'materialize-css';
 import { useRef } from "react";
 
 
@@ -354,7 +353,7 @@ const Journey = () => {
             <ul>
               {timelineContent.map((event, index) => {
                 return (
-                  <li>
+                  <li key={index}>
                     <div className="content no-hide">
                       <h2 className="collapse-header">
                         <time>{event.year}</time><i id="icon" className="material-icons">{`${index > 1 ? "keyboard_arrow_up" : "keyboard_arrow_down"}`}</i>
@@ -362,7 +361,7 @@ const Journey = () => {
                       <p className={`details ${index > 1 ? "hidden" : "show fadein"}`}>
                         {event.events.map(content => {
                           return (
-                            <div>
+                            <div key={content.text} >
                               <div id="headline">{content.headline}</div>
                               <div id="text">{content.text}</div>
                               {content.highlight !== undefined ? (

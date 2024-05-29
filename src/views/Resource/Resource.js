@@ -1,10 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { v4 } from 'uuid';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Card from '../../components/Card/Card';
-import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import Title from '../../components/Title/Title';
 import Cta from '../../components/Cta/Cta';
 import Faq from '../../components/Faq/Faq';

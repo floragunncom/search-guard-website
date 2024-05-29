@@ -4,8 +4,6 @@ import jochen from '../../images/jochen.svg';
 import hendrik from '../../images/hendrik.svg';
 import mechthild from '../../images/mechthild.svg';
 import anja from '../../images/anja.svg';
-import bud from '../../images/bud.svg'
-
 import iconIn from '../../images/icon-in-loud.svg';
 import './Team.scss';
 

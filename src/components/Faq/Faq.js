@@ -1,13 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import Button from '../Button/Button';
 import sections from '../../Api/pagecontent/sections.json';
 import './Faq.scss';
 import Markdown from "markdown-to-jsx";
-import {HashLink as Anchor} from "react-router-hash-link";
-import slugify from "react-slugify";
-
-
 const Faq = () => {
 
   let faqs = sections.filter(section => section.sys.contentType.sys.id === "sectionTopFaq")[0];

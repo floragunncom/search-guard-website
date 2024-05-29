@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { v4 } from 'uuid';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Journey from '../../components/Journey/Journey';
@@ -9,8 +8,6 @@ import Partners from '../../components/Partners/Partners';
 import ctaIcon from '../../images/icon-sg.svg';
 import Title from '../../components/Title/Title';
 import Team from '../../components/Team/Team';
-import News from '../../components/News/News';
-import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 
 const Company = () => {
 

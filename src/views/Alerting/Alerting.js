@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import './Alerting.scss';
-import { v4 } from 'uuid';
 import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
-import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import ctaIcon from '../../images/icon-sg.svg';
 import alertingAnomalies from '../../images/alerting_anomalies.svg';
 import alertingNotifications from '../../images/alerting_notifications.svg';

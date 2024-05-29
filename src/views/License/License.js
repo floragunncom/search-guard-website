@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { v4 } from 'uuid';
 import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Title from '../../components/Title/Title';
 import Card from '../../components/Card/Card';
-import AnchorNavBar from '../../components/AnchorNavBar/AnchorNavBar';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
 import References from '../../components/References/References';
 import Cta from '../../components/Cta/Cta';

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './BlogTitle.scss';
 import posts from '../../Api/contentfulPosts';
-import BlogPostSmall from "../BlogPost/BlogPostSmall";
 
 const Title = ({ text, subText, tags, link, authorProfile }) => {
   const renderTags = (
