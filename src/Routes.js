@@ -5,6 +5,7 @@ import HomePage from './views/HomePage/HomePage';
 import ContactUs from './views/ContactUs/ContactUs';
 import Blog from './views/Blog/Blog';
 import BlogPostArticle from './views/Blog/BlogPostArticle';
+import BlogPostArticlePreview from './views/Blog/BlogPostArticlePreview';
 import BlogCategory from './views/Blog/BlogCategory';
 import Resource from './views/Resource/Resource';
 import Company from './views/Company/Company';
@@ -123,6 +124,8 @@ const Routes = () => {
           <Route exact path="/press/de/elasticsearch-dsgvo/" component={PressDECompliance} />
 
           <Route exact path="/404/" component={NotFound} />
+
+          <Route exact path="/preview/blogpost/:slug" component={BlogPostArticlePreview} />
 
           {/* this is not really good, it interferes with the 404 page! Need to handle that explicitely on BlogPostArticle Page now. Otherwise, we need to change all URLs for all blog posts :( */}
           <Route exact path="/:slug" component={BlogPostArticle} />
