@@ -100,14 +100,6 @@ const ContactForm = () => {
               victor.pichardo@exceleratesystems.net
             </a>
           </p>
-          <p className="company-information-text">
-            <b>Russia</b>
-            <br /> Factor Group
-            <br /> Shchukinskaya Ulitsa, 2
-            <br /> Moscow, 123182
-            <br />
-            <a href="mailto:info@fgts.ru">info@fgts.ru</a>
-          </p>
         </div>
       </div>
       <div className="col s12 l7" id="contact">
