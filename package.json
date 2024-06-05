@@ -41,7 +41,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "fetch": "node ./src/Api/fetchContentfulPosts.js && node ./src/Api/fetchContentfulEvents.js && node ./src/Api/fetchContentfulWhitepapers.js && node ./src/Api/fetchContentfulPersons.js && node ./src/Api/fetchContentfulPageContents.js",
+    "fetch": "node ./src/Api/fetchContentfulPosts.js && node ./src/Api/fetchContentfulEvents.js && node ./src/Api/fetchContentfulWhitepapers.js && node ./src/Api/fetchContentfulVideos.js && node ./src/Api/fetchContentfulPersons.js && node ./src/Api/fetchContentfulPageContents.js",
     "build": "npm run fetch && react-scripts build",
     "sitemap": "./scripts/sitemap.js",
     "postbuild": "react-snap && ./scripts/sitemap.js -- --base-url='https://search-guard.com/'",
