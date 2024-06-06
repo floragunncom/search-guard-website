@@ -27,7 +27,7 @@ const Author = ({ match }) => {
   let postTiles;
 
   if (
-      postsOfAuthor
+      postsOfAuthor && postsOfAuthor.length > 0
   ) {
     postTiles = (
         <>
@@ -60,6 +60,12 @@ const Author = ({ match }) => {
         },
       },
       p: {
+        component: 'div',
+        props: {
+          className: 'blogpostarticle-text',
+        },
+      },
+      span: {
         component: 'div',
         props: {
           className: 'blogpostarticle-text',
