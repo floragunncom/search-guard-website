@@ -205,14 +205,6 @@ const Footer = ({ landing }) => {
             in other countries. Apache, Apache Lucene, Apache Hadoop, Hadoop,
             HDFS and the yellow elephant logo are trademarks of the Apache
             Software Foundation in the United States and/or other countries.
-            <br />
-            <NavLink to="/heise/" className="footer-links">
-              Lower your TCO |
-            </NavLink>
-            <NavLink to="/outdated-elasticsearch-versions-suppport/" className="footer-links">
-              &nbsp; Older Versions Support
-            </NavLink>
-
           </p>
         </div>
       </div>

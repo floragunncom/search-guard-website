@@ -103,7 +103,10 @@
       "/security-for-elasticsearch/",
       "/elasticsearch-kibana-security/",
       "/thanks/",
-      "/search-guard-flx/"
+      "/search-guard-flx/",
+      "/sitemap/",
+      "/heise/",
+      "/outdated-elasticsearch-versions-suppport/"
     ],
     "puppeteerArgs": [
       "--no-sandbox",

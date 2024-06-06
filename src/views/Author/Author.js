@@ -203,9 +203,8 @@ const Author = ({ match }) => {
           <div className="row">
             <div className="col s12 offset-l2 l8 authors-bio-content">
               <Markdown options={options}>
-                {person.fields.biography
-                    .replace(/https:\/\/search-guard\.com/g, '')
-                    .replace(/http:\/\/localhost:8080/g, '')}
+                {person.fields.biography }
+
               </Markdown>
             </div>
           </div>
