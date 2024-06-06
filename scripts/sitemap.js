@@ -99,6 +99,11 @@ const readSite = async (dir) => {
             u.ele('priority', 0.5);
         });
 
+    const u = urlset.ele('url');
+    u.ele('changefreq', 'monthly');
+    u.ele('loc', 'https://search-guard.com/sitemap/');
+    u.ele('priority', 0.5);
+
     const sitemap = urlset.end({ pretty: true });
 
     await asyncWriteFile('build/sitemap.xml', sitemap);
