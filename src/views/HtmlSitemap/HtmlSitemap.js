@@ -76,7 +76,7 @@ const HtmlSitemap = () => {
                     {authors.map(author => {
                         return (
                             <>
-                                <a href={`/authors/${author.fields.slug}` } rel="author">{author.fields.firstName} {author.fields.lastName}</a><br />
+                                <a href={`/author/${author.fields.slug}` } rel="author">{author.fields.firstName} {author.fields.lastName}</a><br />
                             </>
                         );
                     })}

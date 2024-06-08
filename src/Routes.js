@@ -17,6 +17,7 @@ import License from './views/License/License';
 import Imprint from './views/Imprint/Imprint';
 import WhitePapers from './views/WhitePapers/WhitePapers';
 import WhitePaperArticle from './views/WhitePapers/WhitePaperArticle';
+import Authors from './views/Author/Authors';
 import Author from './views/Author/Author';
 import Presentations from './views/Presentations/Presentations';
 import DataProtection from './views/DataProtection/DataProtection';
@@ -105,7 +106,8 @@ const Routes = () => {
             component={TlsGenerator}
           />
 
-          <Route exact path="/authors/:slug" component={Author} />
+          <Route exact path="/authors/" component={Authors} />
+          <Route exact path="/author/:slug" component={Author} />
 
           <Route exact path="/certificates/" component={Certifications} />
           <Route exact path="/category/:slug" component={BlogCategory} />

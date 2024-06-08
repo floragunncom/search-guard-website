@@ -24,6 +24,8 @@ const Author = ({ match }) => {
 
   let postsOfAuthor = posts.filter(post => post.fields.authorProfile && post.fields.authorProfile.sys.id === person.sys.id);
 
+  postsOfAuthor = postsOfAuthor.slice(0,8);
+
   let postTiles;
 
   if (
@@ -142,14 +144,14 @@ const Author = ({ match }) => {
         <title>{person.fields.firstName} {person.fields.lastName}</title>
         <link
           rel="canonical"
-          href={`https://search-guard.com/authors/${person.fields.slug}`}
+          href={`https://search-guard.com/author/${person.fields.slug}`}
         />
 
         <meta name="description" content={person.fields.htmlDescription} />
 
         <meta property="og:title" content={`${person.fields.firstName} ${person.fields.lastName}`}/>
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://search-guard.com/${person.fields.slug}`} />
+        <meta property="og:url" content={`https://search-guard.com/author/${person.fields.slug}`} />
         <meta property="og:description" content={person.fields.htmlDescription}/>
         <meta property="og:image" content={`https:${person.fields.avatar.fields.file.url}`}/>
         <meta property="og:image:alt" content={`${person.fields.firstName} ${person.fields.lastName}`}/>
@@ -163,7 +165,7 @@ const Author = ({ match }) => {
 
         <meta name="twitter:image" content={`https:${person.fields.avatar.fields.file.url}`} />
         <meta name="twitter:image:src" content={`https:${person.fields.avatar.fields.file.url}`} />
-        <meta name="twitter:image:alt" content={`https:${person.fields.avatar.fields.file.url}`} />
+        <meta name="twitter:image:alt" content={`${person.fields.firstName} ${person.fields.lastName}`} />
 
       </Helmet>
 
@@ -204,7 +206,6 @@ const Author = ({ match }) => {
             <div className="col s12 offset-l2 l8 authors-bio-content">
               <Markdown options={options}>
                 {person.fields.biography }
-
               </Markdown>
             </div>
           </div>
