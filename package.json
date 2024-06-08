@@ -106,7 +106,8 @@
       "/search-guard-flx/",
       "/sitemap/",
       "/heise/",
-      "/outdated-elasticsearch-versions-suppport/"
+      "/outdated-elasticsearch-versions-suppport/",
+      "/authors/"
     ],
     "puppeteerArgs": [
       "--no-sandbox",
