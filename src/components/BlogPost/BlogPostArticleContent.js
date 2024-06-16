@@ -13,6 +13,7 @@ import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import BlogBox from '../../components/BlogBox/BlogBox';
 import Blockquote from '../../components/Blockquote/Blockquote';
+import CodeBlock from './CodeBlock';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 import iconTwitter from '../../images/icon-tw-loud.svg';
 import iconY from '../../images/icon-y-loud.svg';
@@ -102,6 +103,9 @@ const BlogPostArticleContent = ({ postContent }) => {
             },
             blockquote: {
                 component: Blockquote,
+            },
+            pre: {
+                component: CodeBlock,
             },
         },
     };
