@@ -6,12 +6,12 @@ const client = contentful.createClient({
   // accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
   space: '95di84mqkkro',
   accessToken:
-    'e374194597d1e72907428441d7ffe9f2ef9486dc92b23a733d9ca02d87e4da3c',
+    'e374194597d1e72907428441d7ffe9f2ef9486dc92b23a733d9ca02d87e4da3c'
 });
 
 const fetchPosts = async () => {
   await client
-    .getEntries({ content_type: 'post', order: '-fields.date' })
+    .getEntries({ content_type: 'post', order: '-fields.date', limit: 500 })
     .then((res, err) => {
       fs.writeFile(
         './src/Api/contentfulPosts.json',
