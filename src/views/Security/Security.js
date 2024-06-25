@@ -36,6 +36,7 @@ const Security = () => {
           name="description"
           content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
         />
+          <script src="/assets/splide-settings.js"></script>
       </Helmet>
       <Title
         headline="search guard security"
