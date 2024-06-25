@@ -21,8 +21,6 @@ $(document).ready(function(){
         splideIntegrators.mount(window.splide.Extensions);
     }
 
-    console.log($("#splide-references"));
-
     if ($("#splide-references").length) {
         var splideReferences = new Splide( '#splide-references', {
                 type   : 'loop',
