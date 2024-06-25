@@ -21,28 +21,30 @@ const References = () => {
     <div className="ref-wrapper">
       <div className="row ref-content-responsive">
         <div className="ref-headline">References</div>
-        <div className="ref-content hide-on-med-and-down">
-          <div className="ref-content-row">
-            <img src={heanet} alt="heanet logo" />
-            <img src={harvard} alt="harvard logo" />
-            <img src={kit} alt="kit logo" />
-            <img src={seges} alt="seges logo" />
-            <img src={deflect} alt="deflect logo" />
-          </div>
-          <div className="ref-content-row">
-            <img src={princeton} alt="princeton logo" />
-            <img src={koc} alt="koc logo" />
-            <img src={mdc} alt="mdc logo" />
-            <img src={laval} alt="laval logo" />
-            <img src={uc3m} alt="uc3m logo" />
-          </div>
-          <div className="ref-content-row">
-            <img src={ub} alt="ub logo" />
-            <img src={bucharest} alt="bucharest logo" />
-            <img src={icfo} alt="icfo logo" />
-            <img src={arnes} alt="arnes logo" />
-            <img src={oxford} alt="oxford logo" />
-          </div>
+        <div className="hide-on-med-and-down">
+
+          <section className="splide splide-integrators-container" aria-labelledby="carousel-heading" id="splide-references">
+            <div className="splide__track">
+              <ul className="splide__list">
+                <li className="splide__slide"><img className="splide_image" src={heanet} alt="heanet logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={harvard} alt="harvard logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={kit} alt="kit logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={seges} alt="seges logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={deflect} alt="deflect logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={princeton} alt="princeton logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={koc} alt="koc logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={mdc} alt="mdc logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={laval} alt="laval logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={uc3m} alt="uc3m logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={ub} alt="ub logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={bucharest} alt="bucharest logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={icfo} alt="icfo logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={arnes} alt="arnes logo" /></li>
+                <li className="splide__slide"><img className="splide_image" src={oxford} alt="oxford logo" /></li>
+              </ul>
+            </div>
+          </section>
+
         </div>
         <div className="ref-content-responsive hide-on-large-only">
           <div className="col s4 m3 ref-image">
