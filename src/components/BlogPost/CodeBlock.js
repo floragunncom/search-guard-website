@@ -1,6 +1,5 @@
 import React from 'react';
 import './CodeBlock.scss';
-import M from "materialize-css";
 
 const Blockquote = props => {
 
