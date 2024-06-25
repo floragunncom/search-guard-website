@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import sieMonster from '../../images/sie-monster.svg';
 import pivotal from '../../images/pivotal.svg';
 import wuerthPhoenix from '../../images/wuerth-phoenix.svg';
@@ -7,10 +7,18 @@ import objectRocket from '../../images/objectRocket.svg';
 import mitratech from '../../images/mitratech.svg';
 import siren from '../../images/siren.svg';
 import kubedb from '../../images/kubedb.svg';
-import Button from '../Button/Button';
 import './Integrators.scss';
 
 const Integrators = () => {
+
+  // new Glide('.glide').mount({ Controls, Breakpoints });
+
+
+  const documentRef = useRef(document); // document here is window.document
+  documentRef.current.addEventListener("DOMContentLoaded", () => {
+
+  });
+
   const integrators = [
     {
       headline: 'Red Hat® OpenShift',
@@ -74,31 +82,25 @@ const Integrators = () => {
     <div className="company-integrators-wrapper" id="integrators">
       <div className="row company-integrators">
         <div className="company-integrators-headline">Integrators</div>
-        {integrators.map((profile, index) => {
-          return (
-            <div className="company-integrators-section" key={index}>
-              <div className="integrators-pic">
-                <img src={profile.pic} alt="integrator icon" />
-              </div>
-              <div className="integrators-content">
-                <div className="integrators-content-headline">
-                  {profile.headline}
-                </div>
-                <div className="integrators-content-text">{profile.text}</div>
-                <div className="integrators-content-button">
-                  <Button
-                    text="visit website"
-                    link={profile.link}
-                    target="_blank"
-                    rel="noopener norefferrer"
-                  />
-                </div>
-              </div>
-            </div>
-          );
-        })}
+
+        <section className="splide splide-integrators-container" aria-labelledby="carousel-heading" id="splide-integrators">
+          <div className="splide__track">
+            <ul className="splide__list">
+              {integrators.map((profile, index) => {
+                return (
+                    <li className="splide__slide">
+                        <img src={profile.pic} alt={profile.headline} className="splide_image"/>
+                    </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+
       </div>
+
     </div>
+
   );
 };
 
