@@ -9,8 +9,8 @@ const Video = props => {
   let playlist;
   let playlistButton;
 
-    let videos = allVideos.filter(video => video.fields.displayOnVideoOverviewPage == true);
-    let featuredVideo = allVideos.filter(video => video.fields.displayAsFeaturesVideo == true)[0];
+    let videos = allVideos.filter(video => video.fields.displayOnVideoOverviewPage === true);
+    let featuredVideo = allVideos.filter(video => video.fields.displayAsFeaturesVideo === true)[0];
 
     if (props.playlist) {
 

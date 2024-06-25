@@ -1,15 +1,10 @@
 import './Author.scss';
 import persons from '../../Api/contentfulPersons.json';
-import posts from '../../Api/contentfulPosts.json';
 import React from 'react';
-import  { Redirect } from 'react-router-dom'
 import { Helmet } from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
-import Markdown from 'markdown-to-jsx';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Blockquote from '../../components/Blockquote/Blockquote';
 import Title from "../../components/Title/Title";
-import BlogPostSmall from "../../components/BlogPost/BlogPostSmall";
 
 const Authors = ({ match }) => {
 
