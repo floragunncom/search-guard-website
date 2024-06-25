@@ -35,7 +35,6 @@ const License = () => {
           name="description"
           content="Get to know more about the Search Guard Editions and pricing. Fair licensing and secure your Elasticsearch cluster with an unlimited amount of nodes - scale your cluster not your costs."
         />
-        <script src="/assets/splide-settings.js"></script>
       </Helmet>
       <Title
         headline="Pricing"
