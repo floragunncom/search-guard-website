@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    console.log("ready");
     if ($("#splide-integrators").length) {
         var splideIntegrators = new Splide( '#splide-integrators', {
                 type   : 'loop',
@@ -18,7 +19,10 @@ $(document).ready(function(){
                 },
             }
         );
-        splideIntegrators.mount(window.splide.Extensions);
+        let a = splideIntegrators.mount(window.splide.Extensions);
+        console.log("mounted splideIntegrators");
+        console.log(a);
+        console.log(a.state.is);
     }
 
     if ($("#splide-references").length) {
@@ -41,5 +45,6 @@ $(document).ready(function(){
             }
         );
         splideReferences.mount(window.splide.Extensions);
+        console.log("mounted splideReferences");
     }
 });

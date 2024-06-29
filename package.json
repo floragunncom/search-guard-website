@@ -6,17 +6,12 @@
     "node": "14.x"
   },
   "dependencies": {
-    "@contentful/rich-text-html-renderer": "^13.1.0",
-    "@contentful/rich-text-react-renderer": "^13.2.0",
-    "@contentful/rich-text-types": "^13.1.0",
-    "contentful": "^7.5.0",
-    "country-list": "^2.2.0",
     "eslint-plugin-react-hooks": "0.0.0-b53ea6ca0",
     "font-awesome": "^4.7.0",
     "fs": "0.0.1-security",
     "lunr": "^2.3.6",
-    "markdown-to-jsx": "^6.10.3",
     "materialize-css": "^1.0.0",
+    "markdown-to-jsx": "^6.10.3",
     "node-fetch": "^2.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
@@ -30,7 +25,6 @@
     "react-lazy-load-image-component": "^1.5.0",
     "react-router-dom": "^5.1.2",
     "react-router-hash-link": "^1.2.2",
-    "react-scripts": "2.1.8",
     "react-share": "^3.0.1",
     "react-snapshot": "^1.3.0",
     "react-transition-group": "^4.3.0",
@@ -42,7 +36,7 @@
   "scripts": {
     "start": "react-scripts start",
     "fetch": "node ./src/Api/fetchContentfulPosts.js && node ./src/Api/fetchContentfulEvents.js && node ./src/Api/fetchContentfulWhitepapers.js && node ./src/Api/fetchContentfulVideos.js && node ./src/Api/fetchContentfulPersons.js && node ./src/Api/fetchContentfulPageContents.js",
-    "build": "npm run fetch && react-scripts build",
+    "build": "react-scripts build",
     "sitemap": "./scripts/sitemap.js",
     "postbuild": "react-snap && ./scripts/sitemap.js -- --base-url='https://search-guard.com/'",
     "clean": "rm -rf build/*",
@@ -62,6 +56,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@contentful/rich-text-html-renderer": "^13.1.0",
+    "@contentful/rich-text-react-renderer": "^13.2.0",
+    "@contentful/rich-text-types": "^13.1.0",
+    "contentful": "^7.5.0",
     "@babel/core": "^7.4.0",
     "@babel/polyfill": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
@@ -84,6 +82,7 @@
     "node-sass": "npm:sass@^1.53.0",
     "path": "^0.12.7",
     "prettier": "^1.16.4",
+    "react-scripts": "^3.0.0",
     "react-hot-loader": "^4.8.0",
     "react-snap": "^1.23.0",
     "sass": "^1.53.0",
@@ -94,7 +93,11 @@
     "webpack-merge": "^4.2.1"
   },
   "reactSnap": {
-    "concurrency": 2,
+    "concurrency": 16,
+    "fixWebpackChunksIssue": "CRA2",
+    "removeBlobs": true,
+    "removeStyleTags": true,
+
     "viewport": {
       "width": 1280,
       "height": 767
