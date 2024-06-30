@@ -1,18 +1,9 @@
 import React, { Component } from 'react';
 import './Quotes.scss';
-import M from 'materialize-css';
 import quoteUp from '../../images/quote-up.svg';
 import quoteDown from '../../images/quote-down.svg';
 
 class Quotes extends Component {
-  componentDidMount() {
-    const elems = document.querySelectorAll('.slider');
-    const options = {
-      indicators: true,
-      duration: 750,
-    };
-    M.Slider.init(elems, options);
-  }
 
   render() {
     const quotes = [

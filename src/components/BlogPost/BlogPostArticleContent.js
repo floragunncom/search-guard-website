@@ -22,14 +22,8 @@ import iconFb from '../../images/icon-fb-loud.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
 import './BlogPostArticleContent.scss';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
-import M from "materialize-css";
 
 const BlogPostArticleContent = ({ postContent }) => {
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.materialboxed');
-        M.Materialbox.init(elems, options);
-    });
 
     if (!postContent) {
         return (<Redirect to="/404/" />);

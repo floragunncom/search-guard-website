@@ -1,6 +1,5 @@
 import React from 'react';
 import './TileSimpleFLX.scss';
-import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const TileSimple = ({
   backgroundColor,
@@ -32,7 +31,7 @@ const TileSimple = ({
         <div className="row tilesimple-flx-row">
           <div className="col s12 l6 center">
 
-            <LazyLoadImage
+            <img
                 src={icon} className={iconStyle} alt="tile icon"
             />
 
@@ -52,7 +51,7 @@ const TileSimple = ({
       <div className={wrapperStyle}>
         <div className="row tilesimple-flx-row">
           <div className="col s12 push-l6 l6 center">
-            <LazyLoadImage
+            <img
                 src={icon} className={iconStyle} alt="tile icon"
             />
           </div>

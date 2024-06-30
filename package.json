@@ -36,9 +36,12 @@
   "scripts": {
     "start": "react-scripts start",
     "fetch": "node ./src/Api/fetchContentfulPosts.js && node ./src/Api/fetchContentfulEvents.js && node ./src/Api/fetchContentfulWhitepapers.js && node ./src/Api/fetchContentfulVideos.js && node ./src/Api/fetchContentfulPersons.js && node ./src/Api/fetchContentfulPageContents.js",
-    "build": "react-scripts build",
+    "cleanchunks": "node ./src/Api/cleanReactChunksPostBuild.js",
+    "buildonly": "npm run-script fetch && react-scripts build",
+    "build": "npm run-script fetch && react-scripts build && npm run-script crawl && npm run-script clearReactChunks",
     "sitemap": "./scripts/sitemap.js",
-    "postbuild": "react-snap && ./scripts/sitemap.js -- --base-url='https://search-guard.com/'",
+    "crawl": "react-snap || true && ./scripts/sitemap.js -- --base-url='https://search-guard.com/' ",
+    "clearReactChunks": "node ./src/Api/cleanReactChunksPostBuild.js ",
     "clean": "rm -rf build/*",
     "start:dev": "node config/webpack-dev-server.js",
     "start:prod": "npm build; serve build",
@@ -94,13 +97,12 @@
   },
   "reactSnap": {
     "concurrency": 16,
-    "fixWebpackChunksIssue": "CRA2",
-    "removeBlobs": true,
-    "removeStyleTags": true,
-
     "viewport": {
       "width": 1280,
       "height": 767
+    },
+    "puppeteer": {
+      "cache": false
     },
     "include": [
       "/security-for-elasticsearch/",
@@ -114,7 +116,17 @@
     ],
     "puppeteerArgs": [
       "--no-sandbox",
-      "--disable-setuid-sandbox"
+      "--disable-setuid-sandbox",
+      "--disable-sync",
+      "--disable-translate",
+      "--disable-infobars",
+      "--disable-dev-shm-usage",
+      "--disable-extensions",
+      "--disable-plugins",
+      "--disable-background-timer-throttling",
+      "--disable-client-side-phishing-detection",
+      "--disable-translate",
+      "--no-experiments"
     ]
   }
 }

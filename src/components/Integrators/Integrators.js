@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import sieMonster from '../../images/sie-monster.svg';
 import pivotal from '../../images/pivotal.svg';
 import wuerthPhoenix from '../../images/wuerth-phoenix.svg';

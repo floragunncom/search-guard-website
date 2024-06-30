@@ -2,11 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 // Directory to change into
-const targetDirectory = '../../build/static/js/';
+const targetDirectory = './build/static/js/';
 
 // Regular expressions to match files
-const fileRegex1 = /\.txt$/; // Change this to your first specific regex
-const fileRegex2 = /\.log$/; // Change this to your second specific regex
+const fileRegex1 = /main\.[\w]{8}.js|main\.[\w]{8}\.chunk\.js/;
+const fileRegex2 = /(\w+)\.[\w]{8}(\.chunk)?\.js/g;
 
 // Change into the target directory
 process.chdir(targetDirectory);

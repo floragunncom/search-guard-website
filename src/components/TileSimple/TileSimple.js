@@ -1,6 +1,5 @@
 import React from 'react';
 import './TileSimple.scss';
-import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const TileSimple = ({
   backgroundColor,
@@ -40,7 +39,7 @@ const TileSimple = ({
         <div className="row">
           <div className="col s12 l6 tilesimple-icon-wrapper-left">
 
-            <LazyLoadImage
+            <img
                 src={icon} className={iconStyle} alt="tile icon"
             />
 
@@ -59,7 +58,7 @@ const TileSimple = ({
       <div className={wrapperStyle}>
         <div className="row tilesimple-change-order">
           <div className="col s12 push-l6 l6 tilesimple-icon-wrapper-right">
-            <LazyLoadImage
+            <img
                 src={icon} className={iconStyle} alt="tile icon"
             />
           </div>

@@ -1,29 +1,10 @@
 import React from 'react';
 import './CodeBlock.scss';
 
-const Blockquote = props => {
-
-    async function copyCode(event) {
-        event.preventDefault();
-        let codeElem = event.target.nextSibling.firstChild;
-        writeClipboardText(codeElem.textContent, event.target)
-    }
-
-    async function writeClipboardText(text, elem) {
-        try {
-            await navigator.clipboard.writeText(text);
-            // visual feedback
-            elem.textContent = "copied"
-            setTimeout(function() {elem.textContent = "copy"}, 1000);
-        }
-        catch (error) {
-            elem.textContent = "An error occured";
-        }
-    }
-
+const CodeBlock = props => {
     return (
         <div className="code-highlight">
-            <span className="copy-code" onClick={copyCode}>copy</span>
+            <span className="copy-code">copy</span>
             <pre>
                 {props.children}
             </pre>
@@ -31,4 +12,4 @@ const Blockquote = props => {
     )
 };
 
-export default Blockquote;
+export default CodeBlock;

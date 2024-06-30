@@ -35,6 +35,10 @@ const Blog = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
+
+  console.log(currentPage);
+  console.log(indexOfFirstPost);
+  console.log(indexOfLastPost);
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const documentsGeneral = [];
@@ -220,6 +224,8 @@ const Blog = () => {
           name="description"
           content="This is the official Search Guard blog. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch."
         />
+        <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js" integrity="sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ=" crossOrigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.72.2/dist/instantsearch.production.min.js" integrity="sha256-7mNbCrGdzpMTGmD7V4c8iLI9ylmXQay4o/MczQXhHrU=" crossOrigin="anonymous"></script>
       </Helmet>
       <Title headline="Blog" breadcrumb={breadcrumb}/>
       <div className="row">

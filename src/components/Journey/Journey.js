@@ -1,7 +1,5 @@
 import React from 'react';
 import './Journey.scss';
-import { useRef } from "react";
-
 
 const Journey = () => {
   const timelineContent = [
@@ -315,35 +313,6 @@ const Journey = () => {
     },
   ];
 
-  const documentRef = useRef(document); // document here is window.document
-  documentRef.current.addEventListener("DOMContentLoaded", () => {
-
-    var elements = document.querySelectorAll('.collapse-header');
-
-    elements.forEach((element) => {
-      element.addEventListener('click', () => {
-        var collapseBody = element.nextSibling
-        var icon = element.querySelector("#icon")
-        if (collapseBody.classList.contains("hidden")) {
-          // up and down arrow
-          icon.innerHTML = "keyboard_arrow_down";
-          collapseBody.classList.remove("hidden");
-          setTimeout(() => {
-            collapseBody.classList.add("fadein");
-            collapseBody.classList.remove("hidden");
-          }, "100");
-        } else {
-          // up and down arrow
-          icon.innerHTML = "keyboard_arrow_up";
-          collapseBody.classList.remove("fadein");
-          setTimeout(() => {
-            collapseBody.classList.add("hidden");
-          }, "200");
-        }
-      });
-    });
-  });
-
   return (
     <div className="journey-wrapper" id="journey">
       <div className="row">
@@ -353,26 +322,26 @@ const Journey = () => {
             <ul>
               {timelineContent.map((event, index) => {
                 return (
-                  <li key={index}>
-                    <div className="content no-hide">
-                      <h2 className="collapse-header">
+                  <li key={`li-${event.year}-${index}`}>
+                    <div className="content no-hide" key={`div-$event.year-$index`}>
+                      <h2 className="collapse-header" id="journey-root">
                         <time>{event.year}</time><i id="icon" className="material-icons">{`${index > 1 ? "keyboard_arrow_up" : "keyboard_arrow_down"}`}</i>
                       </h2>
-                      <p className={`details ${index > 1 ? "hidden" : "show fadein"}`}>
-                        {event.events.map(content => {
+                      <div className={`details ${index > 1 ? "hidden" : "show fadein"}`}>
+                        {event.events.map((content, innerindex) => {
                           return (
-                            <div key={content.text} >
-                              <div id="headline">{content.headline}</div>
-                              <div id="text">{content.text}</div>
-                              {content.highlight !== undefined ? (
-                                <div id="highlight">{content.highlight}</div>
-                              ) : (
-                                ''
-                              )}
-                            </div>
+                              <div key={`${event.year}-${content.headline}-${innerindex}`}>
+                                <div id="headline">{content.headline}</div>
+                                <div id="text">{content.text}</div>
+                                  {content.highlight !== undefined ? (
+                                    <div id="highlight">{content.highlight}</div>
+                                    ) : (
+                                    ''
+                                  )}
+                              </div>
                           );
                         })}
-                      </p>
+                      </div>
                     </div>
                   </li>
                 );

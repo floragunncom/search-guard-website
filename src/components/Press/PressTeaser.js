@@ -4,7 +4,6 @@ import './PressTeaser.scss';
 import alerting from "../../images/press_teaser_alerting.png";
 import tmahler from "../../images/tmahler_press.jpg";
 import dsgvo from "../../images/elasticsearch_dsgvo.jpeg";
-import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const PressTeaser = () => {
 
@@ -15,7 +14,7 @@ const PressTeaser = () => {
 
         <div className="company-press-teaser-section">
           <div className="press-teaser-pic hide-on-med-and-down">
-            <LazyLoadImage
+            <img
                 src={dsgvo}
             />
           </div>
@@ -44,7 +43,7 @@ const PressTeaser = () => {
 
         <div className="company-press-teaser-section">
           <div className="press-teaser-pic hide-on-med-and-down">
-            <LazyLoadImage
+            <img
                 src={alerting}
             />
           </div>
@@ -80,7 +79,7 @@ const PressTeaser = () => {
 
             <div className="company-press-teaser-section">
               <div className="press-teaser-pic hide-on-med-and-down">
-                <LazyLoadImage
+                <img
                     src={tmahler}
                 />
               </div>
