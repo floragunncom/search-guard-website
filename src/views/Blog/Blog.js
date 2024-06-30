@@ -11,7 +11,7 @@ import posts from '../../Api/contentfulPosts.json';
 import Pagination from '../../components/Pagination/Pagination';
 import './Blog.scss';
 
-const Blog = () => {
+const Blog = props => {
 
   const breadcrumb = [
     { anchor: '/', name: 'Home' },
@@ -19,27 +19,18 @@ const Blog = () => {
     { anchor: '/blog/', name: 'Blog' },
   ];
 
-  const [searchResultsPresented, setSearchResultsPresented] = useState(false);
-  const [categoryResultsPresented, setCategoryResultsPresented] = useState(
-    false,
-  );
-  const [defaultResultsPresented, setDefaultResultsPresented] = useState(true);
-  const [searchResultPosts, setSearchResultPosts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
 
-  const indexOfLastPost = currentPage * postsPerPage;
+  let page;
+  if (props.match.params.slug) {
+    page = props.match.params.slug
+  } else {
+    page = 1;
+  }
+
+  const indexOfLastPost = page * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-
-  console.log(currentPage);
-  console.log(indexOfFirstPost);
-  console.log(indexOfLastPost);
-  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const documentsGeneral = [];
 
@@ -54,55 +45,22 @@ const Blog = () => {
     });
   }
 
-  const searchIndexGeneral = lunr(function() {
-    this.ref('id');
-    this.field('content');
-    this.field('title');
-    this.field('author');
-
-    this.pipeline.remove(lunr.stemmer);
-    this.searchPipeline.remove(lunr.stemmer);
-
-    documentsGeneral.forEach(doc => {
-      this.add(doc);
-    });
-  });
-
-  const onClearSearch = () => {
-    setSearchResultsPresented(false);
-    setDefaultResultsPresented(true);
-    setSearchTerm('');
-  };
-
   const searchBar = (
     <div className="blog-searchbar">
       <div className="row">
         <div
           className="input-field col m8 offset-m2 s12 center"
-          style={{ display: 'flex', alignItems: 'center' }}
-        >
-          <input
-            id="search"
-            type="text"
-            className="dark-blue blog-search"
-            value={searchTerm}
-            onChange={value => onSearchTermChange(value)}
-            placeholder="Search blog ..."
-          />
-          {searchResultsPresented ? (
-            <div onClick={onClearSearch}>
-              <i
-                className="material-icons"
-                style={{
-                  color: '#246E94',
-                  opacity: '0.25',
-                  cursor: 'pointer',
-                }}
-              >
-                close
-              </i>
-            </div>
-          ) : null}
+          style={{ display: 'flex', alignItems: 'center' }}>
+
+          <form className="blog-search-form" action="/search/" method="GET">
+            <input
+              id="search"
+              type="text"
+              className="dark-blue blog-search"
+              name="q"
+              placeholder="Search blog ..."
+            />
+          </form>
         </div>
       </div>
     </div>
@@ -147,70 +105,17 @@ const Blog = () => {
   );
 
   function onSearchTermChange(query) {
-    setSearchResultsPresented(true);
-    setDefaultResultsPresented(false);
-    setCategoryResultsPresented(false);
-    const searchedWord = `${query.target.value.trim()}*`;
-    setSearchTerm(query.target.value);
-    setSearchQuery(searchedWord);
-    const createSearchResultPosts = [];
-    const searchResult = searchIndexGeneral.search(searchQuery);
-    searchResult.forEach(res => {
-      createSearchResultPosts.push(posts.find(post => post.sys.id === res.ref));
-    });
-    setSearchResultPosts(createSearchResultPosts);
+
   }
 
-  let renderSearchResultPosts;
-  if (searchResultsPresented && !categoryResultsPresented) {
-    if (searchQuery.length < 4) {
-      renderSearchResultPosts = (
-        <div className="searchblogpost-result-headline">
-          Please provide more than 2 characters for a proper search result,
-          thank you.
-        </div>
-      );
-    } else if (searchResultPosts.length === 0) {
-      renderSearchResultPosts = (
-        <div className="searchblogpost-no-results">
-          No results for &apos;{searchTerm.substring(0, searchTerm.length - 1)}
-          &apos;
-        </div>
-      );
-    } else {
-      renderSearchResultPosts = (
-        <div>
-          <div className="searchblogpost-result-headline">
-            {searchResultPosts.length}{' '}
-            {searchResultPosts.length !== 1 ? 'results' : 'result'} found for
-            &apos;{searchTerm}&apos;
-          </div>
-          {searchResultPosts.map(post => {
-            return (
-              <div className="col m12 l8 offset-l2 searchblogpost-wrapper">
-                <SearchBlogPost key={post.sys.id} post={post} />
-              </div>
-            );
-          })}
-        </div>
-      );
-    }
-  }
-
-  let renderPosts;
-  if (
-    defaultResultsPresented &&
-    !searchResultsPresented &&
-    !categoryResultsPresented
-  ) {
-    renderPosts = (
+  let  renderPosts = (
       <div className="blog-wrapper">
         {currentPosts.map(post => {
           return <BlogPost post={post} key={post.sys.id} intro />;
         })}
       </div>
     );
-  }
+
 
   return (
     <PageWrapper>
@@ -224,22 +129,12 @@ const Blog = () => {
           name="description"
           content="This is the official Search Guard blog. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch."
         />
-        <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.24.0/dist/algoliasearch-lite.umd.js" integrity="sha256-b2n6oSgG4C1stMT/yc/ChGszs9EY/Mhs6oltEjQbFCQ=" crossOrigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.72.2/dist/instantsearch.production.min.js" integrity="sha256-7mNbCrGdzpMTGmD7V4c8iLI9ylmXQay4o/MczQXhHrU=" crossOrigin="anonymous"></script>
       </Helmet>
       <Title headline="Blog" breadcrumb={breadcrumb}/>
       <div className="row">
         {searchBar}
         {renderPosts}
-        {renderSearchResultPosts}
       </div>
-      {!searchResultsPresented && (
-        <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
-          paginate={paginate}
-        />
-      )}
       <PreFooter />
     </PageWrapper>
   );

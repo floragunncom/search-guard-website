@@ -17,7 +17,6 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
             <li key={number} className="pagination-number">
               <Link
                 to={{ pathname: `/blog/page/${number}` }}
-                onClick={() => paginate(number)}
               >
                 {number}
               </Link>

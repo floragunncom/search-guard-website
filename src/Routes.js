@@ -41,6 +41,7 @@ import PressDECompliance from './views/Press/DE/20200910_DSGVO/20200723_DSGVO';
 import FlxLandingPage from './views/FLXLandingPage/FLXLandingPage';
 import OldElasticsearchVersions from './views/OldElasticsearchVersions/OldElasticsearchVersions';
 import HtmlSitemap from './views/HtmlSitemap/HtmlSitemap';
+import Search from './views/Search/Search';
 
 import Error from './views/Error/Error';
 
@@ -116,7 +117,7 @@ const Routes = () => {
 
           <Route exact path="/whitepapers/:slug" component={WhitePaperArticle} />
 
-
+          <Route exact path="/search/" component={Search} />
 
           <Route exact path="/press/de/search-guard-vertrieb-dach/" component={PressDEDach} />
           <Route exact path="/press/en/search-guard-sales-dach/" component={PressENDach} />
