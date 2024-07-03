@@ -61,7 +61,7 @@ const HtmlSitemap = () => {
                     {posts.map(post => {
                         return (
                             <>
-                                <a href={`/${post.fields.slug}`}>{post.fields.title}</a><br />
+                                <a href={`/blog/${post.fields.slug}`}>{post.fields.title}</a><br />
                             </>
                         );
                     })}
