@@ -152,6 +152,11 @@ const Footer = ({ landing }) => {
                     Compliance
                   </NavLink>
                 </div>
+                <div className="footer-list-item">
+                  <NavLink to="/sitemap/" className="footer-links">
+                    Sitemap
+                  </NavLink>
+                </div>
               </div>
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
