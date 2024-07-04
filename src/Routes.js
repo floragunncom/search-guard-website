@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import React from 'react';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import HomePage from './views/HomePage/HomePage';
@@ -41,7 +41,6 @@ import PressDECompliance from './views/Press/DE/20200910_DSGVO/20200723_DSGVO';
 import FlxLandingPage from './views/FLXLandingPage/FLXLandingPage';
 import OldElasticsearchVersions from './views/OldElasticsearchVersions/OldElasticsearchVersions';
 import HtmlSitemap from './views/HtmlSitemap/HtmlSitemap';
-
 import Error from './views/Error/Error';
 
 const Routes = () => {
@@ -110,9 +109,12 @@ const Routes = () => {
           <Route exact path="/author/:slug" component={Author} />
 
           <Route exact path="/certificates/" component={Certifications} />
-          <Route exact path="/category/:slug" component={BlogCategory} />
+
+
+          <Route exact path="/blog/category/:slug" component={BlogCategory} />
           <Route exact path="/blog/" component={Blog} />
-          <Route exact path="/blog/page/:slug" component={Blog} />
+          <Route exact path="/blog/page/:slug/" component={Blog} />
+          <Route exact path="/blog/:slug/" component={BlogPostArticle} />
 
           <Route exact path="/whitepapers/:slug" component={WhitePaperArticle} />
 
@@ -133,12 +135,10 @@ const Routes = () => {
 
           <Route exact path="/preview/blogpost/:slug" component={BlogPostArticlePreview} />
 
-          {/* this is not really good, it interferes with the 404 page! Need to handle that explicitely on BlogPostArticle Page now. Otherwise, we need to change all URLs for all blog posts :( */}
-          <Route exact path="/:slug" component={BlogPostArticle} />
-
-          {/*<Redirect to="/404/" />*/}
+          <Redirect to="/404/" />
 
         </Switch>
+
       </ScrollToTop>
     </React.Fragment>
   );

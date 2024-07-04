@@ -71,7 +71,7 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
       )} ...`;
       return (
         <Link
-          to={{ pathname: `/${post.fields.slug}` }}
+          to={{ pathname: `/blog/${post.fields.slug}` }}
           className="blog-box__box"
           key={post.sys.id}
         >
