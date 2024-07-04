@@ -58,7 +58,7 @@ deploy_to_prod:
   # only:
   #   - master
   variables:
-    website_host: search-guard.com    
+    website_host: preview.search-guard.com    
   <<: *deploy
 
 flush_cloudflare_cache:
