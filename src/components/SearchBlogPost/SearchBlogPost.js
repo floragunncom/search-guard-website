@@ -11,7 +11,7 @@ const SearchBlogPost = ({ post }) => {
   return (
     <Link
       to={{
-        pathname: `/${post.fields.slug}`,
+        pathname: `/blog/${post.fields.slug}`,
       }}
     >
       <div className="searchblogpost-item">

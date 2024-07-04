@@ -15,7 +15,7 @@ const Title = ({ text, subText, tags, link, authorProfile }) => {
         return (
           <Link
             to={{
-              pathname: `/category/${slug}/`,
+              pathname: `/blog/category/${slug}/`,
               categoryName: tag,
               categoryPosts,
               slug,
@@ -56,7 +56,7 @@ const Title = ({ text, subText, tags, link, authorProfile }) => {
                     </a>
                 </span>
                 <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                    <a itemProp="item"href={`/${link}`} className="title-breadcrumb-item">
+                    <a itemProp="item"href={`${link}`} className="title-breadcrumb-item">
                         <span itemProp="name">{text}</span>
                         <meta itemProp="position" content="3"/>
                     </a>
