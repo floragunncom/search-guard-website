@@ -23,7 +23,7 @@ const Security = () => {
         <title>
           Search Guard FLX | Securing your Elasticsearch cluster has never been easier
         </title>
-        <link rel="canonical" href="https://search-guard.com/security/" />
+        <link rel="canonical" href="https://preview.search-guard.com/security/" />
         <meta
           name="description"
           content="Securing Elasticsearch and Kibana has never been easier with Search Guard FLX."

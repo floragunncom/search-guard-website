@@ -9,7 +9,7 @@ const CompanySnippet = () => {
           "@type": "Organization",
           "name": "Search Guard",
           "legalName" : "floragunn GmbH",
-          "url": "https://search-guard.com",
+          "url": "https://preview.search-guard.com",
           "logo": "${sgLogo}",
           "foundingDate": "2013",
           "founders":

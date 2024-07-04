@@ -172,7 +172,7 @@ const BlogPostArticleContent = ({ postContent }) => {
                 <title>{postContent.fields.htmlTitle}</title>
                 <link
                     rel="canonical"
-                    href={`https://search-guard.com/blog/${postContent.fields.slug}`}
+                    href={`https://preview.search-guard.com/blog/${postContent.fields.slug}`}
                 />
 
                 <meta name="description" content={postContent.fields.htmlDescription} />
@@ -181,7 +181,7 @@ const BlogPostArticleContent = ({ postContent }) => {
 
                 <meta property="og:title" content={postContent.fields.htmlTitle} />
                 <meta property="og:type" content="article" />
-                <meta property="og:url" content={`https://search-guard.com/blog/${postContent.fields.slug}`} />
+                <meta property="og:url" content={`https://preview.search-guard.com/blog/${postContent.fields.slug}`} />
                 <meta property="og:description" content={postContent.fields.htmlDescription}/>
                 <meta property="og:image" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
                 <meta property="og:image:alt" content={postContent.fields.htmlDescription}/>
@@ -254,14 +254,14 @@ const BlogPostArticleContent = ({ postContent }) => {
                     <div className="blogpostarticle-sidebar-icons-container">
                         <FacebookShareButton
                             className="blogpostarticle-sidebar-icon"
-                            url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
+                            url={`https://www.preview.search-guard.com/blog/${postContent.fields.slug}`}
                             quote={postContent.fields.title}
                         >
                             <img src={iconFb} alt="facebook icon" />
                         </FacebookShareButton>
                         <TwitterShareButton
                             className="blogpostarticle-sidebar-icon"
-                            url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
+                            url={`https://www.preview.search-guard.com/blog/${postContent.fields.slug}`}
                             title={postContent.fields.title}
                             hastags={postContent.fields.tags}
                         >
@@ -269,13 +269,13 @@ const BlogPostArticleContent = ({ postContent }) => {
                         </TwitterShareButton>
                         <LinkedinShareButton
                             className="blogpostarticle-sidebar-icon"
-                            url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
+                            url={`https://www.preview.search-guard.com/blog/${postContent.fields.slug}`}
                         >
                             <img src={iconIn} alt="linkedIn icon" />
                         </LinkedinShareButton>
                         <RedditShareButton
                             className="blogpostarticle-sidebar-icon"
-                            url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
+                            url={`https://www.preview.search-guard.com/blog/${postContent.fields.slug}`}
                             title={postContent.fields.title}
                         >
                             <img src={iconY} alt="y icon" />
@@ -324,7 +324,7 @@ const BlogPostArticleContent = ({ postContent }) => {
             "@type": "Article",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://search-guard.com/blog/${postContent.fields.slug}/"
+              "@id": "https://preview.search-guard.com/blog/${postContent.fields.slug}/"
             },            
             "headline": "${postContent.fields.title}",
             "description": "${postContent.fields.htmlDescription}",            
@@ -332,7 +332,7 @@ const BlogPostArticleContent = ({ postContent }) => {
             "author": {
                "@type": "Person",
                "name": "${postContent.fields.author}",
-               "url": "https://search-guard.com/author/${postContent.fields.slug}/"
+               "url": "https://preview.search-guard.com/author/${postContent.fields.slug}/"
             },
             "datePublished": "${postContent.fields.date}",
             "dateModified": "${postContent.sys.updatedAt}",

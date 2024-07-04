@@ -18,7 +18,7 @@ const DataProtection = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Datenschutz - Search Guard</title>
-        <link rel="canonical" href="https://search-guard.com/datenschutz/" />
+        <link rel="canonical" href="https://preview.search-guard.com/datenschutz/" />
         <meta
           name="description"
           content="Our policy regarding the collection and usage of personal data in accordance with GDPR."
@@ -64,11 +64,11 @@ const DataProtection = () => {
               <br />
               Beim Aufrufen unserer Website{' '}
               <a
-                  href="https://search-guard.com/"
+                  href="https://preview.search-guard.com/"
                   target="_blank"
                   rel="noopener noreferrer"
               >
-                https://search-guard.com
+                https://preview.search-guard.com
               </a>{' '}
               werden durch den auf Ihrem Endgerät zum Einsatz kommenden Browser
               automatisch Informationen an den Server unserer Website gesendet.
@@ -540,11 +540,11 @@ const DataProtection = () => {
               <br />
               Beim Aufrufen unserer Website{' '}
               <a
-                href="https://search-guard.com/"
+                href="https://preview.search-guard.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                https://search-guard.com
+                https://preview.search-guard.com
               </a>{' '}
               werden durch den auf Ihrem Endgerät zum Einsatz kommenden Browser
               automatisch Informationen an den Server unserer Website gesendet.

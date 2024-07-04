@@ -20,7 +20,7 @@ const Disclosure = () => {
         <title>Search Guard Disclosure Policy</title>
         <link
           rel="canonical"
-          href="https://search-guard.com/disclosure-policy/"
+          href="https://preview.search-guard.com/disclosure-policy/"
         />
         <meta
           name="description"

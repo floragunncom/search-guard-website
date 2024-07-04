@@ -117,13 +117,13 @@ const WhitePaperArticle = ({ match }) => {
         <title>{postContent.fields.title}</title>
         <link
           rel="canonical"
-          href={`https://search-guard.com/${postContent.fields.slug}`}
+          href={`https://preview.search-guard.com/${postContent.fields.slug}`}
         />
         <meta name="description" content={postContent.fields.description} />
 
         <meta property="og:title" content={postContent.fields.title} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://search-guard.com/${postContent.fields.slug}`} />
+        <meta property="og:url" content={`https://preview.search-guard.com/${postContent.fields.slug}`} />
         <meta property="og:description" content={postContent.fields.description}/>
         <meta property="og:image" content={postContent.fields.cover.fields.file.url}/>
         <meta property="og:image:alt" content={postContent.fields.description}/>
@@ -199,27 +199,27 @@ const WhitePaperArticle = ({ match }) => {
           <div className="whitepaperarticle-sidebar-icons-container">
             <FacebookShareButton
               className="whitepaperarticle-sidebar-icon"
-              url={`https://www.search-guard.com/${postContent.fields.slug}`}
+              url={`https://www.preview.search-guard.com/${postContent.fields.slug}`}
               quote={postContent.fields.title}
             >
               <img src={iconFb} alt="facebook icon" />
             </FacebookShareButton>
             <TwitterShareButton
               className="whitepaperarticle-sidebar-icon"
-              url={`https://www.search-guard.com/${postContent.fields.slug}`}
+              url={`https://www.preview.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
             >
               <img src={iconTwitter} alt="twitter icon" />
             </TwitterShareButton>
             <LinkedinShareButton
               className="whitepaperarticle-sidebar-icon"
-              url={`https://www.search-guard.com/${postContent.fields.slug}`}
+              url={`https://www.preview.search-guard.com/${postContent.fields.slug}`}
             >
               <img src={iconIn} alt="linkedIn icon" />
             </LinkedinShareButton>
             <RedditShareButton
               className="whitepaperarticle-sidebar-icon"
-              url={`https://www.search-guard.com/${postContent.fields.slug}`}
+              url={`https://www.preview.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
             >
               <img src={iconY} alt="y icon" />
@@ -250,7 +250,7 @@ const WhitePaperArticle = ({ match }) => {
             "@type": "Article",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://search-guard.com/whitepapers/${postContent.fields.slug}/"
+              "@id": "https://preview.search-guard.com/whitepapers/${postContent.fields.slug}/"
             },            
             "headline": "${postContent.fields.title}",
             "description": "${postContent.fields.description}",            

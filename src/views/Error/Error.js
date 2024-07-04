@@ -17,7 +17,7 @@ const Error = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Search Guard | An error occured</title>
-        <link rel="canonical" href="https://search-guard.com/error/" />
+        <link rel="canonical" href="https://preview.search-guard.com/error/" />
         <meta
           name="description"
           content="An internal error occured, we humpy and deeply apologize"

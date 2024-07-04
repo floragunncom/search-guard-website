@@ -29,7 +29,7 @@ const Whitepapers = () => {
         <title>
           Search Guard Whitepapers for Elasticsearch
         </title>
-        <link rel="canonical" href="https://search-guard.com/whitepapers/" />
+        <link rel="canonical" href="https://preview.search-guard.com/whitepapers/" />
         <meta
           name="description"
           content="Search Guard whitepapers about security and alerting for Elasticsearch and Kibana"

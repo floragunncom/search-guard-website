@@ -101,7 +101,7 @@ const readSite = async (dir) => {
 
     const u = urlset.ele('url');
     u.ele('changefreq', 'monthly');
-    u.ele('loc', 'https://search-guard.com/sitemap/');
+    u.ele('loc', 'https://preview.search-guard.com/sitemap/');
     u.ele('priority', 0.5);
 
     const sitemap = urlset.end({ pretty: true });

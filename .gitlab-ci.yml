@@ -27,10 +27,10 @@ variables:
     - echo "$sftp_user_private_key_base64" | base64 -d | tr -d '\r' | ssh-add -
   script:
     - |
-      echo "Uploading files to SFTP server $sftp_server for host: $website_host"
+      echo "Uploading files to SFTP server 18.203.166.154 for host: $website_host"
       lftp --version
       echo "Start SFTP upload"
-      lftp -u $sftp_user_name, -e "set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no'; mirror --reverse --delete --parallel=20 --verbose build/ /var/www/$website_host/html/; quit" sftp://$sftp_server
+      lftp -u $sftp_user_name, -e "set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no'; mirror --reverse --delete --parallel=20 --verbose build/ /var/www/$website_host/html/; quit" sftp://18.203.166.154
 
 stages:
   - build
@@ -42,8 +42,8 @@ build_prod:
   tags:
     - build
   stage: build
-  only:
-    - master
+  # only:
+  #   - master
   <<: *build
 
 
@@ -55,8 +55,8 @@ deploy_to_prod:
   stage: deploy
   dependencies:
     - build_prod
-  only:
-    - master
+  # only:
+  #   - master
   variables:
     website_host: search-guard.com    
   <<: *deploy

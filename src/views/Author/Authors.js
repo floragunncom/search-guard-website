@@ -15,13 +15,13 @@ const Authors = ({ match }) => {
           <title>Search Guard Authors</title>
           <link
               rel="canonical"
-              href="https://search-guard.com/authors/"
+              href="https://preview.search-guard.com/authors/"
           />
 
           <meta name="description" content="A list of all Search Guard Authors"/>
 
           <meta property="og:title" content="Search Guard Authors"/>
-          <meta property="og:url" content="https://search-guard.com/authors/"/>
+          <meta property="og:url" content="https://preview.search-guard.com/authors/"/>
           <meta property="og:description" content="A list of all Search Guard Authors"/>
           <meta property="og:locale" content="en_US"/>
 

@@ -144,14 +144,14 @@ const Author = ({ match }) => {
         <title>{person.fields.firstName} {person.fields.lastName}</title>
         <link
           rel="canonical"
-          href={`https://search-guard.com/author/${person.fields.slug}`}
+          href={`https://preview.search-guard.com/author/${person.fields.slug}`}
         />
 
         <meta name="description" content={person.fields.htmlDescription} />
 
         <meta property="og:title" content={`${person.fields.firstName} ${person.fields.lastName}`}/>
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://search-guard.com/author/${person.fields.slug}`} />
+        <meta property="og:url" content={`https://preview.search-guard.com/author/${person.fields.slug}`} />
         <meta property="og:description" content={person.fields.htmlDescription}/>
         <meta property="og:image" content={`https:${person.fields.avatar.fields.file.url}`}/>
         <meta property="og:image:alt" content={`${person.fields.firstName} ${person.fields.lastName}`}/>

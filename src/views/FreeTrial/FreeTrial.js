@@ -21,7 +21,7 @@ const FreeTrial = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Start your free Search Guard Trial now</title>
-                <link rel="canonical" href="https://search-guard.com/search-guard-free-trial/" />
+                <link rel="canonical" href="https://preview.search-guard.com/search-guard-free-trial/" />
                 <meta
                     name="description"
                     content="How to download and run your free 60 day Search Guard Enterprise Trial"

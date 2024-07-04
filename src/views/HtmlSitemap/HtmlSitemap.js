@@ -14,7 +14,7 @@ const HtmlSitemap = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Search Guard - Security and Alerting for Elasticsearch and Kibana</title>
-                <link rel="canonical" href="https://search-guard.com/sitemap/" />
+                <link rel="canonical" href="https://preview.search-guard.com/sitemap/" />
                 <meta
                     name="description"
                     content="Search Guard is an Open Source security plugin for Elasticsearch, Kibana and the entire ELK stack. Search Guard offers encryption, authentication, authorization, audit logging, compliance as well as alerting and anomaly detection features."

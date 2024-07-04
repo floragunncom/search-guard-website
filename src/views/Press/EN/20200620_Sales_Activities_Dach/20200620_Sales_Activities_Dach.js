@@ -16,7 +16,7 @@ const Article = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Search Guard expands sales activities in DACH</title>
-                <link rel="canonical" href="https://search-guard.com/press/de/search-guard-vertrieb-dach/" />
+                <link rel="canonical" href="https://preview.search-guard.com/press/de/search-guard-vertrieb-dach/" />
                 <meta
                     name="description"
                     content="floragunn GmbH, manufacturer of the security plug-in Search Guard, based in Berlin, is strengthening its business activities in the German-speaking market"
@@ -98,7 +98,7 @@ const Article = () => {
                             Community Edition and in the Enterprise and Compliance Edition license versions.
                             The plug-in can be tested free of charge for 60 days.
 
-                            Further information is available at <a href="https://search-guard.com">search-guard.com</a>.
+                            Further information is available at <a href="https://preview.search-guard.com">search-guard.com</a>.
 
                         <br /><br />
 

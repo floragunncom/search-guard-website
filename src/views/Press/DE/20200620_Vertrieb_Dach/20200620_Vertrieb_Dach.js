@@ -18,7 +18,7 @@ const Article = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Search Guard weitet Vertriebsaktivitäten in DACH aus</title>
-                <link rel="canonical" href="https://search-guard.com/press/de/search-guard-vertrieb-dach/" />
+                <link rel="canonical" href="https://preview.search-guard.com/press/de/search-guard-vertrieb-dach/" />
                 <meta
                     name="description"
                     content="Die floragunn GmbH, Hersteller des Sicherheits-Plug-Ins Search Guard mit Sitz in Berlin, stärkt ihre Geschäftsaktivitäten auf dem deutschsprachigen Markt. "
@@ -92,7 +92,7 @@ const Article = () => {
                         sowie im TeleTrusT, dem Bundesverband für IT Sicherheit e.V.. Fortune 500 Unternehmen, Bildungsträger und Behörden
                         weltweit setzen Search Guard® zum Schutz ihrer Cluster ein. Search Guard® ist erhältlich in der kostenlosen
                         Community Edition sowie in den Lizenz-Versionen Enterprise und Compliance Edition.
-                        Das Plug-In kann 60 Tage kostenlos getestet werden. Weitere Informationen unter <a href="https://search-guard.com">search-guard.com</a>.
+                        Das Plug-In kann 60 Tage kostenlos getestet werden. Weitere Informationen unter <a href="https://preview.search-guard.com">search-guard.com</a>.
 
                         <br /><br />
 

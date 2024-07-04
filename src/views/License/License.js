@@ -30,7 +30,7 @@ const License = () => {
         <title>
           Pricing | Search Guard Community, Enterprise and Compliance Edition
         </title>
-        <link rel="canonical" href="https://search-guard.com/licensing/" />
+        <link rel="canonical" href="https://preview.search-guard.com/licensing/" />
         <meta
           name="description"
           content="Get to know more about the Search Guard Editions and pricing. Fair licensing and secure your Elasticsearch cluster with an unlimited amount of nodes - scale your cluster not your costs."

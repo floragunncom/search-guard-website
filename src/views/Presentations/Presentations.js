@@ -22,7 +22,7 @@ const Presentations = () => {
         <title>
           Search Guard Security and Alerting Slide Decks for Elasticsearch
         </title>
-        <link rel="canonical" href="https://search-guard.com/presentations/" />
+        <link rel="canonical" href="https://preview.search-guard.com/presentations/" />
         <meta
           name="description"
           content="Search Guard slide decks regarding various topics around security and alerting for Elasticsearch"
