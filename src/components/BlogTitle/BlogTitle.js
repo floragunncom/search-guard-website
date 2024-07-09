@@ -44,7 +44,7 @@ const Title = ({ text, subText, tags, link, authorProfile }) => {
                     </a>
                 </span>
                 <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                    <a itemProp="item" href="/resources/" className="title-breadcrumb-item">
+                    <a itemProp="item" href="/resource/" className="title-breadcrumb-item">
                         <span itemProp="name">Resources ></span>
                         <meta itemProp="position" content="2"/>
                     </a>
