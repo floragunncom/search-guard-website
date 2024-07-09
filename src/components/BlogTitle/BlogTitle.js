@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './BlogTitle.scss';
 import posts from '../../Api/contentfulPosts';
 
-const Title = ({ text, subText, tags, link, authorProfile }) => {
+const Title = ({ text, subText, tags, link, authorProfile, image }) => {
   const renderTags = (
     <div className="blogtitle-sub-text">
       Tags:{' '}

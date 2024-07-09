@@ -184,7 +184,7 @@ const BlogPostArticleContent = ({ postContent }) => {
                 <meta property="og:url" content={`https://search-guard.com/blog/${postContent.fields.slug}`} />
                 <meta property="og:description" content={postContent.fields.htmlDescription}/>
                 <meta property="og:image" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
-                <meta property="og:image:alt" content={postContent.fields.htmlDescription}/>
+                <meta property="og:image:alt" content={postContent.fields.title}/>
                 <meta property="og:locale" content="en_US" />
 
                 <meta name="twitter:card" content="summary_large_image"/>
@@ -195,7 +195,7 @@ const BlogPostArticleContent = ({ postContent }) => {
 
                 <meta name="twitter:image" content={`https:${postContent.fields.postImage.fields.file.url}`} />
                 <meta name="twitter:image:src" content={`https:${postContent.fields.postImage.fields.file.url}`} />
-                <meta name="twitter:image:alt" content={`https:${postContent.fields.postImage.fields.file.url}`} />
+                <meta name="twitter:image:alt" content={postContent.fields.title} />
 
             </Helmet>
             <BlogTitle
@@ -204,7 +204,15 @@ const BlogPostArticleContent = ({ postContent }) => {
                 tags={postContent.fields.tags}
                 link={`/blog/${postContent.fields.slug} `}
                 authorProfile={postContent.fields.authorProfile}
+                image={postContent.fields.postImage.fields.file.url}
             />
+            
+            <div className="row blogpostarticle-wrapper blogpostarticle-author">
+                <div className="col s12 l8 offset-l2 center">
+                    <img src={postContent.fields.postImage.fields.file.url + "?fm=jpg&fl=progressive&w=800&fit=scale"} className="blogpostarticle-headerimage responsive-img" alt={postContent.fields.title}></img>
+                </div>
+            </div>
+
             <div className="row blogpostarticle-wrapper blogpostarticle-author">
                 <div className="col s12 offset-l2 l8">
                     {renderAuthor}
