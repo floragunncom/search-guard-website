@@ -165,6 +165,23 @@ const BlogPostArticleContent = ({ postContent }) => {
         renderVideo = '<div className="video-container"> <iframe width="560" height="315" src="' + video.fields.embedUrl +'" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div>'
     };
 
+    let renderVideoJson = '';
+    if (
+        video
+    ) {
+        renderVideoJson =`
+            {
+              "@context": "https://schema.org",
+              "@type": "VideoObject",
+              "name": "${video.fields.title}",
+              "description": "${video.fields.shortDescription}",
+              "uploadDate": "${video.fields.publishedAt}",
+              "contentUrl": "${video.fields.url}",
+              "embedUrl": "${video.fields.embedUrl}",
+            }
+        `
+    };
+
     return (
         <PageWrapper>
             <Helmet>
@@ -323,9 +340,8 @@ const BlogPostArticleContent = ({ postContent }) => {
                 </a>
             </div>
 
-
-
             <PreFooter />
+
             <script type="application/ld+json">{`
           {
             "@context": "https://schema.org",
@@ -354,6 +370,11 @@ const BlogPostArticleContent = ({ postContent }) => {
             }
           }
         `}</script>
+
+            <script type="application/ld+json">
+                {renderVideoJson}
+            </script>
+
         </PageWrapper>
     );
 };
