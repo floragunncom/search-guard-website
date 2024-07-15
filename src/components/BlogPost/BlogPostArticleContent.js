@@ -182,6 +182,22 @@ const BlogPostArticleContent = ({ postContent }) => {
         `
     };
 
+    let renderAuthorJson = '';
+       if (authorProfile) {
+           renderAuthorJson =`
+            "author": {
+               "@type": "Person",
+               "name": "${authorProfile.fields.firstName} ${authorProfile.fields.lastName}",
+               "url": "https://search-guard.com/author/${authorProfile.fields.slug}"
+            }`
+       } else {
+           renderAuthorJson =`
+            "author": {
+               "@type": "Person",
+               "name": "${postContent.fields.author}"               
+            }`
+       }
+
     return (
         <PageWrapper>
             <Helmet>
@@ -348,16 +364,12 @@ const BlogPostArticleContent = ({ postContent }) => {
             "@type": "Article",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://search-guard.com/blog/${postContent.fields.slug}/"
+              "@id": "https://search-guard.com/blog/${postContent.fields.slug}"
             },            
             "headline": "${postContent.fields.title}",
             "description": "${postContent.fields.htmlDescription}",            
             "image": "${postContent.fields.postImage.fields.file.url}",
-            "author": {
-               "@type": "Person",
-               "name": "${postContent.fields.author}",
-               "url": "https://search-guard.com/author/${postContent.fields.slug}/"
-            },
+               ${renderAuthorJson},
             "datePublished": "${postContent.fields.date}",
             "dateModified": "${postContent.sys.updatedAt}",
             "publisher": {
