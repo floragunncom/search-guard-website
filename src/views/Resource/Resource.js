@@ -52,7 +52,7 @@ const Resource = () => {
         headlineRight="Community forum"
         textLeft="Get the official technical documentation for all Search Guard versions."
         textRight="Any questions on installation or configuration? Ask our community forum."
-        linkLeft="https://docs.search-guard.com/latest/"
+        linkLeft="https://search-guard.com/docs/latest/"
         linkRight="https://forum.search-guard.com/latest/"
         buttonTargetLeft="_blank"
         buttonTargetRight="_blank"

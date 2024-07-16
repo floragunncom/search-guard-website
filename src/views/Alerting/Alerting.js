@@ -99,7 +99,7 @@ const Alerting = () => {
             <div className="row certified-row-wrapper">
                 <div className="col s12 m4">
                     <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-alerting-actions-email"
+                        href="https://search-guard.com/docs/latest/elasticsearch-alerting-actions-email"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="certified-col-img"
@@ -115,7 +115,7 @@ const Alerting = () => {
                 </div>
                 <div className="col s12 m4">
                     <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-alerting-actions-slack"
+                        href="https://search-guard.com/docs/latest/elasticsearch-alerting-actions-slack"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="certified-col-img"
@@ -132,7 +132,7 @@ const Alerting = () => {
                 </div>
                 <div className="col s12 m4">
                     <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-alerting-actions-pagerduty"
+                        href="https://search-guard.com/docs/latest/elasticsearch-alerting-actions-pagerduty"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="certified-col-img"
@@ -152,7 +152,7 @@ const Alerting = () => {
             <div className="row">
                 <div className="col s12 m4">
                     <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-alerting-actions-jira"
+                        href="https://search-guard.com/docs/latest/elasticsearch-alerting-actions-jira"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="certified-col-img"
@@ -166,7 +166,7 @@ const Alerting = () => {
                 </div>
                 <div className="col s12 m4">
                     <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-alerting-actions-webhook"
+                        href="https://search-guard.com/docs/latest/elasticsearch-alerting-actions-webhook"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="certified-col-img"
@@ -181,7 +181,7 @@ const Alerting = () => {
                 </div>
                 <div className="col s12 m4">
                     <a
-                        href="https://docs.search-guard.com/latest/elasticsearch-alerting-actions-index"
+                        href="https://search-guard.com/docs/latest/elasticsearch-alerting-actions-index"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="certified-col-img"
