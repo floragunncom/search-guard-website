@@ -34,7 +34,7 @@ const NotFound = () => {
                 <li><a href="/alerting/">Search Guard Alerting</a></li>
                 <li><a href="/blog/">Search Guard Blog</a></li>
                 <li><a href="/faq/">Search Guard FAQ</a></li>
-                <li><a href="https://search-guard.com/docs/latest/" target="_blank" rel="noopener noreferrer">Search Guard Documentation</a></li>
+                <li><a href="https://preview.search-guard.com/docs/latest/" target="_blank" rel="noopener noreferrer">Search Guard Documentation</a></li>
               </ul>
             </div>
 

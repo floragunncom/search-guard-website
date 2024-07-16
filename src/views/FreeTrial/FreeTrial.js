@@ -55,7 +55,7 @@ const FreeTrial = () => {
                                 <div className="free-trial-content-button">
                                     <Button
                                         text="visit our downloads page"
-                                        link="https://search-guard.com/docs/latest/search-guard-versions"
+                                        link="https://preview.search-guard.com/docs/latest/search-guard-versions"
                                         target="_blank"
                                         rel="noopener norefferrer"
                                     />
@@ -151,7 +151,7 @@ const FreeTrial = () => {
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                We provide a <a href="https://search-guard.com/docs/latest/docker" target="_blank" rel="noopener noreferrer">Docker based demo</a> including Elasticsearch and Kibana with Search Guard and Signas Alerting pre-installed:
+                                We provide a <a href="https://preview.search-guard.com/docs/latest/docker" target="_blank" rel="noopener noreferrer">Docker based demo</a> including Elasticsearch and Kibana with Search Guard and Signas Alerting pre-installed:
 
                                 To start the image, run:
 
@@ -190,7 +190,7 @@ const FreeTrial = () => {
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                We provide <a href="https://search-guard.com/docs/latest/search-guard-kubernetes-helm" target="_blank" rel="noopener noreferrer">Helm Charts</a> for running Search Guard on Kubernetes.
+                                We provide <a href="https://preview.search-guard.com/docs/latest/search-guard-kubernetes-helm" target="_blank" rel="noopener noreferrer">Helm Charts</a> for running Search Guard on Kubernetes.
                             </div>
 
                         </div>
@@ -204,7 +204,7 @@ const FreeTrial = () => {
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                <a href="https://search-guard.com/docs/latest/" target="_blank" rel="noopener noreferrer">Search Guard Documentation</a>
+                                <a href="https://preview.search-guard.com/docs/latest/" target="_blank" rel="noopener noreferrer">Search Guard Documentation</a>
                                 <br />
                                 <a href="https://forum.search-guard.com/" target="_blank" rel="noopener noreferrer">Search Guard Community Forum</a>
                                 <br />

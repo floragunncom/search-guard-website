@@ -46,7 +46,7 @@ const TlsGenerator = () => {
                     <div className="col s12 l6">
                         <Button
                             text="Download TLS Tool"
-                            link="https://search-guard.com/docs/latest/offline-tls-tool"
+                            link="https://preview.search-guard.com/docs/latest/offline-tls-tool"
                             target="_blank"
                         />
                     </div>

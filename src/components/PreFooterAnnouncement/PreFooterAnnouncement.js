@@ -16,7 +16,7 @@ const PreFooterAnnouncement = ({ headline, buttonStyle, buttonText, buttonLink, 
             <Button
                 text="View Full Documentaton"
                 buttonStyle="sand-button"
-                link="https://search-guard.com/docs/latest/"
+                link="https://preview.search-guard.com/docs/latest/"
                 target="_blank"
             />
           </div>

@@ -35,7 +35,7 @@ const Security = () => {
         titlestyle="flx"
         buttonstyle="sand-button"
         buttontext="View full documentation"
-        buttonlink="https://search-guard.com/docs/latest/"
+        buttonlink="https://preview.search-guard.com/docs/latest/"
         buttontarget="_blank"
       />
 

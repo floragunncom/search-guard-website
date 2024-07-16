@@ -91,7 +91,7 @@ const Footer = ({ landing }) => {
                 </div>
                 <div className="footer-list-item">
                   <a
-                    href="https://search-guard.com/docs/latest/"
+                    href="https://preview.search-guard.com/docs/latest/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="footer-links"
