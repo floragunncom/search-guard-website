@@ -41,7 +41,7 @@ const Team = () => {
 
   return (
     <div className="company-team-wrapper" id="team">
-      <div className="company-team-headline">Management team</div>
+      <h3 className="company-team-headline">Management team</h3>
       <div className="row">
         {team.map(person => {
           return (

@@ -11,7 +11,7 @@ const Partners = () => {
   return (
     <div className="company-partners-wrapper" id="partners">
       <div className="row">
-        <div className="company-partners-headline">Partners</div>
+        <h3 className="company-partners-headline">Partners</h3>
         <div className="company-partners-pic-wrapper">
           <div className="col s12 m4 company-partners-pic hide-on-small-only">
             <a href="https://eliatra.com/">

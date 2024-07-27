@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import '../FreeTrial/FreeTrial.scss';
 import './Compliance.scss';
 import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -7,7 +8,6 @@ import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
-import Contact from '../../components/ContactFormSuperSlimOnly';
 import ctaIcon from '../../images/icon-sg.svg';
 import complianceDataChanges from '../../images/compliance_change_tracking.svg';
 import complianceAnon from '../../images/compliance_anon.svg';
@@ -15,6 +15,7 @@ import complianceForgotten from '../../images/compliance_forgotten.svg';
 import multilevel from '../../images/multilevel-security.svg';
 import shieldWheel from "../../images/shield-wheel.svg";
 import lock from '../../images/tile-icon-wheel.svg';
+import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 
 const breadcrumb = [
     { anchor: '/', name: 'Home' },
@@ -50,9 +51,9 @@ const Compliance = () => {
           <div className="compliance-wrapper" id="concept">
 
               <div className="row compliance">
-                  <div className="compliance-headline">Search Guard Compliance Edition</div>
+                  <h3 className="compliance-headline">Search Guard Compliance Edition</h3>
 
-                  <div className="compliance-content-headline">
+                  <div className="subtitle compliance-content-headline">
                       The challenges of data compliance
                   </div>
                   <div className="compliance-content-text">
@@ -63,7 +64,7 @@ const Compliance = () => {
                     impact on the reputation and business of any company.
                   </div>
 
-                  <div className="compliance-content-headline">
+                  <div className="subtitle compliance-content-headline">
                       Search Guard Compliance Edition
                   </div>
                   <div className="compliance-content-text">
@@ -138,7 +139,7 @@ const Compliance = () => {
                           <img src={shieldWheel} alt="checkmark icon" />
                       </div>
                       <div className="securityinfo-text-wrapper">
-                          <div className="securityinfo-headline">Data Encryption</div>
+                          <div className="subtitle securityinfo-headline">Data Encryption</div>
                           <div className="securityinfo-content">
                               Search Guard encrypts all the traffic inside your Elasticsearch cluster, shields from data breaches and ensures the
                               integrity of your data.
@@ -151,7 +152,7 @@ const Compliance = () => {
                           <img src={shieldWheel} alt="certificate icon" />
                       </div>
                       <div className="securityinfo-text-wrapper">
-                          <div className="securityinfo-headline">Data Anonymization</div>
+                          <div className="subtitle securityinfo-headline">Data Anonymization</div>
                           <div className="securityinfo-content">
                               Search Guard provides role-based access control to all data stored in your Elasticsearch cluster.
                               Control exactly which users can access PII or other sensitive data in cleartext or anonymized.
@@ -164,7 +165,7 @@ const Compliance = () => {
                           <img src={shieldWheel} alt="shield icon" />
                       </div>
                       <div className="securityinfo-text-wrapper">
-                          <div className="securityinfo-headline">Audit Trails</div>
+                          <div className="subtitle securityinfo-headline">Audit Trails</div>
                           <div className="securityinfo-content">
                               Search Guard generates audit trails on who has created, modified, accessed and deleted PII and other sensitive
                               data in your Elasticsearch cluster.
@@ -174,8 +175,20 @@ const Compliance = () => {
               </div>
           </div>
 
-          <div className="compliance-headline-form" id="contact">Questions? Contact Us!</div>
-    <Contact/>
+          <div className="row free-trial">
+              <div className="subtitle compliance-headline-form" id="contact">
+                  Questions? Contact Us!
+              </div>
+
+              <div className="free-trial-section" >
+                  <div className="free-trial-content">
+                      <div className="free-trial-content-text">
+                          <ContactFormSlimOnly/>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
       <div id="tryit">
         <Cta
           headline="Give the Search Guard Compliance Edition a spin!"

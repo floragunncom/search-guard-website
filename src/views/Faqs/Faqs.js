@@ -99,7 +99,7 @@ const Faqs = () => {
                       itemType="https://schema.org/Question"
                     >
                       <div
-                        className={`faq-answer-headline ${faq.paddingClass}`}
+                        className={`subtitle faq-answer-headline ${faq.paddingClass}`}
                         itemProp="name"
                       >
                         {faq.fields.question}

@@ -37,14 +37,13 @@ const FreeTrial = () => {
             <div className="free-trial-wrapper" >
 
                 <div className="row free-trial">
-                    <div className="free-trial-headline">Start your free Search Guard Enterprise trial</div>
 
                         <div className="free-trial-section" >
                             <div className="free-trial-pic">
                                 <img src={one} alt="integrator icon" />
                             </div>
                             <div className="free-trial-content">
-                                <div className="free-trial-content-headline">
+                                <div className="subtitle free-trial-content-headline">
                                     Download Search Guard
                                 </div>
                                 <div className="free-trial-content-text">
@@ -75,7 +74,7 @@ const FreeTrial = () => {
                             <img src={two} alt="integrator icon" />
                         </div>
                         <div className="free-trial-content">
-                            <div className="free-trial-content-headline">
+                            <div className="subtitle  free-trial-content-headline">
                                 Install Search Guard
                             </div>
                             <div className="free-trial-content-text">
@@ -102,7 +101,7 @@ const FreeTrial = () => {
                             <img src={three} alt="integrator icon" />
                         </div>
                         <div className="free-trial-content">
-                            <div className="free-trial-content-headline">
+                            <div className="subtitle free-trial-content-headline">
                                 (Optional) Install demo configuration
                             </div>
                             <div className="free-trial-content-text">
@@ -130,7 +129,7 @@ const FreeTrial = () => {
                             <img src={four} alt="integrator icon" />
                         </div>
                         <div className="free-trial-content">
-                            <div className="free-trial-content-headline">
+                            <div className="subtitle free-trial-content-headline">
                                 Restart Elasticsearch
                             </div>
                             <div className="free-trial-content-text">
@@ -146,7 +145,7 @@ const FreeTrial = () => {
                 </div>
 
                 <div className="row free-trial">
-                    <div className="free-trial-headline">Docker</div>
+                    <h3 className="free-trial-headline">Docker</h3>
 
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
@@ -185,7 +184,7 @@ const FreeTrial = () => {
                 </div>
 
                 <div className="row free-trial">
-                    <div className="free-trial-headline">Kubernetes</div>
+                    <h3 className="free-trial-headline">Kubernetes</h3>
 
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
@@ -199,7 +198,7 @@ const FreeTrial = () => {
                 </div>
 
                 <div className="row free-trial">
-                    <div className="free-trial-headline">Other Resources</div>
+                    <h3 className="free-trial-headline">Other Resources</h3>
 
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
@@ -220,7 +219,7 @@ const FreeTrial = () => {
             </div>
 
             <div className="row free-trial">
-                <div className="free-trial-headline">Any Questions? Drop us a line!</div>
+                <div className="subtitle free-trial-headline">Any Questions? Drop us a line!</div>
 
                 <div className="free-trial-section" >
                     <div className="free-trial-content">

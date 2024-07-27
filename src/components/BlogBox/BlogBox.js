@@ -107,13 +107,13 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
           postsyoulike ? 'blog-box__postsyoulike' : 'blog-box__wrapper'
         }
     >
-      <div
+      <h3
         className={
           overview ? 'blog-box__headline-overview' : 'blog-box__headline'
         }
       >
         {headline}
-      </div>
+      </h3>
       <div className="blog-box__container">{previewPosts(startPoint1)}</div>
       {overview ? (
         <div className="blog-box__container">{previewPosts(startPoint2)}</div>

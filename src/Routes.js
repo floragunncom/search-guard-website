@@ -1,4 +1,5 @@
-import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
+import './index.scss';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import React from 'react';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import HomePage from './views/HomePage/HomePage';

@@ -104,7 +104,9 @@ li a {
 iframe {
   border: none;
 }
-// Default Settings
+
+// Core Components
+
 .container, .row, .container .row {
   width: inherit;
   margin: 0px auto;
@@ -119,6 +121,15 @@ div.row {
   padding: 0px 20px;
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.subtitle {
+  @include fonts;
+  font-family: "Inter-Medium";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 175%; /* 28px */
+  letter-spacing: 0.15px;
 }
 
 .hidden {

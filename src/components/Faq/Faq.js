@@ -10,7 +10,7 @@ const Faq = () => {
   return (
     <div className="faq-wrapper" id="faq">
       <div className="row faq-row">
-        <div className="faq-headline">Frequently asked questions</div>
+        <h3 className="faq-headline">Frequently asked questions</h3>
         <div className="faq-info-boxes">
             {faqs.fields.entries.map(faq => {
                     return (

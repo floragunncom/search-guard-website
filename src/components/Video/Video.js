@@ -47,7 +47,7 @@ const Video = props => {
         }
       >
         <div className="row">
-          <div className="video-headline">Videos</div>
+          <h3 className="video-headline" id="videos">Videos</h3>
            <div className="video-description">
             <div className="video-description-video">
               <iframe

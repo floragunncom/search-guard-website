@@ -347,7 +347,7 @@ const Journey = () => {
   return (
     <div className="journey-wrapper" id="journey">
       <div className="row">
-        <div className="journey-headline"> The Search Guard Journey </div>
+        <h3 className="journey-headline"> The Search Guard Journey </h3>
         <div className="journey-timeline-wrapper">
           <section className="timeline">
             <ul>

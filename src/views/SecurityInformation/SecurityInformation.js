@@ -34,7 +34,7 @@ const Security = () => {
       />
       <div className="row">
         <div className="col s12 l8 offset-l2 security-wrapper">
-          <div className="security-headline">Search Guard Public Key</div>
+          <h3 className="security-headline">Search Guard Public Key</h3>
           <div className="security-text">
             Fingerprint:
             <br />
@@ -81,9 +81,9 @@ const Security = () => {
             <br />
             -----END PGP PUBLIC KEY BLOCK-----
           </div>
-          <div className="security-headline">
+          <h3 className="security-headline">
             Search Guard Code Signing Public Key
-          </div>
+          </h3>
           <div className="security-text">
             Fingerprint:
             <br />
@@ -134,7 +134,7 @@ const Security = () => {
             <br />
             -----END PGP PUBLIC KEY BLOCK-----
           </div>
-          <div className="security-headline">Security Issues</div>
+          <h3 className="security-headline">Security Issues</h3>
           <div className="security-plain-text">
             Please report any security issues and findings via:{' '}
             <a href="mailto:security@search-guard.com?Subject=Security%20Issue%20Search-Guard">

@@ -54,9 +54,9 @@ const ContactForm = () => {
     <div className="row contact-wrapper">
       <div className="col s12 l5" id="contact">
         <div className="company-information-container">
-          <p className="company-information-header">
+          <h4 className="company-information-header">
             Search Guard Headquarters
-          </p>
+          </h4>
           <p className="company-information-text">
             floragunn GmbH
             <br />
@@ -68,9 +68,9 @@ const ContactForm = () => {
             <br />
             <a href="mailto:info@floragunn.com">info@floragunn.com</a>
           </p>
-          <p className="company-information-header">Authorized Partners</p>
+          <h4 className="company-information-header">Authorized Partners</h4>
           <p className="company-information-text">
-            <b>USA and Canada</b>
+            <b className="subtitle">USA and Canada</b>
             <br />
             Excelerate Systems LLC
             <br /> 2205 152nd Avenue NE Redmond
@@ -82,7 +82,7 @@ const ContactForm = () => {
             </a>
           </p>
           <p className="company-information-text">
-            <b>France & North Africa</b>
+            <b className="subtitle">France & North Africa</b>
             <br />
             Ian Quakenbos
             <br />
@@ -91,7 +91,7 @@ const ContactForm = () => {
             </a>
           </p>
           <p className="company-information-text">
-            <b>South America</b>
+            <b className="subtitle">South America</b>
             <br /> Excelerate Systems S de R.L. de C.V.
             <br /> Córdoba 42, Roma Norte, Cuauhtémoc, C.P.
             <br /> 06700, Ciudad de México

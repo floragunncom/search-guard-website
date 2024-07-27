@@ -116,11 +116,11 @@ const Certifications = () => {
     <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>certificates Archives - Search Guard</title>
+        <title>Certificates - Search Guard</title>
         <link rel="canonical" href="https://search-guard.com/certificates/" />
         <meta
           name="description"
-          // content="Search Guard is an Open Source security plugin for Elasticsearch and the entire ELK stack. Search Guard offers encryption, authentification, authorization, audit logging, multitenancy and compliance features (for regulations like GDPR, HIPAA, PCI DSS or SOX)."
+          content="Search Guard is security certified by CA Veracode and we are actively participating in various IT security associations."
         />
       </Helmet>
       <Title
@@ -132,9 +132,9 @@ const Certifications = () => {
           return (
             <div>
               <div className="certifications-item-wrapper">
-                <div className="col s12 certifications-headline">
+                <h3 className="col s12 certifications-headline">
                   {certificate.headline}
-                </div>
+                </h3>
                 <a
                   href={certificate.homepage}
                   target="_blank"

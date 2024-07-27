@@ -13,7 +13,7 @@ const Labels = () => {
             <img src={certificate} alt="certificate icon" />
           </div>
           <div className="securityinfo-text-wrapper">
-            <div className="securityinfo-headline">Certified</div>
+            <div className=" securityinfo-headline subtitle">Certified</div>
             <div className="securityinfo-content">
               Since 2013, Search Guard has been pushing the boundaries of Elastic Stack security.
               We don't take any shortcuts when it comes to data protection - our code is rigorously tested and verified by
@@ -26,7 +26,7 @@ const Labels = () => {
             <img src={shieldWheel} alt="shield icon" />
           </div>
           <div className="securityinfo-text-wrapper">
-            <div className="securityinfo-headline">Priority support</div>
+            <div className="securityinfo-headline subtitle">Priority support</div>
             <div className="securityinfo-content">
               Our customers enjoy priority support with guaranteed service-level agreements and direct access to the Search Guard developer team.
               Custom plans that include 24/7 coverage and  Elastic Stack support are available for maximum peace of mind.
@@ -39,7 +39,7 @@ const Labels = () => {
             <img src={check} alt="checkmark icon" />
           </div>
           <div className="securityinfo-text-wrapper">
-            <div className="securityinfo-headline">Trusted by</div>
+            <div className="securityinfo-headline subtitle">Trusted by</div>
             <div className="securityinfo-content">
               Our clients span the globe, from Fortune 500s and federal entities to groundbreaking start-ups.
               They trust us with their most important projects - no matter the size or type.

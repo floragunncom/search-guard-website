@@ -8,7 +8,7 @@ import './Certified.scss';
 const Certified = () => {
   return (
     <div className="certified-wrapper" id="certified">
-      <div className="certified-headline">Certified</div>
+      <h4 className="certified-headline">Certified</h4>
       <div className="row certified-row-wrapper">
         <div className="col s12 m6">
           <a
@@ -19,7 +19,7 @@ const Certified = () => {
           >
             <img src={veracode} alt="veracode logo" />
           </a>
-          <div className="certified-col-headline">Veracode</div>
+          <div className="subtitle certified-col-headline">Veracode</div>
           <div className="certified-col-text">
             All Search Guard versions and all third-party libraries are verified
             and scanned for vulnerabilities by Veracode. CA Veracode Verified
@@ -36,7 +36,7 @@ const Certified = () => {
           >
             <img src={alliance} alt="alliance logo" />
           </a>
-          <div className="certified-col-headline">
+          <div className="subtitle certified-col-headline">
             Allianz for Cyber-Sicherheit
           </div>
           <div className="certified-col-text">
@@ -55,7 +55,7 @@ const Certified = () => {
           >
             <img src={cve} alt="ove logo" />
           </a>
-          <div className="certified-col-headline">CVE</div>
+          <div className="subtitle certified-col-headline">CVE</div>
           <div className="certified-col-text">
             floragunn GmbH is the official CVE numbering authority for Search
             Guard.
@@ -70,7 +70,7 @@ const Certified = () => {
           >
             <img src={security} alt="security icon" />
           </a>
-          <div className="certified-col-headline">TeleTrusT</div>
+          <div className="subtitle certified-col-headline">TeleTrusT</div>
           <div className="certified-col-text">
             floragunn is member of TeleTrust, a German federal association for
             IT security.

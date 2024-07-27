@@ -73,7 +73,7 @@ const Integrators = () => {
   return (
     <div className="company-integrators-wrapper" id="integrators">
       <div className="row company-integrators">
-        <div className="company-integrators-headline">Integrators</div>
+        <h4 className="company-integrators-headline">Integrators</h4>
         {integrators.map((profile, index) => {
           return (
             <div className="company-integrators-section" key={index}>
@@ -81,7 +81,7 @@ const Integrators = () => {
                 <img src={profile.pic} alt="integrator icon" />
               </div>
               <div className="integrators-content">
-                <div className="integrators-content-headline">
+                <div className="subtitle integrators-content-headline">
                   {profile.headline}
                 </div>
                 <div className="integrators-content-text">{profile.text}</div>

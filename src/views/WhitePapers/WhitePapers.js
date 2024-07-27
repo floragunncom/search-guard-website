@@ -62,7 +62,7 @@ const Whitepapers = () => {
                 alt="preview imaginery"
               />
                 </a>
-              <div className="whitepapers-headline">{whitepaperContent.fields.title}</div>
+              <div className="subtitle whitepapers-headline">{whitepaperContent.fields.title}</div>
               <div className="whitepapers-text">{whitepaperContent.fields.description}</div>
 
                 <div className="col m6 s12 center-align">
