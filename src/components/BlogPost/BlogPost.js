@@ -10,8 +10,8 @@ const BlogPost = ({ post }) => {
 
     const blogPost = post.fields;
 
-  let infoTextIndex = 165;
-  let infoHeadlineIndex = 42;
+  let infoTextIndex = 200;
+  let infoHeadlineIndex = 100;
   while (blogPost.postContent[infoTextIndex] !== ' ') {
     infoTextIndex -= 1;
   }
@@ -30,7 +30,7 @@ const BlogPost = ({ post }) => {
           />
         </div>
         <div className="blogpost-headline">
-          {blogPost.title.length < 45
+          {blogPost.title.length < infoHeadlineIndex
             ? blogPost.title
             : `${blogPost.title.substring(0, infoHeadlineIndex)} ...`}
         </div>
@@ -38,7 +38,9 @@ const BlogPost = ({ post }) => {
           {blogPost.author} || {blogPost.date}
         </div>
         <div className="blogpost-paragraph">
-          {blogPost.htmlDescription.substring(0, infoTextIndex)} ...
+            {blogPost.htmlDescription.length < infoTextIndex
+                ? blogPost.htmlDescription
+                : `${blogPost.htmlDescription.substring(0, infoTextIndex)} ...`}
         </div>
         <div className="blogpost-info-link">
           <span>read more</span>

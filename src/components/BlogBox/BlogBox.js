@@ -59,16 +59,21 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
   const previewPosts = startPoint => {
     return posts.slice(startPoint, startPoint + 3).map(post => {
       const fittedTitle =
-        post.fields.title.length > 45
+        post.fields.title.length > 100
           ? `${post.fields.title.substring(
               0,
-              textLength(post.fields.title, 45),
+              textLength(post.fields.title, 100),
             )} ...`
           : post.fields.title;
-      const fittedContent = `${post.fields.htmlDescription.substring(
-        0,
-        textLength(post.fields.postContent, 160),
-      )} ...`;
+
+      const fittedContent =
+      post.fields.htmlDescription.length > 200
+          ? `${post.fields.htmlDescription.substring(
+              0,
+              textLength(post.fields.htmlDescription, 200),
+          )} ...`
+          : post.fields.htmlDescription;
+
       return (
         <Link
           to={{ pathname: `/blog/${post.fields.slug}` }}
