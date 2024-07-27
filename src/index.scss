@@ -15,11 +15,74 @@
   margin: 0px;
   padding: 0px;
   scroll-behavior: smooth;
-  font-family: 'Roboto', sans-serif;
 }
 
+@mixin fonts{
+  color: var(--Text-Primary, rgba(0, 0, 0, 0.87));
+  font-feature-settings: 'clig' off, 'liga' off;
+}
+
+@mixin font-headlines {
+  @include fonts;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+// HTML Elements
 body {
-  font-size: 62.5%;
+  @include fonts;
+  font-family: "Inter-Regular";
+}
+
+h1 {
+  @include font-headlines;
+  font-family: "Parafina-SemiWideXBold";
+  font-size: 96px;
+  line-height: 80%; /* 76.8px */
+  letter-spacing: -1.5px;
+
+}
+
+h2 {
+  @include font-headlines;
+  font-family: Parafina-SemiWideXBold;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 80%; /* 48px */
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  @include font-headlines;
+  font-family: Parafina-SemiWideXBold;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 80%; /* 38.4px */
+}
+
+h4 {
+  @include font-headlines;
+  font-family: Parafina-SemiWideXBold;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 123.5%; /* 49.4px */
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  @include font-headlines;
+  font-family: Parafina-SemiWideBold;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 133.4%; /* 37.352px */
+}
+
+h5 {
+  @include font-headlines;
+  font-family: Parafina-SemiWideBold;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 133.4%; /* 37.352px */
 }
 
 p {
@@ -30,6 +93,18 @@ button {
   border: none;
 }
 
+a {
+  cursor: pointer;
+}
+
+li a {
+  text-decoration: none;
+}
+
+iframe {
+  border: none;
+}
+// Default Settings
 .container, .row, .container .row {
   width: inherit;
   margin: 0px auto;
@@ -46,20 +121,8 @@ div.row {
   margin-right: 0px;
 }
 
-li a {
-  text-decoration: none;
-}
-
 .hidden {
   display: none;
-}
-
-a {
-  cursor: pointer;
-}
-
-iframe {
-  border: none;
 }
 
 .material-icons.md-18 { font-size: 18px; }

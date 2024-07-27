@@ -18,27 +18,23 @@
 
 }
 
-
-
 .title-headline-style {
-  text-transform: uppercase;
+  color: $turkis;
   font-size: 60px;
   line-height: 72px;
-  font-weight: 500;
-  color: $turkis;
   text-align: center;
   padding: 0px 20px 0px 20px;
   letter-spacing: 2px;
   margin-top: 20px;
   @media only screen and (max-width: $tabletBig) {
-    padding-bottom: 32px;
+    padding: 0px 0px 0px 0px;
     font-size: 42px;
     letter-spacing: 1.4px;
     line-height: 49px;
     margin-top: 15px;
   };
   @media only screen and (max-width: $mobile) {
-    padding: 0px 0px 16px 0px;
+    padding: 0px 0px 0px 0px;
     font-size: 30px;
     line-height: 36px;
     letter-spacing: 1px;
@@ -63,16 +59,18 @@
 }
 
 .title-text-style {
-  font-size: 24px;
+  font-family: "Inter-Regular"; // this is an h2 but we want the body font type
+  font-size: 18px;
   line-height: 30px;
   letter-spacing: 0.8px;
   color: $white;
   padding: 0px 18px;
   text-align: center;
+  text-transform: none;
   @media only screen and (max-width: $mobile) {
-    letter-spacing: 0.67px;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 25px;
+    padding: 0px 18px;
   };
 
   &-heise {

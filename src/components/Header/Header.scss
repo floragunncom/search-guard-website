@@ -73,8 +73,8 @@
       letter-spacing: 1px;
       font-weight: bold;
       &:not(:last-child) {
-        margin-right: 48px;
-        @media only screen and (max-width: $tabletBig) {
+        margin-right: 28px;
+        @media only screen and (max-width: $tablet) {
           margin-right: 0;
         }
       }
