@@ -2,7 +2,7 @@
 @import '../../styles/Breakpoints';
 
 .title-wrapper-style {
-  background-color: $navyBlue;
+  background-color: white;
   padding: 64px 32px;
   @media only screen and (max-width: $tabletBig) {
     padding-bottom: 32px;
@@ -19,12 +19,11 @@
 }
 
 .title-headline-style {
-  color: $turkis;
+  color: $primary-main;
   font-size: 60px;
   line-height: 72px;
   text-align: center;
   padding: 0px 20px 0px 20px;
-  letter-spacing: 2px;
   margin-top: 20px;
   @media only screen and (max-width: $tabletBig) {
     padding: 0px 0px 0px 0px;
@@ -63,7 +62,7 @@
   font-size: 18px;
   line-height: 30px;
   letter-spacing: 0.8px;
-  color: $white;
+  color: $primary-main;
   padding: 0px 18px;
   text-align: center;
   text-transform: none;
@@ -94,7 +93,7 @@
 
 
 .title-breadcrumb-item {
-  color: $turkis;
+  color: $primary-main;
   font-size: 13px;
   line-height: 12px;
   letter-spacing: 0.8px;

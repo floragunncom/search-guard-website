@@ -3,25 +3,25 @@ import Headroom from 'react-headroom';
 import { NavLink } from 'react-router-dom';
 import Markdown from 'markdown-to-jsx';
 import {useLocation} from "react-router-dom";
-import logo from '../../images/logo-white.svg';
+import logo from '../../images/sg_dlic_small.png';
 import cross from '../../images/cross-white.svg';
 import pagesections from '../../Api/pagecontent/sections.json';
 import './Header.scss';
 
 
 
-const Header = ({ background = '#246E94', landing }) => {
+const Header = ({ background = 'white', landing }) => {
   const [showMenu, setShowMenu] = useState(false);
 
     const location = useLocation();
 
     const style = {
     active: {
-      borderBottom: '2px solid #00FCE5',
+      borderBottom: '2px solid #184962',
       marginBottom: 0,
     },
     activeContact: {
-      border: '2px solid #00FCE5',
+      border: '2px solid #184962',
     },
   };
 

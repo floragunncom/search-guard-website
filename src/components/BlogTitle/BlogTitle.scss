@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column; 
-  background-color: $navyBlue;
+  background-color: white;
 }
 
 .blogtitle-subtext-container {
@@ -14,7 +14,7 @@
   @media only screen and (max-width: $tabletBig) {
     padding: 32px 32px 0px 32px;
     background-color: $white;
-    color: $navyBlue;
+    color: $primary-main;
   };
   @media only screen and (max-width: $mobile) {
     padding: 16px 24px 0px 24px;
@@ -40,9 +40,8 @@
   max-width: 1180px;
   font-size: 60px;
   line-height: 72px;
-  letter-spacing: 2px;
   font-weight: 500;
-  color: $turkis;
+  color: $primary-main;
   margin-bottom: 32px;
   margin-top: 0px;
   @media only screen and (max-width: $tabletBig) {
@@ -66,15 +65,15 @@
   font-size: 12px;
   line-height: 22px;
   letter-spacing: 3.3px;
-  color: $white;
+  color: $primary-main;
   @media only screen and (max-width: $tabletBig) {
-    color: $navyBlue;
+    color: $primary-main;
   };
 }
 
 .blogtitle-tag {
   padding: 0 4px;
-  color: $white;
+  color: $primary-main;
   transition: all .2s;
   &:not(:last-child) {
     &::after {
