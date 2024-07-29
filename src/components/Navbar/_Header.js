@@ -6,7 +6,7 @@ import {useLocation} from "react-router-dom";
 import logo from '../../images/logo-white.svg';
 import cross from '../../images/cross-white.svg';
 import pagesections from '../../Api/pagecontent/sections.json';
-import './Header.scss';
+import './_Header.scss';
 
 
 

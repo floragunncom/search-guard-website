@@ -1,0 +1,25 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+nav {
+  background-color: $navyBlueActive;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.navbar {
+  &__item {
+    color: $white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+}
+
+
+
+.sidenav {
+  left: -20px;
+}
+
