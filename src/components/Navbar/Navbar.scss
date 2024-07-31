@@ -7,6 +7,34 @@ nav {
   padding-right: 200px;
 }
 
+nav ul li {
+  transition: unset;
+  -webkit-transition: unset;
+  -moz-transition: unset;
+  -ms-transition: unset;
+  -o-transition: unset;
+  &:hover,
+  &:focus {
+    border-bottom: 2px solid $turkis;
+    margin-bottom: -2px;
+  }
+  border: none;
+  text-decoration: none;
+}
+
+nav ul a {
+  transition: unset;
+  -webkit-transition: unset;
+  -moz-transition: unset;
+  -ms-transition: unset;
+  -o-transition: unset;
+  border: none;
+  text-decoration: none;
+  outline-style: none;
+}
+
+
+
 .navbar {
   &__item {
     color: $white;
@@ -14,12 +42,79 @@ nav {
     font-size: 14px;
     letter-spacing: 1px;
     font-weight: 700;
+    border: none;
+    outline-style: none;
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid $turkis;
+      margin-bottom: -2px;
+    }
+  }
+
+  &__icon {
+    padding-top: 5px;
   }
 }
 
-
-
 .sidenav {
   left: -20px;
+  color: $white;
+  background-color: $navyBlueActive;
 }
 
+.sidenav li>a {
+  color: $white;
+}
+#nav-solutions {
+  min-width: 250px;
+}
+
+#nav-resources {
+  min-width: 250px;
+}
+
+.dropdown-content  {
+  background-color: unset !important;
+}
+
+.dropdown-content li > a {
+  background-color: $navyBlueActive;
+  color: white;
+}
+
+.dropdown-content li:hover,
+.dropdown-content li.active {
+  background-color:$navyBlueActive;
+  border-bottom: 2px solid $turkis;
+  margin-bottom: -2px;
+}
+
+.dropdown-content li {
+  clear:both;
+  color:$navyBlueActive;
+  cursor:pointer;
+  min-height:50px;
+  line-height:1.5rem;
+  width:100%;
+  text-align:left
+}
+
+.dropdown-trigger {
+  border: none !important;
+  text-decoration: none !important;
+  &:hover,
+  &:focus {
+    border: none !important;
+    text-decoration: none !important;
+  }
+}
+
+nav .sidenav-trigger {
+  float: right;
+}
+
+@media only screen and (max-width: 992px) {
+  nav .brand-logo {
+    left: 30%;
+  }
+}
