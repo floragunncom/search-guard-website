@@ -52,57 +52,7 @@ const ContactForm = () => {
 
   return (
     <div className="row contact-wrapper">
-      <div className="col s12 l5" id="contact">
-        <div className="company-information-container">
-          <h4 className="company-information-header">
-            Search Guard Headquarters
-          </h4>
-          <p className="company-information-text">
-            floragunn GmbH
-            <br />
-            Tempelhofer Ufer 16
-            <br />
-            10963 Berlin
-            <br />
-            Germany
-            <br />
-            <a href="mailto:info@floragunn.com">info@floragunn.com</a>
-          </p>
-          <h4 className="company-information-header">Authorized Partners</h4>
-          <p className="company-information-text">
-            <b className="subtitle">USA and Canada</b>
-            <br />
-            Excelerate Systems LLC
-            <br /> 2205 152nd Avenue NE Redmond
-            <br />
-            WA 98052
-            <br />
-            <a href="mailto:david.bennett@exceleratesystems.net">
-              david.bennett@exceleratesystems.net
-            </a>
-          </p>
-          <p className="company-information-text">
-            <b className="subtitle">France & North Africa</b>
-            <br />
-            Ian Quakenbos
-            <br />
-            <a href="mailto:iquackenbos@search-guard.com">
-                iquackenbos@search-guard.com
-            </a>
-          </p>
-          <p className="company-information-text">
-            <b className="subtitle">South America</b>
-            <br /> Excelerate Systems S de R.L. de C.V.
-            <br /> Córdoba 42, Roma Norte, Cuauhtémoc, C.P.
-            <br /> 06700, Ciudad de México
-            <br />
-            <a href="mailto:victor.pichardo@exceleratesystems.net">
-              victor.pichardo@exceleratesystems.net
-            </a>
-          </p>
-        </div>
-      </div>
-      <div className="col s12 l7" id="contact">
+      <div className="col s12 l7 push-l5" id="contact">
         <div className="contact-info-container">
           <form onSubmit={postDataToCRM}>
             <div className="contact-info-wrapper">
@@ -369,6 +319,56 @@ const ContactForm = () => {
           </form>
         </div>
       </div>
+        <div className="col s12 l5 pull-l7" id="contact">
+            <div className="company-information-container">
+                <h4 className="company-information-header">
+                    Search Guard Headquarters
+                </h4>
+                <p className="company-information-text">
+                    floragunn GmbH
+                    <br />
+                    Tempelhofer Ufer 16
+                    <br />
+                    10963 Berlin
+                    <br />
+                    Germany
+                    <br />
+                    <a href="mailto:info@floragunn.com">info@floragunn.com</a>
+                </p>
+                <h4 className="company-information-header">Authorized Partners</h4>
+                <p className="company-information-text">
+                    <b className="subtitle">USA and Canada</b>
+                    <br />
+                    Excelerate Systems LLC
+                    <br /> 2205 152nd Avenue NE Redmond
+                    <br />
+                    WA 98052
+                    <br />
+                    <a href="mailto:david.bennett@exceleratesystems.net">
+                        david.bennett@exceleratesystems.net
+                    </a>
+                </p>
+                <p className="company-information-text">
+                    <b className="subtitle">France & North Africa</b>
+                    <br />
+                    Ian Quakenbos
+                    <br />
+                    <a href="mailto:iquackenbos@search-guard.com">
+                        iquackenbos@search-guard.com
+                    </a>
+                </p>
+                <p className="company-information-text">
+                    <b className="subtitle">South America</b>
+                    <br /> Excelerate Systems S de R.L. de C.V.
+                    <br /> Córdoba 42, Roma Norte, Cuauhtémoc, C.P.
+                    <br /> 06700, Ciudad de México
+                    <br />
+                    <a href="mailto:victor.pichardo@exceleratesystems.net">
+                        victor.pichardo@exceleratesystems.net
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
   );
 };
