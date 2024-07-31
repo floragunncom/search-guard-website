@@ -32,7 +32,7 @@ const Alerting = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-            Free Alerting for Elasticsearch and Kibana | Search Guard
+            Free Elasticsearch and Kibana Alerting| Search Guard
         </title>
         <link rel="canonical" href="https://search-guard.com/alerting/" />
         <meta
@@ -62,7 +62,7 @@ const Alerting = () => {
         icon={alertingNotifications}
         iconPosition="right"
         backgroundColor="dark"
-        headline="Alerting Actions & Notifications"
+        headline="Elasticsearch Actions & Notifications"
         text="
             If an anomaly is detected in your Elasticsearch data you can use a wide range of connectors send alerting notifications: Create messages on Slack, send out an email,
             trigger a Pager Duty event, open a JIRA issue, write data back to Elasticsearch or post to a Webhook. Supports multiple
@@ -84,7 +84,7 @@ const Alerting = () => {
             icon={alertingUI}
             iconPosition="right"
             backgroundColor="dark"
-            headline="Kibana User Interface & REST API"
+            headline="Kibana Alerting UI & REST API"
             text="
             Signals Alerting for Elasticsearch ships with a fully fledged Kibana user interface which only requires a couple of clicks to set up alerts.
             You can use the Graph mode, Blocks mode or JSON mode based on the complexity of your use case. Use the extensive REST API to fully
@@ -108,7 +108,7 @@ const Alerting = () => {
                     </a>
                     <div className="subtitle certified-col-headline">Email</div>
                     <div className="certified-col-text">
-                        Send out Email notifications by connecting to any
+                        Send out Email notifications from Elasticsearch and Kibana by connecting to any
                         SMTP provider. Supports TLS, StartTLS, Proxies and
                         default fields.
                     </div>
@@ -191,14 +191,10 @@ const Alerting = () => {
                     <div className="subtitle certified-col-headline">Elasticsearch</div>
                     <div className="certified-col-text">
                         Write any data back to a local or remote Elasticsearch index for building time-series based datapoints.
-
                     </div>
                 </div>
             </div>
         </div>
-
-
-
 
           <div id="escalationmodel">
               <Card
@@ -220,27 +216,15 @@ const Alerting = () => {
                   <div className="alerting-section" >
                       <div className="alerting-content">
                           <div className="subtitle alerting-content-headline">
-                              Single download and install
+                              Elasticsearch and Kibana Alerting for free
                           </div>
                           <div className="alerting-content-text">
-                              Signals Alerting is bundled with any Search Guard download for Elasticsearch > 7.4. A single plugin install
-                              that provides both Security and Alerting features. It was never easier to supercharge your Elasticsearch cluster
-                          </div>
-                      </div>
-                  </div>
-
-                  <div className="alerting-section" >
-                      <div className="alerting-content">
-                          <div className="subtitle alerting-content-headline">
-                              Free Community Edition - forever
-                          </div>
-                          <div className="alerting-content-text">
-                              The Community Edition of Signals Alerting is free and will always be. Signals Alerting is ASL2 licensed, so you can use
+                              Signals provides free alerting for Elasticsearch and Kibana.
+                              The <a href="https://git.floragunn.com/search-guard/search-guard-suite-enterprise" target="_blank">Community Edition of Signals Alerting is ASL2 licensed</a>, and will always be. You can use
                               it for any project, commercial or other, and even bundle it with your own projects.
                           </div>
                       </div>
                   </div>
-
                   <div className="alerting-section" >
                       <div className="alerting-content">
                           <div className="subtitle alerting-content-headline">
@@ -253,14 +237,24 @@ const Alerting = () => {
                           </div>
                       </div>
                   </div>
-
+                  <div className="alerting-section" >
+                      <div className="alerting-content">
+                          <div className="subtitle alerting-content-headline">
+                              Single download and install
+                          </div>
+                          <div className="alerting-content-text">
+                              Signals Alerting is bundled with any Search Guard download for Elasticsearch > 7.4. <a href="/search-guard-free-trial/">A single plugin install</a> that
+                               provides both Security and Alerting features. It was never easier to supercharge your Elasticsearch cluster
+                          </div>
+                      </div>
+                  </div>
               </div>
           </div>
 
       <div id="tryit">
         <Cta
           headline="Give Signals Alerting a spin!"
-          text="Follow these simple steps to install Signals Alerting to your Elasticsearch cluster. "
+          text="Follow these simple steps to install Signals Alerting to your Elasticsearch cluster for free. "
           ctaText="Installation"
           icon={ctaIcon}
           link="/search-guard-free-trial/"
