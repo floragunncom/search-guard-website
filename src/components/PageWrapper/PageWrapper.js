@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Header/Header';
+import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
 const PageWrapper = ({ children, background, landing }) => {
