@@ -7,7 +7,8 @@ import objectRocket from '../../images/objectRocket.svg';
 import mitratech from '../../images/mitratech.svg';
 import siren from '../../images/siren.svg';
 import kubedb from '../../images/kubedb.svg';
-import Button from '../Button/Button';
+import Carousel from 'react-multi-carousel';
+import "react-multi-carousel/lib/styles.css";
 import './Integrators.scss';
 
 const Integrators = () => {
@@ -70,33 +71,73 @@ const Integrators = () => {
     },
   ];
 
+  const responsiveCarouselBreakpoints= {
+    desktop: {
+      breakpoint: {
+        max: 3000,
+        min: 1024
+      },
+      items: 4,
+      partialVisibilityGutter: 180
+    },
+    mobile: {
+      breakpoint: {
+        max: 464,
+        min: 0
+      },
+      items: 2,
+      partialVisibilityGutter: 30
+    },
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 464
+      },
+      items: 2,
+      partialVisibilityGutter: 30
+    }
+  };
+
   return (
     <div className="company-integrators-wrapper" id="integrators">
       <div className="row company-integrators">
         <h4 className="company-integrators-headline">Integrators</h4>
+
+        <Carousel
+            additionalTransfrom={0}
+            arrows={false}
+            autoPlay
+            autoPlaySpeed={2000}
+            centerMode={false}
+            className=""
+            containerClass="container-with-dots"
+            dotListClass=""
+            draggable
+            focusOnSelect={false}
+            infinite
+            itemClass=""
+            keyBoardControl
+            minimumTouchDrag={80}
+            pauseOnHover={false}
+            renderArrowsWhenDisabled={false}
+            renderButtonGroupOutside={false}
+            renderDotsOutside={false}
+            responsive={responsiveCarouselBreakpoints}
+            showDots={false}
+            slidesToSlide={2}
+        >
+
         {integrators.map((profile, index) => {
           return (
-            <div className="company-integrators-section" key={index}>
-              <div className="integrators-pic">
-                <img src={profile.pic} alt="integrator icon" />
-              </div>
-              <div className="integrators-content">
-                <div className="subtitle integrators-content-headline">
-                  {profile.headline}
-                </div>
-                <div className="integrators-content-text">{profile.text}</div>
-                <div className="integrators-content-button">
-                  <Button
-                    text="visit website"
-                    link={profile.link}
-                    target="_blank"
-                    rel="noopener norefferrer"
-                  />
+              <div className="col s12 m6 l4" key={index}>
+                <div className="">
+                  <img src={profile.pic} alt={profile.headline} />
                 </div>
               </div>
-            </div>
           );
         })}
+
+        </Carousel>
       </div>
     </div>
   );

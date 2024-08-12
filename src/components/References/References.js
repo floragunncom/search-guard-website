@@ -15,83 +15,83 @@ import bucharest from '../../images/logo-bucharest.svg';
 import icfo from '../../images/logo-icfo.svg';
 import arnes from '../../images/logo-arnes.svg';
 import oxford from '../../images/logo-oxford.svg';
-
+import Carousel from 'react-multi-carousel';
+import "react-multi-carousel/lib/styles.css";
 const References = () => {
+
+  const responsiveCarouselBreakpoints= {
+    desktop: {
+      breakpoint: {
+        max: 3000,
+        min: 1024
+      },
+      items: 4,
+      partialVisibilityGutter: 180
+    },
+    mobile: {
+      breakpoint: {
+        max: 464,
+        min: 0
+      },
+      items: 2,
+      partialVisibilityGutter: 30
+    },
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 464
+      },
+      items: 2,
+      partialVisibilityGutter: 30
+    }
+  };
+
   return (
     <div className="ref-wrapper">
       <div className="row ref-content-responsive">
         <div className="ref-headline">References</div>
-        <div className="ref-content hide-on-med-and-down">
-          <div className="ref-content-row">
+        <div className="ref-content">
+          <Carousel
+              additionalTransfrom={0}
+              arrows={false}
+              autoPlay
+              autoPlaySpeed={2000}
+              centerMode={false}
+              className=""
+              containerClass="container-with-dots"
+              dotListClass=""
+              draggable
+              focusOnSelect={false}
+              infinite
+              itemClass=""
+              keyBoardControl
+              minimumTouchDrag={80}
+              pauseOnHover={false}
+              renderArrowsWhenDisabled={false}
+              renderButtonGroupOutside={false}
+              renderDotsOutside={false}
+              responsive={responsiveCarouselBreakpoints}
+              showDots={false}
+              slidesToSlide={2}
+          >
             <img src={heanet} alt="heanet logo" />
             <img src={harvard} alt="harvard logo" />
             <img src={kit} alt="kit logo" />
             <img src={seges} alt="seges logo" />
             <img src={deflect} alt="deflect logo" />
-          </div>
-          <div className="ref-content-row">
             <img src={princeton} alt="princeton logo" />
             <img src={koc} alt="koc logo" />
             <img src={mdc} alt="mdc logo" />
             <img src={laval} alt="laval logo" />
             <img src={uc3m} alt="uc3m logo" />
-          </div>
-          <div className="ref-content-row">
             <img src={ub} alt="ub logo" />
             <img src={bucharest} alt="bucharest logo" />
             <img src={icfo} alt="icfo logo" />
             <img src={arnes} alt="arnes logo" />
             <img src={oxford} alt="oxford logo" />
+          </Carousel>
           </div>
         </div>
-        <div className="ref-content-responsive hide-on-large-only">
-          <div className="col s4 m3 ref-image">
-            <img src={heanet} alt="heanet logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={harvard} alt="harvard logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={kit} alt="kit logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={seges} alt="seges logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={deflect} alt="deflect logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={princeton} alt="princeton logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={koc} alt="koc logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={mdc} alt="mdc logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={laval} alt="laval logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={uc3m} alt="uc3m logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={ub} alt="ub logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={bucharest} alt="bucharest logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={icfo} alt="icfo logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={arnes} alt="arnes logo" className="ref" />
-          </div>
-          <div className="col s4 m3 ref-image">
-            <img src={oxford} alt="oxford logo" className="ref" />
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

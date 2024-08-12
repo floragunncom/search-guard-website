@@ -9,6 +9,7 @@
     "@contentful/rich-text-html-renderer": "^13.1.0",
     "@contentful/rich-text-react-renderer": "^13.2.0",
     "@contentful/rich-text-types": "^13.1.0",
+    "react-multi-carousel": "^2.8.5",
     "contentful": "^7.5.0",
     "country-list": "^2.2.0",
     "eslint-plugin-react-hooks": "0.0.0-b53ea6ca0",
