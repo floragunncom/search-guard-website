@@ -10,7 +10,7 @@ const LandingUSP = () => {
       <div className="row">
         <div className="col s12 m4">
           <div className="landing-usp-box">
-            <img src={multilayer} alt="multilayer icon" />
+            <img loading="lazy" src={multilayer} alt="multilayer icon" width="150px" height="150px"/>
             <div className="landing-usp-text-box">
               <div className="landing-usp-text-box-headline">
                 Multilevel security
@@ -24,7 +24,7 @@ const LandingUSP = () => {
           </div>
         <div className="col s12 m4">
           <div className="landing-usp-box">
-            <img src={shield} alt="shield icon" />
+            <img loading="lazy" src={shield} alt="shield icon" width="150px" height="150px" />
             <div className="landing-usp-text-box">
               <div className="landing-usp-text-box-headline">
                 Industry standards
@@ -37,7 +37,7 @@ const LandingUSP = () => {
           </div>
         <div className="col s12 m4">
           <div className="landing-usp-box">
-            <img src={disc} alt="disc icon" />
+            <img loading="lazy" src={disc} alt="disc icon" width="150px" height="150px"/>
             <div className="landing-usp-text-box">
               <div className="landing-usp-text-box-headline">Elastic Stack</div>
               <div className="landing-usp-text-box-text">

@@ -136,7 +136,7 @@ const Compliance = () => {
 
                   <div className="col s12 m4">
                       <div className="securityinfo-icon-wrapper">
-                          <img src={shieldWheel} alt="checkmark icon" />
+                          <img loading="lazy" src={shieldWheel} alt="checkmark icon" />
                       </div>
                       <div className="securityinfo-text-wrapper">
                           <div className="subtitle securityinfo-headline">Data Encryption</div>
@@ -149,7 +149,7 @@ const Compliance = () => {
 
                   <div className="col s12 m4">
                       <div className="securityinfo-icon-wrapper">
-                          <img src={shieldWheel} alt="certificate icon" />
+                          <img loading="lazy" src={shieldWheel} alt="certificate icon" />
                       </div>
                       <div className="securityinfo-text-wrapper">
                           <div className="subtitle securityinfo-headline">Data Anonymization</div>
@@ -162,7 +162,7 @@ const Compliance = () => {
 
                   <div className="col s12 m4">
                       <div className="securityinfo-icon-wrapper">
-                          <img src={shieldWheel} alt="shield icon" />
+                          <img loading="lazy" src={shieldWheel} alt="shield icon" />
                       </div>
                       <div className="securityinfo-text-wrapper">
                           <div className="subtitle securityinfo-headline">Audit Trails</div>

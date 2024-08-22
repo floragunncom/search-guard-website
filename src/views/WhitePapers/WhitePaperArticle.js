@@ -202,27 +202,27 @@ const WhitePaperArticle = ({ match }) => {
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               quote={postContent.fields.title}
             >
-              <img src={iconFb} alt="facebook icon" />
+              <img loading="lazy" src={iconFb} alt="facebook icon" />
             </FacebookShareButton>
             <TwitterShareButton
               className="whitepaperarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
             >
-              <img src={iconTwitter} alt="twitter icon" />
+              <img loading="lazy" src={iconTwitter} alt="twitter icon" />
             </TwitterShareButton>
             <LinkedinShareButton
               className="whitepaperarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
             >
-              <img src={iconIn} alt="linkedIn icon" />
+              <img loading="lazy" src={iconIn} alt="linkedIn icon" />
             </LinkedinShareButton>
             <RedditShareButton
               className="whitepaperarticle-sidebar-icon"
               url={`https://www.search-guard.com/${postContent.fields.slug}`}
               title={postContent.fields.title}
             >
-              <img src={iconY} alt="y icon" />
+              <img loading="lazy" src={iconY} alt="y icon" />
             </RedditShareButton>
           </div>
         </div>

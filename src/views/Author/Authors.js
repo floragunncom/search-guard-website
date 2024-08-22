@@ -47,8 +47,8 @@ const Authors = ({ match }) => {
                   <div className="row">
                     <div className="col s12 offset-l2 l5">
                       <div className="authors-pic">
-                        <img src={`https:${person.fields.avatar.fields.file.url}?w=250&fit=scale`}
-                             alt="{person.fields.htmlDescription}"/>
+                        <img loading="lazy" src={`https:${person.fields.avatar.fields.file.url}?w=250&fit=scale`}
+                             alt={`${person.fields.firstName} ${person.fields.lastName}`} width={200}/>
                       </div>
                     </div>
                     <div className="col s12 l5">

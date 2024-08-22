@@ -25,7 +25,7 @@ const Card = ({
     >
       <div className="card__row">
         <div className="card__col card__col-left">
-          <img src={iconLeft} alt="Card Icon" className="card__col-img" />
+          <img loading="lazy" src={iconLeft} alt="Card Icon" className="card__col-img" />
           <div className="card__col-content">
             <div
               className={
@@ -59,7 +59,7 @@ const Card = ({
           }
         </div>
         <div className="card__col card__col-right">
-          <img src={iconRight} alt="Card Icon" className="card__col-img" />
+          <img loading="lazy" src={iconRight} alt="Card Icon" className="card__col-img" />
           <div className="card__col-content">
             <div
               className={

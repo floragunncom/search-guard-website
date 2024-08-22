@@ -27,6 +27,7 @@ const BlogPost = ({ post }) => {
             src={blogPost.postImage.fields.file.url + imageParameters }
             className="blogpost-feed-image"
             alt={blogPost.postImage.fields.title}
+            width={500}
           />
         </div>
         <div className="blogpost-headline">
@@ -48,6 +49,7 @@ const BlogPost = ({ post }) => {
             src={infoArrowForward}
             className="blogpost-arrow"
             alt="arrow icon"
+            width="16px" height="16px"
           />
         </div>
       </Link>

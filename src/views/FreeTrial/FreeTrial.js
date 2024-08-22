@@ -40,7 +40,7 @@ const FreeTrial = () => {
 
                         <div className="free-trial-section" >
                             <div className="free-trial-pic">
-                                <img src={one} alt="integrator icon" />
+                                <img loading="lazy" src={one} alt="icon one" />
                             </div>
                             <div className="free-trial-content">
                                 <div className="subtitle free-trial-content-headline">
@@ -71,7 +71,7 @@ const FreeTrial = () => {
 
                     <div className="free-trial-section" >
                         <div className="free-trial-pic">
-                            <img src={two} alt="integrator icon" />
+                            <img loading="lazy" src={two} alt="icon two" />
                         </div>
                         <div className="free-trial-content">
                             <div className="subtitle  free-trial-content-headline">
@@ -98,7 +98,7 @@ const FreeTrial = () => {
 
                     <div className="free-trial-section" >
                         <div className="free-trial-pic">
-                            <img src={three} alt="integrator icon" />
+                            <img loading="lazy" src={three} alt="icon three" />
                         </div>
                         <div className="free-trial-content">
                             <div className="subtitle free-trial-content-headline">
@@ -126,7 +126,7 @@ const FreeTrial = () => {
 
                     <div className="free-trial-section" >
                         <div className="free-trial-pic">
-                            <img src={four} alt="integrator icon" />
+                            <img loading="lazy" src={four} alt="icon four" />
                         </div>
                         <div className="free-trial-content">
                             <div className="subtitle free-trial-content-headline">

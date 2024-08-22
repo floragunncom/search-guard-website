@@ -14,6 +14,7 @@ const LinkLoud = ({ link, target, text }) => {
         src={arrowRight}
         alt="arrow icon"
         className="arrow-link-arrow-style"
+        width="16px" height="16px"
       />
     </a>
   );

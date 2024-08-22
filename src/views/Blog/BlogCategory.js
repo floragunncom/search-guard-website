@@ -42,7 +42,9 @@ const BlogCategory = ({ match }) => {
           <img
             src={infoArrowBack}
             className="blog-arrow-back"
-            alt="arrow icon"
+            alt="arrow back icon"
+            width={16}
+            height={16}
           />
           <span>back to blog</span>
         </a>

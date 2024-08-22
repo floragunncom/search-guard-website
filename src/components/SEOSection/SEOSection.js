@@ -82,6 +82,7 @@ const SEOSection = () => {
                     src={arrow}
                     alt="arrow icon"
                     className="seo-content-arrow"
+                    width="16px" height="16px"
                   />
                 </div>
               </div>

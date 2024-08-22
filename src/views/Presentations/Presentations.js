@@ -40,7 +40,7 @@ const Presentations = () => {
               <img
                 src={item.image}
                 className="presentations-image"
-                alt="preview imaginery"
+                alt={item.headline}
               />
               <div className="presentations-headline">{item.headline}</div>
               <div className="presentations-text">{item.text}</div>

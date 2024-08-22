@@ -19,6 +19,8 @@ const AnchorNavBar = ({ anchors }) => {
                     src={arrowDown}
                     alt="arrow-down"
                     className="product-anchor-img"
+                    width={12}
+                    height={12}
                   />
                   {item.name}
                 </HashLink>

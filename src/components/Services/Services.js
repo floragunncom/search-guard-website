@@ -28,49 +28,49 @@ const Services = ({ landing }) => {
       <div className="row">
         <div className="col s6 m3 security-detail-dark">
           <div className="security-detail-icon">
-            <img src={keyshield} alt="key shield icon" />
+            <img loading="lazy" src={keyshield} alt="key shield icon" width="100px" height="100px" />
           </div>
           <div className="security-detail-title">Encryption</div>
         </div>
         <div className="col s6 m3 security-detail-light">
           <div className="security-detail-icon">
-            <img src={dblock} alt="dblock icon" />
+            <img loading="lazy" src={dblock} alt="dblock icon" width="100px" height="100px" />
           </div>
           <div className="security-detail-title">Authentication</div>
         </div>
         <div className="col s6 m3 security-detail-dark-mobile">
           <div className="security-detail-icon">
-            <img src={key} alt="key icon" />
+            <img loading="lazy" src={key} alt="key icon" width="100px" height="100px" />
           </div>
           <div className="security-detail-title">Authorization</div>
         </div>
         <div className="col s6 m3 security-detail-light-mobile">
           <div className="security-detail-icon">
-            <img src={id} alt="identity icon" />
+            <img loading="lazy" src={id} alt="identity icon" width="100px" height="100px" />
           </div>
           <div className="security-detail-title">Role-based access control</div>
         </div>
         <div className="col s6 m3 security-detail-light-mobile">
           <div className="security-detail-icon">
-            <img src={audit} alt="audit icon" />
+            <img loading="lazy" src={audit} alt="audit icon" width="100px" height="100px" />
           </div>
           <div className="security-detail-title">Audit logging</div>
         </div>
         <div className="col s6 m3 security-detail-dark-mobile">
           <div className="security-detail-icon">
-            <img src={people} alt="people icon" />
+            <img loading="lazy" src={people} alt="people icon" width="100px" height="100px" />
           </div>
           <div className="security-detail-title">Multitenancy</div>
         </div>
         <div className="col s6 m3 security-detail-light">
           <div className="security-detail-icon">
-            <img src={db} alt="db icon" />
+            <img loading="lazy" src={db} alt="db icon" width="100px" height="100px" />
           </div>
           <div className="security-detail-title">Elastic stack</div>
         </div>
         <div className="col s6 m3 security-detail-dark">
           <div className="security-detail-icon">
-            <img src={pc} alt="computer icon" />
+            <img loading="lazy" src={pc} alt="computer icon" width="100px" height="100px" />
           </div>
           <div className="security-detail-title">Compliance</div>
         </div>

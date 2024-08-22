@@ -55,6 +55,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   src={community}
                   alt="community icon"
                   className="licensing-icon"
+                  width="145px" height="145px"
                 />
               </div>
               <h3 className="licensing-editions-headline community-border">
@@ -91,6 +92,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   src={enterprise}
                   alt="enterprise icon"
                   className="licensing-icon"
+                  width="145px" height="145px"
                 />
               </div>
               <h3 className="licensing-editions-headline enterprise-border">
@@ -127,6 +129,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   src={compliance}
                   alt="compliance icon"
                   className="licensing-icon"
+                  width="145px" height="145px"
                 />
               </div>
               <h3 className="licensing-editions-headline compliance-border">
@@ -171,6 +174,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   src={academic}
                   alt="academic icon"
                   className="licensing-icon"
+                  width="145px" height="145px"
                 />
               </div>
               <div className="licensing-editions-headline academic-border">
@@ -204,6 +208,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   src={custom}
                   alt="custom icon"
                   className="licensing-icon"
+                  width="145px" height="145px"
                 />
               </div>
               <div className="licensing-editions-headline custom-border">

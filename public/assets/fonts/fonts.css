@@ -1,64 +1,102 @@
 @font-face {
     font-family: 'Parafina-SemiWideXBold';
     src: url('/assets/fonts/Parafina-BlackS.otf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Parafina-SemiWideBold';
     src: url('/assets/fonts/Parafina-BoldS.otf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Parafina-Bold';
     src: url('/assets/fonts/Parafina-MediumS.otf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Parafina-Regular';
     src: url('/assets/fonts/Parafina-RegularS.otf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Parafina-Light';
     src: url('/assets/fonts/Parafina-LightS.otf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Parafina-Thin';
     src: url('/assets/fonts/Parafina-ThinS.otf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Inter-Black';
     src: url('/assets/fonts/Inter-Black.ttf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Inter-Bold';
     src: url('/assets/fonts/Inter-Bold.ttf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Inter-SemiBold';
     src: url('/assets/fonts/Inter-SemiBold.ttf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Inter-Medium';
     src: url('/assets/fonts/Inter-Medium.ttf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Inter-Regular';
     src: url('/assets/fonts/Inter-Regular.ttf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Inter-Light';
     src: url('/assets/fonts/Inter-Light.ttf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Inter-Thin';
     src: url('/assets/fonts/Inter-Thin.ttf');
+    font-display: swap;
 }
+
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/assets/fonts/Material-Icons.woff2') format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+

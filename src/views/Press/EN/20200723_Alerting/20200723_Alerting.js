@@ -31,13 +31,13 @@ const Alerting = () => {
 
             <div className="row pressarticle-wrapper">
                 <div className="col l4 hide-on-med-and-down">
-                    <a href={watches} target="_blank" rel="noopener noreferrer"><img src={watches_small} className="profile-pic" alt="Free Alerting for Elasticsearch"/></a>
+                    <a href={watches} target="_blank" rel="noopener noreferrer"><img loading="lazy" src={watches_small} className="profile-pic" alt="Free Alerting for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">
                         Watches are the essential component in Signals. They consist of three parts:
                         Triggers that determine when a watch is performed. Checks, which monitor and analyze the defined situation.
                         Actions that are executed when all previous conditions are met.
                     </div>
-                    <a href={graph} target="_blank" rel="noopener noreferrer"><img src={graph_small} className="profile-pic" alt="Free Alerting for Elasticsearch"/></a>
+                    <a href={graph} target="_blank" rel="noopener noreferrer"><img loading="lazy" src={graph_small} className="profile-pic" alt="Free Alerting for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">
                         The graphic mode in Signals shows how data of a defined condition behave in comparison to the threshold value and how they change over time.
                         The definition of the threshold value is the starting point for the alerting strategy.

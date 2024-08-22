@@ -86,6 +86,7 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
                 alt={post.fields.postImage.fields.title}
                 src={post.fields.postImage.fields.file.url+ imageParameters }
                 className="blog-box__box-image"
+                width={500}
            />
           </div>
           <div className="blog-box__box-content-headline">{fittedTitle}</div>
@@ -99,6 +100,7 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
               src={infoArrowForward}
               className="blogpost-arrow"
               alt="arrow icon"
+              width="16px" height="16px"
             />
           </div>
         </Link>

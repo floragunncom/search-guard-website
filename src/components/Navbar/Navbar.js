@@ -25,7 +25,7 @@ const Navbar = ({ background = 'white', landing }) => {
             <nav>
                 <div className="nav-wrapper">
                     <a href="/" className="brand-logo">
-                        <img src={logo} alt="Search Guard" className="navbar__icon" />
+                        <img loading="lazy" src={logo} alt="Search Guard" className="navbar__icon" width="100px" height="48px" />
                     </a>
                     <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">

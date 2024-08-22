@@ -17,6 +17,7 @@ const ButtonGhost = ({ link, color, text }) => {
           src={arrowRight}
           alt="arrow icon"
           className="arrow-link-arrow-style"
+          width="16px" height="16px"
         />
       </a>
     );
@@ -32,6 +33,7 @@ const ButtonGhost = ({ link, color, text }) => {
         src={arrowRight}
         alt="arrow icon"
         className="arrow-link-arrow-style"
+        width="16px" height="16px"
       />
     </NavLink>
   );

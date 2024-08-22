@@ -32,16 +32,16 @@ const Hero = () => {
                 />
               </div>
               <NavLink to="/certificates/" className="hero-certificate-wrapper">
-                <img src={heroCertificates} alt="certificate icon" />
+                <img loading="lazy" src={heroCertificates} alt="certificate icon"/>
               </NavLink>
             </div>
           </div>
         </div>
       </div>
       <div className="hero-certificate-wrapper-hidden">
-        <img src={veracode} alt="veracode logo" />
-        <img src={alliance} alt="alliance logo" />
-        <img src={security} alt="security logo" />
+        <img loading="lazy" src={veracode} alt="veracode logo" width="128px" height="78px" />
+        <img loading="lazy" src={alliance} alt="alliance logo" width="200px" height="78px"/>
+        <img loading="lazy" src={security} alt="security logo" width="133px" height="81px"/>
       </div>
     </div>
   );

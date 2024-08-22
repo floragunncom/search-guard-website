@@ -29,7 +29,7 @@ const Article = () => {
 
             <div className="row pressarticle-wrapper">
                 <div className="col l4 hide-on-med-and-down">
-                    <img src={tmahler} className="profile-pic" alt="Security for Elasticsearch Thomas Mahler"/>
+                    <img loading="lazy" src={tmahler} className="profile-pic" alt="Security for Elasticsearch Thomas Mahler"/>
                     <div className="pressarticle-text">
                     floragunn GmbH<br />
                     Thomas Mahler<br />

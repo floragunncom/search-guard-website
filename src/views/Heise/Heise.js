@@ -40,7 +40,7 @@ const Heise = () => {
                 </div>
             </div>
 
-            <img alt="Phone Phreak"
+            <img loading="lazy" alt="Phone Phreak"
                  src={scale}
                  className="heise-image-wrapper heise-image" />
 
@@ -48,7 +48,7 @@ const Heise = () => {
                 <div className="row">
                     <div className="col s12 m4">
                         <div className="securityinfo-icon-wrapper">
-                            <img src={certificate} alt="certificate icon" />
+                            <img loading="lazy" src={certificate} alt="certificate icon" />
                         </div>
                         <div className="securityinfo-text-wrapper">
                             <div className="securityinfo-headline">Protects all components of the Elastic stack</div>
@@ -56,7 +56,7 @@ const Heise = () => {
                     </div>
                     <div className="col s12 m4">
                         <div className="securityinfo-icon-wrapper">
-                            <img src={shieldWheel} alt="shield icon" />
+                            <img loading="lazy" src={shieldWheel} alt="shield icon" />
                         </div>
                         <div className="securityinfo-text-wrapper">
                             <div className="securityinfo-headline">Provides Security and Alerting on all levels</div>
@@ -64,7 +64,7 @@ const Heise = () => {
                     </div>
                     <div className="col s12 m4">
                         <div className="securityinfo-icon-wrapper">
-                            <img src={check} alt="checkmark icon" />
+                            <img loading="lazy" src={check} alt="checkmark icon" />
                         </div>
                         <div className="securityinfo-text-wrapper">
                             <div className="securityinfo-headline">Supports all industry standards</div>
@@ -101,7 +101,7 @@ const Heise = () => {
                 <div className="blog-box__container">
                     <a className="blog-box__box" href="/elasticsearch-cost-optimization/">
                         <div className="blog-box__box-image-container">
-                            <img alt="Elasticsearch Cost Optimizations"
+                            <img loading="lazy" alt="Elasticsearch Cost Optimizations"
                                  src="//images.ctfassets.net/95di84mqkkro/7ou9XscGVTXw0dTiXX25s5/a12456487832418a989af0340dbc4b00/elasticsearch-cost_optimization.jpg?fm=jpg&amp;fl=progressive&amp;w=500&amp;fit=scale"
                                  className="blog-box__box-image" /></div>
                         <div className="blog-box__box-content-headline">Elasticsearch Cost Optimization</div>
@@ -117,7 +117,7 @@ const Heise = () => {
 
                     <a className="blog-box__box" href="/signals-elasticsearch-alerting/">
                         <div className="blog-box__box-image-container">
-                            <img alt="Elasticsearch Cost Optimizations"
+                            <img loading="lazy" alt="Elasticsearch Cost Optimizations"
                                  src="//images.ctfassets.net/95di84mqkkro/1Lsxx3o8PTyEXsKPLv2GHX/4f6e51589c9da7e7e486955abadbd611/elasticsearch_alerting_search_guard.jpg?fm=jpg&amp;fl=progressive&amp;w=500&amp;fit=scale"
                                  className="blog-box__box-image" /></div>
                         <div className="blog-box__box-content-headline">Signals Alerting: First steps</div>
@@ -131,7 +131,7 @@ const Heise = () => {
                     </a>
 
                     <a className="blog-box__box" href="/elasticsearch-kibana-license-change/">
-                    <div className="blog-box__box-image-container"><img alt="Jackpotting"
+                    <div className="blog-box__box-image-container"><img loading="lazy" alt="Jackpotting"
                                                                         src="//images.ctfassets.net/95di84mqkkro/18qCWMmdDqlSBrfoXdwWec/cb956b670257f70f5f3968b418c646ba/elastic-license-change.jpg?fm=jpg&amp;fl=progressive&amp;w=500&amp;fit=scale"
                                                                         className="blog-box__box-image"/>
                     </div>

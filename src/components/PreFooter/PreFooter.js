@@ -29,28 +29,28 @@ const Info = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={twitter} alt="twitter icon" />
+                  <img loading="lazy" src={twitter} alt="twitter icon" width="32px" height="32px"/>
                 </a>
                 <a
                   href="https://www.facebook.com/searchguard/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={facebook} alt="facebook icon" />
+                  <img loading="lazy" src={facebook} alt="facebook icon" width="32px" height="32px"/>
                 </a>
                 <a
                   href="https://www.linkedin.com/company/search-guard/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={linkedIn} alt="linkedIn icon" />
+                  <img loading="lazy" src={linkedIn} alt="linkedIn icon" width="32px" height="32px"/>
                 </a>
                 <a
                   href="https://www.youtube.com/channel/UCUw93I0DHMvoA8HNQ31AeJw"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={youtube} alt="youtube icon" />
+                  <img loading="lazy" src={youtube} alt="youtube icon" width="32px" height="32px" />
                 </a>
                 <hr className="prefooter-hr" />
               </div>

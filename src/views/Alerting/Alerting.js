@@ -220,7 +220,7 @@ const Alerting = () => {
                           </div>
                           <div className="alerting-content-text">
                               Signals provides free alerting for Elasticsearch and Kibana.
-                              The <a href="https://git.floragunn.com/search-guard/search-guard-suite-enterprise" target="_blank">Community Edition of Signals Alerting is ASL2 licensed</a>, and will always be. You can use
+                              The <a href="https://git.floragunn.com/search-guard/search-guard-suite-enterprise" target="_blank" rel="noopener noreferrer">Community Edition of Signals Alerting is ASL2 licensed</a>, and will always be. You can use
                               it for any project, commercial or other, and even bundle it with your own projects.
                           </div>
                       </div>

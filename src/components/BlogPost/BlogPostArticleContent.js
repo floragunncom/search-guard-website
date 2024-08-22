@@ -121,9 +121,11 @@ const BlogPostArticleContent = ({ postContent }) => {
                 <div className="row">
                     <div className="col">
                         <a href={`/author/${authorProfile.fields.slug}`}>
-                            <img src={`https:${authorProfile.fields.avatar.fields.file.url}?w=80&fit=scale`}
+                            <img loading="lazy" src={`https:${authorProfile.fields.avatar.fields.file.url}?w=80&fit=scale`}
                                  alt={`${authorProfile.fields.avatar.fields.title}`}
-                                 className="blogpostarticle-avatar"/>
+                                 className="blogpostarticle-avatar"
+                                 width={80}
+                            />
                         </a>
                     </div>
                     <div className="col">
@@ -242,7 +244,11 @@ const BlogPostArticleContent = ({ postContent }) => {
             
             <div className="row blogpostarticle-wrapper blogpostarticle-author">
                 <div className="col s12 l8 offset-l2 center">
-                    <img src={postContent.fields.postImage.fields.file.url + "?fm=jpg&fl=progressive&w=800&fit=scale"} className="blogpostarticle-headerimage responsive-img" alt={postContent.fields.title}></img>
+                    <img loading="lazy" src={postContent.fields.postImage.fields.file.url + "?fm=jpg&fl=progressive&w=800&fit=scale"}
+                         className="blogpostarticle-headerimage responsive-img"
+                         alt={postContent.fields.title}
+                        width={800}
+                    />
                 </div>
             </div>
 
@@ -298,7 +304,7 @@ const BlogPostArticleContent = ({ postContent }) => {
                             url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
                             quote={postContent.fields.title}
                         >
-                            <img src={iconFb} alt="facebook icon" />
+                            <img loading="lazy" src={iconFb} alt="facebook icon" width="32px" height="32px"/>
                         </FacebookShareButton>
                         <TwitterShareButton
                             className="blogpostarticle-sidebar-icon"
@@ -306,20 +312,20 @@ const BlogPostArticleContent = ({ postContent }) => {
                             title={postContent.fields.title}
                             hastags={postContent.fields.tags}
                         >
-                            <img src={iconTwitter} alt="twitter icon" />
+                            <img loading="lazy" src={iconTwitter} alt="twitter icon" width="32px" height="32px"/>
                         </TwitterShareButton>
                         <LinkedinShareButton
                             className="blogpostarticle-sidebar-icon"
                             url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
                         >
-                            <img src={iconIn} alt="linkedIn icon" />
+                            <img loading="lazy" src={iconIn} alt="linkedIn icon" width="32px" height="32px"/>
                         </LinkedinShareButton>
                         <RedditShareButton
                             className="blogpostarticle-sidebar-icon"
                             url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
                             title={postContent.fields.title}
                         >
-                            <img src={iconY} alt="y icon" />
+                            <img loading="lazy" src={iconY} alt="Reddit icon" width="32px" height="32px"/>
                         </RedditShareButton>
                     </div>
                 </div>
@@ -351,6 +357,7 @@ const BlogPostArticleContent = ({ postContent }) => {
                         src={infoArrowBack}
                         className="blog-arrow-back"
                         alt="arrow icon"
+                        width="16px" height="16px"
                     />
                     <span>back to blog</span>
                 </a>

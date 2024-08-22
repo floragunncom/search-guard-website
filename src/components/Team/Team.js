@@ -46,7 +46,7 @@ const Team = () => {
         {team.map(person => {
           return (
             <div className="col s12 l6 company-team-profile" key={person.link}>
-              <img src={person.pic} alt="person" className="profile-pic" />
+              <img loading="lazy" src={person.pic} alt="person" className="profile-pic" width="300px" height="300px" />
               <div className="profile-name">{person.name}</div>
               <div className="profile-position">{person.position}</div>
               <div className="profile-link">
@@ -55,6 +55,7 @@ const Team = () => {
                     src={iconIn}
                     alt="linkedIn icon"
                     className="profile-linkedIn"
+                    width="32px" height="32px"
                   />
                 </a>
               </div>

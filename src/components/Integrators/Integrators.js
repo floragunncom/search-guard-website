@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import sieMonster from '../../images/sie-monster.svg';
 import pivotal from '../../images/pivotal.svg';
 import wuerthPhoenix from '../../images/wuerth-phoenix.svg';
@@ -131,7 +131,7 @@ const Integrators = () => {
           return (
               <div className="col s12 m6 l4" key={index}>
                 <div className="">
-                  <img src={profile.pic} alt={profile.headline} />
+                  <img loading="lazy" src={profile.pic} alt={profile.headline} width="165px" height="165px" />
                 </div>
               </div>
           );

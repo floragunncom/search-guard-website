@@ -141,7 +141,7 @@ const Certifications = () => {
                   rel="noopener noreferrer"
                   className="col s12 m3 certifications-image"
                 >
-                  <img src={certificate.image} alt={certificate.image} />
+                  <img loading="lazy" src={certificate.image} alt={certificate.image} />
                 </a>
                 <div className="col s12 m8 certifications-context">
                   <div className="col s12 certifications-text">

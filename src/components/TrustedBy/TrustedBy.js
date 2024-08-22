@@ -107,7 +107,7 @@ const TrustedBy = () => {
           return (
             <div className="col s12 m6 l4" key={index}>
               <div className="">
-                <img src={entry.logo} alt={entry.name} />
+                <img loading="lazy" src={entry.logo} alt={entry.name} width="165px" height="165px" />
               </div>
             </div>
           );

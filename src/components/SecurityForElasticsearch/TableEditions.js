@@ -352,21 +352,21 @@ const TableEditions = () => {
                     </td>
                     {serviceItem.community ? (
                       <td className="licensing-checkmark">
-                        <img src={community} alt="checkmark icon" />
+                        <img loading="lazy" src={community} alt="checkmark icon" width="12px" height="12px"/>
                       </td>
                     ) : (
                       <td />
                     )}
                     {serviceItem.enterprise ? (
                       <td className="licensing-checkmark">
-                        <img src={enterprise} alt="checkmark icon" />
+                        <img loading="lazy" src={enterprise} alt="checkmark icon" width="12px" height="12px"/>
                       </td>
                     ) : (
                       <td />
                     )}
                     {serviceItem.compliance ? (
                       <td className="licensing-checkmark">
-                        <img src={compliance} alt="checkmark icon" />
+                        <img loading="lazy" src={compliance} alt="checkmark icon" width="12px" height="12px"/>
                       </td>
                     ) : (
                       <td />

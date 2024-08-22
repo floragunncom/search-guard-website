@@ -18,6 +18,7 @@ const Partners = () => {
               <img
                   src={eliatra}
                   alt="Eliatra - The OpenSearch Experts"
+                  width="360" height="360"
               />{' '}
             </a>
           </div>
@@ -26,6 +27,7 @@ const Partners = () => {
               <img
                   src={eliatraMobile}
                   alt="Eliatra - The OpenSearch Experts"
+                  width="731" height="216"
               />{' '}
             </a>
           </div>
@@ -34,6 +36,7 @@ const Partners = () => {
               <img
                 src={excelerate}
                 alt="Search Guard Partner Excelerate Systems"
+                width="360" height="360"
               />{' '}
             </a>
           </div>
@@ -42,6 +45,7 @@ const Partners = () => {
               <img
                 src={excelerateMobile}
                 alt="Search Guard Partner Excelerate Systems"
+                width="170" height="170"
               />{' '}
             </a>
           </div>
@@ -50,6 +54,7 @@ const Partners = () => {
               <img
                 src={sirenPartner}
                 alt="Search Guard Partner Siren Solutions"
+                width="360" height="360"
               />{' '}
             </a>
           </div>
@@ -58,6 +63,7 @@ const Partners = () => {
               <img
                 src={sirenPartnerMobile}
                 alt="Search Guard Partner Siren Solutions"
+                width="170" height="170"
               />{' '}
             </a>
           </div>

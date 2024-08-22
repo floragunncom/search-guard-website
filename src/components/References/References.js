@@ -74,21 +74,21 @@ const References = () => {
               showDots={false}
               slidesToSlide={2}
           >
-            <img src={heanet} alt="heanet logo" />
-            <img src={harvard} alt="harvard logo" />
-            <img src={kit} alt="kit logo" />
-            <img src={seges} alt="seges logo" />
-            <img src={deflect} alt="deflect logo" />
-            <img src={princeton} alt="princeton logo" />
-            <img src={koc} alt="koc logo" />
-            <img src={mdc} alt="mdc logo" />
-            <img src={laval} alt="laval logo" />
-            <img src={uc3m} alt="uc3m logo" />
-            <img src={ub} alt="ub logo" />
-            <img src={bucharest} alt="bucharest logo" />
-            <img src={icfo} alt="icfo logo" />
-            <img src={arnes} alt="arnes logo" />
-            <img src={oxford} alt="oxford logo" />
+            <img loading="lazy" width="154px" height="154px" src={heanet} alt="heanet logo" />
+            <img loading="lazy" width="154px" height="154px" src={harvard} alt="harvard logo" />
+            <img loading="lazy" width="154px" height="154px" src={kit} alt="kit logo" />
+            <img loading="lazy" width="154px" height="154px" src={seges} alt="seges logo" />
+            <img loading="lazy" width="154px" height="154px" src={deflect} alt="deflect logo" />
+            <img loading="lazy" width="154px" height="154px" src={princeton} alt="princeton logo" />
+            <img loading="lazy" width="154px" height="154px" src={koc} alt="koc logo" />
+            <img loading="lazy" width="154px" height="154px" src={mdc} alt="mdc logo" />
+            <img loading="lazy" width="154px" height="154px" src={laval} alt="laval logo" />
+            <img loading="lazy" width="154px" height="154px" src={uc3m} alt="uc3m logo" />
+            <img loading="lazy" width="154px" height="154px" src={ub} alt="ub logo" />
+            <img loading="lazy" width="154px" height="154px" src={bucharest} alt="bucharest logo" />
+            <img loading="lazy" width="154px" height="154px" src={icfo} alt="icfo logo" />
+            <img loading="lazy" width="154px" height="154px" src={arnes} alt="arnes logo" />
+            <img loading="lazy" width="154px" height="154px" src={oxford} alt="oxford logo" />
           </Carousel>
           </div>
         </div>
