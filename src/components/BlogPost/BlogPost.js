@@ -21,7 +21,7 @@ const BlogPost = ({ post }) => {
 
   if (blogPost !== undefined) {
     return (
-      <Link to={{ pathname: `/blog/${blogPost.slug}` }} className="blogpost-wrapper">
+      <a href={ `/blog/${blogPost.slug}` } className="blogpost-wrapper">
         <div className="blogpost-image-wrapper">
           <img
             src={blogPost.postImage.fields.file.url + imageParameters }
@@ -52,7 +52,7 @@ const BlogPost = ({ post }) => {
             width="16px" height="16px"
           />
         </div>
-      </Link>
+      </a>
     );
   }
 };
