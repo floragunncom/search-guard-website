@@ -1,7 +1,6 @@
 import './index.scss';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import React from 'react';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import HomePage from './views/HomePage/HomePage';
 import ContactUs from './views/ContactUs/ContactUs';
 import Blog from './views/Blog/Blog';
@@ -47,7 +46,7 @@ import Error from './views/Error/Error';
 const Routes = () => {
   return (
     <React.Fragment>
-      <ScrollToTop>
+
         <Switch>
 
           <Route exact path="/" component={HomePage} />
@@ -140,7 +139,6 @@ const Routes = () => {
 
         </Switch>
 
-      </ScrollToTop>
     </React.Fragment>
   );
 };

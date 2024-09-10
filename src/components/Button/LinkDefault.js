@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './LinkDefault.scss';
 import arrowRight from '../../images/arrow-right-white.svg';
 
@@ -19,7 +18,7 @@ const LinkDefault = ({ link, target, text }) => {
     );
   }
   return (
-    <NavLink to={`${link}`} className="arrow-link-default-container">
+    <a href={`${link}`} className="arrow-link-default-container">
       <div className="arrow-link-default-text">{text}</div>
       <img
         src={arrowRight}
@@ -27,7 +26,7 @@ const LinkDefault = ({ link, target, text }) => {
         className="arrow-link-arrow-style"
         width="16px" height="16px"
       />
-    </NavLink>
+    </a>
   );
 };
 

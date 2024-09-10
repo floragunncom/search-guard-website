@@ -30,18 +30,18 @@ const Resource = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Resources | Search Guard blog posts, faq, documentation, presentations
+          Resources | Search Guard Blog Posts, FAQ, Documentation and Presentations
           and whitepapers
         </title>
         <link rel="canonical" href="https://search-guard.com/resource/" />
         <meta
           name="description"
-          content="Search Guard resource hub including blog posts, faq, documentation, presentations and whitepapers"
+          content="Search Guard Resource Hub including Blog Posts, FAQ, Documentation, Presentations and Whitepapers"
         />
       </Helmet>
       <Title
         headline="resources"
-        text="Search Guard resource hub including blog posts, faq, documentation, presentations and whitepapers."
+        text="Search Guard Resource Hub including Blog Posts, FAQ, Documentation, Presentations and Whitepapers"
         breadcrumb={breadcrumb}
       />
       <Card

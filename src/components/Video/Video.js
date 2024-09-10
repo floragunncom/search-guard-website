@@ -15,9 +15,9 @@ const Video = props => {
     if (props.playlist) {
 
     playlist = (
-      <div class="video-playlist-wrapper">
-          {videos.map((item) => (
-              <div className="video-playlist-item col l4">
+      <div className="video-playlist-wrapper">
+          {videos.map((item, index) => (
+              <div className="video-playlist-item col l4" key={index}>
                   <iframe
                       className="responsive-video"
                       src={item.fields.embedUrl}

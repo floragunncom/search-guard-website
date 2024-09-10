@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './LinkGhost.scss';
 import arrowRight from '../../images/arrow-right-dark-blue.svg';
 
@@ -23,8 +22,8 @@ const ButtonGhost = ({ link, color, text }) => {
     );
   }
   return (
-    <NavLink
-      to={link}
+    <a
+      href={link}
       className="arrow-link-ghost-container"
       style={{ borderColor: `${color || '#00FCE5'}` }}
     >
@@ -35,7 +34,7 @@ const ButtonGhost = ({ link, color, text }) => {
         className="arrow-link-arrow-style"
         width="16px" height="16px"
       />
-    </NavLink>
+    </a>
   );
 };
 

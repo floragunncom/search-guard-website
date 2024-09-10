@@ -31,9 +31,9 @@ const Hero = () => {
                   link="/search-guard-free-trial/"
                 />
               </div>
-              <NavLink to="/certificates/" className="hero-certificate-wrapper">
+              <a href="/certificates/" className="hero-certificate-wrapper">
                 <img loading="lazy" src={heroCertificates} alt="certificate icon"/>
-              </NavLink>
+              </a>
             </div>
           </div>
         </div>

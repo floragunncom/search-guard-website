@@ -1,6 +1,5 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import './BlogBox.scss';
@@ -75,8 +74,8 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
           : post.fields.htmlDescription;
 
       return (
-        <Link
-          to={{ pathname: `/blog/${post.fields.slug}` }}
+        <a
+          href={`/blog/${post.fields.slug}` }
           className="blog-box__box"
           key={post.sys.id}
         >
@@ -103,7 +102,7 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
               width="16px" height="16px"
             />
           </div>
-        </Link>
+        </a>
       );
     });
   };

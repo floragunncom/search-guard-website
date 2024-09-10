@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './Footer.scss';
 import RichSnippetCompany from '../RichSnippets/RichSnippetCompany';
 
@@ -15,7 +14,7 @@ const Footer = ({ landing }) => {
             <div className="row footer-row">
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/security/">security</NavLink>
+                  <a href="/security/">security</a>
                 </div>
                 <div className="footer-list-item">
                   <a href="/security/#concept" className="footer-links">
@@ -28,19 +27,19 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/certificates/" className="footer-links">
+                  <a href="/certificates/" className="footer-links">
                     Certifications
-                  </NavLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/compliance/" className="footer-links">
+                  <a href="/compliance/" className="footer-links">
                     Compliance
-                  </NavLink>
+                  </a>
                 </div>
                 <div className="footer-list-headline">
                 </div>
                 <div className="footer-list-headline">
-                  <NavLink to="/security/">alerting</NavLink>
+                  <a href="/security/">alerting</a>
                 </div>
                 <div className="footer-list-item">
                   <a href="/alerting/#concept" className="footer-links">
@@ -53,15 +52,15 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/alerting/#escalationmodel" className="footer-links">
+                  <a href="/alerting/#escalationmodel" className="footer-links">
                     Escalation model
-                  </NavLink>
+                  </a>
                 </div>
               </div>
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/licensing/">license</NavLink>
+                  <a href="/licensing/">license</a>
                 </div>
                 <div className="footer-list-item">
                   <a href="/licensing/#standard" className="footer-links">
@@ -87,7 +86,7 @@ const Footer = ({ landing }) => {
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/resource/">resources</NavLink>
+                  <a href="/resource/">resources</a>
                 </div>
                 <div className="footer-list-item">
                   <a
@@ -110,9 +109,9 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/faq/" className="footer-links">
+                  <a href="/faq/" className="footer-links">
                     FAQ
-                  </NavLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
                   <a
@@ -125,43 +124,35 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink
-                    to="/tls-certificate-generator/"
-                    className="footer-links"
-                  >
-                    TLS certificate generator
-                  </NavLink>
-                </div>
-                <div className="footer-list-item">
-                  <NavLink to="/blog/" className="footer-links">
+                  <a href="/blog/" className="footer-links">
                     Blog
-                  </NavLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/presentations/" className="footer-links">
+                  <a href="/presentations/" className="footer-links">
                     Presentations
-                  </NavLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/whitepapers/" className="footer-links">
+                  <a href="/whitepapers/" className="footer-links">
                     White papers
-                  </NavLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/compliance/" className="footer-links">
+                  <a href="/compliance/" className="footer-links">
                     Compliance
-                  </NavLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/sitemap/" className="footer-links">
+                  <a href="/sitemap/" className="footer-links">
                     Sitemap
-                  </NavLink>
+                  </a>
                 </div>
               </div>
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
-                  <NavLink to="/company/">company</NavLink>
+                  <a href="/company/">company</a>
                 </div>
                 <div className="footer-list-item">
                   <a href="/company/#team" className="footer-links">
@@ -179,19 +170,19 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/datenschutz/" className="footer-links">
+                  <a href="/datenschutz/" className="footer-links">
                     Data protection
-                  </NavLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/impressum/" className="footer-links">
+                  <a href="/impressum/" className="footer-links">
                     Imprint
-                  </NavLink>
+                  </a>
                 </div>
                 <div className="footer-list-item">
-                  <NavLink to="/security-information/" className="footer-links">
+                  <a href="/security-information/" className="footer-links">
                     Public key & security
-                  </NavLink>
+                  </a>
                 </div>
               </div>
               <div className="filler-class" />

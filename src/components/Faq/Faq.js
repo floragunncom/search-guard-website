@@ -12,18 +12,18 @@ const Faq = () => {
       <div className="row faq-row">
         <h3 className="faq-headline">Frequently asked questions</h3>
         <div className="faq-info-boxes">
-            {faqs.fields.entries.map(faq => {
-                    return (
-                        <div className="faq-info-box">
-                          <div className="faq-info-box-headline">{faq.fields.question}</div>
-                          <div className="faq-info-box-text">
-                            <Markdown>
-                              { faq.fields.answer }
-                            </Markdown>
-                          </div>
-                        </div>
-                    );
-                })}
+
+          {faqs.fields.entries.map((faq, index) => (
+              <div className="faq-info-box" key={index}>
+                <div className="faq-info-box-headline">{faq.fields.question}</div>
+                <div className="faq-info-box-text">
+                  <Markdown>
+                    { faq.fields.answer }
+                  </Markdown>
+                </div>
+              </div>
+          ))}
+
         </div>
         <div className="faq-button">
           <Button text="see more" link="/faq/" />
