@@ -7,8 +7,6 @@ const BlogPostArticle = ({ match }) => {
 
   const slug = match.url.split("/")[2] + "/";
 
-  console.log(slug);
-
   const postContent = posts.find(
     entry => entry.fields.slug === `${slug}`,
   );

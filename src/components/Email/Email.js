@@ -1,29 +1,86 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { initGA, Event, PageView } from '../Tracking/Tracking';
 import './Email.scss';
-
+import Button from '../Button/Button';
 
 const Email = () => {
+  useEffect(() => {
+    initGA();
+    PageView();
+  }, []);
 
+  const [emailSendStatus, setEmailSendStatus] = useState(false);
+
+  const onSubscribeClick = async event => {
+    event.preventDefault();
+    const formValuesJson = {};
+    const formData = new FormData(event.target);
+    formValuesJson.email = formData.get("email");
+    formValuesJson.ids = formData.getAll("ids");
+    handleSubmit(formValuesJson)
+        .then(response => {
+          if (response && response.ok) {
+            setEmailSendStatus(true);
+          } else {
+            setEmailSendStatus(true);
+          }
+        }).catch(function (error) {
+      setEmailSendStatus(true);
+    });
+  };
+
+  async function handleSubmit(formProps) {
+    const data = {};
+    // Default options are marked with *
+    return fetch('https://sisag8b0fg.execute-api.eu-central-1.amazonaws.com/dev', {
+      method: 'POST',
+      cache: 'no-cache',
+      headers: {
+        accept: 'application/json; charset=utf-8',
+        'content-type': 'application/json; charset=UTF-8',
+      },
+      body: JSON.stringify(formProps)
+    });
+  }
 
   return (
-          <div className="sendgrid-subscription-widget widget-2963" data-emailerror="Please enter a valid email address" data-nameerror="Please enter your name" data-checkboxerror="Please tick the box to accept our conditions">
-            <form className="sg-widget" data-token="feda1502bd7eb359faa050c8c00fcd14" >
-
-              <div className="row">
-                <div className="col s12 m6 l6">
-                  <input className="sg_email" type="email" name="sg_email" placeholder="Your Email" required="required"></input>
-                </div>
-                <div className="col s12 m6 l6">
-                  <input type="submit" className="sg-submit-btn arrow-button-default-container arrow-button-default-text" id="widget-2963" value="Subscribe"></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col s12 m12 l12">
-                  <div className="sg-response"></div>
-                </div>
-              </div>
-            </form>
+    <div>
+      {emailSendStatus ? (
+        <div
+          className="prefooter-content-text bold"
+          style={{ color: '#246E94' }}
+        >
+          Thank you for signing up to our newsletter!
+        </div>
+      ) : (
+        <form onSubmit={onSubscribeClick}>
+          <div className="input-field col s12 m6 l8">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              className="validate"
+              required
+            />
+            <label htmlFor="email" id="email-input">
+              Email address
+            </label>
+            <span
+              className="helper-text"
+              data-error="Please type in the correct format!"
+            />
+            <input
+                name="ids"
+                type="hidden"
+                value="9254dc87-0c97-43a8-bf7b-85a624da753e"
+            />
           </div>
+          <div className="input-field col s12 m6 l4">
+            <Button text="subscribe" buttonStyle="default-button" type="button"/>
+          </div>
+        </form>
+      )}
+    </div>
   );
 };
 
