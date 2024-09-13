@@ -1,35 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { initGA, Event, PageView } from '../Tracking/Tracking';
 import './Email.scss';
 import Button from '../Button/Button';
 
 const Email = () => {
-  useEffect(() => {
-    initGA();
-    PageView();
-  }, []);
 
-  const [emailSendStatus, setEmailSendStatus] = useState(false);
+    const [emailSendStatus, setEmailSendStatus] = useState(false);
+    const [procesing, setProcessing] = useState(false);
 
-  const onSubscribeClick = async event => {
+   const onNewsletterSubscribeClick = async event => {
     event.preventDefault();
+    setProcessing(true);
     const formValuesJson = {};
     const formData = new FormData(event.target);
     formValuesJson.email = formData.get("email");
     formValuesJson.ids = formData.getAll("ids");
-    handleSubmit(formValuesJson)
+    handleNewsletterSubmit(formValuesJson)
         .then(response => {
           if (response && response.ok) {
+            setProcessing(false);
             setEmailSendStatus(true);
           } else {
+            setProcessing(false);
             setEmailSendStatus(true);
           }
         }).catch(function (error) {
-      setEmailSendStatus(true);
+          setProcessing(false);
+          setEmailSendStatus(true);
     });
   };
 
-  async function handleSubmit(formProps) {
+  async function handleNewsletterSubmit(formProps) {
     const data = {};
     // Default options are marked with *
     return fetch('https://sisag8b0fg.execute-api.eu-central-1.amazonaws.com/dev', {
@@ -42,44 +42,54 @@ const Email = () => {
       body: JSON.stringify(formProps)
     });
   }
-
   return (
     <div>
-      {emailSendStatus ? (
-        <div
-          className="prefooter-content-text bold"
-          style={{ color: '#246E94' }}
-        >
-          Thank you for signing up to our newsletter!
-        </div>
-      ) : (
-        <form onSubmit={onSubscribeClick}>
-          <div className="input-field col s12 m6 l8">
-            <input
-              id="email"
-              name="email"
-              type="email"
-              className="validate"
-              required
-            />
-            <label htmlFor="email" id="email-input">
-              Email address
-            </label>
-            <span
-              className="helper-text"
-              data-error="Please type in the correct format!"
-            />
-            <input
-                name="ids"
-                type="hidden"
-                value="9254dc87-0c97-43a8-bf7b-85a624da753e"
-            />
-          </div>
-          <div className="input-field col s12 m6 l4">
-            <Button text="subscribe" buttonStyle="default-button" type="button"/>
-          </div>
-        </form>
-      )}
+
+      {emailSendStatus ?
+          (
+            <div
+              className="prefooter-content-text bold"
+              style={{ color: '#246E94' }}
+            >
+              Thank you for signing up to our newsletter!
+            </div>
+          ) : (
+          procesing ? (
+                <div
+                    className="prefooter-content-text bold"
+                    style={{ color: '#246E94' }}
+                >
+                  Processing
+                </div>
+            ) : (
+                  <form onSubmit={onNewsletterSubscribeClick}>
+                    <div className="input-field col s12 m6 l8">
+                      <input
+                          id="email"
+                          name="email"
+                          type="email"
+                          className="validate"
+                          required
+                      />
+                      <label htmlFor="email" id="email-input">
+                        Email address
+                      </label>
+                      <span
+                          className="helper-text"
+                          data-error="Please type in the correct format!"
+                      />
+                      <input
+                          name="ids"
+                          type="hidden"
+                          value="9254dc87-0c97-43a8-bf7b-85a624da753e"
+                      />
+                    </div>
+                    <div className="input-field col s12 m6 l4">
+                      <Button text="subscribe" buttonStyle="default-button" type="submit"/>
+                    </div>
+                  </form>
+            ))
+      }
     </div>
   );
 };

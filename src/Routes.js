@@ -40,6 +40,7 @@ import PressENAlerting from './views/Press/EN/20200723_Alerting/20200723_Alertin
 import PressDECompliance from './views/Press/DE/20200910_DSGVO/20200723_DSGVO';
 import FlxLandingPage from './views/FLXLandingPage/FLXLandingPage';
 import OldElasticsearchVersions from './views/OldElasticsearchVersions/OldElasticsearchVersions';
+import Newsletter from './views/Newsletter/Newsletter';
 import HtmlSitemap from './views/HtmlSitemap/HtmlSitemap';
 import Error from './views/Error/Error';
 
@@ -73,6 +74,7 @@ const Routes = () => {
           <Route exact path="/datenschutz/" component={DataProtection} />
           <Route exact path="/education-program/" component={Education} />
           <Route exact path="/outdated-elasticsearch-versions-suppport/" component={OldElasticsearchVersions} />
+          <Route exact path="/newsletter/" component={Newsletter} />
 
           <Route
             exact

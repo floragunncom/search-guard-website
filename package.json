@@ -111,7 +111,8 @@
       "/sitemap/",
       "/heise/",
       "/outdated-elasticsearch-versions-suppport/",
-      "/authors/"
+      "/authors/",
+      "/newsletter/"
     ],
     "puppeteerArgs": [
       "--no-sandbox",

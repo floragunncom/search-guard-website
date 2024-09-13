@@ -1,0 +1,132 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+@import '../../components/Integrators/Integrators';
+
+.newsletter-wrapper {
+  padding-top: 0px;
+  @media only screen and (max-width: $tabletBig) {
+    padding: 0px 32px 0px 32px;
+  }
+  @media only screen and (max-width: $mobile) {
+    padding: 0px 24px 16px 24px;
+  }
+}
+
+.row.newsletter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.newsletter-headline {
+  margin-bottom: 32px;
+  margin-top: 0px;
+  color: $darkBlue;
+  font-size: 48px;
+  line-height: 57px;
+  text-align: center;
+  font-weight: 300;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 36px;
+    line-height: 43px;
+  }
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 32px;
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.newsletter-section {
+  margin-bottom: 24px;
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-around;
+  max-width: 945px;
+  width: 100%;
+  &:last-child {
+    border-bottom: unset;
+  }
+  @media only screen and (max-width: $mobile) {
+    border-bottom: unset;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+
+.newsletter-content {
+  width: 80%;
+}
+
+.newsletter-content-headline {
+  color: $darkBlue;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: left;
+  letter-spacing: 0.8px;
+  margin-bottom: 16px;
+  @media only screen and (max-width: $mobile) {
+    margin: 16px 0px;
+  }
+}
+
+.newsletter-content-text {
+  color: $darkGrey;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: left;
+  margin-bottom: 32px;
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.newsletter-textbox {
+  @extend .company-integrators;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.newsletter-image-wrapper.newsletter-image {
+  display: block;
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-height: 500px;
+  max-width: 100%;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.newsletter-tilesimple-headline {
+  color: $darkBlue;
+  font-weight: normal !important;
+  font-size: 48px;
+  line-height: 57px;
+  font-weight: 300;
+  margin-bottom: 32px;
+  margin-top: 0px;
+  @media only screen and (max-width: $mobile) {
+    font-size: 24px;
+    line-height: 28px;
+  };
+}
+
+.newsletter-tilesimple-text {
+  font-weight: normal !important;
+  font-size: 22px;
+  line-height: 34px;
+  color: $darkGrey;
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+  };
+}

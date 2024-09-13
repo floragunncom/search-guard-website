@@ -144,6 +144,11 @@ const Footer = ({ landing }) => {
                   </a>
                 </div>
                 <div className="footer-list-item">
+                  <a href="/newsletter/" className="footer-links">
+                    Newsletter
+                  </a>
+                </div>
+                <div className="footer-list-item">
                   <a href="/sitemap/" className="footer-links">
                     Sitemap
                   </a>
