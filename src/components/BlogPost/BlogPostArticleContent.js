@@ -118,7 +118,7 @@ const BlogPostArticleContent = ({ postContent }) => {
     ) {
         renderAuthor = (
             <>
-                <div className="row">
+
                     <div className="col">
                         <a href={`/author/${authorProfile.fields.slug}`}>
                             <img loading="lazy" src={`https:${authorProfile.fields.avatar.fields.file.url}?w=80&fit=scale`}
@@ -137,7 +137,7 @@ const BlogPostArticleContent = ({ postContent }) => {
                 </span>
                         <div>{authorProfile.fields.position}</div>
                     </div>
-                </div>
+
             </>
         );
     } else {
@@ -158,6 +158,17 @@ const BlogPostArticleContent = ({ postContent }) => {
             <meta name="author" content={`${postContent.fields.author}`} />
         )
     };
+
+    let audio;
+    let renderAudio = "";
+
+    if (
+        postContent.fields.audio
+    ) {
+        renderAudio = (
+            <audio controls src={`${postContent.fields.audio.fields.file.url}`}></audio>
+        );
+    }
 
     let video = postContent.fields.video;
     let renderVideo = '';
@@ -253,8 +264,14 @@ const BlogPostArticleContent = ({ postContent }) => {
             </div>
 
             <div className="row blogpostarticle-wrapper blogpostarticle-author">
+
                 <div className="col s12 offset-l2 l8">
-                    {renderAuthor}
+                        <div className="col s12 l6">
+                            {renderAuthor}
+                        </div>
+                        <div className="col s12 l6">
+                            {renderAudio}
+                        </div>
                 </div>
             </div>
 
