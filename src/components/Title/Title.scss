@@ -2,7 +2,7 @@
 @import '../../styles/Breakpoints';
 
 .title-wrapper-style {
-  background-color: $navyBlue;
+  background-color: $white; // navyBlue;
   padding: 64px 32px;
   @media only screen and (max-width: $tabletBig) {
     padding-bottom: 32px;
@@ -13,13 +13,13 @@
 
   &-heise {
     @extend .title-wrapper-style;
-    background-color: $navyBlue;
+    background-color: $white; //navyBlue
   }
 
 }
 
 .title-headline-style {
-  color: $turkis;
+  color: $darkBlue;
   font-size: 60px;
   line-height: 72px;
   text-align: center;

@@ -14,6 +14,11 @@ const TileSimple = ({
   let iconStyle;
   let contentStyle;
 
+  // TODO no left/right?
+  // wrapperStyle = 'tilesimple-container-dark-left';
+  // contentStyle = 'tilesimple-content-wrapper-left';
+  // iconStyle = 'tilesimple-icon-style-left';
+
   if (backgroundColor === 'dark') {
     if (iconPosition === 'left') {
       wrapperStyle = 'tilesimple-container-dark-left';
@@ -65,7 +70,7 @@ const TileSimple = ({
           </div>
           <div className="col s12 pull-l6 l6">
             <div className={contentStyle}>
-              <h2 className="tilesimple-headline">{headline}</h2>
+              <h3 className="tilesimple-headline">{headline}</h3>
               <div className="tilesimple-text">{text}</div>
             </div>
           </div>

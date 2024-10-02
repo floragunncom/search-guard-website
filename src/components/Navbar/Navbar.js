@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../images/logo-white.svg';
+import logo from '../../images/SG_Logo.svg';
 import M from "materialize-css";
 import './Navbar.scss';
 
@@ -29,13 +29,13 @@ const Navbar = ({ background = 'white', landing }) => {
                     </a>
                     <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
-                        <li><a href="/security/" data-target="nav-solutions" className="dropdown-trigger navbar__item" >Solutions</a></li>
-                        <li><a className="navbar__item" href="/search-guard-free-trial/">Download</a></li>
-                        <li><a className="navbar__item" href="/licensing/">Pricing</a></li>
-                        <li><a className="navbar__item" href="/blog/">Blog</a></li>
-                        <li><a href="/resource/" data-target="nav-resources" className="dropdown-trigger navbar__item" >Resources</a></li>
-                        <li><a className="navbar__item" href="/company/">About</a></li>
-                        <li><a className="navbar__item" href="/contacts/">Contact</a></li>
+                        <li><a href="/security/" data-target="nav-solutions" className="dropdown-trigger navbar__item btn" >Solutions</a></li>
+                        <li><a className="navbar__item btn" href="/search-guard-free-trial/">Download</a></li>
+                        <li><a className="navbar__item btn" href="/licensing/">Pricing</a></li>
+                        <li><a className="navbar__item btn" href="/blog/">Blog</a></li>
+                        <li><a href="/resource/" data-target="nav-resources" className="dropdown-trigger navbar__item btn" >Resources</a></li>
+                        <li><a className="navbar__item btn" href="/company/">About</a></li>
+                        <li><a className="navbar__item navbar__item:last-child navbar__contact btn" href="/contacts/">Contact</a></li>
                     </ul>
                 </div>
             </nav>

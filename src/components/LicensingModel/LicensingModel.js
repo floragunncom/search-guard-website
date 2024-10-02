@@ -58,7 +58,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
                 />
               </div>
               <h3 className="licensing-editions-headline community-border">
-                Search Guard Community Edition
+                Search Guard Community Edition ///
               </h3>
               <div className="licensing-editions-text-wrapper">
                 <div className="licensing-editions-text">

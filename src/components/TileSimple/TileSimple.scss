@@ -2,30 +2,30 @@
 @import '../../styles/Breakpoints';
 
 .tilesimple-container-dark-right {
-  background: linear-gradient(90deg, $white 50%, $navyBlue 50%);
+  background: $navyBlue;
   @media only screen and (max-width: $tabletBig) {
-    background: unset;
+    background: $navyBlue;
   };
 }
 
 .tilesimple-container-light-right {
-  background: linear-gradient(90deg, $white 50%, $grey 50%);
+  background: $navyBlue;
   @media only screen and (max-width: $tabletBig) {
-    background: unset;
+    background: $navyBlue;
   };
 }
 
 .tilesimple-container-dark-left {
-  background: linear-gradient(90deg, $navyBlue 50%, $white 50%);
+  background: $navyBlue;
   @media only screen and (max-width: $tabletBig) {
-    background: unset;
+    background: $navyBlue;
   };
 }
 
 .tilesimple-container-light-left {
-  background: linear-gradient(90deg, $grey 50%, $white 50%);
+  background: $navyBlue;
   @media only screen and (max-width: $tabletBig) {
-    background: unset;
+    background: $navyBlue;
   };
 }
 
@@ -41,7 +41,7 @@
   display: flex;
   justify-content: flex-end;
   @media only screen and (max-width: $tabletBig) {
-    background-color: $grey;
+    background-color: $navyBlue;
   }
 }
 
@@ -101,7 +101,7 @@ img.tilesimple-icon-style-left {
 }
 
 .tilesimple-headline {
-  color: $darkBlue;
+  color: $white;
   font-size: 48px;
   line-height: 57px;
   font-weight: 300;
@@ -116,7 +116,7 @@ img.tilesimple-icon-style-left {
 .tilesimple-text {
   font-size: 18px;
   line-height: 27px;
-  color: $darkGrey;
+  color: $white;
   @media only screen and (max-width: $mobile) {
     font-size: 16px;
     line-height: 24px;

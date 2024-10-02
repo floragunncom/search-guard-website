@@ -2,7 +2,7 @@
 @import '../../styles/Breakpoints';
 
 nav {
-  background-color: $navyBlueActive;
+  background-color: $white;
   padding-left: 200px;
   padding-right: 200px;
 }
@@ -37,13 +37,18 @@ nav ul a {
 
 .navbar {
   &__item {
-    color: $white;
+    color: $darkBlue;
+    background-color: $white; 
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 1px;
     font-weight: 700;
     border: none;
     outline-style: none;
+    margin-left: 100px;
+    margin-right: 100px;
+    // padding-right: 20px; /* spacing between items */
+    // padding-left: 20px; /* spacing between items */
     &:hover,
     &:focus {
       border-bottom: 2px solid $turkis;
@@ -51,8 +56,25 @@ nav ul a {
     }
   }
 
+  /*
+width: Hug (77px)px;
+height: Hug (36px)px;
+padding: 6px 8px 6px 8px;
+gap: 8px;
+opacity: 0px;
+
+  */
+
+  &__item:last-child {
+    // padding-right: 0; /* remove margin from the last item */
+  }
+
   &__icon {
     padding-top: 5px;
+  }
+
+  &__contact {
+    background-color: $lightGreen; 
   }
 }
 

@@ -26,14 +26,16 @@ const Hero = () => {
               </div>
               <div className="hero-button-wrapper">
                 <Button
+                  className="btn-large"
                   text="Free Search Guard Trial"
                   buttonStyle="loud-link"
                   link="/search-guard-free-trial/"
                 />
               </div>
-              <a href="/certificates/" className="hero-certificate-wrapper">
+              {/* what about this? not visible in figma */}
+              {/* <a href="/certificates/" className="hero-certificate-wrapper">
                 <img loading="lazy" src={heroCertificates} alt="certificate icon"/>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

@@ -79,7 +79,7 @@ const TrustedBy = () => {
   return (
     <div className="trusted-wrapper">
       <div className="row">
-        <h2 className="trusted-headline">Search Guard is trusted by</h2>
+        <h3 className="trusted-headline">Search Guard is trusted by</h3>
 
         <Carousel
             additionalTransfrom={0}

@@ -2,9 +2,9 @@
 @import '../../styles/Breakpoints';
 
 .hero-wrapper {
-  background-color: $darkBlue;
+  background-color: $white;
   width: 100%;
-  background-image: url('../../images/hero-static.svg'), url('../../images/hero-background.svg');
+  // background-image: url('../../images/hero-static.svg'), url('../../images/hero-background.svg');
   background-size: 100% 100%;
   background-repeat: no-repeat, no-repeat;
   @media only screen and (max-width: $mobile) {
@@ -41,11 +41,10 @@ div.col.s12.m5.l6 {
 .hero-text-wrapper-headline {
   margin-top: 32px;
   margin-bottom: 16px;
-  text-transform: uppercase;
-  font-size: 60px;
-  line-height: 72px;
-  font-weight: 500;
-  color: $white;
+  // font-size: 60px;
+  // line-height: 72px;
+  // font-weight: 500;
+  color: $darkBlue;
   letter-spacing: 2px;
   @media only screen and (max-width: $tabletBig) {
     margin-top: 32px;
@@ -61,11 +60,13 @@ div.col.s12.m5.l6 {
 }
 
 .hero-text-wrapper-text {
+  // font-family: 'Inter';
+  // text-transform: initial;
   margin-bottom: 64px;
   font-size: 18px;
   line-height: 27px;
   letter-spacing: 2px;
-  color: $white;
+  color: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
     margin-right: 40px;
     font-size: 16px;

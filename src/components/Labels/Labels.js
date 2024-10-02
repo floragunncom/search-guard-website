@@ -1,9 +1,9 @@
 import React from 'react';
-import certificate from '../../images/icon-certificate.svg';
-import check from '../../images/icon-check.svg';
-import shieldWheel from '../../images/shield-wheel.svg';
+import certificate from '../../images/file-certificate.svg';
+import check from '../../images/thumbs-up.svg';
+import support from '../../images/user-headset.svg';
 import './Labels.scss';
-
+// FONT SIZES!!!
 const Labels = () => {
   return (
     <div className="securityinfo-wrapper">
@@ -23,7 +23,7 @@ const Labels = () => {
         </div>
         <div className="col s12 m4">
           <div className="securityinfo-icon-wrapper">
-            <img loading="lazy" src={shieldWheel} alt="shield icon" width="150px" height="150px"/>
+            <img loading="lazy" src={support} alt="shield icon" width="150px" height="150px"/>
           </div>
           <div className="securityinfo-text-wrapper">
             <div className="securityinfo-headline subtitle">Priority support</div>

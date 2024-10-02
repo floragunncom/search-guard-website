@@ -11,9 +11,10 @@ import Cta from '../../components/Cta/Cta';
 import Services from '../../components/Services/Services';
 import Quotes from '../../components/Quotes/Quotes';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
-import lock from '../../images/tile-icon-wheel.svg';
-import multilevel from '../../images/multilevel-security.svg';
-import disk from '../../images/disk.svg';
+import cog_cog from '../../images/cog-cog.svg';
+import server_lock from '../../images/server-lock.svg';
+import objects_shield from '../../images/objects-shield.svg';
+
 import ctaIcon from '../../images/icon-sg.svg';
 
 
@@ -39,21 +40,21 @@ const HomePage = () => {
       </Helmet>
       <Hero />
       <TileSimple
-        icon={multilevel}
+        icon={server_lock}
         iconPosition="left"
         backgroundColor="dark"
         headline="Search Guard provides security on all levels"
         text="Search Guard provides an all-encompassing security solution to keep your most confidential data safe. Utilizing RBAC, Search Guard ensures the highest level of protection in your clusters, indices, and documents by adding encryption, authentication, authorization, audit logging, compliance as well as alerting and anomaly detection features."
       />
       <TileSimple
-        icon={lock}
+        icon={cog_cog}
         iconPosition="right"
-        backgroundColor="light"
+        backgroundColor="dark"
         headline="Search Guard supports all industry standards"
         text="Search Guard supports all industry standards for authentication and authorization like LDAP, Active Directory, OpenID, SAML, Kerberos, JSON web tokens or client certificates. You can chose from a wide variety of modern and highly secure modern cipher suites."
       />
       <TileSimple
-        icon={disk}
+        icon={objects_shield}
         iconPosition="left"
         backgroundColor="dark"
         headline="Search Guard protects all components of the Elastic Stack"

@@ -19,12 +19,12 @@ const Services = ({ landing }) => {
           : 'services-wrapper services-landing-background'
       }
     >
-      <h2
+      <h3
         className="services-headline"
         style={landing ? { color: 'white' } : null}
       >
         Enterprise security on all levels
-      </h2>
+      </h3>
       <div className="row">
         <div className="col s6 m3 security-detail-dark">
           <div className="security-detail-icon">
