@@ -1,11 +1,11 @@
 @import '../../styles/Colors.scss';
 @import '../../styles/Breakpoints';
 
-.arrow-link-ghost-container {
+.arrow-button-light-aqua-container {
   height: 48px;	
   min-width: 180px;
   border-radius: 3px;
-  border: 2px solid $turkis;
+  background-color: $lightAqua;
   // box-shadow: 0 20px 40px 0 rgba(90,90,90,0.24);
   display: flex;
   justify-content: center;
@@ -14,11 +14,10 @@
   padding: 14px 20px;
   cursor: pointer;
   &:hover {
-    border-width: 3px;
-    transition: border-width 0.3s linear;
+    background-color: $turkisHover;
+    transition: background-color 0.3s linear;
   };
   &:active {
-    border-width: 3px;
     background-color: $turkisActive;
   }
   @media only screen and (max-width: $mobile) {
@@ -26,16 +25,11 @@
   };
 }
 
-.arrow-button-text {
+.arrow-button-light-aqua-text {
   font-size: 14px;
   font-weight: bold;
   line-height: 20px;
   letter-spacing: 1px;
   text-align: center;
-  margin-right: 16px;
-  color: $buttonGhost;
-}
-
-.arrow-link-arrow-style {
-  width: 18px;
+  color: $textLoud;
 }

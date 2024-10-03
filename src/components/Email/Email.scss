@@ -7,7 +7,7 @@
 
 input#email, input#search {
   padding: 0px;
-  border-bottom: 2px solid $navyBlue !important;
+  border-bottom: 2px solid $lightAqua !important;
   @media only screen and (max-width: $mobile) {
     margin-bottom: 22px;
   };
@@ -32,7 +32,7 @@ div.input-field.col {
 }
 
  .input-field input:focus + label {
-  color: unset !important;
+  color: $white !important;
 }
 
 // styling for the Sendgrid Widget signup form

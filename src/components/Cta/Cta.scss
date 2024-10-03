@@ -3,23 +3,14 @@
 
 .cta-container {
   padding: 96px 0px;
-  background: linear-gradient(40deg, $darkBlue 33%, $navyBlue 33%);
+  background: $white;//linear-gradient(40deg, $darkBlue 33%, $navyBlue 33%);
   @media only screen and (max-width: $tabletBig) {
-    background: linear-gradient(66deg, $darkBlue 25%, $navyBlue 25%);
+    background: $white;//linear-gradient(66deg, $darkBlue 25%, $navyBlue 25%);
     padding: 64px 0px;
   };
   @media only screen and (max-width: $mobile) {
-    background: linear-gradient(165deg, $darkBlue 27.5%, $navyBlue 27.5%);
+    background: $white;//linear-gradient(165deg, $darkBlue 27.5%, $navyBlue 27.5%);
     padding: 32px 0px 32px 0px;
-  };
-}
-
-.cta-image-wrapper {
-  height: 292px;
-  display: flex;
-  align-items: center;
-  @media only screen and (max-width: $mobile) {
-    height: unset;
   };
 }
 
@@ -68,9 +59,9 @@
   font-size: 48px;
   line-height: 57px;
   font-weight: 300;
-  color: $white;
+  color: $darkBlue;
   margin-bottom: 32px;
-  margin-top: 0px;
+  margin-top: 0px; 
   @media only screen and (max-width: $tabletBig) {
     font-size: 36px;
     line-height: 43px;
@@ -84,11 +75,12 @@
 }
 
 .cta-text {
-  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
   line-height: 30px;
-  font-size: 24px;
-  letter-spacing: 0.8px;
-  color: $white;
+  letter-spacing: 0.15px;
+  text-align: center;
+  color: $black;
   margin-bottom: 64px;
   @media only screen and (max-width: $mobile) {
     font-size: 16px;

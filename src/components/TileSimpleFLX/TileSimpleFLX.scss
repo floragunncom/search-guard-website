@@ -106,10 +106,7 @@ img.tilesimple-flx-icon-style-left {
 }
 
 .tilesimple-headline {
-  color: $darkBlue;
-  font-size: 48px;
-  line-height: 57px;
-  font-weight: 300;
+  color: $white;
   margin-bottom: 32px;
   margin-top: 0px;
   @media only screen and (max-width: $mobile) {
@@ -119,10 +116,9 @@ img.tilesimple-flx-icon-style-left {
 }
 
 .tilesimple-text {
-  font-size: 18px;
-  line-height: 27px;
-  color: $darkGrey;
+  color: $white;
   margin-bottom: 24px;
+  text-align: left;
   @media only screen and (max-width: $mobile) {
     font-size: 16px;
     line-height: 24px;

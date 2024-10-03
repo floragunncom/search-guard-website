@@ -12,6 +12,8 @@ const Button = props => {
       return <ButtonLoud text={props.text} onPress={props.onPress} />;
     case 'default-button':
       return <ButtonDefault text={props.text} onPress={props.onPress} />;
+    case 'light-aqua-button':
+      return <ButtonDefault text={props.text} onPress={props.onPress} />;      
     case 'loud-link':
       return (
         <LinkLoud text={props.text} target={props.target} link={props.link} />

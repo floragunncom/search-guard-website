@@ -5,6 +5,10 @@
   background-color: $darkBlue;
 }
 
+.footer-wrapper {
+  color: $white;
+}
+
 div.row.footer-row {
   padding: 64px 0px;
   @media only screen and (max-width: $xl) {
@@ -13,7 +17,6 @@ div.row.footer-row {
 }
 
 .footer-links-column-container {
-  border-left: 3px solid $turkis;
   margin-bottom: 32px;
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 64px;
@@ -28,7 +31,7 @@ a.footer-links {
   color: $white;
 }
 
-.footer-list-headline a, .footer-list-item a {
+.footer-list-headline a, .footer-list-item a { /////////////
   font-size: 14px;
   line-height: 14px;
   letter-spacing: 1px;
@@ -42,10 +45,10 @@ a.footer-links {
   }
 }
 
-.footer-list-headline {
+.footer-list-headline { ////////////////
   margin-bottom: 32px;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
   @media only screen and (max-width: $mobile) {
     position: relative;
     top: -16px;
@@ -72,11 +75,48 @@ a.footer-links {
   margin-right: auto;
   padding: 0 32px 64px 32px;
   color: $white;
-  opacity: 0.7;
-  line-height: 20px;
-  font-size: 14px;
-  text-align: center;
   @media only screen and (max-width: $mobile) {
     padding-bottom: 32px;
   }
+}
+
+.footer-content-wrapper {
+  padding: 0px;
+  @media only screen and (max-width: $tabletBig) {
+    margin: 32px 0px;
+  };
+  @media only screen and (max-width: $mobile) {
+    margin: 16px 0px;
+  };
+};
+
+.footer-col-content {
+  @media only screen and (max-width: $tabletBig) and (min-width: $mobile) {
+    padding: 0 12px;
+  }
+}
+
+.footer-headline {
+  color: $white;
+  // text-transform: uppercase;
+  font-size: 12px; /////////////
+  letter-spacing: 3.3px;
+  line-height: 32px;
+}
+
+.footer-content {
+  margin: 8px 0px 0px 0px;
+  @media only screen and (max-width: 600px) {
+    margin-top: 8px;
+  };
+}
+
+hr.footer-hr {
+  display: none;
+  height: 1.75px;
+  background-color: $white;
+  margin-top: 24px;
+  @media only screen and (max-width: 600px) {
+    display: block;
+  };
 }

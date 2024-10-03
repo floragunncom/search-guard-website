@@ -277,7 +277,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
       >
         <div className="row">
           <div className="col s12">
-            <div className="licensing-headline">{headline}</div>
+            <h3 className="licensing-headline">{headline}</h3>
             <div className="licensing-subheadline">{subheadline}</div>
             {buttons}
             {renderContent}

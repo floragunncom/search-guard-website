@@ -19,10 +19,10 @@ const Hero = () => {
                 <h1 className="hero-text-wrapper-headline">
                   Security and Alerting for Elasticsearch and Kibana
                 </h1>
-                <h2 className="hero-text-wrapper-text">
+                <div className="hero-text-wrapper-text">
                   Search Guard is a security and alerting plugin that encrypts and protects your data
                   and data flows from unauthorized access in the entire Elastic Stack.
-                </h2>
+                </div>
               </div>
               <div className="hero-button-wrapper">
                 <Button

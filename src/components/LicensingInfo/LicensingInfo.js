@@ -1,7 +1,7 @@
 import React from 'react';
 import './LicensingInfo.scss';
 
-const LicensingInfo = () => {
+const LicensingInfo = () => { // not used?
   return (
     <div className="licensing-landing-wrapper">
       <div className="row">

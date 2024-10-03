@@ -2,9 +2,9 @@
 @import '../../styles/Breakpoints';
 
 .licensing-wrapper {
-  background: linear-gradient(180deg, $grey 550px, $lightGrey 550px);
+  background: $lightAqua;
   @media only screen and (max-width: $mobile) {
-    background: linear-gradient(180deg, $grey 250px, $lightGrey 250px);
+    background: $lightAqua;
   };
 }
 

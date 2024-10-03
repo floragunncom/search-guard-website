@@ -50,15 +50,25 @@ h1 {
 
 }
 
-h2 { // ok? check where used
+// h2 { // ok? check where used
+//   @include font-headlines;
+//   font-family: 'Inter-Regular';
+//   font-size: 16px;
+//   font-weight: 400;
+//   line-height: 24px;
+//   letter-spacing: 0.15px;
+//   text-align: left;
+//   text-transform: unset;
+// }
+
+h2 {
   @include font-headlines;
-  font-family: 'Inter-Regular';
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.15px;
-  text-align: left;
-  text-transform: unset;
+  font-family: Parafina-SemiWideXBold;
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 48px;
+  letter-spacing: -0.5px;
+  text-align: center;
 }
 
 h3 {
@@ -135,16 +145,27 @@ div.row {
 
 .subtitle {
   @include fonts;
-  font-family: "Inter-Medium";
+  font-family: "Inter-Regular";
   font-size: 16px;
   font-weight: 700;
-  line-height: 175%; /* 28px */
-  letter-spacing: 0.15px;
+  line-height: 28px;
+  letter-spacing:  175%; //0.15px;
+  text-align: left;
 }
 
 .hidden {
   display: none;
 }
+
+.body2 {
+font-family: "Inter-Regular";
+font-size: 14px;
+font-weight: 400;
+line-height: 20.02px;
+letter-spacing: 0.15px;
+text-align: left;
+}
+
 
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }

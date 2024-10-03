@@ -2,7 +2,7 @@
 @import '../../styles/Breakpoints';
 
 .prefooter-container {
-  background-color: $lightGrey;
+  background-color: $darkBlue;
 }
 
 .prefooter-row {
@@ -29,9 +29,9 @@
 }
 
 .prefooter-headline {
-  color: $darkBlue;
-  text-transform: uppercase;
-  font-size: 12px;
+  color: $white;
+  // text-transform: uppercase;
+  font-size: 12px; /////////////
   letter-spacing: 3.3px;
   line-height: 32px;
 }
@@ -44,7 +44,7 @@
 }
 
 .prefooter-content-text {
-  color: $darkGrey;
+  color: $white;
   font-size: 18px;
   line-height: 27px;
   padding-top: 4px;
@@ -52,16 +52,6 @@
   @media only screen and (max-width: $tabletBig) and (min-width: $mobile) {
     padding-top: 8px;
     margin-bottom: 12px;
-  };
-}
-
-hr.prefooter-hr {
-  display: none;
-  height: 1.75px;
-  background-color: $navyBlue;
-  margin-top: 24px;
-  @media only screen and (max-width: 600px) {
-    display: block;
   };
 }
 

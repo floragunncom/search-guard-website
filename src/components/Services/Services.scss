@@ -2,6 +2,7 @@
 @import '../../styles/Breakpoints';
 
 .services-wrapper {
+  background-color: $navyBlue;
   padding: 128px 0;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 0;
@@ -12,14 +13,14 @@
 }
 
 .services-landing-background {
-  background: linear-gradient(180deg, $navyBlue 500px, white 500px);
+  background: $navyBlue;//linear-gradient(180deg, $navyBlue 500px, white 500px);
   @media only screen and (max-width: $tabletBig) {
     background: $navyBlue;
   };
 }
 
 .security-detail-dark, .security-detail-light, .security-detail-dark-mobile, .security-detail-light-mobile {
-  background-color: $grey;
+  background-color: $grey; // 
   height: 286px;
   display: flex;
   align-items: center;
@@ -39,7 +40,7 @@
 
 .security-detail-light-mobile {
   @media only screen and (max-width: $mobile) {
-    background-color: $grey;
+    background-color: $grey; //
   };
 }
 
@@ -68,7 +69,7 @@
 .services-headline {
   margin-bottom: 64px;
   margin-top: 0px;
-  color: $darkBlue;
+  color: $white;
   font-size: 48px;
   line-height: 57px;
   font-weight: 300;
