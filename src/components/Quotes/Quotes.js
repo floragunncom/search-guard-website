@@ -62,7 +62,7 @@ class Quotes extends Component {
     return (
       <div className="quotes-container">
         <div className="row">
-          <div className="quotes-headline">What our clients say</div>
+          <h2 className="quotes-headline">What our clients say</h2>
           <div className="slider">
             <ul className="slides">
               {quotes.map(quote => {
