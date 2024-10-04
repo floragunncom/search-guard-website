@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Email.scss';
 import Button from '../Button/Button';
-import sg_helmet_logo from '../../images/SG_Helmet_LOGO 1.svg';
-
 
 const Email = () => {
 
@@ -92,7 +90,6 @@ const Email = () => {
                   </form>
             ))
       }
-      <img loading="lazy" src={sg_helmet_logo} alt="search guard logo"  />      
     </div>
   );
 };

@@ -1,8 +1,9 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
+@import '../../index.scss';
 
 .title-wrapper-style {
-  background-color: $white; // navyBlue;
+  background-color: $white;
   padding: 64px 32px;
   @media only screen and (max-width: $tabletBig) {
     padding-bottom: 32px;
@@ -13,9 +14,8 @@
 
   &-heise {
     @extend .title-wrapper-style;
-    background-color: $white; //navyBlue
+    background-color: $white;
   }
-
 }
 
 .title-headline-style {
@@ -59,11 +59,9 @@
 }
 
 .title-text-style {
-  font-family: "Inter-Regular"; // this is an h2 but we want the body font type
-  font-size: 18px;
-  line-height: 30px;
-  letter-spacing: 0.8px;
-  color: $white;
+  // this is an h2 but we want the body font type
+  @extend .body1;
+  color: $navyBlue;
   padding: 0px 18px;
   text-align: center;
   text-transform: none;

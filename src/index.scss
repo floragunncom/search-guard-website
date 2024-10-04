@@ -151,6 +151,17 @@ div.row {
   display: none;
 }
 
+// same as body, but for reusing in title!
+.body1 {
+  @include fonts;
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  text-align: left;
+}
+
 .body2 {
 font-family: "Inter-Regular";
 font-size: 14px;
