@@ -26,7 +26,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <PageWrapper background="#184962">
+    <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
         <title>

@@ -25,17 +25,17 @@ const Navbar = ({ background = 'white', landing }) => {
             <nav>
                 <div className="nav-wrapper">
                     <a href="/" className="brand-logo">
-                        <img loading="lazy" src={logo} alt="Search Guard" className="navbar__icon" width="100px" height="48px" />
+                        <img loading="lazy" src={logo} alt="Search Guard" className="navbar__icon" width="207px" height="32px" />
                     </a>
                     <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
-                        <li><a href="/security/" data-target="nav-solutions" className="dropdown-trigger navbar__item btn" >Solutions</a></li>
-                        <li><a className="navbar__item btn" href="/search-guard-free-trial/">Download</a></li>
-                        <li><a className="navbar__item btn" href="/licensing/">Pricing</a></li>
-                        <li><a className="navbar__item btn" href="/blog/">Blog</a></li>
-                        <li><a href="/resource/" data-target="nav-resources" className="dropdown-trigger navbar__item btn" >Resources</a></li>
-                        <li><a className="navbar__item btn" href="/company/">About</a></li>
-                        <li><a className="navbar__item navbar__item:last-child navbar__contact btn" href="/contacts/">Contact</a></li>
+                        <li><a href="/security/" data-target="nav-solutions" className="dropdown-trigger navbar__item button-medium" >Solutions</a></li>
+                        <li><a className="navbar__item button-medium" href="/search-guard-free-trial/">Download</a></li>
+                        <li><a className="navbar__item button-medium" href="/licensing/">Pricing</a></li>
+                        <li><a className="navbar__item button-medium" href="/blog/">Blog</a></li>
+                        <li><a href="/resource/" data-target="nav-resources" className="dropdown-trigger navbar__item button-medium" >Resources</a></li>
+                        <li><a className="navbar__item button-medium" href="/company/">About</a></li>
+                        <li><a className="navbar__item navbar__item:last-child navbar__contact button-medium" href="/contacts/">Contact</a></li>
                     </ul>
                 </div>
             </nav>

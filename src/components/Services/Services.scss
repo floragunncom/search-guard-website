@@ -20,7 +20,6 @@
 }
 
 .security-detail-dark, .security-detail-light, .security-detail-dark-mobile, .security-detail-light-mobile {
-  background-color: $grey; // 
   height: 286px;
   display: flex;
   align-items: center;
@@ -34,23 +33,8 @@
   };
 }
 
-.security-detail-light, .security-detail-light-mobile {
-  background-color: $lightGrey;
-}
-
-.security-detail-light-mobile {
-  @media only screen and (max-width: $mobile) {
-    background-color: $grey; //
-  };
-}
-
-.security-detail-dark-mobile {
-  @media only screen and (max-width: $mobile) {
-    background-color: $lightGrey;
-  };
-}
-
 .security-detail-icon {
+  color: $lightAqua;
   padding-top: 55px;
   margin-bottom: 16px;
   @media only screen and (max-width: $tabletBig) {
@@ -86,10 +70,7 @@
 }
 
 .security-detail-title {
-  color: $darkBlue;
-  font-size: 24px;
-  line-height: 30px;
-  letter-spacing: 0.8px;
+  color: $white;
   text-align: center;
   @media only screen and (max-width: $tabletBig) {
     font-size: 20px;

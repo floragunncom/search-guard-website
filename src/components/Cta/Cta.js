@@ -12,7 +12,7 @@ const Cta = ({ icon, ctaText, headline, link, text }) => {
             {/* Neue DIN should be used here new font */}
             <div className="cta-text">{text}</div>
             {link && link.length > 0 && ctaText && ctaText.length > 0 &&
-             <Button text={ctaText} buttonStyle="loud-link" link={link} />
+             <Button text={ctaText} buttonStyle="light-aqua-button" link={link} />
             }
           </div>
            {/* </div> */}

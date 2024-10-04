@@ -42,7 +42,7 @@ const TileSimple = ({
   if (iconPosition === 'left') {
     tilePosition = (
       <div className={wrapperStyle}>
-        <div className="row">
+        <div className="row tile-row">
           <div className="col s12 l6 tilesimple-icon-wrapper-left">
 
             <LazyLoadImage
@@ -62,7 +62,7 @@ const TileSimple = ({
   } else {
     tilePosition = (
       <div className={wrapperStyle}>
-        <div className="row tilesimple-change-order">
+        <div className="row tilesimple-change-order tile-row">
           <div className="col s12 push-l6 l6 tilesimple-icon-wrapper-right">
             <LazyLoadImage
                 src={icon} className={iconStyle} alt="tile icon"

@@ -58,7 +58,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   width="145px" height="145px"
                 />
               </div>
-              <h3 className="licensing-editions-headline community-border">
+              <h3 className="licensing-editions-headline">
                 Community Edition for Elasticsearch
               </h3>
               <div className="licensing-editions-text-wrapper">
@@ -95,7 +95,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   width="145px" height="145px"
                 />
               </div>
-              <h3 className="licensing-editions-headline enterprise-border">
+              <h3 className="licensing-editions-headline">
                 Enterprise Edition for Elasticsearch
               </h3>
               <div className="licensing-editions-text-wrapper">
@@ -132,7 +132,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   width="145px" height="145px"
                 />
               </div>
-              <h3 className="licensing-editions-headline compliance-border">
+              <h3 className="licensing-editions-headline">
                 Compliance Edition for Elasticsearch
               </h3>
               <div className="licensing-editions-text-wrapper">
@@ -177,7 +177,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   width="145px" height="145px"
                 />
               </div>
-              <div className="licensing-editions-headline academic-border">
+              <div className="licensing-editions-headline">
                 Academic & Scientific edition
               </div>
               <div className="licensing-editions-text-wrapper">
@@ -211,7 +211,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
                   width="145px" height="145px"
                 />
               </div>
-              <div className="licensing-editions-headline custom-border">
+              <div className="licensing-editions-headline">
                 Custom edition
               </div>
               <div className="licensing-editions-text-wrapper">
@@ -244,7 +244,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
 
   if (topButtons) {
     buttons = (
-      <div className="licensing-buttons">
+      <div className="licensing-buttons button-large">
         <div
           className={
             standardButton ? 'licensing-button-active' : 'licensing-button'

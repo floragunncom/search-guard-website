@@ -16,12 +16,10 @@
 }
 
 .licensing-headline {
+  text-transform: uppercase;
   text-align: center;
   padding-top: 128px;
   padding-bottom: 0px;
-  font-size: 48px;
-  line-height: 57px;
-  font-weight: 300;
   color: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
     font-size: 36px;
@@ -55,7 +53,10 @@
   };
 }
 
+
+// button-large
 .licensing-buttons {
+  text-align: left;  
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -67,9 +68,10 @@
   };
 }
 
+
+
 .licensing-button-active, .licensing-button {
   border: 2px solid $navyBlue;
-  text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: bold;
 }
@@ -148,15 +150,11 @@
   };
 }
 
-.licensing-editions-headline { ///
+.licensing-editions-headline {
   text-align: center;
   padding-top: 32px;
   padding-bottom: 16px;
   margin-bottom: 32px;
-  font-size: 24px;
-  line-height: 30px;
-  letter-spacing: 0.8px;
-  font-weight: 500;
   color: $editionText;
   @media only screen and (max-width: $mobile) {
     font-size: 20px;
@@ -182,11 +180,10 @@ img.licensing-icon {
 }
 
 .licensing-editions-text {
+  list-style-type: disc !important;
   padding: 0px 18px 16px 18px;
-  color: $darkGrey;
-  font-size: 18px;
-  line-height: 27px;
-  text-align: center;
+  color: $darkBlue;
+  text-align: left;
   @media only screen and (max-width: $tabletBig) {
     padding-bottom: 8px;
   };
@@ -194,39 +191,6 @@ img.licensing-icon {
     font-size: 16px;
     line-height: 24px;
   };
-}
-
-.community-border, .compliance-border, .enterprise-border{
-  width: 100%;
-  @media only screen and (max-width: $tabletBig) {
-    width: 65%;
-  };  
-}
-
-.academic-border, .custom-border {
-  width: 70%;
-}
-
-.community-border {
-  border-bottom: 2.5px solid $communityEdition;
-}
-
-.enterprise-border {
-  border-bottom: 2.5px solid $enterpriseEdition;
-}
-
-.compliance-border {
-  border-bottom: 2.5px solid $complianceEdition;
-}
-
-.academic-border {
-  border-bottom: 2.5px solid $darkGrey;
-  color: $darkGrey;
-}
-
-.custom-border {
-  border-bottom: 2.5px solid $navyBlue;
-  color: $navyBlue;
 }
 
 .licensing-editions-button {

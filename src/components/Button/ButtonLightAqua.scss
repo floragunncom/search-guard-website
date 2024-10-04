@@ -1,12 +1,11 @@
 @import '../../styles/Colors.scss';
 @import '../../styles/Breakpoints';
 
-.arrow-button-light-aqua-container {
+.button-light-aqua-container {
   height: 48px;	
   min-width: 180px;
   border-radius: 3px;
   background-color: $lightAqua;
-  // box-shadow: 0 20px 40px 0 rgba(90,90,90,0.24);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,22 +13,19 @@
   padding: 14px 20px;
   cursor: pointer;
   &:hover {
-    background-color: $turkisHover;
-    transition: background-color 0.3s linear;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.28);
+    -webkit-transition: box-shadow 0.1s linear;
+    transition: box-shadow 0.1s linear;
   };
   &:active {
-    background-color: $turkisActive;
+    background-color: $lightAqua;
   }
   @media only screen and (max-width: $mobile) {
     width: 100%;
   };
 }
 
-.arrow-button-light-aqua-text {
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 20px;
-  letter-spacing: 1px;
+.button-light-aqua-text {
   text-align: center;
-  color: $textLoud;
+  color: $black;
 }

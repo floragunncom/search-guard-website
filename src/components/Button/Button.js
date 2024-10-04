@@ -1,6 +1,7 @@
 import React from 'react';
 import LinkLoud from './LinkLoud';
 import ButtonLoud from './ButtonLoud';
+import ButtonLightAqua from './ButtonLightAqua';
 import ButtonDefault from './ButtonDefault';
 import LinkDefault from './LinkDefault';
 import LinkGhost from './LinkGhost';
@@ -13,7 +14,7 @@ const Button = props => {
     case 'default-button':
       return <ButtonDefault text={props.text} onPress={props.onPress} />;
     case 'light-aqua-button':
-      return <ButtonDefault text={props.text} onPress={props.onPress} />;      
+      return <ButtonLightAqua text={props.text} onPress={props.onPress} target={props.target} link={props.link}/>;      
     case 'loud-link':
       return (
         <LinkLoud text={props.text} target={props.target} link={props.link} />

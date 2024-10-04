@@ -4,12 +4,20 @@
 .hero-wrapper {
   background-color: $white;
   width: 100%;
+}
+
+.hero-image {
+  margin-top: 32px;
   // background-image: url('../../images/hero-static.svg'), url('../../images/hero-background.svg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat, no-repeat;
-  @media only screen and (max-width: $mobile) {
-    background-image: url('../../images/hero-animation-mobile.svg'), url('../../images/hero-background.svg');
-  }
+  // background-size: 100% 100%;
+  // background-repeat: no-repeat, no-repeat;
+  // @media only screen and (max-width: $mobile) {
+  //   background-image: url('../../images/hero-animation-mobile.svg'), url('../../images/hero-background.svg');
+  // }  
+}
+
+.hero-image-content {
+  width: -webkit-fill-available;
 }
 
 .hero-row-empty-mobile {

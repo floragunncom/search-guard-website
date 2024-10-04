@@ -33,7 +33,7 @@
 
 .tilesimple-icon-wrapper-left {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   @media only screen and (max-width: $tabletBig) {
     background-color: $navyBlue;
   }
@@ -41,7 +41,7 @@
 
 .tilesimple-icon-wrapper-right {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   @media only screen and (max-width: $tabletBig) {
     background-color: $grey;
   }

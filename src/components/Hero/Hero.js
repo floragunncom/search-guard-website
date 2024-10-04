@@ -6,14 +6,16 @@ import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
 import './Hero.scss';
-
+import hero from '../../images/hero-static.svg';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+// , url('../../images/hero-background.svg');
 const Hero = () => {
   return (
     <div>
       <div className="hero-wrapper">
         <div className="row">
           <div className="hero-row-empty-mobile" />
-          <div className="col s12 m5 l6">
+          <div className="col s12 m7 l6">
             <div className="hero-col-wrapper">
               <div className="hero-text-wrapper">
                 <h1 className="hero-text-wrapper-headline">
@@ -26,9 +28,8 @@ const Hero = () => {
               </div>
               <div className="hero-button-wrapper">
                 <Button
-                  className="btn-large"
                   text="Free Search Guard Trial"
-                  buttonStyle="loud-link"
+                  buttonStyle="light-aqua-button"
                   link="/search-guard-free-trial/"
                 />
               </div>
@@ -38,6 +39,9 @@ const Hero = () => {
               </a> */}
             </div>
           </div>
+          <div className="col s12 m5 l6 hero-image">
+            <LazyLoadImage src={hero} className='hero-image-content'/>
+        </div>
         </div>
       </div>
       <div className="hero-certificate-wrapper-hidden">

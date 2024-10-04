@@ -94,15 +94,9 @@ h5 {
   font-family: Parafina-SemiWideBold;
   font-size: 28px;
   font-weight: 700;
-  line-height: 133.4%; /* 37.352px */
-}
-
-h5 {
-  @include font-headlines;
-  font-family: Parafina-SemiWideBold;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 133.4%; /* 37.352px */
+  line-height: 37.35px; /* 133.4% /37.352px */
+  text-align: left;
+  text-transform: capitalize;
 }
 
 p {
@@ -166,6 +160,23 @@ letter-spacing: 0.15px;
 text-align: left;
 }
 
+.button-medium { 
+  font-family: "Inter-Regular";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  text-align: left;
+}
+
+.button-large {
+  font-family: "Inter-Regular";
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0.46px;
+  text-align: left;
+}
 
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
