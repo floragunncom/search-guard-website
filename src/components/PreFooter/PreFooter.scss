@@ -59,3 +59,9 @@
     opacity: 0.9
   }
 }
+
+.prefooter-logo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
