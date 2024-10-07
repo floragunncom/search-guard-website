@@ -1,25 +1,32 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
+.filter-icons-color {
+  filter: invert(86%) sepia(25%) saturate(369%) hue-rotate(119deg) brightness(105%) contrast(93%);
+}
+
 .services-wrapper {
   background-color: $navyBlue;
   padding: 128px 0;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 0;
-  };
+  }
   @media only screen and (max-width: $mobile) {
     padding: 32px 0;
-  };
+  }
 }
 
 .services-landing-background {
-  background: $navyBlue;//linear-gradient(180deg, $navyBlue 500px, white 500px);
+  background: $navyBlue;
   @media only screen and (max-width: $tabletBig) {
     background: $navyBlue;
-  };
+  }
 }
 
-.security-detail-dark, .security-detail-light, .security-detail-dark-mobile, .security-detail-light-mobile {
+.security-detail-dark,
+.security-detail-light,
+.security-detail-dark-mobile,
+.security-detail-light-mobile {
   height: 286px;
   display: flex;
   align-items: center;
@@ -27,10 +34,14 @@
   flex-direction: column;
   @media only screen and (max-width: $tabletBig) {
     height: 170px;
-  };
+  }
   @media only screen and (max-width: $mobile) {
     height: 155px;
-  };
+  }
+}
+
+.services-icons {
+  color: $lightAqua !important;
 }
 
 .security-detail-icon {
@@ -44,10 +55,10 @@
       height: 60px;
       width: 60px;
     }
-  };
+  }
   @media only screen and (max-width: $mobile) {
     padding-top: 22px;
-  };
+  }
 }
 
 .services-headline {
@@ -62,11 +73,11 @@
     font-size: 36px;
     line-height: 43px;
     margin-bottom: 32px;
-  };
+  }
   @media only screen and (max-width: $mobile) {
     font-size: 24px;
     line-height: 28px;
-  };
+  }
 }
 
 .security-detail-title {
@@ -76,19 +87,19 @@
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0.67px;
-  };
+  }
   @media only screen and (max-width: $mobile) {
     font-size: 16px;
     line-height: 24px;
-  };
+  }
 }
 
 .security-button {
   margin-top: 76px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   @media only screen and (max-width: $mobile) {
     padding: 32px 24px;
     width: 100%;
-  };
+  }
 }

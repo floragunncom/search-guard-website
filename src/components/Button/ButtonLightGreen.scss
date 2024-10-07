@@ -1,11 +1,11 @@
 @import '../../styles/Colors.scss';
 @import '../../styles/Breakpoints';
 
-.button-light-aqua-container {
+.button-light-green-container {
   height: 48px;	
   min-width: 180px;
   border-radius: 3px;
-  background-color: $lightAqua;
+  background-color: $lightGreen;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,14 +18,14 @@
     transition: box-shadow 0.1s linear;
   };
   &:active {
-    background-color: $lightAqua;
+    background-color: $lightGreen;
   }
   @media only screen and (max-width: $mobile) {
     width: 100%;
   };
 }
 
-.button-light-aqua-text {
+.button-light-green-text {
   text-align: center;
   color: $black;
 }

@@ -2,10 +2,9 @@ import React from 'react';
 import certificate from '../../images/file-certificate.svg';
 import check from '../../images/thumbs-up.svg';
 import support from '../../images/user-headset.svg';
-import bg_arrow from '../../images/arrows_group.svg';
 import './Labels.scss';
+import FilledDivider from '../FilledDivider/FilledDivider';
 
-// FONT SIZES!!!
 const Labels = () => {
   return (
     <div className="securityinfo-wrapper">
@@ -49,9 +48,7 @@ const Labels = () => {
           </div>
         </div>
       </div>
-      <div className="security-bg-wrapper">
-        <img loading="lazy" src={bg_arrow} alt="background arrows"/>
-      </div>
+      <FilledDivider />
     </div>
   );
 };

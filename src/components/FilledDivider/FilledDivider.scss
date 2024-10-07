@@ -1,0 +1,10 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.security-bg-wrapper {  
+  text-align: center;
+
+  @media only screen and (max-width: $tabletBig) {
+    max-width: $tabletBig;
+  }
+}
