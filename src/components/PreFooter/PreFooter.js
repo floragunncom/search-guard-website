@@ -10,7 +10,7 @@ const Info = () => {
         <div className="row">
           <div className="prefooter-content-wrapper col s12 m12 l6">
             <div className="prefooter-col-content">
-              <div className="prefooter-headline subtitle">Sign up for Search Guard Newsletter</div>
+              <div className="subtitle prefooter-headline">Sign up for Search Guard Newsletter</div>
               {/* <div className="prefooter-content">
                 <div className="prefooter-content-text">
                   For the latest product developments, new versions and

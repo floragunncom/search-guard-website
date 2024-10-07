@@ -31,8 +31,16 @@ div.input-field.col {
   left: 0px;
 }
 
- .input-field input:focus + label {
-  color: $white !important;
+.input-field input:focus + label {
+  color: $lightAqua !important;
+}
+
+.input-field {
+  color: $lightAqua !important;
+}
+
+.text-processing {
+  color: $announcementHighlight !important;
 }
 
 // styling for the Sendgrid Widget signup form

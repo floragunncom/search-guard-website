@@ -28,6 +28,7 @@ const FreeTrial = () => {
                 />
             </Helmet>
             <Title
+                className="free-trial-title"
                 headline="Start your free trial"
                 text="You can use the completely Open Source and forever-free Community Edition, or start your 60 day Search Guard Enterprise trial"
                 breadcrumb={breadcrumb}

@@ -199,59 +199,63 @@ const Footer = ({ landing }) => {
             </div>
           </div>
         ) : null}
-
-        <div className="footer-content-wrapper col s12 m6 l6 subtitle">
-          <div className="footer-col-content">
-            <div className="footer-headline">follow us</div>
-            <div className="footer-content icons">
-              <a
-                href="https://twitter.com/searchguard?lang=en"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img loading="lazy" src={x_twitter} alt="twitter icon" />
-              </a>
-              <a
-                href="https://www.facebook.com/searchguard/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img loading="lazy" src={facebook} alt="facebook icon" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/search-guard/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img loading="lazy" src={linkedIn} alt="linkedIn icon" />
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UCUw93I0DHMvoA8HNQ31AeJw"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img loading="lazy" src={youtube} alt="youtube icon"  />
-              </a>
-              <hr className="footer-hr" />
+        <div className="row footer-row">
+          <div className="footer-content-wrapper col subtitle">
+            <div className="footer-col-content">
+              <div className="footer-headline">Follow us</div>
+              <div className="footer-content footer-content-icons">
+                <a
+                  href="https://twitter.com/searchguard?lang=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img loading="lazy" src={x_twitter} alt="twitter icon" />
+                </a>
+                <a
+                  href="https://www.facebook.com/searchguard/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img loading="lazy" src={facebook} alt="facebook icon" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/search-guard/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img loading="lazy" src={linkedIn} alt="linkedIn icon" />
+                </a>
+                <a
+                  href="https://www.youtube.com/channel/UCUw93I0DHMvoA8HNQ31AeJw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img loading="lazy" src={youtube} alt="youtube icon"  />
+                </a>
+                <hr className="footer-hr" />
+              </div>
             </div>
           </div>
         </div>
-
         <div
-          className="footer-text subtitle"
+          className="row footer-row subtitle footer-text"
           style={landing ? { paddingTop: '64px' } : null}
         >
-          <p>© {currentYear} floragunn GmbH - All Rights Reserved</p>
-          <p className='body2'>
-            Search Guard is a trademark of floragunn GmbH, registered in the
-            U.S. and in other countries. Elasticsearch, Kibana, Logstash, and
-            Beats are trademarks of Elasticsearch BV, registered in the U.S. and
-            in other countries. Apache, Apache Lucene, Apache Hadoop, Hadoop,
-            HDFS and the yellow elephant logo are trademarks of the Apache
-            Software Foundation in the United States and/or other countries.
-          </p>
+          <div className="footer-content-wrapper col subtitle">   
+            <div className="footer-col-content">  
+              <p>© {currentYear} floragunn GmbH - All Rights Reserved</p>
+              <p className='body2'>
+                Search Guard is a trademark of floragunn GmbH, registered in the
+                U.S. and in other countries. Elasticsearch, Kibana, Logstash, and
+                Beats are trademarks of Elasticsearch BV, registered in the U.S. and
+                in other countries. Apache, Apache Lucene, Apache Hadoop, Hadoop,
+                HDFS and the yellow elephant logo are trademarks of the Apache
+                Software Foundation in the United States and/or other countries.
+              </p>
+          </div>
         </div>
       </div>
+      </div>   
       <RichSnippetCompany />
     </div>
   );

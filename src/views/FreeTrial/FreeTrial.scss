@@ -82,10 +82,12 @@
   }
 }
 
+.free-trial-title{
+  color: $navyBlue;
+}
+
 .free-trial-content-text {
-  color: $darkGrey;
-  font-size: 18px;
-  line-height: 27px;
+  color: $navyBlue;
   text-align: left;
   margin-bottom: 32px;
   @media only screen and (max-width: $mobile) {

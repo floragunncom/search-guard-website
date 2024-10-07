@@ -138,12 +138,11 @@ div.row {
 }
 
 .subtitle {
-  @include fonts;
   font-family: "Inter-Regular";
   font-size: 16px;
   font-weight: 700;
   line-height: 28px;
-  letter-spacing:  175%; //0.15px;
+  letter-spacing:  0.15px;
   text-align: left;
 }
 
