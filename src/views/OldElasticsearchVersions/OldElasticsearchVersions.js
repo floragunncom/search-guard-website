@@ -73,17 +73,17 @@ const OldElasticsearchVersions = () => {
         "
       />
 
-          <div className="alerting-wrapper" >
+          <div className="old-alerting-wrapper" >
 
-              <div className="row alerting">
-                  <h2 className="alerting-headline">Search Guard is still available for older and outdated Elasticsearch Versions</h2>
+              <div className="row old-alerting">
+                  <h2 className="old-alerting-headline">Search Guard is still available for older and outdated Elasticsearch Versions</h2>
 
-                  <div className="alerting-section" >
-                      <div className="alerting-content">
-                          <div className="alerting-content-headline">
+                  <div className="old-alerting-section" >
+                      <div className="old-alerting-content">
+                          <div className="old-alerting-content-headline">
                               Stuck on an old Elasticsearch Version?
                           </div>
-                          <div className="alerting-content-text">
+                          <div className="old-alerting-content-text">
                               Are you stuck on Elasticsearch 6? Or even version 5 or 2?
                               Elasticsearch’s older versions have a list of well known issues that are fixed in later versions as well as significant feature enhancements.
                               However many organizations implemented Elasticsearch sometime ago and find they don’t have the skills or knowledge to unpick the integrations built at the time.
@@ -95,12 +95,12 @@ const OldElasticsearchVersions = () => {
                       </div>
                   </div>
 
-                  <div className="alerting-section" >
-                      <div className="alerting-content">
-                          <div className="alerting-content-headline">
+                  <div className="old-alerting-section" >
+                      <div className="old-alerting-content">
+                          <div className="old-alerting-content-headline">
                               We still provide security for Elasticsearch 2, 5 and 6
                           </div>
-                          <div className="alerting-content-text">
+                          <div className="old-alerting-content-text">
                               Search Guard has been providing Enterprise security for Elasticsearch since Version 2.
                               Search guard still provides versions of our Security plugins for Elasticsearch 6 as well as version 5 and, yes, even version 2.
                               By implementing Search Guard you can stabilize your security particularly with Encryption in motion,

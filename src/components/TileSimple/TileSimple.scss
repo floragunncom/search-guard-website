@@ -1,7 +1,10 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
+
+// TODO this one is not used mainly
 .tilesimple-container-dark-right {
+  color: $white;  
   background: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
     background: $darkBlue;
@@ -9,13 +12,15 @@
 }
 
 .tilesimple-container-light-right {
-  background: $darkBlue;
+  color: $navyBlue;
+  background: $lightAqua;
   @media only screen and (max-width: $tabletBig) {
-    background: $darkBlue;
+    background: $lightAqua;
   };
 }
 
 .tilesimple-container-dark-left {
+  color: $white;
   background: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
     background: $darkBlue;
@@ -23,9 +28,10 @@
 }
 
 .tilesimple-container-light-left {
-  background: $darkBlue;
+  color: $navyBlue;
+  background: $lightAqua;
   @media only screen and (max-width: $tabletBig) {
-    background: $darkBlue;
+    background: $lightAqua;
   };
 }
 
@@ -95,7 +101,6 @@ img.tilesimple-icon-style-left {
 }
 
 .tilesimple-headline {
-  color: $white;
   margin-bottom: 32px;
   margin-top: 0px;
   @media only screen and (max-width: $mobile) {
@@ -103,8 +108,23 @@ img.tilesimple-icon-style-left {
   };
 }
 
-.tilesimple-text {
+.tilesimple-text-light {
+  color: $darkBlue;
+}
+
+.tilesimple-text-dark {
   color: $white;
+}
+
+.tilesimple-headline-light {
+  color: $darkBlue;
+}
+
+.tilesimple-headline-dark {
+  color: $white;
+}
+
+.tilesimple-headline-light, .tilesimple-headline-dark {
   @media only screen and (max-width: $mobile) {
     font-size: 16px;
   };

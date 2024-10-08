@@ -5,7 +5,7 @@ import './FilledDivider.scss';
 const FilledDivider = ( { backgroundClass, shapeClass } ) => {
     return (
         <div className={backgroundClass || ''}>
-            <div className="row">
+            <div className="row divider-base ">
                 <div className="col s12 m12">
                         <img className={`img-class ${shapeClass} || ''`} loading="lazy" src={bg_arrow} alt="background arrows"/>
                 </div>

@@ -50,7 +50,7 @@ const Security = () => {
           icon={handsHolding}
           iconClass={'filter-icons-color'}
           iconPosition="left"
-          backgroundColor="light"
+          backgroundColor="dark"
           headline="Protect Your Data with Confidence"
           text="Search Guard's battle-proven security features ensure that your Elasticsearch cluster is safeguarded from unauthorized access, data breaches, and cyber threats. With advanced authentication, role-based access control, and document-level security, you can rest assured that your sensitive data is protected."
         />
@@ -67,7 +67,7 @@ const Security = () => {
         icon={umberlla}
         iconClass={'filter-icons-color'}
         iconPosition="left"
-        backgroundColor="light"
+        backgroundColor="dark"
         headline="Advanced Security Made Simple"
         text="Search Guard simplifies advanced security for your Elasticsearch cluster. With easy-to-implement features and seamless integration, you can secure your data without compromising on performance or usability."
       />

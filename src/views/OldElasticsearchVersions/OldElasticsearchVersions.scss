@@ -1,7 +1,8 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
-.alerting-wrapper {
+// TODO to rm?
+.old-alerting-wrapper {
   padding-top: 64px;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 32px 0px 32px;
@@ -11,13 +12,13 @@
   }
 }
 
-.row.alerting {
+.row.old-alerting {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.alerting-headline {
+.old-alerting-headline {
   margin-bottom: 32px;
   margin-top: 0px;
   color: $darkBlue;
@@ -36,7 +37,7 @@
   }
 }
 
-.alerting-section {
+.old-alerting-section {
   margin-bottom: 24px;
   margin-top: 24px;
   display: flex;
@@ -57,7 +58,7 @@
   }
 }
 
-.alerting-pic img {
+.old-alerting-pic img {
   margin-right: 32px;
   display: flex;
   justify-content: center;
@@ -66,11 +67,11 @@
   }
 }
 
-.alerting-content {
+.old-alerting-content {
   width: 80%;
 }
 
-.alerting-content-headline {
+.old-alerting-content-headline {
   color: $darkBlue;
   font-size: 24px;
   line-height: 30px;
@@ -82,7 +83,7 @@
   }
 }
 
-.alerting-content-text {
+.old-alerting-content-text {
   color: $darkGrey;
   font-size: 18px;
   line-height: 27px;
@@ -95,7 +96,7 @@
   }
 }
 
-.alerting-content-button {
+.old-alerting-content-button {
   display: flex;
   margin-bottom: 64px;
   @media only screen and (max-width: $mobile) {
@@ -103,7 +104,7 @@
   }
 }
 
-.alerting-pre {
+.old-alerting-pre {
   background-color: $lightGrey;
   white-space: pre-wrap;
   margin-top: 24px;

@@ -14,30 +14,37 @@ const TileSimple = ({
   let wrapperStyle;
   let iconStyle;
   let contentStyle;
+  let headlineStyle;
+  let textStyle;
+
 
   // TODO no left/right?
-  // wrapperStyle = 'tilesimple-container-dark-left';
-  // contentStyle = 'tilesimple-content-wrapper-left';
-  // iconStyle = 'tilesimple-icon-style-left';
-
   if (backgroundColor === 'dark') {
     if (iconPosition === 'left') {
       wrapperStyle = 'tilesimple-container-dark-left';
       contentStyle = 'tilesimple-content-wrapper-left';
       iconStyle = 'tilesimple-icon-style-left';
+      headlineStyle = 'tilesimple-headline-dark';
+      textStyle = 'tilesimple-text-dark';
     } else {
       wrapperStyle = 'tilesimple-container-dark-right';
       contentStyle = 'tilesimple-content-wrapper-right';
       iconStyle = 'tilesimple-icon-style-right';
+      headlineStyle = 'tilesimple-headline-dark';
+      textStyle = 'tilesimple-text-dark';
     }
   } else if (iconPosition === 'left') {
     wrapperStyle = 'tilesimple-container-light-left';
     contentStyle = 'tilesimple-content-wrapper-left';
     iconStyle = 'tilesimple-icon-style-left';
+    headlineStyle = 'tilesimple-headline-light';
+    textStyle = 'tilesimple-text-light';
   } else {
     wrapperStyle = 'tilesimple-container-light-right';
     contentStyle = 'tilesimple-content-wrapper-right';
     iconStyle = 'tilesimple-icon-style-right';
+    headlineStyle = 'tilesimple-headline-light';
+    textStyle = 'tilesimple-text-light';
   }
 
   if (iconPosition === 'left') {
@@ -51,8 +58,8 @@ const TileSimple = ({
           </div>
           <div className="col s12 l6">
             <div className={contentStyle}>
-              <h3 className="tilesimple-headline">{headline}</h3>
-              <div className="tilesimple-text">{text}</div>
+              <h3 className={headlineStyle}>{headline}</h3>
+              <div className={textStyle}>{text}</div>
             </div>
           </div>
         </div>
@@ -69,8 +76,8 @@ const TileSimple = ({
           </div>
           <div className="col s12 pull-l6 l6">
             <div className={contentStyle}>
-              <h3 className="tilesimple-headline">{headline}</h3>
-              <div className="tilesimple-text">{text}</div>
+              <h3 className={headlineStyle}>{headline}</h3>
+              <div className={textStyle}>{text}</div>
             </div>
           </div>
         </div>
