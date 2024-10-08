@@ -5,8 +5,8 @@ import './Cta.scss';
 const Cta = ({ icon, ctaText, headline, link, text }) => {
   return (
     <div className="cta-container">
-      {/* {/* <div className="row cta-row-wrapper"> */}
-        <div className="cta-row col s12 m12 l7">
+      <div className="row cta-row-wrapper">
+        <div className="cta-row col s12 m12">
           <div className="cta-text-container">
             <h2 className="cta-headline">{headline}</h2>
             {/* Neue DIN should be used here new font */}
@@ -15,7 +15,7 @@ const Cta = ({ icon, ctaText, headline, link, text }) => {
              <Button text={ctaText} buttonStyle="light-aqua-button" link={link} />
             }
           </div>
-           {/* </div> */}
+           </div>
         </div>
     </div>
   );

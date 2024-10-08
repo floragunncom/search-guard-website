@@ -3,7 +3,7 @@
 
 .certified-wrapper {
   padding: 128px 0px;
-  background-color: $lightGrey;
+  background-color: $lightAqua;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 0px;
   }
@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $grey;
+  background-color: $lightGreen;
   width: 280px;
   height: 280px;
   border-radius: 140px;
@@ -54,9 +54,6 @@
 .certified-col-headline {
   margin-top: 32px;
   margin-bottom: 16px;
-  font-size: 24px;
-  line-height: 30px;
-  letter-spacing: 0.8px;
   text-align: center;
   color: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
@@ -70,10 +67,6 @@
 }
 
 .certified-col-text {
-  font-size: 18px;
-  line-height: 27px;
-  text-align: center;
-  color: $darkGrey;
   @media only screen and (max-width: $tabletBig) {
     margin: 0px 16px;
   }

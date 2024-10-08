@@ -2,30 +2,30 @@
 @import '../../styles/Breakpoints';
 
 .tilesimple-container-dark-right {
-  background: $navyBlue;
+  background: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
-    background: $navyBlue;
+    background: $darkBlue;
   };
 }
 
 .tilesimple-container-light-right {
-  background: $navyBlue;
+  background: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
-    background: $navyBlue;
+    background: $darkBlue;
   };
 }
 
 .tilesimple-container-dark-left {
-  background: $navyBlue;
+  background: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
-    background: $navyBlue;
+    background: $darkBlue;
   };
 }
 
 .tilesimple-container-light-left {
-  background: $navyBlue;
+  background: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
-    background: $navyBlue;
+    background: $darkBlue;
   };
 }
 
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: center;
   @media only screen and (max-width: $tabletBig) {
-    background-color: $navyBlue;
+    background-color: $darkBlue;
   }
 }
 
@@ -41,7 +41,7 @@
   display: flex;
   justify-content: center;
   @media only screen and (max-width: $tabletBig) {
-    background-color: $navyBlue;
+    background-color: $darkBlue;
   }
 }
 
@@ -113,4 +113,7 @@ img.tilesimple-icon-style-left {
 .tile-row {
   padding-top: 80px;
   padding-bottom: 96px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

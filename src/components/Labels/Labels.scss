@@ -65,15 +65,14 @@
 }
 
 .securityinfo-content {
-  color: $darkGrey;
-  font-size: 18px;
-  line-height: 27px;
   text-align: center;
 
   @media only screen and (max-width: $tabletBig) {
     font-size: 16px;
     line-height: 24px;
-  }
+  };
+}
 
-  ;
+.label-divider-shape-color {
+  filter: invert(94%) sepia(83%) saturate(299%) hue-rotate(89deg) brightness(102%) contrast(95%);
 }

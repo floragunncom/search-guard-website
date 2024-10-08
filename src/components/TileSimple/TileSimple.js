@@ -6,6 +6,7 @@ const TileSimple = ({
   backgroundColor,
   iconPosition,
   icon,
+  iconClass,
   headline,
   text,
 }) => {
@@ -44,11 +45,9 @@ const TileSimple = ({
       <div className={wrapperStyle}>
         <div className="row tile-row">
           <div className="col s12 l6 tilesimple-icon-wrapper-left">
-
             <LazyLoadImage
-                src={icon} className={iconStyle} alt="tile icon"
+                src={icon} className={`${iconStyle} ${iconClass}`} alt="tile icon"
             />
-
           </div>
           <div className="col s12 l6">
             <div className={contentStyle}>
@@ -65,7 +64,7 @@ const TileSimple = ({
         <div className="row tilesimple-change-order tile-row">
           <div className="col s12 push-l6 l6 tilesimple-icon-wrapper-right">
             <LazyLoadImage
-                src={icon} className={iconStyle} alt="tile icon"
+                src={icon} className={`${iconStyle} ${iconClass}`} alt="tile icon"
             />
           </div>
           <div className="col s12 pull-l6 l6">

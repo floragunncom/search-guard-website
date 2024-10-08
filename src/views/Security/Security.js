@@ -8,10 +8,12 @@ import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
 import Certified from '../../components/Certified/Certified';
 import Integrators from '../../components/Integrators/Integrators';
+import FilledDivider from '../../components/FilledDivider/FilledDivider';
 import ctaIcon from '../../images/icon-sg.svg';
-import fileCode from '../../images/file-code.svg';
-import worldLock from '../../images/world-lock.svg';
-import certificate from '../../images/certificate-big.svg';
+import handsHolding from '../../images/hands-holding-circle-solid.svg';
+import umberlla from '../../images/umbrella-solid.svg';
+import tableCellsLock from '../../images/table-cells-column-lock-solid.svg';
+import './Security.scss';
 
 const Security = () => {
   useEffect(() => {
@@ -45,7 +47,8 @@ const Security = () => {
 
       <div id="concept">
         <TileSimple
-          icon={fileCode}
+          icon={handsHolding}
+          iconClass={'filter-icons-color'}
           iconPosition="left"
           backgroundColor="light"
           headline="Protect Your Data with Confidence"
@@ -53,14 +56,16 @@ const Security = () => {
         />
       </div>
       <TileSimple
-        icon={certificate}
+        icon={tableCellsLock}
+        iconClass={'filter-icons-color'}
         iconPosition="right"
         backgroundColor="dark"
         headline="Lock Down Your Elasticsearch Cluster"
         text="Search Guard's comprehensive security suite provides end-to-end protection for your Elasticsearch data. From encryption to audit logging, our features ensure that your data is secure in transit and at rest. Don't leave your cluster vulnerable - secure it with Search Guard today!"
       />
       <TileSimple
-        icon={worldLock}
+        icon={umberlla}
+        iconClass={'filter-icons-color'}
         iconPosition="left"
         backgroundColor="light"
         headline="Advanced Security Made Simple"
@@ -68,6 +73,7 @@ const Security = () => {
       />
       <Integrators />
       <Certified />
+      <FilledDivider backgroundClass={'arrows-bg'} shapeClass={'divider-shape-color'} />
       <div id="quote">
         <Cta
           headline="Free 60-day Trial"
