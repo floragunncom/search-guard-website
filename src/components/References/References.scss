@@ -13,10 +13,8 @@
 
 .ref-headline {
   margin-bottom: 64px;
-  font-size: 48px;
-  line-height: 57px;
   text-align: center;
-  font-weight: 300;
+  color: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
     font-size: 36px;
     line-height: 43px;

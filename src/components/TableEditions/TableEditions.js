@@ -376,7 +376,7 @@ const TableEditions = () => {
         {matrixContent.map(service => {
           return (
             <tbody className="licensing-table-body" key={service.name}>
-              <tr style={{ backgroundColor: '#E8ECED' }}>
+              <tr className="licensing-table-row-heading">
                 <td>
                   <div className="licensing-table-subheadline">
                     {service.name}

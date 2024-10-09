@@ -49,7 +49,7 @@ const References = () => {
   return (
     <div className="ref-wrapper">
       <div className="row ref-content-responsive">
-        <div className="ref-headline">References</div>
+        <h3 className="ref-headline">References</h3>
         <div className="ref-content">
           <Carousel
               additionalTransfrom={0}

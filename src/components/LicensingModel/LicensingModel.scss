@@ -9,10 +9,7 @@
 }
 
 .licensing-wrapper-expanded {
-  background: linear-gradient(180deg, $grey 1180px, $lightGrey 1180px);
-  @media only screen and (max-width: $tabletBig) {
-    background: $grey;
-  };
+  background-color: $lightAqua;
 }
 
 .licensing-headline {
@@ -246,9 +243,6 @@ img.licensing-icon {
   padding-top: 128px;
   padding-bottom: 64px;
   text-align: center;
-  font-size: 48px;
-  line-height: 57px;
-  font-weight: 300;
   color: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 24px;

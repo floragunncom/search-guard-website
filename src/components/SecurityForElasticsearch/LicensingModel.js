@@ -268,12 +268,12 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
   if (tableView) {
     renderTableView = (
       <div className="licensing-comparison-wrapper" id="feature">
-        <div
+        <h2
           className="licensing-comparison-headline"
           onClick={ontableViewPress}
         >
           Feature breakdown
-        </div>
+        </h2>
         <TableEditions />
       </div>
     );

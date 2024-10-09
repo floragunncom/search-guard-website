@@ -1,5 +1,6 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
+@import '../../index.scss';
 
 .licensing-table-wrapper {
   margin-bottom: 127px;
@@ -16,19 +17,16 @@
 }
 
 .licensing-table-head th {
+  @extend .body1;
   text-align: center;
   text-transform: uppercase;
-  font-size: 12px;
-  line-height: 32px;
   color: $darkBlue;
-  letter-spacing: 3.3px;
   font-weight: normal;
 }
 
 .licensing-table-body td {
+  @extend .body1;
   text-align: center;
-  font-size: 14px;
-  line-height: 20px;
   color: $darkGrey;
   border-right: 1px solid $grey;
   &:last-child {
@@ -49,11 +47,7 @@ td .licensing-checkmark {
   text-transform: uppercase;
   padding: 0px 32px;
   width: 100%;
-  background-color: $grey;
   color: $darkBlue;
-  font-size: 12px;
-  line-height: 32px;
-  letter-spacing: 3.3px;
   text-align: left;
 }
 
@@ -93,26 +87,23 @@ td .licensing-checkmark {
   };
 }
 
+.licensing-table-row-heading {
+background-color: $lightAqua;  
+}
+
 .licensing-overview-content-headline {
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 4px;
-    text-transform: uppercase;
-    color: $darkBlue;
-    font-size: 12px;
-    line-height: 32px;
-    letter-spacing: 3.3px;
   };
 }
 
 .licensing-overview-content-text {
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 4px;
-    color: $darkGrey;
-    font-size: 14px;
-    line-height: 20px;
   };
 }
 
+// unused?
 .material-tooltip {
     width: 250px;
     padding: 20px 16px;

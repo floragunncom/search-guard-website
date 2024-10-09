@@ -1,24 +1,26 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
-.card__wrapper-blue-to-grey-bg {
-  display: flex;
-  padding: 130px 0;
-  background-image: linear-gradient(90deg, $navyBlue 0%, $navyBlue 50%, $grey 50%);
+
+.card__title {
+  text-align: center;
+  padding-bottom: 72px;
+} 
+
+.card__wrapper-dark, .card__wrapper-light {
+  padding-top: 96px;
+  padding-bottom: 104px;
   @media only screen and (max-width: $tabletBig) {
-    background-image: none;
     padding: 0;
   }
 }
 
-.card__wrapper-grey-to-blue-bg {
-  display: flex;
-  padding: 130px 0;
-  background-image: linear-gradient(90deg, $grey 0%, $grey 50%, $navyBlue 50%);
-  @media only screen and (max-width: $tabletBig) {
-    background-image: none;
-    padding: 0;
-  }
+.card__wrapper-dark {
+  background-color: $darkBlue;
+}
+
+.card__wrapper-light {
+  background-color: $white;
 }
 
 .card__row {
@@ -33,15 +35,9 @@
 
 .card__col-left {
   width: 50%;
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
   padding-right: 130px;
   padding-left: 32px;
-  color: $white;
-  text-align: right;
   @media only screen and (max-width: $tabletBig) {
-    background-color: $navyBlue;
     width: 100%;
     padding: 32px 24px 70px 24px;
     align-items: center;
@@ -54,18 +50,12 @@
 
 .card__col-right {
   width: 50%;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
   padding-left: 130px;
   padding-right: 32px;
-  color: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
-    background-color: $grey;
     align-items: center;
     width: 100%;
     padding: 32px 24px 70px 24px;
-    text-align: center;
   }
   @media only screen and (max-width: $mobile) {
     padding: 32px 24px;
@@ -74,6 +64,9 @@
 
 .card__col {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   @media only screen and (max-width: $tabletBig) {
     width: 100%;
   }
@@ -90,32 +83,17 @@
       margin-bottom: 32px;
     }
     &__headline {
-      font-family: Inter-Light;
-      font-size: 48px;
-      font-weight: 300;
-      line-height: 57px;
+      text-align: center;
       margin-bottom: 32px;
       @media only screen and (max-width: $tabletBig) {
-        font-size: 36px;
-        line-height: 43px;
         margin-bottom: 16px;
       }
       @media only screen and (max-width: $mobile) {
-        font-size: 24px;
-        line-height: 28px;
         margin-bottom: 8px;
       }
     }
     &__text {
-      font-size: 18px;
-      line-height: 27px;
-      @media only screen and (max-width: $tabletBig) {
-        font-size: 18px;
-        line-height: 24px;
-      }
-      @media only screen and (max-width: $mobile) {
-        font-size: 16px;
-      }
+      text-align: center;
     }
   }
   &-button {
@@ -126,41 +104,19 @@
   }
 }
 
-.headline-left-dark, .text-left-dark {
+
+.headline-in-dark-mode, .text-in-dark-mode, .title-in-dark-mode {
   color: $white;
 }
 
-.headline-right-dark {
+.headline-in-light-mode, .text-in-light-mode, .title-in-light-mode {
   color: $darkBlue;
 }
-.text-right-dark {
-  color: $darkGrey;
+
+.icon-in-dark-mode {
+  filter: invert(94%) sepia(83%) saturate(299%) hue-rotate(89deg) brightness(102%) contrast(95%);  
 }
 
-.headline-left-light {
-  color: $darkBlue;
-  @media only screen and (max-width: $tabletBig) {
-    color: $white;
-  }
-}
-
-.text-left-light {
-  color: $darkGrey;
-  @media only screen and (max-width: $tabletBig) {
-    color: $white;
-  }
-}
-
-.headline-right-light {
-  color: $white;
-  @media only screen and (max-width: $tabletBig) {
-    color: $darkBlue;
-  }
-}
-
-.text-right-light {
-  color: $white;
-  @media only screen and (max-width: $tabletBig) {
-    color: $darkGrey;
-  }
+.icon-in-light-mode {
+  filter: invert(94%) sepia(83%) saturate(299%) hue-rotate(89deg) brightness(102%) contrast(95%);  
 }

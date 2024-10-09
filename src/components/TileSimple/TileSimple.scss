@@ -90,7 +90,6 @@ img.tilesimple-icon-style-left {
 }
 
 .tilesimple-content-wrapper-right {
-  text-align: right;
   @media only screen and (max-width: $tabletBig) {
     padding: 32px 155px 64px 155px;
     text-align: center;
@@ -136,4 +135,5 @@ img.tilesimple-icon-style-left {
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-align: left;  
 }

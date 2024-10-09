@@ -9,8 +9,9 @@ import LicensingModel from '../../components/LicensingModel/LicensingModel';
 import References from '../../components/References/References';
 import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
-import iconBook from '../../images/icon-book.svg';
-import iconWheels from '../../images/icon-wheels.svg';
+import iconBook from '../../images/book-solid.svg';
+import iconWheels from '../../images/gears-solid.svg';
+import FilledDivider from '../../components/FilledDivider/FilledDivider';
 
 const License = () => {
   useEffect(() => {
@@ -48,7 +49,8 @@ const License = () => {
       />
       <div id="academic">
         <Card
-          bgLeftDark
+          title="Customize your license"
+          dark={true}
           iconLeft={iconBook}
           iconRight={iconWheels}
           headlineLeft="Academic & Scientific Programme"
@@ -59,6 +61,7 @@ const License = () => {
           linkRight="/contacts/"
         />
       </div>
+      <FilledDivider backgroundClass={'arrows-bg'} shapeClass={'divider-shape-color'} />
       <References />
       <Cta
         headline="Interested?"

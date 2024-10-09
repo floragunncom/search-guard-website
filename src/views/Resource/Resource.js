@@ -45,7 +45,7 @@ const Resource = () => {
         breadcrumb={breadcrumb}
       />
       <Card
-        bgLeftDark={false}
+        dark={false}
         iconLeft={iconFolder}
         iconRight={iconPeople}
         headlineLeft="Documentation"
@@ -60,7 +60,7 @@ const Resource = () => {
       <Faq />
       <div id="git">
         <Card
-          bgLeftDark
+          dark
           iconLeft={iconDownload}
           iconRight={iconCertificate}
           headlineLeft="Source Code"
@@ -79,7 +79,7 @@ const Resource = () => {
 
       <div id="whitePapers">
         <Card
-          bgLeftDark={false}
+          dark={false}
           iconLeft={iconSpeaker}
           iconRight={iconNote}
           headlineLeft="Presentations"
@@ -91,7 +91,7 @@ const Resource = () => {
         />
       </div>
       <Card
-        bgLeftDark
+        dark
         iconLeft={iconShield}
         iconRight={iconLock}
         headlineLeft="CVE advisory"

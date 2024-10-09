@@ -1,7 +1,7 @@
 import React from 'react';
-import certificate from '../../images/file-certificate.svg';
-import check from '../../images/thumbs-up.svg';
-import support from '../../images/user-headset.svg';
+import certificate from '../../images/clipboard-check-solid.svg';
+import check from '../../images/thumbs-up-regular.svg';
+import support from '../../images/headset-solid.svg';
 import './Labels.scss';
 import FilledDivider from '../FilledDivider/FilledDivider';
 
@@ -11,7 +11,7 @@ const Labels = () => {
       <div className="row">
         <div className="col s12 m4">
           <div className="securityinfo-icon-wrapper">
-            <img loading="lazy" src={certificate} alt="certificate icon" width="150px" height="150px" />
+            <img className="securityinfo-icons" loading="lazy" src={certificate} alt="certificate icon" width="150px" height="150px" />
           </div>
           <div className="securityinfo-text-wrapper">
             <h5 className=" securityinfo-headline">Certified</h5>
@@ -24,7 +24,7 @@ const Labels = () => {
         </div>
         <div className="col s12 m4">
           <div className="securityinfo-icon-wrapper">
-            <img loading="lazy" src={support} alt="shield icon" width="150px" height="150px"/>
+            <img className="securityinfo-icons" loading="lazy" src={support} alt="shield icon" width="150px" height="150px"/>
           </div>
           <div className="securityinfo-text-wrapper">
             <h5 className="securityinfo-headline">Priority support</h5>
@@ -37,7 +37,7 @@ const Labels = () => {
         </div>
         <div className="col s12 m4">
           <div className="securityinfo-icon-wrapper">
-            <img loading="lazy" src={check} alt="checkmark icon" width="150px" height="150px" />
+            <img className="securityinfo-icons" loading="lazy" src={check} alt="checkmark icon" width="150px" height="150px" />
           </div>
           <div className="securityinfo-text-wrapper">
             <h5 className="securityinfo-headline">Trusted by</h5>

@@ -12,9 +12,10 @@ import alertingAnomalies from '../../images/alerting_anomalies.svg';
 import alertingNotifications from '../../images/alerting_notifications.svg';
 import alertingEscalation from '../../images/alerting_escalation.svg';
 import alertingUI from '../../images/alerting_ui.svg';
-import iconSpeaker from "../../images/icon-speaker.svg";
-import iconNote from "../../images/icon-note.svg";
+import iconSpeaker from "../../images/bullhorn-solid.svg";
+import iconBell from "../../images/bell-regular.svg";
 import FilledDivider from '../../components/FilledDivider/FilledDivider';
+import Card from '../../components/Card/Card';
 
 const Alerting = () => {
   useEffect(() => {
@@ -192,41 +193,18 @@ const Alerting = () => {
             </div>
         </div>
     </div>
-    <div id="escalationmodel"className="alerting-wrapper alerting-escalation-wrapper" >
-        <h3 className="alerting-headline">Notifications escalation</h3>  
-        <div className="row alerting-row">           
-            <div className="col s12 m6">
-                <div className="alerting-section" >
-                    <div className="alerting-content">
-                         {/* <i className="material-icons md-96 md-dark alerting-icon">http</i> */}
-                        <img className="material-icons md-96 md-dark alerting-icon" alt='http' src={iconSpeaker}/>
-                        <h5 className="alerting-content-headline">
-                            Escalation by Severity Levels
-                        </h5>
-                        <div className="body1 alerting-content-text">
-                            Define severity levels and get notified on different channels for different levels. Send out Slack notifications for error conditions, and additional Email and PagerDuty alerts for critical conditions.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="col s12 m6">
-                <div className="alerting-section" >
-                    <div className="alerting-content">
-                        {/* <i className="material-icons md-96 md-dark alerting-icon">http</i> */}
-                        <img className="material-icons md-96 md-dark alerting-icon" alt='http' src={iconNote}/>
-                        <h5 className="alerting-content-headline">
-                            Resolve Notifications
-                        </h5>
-                        <div className="body1 alerting-content-text">
-                            A critical system condition is hopefully just temporary: Get notified once an alert is resolved and everything is back to normal.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="escalationmodel">
+        <Card
+            title="Notifications escalation"
+            dark={false}
+            iconLeft={iconSpeaker}
+            iconRight={iconBell}
+            headlineLeft="Escalation by Severity Levels"
+            headlineRight="Resolve Notifications"
+            textLeft="Define severity levels and get notified on different channels for different levels. Send out Slack notifications for error conditions, and additional Email and PagerDuty alerts for critical conditions."
+            textRight="A critical system condition is hopefully just temporary: Get notified once an alert is resolved and everything is back to normal."
+        />
     </div>
-
-
     <div className="alerting-wrapper" >
         <h3 className="alerting-headline">Free Alerting for Elasticsearch and Kibana.<br />Bundled and integrated with Search Guard.</h3>
         <div className="row alerting-row">           
