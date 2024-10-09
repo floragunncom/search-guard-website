@@ -9,7 +9,7 @@ import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
 import security from '../../images/tile-icon-wheel.svg';
-import oldversions from "../../images/icon-speaker.svg";
+import oldversions from "../../images/bullhorn-solid.svg";
 import jail from "../../images/icon-note.svg";
 
 

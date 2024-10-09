@@ -8,7 +8,7 @@ import './Certified.scss';
 const Certified = () => {
   return (
     <div className="certified-wrapper" id="certified">
-      <h4 className="certified-headline">Certified</h4>
+      <h3 className="certified-headline">Certified</h3>
       <div className="row certified-row-wrapper">
         <div className="col s12 m6">
           <a
@@ -40,7 +40,7 @@ const Certified = () => {
             Allianz for Cyber-Sicherheit
           </h5>
           <div className="body1 certified-col-text">
-            floragunn is member of the "Alliance for Cybersecurity", a body of
+            Floragunn is member of the "Alliance for Cybersecurity", a body of
             the Federal Office for Information Security in Germany.
           </div>
         </div>
@@ -57,7 +57,7 @@ const Certified = () => {
           </a>
           <h5 className="certified-col-headline">CVE</h5>
           <div className="body1 certified-col-text">
-            floragunn GmbH is the official CVE numbering authority for Search
+            Floragunn GmbH is the official CVE numbering authority for Search
             Guard.
           </div>
         </div>
@@ -72,7 +72,7 @@ const Certified = () => {
           </a>
           <h5 className="certified-col-headline">TeleTrusT</h5>
           <div className="body1 certified-col-text">
-            floragunn is member of TeleTrust, a German federal association for
+            Floragunn is member of TeleTrust, a German federal association for
             IT security.
           </div>
         </div>

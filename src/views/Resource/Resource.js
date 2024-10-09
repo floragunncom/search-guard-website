@@ -9,14 +9,14 @@ import Faq from '../../components/Faq/Faq';
 import Video from '../../components/Video/Video';
 import BlogBox from '../../components/BlogBox/BlogBox';
 import envelope from '../../images/icon-envelope.svg';
-import iconNote from '../../images/icon-note.svg';
-import iconPeople from '../../images/icon-people.svg';
-import iconLock from '../../images/icon-multilayer-security.svg';
-import iconShield from '../../images/icon-wheel-shield.svg';
-import iconCertificate from '../../images/icon-certificate.svg';
-import iconSpeaker from '../../images/icon-speaker.svg';
-import iconFolder from '../../images/icon-folder.svg';
-import iconDownload from '../../images/icon-download.svg';
+import iconBookRead from '../../images/book-open-reader-solid.svg';
+import iconPeople from '../../images/people-carry-box-solid.svg';
+import iconBellSlash from '../../images/bell-slash-regular.svg';
+import iconDanger from '../../images/triangle-exclamation-solid.svg';
+import iconCertificate from '../../images/certificate-solid.svg';
+import iconPresentation from '../../images/person-chalkboard-solid.svg';
+import iconBook from '../../images/file-lines-solid.svg';
+import iconCode from '../../images/file-code-regular.svg';
 
 const Resource = () => {
 
@@ -46,7 +46,7 @@ const Resource = () => {
       />
       <Card
         dark={false}
-        iconLeft={iconFolder}
+        iconLeft={iconBook}
         iconRight={iconPeople}
         headlineLeft="Documentation"
         headlineRight="Community forum"
@@ -61,7 +61,7 @@ const Resource = () => {
       <div id="git">
         <Card
           dark
-          iconLeft={iconDownload}
+          iconLeft={iconCode}
           iconRight={iconCertificate}
           headlineLeft="Source Code"
           headlineRight="TLS Certificate Generator"
@@ -80,8 +80,8 @@ const Resource = () => {
       <div id="whitePapers">
         <Card
           dark={false}
-          iconLeft={iconSpeaker}
-          iconRight={iconNote}
+          iconLeft={iconPresentation}
+          iconRight={iconBookRead}
           headlineLeft="Presentations"
           headlineRight="White Papers"
           textLeft="Browse our library of presentations on all Search Guard features."
@@ -92,8 +92,8 @@ const Resource = () => {
       </div>
       <Card
         dark
-        iconLeft={iconShield}
-        iconRight={iconLock}
+        iconLeft={iconDanger}
+        iconRight={iconBellSlash}
         headlineLeft="CVE advisory"
         headlineRight="Disclosure Policy"
         textLeft="We are the official CVE numbering authority for Search Guard. Browse the list of known issues."
@@ -107,7 +107,7 @@ const Resource = () => {
 
       <Cta
         headline="Can’t find what you’re looking for?"
-        text="No worries,we're here to help!."
+        text="No worries,we're here to help!"
         ctaText="contact us"
         icon={envelope}
         link="/contacts/"

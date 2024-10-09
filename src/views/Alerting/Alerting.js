@@ -195,7 +195,7 @@ const Alerting = () => {
     </div>
     <div id="escalationmodel">
         <Card
-            title="Notifications escalation"
+            title="Notifications model"
             dark={false}
             iconLeft={iconSpeaker}
             iconRight={iconBell}
