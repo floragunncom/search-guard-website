@@ -296,10 +296,8 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
           </div>
         </div>
       </div>
-      <div style={{ backgroundColor: 'white' }}>
-        <div className="row">
-          <div className="col s12">{renderTableView}</div>
-        </div>
+      <div className="row">
+        <div className="col s12">{renderTableView}</div>
       </div>
     </div>
   );

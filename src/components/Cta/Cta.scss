@@ -2,7 +2,8 @@
 @import '../../styles/Breakpoints';
 
 .cta-container {
-  padding: 96px 0px;
+  padding-top: 160px;
+  padding-bottom: 160px;
   background: $white;//linear-gradient(40deg, $darkBlue 33%, $navyBlue 33%);
   @media only screen and (max-width: $tabletBig) {
     background: $white;//linear-gradient(66deg, $darkBlue 25%, $navyBlue 25%);
