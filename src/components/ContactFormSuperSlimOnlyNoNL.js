@@ -260,7 +260,7 @@ const ContactForm = () => {
             </div>
             <div className="contact-newsletter-wrapper">
               <div className="cta-wrapper">
-                <Button buttonStyle="default-button" text={sendbuttonValue}  />
+                <Button buttonStyle="light-green-button" text={sendbuttonValue} />
               </div>
             </div>
           </form>

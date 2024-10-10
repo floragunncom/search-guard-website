@@ -20,18 +20,15 @@
 .free-trial-headline {
   margin-bottom: 32px;
   color: $darkBlue;
-  font-size: 48px;
-  line-height: 57px;
   text-align: center;
-  font-weight: 300;
   @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
+    // font-size: 36px;
+    // line-height: 43px;
   }
   @media only screen and (max-width: $mobile) {
     margin-bottom: 32px;
-    font-size: 24px;
-    line-height: 28px;
+    // font-size: 24px;
+    // line-height: 28px;
   }
 }
 

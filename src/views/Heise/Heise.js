@@ -85,11 +85,10 @@ const Heise = () => {
             </div>
 
             <div className="row free-trial">
-                <div className="free-trial-headline">Interested? Drop us a line!</div>
-
+                <h3 className="free-trial-headline">Interested? Drop us a line!</h3>
                 <div className="free-trial-section" >
                     <div className="free-trial-content">
-                        <div className="free-trial-content-text">
+                        <div className="body1 free-trial-content-text">
                             <ContactFormSlimOnly/>
                         </div>
                     </div>

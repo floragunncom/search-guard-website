@@ -341,7 +341,7 @@ const ContactForm = () => {
                 and manage your submitted data.
               </div>
               <div className="cta-wrapper">
-                <Button buttonStyle="default-button" text={sendbuttonValue}  />
+                <Button buttonStyle="light-green-button" text={sendbuttonValue} />
               </div>
             </div>
           </form>

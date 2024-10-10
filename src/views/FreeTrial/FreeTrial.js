@@ -47,7 +47,7 @@ const FreeTrial = () => {
                                 <div className="subtitle free-trial-content-headline">
                                     Download Search Guard
                                 </div>
-                                <div className="free-trial-content-text">
+                                <div className="body1 free-trial-content-text">
                                     Download the Search Guard plugin matching the Elasticsearch version you are running. For example, if you are
                                     running Elasticsearch 7.9.1, you need to download Search Guard 7.9.1 as well.
                                     The download is platform-independant.
@@ -76,10 +76,10 @@ const FreeTrial = () => {
                             <img loading="lazy" src={two} alt="icon two" />
                         </div>
                         <div className="free-trial-content">
-                            <div className="subtitle  free-trial-content-headline">
+                            <div className="subtitle free-trial-content-headline">
                                 Install Search Guard
                             </div>
-                            <div className="free-trial-content-text">
+                            <div className="body1 free-trial-content-text">
                                 Stop your Elasticsearch cluster and install Search Guard on all nodes.
 
                                 <pre>
@@ -106,7 +106,7 @@ const FreeTrial = () => {
                             <div className="subtitle free-trial-content-headline">
                                 (Optional) Install demo configuration
                             </div>
-                            <div className="free-trial-content-text">
+                            <div className="body1 free-trial-content-text">
                                 Search Guard ships with demo users and roles that you can install for a quick PoC:
 
                                 <pre className="free-trial-pre">
@@ -134,7 +134,7 @@ const FreeTrial = () => {
                             <div className="subtitle free-trial-content-headline">
                                 Restart Elasticsearch
                             </div>
-                            <div className="free-trial-content-text">
+                            <div className="body1 free-trial-content-text">
                                 After installing Search Guard, start your cluster as normal:
 
                                 <pre className="free-trial-pre">
@@ -151,7 +151,7 @@ const FreeTrial = () => {
 
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
-                            <div className="free-trial-content-text">
+                            <div className="body1 free-trial-content-text">
                                 We provide a <a href="https://docs.search-guard.com/latest/docker" target="_blank" rel="noopener noreferrer">Docker based demo</a> including Elasticsearch and Kibana with Search Guard and Signas Alerting pre-installed:
 
                                 To start the image, run:
@@ -190,7 +190,7 @@ const FreeTrial = () => {
 
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
-                            <div className="free-trial-content-text">
+                            <div className="body1 free-trial-content-text">
                                 We provide <a href="https://docs.search-guard.com/latest/search-guard-kubernetes-helm" target="_blank" rel="noopener noreferrer">Helm Charts</a> for running Search Guard on Kubernetes.
                             </div>
 
@@ -204,7 +204,7 @@ const FreeTrial = () => {
 
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
-                            <div className="free-trial-content-text">
+                            <div className="body1 free-trial-content-text">
                                 <a href="https://docs.search-guard.com/" target="_blank" rel="noopener noreferrer">Search Guard Documentation</a>
                                 <br />
                                 <a href="https://forum.search-guard.com/" target="_blank" rel="noopener noreferrer">Search Guard Community Forum</a>
@@ -221,11 +221,10 @@ const FreeTrial = () => {
             </div>
 
             <div className="row free-trial">
-                <div className="subtitle free-trial-headline">Any Questions? Drop us a line!</div>
-
+                <h3 className="free-trial-headline">Any Questions? Drop us a line!</h3>
                 <div className="free-trial-section" >
                     <div className="free-trial-content">
-                        <div className="free-trial-content-text">
+                        <div className="body1 free-trial-content-text">
                             <ContactFormSlimOnly/>
                         </div>
                     </div>
