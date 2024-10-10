@@ -8,7 +8,7 @@ import security from '../../images/security.svg';
 import './Hero.scss';
 import hero from '../../images/hero-static.svg';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-// , url('../../images/hero-background.svg');
+
 const Hero = () => {
   return (
     <div>
@@ -21,7 +21,7 @@ const Hero = () => {
                 <h1 className="hero-text-wrapper-headline">
                   Security and Alerting for Elasticsearch and Kibana
                 </h1>
-                <div className="hero-text-wrapper-text">
+                <div className="body1 hero-text-wrapper-text">
                   Search Guard is a security and alerting plugin that encrypts and protects your data
                   and data flows from unauthorized access in the entire Elastic Stack.
                 </div>
@@ -29,7 +29,7 @@ const Hero = () => {
               <div className="hero-button-wrapper">
                 <Button
                   text="Free Search Guard Trial"
-                  buttonStyle="light-aqua-button"
+                  buttonStyle="light-green-button"
                   link="/search-guard-free-trial/"
                 />
               </div>

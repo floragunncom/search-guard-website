@@ -2,7 +2,8 @@
 @import '../../styles/Breakpoints';
 
 .trusted-wrapper {
-  padding: 128px;
+  padding-top: 96px;
+  padding-bottom: 104px;
   background-color: $lightAqua;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 32px 0px 32px;
@@ -16,21 +17,22 @@
   margin-bottom: 64px;
   margin-top: 0px;
   color: $darkBlue;
-  font-size: 48px;
-  line-height: 57px;
   text-align: center;
-  font-weight: 300;
 
-  @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
-  }
+  // @media only screen and (max-width: $tabletBig) {
+  //   font-size: 36px;
+  //   line-height: 43px;
+  // }
 
   @media only screen and (max-width: $mobile) {
     margin-bottom: 32px;
-    font-size: 24px;
-    line-height: 28px;
+    // font-size: 24px;
+    // line-height: 28px;
   }
+}
+
+.trusted-icon-wrapper {
+  text-align: center;
 }
 
 .trusted-pic {

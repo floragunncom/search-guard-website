@@ -47,19 +47,8 @@ h1 {
   line-height: 76.8px;
   letter-spacing: -1.5px;
   text-align: left;
-
+  margin-top: 0px;
 }
-
-// h2 { // ok? check where used
-//   @include font-headlines;
-//   font-family: 'Inter-Regular';
-//   font-size: 16px;
-//   font-weight: 400;
-//   line-height: 24px;
-//   letter-spacing: 0.15px;
-//   text-align: left;
-//   text-transform: unset;
-// }
 
 h2 {
   @include font-headlines;
@@ -69,6 +58,7 @@ h2 {
   line-height: 48px;
   letter-spacing: -0.5px;
   text-align: center;
+  margin-top: 0px;
 }
 
 h3 {
@@ -78,6 +68,7 @@ h3 {
   font-weight: 900;
   line-height: 80%; /* 38.4px */
   text-align: left;
+  margin-top: 0px;
 }
 
 h4 {
@@ -87,6 +78,7 @@ h4 {
   font-weight: 700;
   line-height: 123.5%; /* 49.4px */
   letter-spacing: 0.25px;
+  margin-top: 0px;
 }
 
 h5 {
@@ -97,6 +89,7 @@ h5 {
   line-height: 37.35px; /* 133.4% /37.352px */
   text-align: left;
   text-transform: capitalize;
+  margin-top: 0px;
 }
 
 p {
@@ -161,12 +154,21 @@ div.row {
 }
 
 .body2 {
-font-family: "Inter-Regular";
-font-size: 14px;
-font-weight: 400;
-line-height: 20.02px;
-letter-spacing: 0.15px;
-text-align: left;
+  font-family: "Inter-Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.02px;
+  letter-spacing: 0.15px;
+  text-align: left;
+}
+
+.body-din {
+  font-family: "Inter-Regular"; // Neue DIN should be used
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  text-align: center;
 }
 
 .button-medium { 

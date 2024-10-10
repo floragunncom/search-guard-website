@@ -47,8 +47,8 @@ const Team = () => {
           return (
             <div className="col s12 l6 company-team-profile" key={person.link}>
               <img loading="lazy" src={person.pic} alt="person" className="profile-pic" width="300px" height="300px" />
-              <div className="profile-name">{person.name}</div>
-              <div className="profile-position">{person.position}</div>
+              <h5 className="profile-name">{person.name}</h5>
+              <div className="body1 profile-position">{person.position}</div>
               <div className="profile-link">
                 <a href={person.link} target="_blank" rel="noopener noreferrer">
                   <img

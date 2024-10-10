@@ -37,7 +37,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
           for your personal needs.
         </div>
         <div className="liccensing-info-button">
-          <Button text="see all license models" link="/licensing/" />
+          <Button buttonStyle="light-green-button" text="see all license models" link="/licensing/" />
         </div>
       </div>
     );

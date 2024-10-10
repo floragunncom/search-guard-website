@@ -2,12 +2,13 @@
 @import '../../styles/Breakpoints';
 
 .hero-wrapper {
+  padding: 156px;
   background-color: $white;
   width: 100%;
 }
 
 .hero-image {
-  margin-top: 32px;
+  // margin-top: 32px;
   // background-image: url('../../images/hero-static.svg'), url('../../images/hero-background.svg');
   // background-size: 100% 100%;
   // background-repeat: no-repeat, no-repeat;
@@ -17,6 +18,8 @@
 }
 
 .hero-image-content {
+  width: 100%;
+  width: -moz-available;
   width: -webkit-fill-available;
 }
 
@@ -47,18 +50,10 @@ div.col.s12.m5.l6 {
 }
 
 .hero-text-wrapper-headline {
-  margin-top: 32px;
-  margin-bottom: 16px;
-  // font-size: 60px;
-  // line-height: 72px;
-  // font-weight: 500;
+  margin-bottom: 32px;
   color: $darkBlue;
-  letter-spacing: 2px;
   @media only screen and (max-width: $tabletBig) {
     margin-top: 32px;
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: 1px;
   }
   @media only screen and (max-width: $mobile) {
     margin-top: -72px;
@@ -68,17 +63,10 @@ div.col.s12.m5.l6 {
 }
 
 .hero-text-wrapper-text {
-  // font-family: 'Inter';
-  // text-transform: initial;
-  margin-bottom: 64px;
-  font-size: 18px;
-  line-height: 27px;
-  letter-spacing: 2px;
+  margin-bottom: 32px;
   color: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
     margin-right: 40px;
-    font-size: 16px;
-    line-height: 24px;
     margin-bottom: 32px;
   }
   @media only screen and (max-width: $mobile) {

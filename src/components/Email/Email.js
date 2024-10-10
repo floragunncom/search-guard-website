@@ -83,7 +83,7 @@ const Email = () => {
                       />
                     </div>
                     <div className="input-field col s12 m6 l4">
-                      <Button text="subscribe" buttonStyle="light-aqua-button" type="submit"/>
+                      <Button text="subscribe" buttonStyle="light-green-button" type="submit"/>
                     </div>
                   </form>
             ))

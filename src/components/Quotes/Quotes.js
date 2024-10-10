@@ -73,7 +73,7 @@ class Quotes extends Component {
                         <img loading="lazy" src={quoteUp} alt="quote icon" width="58px" height="51px"/>
                       </div>
                       <div className="quotes-quote">
-                        <div className="quotes-text">{quote.quote}</div>
+                        <div className="body-din quotes-text">{quote.quote}</div>
                         <div className="quotes-author-name">
                           - {quote.author}
                         </div>

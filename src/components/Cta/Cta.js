@@ -9,10 +9,9 @@ const Cta = ({ icon, ctaText, headline, link, text }) => {
         <div className="cta-row col s12 m12">
           <div className="cta-text-container">
             <h2 className="cta-headline">{headline}</h2>
-            {/* Neue DIN should be used here new font */}
-            <div className="cta-text">{text}</div>
+            <div className="body-din cta-text">{text}</div>
             {link && link.length > 0 && ctaText && ctaText.length > 0 &&
-             <Button text={ctaText} buttonStyle="light-aqua-button" link={link} />
+             <Button text={ctaText} buttonStyle="light-green-button" link={link} />
             }
           </div>
            </div>

@@ -54,6 +54,7 @@ const FreeTrial = () => {
                                 </div>
                                 <div className="free-trial-content-button">
                                     <Button
+                                        buttonStyle="light-green-button"
                                         text="visit our downloads page"
                                         link="https://docs.search-guard.com/latest/search-guard-versions"
                                         target="_blank"

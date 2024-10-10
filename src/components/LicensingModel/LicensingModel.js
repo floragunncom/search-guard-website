@@ -36,7 +36,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
           for your personal needs.
         </div>
         <div className="liccensing-info-button">
-          <Button text="see all license models" link="/licensing/" />
+          <Button buttonStyle="light-green-button" text="see all license models" link="/licensing/" />
         </div>
       </div>
     );
@@ -72,7 +72,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
               <div className="licensing-editions-button">
                 <Button
                   text="install community edition"
-                  buttonStyle="light-aqua-button"
+                  buttonStyle="light-green-button"
                   link="/search-guard-free-trial/"
                 />
               </div>
@@ -105,7 +105,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
               <div className="licensing-editions-button">
                 <Button
                   text="start free trial"
-                  buttonStyle="light-aqua-button"
+                  buttonStyle="light-green-button"
                   link="/search-guard-free-trial/"
                 />
               </div>
@@ -138,7 +138,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
               <div className="licensing-editions-button">
                 <Button
                   text="start free trial"
-                  buttonStyle="light-aqua-button"
+                  buttonStyle="light-green-button"
                   link="/search-guard-free-trial/"
                 />
               </div>
@@ -179,7 +179,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
               <div className="licensing-editions-button">
                 <Button
                   text="Contact us"
-                  buttonStyle="light-aqua-button"
+                  buttonStyle="light-green-button"
                   link="/contacts/"
                 />
               </div>
@@ -210,7 +210,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
               <div className="licensing-editions-button">
                 <Button
                   text="Contact us"
-                  buttonStyle="light-aqua-button"
+                  buttonStyle="light-green-button"
                   link="/contacts/"
                 />
               </div>
@@ -273,7 +273,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
         <div className="row">
           <div className="col s12">
             <h3 className="licensing-headline">{headline}</h3>
-            <div className="licensing-subheadline">{subheadline}</div>
+            {subheadline ? <div className="licensing-subheadline">{subheadline}</div> : null}
             {buttons}
             {renderContent}
           </div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button';
 import './Card.scss';
-import ButtonLightGreen from '../Button/ButtonLightGreen';
 
 const Card = ({
   title,
@@ -28,7 +27,7 @@ const Card = ({
       {title ? 
         <h3 className={
           `card__title
-          ${dark ? 'title-in-dark-mode' : 'title-in-light-mode'}
+          ${dark ? 'title-on-dark-bg' : 'title-on-light-bg'}
         `}
         >{title}</h3> : null}        
       <div className="card__row">
@@ -37,7 +36,7 @@ const Card = ({
             className={
               `card__col-img
               ${
-                dark ? 'icon-in-dark-mode' : 'icon-in-light-mode'
+                dark ? 'image-on-dark-bg' : 'image-on-light-bg'
               }`
             }
             loading="lazy" src={iconLeft} alt="Card Icon" width="160px" height="160px"
@@ -47,7 +46,7 @@ const Card = ({
               className={
                 `card__col-content__headline
                 ${
-                  dark ? 'headline-in-dark-mode' : 'headline-in-light-mode'
+                  dark ? 'headline-on-dark-bg' : 'headline-on-light-bg'
                 }`
               }
             >
@@ -57,7 +56,7 @@ const Card = ({
               className={
                 `body1 card__col-content__text
                 ${
-                  dark ? 'text-in-dark-mode' : 'text-in-light-mode'
+                  dark ? 'text-on-dark-bg' : 'text-on-light-bg'
                 }`
               }
             >
@@ -66,10 +65,11 @@ const Card = ({
           </div>
           {linkLeft?
           <div className="card__col-button">
-            <ButtonLightGreen
-                text="find out more"
-                link={linkLeft}
-                target={buttonTargetLeft}
+            <Button
+              buttonStyle="light-green-button"
+              text="find out more"
+              link={linkLeft}
+              target={buttonTargetLeft}
             />
           </div>
               : ""
@@ -80,7 +80,7 @@ const Card = ({
             className={
               `card__col-img
               ${
-                dark ? 'icon-in-dark-mode' : 'icon-in-light-mode'
+                dark ? 'image-on-dark-bg' : 'image-on-light-bg'
               }`
             }
             loading="lazy" src={iconRight} alt="Card Icon" width="160px" height="160px"
@@ -90,7 +90,7 @@ const Card = ({
               className={
                 `card__col-content__headline
                 ${
-                  dark ? 'headline-in-dark-mode' : 'headline-in-light-mode'
+                  dark ? 'headline-on-dark-bg' : 'headline-on-light-bg'
                 }`
               }
             >
@@ -100,7 +100,7 @@ const Card = ({
               className={
                 `body1 card__col-content__text
                 ${
-                  dark ? 'text-in-dark-mode' : 'text-in-light-mode'
+                  dark ? 'text-on-dark-bg' : 'text-on-light-bg'
                 }`
               }
             >
@@ -109,7 +109,8 @@ const Card = ({
           </div>
           {linkRight?
           <div className="card__col-button">
-            <ButtonLightGreen
+            <Button
+              buttonStyle="light-green-button"            
               text="find out more"
               link={linkRight}
               target={buttonTargetRight}

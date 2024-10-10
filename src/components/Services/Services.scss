@@ -2,12 +2,13 @@
 @import '../../styles/Breakpoints';
 
 .filter-icons-color {
-  filter: invert(94%) sepia(83%) saturate(299%) hue-rotate(89deg) brightness(102%) contrast(95%);
+  @extend .image-on-dark-bg;
 }
 
 .services-wrapper {
   background-color: $darkBlue;
-  padding: 128px 0;
+  padding-top: 96px;
+  padding-bottom: 104px;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 0;
   }

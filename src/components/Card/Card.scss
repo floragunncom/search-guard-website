@@ -10,9 +10,9 @@
 .card__wrapper-dark, .card__wrapper-light {
   padding-top: 96px;
   padding-bottom: 104px;
-  @media only screen and (max-width: $tabletBig) {
-    padding: 0;
-  }
+  // @media only screen and (max-width: $tabletBig) {
+  //   padding: 0;
+  // }
 }
 
 .card__wrapper-dark {
@@ -104,19 +104,10 @@
   }
 }
 
-
-.headline-in-dark-mode, .text-in-dark-mode, .title-in-dark-mode {
+.headline-on-dark-bg, .text-on-dark-bg, .title-on-dark-bg {
   color: $white;
 }
 
-.headline-in-light-mode, .text-in-light-mode, .title-in-light-mode {
+.headline-on-light-bg, .text-on-light-bg, .title-on-light-bg {
   color: $darkBlue;
-}
-
-.icon-in-dark-mode {
-  filter: invert(94%) sepia(83%) saturate(299%) hue-rotate(89deg) brightness(102%) contrast(95%);  
-}
-
-.icon-in-light-mode {
-  filter: invert(22%) sepia(45%) saturate(777%) hue-rotate(155deg) brightness(96%) contrast(91%);
 }

@@ -100,7 +100,7 @@ const Integrators = () => {
 
   return (
     <div className="company-integrators-wrapper" id="integrators">
-      <div className="row company-integrators">
+      <div className="row">
         <h4 className="company-integrators-headline">Integrators</h4>
 
         <Carousel

@@ -1,11 +1,11 @@
 @import '../../styles/Colors';
 
 .filter-icons-color {
-  filter: invert(94%) sepia(83%) saturate(299%) hue-rotate(89deg) brightness(102%) contrast(95%);
+  @extend .image-on-dark-bg;
 }
 
 .divider-shape-color {
-  filter: invert(73%) sepia(91%) saturate(1175%) hue-rotate(117deg) brightness(96%) contrast(98%);
+  @extend .image-on-light-bg-2;
 }
 
 .arrows-bg {

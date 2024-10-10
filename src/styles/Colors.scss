@@ -29,3 +29,18 @@ $flxText: #f0c490;
 $flxTileControl: #00c9b7;
 $flxTileVariables: #009688;
 $flxTileKibana: #0a635b;
+
+
+.image-on-dark-bg {
+    filter: invert(94%) sepia(83%) saturate(299%) hue-rotate(89deg) brightness(102%) contrast(95%);  
+}
+  
+.image-on-light-bg {
+    filter: invert(22%) sepia(45%) saturate(777%) hue-rotate(155deg) brightness(96%) contrast(91%);
+}
+  
+.image-on-light-bg-2 {
+    filter: invert(73%) sepia(91%) saturate(1175%) hue-rotate(117deg) brightness(96%) contrast(98%);
+}
+
+  

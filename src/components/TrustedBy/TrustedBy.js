@@ -80,7 +80,6 @@ const TrustedBy = () => {
     <div className="trusted-wrapper">
       <div className="row">
         <h3 className="trusted-headline">Search Guard is trusted by</h3>
-
         <Carousel
             additionalTransfrom={0}
             arrows={false}
@@ -90,7 +89,7 @@ const TrustedBy = () => {
             className=""
             containerClass="container-with-dots"
             dotListClass=""
-            draggable
+            draggabletrusted-icon-wrapper
             focusOnSelect={false}
             infinite
             itemClass=""
@@ -106,8 +105,8 @@ const TrustedBy = () => {
         {icons.map((entry, index) => {
           return (
             <div className="col s12 m6 l4" key={index}>
-              <div className="">
-                <img loading="lazy" src={entry.logo} alt={entry.name} width="165px" height="165px" />
+              <div className="trusted-icon-wrapper">
+                <img loading="lazy" src={entry.logo} alt={entry.name} width="160px" height="160px" />
               </div>
             </div>
           );

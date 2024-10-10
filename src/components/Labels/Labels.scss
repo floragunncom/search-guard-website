@@ -73,6 +73,10 @@
   };
 }
 
-.label-divider-shape-color, .securityinfo-icons {
-  filter: invert(94%) sepia(83%) saturate(299%) hue-rotate(89deg) brightness(102%) contrast(95%);
+.label-divider-shape-color {
+  @extend .image-on-dark-bg;
+}
+
+.securityinfo-icons {
+  @extend .image-on-light-bg;
 }
