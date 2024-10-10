@@ -58,9 +58,10 @@ a.footer-links {
   font-weight: bold;
   text-transform: capitalize;
   @media only screen and (max-width: $mobile) {
-    position: relative;
-    top: -16px;
     margin-bottom: 0px;
+    position: relative;
+    text-align: center;
+    top: -16px;
   }
 }
 
