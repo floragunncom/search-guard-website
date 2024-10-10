@@ -34,17 +34,11 @@
 .tilesimple-icon-wrapper-left {
   display: flex;
   justify-content: center;
-  @media only screen and (max-width: $tabletBig) {
-    background-color: $navyBlue;
-  }
 }
 
 .tilesimple-icon-wrapper-right {
   display: flex;
   justify-content: center;
-  @media only screen and (max-width: $tabletBig) {
-    background-color: $grey;
-  }
 }
 
 img.tilesimple-flx-icon-style-right {

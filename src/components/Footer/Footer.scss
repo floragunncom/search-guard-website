@@ -18,8 +18,16 @@ div.row.footer-row {
 
 .footer-links-column-container {
   margin-bottom: 32px;
+}
+
+.footer-list-items {
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 64px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; 
     &:last-child {
       margin-bottom: 0px;
     }

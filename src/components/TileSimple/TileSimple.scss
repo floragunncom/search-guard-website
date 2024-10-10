@@ -6,49 +6,31 @@
 .tilesimple-container-dark-right {
   color: $white;  
   background: $darkBlue;
-  @media only screen and (max-width: $tabletBig) {
-    background: $darkBlue;
-  };
 }
 
 .tilesimple-container-light-right {
   color: $navyBlue;
   background: $lightAqua;
-  @media only screen and (max-width: $tabletBig) {
-    background: $lightAqua;
-  };
 }
 
 .tilesimple-container-dark-left {
   color: $white;
   background: $darkBlue;
-  @media only screen and (max-width: $tabletBig) {
-    background: $darkBlue;
-  };
 }
 
 .tilesimple-container-light-left {
   color: $navyBlue;
   background: $lightAqua;
-  @media only screen and (max-width: $tabletBig) {
-    background: $lightAqua;
-  };
 }
 
 .tilesimple-icon-wrapper-left {
   display: flex;
   justify-content: center;
-  @media only screen and (max-width: $tabletBig) {
-    background-color: $darkBlue;
-  }
 }
 
 .tilesimple-icon-wrapper-right {
   display: flex;
   justify-content: center;
-  @media only screen and (max-width: $tabletBig) {
-    background-color: $darkBlue;
-  }
 }
 
 img.tilesimple-icon-style-right {
@@ -125,7 +107,8 @@ img.tilesimple-icon-style-left {
 
 .tilesimple-headline-light, .tilesimple-headline-dark {
   @media only screen and (max-width: $mobile) {
-    font-size: 16px;
+    // font-size: 16px;
+    text-align: center;
   };
 }
 
@@ -136,4 +119,8 @@ img.tilesimple-icon-style-left {
   flex-direction: row;
   align-items: center;
   text-align: left;  
+
+  @media only screen and (max-width: $mobile) {
+    flex-direction: column;
+  };  
 }
