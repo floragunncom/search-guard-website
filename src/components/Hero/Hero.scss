@@ -6,7 +6,7 @@
   background-color: $white;
   width: 100%;
   @media only screen{// and (max-width: $mobile) {
-    padding: 30px;
+    padding: 10px;
   }    
 }
 
@@ -44,7 +44,7 @@
     margin-left: 12px;
   }
   @media only screen and (max-width: $mobile) {
-    margin: 0px 24px;
+    margin: 0px 0px;
     max-width: unset;
   }
 }
