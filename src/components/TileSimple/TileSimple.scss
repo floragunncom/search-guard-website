@@ -63,30 +63,25 @@ img.tilesimple-icon-style-left {
 
 .tilesimple-content-wrapper-left {
   @media only screen and (max-width: $tabletBig) {
-    padding: 32px 155px 64px 155px;
     text-align: center;
   };
   @media only screen and (max-width: $mobile) {
-    padding: 32px 24px;
+    padding: 32px 0px;
   };
 }
 
 .tilesimple-content-wrapper-right {
   @media only screen and (max-width: $tabletBig) {
-    padding: 32px 155px 64px 155px;
     text-align: center;
   };
   @media only screen and (max-width: $mobile) {
-    padding: 32px 24px;
+    padding: 32px 0px;
   };
 }
 
 .tilesimple-headline {
   margin-bottom: 32px;
   margin-top: 0px;
-  @media only screen and (max-width: $mobile) {
-    font-size: 24px;
-  };
 }
 
 .tilesimple-text-light {

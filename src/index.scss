@@ -48,8 +48,8 @@ h1 {
   letter-spacing: -1.5px;
   text-align: left;
   margin-top: 0px;
-  @media only screen and (max-width: $mobile) {
-    font-size: 64px;
+  @media only screen {
+    font-size: 48px;
   }    
   text-wrap: balance;
   word-break: break-word;
