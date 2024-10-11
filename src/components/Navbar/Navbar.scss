@@ -44,27 +44,17 @@ nav ul a {
     background-color: $white; 
     text-transform: capitalize;
     border: none;
-    outline-style: none;
-    // padding-right: 20px; /* spacing between items */
-    // padding-left: 20px; /* spacing between items */    
+    outline-style: none;  
+
+    @media only screen and (max-width: 992px) {
+      background-color: $darkBlue;
+    }
+
     &:hover,
     &:focus {
       border-bottom: 2px solid $turkis;
       margin-bottom: -2px;
     }
-  }
-
-  /*
-width: Hug (77px)px;
-height: Hug (36px)px;
-padding: 6px 8px 6px 8px;
-gap: 8px;
-opacity: 0px;
-
-  */
-
-  &__item:last-child {
-    // padding-right: 0; /* remove margin from the last item */
   }
 
   &__icon {
@@ -131,10 +121,11 @@ opacity: 0px;
 
 nav .sidenav-trigger {
   float: right;
+  right: -100%;  
 }
 
 @media only screen and (max-width: 992px) {
   nav .brand-logo {
-    left: 30%;
+    left: -50%;
   }
 }

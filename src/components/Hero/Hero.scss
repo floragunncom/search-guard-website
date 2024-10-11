@@ -5,6 +5,9 @@
   padding: 156px;
   background-color: $white;
   width: 100%;
+  @media only screen and (max-width: $mobile) {
+    padding: 30px;
+  }    
 }
 
 .hero-image {
@@ -21,6 +24,9 @@
   width: 100%;
   width: -moz-available;
   width: -webkit-fill-available;
+
+  // only on mobile?
+  margin-left: -200px;  
 }
 
 .hero-row-empty-mobile {
@@ -57,7 +63,6 @@ div.col.s12.m5.l6 {
   }
   @media only screen and (max-width: $mobile) {
     margin-top: -72px;
-    margin-bottom: 85%;
     text-align: center;
   }
 }
