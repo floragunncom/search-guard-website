@@ -9,12 +9,12 @@
   background-color: $darkBlue;
   padding-top: 96px;
   padding-bottom: 104px;
-  @media only screen and (max-width: $tabletBig) {
-    padding: 64px 0;
-  }
-  @media only screen and (max-width: $mobile) {
-    padding: 32px 0;
-  }
+  // @media only screen and (max-width: $tabletBig) {
+  //   padding: 64px 0;
+  // }
+  // @media only screen and (max-width: $mobile) {
+  //   padding: 32px 0;
+  // }
 }
 
 .services-landing-background {
@@ -71,13 +71,7 @@
   font-weight: 300;
   text-align: center;
   @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
     margin-bottom: 32px;
-  }
-  @media only screen and (max-width: $mobile) {
-    font-size: 24px;
-    line-height: 28px;
   }
 }
 

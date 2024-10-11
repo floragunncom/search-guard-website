@@ -3,8 +3,12 @@
 
 .pagination-wrapper {
   display: flex;
+  padding-top: 96px;
+  padding-bottom: 104px;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
-  margin: 128px 32px;
+  align-content: center;
 }
 
 li.pagination-number {

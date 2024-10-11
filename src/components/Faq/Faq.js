@@ -26,7 +26,7 @@ const Faq = () => {
 
         </div>
         <div className="faq-button">
-          <Button text="see more" link="/faq/" />
+          <Button buttonStyle="light-green-button" text="see more" link="/faq/" />
         </div>
       </div>
     </div>

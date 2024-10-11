@@ -13,10 +13,10 @@
   margin-top: 0px;
   padding-bottom: 48px;
   color: $darkBlue;
-  @media only screen and (max-width: $tabletBig) {
-    padding-top: 64px;
-    padding-bottom: 32px;
-  };
+  // @media only screen and (max-width: $tabletBig) {
+  //   padding-top: 64px;
+  //   padding-bottom: 32px;
+  // };
 }
 
 .licensing-subheadline {
@@ -27,16 +27,10 @@
   line-height: 57px;
   font-weight: 300;
   color: $darkBlue;
-  @media only screen and (max-width: $tabletBig) {
-    font-size: 16px;
-    line-height: 43px;
-    padding-top: 64px;
-    padding-bottom: 32px;
-  };
-  @media only screen and (max-width: $mobile) {
-    font-size: 12px;
-    line-height: 28px;
-  };
+  // @media only screen and (max-width: $tabletBig) {
+  //   padding-top: 64px;
+  //   padding-bottom: 32px;
+  // };
 }
 
 .licensing-buttons {
@@ -118,18 +112,18 @@
     @media only screen and (max-width: $tabletBig) {
       padding: 32px 25px;
     }
-    @media only screen and (max-width: $mobile) {
-      padding: 16px 0;
-    }
+    // @media only screen and (max-width: $mobile) {
+    //   padding: 16px 0;
+    // }
   }
   @media only screen and (max-width: $tabletBig) {
     background-color: $white;
     padding: 32px 64px;
-    border: 3px solid $grey;
+    // border: 3px solid $grey;
   };
-  @media only screen and (max-width: $mobile) {
-    padding: 16px 0px;
-  };
+  // @media only screen and (max-width: $mobile) {
+  //   padding: 16px 0px;
+  // };
 }
 
 .licensing-editions-headline {
@@ -234,12 +228,9 @@ img.licensing-icon {
   color: $darkBlue;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 24px;
-    font-size: 36px;
-    line-height: 43px;
+
   };
   @media only screen and (max-width: $mobile) {
-    font-size: 24px;
-    line-height: 26px;
     padding-bottom: 0px;
     margin-bottom: -16px;
   };

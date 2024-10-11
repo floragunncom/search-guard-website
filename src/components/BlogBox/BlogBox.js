@@ -44,7 +44,7 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
 
   const morePostsButton = overview ? (
     <div className="blog-box-button">
-      <Button text="see more" link="/blog/" />
+      <Button buttonStyle='light-green-button' text="see more" link="/blog/" />
     </div>
   ) : null;
 
