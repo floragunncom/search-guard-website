@@ -42,14 +42,13 @@ nav ul a {
   &__item {
     color: $darkBlue;
     background-color: $white; 
+    @media only screen and (max-width: 992px) {
+      color: $white;
+      background-color: $darkBlue; 
+    }
     text-transform: capitalize;
     border: none;
     outline-style: none;  
-
-    @media only screen and (max-width: 992px) {
-      background-color: $darkBlue;
-    }
-
     &:hover,
     &:focus {
       border-bottom: 2px solid $turkis;
@@ -94,7 +93,7 @@ nav ul a {
 
 .dropdown-content li:hover,
 .dropdown-content li.active {
-  background-color:$navyBlueActive;
+  background-color: $navyBlueActive;
   border-bottom: 2px solid $turkis;
   margin-bottom: -2px;
 }
@@ -122,11 +121,4 @@ nav ul a {
 nav .sidenav-trigger {
   right: 5%;
   position: fixed; 
-}
-
-@media only screen and (max-width: 992px) {
-  nav .brand-logo {
-    left: 25%;
-    position: fixed;
-  }
 }
