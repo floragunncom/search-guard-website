@@ -24,7 +24,7 @@
   font-size: 48px;
   line-height: 57px;
   text-align: center;
-  font-weight: 300;
+  font-weight: 100;
   @media only screen and (max-width: $tabletBig) {
     font-size: 36px;
     line-height: 43px;
@@ -77,6 +77,8 @@
   text-align: left;
   letter-spacing: 0.8px;
   margin-bottom: 16px;
+  text-transform: none;
+  margin-top: 0px;
   @media only screen and (max-width: $mobile) {
     margin: 16px 0px;
   }

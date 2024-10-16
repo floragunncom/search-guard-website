@@ -50,13 +50,10 @@ img.tilesimple-icon-style-right {
   height: 40vw;
   margin: 116px 0px;
   @media only screen and (max-width: $tabletBig) {
-    max-height: 285px;
-    margin: 64px 0px;
-    width: 100%;
+
   };
   @media only screen and (max-width: $mobile) {
-    max-height: 170px;
-    margin: 32px 0px;
+
   };
 }
 

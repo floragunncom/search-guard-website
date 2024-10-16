@@ -47,6 +47,7 @@ const Navbar = ({ background = 'white', landing }) => {
                     <ul >
                         <li><a href="/security/">Security</a></li>
                         <li><a href="/alerting/">Alerting</a></li>
+                        <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
                     </ul>
                 </li>
                 <li><a className="navbar__item" href="/search-guard-free-trial/">Download</a></li>
@@ -81,6 +82,7 @@ const Navbar = ({ background = 'white', landing }) => {
             <ul id="nav-solutions" className="dropdown-content">
                 <li><a href="/security/">Security</a></li>
                 <li><a href="/alerting/">Alerting</a></li>
+                <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
             </ul>
         </>
     );

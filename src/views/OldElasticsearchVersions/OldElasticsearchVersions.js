@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './OldElasticsearchVersions.scss';
+import '../Alerting/Alerting.scss';
 import { Helmet } from 'react-helmet';
 import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';

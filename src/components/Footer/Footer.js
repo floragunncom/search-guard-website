@@ -56,6 +56,11 @@ const Footer = ({ landing }) => {
                     Escalation model
                   </a>
                 </div>
+                <div className="footer-list-headline">
+                </div>
+                <div className="footer-list-headline">
+                  <a href="/indexmanagement/">Index Management</a>
+                </div>
               </div>
               <div className="filler-class" />
               <div className="footer-links-column-container col s12 m6 l3">
