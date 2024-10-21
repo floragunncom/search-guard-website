@@ -14,6 +14,7 @@ import aim2 from '../../images/elasticsearch_index_management_2.png';
 import aim3 from '../../images/elasticsearch_index_management_3.png';
 import aim4 from '../../images/elasticsearch_index_management_4.png';
 import aim5 from '../../images/elasticsearch_index_management_5.png';
+import Email from "../../components/Email/Email";
 
 
 const Aim = () => {
@@ -82,6 +83,8 @@ const Aim = () => {
                 Grow your Elasticsearch deployment without proportionally increasing management overhead.
                 Focus on leveraging your data, not just maintaining it, and stay ready for future challenges."
             />
+
+            <PreFooter />
 
             <div className="alerting-wrapper" >
 
