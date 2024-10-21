@@ -9,13 +9,11 @@ import Title from '../../components/Title/Title';
 import TileSimple from '../../components/TileSimple/TileSimple';
 import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
-import aim1 from '../../images/elasticsearch_index_management_1.png';
-import aim2 from '../../images/elasticsearch_index_management_2.png';
-import aim3 from '../../images/elasticsearch_index_management_3.png';
-import aim4 from '../../images/elasticsearch_index_management_4.png';
-import aim5 from '../../images/elasticsearch_index_management_5.png';
-import Email from "../../components/Email/Email";
-
+import aim1 from '../../images/elasticsearch_index_management_1.svg';
+import aim2 from '../../images/elasticsearch_index_management_2.svg';
+import aim3 from '../../images/elasticsearch_index_management_3.svg';
+import aim4 from '../../images/elasticsearch_index_management_4.svg';
+import aim5 from '../../images/elasticsearch_index_management_5.svg';
 
 const Aim = () => {
 
