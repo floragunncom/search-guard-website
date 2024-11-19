@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../images/logo-white.svg';
+import logo from '../../images/sg_logo_white.svg';
 import M from "materialize-css";
 import './Navbar.scss';
 
@@ -25,9 +25,9 @@ const Navbar = ({ background = 'white', landing }) => {
             <nav>
                 <div className="nav-wrapper">
                     <a href="/" className="brand-logo">
-                        <img loading="lazy" src={logo} alt="Search Guard" className="navbar__icon" width="100px" height="48px" />
+                        <img loading="lazy" src={logo} alt="Search Guard" className="navbar__icon" width="200px"  />
                     </a>
-                    <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+                    <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger">menu</i></a>
                     <ul className="right hide-on-med-and-down">
                         <li><a href="/security/" data-target="nav-solutions" className="dropdown-trigger navbar__item" >Solutions</a></li>
                         <li><a className="navbar__item" href="/search-guard-free-trial/">Download</a></li>

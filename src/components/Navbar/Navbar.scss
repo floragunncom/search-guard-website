@@ -2,7 +2,7 @@
 @import '../../styles/Breakpoints';
 
 nav {
-  background-color: $navyBlueActive;
+  background-color: #133346;
   padding-left: 200px;
   padding-right: 200px;
 }
@@ -15,7 +15,7 @@ nav ul li {
   -o-transition: unset;
   &:hover,
   &:focus {
-    border-bottom: 2px solid $turkis;
+    border-bottom: 2px solid #01EFDD;
     margin-bottom: -2px;
   }
   border: none;
@@ -46,7 +46,7 @@ nav ul a {
     outline-style: none;
     &:hover,
     &:focus {
-      border-bottom: 2px solid $turkis;
+      border-bottom: 2px solid #01EFDD;
       margin-bottom: -2px;
     }
   }
@@ -59,7 +59,7 @@ nav ul a {
 .sidenav {
   left: -20px;
   color: $white;
-  background-color: $navyBlueActive;
+  background-color: #133346;
 }
 
 .sidenav li>a {
@@ -78,14 +78,14 @@ nav ul a {
 }
 
 .dropdown-content li > a {
-  background-color: $navyBlueActive;
+  background-color: #133346;
   color: white;
 }
 
 .dropdown-content li:hover,
 .dropdown-content li.active {
-  background-color:$navyBlueActive;
-  border-bottom: 2px solid $turkis;
+  background-color: #133346;
+  border-bottom: 2px solid #01EFDD;
   margin-bottom: -2px;
 }
 
@@ -111,6 +111,10 @@ nav ul a {
 
 nav .sidenav-trigger {
   float: right;
+}
+
+.burger {
+  color: white;
 }
 
 @media only screen and (max-width: 992px) {
