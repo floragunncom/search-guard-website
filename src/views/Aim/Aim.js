@@ -40,6 +40,9 @@ const Aim = () => {
                 text="Streamline Elasticsearch operations with Search Guard's Automated Index Management. Boost efficiency, reduce manual tasks, and ensure peak cluster performance effortlessly."
                 breadcrumb={breadcrumb}
             />
+
+            <PreFooter />
+            
             <div id="concept">
                 <TileSimple
                     icon={aim5}
@@ -81,8 +84,6 @@ const Aim = () => {
                 Grow your Elasticsearch deployment without proportionally increasing management overhead.
                 Focus on leveraging your data, not just maintaining it, and stay ready for future challenges."
             />
-
-            <PreFooter />
 
             <div className="alerting-wrapper" >
 
