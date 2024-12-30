@@ -6,7 +6,7 @@ import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
-import TileSimple from '../../components/TileSimple/TileSimple';
+import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
 import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
 import complianceDataChanges from '../../images/compliance_change_tracking.svg';
@@ -76,7 +76,7 @@ const Compliance = () => {
           </div>
 
           <div id="features">
-              <TileSimple
+              <ImageTextTile
                   icon={lock}
                   iconPosition="right"
                   backgroundColor="light"
@@ -88,7 +88,7 @@ const Compliance = () => {
           </div>
 
           <div id="concept">
-              <TileSimple
+              <ImageTextTile
                   icon={multilevel}
                   iconPosition="left"
                   backgroundColor="dark"
@@ -99,7 +99,7 @@ const Compliance = () => {
           "
               />
           </div>
-          <TileSimple
+          <ImageTextTile
               icon={complianceDataChanges}
               iconPosition="right"
               backgroundColor="light"
@@ -109,7 +109,7 @@ const Compliance = () => {
                 exactly state when, by whom and why this data has been entered and processed.
               "
           />
-          <TileSimple
+          <ImageTextTile
               icon={complianceAnon}
               iconPosition="left"
               backgroundColor="dark"
@@ -120,7 +120,7 @@ const Compliance = () => {
                 Elasticsearch data aggregation and analysis features continue to work also on anonymized data.
         "
           />
-          <TileSimple
+          <ImageTextTile
               icon={complianceForgotten}
               iconPosition="right"
               backgroundColor="light"

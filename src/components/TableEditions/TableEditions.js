@@ -376,7 +376,7 @@ const TableEditions = () => {
         {matrixContent.map(service => {
           return (
             <tbody className="licensing-table-body" key={service.name}>
-              <tr style={{ backgroundColor: '#E8ECED' }}>
+              <tr className="licensing-table-row-heading">
                 <td>
                   <div className="licensing-table-subheadline">
                     {service.name}
@@ -427,7 +427,7 @@ const TableEditions = () => {
       </table>
 
       <div className="row hide-on-large-only">
-        <div className="licensing-overview-headline">Community Edition</div>
+        <h5 className="licensing-overview-headline">Community Edition</h5>
         {matrixContent.map(service => {
           return (
             <div className="col s12 m6 licensing-overview-content" key={service.name}>
@@ -448,7 +448,7 @@ const TableEditions = () => {
         })}
       </div>
       <div className="row hide-on-large-only">
-        <div className="licensing-overview-headline">Enterprise Edition</div>
+        <h5 className="licensing-overview-headline">Enterprise Edition</h5>
         {matrixContent.map(service => {
           return (
             <div className="col s12 m6 licensing-overview-content" key={service.name}>
@@ -469,7 +469,7 @@ const TableEditions = () => {
         })}
       </div>
       <div className="row hide-on-large-only">
-        <div className="licensing-overview-headline">Compliance Edition</div>
+        <h5 className="licensing-overview-headline">Compliance Edition</h5>
         {matrixContent.map(service => {
           return (
             <div className="col s12 m6 licensing-overview-content" key={service.name}>

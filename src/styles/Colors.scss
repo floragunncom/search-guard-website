@@ -1,5 +1,5 @@
 $navyBlue: #246E94;
-$darkBlue: #184962;
+
 $navyBlueHover: #1E5B7A;
 $navyBlueActive: #184962;
 $turkis: #00FCE5;
@@ -7,13 +7,13 @@ $turkisHover: #00E3CE;
 $turkisActive: #00C9B7;
 $green: #007D71;
 $darkGrey: #63737E;
-$grey: #E8ECED;
+
 $lightGrey: #F5F7F7;
 $communityEdition: #00C9B7;
 $enterpriseEdition: #009688;
 $complianceEdition: #007D71;
-$editionText: #0A635B;
-$white: #FFF;
+
+
 $buttonGhost: #0A635B;
 $textLoud: #184962;
 $buttonGreen: #009688;
@@ -29,3 +29,31 @@ $flxTileControl: #00c9b7;
 $flxTileVariables: #009688;
 $flxTileKibana: #0a635b;
 
+$white: #FFF;
+$black: #000;
+
+$primary: #184962;
+$primary-light: #478EB3;
+$primary-dark: #184962;
+
+$secondary: #02F0DD;
+$secondary-light: #B0F8F2;
+$secondary-dark: #00B7A8;
+
+$licensingEditionText: #0A635B;
+$grey: #E8ECED;
+
+$darkBlue: $primary;
+
+// REMOVE
+.image-on-dark-bg {
+  filter: invert(94%) sepia(83%) saturate(299%) hue-rotate(89deg) brightness(102%) contrast(95%);
+}
+
+.image-on-light-bg {
+  filter: invert(22%) sepia(45%) saturate(777%) hue-rotate(155deg) brightness(96%) contrast(91%);
+}
+
+.image-on-light-bg-2 {
+  filter: invert(73%) sepia(91%) saturate(1175%) hue-rotate(117deg) brightness(96%) contrast(98%);
+}

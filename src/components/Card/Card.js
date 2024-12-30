@@ -3,7 +3,8 @@ import Button from '../Button/Button';
 import './Card.scss';
 
 const Card = ({
-  bgLeftDark,
+  title,
+  dark,
   iconLeft,
   iconRight,
   headlineLeft,
@@ -18,29 +19,45 @@ const Card = ({
   return (
     <div
       className={
-        bgLeftDark
-          ? 'card__wrapper-blue-to-grey-bg'
-          : 'card__wrapper-grey-to-blue-bg'
+        dark
+          ? 'card__wrapper-dark'
+          : 'card__wrapper-light'
       }
     >
+      {title ? 
+        <h3 className={
+          `card__title
+          ${dark ? 'title-on-dark-bg' : 'title-on-light-bg'}
+        `}
+        >{title}</h3> : null}        
       <div className="card__row">
-        <div className="card__col card__col-left">
-          <img loading="lazy" src={iconLeft} alt="Card Icon" className="card__col-img" />
+        <div className={`card__col card__col-left`}>
+          <img
+            className={
+              `card__col-img
+              ${
+                dark ? 'image-on-dark-bg' : 'image-on-light-bg'
+              }`
+            }
+            loading="lazy" src={iconLeft} alt="Card Icon" width="160px" height="160px"
+          />
           <div className="card__col-content">
-            <div
+            <h5
               className={
-                bgLeftDark
-                  ? 'headline-left-dark card__col-content__headline'
-                  : 'headline-left-light card__col-content__headline'
+                `card__col-content__headline
+                ${
+                  dark ? 'headline-on-dark-bg' : 'headline-on-light-bg'
+                }`
               }
             >
               {headlineLeft}
-            </div>
+            </h5>
             <div
               className={
-                bgLeftDark
-                  ? 'text-left-dark card__col-content__text'
-                  : 'text-left-light card__col-content__text'
+                `body1 card__col-content__text
+                ${
+                  dark ? 'text-on-dark-bg' : 'text-on-light-bg'
+                }`
               }
             >
               {textLeft}
@@ -49,32 +66,42 @@ const Card = ({
           {linkLeft?
           <div className="card__col-button">
             <Button
-                text="find out more"
-                buttonStyle="loud-link"
-                link={linkLeft}
-                target={buttonTargetLeft}
+              buttonStyle="light-green-button"
+              text="find out more"
+              link={linkLeft}
+              target={buttonTargetLeft}
             />
           </div>
               : ""
           }
         </div>
-        <div className="card__col card__col-right">
-          <img loading="lazy" src={iconRight} alt="Card Icon" className="card__col-img" />
+        <div className={`card__col card__col-right`}>
+          <img 
+            className={
+              `card__col-img
+              ${
+                dark ? 'image-on-dark-bg' : 'image-on-light-bg'
+              }`
+            }
+            loading="lazy" src={iconRight} alt="Card Icon" width="160px" height="160px"
+          />
           <div className="card__col-content">
-            <div
+            <h5
               className={
-                bgLeftDark
-                  ? 'headline-right-dark card__col-content__headline'
-                  : 'headline-right-light card__col-content__headline'
+                `card__col-content__headline
+                ${
+                  dark ? 'headline-on-dark-bg' : 'headline-on-light-bg'
+                }`
               }
             >
               {headlineRight}
-            </div>
+            </h5>
             <div
               className={
-                bgLeftDark
-                  ? 'text-right-dark card__col-content__text'
-                  : 'text-right-light card__col-content__text'
+                `body1 card__col-content__text
+                ${
+                  dark ? 'text-on-dark-bg' : 'text-on-light-bg'
+                }`
               }
             >
               {textRight}
@@ -83,8 +110,8 @@ const Card = ({
           {linkRight?
           <div className="card__col-button">
             <Button
+              buttonStyle="light-green-button"            
               text="find out more"
-              buttonStyle="loud-link"
               link={linkRight}
               target={buttonTargetRight}
             />

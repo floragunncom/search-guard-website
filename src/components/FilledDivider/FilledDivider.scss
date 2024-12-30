@@ -1,0 +1,27 @@
+@import '../../styles/Colors';
+
+.img-class {
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+}
+
+.divider-base {
+  padding: 10px;
+}
+
+.divider-shape-color-light {
+  @extend .image-on-dark-bg;
+}
+
+.filter-icons-color {
+  @extend .image-on-dark-bg;
+}
+
+.divider-shape-color {
+  @extend .image-on-light-bg-2;
+}
+
+.arrows-bg {
+  background-color: $secondary-light;
+}

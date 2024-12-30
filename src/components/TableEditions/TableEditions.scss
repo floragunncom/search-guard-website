@@ -1,8 +1,9 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
+@import '../../index.scss';
 
 .licensing-table-wrapper {
-  margin-bottom: 127px;
+  // margin-bottom: 127px; // review !
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 0px;
   };
@@ -16,20 +17,17 @@
 }
 
 .licensing-table-head th {
+  @extend .body1;
   text-align: center;
   text-transform: uppercase;
-  font-size: 12px;
-  line-height: 32px;
-  color: $darkBlue;
-  letter-spacing: 3.3px;
+  color: $primary;
   font-weight: normal;
 }
 
 .licensing-table-body td {
+  @extend .body1;
   text-align: center;
-  font-size: 14px;
-  line-height: 20px;
-  color: $darkGrey;
+  color: $primary-dark;
   border-right: 1px solid $grey;
   &:last-child {
     border-right: unset;
@@ -49,28 +47,22 @@ td .licensing-checkmark {
   text-transform: uppercase;
   padding: 0px 32px;
   width: 100%;
-  background-color: $grey;
-  color: $darkBlue;
-  font-size: 12px;
-  line-height: 32px;
-  letter-spacing: 3.3px;
+  color: $primary;
   text-align: left;
 }
 
 .licensing-overview-headline {
   @media only screen and (max-width: $tabletBig) {
     margin: 0px 10.5px 32px 10.5px;
-    color: $darkBlue;
-    font-size: 24px;
-    line-height: 30px;
-    letter-spacing: 0.8px;
+    // font-size: 24px;
+    // line-height: 30px;
+    // letter-spacing: 0.8px;
     text-align: center;
   };
   @media only screen and (max-width: $mobile) {
     margin: 48px 10.5px 16px 10.5px;
-    color: $darkBlue;
-    font-size: 20px;
-    letter-spacing: 0.67px;
+    // font-size: 20px;
+    // letter-spacing: 0.67px;
     text-align: center;
   };
 }
@@ -93,33 +85,18 @@ td .licensing-checkmark {
   };
 }
 
+.licensing-table-row-heading {
+background-color: $secondary-light;
+}
+
 .licensing-overview-content-headline {
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 4px;
-    text-transform: uppercase;
-    color: $darkBlue;
-    font-size: 12px;
-    line-height: 32px;
-    letter-spacing: 3.3px;
   };
 }
 
 .licensing-overview-content-text {
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 4px;
-    color: $darkGrey;
-    font-size: 14px;
-    line-height: 20px;
   };
-}
-
-.material-tooltip {
-    width: 250px;
-    padding: 20px 16px;
-    text-align: left;
-    background-color: $white;
-    box-shadow: 0 1px 15px 0 rgba(69,65,78,0.1);
-    color: $darkGrey;
-    font-size: 14px;
-    line-height: 20px;
 }

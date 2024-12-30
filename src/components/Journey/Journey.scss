@@ -3,29 +3,27 @@
 
 
 .journey-wrapper {
-  padding: 0px 30px 96px 30px;
+  background-color: $secondary;
+  padding: 96px 30px 96px 104px;
   @media only screen and (max-width: $mobile) {
     display: none;
   }
 }
 
 .journey-headline {
-  padding: 137px 20px 144px 20px;
+  padding: 0px 20px 144px 0px;
   text-align: center;
-  font-weight: 300;
-  color: $darkBlue;
-  font-size: 48px;
-  line-height: 57px;
+  color: $primary;
   @media only screen and (max-width: $tabletBig) {
     padding: 96px 20px 64px 20px;
   }
 }
 
 .timeline {
-  color: $darkBlue;
+  color: $primary;
   ul{    
     li{
-      background: $turkis;
+      background: $secondary;
       position: relative;
       margin: 0 auto;
       width: 5px;
@@ -46,7 +44,7 @@
         -webkit-transform: translateX(-50%);
         width: 20px;
         height: 20px;
-        border: 3px solid $turkis;
+        border: 3px solid $secondary;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
@@ -65,7 +63,7 @@
         h2{
           margin-top: -45px;
           margin-bottom: 16px;
-          color: $darkBlue;
+          color: $primary;
           font-weight: 300;
           font-size: 48px;
           line-height: 57px;
@@ -78,7 +76,7 @@
           background: $lightGrey;
           padding: 16px;
           #headline {
-            color: $darkBlue;
+            color: $primary;
             font-size: 12px;
             line-height: 32px;
             letter-spacing: 3.3px;

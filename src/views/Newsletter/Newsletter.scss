@@ -21,7 +21,7 @@
 .newsletter-headline {
   margin-bottom: 32px;
   margin-top: 0px;
-  color: $darkBlue;
+  color: $primary;
   font-size: 48px;
   line-height: 57px;
   text-align: center;
@@ -64,7 +64,7 @@
 }
 
 .newsletter-content-headline {
-  color: $darkBlue;
+  color: $primary;
   font-size: 24px;
   line-height: 30px;
   text-align: left;
@@ -76,7 +76,7 @@
 }
 
 .newsletter-content-text {
-  color: $darkGrey;
+  color: $primary;
   font-size: 18px;
   line-height: 27px;
   text-align: left;
@@ -89,7 +89,7 @@
 }
 
 .newsletter-textbox {
-  @extend .company-integrators;
+  margin-bottom: 25px;
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
@@ -107,7 +107,7 @@
 }
 
 .newsletter-tilesimple-headline {
-  color: $darkBlue;
+  color: $primary;
   font-weight: normal !important;
   font-size: 48px;
   line-height: 57px;
@@ -124,7 +124,7 @@
   font-weight: normal !important;
   font-size: 22px;
   line-height: 34px;
-  color: $darkGrey;
+  color: $primary-dark;
   @media only screen and (max-width: $mobile) {
     font-size: 16px;
     line-height: 24px;

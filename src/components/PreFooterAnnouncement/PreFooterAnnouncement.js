@@ -2,7 +2,7 @@ import React from 'react';
 import './PreFooterAnnouncement.scss';
 import Button from "../Button/Button";
 
-const PreFooterAnnouncement = ({ headline, buttonStyle, buttonText, buttonLink, buttonTarget }) => {
+const PreFooterAnnouncement = ({ headline }) => {
   return (
     <div className="prefooter-announcement-container">
       <div className="prefooter-announcement-row">
@@ -15,7 +15,6 @@ const PreFooterAnnouncement = ({ headline, buttonStyle, buttonText, buttonLink, 
           <div className="prefooter-announcement-content-wrapper prefooter-announcement-button-spacer col s12 l6 push-l3 center">
             <Button
                 text="View Full Documentaton"
-                buttonStyle="sand-button"
                 link="https://docs.search-guard.com/latest/"
                 target="_blank"
             />

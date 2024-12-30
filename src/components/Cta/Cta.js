@@ -6,21 +6,16 @@ const Cta = ({ icon, ctaText, headline, link, text }) => {
   return (
     <div className="cta-container">
       <div className="row cta-row-wrapper">
-        <div className="cta-row col xs12 m4 l5">
-          <div className="cta-image-wrapper">
-            <img loading="lazy" src={icon} alt={headline} className="cta-image-container" />
-          </div>
-        </div>
-        <div className="cta-row col s12 m8 l7">
+        <div className="cta-row col s12 m12">
           <div className="cta-text-container">
-            <h3 className="cta-headline">{headline}</h3>
-            <div className="cta-text">{text}</div>
+            <h2 className="cta-headline">{headline}</h2>
+            <div className="body-din cta-text">{text}</div>
             {link && link.length > 0 && ctaText && ctaText.length > 0 &&
-             <Button text={ctaText} buttonStyle="loud-link" link={link} />
+             <Button text={ctaText} buttonStyle="light-green-button" link={link} />
             }
           </div>
+           </div>
         </div>
-      </div>
     </div>
   );
 };

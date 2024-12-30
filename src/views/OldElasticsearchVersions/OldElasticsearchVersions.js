@@ -5,7 +5,7 @@ import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
-import TileSimple from '../../components/TileSimple/TileSimple';
+import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
 import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
 import security from '../../images/tile-icon-wheel.svg';
@@ -46,7 +46,7 @@ const OldElasticsearchVersions = () => {
       />
 
       <div id="concept">
-        <TileSimple
+        <ImageTextTile
           icon={oldversions}
           iconPosition="left"
           backgroundColor="light"
@@ -54,7 +54,7 @@ const OldElasticsearchVersions = () => {
           text="Stuck on Elasticsearch 6, or even Elastic Search 5 or 2 without a viable migration path? Search Guard can help you migrate while providing core Enterprise security on older versions of Elasticsearch."
         />
       </div>
-      <TileSimple
+      <ImageTextTile
         icon={jail}
         iconPosition="right"
         backgroundColor="dark"
@@ -63,7 +63,7 @@ const OldElasticsearchVersions = () => {
             Older versions of Elasticsearch have a list of known issues. Search Guard can help you stabilize your security framework with enterprise level authz/authn and provide a way forward to upgrade to current versions of Elasticsearch and Search guard that are not End of life.
         "
       />
-      <TileSimple
+      <ImageTextTile
         icon={security}
         iconPosition="left"
         backgroundColor="light"

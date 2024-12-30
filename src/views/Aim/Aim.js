@@ -2,11 +2,10 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import '../Alerting/Alerting.scss';
 import './Aim.scss';
-import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
-import TileSimple from '../../components/TileSimple/TileSimple';
+import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
 import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
 import aim1 from '../../images/elasticsearch_index_management_1.svg';
@@ -44,7 +43,7 @@ const Aim = () => {
             <PreFooter />
             
             <div id="concept">
-                <TileSimple
+                <ImageTextTile
                     icon={aim5}
                     iconPosition="left"
                     backgroundColor="light"
@@ -54,7 +53,7 @@ const Aim = () => {
                     allowing you to redirect your expertise where it matters most."
                 />
             </div>
-            <TileSimple
+            <ImageTextTile
                 icon={aim3}
                 iconPosition="right"
                 backgroundColor="dark"
@@ -63,7 +62,7 @@ const Aim = () => {
                 Experience reduced query latency and optimized resource allocation without constant intervention.
                 Enjoy a leaner, more responsive Elasticsearch deployment that adapts to your data needs automatically."
             />
-            <TileSimple
+            <ImageTextTile
                 icon={aim4}
                 iconPosition="left"
                 backgroundColor="light"
@@ -74,7 +73,7 @@ const Aim = () => {
                 Rest easy knowing your indices are cared for around the clock,
                 allowing you to maintain work-life balance without compromising cluster health."
             />
-            <TileSimple
+            <ImageTextTile
                 icon={aim2}
                 iconPosition="right"
                 backgroundColor="dark"

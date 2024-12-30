@@ -2,14 +2,31 @@
 @import '../../styles/Breakpoints';
 
 .hero-wrapper {
-  background-color: $darkBlue;
+  padding: 156px;
+  background-color: $white;
   width: 100%;
-  background-image: url('../../images/hero-static.svg'), url('../../images/hero-background.svg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat, no-repeat;
-  @media only screen and (max-width: $mobile) {
-    background-image: url('../../images/hero-animation-mobile.svg'), url('../../images/hero-background.svg');
+  @media only screen{// and (max-width: $mobile) {
+    padding: 10px;
   }
+}
+
+.hero-image {
+  // margin-top: 32px;
+  // background-image: url('../../images/hero-static.svg'), url('../../images/hero-background.svg');
+  // background-size: 100% 100%;
+  // background-repeat: no-repeat, no-repeat;
+  // @media only screen and (max-width: $mobile) {
+  //   background-image: url('../../images/hero-animation-mobile.svg'), url('../../images/hero-background.svg');
+  // }
+}
+
+.hero-image-content {
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+
+  // only on mobile?
+  margin-left: -200px;
 }
 
 .hero-row-empty-mobile {
@@ -27,49 +44,38 @@
     margin-left: 12px;
   }
   @media only screen and (max-width: $mobile) {
-    margin: 0px 24px;
+    margin: 0px 0px;
     max-width: unset;
   }
 }
 
 div.col.s12.m5.l6 {
   @media only screen and (max-width: $xl) and (min-width: $tabletBig) {
-    margin-left: 12px;
+    margin-left: 0px;
+  }
+  @media only screen {
+    margin-top: 32px;
   }
 }
 
 .hero-text-wrapper-headline {
-  margin-top: 32px;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  font-size: 60px;
-  line-height: 72px;
-  font-weight: 500;
-  color: $white;
-  letter-spacing: 2px;
+
+  margin-bottom: 32px;
+  color: $primary;
   @media only screen and (max-width: $tabletBig) {
     margin-top: 32px;
-    font-size: 30px;
-    line-height: 36px;
-    letter-spacing: 1px;
   }
   @media only screen and (max-width: $mobile) {
     margin-top: -72px;
-    margin-bottom: 85%;
     text-align: center;
   }
 }
 
 .hero-text-wrapper-text {
-  margin-bottom: 64px;
-  font-size: 18px;
-  line-height: 27px;
-  letter-spacing: 2px;
-  color: $white;
+  margin-bottom: 32px;
+  color: $primary;
   @media only screen and (max-width: $tabletBig) {
     margin-right: 40px;
-    font-size: 16px;
-    line-height: 24px;
     margin-bottom: 32px;
   }
   @media only screen and (max-width: $mobile) {

@@ -9,8 +9,10 @@ import LicensingModel from '../../components/LicensingModel/LicensingModel';
 import References from '../../components/References/References';
 import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
-import iconBook from '../../images/icon-book.svg';
-import iconWheels from '../../images/icon-wheels.svg';
+import iconBook from '../../images/book-solid.svg';
+import iconWheels from '../../images/gears-solid.svg';
+import CustomizeLicense from '../../components/LicensingModel/CustomizeLicense';
+import FilledDivider from '../../components/FilledDivider/FilledDivider';
 
 const License = () => {
   useEffect(() => {
@@ -47,18 +49,9 @@ const License = () => {
         tableView
       />
       <div id="academic">
-        <Card
-          bgLeftDark
-          iconLeft={iconBook}
-          iconRight={iconWheels}
-          headlineLeft="Academic & Scientific Programme"
-          headlineRight="OEM, Integrators & Resellers"
-          textLeft="We want to give back to education and science and provide free licenses and special discounts for eligible institutions. Get in touch with us to learn more."
-          textRight="We provide tailor made custom licenses for system integrators, OEM partners and resellers."
-          linkLeft="/contacts/"
-          linkRight="/contacts/"
-        />
+          <CustomizeLicense />
       </div>
+      <FilledDivider backgroundClass={'arrows-bg'} shapeClass={'divider-shape-color'} />
       <References />
       <Cta
         headline="Interested?"

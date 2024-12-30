@@ -25,7 +25,6 @@ const Heise = () => {
             </Helmet>
             <Title
                 headline="Scale your cluster,<br/> not your cost."
-                titlestyle="heise"
             />
 
             <div className="row heise-textbox">

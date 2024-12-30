@@ -2,7 +2,7 @@
 @import '../../styles/Breakpoints';
 
 .prefooter-container {
-  background-color: $lightGrey;
+  background-color: $darkBlue;
 }
 
 .prefooter-row {
@@ -29,11 +29,8 @@
 }
 
 .prefooter-headline {
-  color: $darkBlue;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 3.3px;
-  line-height: 32px;
+  color: $white;
+  padding-bottom: 24px;
 }
 
 .prefooter-content {
@@ -44,9 +41,7 @@
 }
 
 .prefooter-content-text {
-  color: $darkGrey;
-  font-size: 18px;
-  line-height: 27px;
+  color: $white;
   padding-top: 4px;
   margin-bottom: 32px;
   @media only screen and (max-width: $tabletBig) and (min-width: $mobile) {
@@ -55,19 +50,15 @@
   };
 }
 
-hr.prefooter-hr {
-  display: none;
-  height: 1.75px;
-  background-color: $navyBlue;
-  margin-top: 24px;
-  @media only screen and (max-width: 600px) {
-    display: block;
-  };
-}
-
 .prefooter-content.icons img {
   padding: 8px 32px 8px 0;
   &:hover, &:focus, &:active {
     opacity: 0.9
   }
+}
+
+.prefooter-logo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
 }

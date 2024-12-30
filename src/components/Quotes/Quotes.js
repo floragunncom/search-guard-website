@@ -60,9 +60,9 @@ class Quotes extends Component {
       },
     ];
     return (
-      <div className="quotes-container">
+      <div className="quotes-container color-schema-light">
         <div className="row">
-          <div className="quotes-headline">What our clients say</div>
+          <h2 className="quotes-headline">What our clients say</h2>
           <div className="slider">
             <ul className="slides">
               {quotes.map(quote => {
@@ -73,7 +73,7 @@ class Quotes extends Component {
                         <img loading="lazy" src={quoteUp} alt="quote icon" width="58px" height="51px"/>
                       </div>
                       <div className="quotes-quote">
-                        <div className="quotes-text">{quote.quote}</div>
+                        <div className="body-din quotes-text">{quote.quote}</div>
                         <div className="quotes-author-name">
                           - {quote.author}
                         </div>

@@ -1,4 +1,3 @@
-import './index.scss';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import React from 'react';
 import HomePage from './views/HomePage/HomePage';
@@ -44,6 +43,8 @@ import OldElasticsearchVersions from './views/OldElasticsearchVersions/OldElasti
 import Newsletter from './views/Newsletter/Newsletter';
 import HtmlSitemap from './views/HtmlSitemap/HtmlSitemap';
 import Error from './views/Error/Error';
+
+
 
 const Routes = () => {
   return (

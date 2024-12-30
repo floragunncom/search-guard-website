@@ -5,18 +5,29 @@
   background-color: $darkBlue;
 }
 
+.footer-wrapper {
+  color: $white;
+}
+
 div.row.footer-row {
-  padding: 64px 0px;
-  @media only screen and (max-width: $xl) {
-    padding: 64px 34px 0px 34px;
-  };
+  padding: 40px 0px;
+  // @media only screen and (max-width: $xl) {
+  //   padding: 64px 34px 0px 34px;
+  // };
 }
 
 .footer-links-column-container {
-  border-left: 3px solid $turkis;
   margin-bottom: 32px;
+}
+
+.footer-list-items {
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 64px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center; 
     &:last-child {
       margin-bottom: 0px;
     }
@@ -45,11 +56,12 @@ a.footer-links {
 .footer-list-headline {
   margin-bottom: 32px;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
   @media only screen and (max-width: $mobile) {
-    position: relative;
-    top: -16px;
     margin-bottom: 0px;
+    position: relative;
+    text-align: center;
+    top: -16px;
   }
 }
 
@@ -72,11 +84,52 @@ a.footer-links {
   margin-right: auto;
   padding: 0 32px 64px 32px;
   color: $white;
-  opacity: 0.7;
-  line-height: 20px;
-  font-size: 14px;
-  text-align: center;
   @media only screen and (max-width: $mobile) {
     padding-bottom: 32px;
   }
+}
+
+.footer-content-wrapper {
+  padding: 0px;
+  @media only screen and (max-width: $tabletBig) {
+    margin: 32px 0px;
+  };
+  @media only screen and (max-width: $mobile) {
+    margin: 16px 0px;
+  };
+};
+
+.footer-col-content {
+  @media only screen and (max-width: $tabletBig) and (min-width: $mobile) {
+    padding: 0 12px;
+  }
+}
+
+.footer-headline {
+  color: $white;
+}
+
+.footer-content {
+  margin: 24px 0px 0px 0px;
+  @media only screen and (max-width: 600px) {
+    margin-top: 8px;
+  };
+}
+
+.footer-content-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 32px;
+  align-content: center;
+  align-items: center;  
+}
+
+hr.footer-hr {
+  display: none;
+  height: 1.75px;
+  background-color: $white;
+  margin-top: 24px;
+  @media only screen and (max-width: 600px) {
+    display: block;
+  };
 }

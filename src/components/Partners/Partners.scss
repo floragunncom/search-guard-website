@@ -2,8 +2,9 @@
 @import '../../styles/Breakpoints';
 
 .company-partners-wrapper {
-  background-color: $grey;
-  padding: 128px 0px;
+  background-color: $white;
+  padding-top: 96px;
+  padding-bottom: 104px;
   @media only screen and (max-width: $tabletBig) {
     padding:  64px 32px;
   };
@@ -28,6 +29,10 @@
     font-size: 24px;
     line-height: 28px;
   };
+}
+
+.company-partners-pic-wrapper {
+  text-align: center;
 }
 
 .company-partners-pic,

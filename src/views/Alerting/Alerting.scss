@@ -2,38 +2,34 @@
 @import '../../styles/Breakpoints';
 
 .alerting-wrapper {
-  padding-top: 64px;
-  @media only screen and (max-width: $tabletBig) {
-    padding: 64px 32px 0px 32px;
-  }
-  @media only screen and (max-width: $mobile) {
-    padding: 32px 24px 16px 24px;
-  }
+  background-color: $secondary-light;
+  padding-top: 96px;
+  padding-bottom: 104px;
+  // @media only screen and (max-width: $tabletBig) {
+  //   padding: 64px 32px 0px 32px;
+  // }
+  // @media only screen and (max-width: $mobile) {
+  //   padding: 32px 24px 16px 24px;
+  // }
 }
 
-.row.alerting {
+.row.alerting-row {
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  align-items: flex-start;
+  flex-direction: row;
+
+  // @media only screen and (max-width: $tabletBig) {
+  //   padding: 64px 32px 0px 32px;
+  // }
+  @media only screen and (max-width: $mobile) {
+    flex-direction: column;
+  }
 }
 
 .alerting-headline {
   margin-bottom: 32px;
-  margin-top: 0px;
   color: $darkBlue;
-  font-size: 48px;
-  line-height: 57px;
   text-align: center;
-  font-weight: 100;
-  @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
-  }
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 32px;
-    font-size: 24px;
-    line-height: 28px;
-  }
 }
 
 .alerting-section {
@@ -67,28 +63,69 @@
 }
 
 .alerting-content {
-  width: 80%;
+  text-align: center;
+}
+
+.alering-col-headline {
+  margin-bottom: 32px;
+  text-align: center;
+  color: $white;
+  @media only screen and (max-width: $tabletBig) {
+    line-height: 43px;
+  }
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 32px;
+  }
+}
+
+.alerting-connectors-row-wrapper {
+  padding-bottom: 72px;
+  @media only screen and (max-width: $mobile) {
+    padding-bottom: 0px;
+  }
+}
+
+.alerting-col-text {
+  text-align: center;
+  color: $white;
+  @media only screen and (max-width: $tabletBig) {
+    margin: 0px 16px;
+  }
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 64px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.alerting-col-img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 140px;
+  @media only screen and (max-width: $tabletBig) {
+    background-color: unset;
+    height: unset;
+    width: unset;
+  }
 }
 
 .alerting-content-headline {
   color: $darkBlue;
-  font-size: 24px;
-  line-height: 30px;
-  text-align: left;
-  letter-spacing: 0.8px;
+  text-align: center;
   margin-bottom: 16px;
-  text-transform: none;
-  margin-top: 0px;
   @media only screen and (max-width: $mobile) {
     margin: 16px 0px;
   }
 }
 
 .alerting-content-text {
-  color: $darkGrey;
-  font-size: 18px;
-  line-height: 27px;
-  text-align: left;
+  text-align: center;
   margin-bottom: 32px;
   @media only screen and (max-width: $mobile) {
     margin-bottom: 16px;
@@ -118,11 +155,27 @@
   overflow: scroll;
 }
 
-.connectors-wrapper {
-  padding: 32px 0px;
-  background-color: $lightGrey;
-  @media only screen and (max-width: $tabletBig) {
-    padding: 16px 0px;
+.alerting-connectors-wrapper {
+  background-color: $darkBlue;
+}
+
+.alerting-escalation-wrapper {
+  background-color: $white;
+}
+
+.alerting-connectors-headline {
+  margin-bottom: 64px;
+  text-align: center;
+  color: $white;
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 32px;
   }
 }
 
+.alerting-icon {
+  color: $white;
+}
+
+.alerting-icons {
+  @extend .image-on-dark-bg;
+}

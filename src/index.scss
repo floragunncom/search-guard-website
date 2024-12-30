@@ -2,7 +2,7 @@
 @import '../src/styles/Breakpoints.scss';
 
 ::selection {
-  background-color: $turkisActive;
+  background-color: $primary;
   color: $white;
 }
 
@@ -17,8 +17,7 @@
   scroll-behavior: smooth;
 }
 
-@mixin fonts{
-  color: var(--Text-Primary, rgba(0, 0, 0, 0.87));
+@mixin fonts {
   font-feature-settings: 'clig' off, 'liga' off;
 }
 
@@ -30,34 +29,52 @@
 
 // HTML Elements
 body {
-  @include fonts;
   font-family: "Inter-Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  text-align: left;
 }
 
 h1 {
   @include font-headlines;
   font-family: "Parafina-SemiWideXBold";
   font-size: 96px;
-  line-height: 80%; /* 76.8px */
+  font-weight: 900;
+  line-height: 100%;
   letter-spacing: -1.5px;
-
+  text-align: left;
+  margin-top: 0px;
+  text-wrap: balance;
+  word-break: break-word;
+  text-transform: uppercase;
 }
 
 h2 {
   @include font-headlines;
   font-family: Parafina-SemiWideXBold;
-  font-weight: 900;
   font-size: 60px;
-  line-height: 80%; /* 48px */
+  font-weight: 900;
+  line-height: 100%;
   letter-spacing: -0.5px;
+  text-align: center;
+  margin-top: 0px;
+  text-wrap: balance;
+  word-break: break-word;
 }
 
 h3 {
   @include font-headlines;
+  color: black;
   font-family: Parafina-SemiWideXBold;
-  font-weight: 900;
   font-size: 48px;
-  line-height: 80%; /* 38.4px */
+  font-weight: 900;
+  line-height: 100%;
+  text-align: left;
+  margin-top: 0px;
+  text-wrap: balance;
+  word-break: break-word;
 }
 
 h4 {
@@ -65,8 +82,11 @@ h4 {
   font-family: Parafina-SemiWideXBold;
   font-size: 40px;
   font-weight: 700;
-  line-height: 123.5%; /* 49.4px */
+  line-height: 100%;
   letter-spacing: 0.25px;
+  margin-top: 0px;
+  text-wrap: balance;
+  word-break: break-word;
 }
 
 h5 {
@@ -74,15 +94,12 @@ h5 {
   font-family: Parafina-SemiWideBold;
   font-size: 28px;
   font-weight: 700;
-  line-height: 133.4%; /* 37.352px */
-}
-
-h5 {
-  @include font-headlines;
-  font-family: Parafina-SemiWideBold;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 133.4%; /* 37.352px */
+  line-height: 100%;
+  text-align: left;
+  text-transform: capitalize;
+  margin-top: 0px;
+  text-wrap: balance;
+  word-break: break-word;
 }
 
 p {
@@ -105,8 +122,9 @@ iframe {
   border: none;
 }
 
-// Core Components
+// # CORE COMPONENTS
 
+// ## Grid System
 .container, .row, .container .row {
   width: inherit;
   margin: 0px auto;
@@ -123,22 +141,128 @@ div.row {
   margin-right: 0px;
 }
 
+// ## default padding for page sections
+.default-padding-top-bottom {
+  padding-top: 128px;
+  padding-bottom: 128px;
+  @media only screen and (max-width: $tabletBig) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.default-margin-top-bottom {
+  margin-top: 128px;
+  margin-bottom: 128px;
+  @media only screen and (max-width: $tabletBig) {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+}
+
+// ## background and text colors for dark, light and white sections
+.color-schema-dark {
+  color: $white;
+  background-color: $primary;
+}
+
+.color-schema-light {
+  color: $primary;
+  background-color: $secondary-light;
+
+}
+
+.color-schema-white {
+  color: $primary;
+  background-color: $white;
+}
+
 .subtitle {
-  @include fonts;
-  font-family: "Inter-Medium";
+  font-family: "Inter-Regular";
   font-size: 16px;
   font-weight: 700;
-  line-height: 175%; /* 28px */
+  line-height: 28px;
   letter-spacing: 0.15px;
+  text-align: left;
 }
 
 .hidden {
   display: none;
 }
 
-.material-icons.md-18 { font-size: 18px; }
-.material-icons.md-24 { font-size: 24px; }
-.material-icons.md-36 { font-size: 36px; }
-.material-icons.md-48 { font-size: 48px; }
-.material-icons.md-96 { font-size: 96px; }
-.material-icons  { color: $turkisActive }
+
+// same as body, but for reusing in title!
+
+// REMOVE
+.body1 {
+  @include fonts;
+  font-family: "Inter-Regular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}
+
+// REMOVE
+.body2 {
+  font-family: "Inter-Regular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20.02px;
+  letter-spacing: 0.15px;
+  text-align: left;
+}
+
+// REMOVE
+.body-din {
+  font-family: "Inter-Regular"; // Neue DIN should be used
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  text-align: center;
+}
+
+// REMOVE?
+.button-medium {
+  font-family: "Inter-Regular";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.4px;
+  text-align: left;
+}
+
+// REMOVE?
+.button-large {
+  font-family: "Inter-Regular";
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 0.46px;
+  text-align: left;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.material-icons.md-96 {
+  font-size: 96px;
+}
+
+.material-icons {
+  color: $turkisActive
+}

@@ -52,7 +52,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src -c .eslintrc --ext js,jsx",
-    "extractpostslugs": "node ./src/Api/extractBlogSlugs.js"
+    "extractpostslugs": "node ./src/Api/extractBlogSlugs.js",
+    "find-unused-images": "node scripts/find-unused-images.js",
+    "delete-unused-images": "node scripts/find-unused-images.js --delete-images=true"
   },
   "eslintConfig": {
     "extends": "react-app"

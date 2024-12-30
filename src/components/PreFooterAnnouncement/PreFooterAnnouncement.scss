@@ -39,7 +39,7 @@
   font-style: normal;
   letter-spacing: normal;
   text-align: center;
-  font-weight: 200;
+  line-height: 100%;
 }
 
 .prefooter-announcement-content {
@@ -52,7 +52,7 @@
 .prefooter-announcement-content-text {
   color: $darkGrey;
   font-size: 18px;
-  line-height: 27px;
+  // line-height: 27px;
   padding-top: 4px;
   margin-bottom: 32px;
   @media only screen and (max-width: $tabletBig) and (min-width: $mobile) {

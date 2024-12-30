@@ -1,0 +1,9 @@
+@import '../../styles/Colors';
+
+.divider-shape-color {
+  @extend .image-on-light-bg-2;
+}
+  
+.arrows-bg {
+  background-color: $lightAqua;
+}

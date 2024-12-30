@@ -48,16 +48,14 @@ const Email = () => {
       {emailSendStatus ?
           (
             <div
-              className="prefooter-content-text bold"
-              style={{ color: '#246E94' }}
+              className="prefooter-content-text bold text-processing"
             >
               Thank you for signing up to our newsletter!
             </div>
           ) : (
           procesing ? (
                 <div
-                    className="prefooter-content-text bold"
-                    style={{ color: '#246E94' }}
+                    className="prefooter-content-text bold text-processing"
                 >
                   Processing
                 </div>
@@ -68,7 +66,7 @@ const Email = () => {
                           id="email"
                           name="email"
                           type="email"
-                          className="validate"
+                          className="validate input-field"
                           required
                       />
                       <label htmlFor="email" id="email-input">
@@ -85,7 +83,7 @@ const Email = () => {
                       />
                     </div>
                     <div className="input-field col s12 m6 l4">
-                      <Button text="subscribe" buttonStyle="default-button" type="submit"/>
+                      <Button text="subscribe" buttonStyle="light-green-button" type="submit"/>
                     </div>
                   </form>
             ))

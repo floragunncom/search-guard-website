@@ -105,30 +105,6 @@ img.tilesimple-flx-icon-style-left {
   };
 }
 
-.tilesimple-headline {
-  color: $darkBlue;
-  font-size: 48px;
-  line-height: 57px;
-  font-weight: 300;
-  margin-bottom: 32px;
-  margin-top: 0px;
-  @media only screen and (max-width: $mobile) {
-    font-size: 24px;
-    line-height: 28px;
-  };
-}
-
-.tilesimple-text {
-  font-size: 18px;
-  line-height: 27px;
-  color: $darkGrey;
-  margin-bottom: 24px;
-  @media only screen and (max-width: $mobile) {
-    font-size: 16px;
-    line-height: 24px;
-  };
-}
-
 .tilesimple-flx-readmore {
   font-weight: 600;
   font-size: 16px;

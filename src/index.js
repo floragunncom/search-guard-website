@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render, hydrate } from 'react-dom';
 import Routes from './Routes';
