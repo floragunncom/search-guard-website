@@ -1,9 +1,9 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
-.filter-icons-color {
+/*.filter-icons-color {
   @extend .image-on-dark-bg;
-}
+}*/
 
 .services-wrapper {
   background-color: $primary;
@@ -41,9 +41,10 @@
   }
 }
 
-.services-icons {
+// REMOVE
+/*.services-icons {
   color: $secondary-light !important;
-}
+}*/
 
 .security-detail-icon {
   color: $secondary-light;

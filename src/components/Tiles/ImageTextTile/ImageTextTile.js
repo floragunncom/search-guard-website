@@ -1,21 +1,35 @@
 import React from 'react';
 import './ImageTextTile.scss';
-import {LazyLoadImage} from "react-lazy-load-image-component";
+import {getColorSchemaCSS, getColorSchemaCSSForSVG} from "../../../utils/styleUtils";
+import {ReactSVG} from "react-svg";
 
 const ImageTextTile = ({
-                        backgroundColor,
-                        iconPosition,
-                        icon,
-                        iconClass,
-                        headline,
-                        text,
-                    }) => {
+                           colorschema,
+                           svgcolor,
+                           backgroundColor,
+                           iconPosition,
+                           icon,
+                           headline,
+                           text,
+                       }) => {
     let tilePosition;
     let wrapperStyle;
     let iconStyle;
     let contentStyle;
     let textStyle;
+    let baseCSS;
+    let imageCSS;
 
+
+    baseCSS = getColorSchemaCSS(colorschema);
+
+    // if SVG does not need a color set, use the color schema as default
+    if (!svgcolor) {
+        svgcolor = colorschema;
+    }
+
+    imageCSS = getColorSchemaCSSForSVG(svgcolor);
+console.log(imageCSS);
     if (backgroundColor === 'dark') {
         wrapperStyle = 'tilesimple-wrapper-dark';
         textStyle = 'tilesimple-text-dark';
@@ -42,17 +56,31 @@ const ImageTextTile = ({
 
     if (iconPosition === 'left') {
         tilePosition = (
-            <div className={wrapperStyle}>
+            <div className={baseCSS}>
                 <div className="row tile-row">
-                    <div className="col s12 l6 tilesimple-icon-wrapper-left">
-                        <LazyLoadImage
-                            src={icon} className={`${iconStyle} ${iconClass}`} alt="tile icon"
+                    <div className="col s12 l6 tilesimple-icon-wrapper-left tilesimple-icon-style-left ">
+                        <ReactSVG
+                            src={icon}
+                            alt="background arrows"
+                            beforeInjection={(svg) => {
+                                svg.querySelectorAll('*').forEach((element) => {
+                                    element.removeAttribute('fill');
+                                    element.removeAttribute('stroke');
+                                    element.removeAttribute('filter');
+                                    element.removeAttribute('mask');
+                                    element.removeAttribute('style');
+                                    element.removeAttribute('class');
+                                });
+                                svg.setAttribute('width', "100%");
+                                svg.setAttribute('max-height', "320px");
+                                svg.setAttribute('class', imageCSS );
+                            }}
                         />
                     </div>
                     <div className="col s12 l6">
                         <div className={contentStyle}>
-                            <h3 className={`${textStyle} tilesimple-headline`}>{headline}</h3>
-                            <div className={`${textStyle} tilesimple-text`}>{text}</div>
+                            <h3 className={`${baseCSS} tilesimple-headline`}>{headline}</h3>
+                            <div className={`${baseCSS} tilesimple-text`}>{text}</div>
                         </div>
                     </div>
                 </div>
@@ -60,17 +88,31 @@ const ImageTextTile = ({
         );
     } else {
         tilePosition = (
-            <div className={wrapperStyle}>
+            <div className={baseCSS}>
                 <div className="row tilesimple-change-order tile-row">
                     <div className="col s12 push-l6 l6 tilesimple-icon-wrapper-right">
-                        <LazyLoadImage
-                            src={icon} className={`${iconStyle} ${iconClass}`} alt="tile icon"
+                        <ReactSVG
+                            src={icon}
+                            alt="background arrows"
+                            beforeInjection={(svg) => {
+                                svg.querySelectorAll('*').forEach((element) => {
+                                    element.removeAttribute('fill');
+                                    element.removeAttribute('stroke');
+                                    element.removeAttribute('filter');
+                                    element.removeAttribute('mask');
+                                    element.removeAttribute('style');
+                                    element.removeAttribute('class');
+                                });
+                                svg.setAttribute('width', "100%");
+                                svg.setAttribute('max-height', "320px");
+                                svg.setAttribute('class', imageCSS );
+                            }}
                         />
                     </div>
                     <div className="col s12 pull-l6 l6">
                         <div className={contentStyle}>
-                            <h3 className={`${textStyle} tilesimple-headline`}>{headline}</h3>
-                            <div className={`${textStyle} tilesimple-text`}>{text}</div>
+                            <h3 className={`${baseCSS} tilesimple-headline`}>{headline}</h3>
+                            <div className={`${baseCSS} tilesimple-text`}>{text}</div>
                         </div>
                     </div>
                 </div>
@@ -81,4 +123,4 @@ const ImageTextTile = ({
     return <div>{tilePosition}</div>;
 };
 
-export default ImageTextTile;
+export default ImageTextTile

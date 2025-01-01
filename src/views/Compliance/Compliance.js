@@ -6,6 +6,7 @@ import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
+import ComplianceFeatures from '../../components/Compliance/ComplianceFeatures';
 import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
 import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
@@ -132,47 +133,7 @@ const Compliance = () => {
           />
 
           <div className="securityinfo-wrapper" id="highlights">
-              <div className="row">
-
-                  <div className="col s12 m4">
-                      <div className="securityinfo-icon-wrapper">
-                          <img loading="lazy" src={shieldWheel} alt="checkmark icon" />
-                      </div>
-                      <div className="securityinfo-text-wrapper">
-                          <div className="subtitle securityinfo-headline">Data Encryption</div>
-                          <div className="securityinfo-content">
-                              Search Guard encrypts all the traffic inside your Elasticsearch cluster, shields from data breaches and ensures the
-                              integrity of your data.
-                          </div>
-                      </div>
-                  </div>
-
-                  <div className="col s12 m4">
-                      <div className="securityinfo-icon-wrapper">
-                          <img loading="lazy" src={shieldWheel} alt="certificate icon" />
-                      </div>
-                      <div className="securityinfo-text-wrapper">
-                          <div className="subtitle securityinfo-headline">Data Anonymization</div>
-                          <div className="securityinfo-content">
-                              Search Guard provides role-based access control to all data stored in your Elasticsearch cluster.
-                              Control exactly which users can access PII or other sensitive data in cleartext or anonymized.
-                          </div>
-                      </div>
-                  </div>
-
-                  <div className="col s12 m4">
-                      <div className="securityinfo-icon-wrapper">
-                          <img loading="lazy" src={shieldWheel} alt="shield icon" />
-                      </div>
-                      <div className="securityinfo-text-wrapper">
-                          <div className="subtitle securityinfo-headline">Audit Trails</div>
-                          <div className="securityinfo-content">
-                              Search Guard generates audit trails on who has created, modified, accessed and deleted PII and other sensitive
-                              data in your Elasticsearch cluster.
-                          </div>
-                      </div>
-                  </div>
-              </div>
+              <ComplianceFeatures />
           </div>
 
           <div className="row free-trial">

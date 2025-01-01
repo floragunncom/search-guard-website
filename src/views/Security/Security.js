@@ -12,6 +12,7 @@ import ctaIcon from '../../images/icon-sg.svg';
 import fileCode from '../../images/file-code.svg';
 import worldLock from '../../images/world-lock.svg';
 import certificate from '../../images/certificate-big.svg';
+import server_lock from '../../images/server-lock.svg';
 import handsHolding from '../../images/hands-holding-circle-solid.svg';
 import umbrella from '../../images/umbrella-solid.svg';
 import tableCellsLock from '../../images/table-cells-column-lock-solid.svg';
@@ -48,26 +49,23 @@ const Security = () => {
             <div id="concept">
                 <ImageTextTile
                     icon={handsHolding}
-                    iconClass={'filter-icons-color'}
                     iconPosition="left"
-                    backgroundColor="dark"
+                    colorschema="dark"
                     headline="Protect Your Data with Confidence"
                     text="Search Guard's battle-proven security features ensure that your Elasticsearch cluster is safeguarded from unauthorized access, data breaches, and cyber threats. With advanced authentication, role-based access control, and document-level security, you can rest assured that your sensitive data is protected."
                 />
             </div>
             <ImageTextTile
                 icon={tableCellsLock}
-                iconClass={'filter-icons-color'}
                 iconPosition="right"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Lock Down Your Elasticsearch Cluster"
                 text="Search Guard's comprehensive security suite provides end-to-end protection for your Elasticsearch data. From encryption to audit logging, our features ensure that your data is secure in transit and at rest. Don't leave your cluster vulnerable - secure it with Search Guard today!"
             />
             <ImageTextTile
                 icon={umbrella}
-                iconClass={'filter-icons-color'}
                 iconPosition="left"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Advanced Security Made Simple"
                 text="Search Guard simplifies advanced security for your Elasticsearch cluster. With easy-to-implement features and seamless integration, you can secure your data without compromising on performance or usability."
             />

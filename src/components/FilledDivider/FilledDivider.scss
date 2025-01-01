@@ -10,17 +10,18 @@
   padding: 10px;
 }
 
-.divider-shape-color-light {
+// REMOVE
+/*.divider-shape-color-light {
   @extend .image-on-dark-bg;
-}
+}*/
 
-.filter-icons-color {
+/*.filter-icons-color {
   @extend .image-on-dark-bg;
-}
+}*/
 
-.divider-shape-color {
+/*.divider-shape-color {
   @extend .image-on-light-bg-2;
-}
+}*/
 
 .arrows-bg {
   background-color: $secondary-light;

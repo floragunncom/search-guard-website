@@ -1,13 +1,33 @@
 import React from 'react';
+import { ReactSVG } from 'react-svg';
+import {getColorSchemaCSS, getColorSchemaCSSForSVG} from "../../utils/styleUtils";
 import bg_arrow from '../../images/arrows_group.svg';
 import './FilledDivider.scss';
 
-const FilledDivider = ( { backgroundClass, shapeClass } ) => {
+const FilledDivider = ( {colorschema} ) => {
+
+    let baseCss = getColorSchemaCSS(colorschema);
+    let imageCss = getColorSchemaCSSForSVG(colorschema);
+console.log(imageCss);
     return (
-        <div className={backgroundClass || ''}>
+        <div className={baseCss || ''}>
             <div className="row divider-base ">
-                <div className="col s12 m12">
-                        <img className={`img-class ${shapeClass || ''}`} loading="lazy" src={bg_arrow} alt="background arrows"/>
+                <div className="col s12 m12 center">
+                    <ReactSVG
+                        src={bg_arrow}
+                        className={`${imageCss} img-class`}
+                        alt="background arrows"
+                        beforeInjection={(svg) => {
+                            svg.querySelectorAll('*').forEach((element) => {
+                                element.removeAttribute('fill');
+                                element.removeAttribute('stroke');
+                                element.removeAttribute('filter');
+                                element.removeAttribute('mask');
+                            });
+                            svg.setAttribute('width', "100%");
+                            svg.setAttribute('class', imageCss);
+                        }}
+                    />
                 </div>
             </div>
         </div>

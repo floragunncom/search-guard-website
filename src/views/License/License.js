@@ -4,13 +4,10 @@ import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Title from '../../components/Title/Title';
-import Card from '../../components/Card/Card';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
 import References from '../../components/References/References';
 import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
-import iconBook from '../../images/book-solid.svg';
-import iconWheels from '../../images/gears-solid.svg';
 import CustomizeLicense from '../../components/LicensingModel/CustomizeLicense';
 import FilledDivider from '../../components/FilledDivider/FilledDivider';
 
@@ -51,7 +48,7 @@ const License = () => {
       <div id="academic">
           <CustomizeLicense />
       </div>
-      <FilledDivider backgroundClass={'arrows-bg'} shapeClass={'divider-shape-color'} />
+      <FilledDivider colorschema="white" />
       <References />
       <Cta
         headline="Interested?"

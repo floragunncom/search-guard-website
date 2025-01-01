@@ -41,27 +41,27 @@ const HomePage = () => {
             <ImageTextTile
                 icon={server_lock}
                 iconPosition="left"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Search Guard provides security on all levels"
                 text="Search Guard provides an all-encompassing security solution to keep your most confidential data safe. Utilizing RBAC, Search Guard ensures the highest level of protection in your clusters, indices, and documents by adding encryption, authentication, authorization, audit logging, compliance as well as alerting and anomaly detection features."
             />
             <ImageTextTile
                 icon={cog_cog}
                 iconPosition="right"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Search Guard supports all industry standards"
                 text="Search Guard supports all industry standards for authentication and authorization like LDAP, Active Directory, OpenID, SAML, Kerberos, JSON web tokens or client certificates. You can chose from a wide variety of modern and highly secure modern cipher suites."
             />
             <ImageTextTile
                 icon={objects_shield}
                 iconPosition="left"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Search Guard protects all components of the Elastic Stack"
                 text="Search Guard implements full access control over your entire Elasticsearch environment. Protect all components of the Elastic stack, including Kibana, Logstash and Beats."
             />
             <TrustedBy/>
             <Labels/>
-            <FilledDivider shapeClass={'divider-shape-color-light'}/>
+            <FilledDivider colorschema="light"/>
             <Services/>
             <LicensingModel
                 topButtons

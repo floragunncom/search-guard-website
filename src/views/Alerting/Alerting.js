@@ -76,7 +76,7 @@ const Alerting = () => {
                 <ImageTextTile
                     icon={alertingAnomalies}
                     iconPosition="left"
-                    backgroundColor="light"
+                    colorschema="light"
                     headline="Elasticsearch Anomaly detection"
                     text="
             Signals Alerting for Elasticsearch can detect anomalies in data stored in Elasticsearch and other IT systems.
@@ -88,7 +88,7 @@ const Alerting = () => {
             <ImageTextTile
                 icon={alertingNotifications}
                 iconPosition="right"
-                backgroundColor="light"
+                colorschema="dark"
                 headline="Elasticsearch Actions & Notifications"
                 text="
             If an anomaly is detected in your Elasticsearch data you can use a wide range of connectors send alerting notifications: Create messages on Slack, send out an email,
@@ -99,7 +99,7 @@ const Alerting = () => {
             <ImageTextTile
                 icon={alertingEscalation}
                 iconPosition="left"
-                backgroundColor="light"
+                colorschema="light"
                 headline="Escalation levels"
                 text="
             The Signals Alerting for Elasticsearch escalation model makes it possible to tailor notifications and actions to your specific use case. Define how often
@@ -110,7 +110,7 @@ const Alerting = () => {
             <ImageTextTile
                 icon={alertingUI}
                 iconPosition="right"
-                backgroundColor="light"
+                colorschema="dark"
                 headline="Kibana Alerting UI & REST API"
                 text="
         Signals Alerting for Elasticsearch ships with a fully fledged Kibana user interface which only requires a couple of clicks to set up alerts.
@@ -118,7 +118,7 @@ const Alerting = () => {
         automate your alerts configuration.
     "
             />
-            <FilledDivider backgroundClass={'arrows-bg'} shapeClass={'divider-shape-color'}/>
+            <FilledDivider colorschema="white"/>
 
             <div className="alerting-wrapper alerting-connectors-wrapper" id="connectors">
                 <h3 className="alerting-connectors-headline">Connectors</h3>

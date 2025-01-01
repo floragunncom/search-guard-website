@@ -1,9 +1,11 @@
 import React from 'react';
+import {ReactSVG} from "react-svg";
 import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
 import cve from '../../images/ove.svg';
 import './Certified.scss';
+
 
 const Certified = () => {
   return (
@@ -17,7 +19,7 @@ const Certified = () => {
             rel="noopener noreferrer"
             className="certified-col-img"
           >
-            <img loading="lazy" src={veracode} alt="veracode logo" />
+            <ReactSVG src={veracode} alt="Search Guard is verified by Veracode"/>
           </a>
           <h5 className="certified-col-headline">Veracode</h5>
           <div className="body1 certified-col-text">
@@ -34,7 +36,7 @@ const Certified = () => {
             rel="noopener noreferrer"
             className="certified-col-img"
           >
-            <img loading="lazy" src={alliance} alt="alliance logo" />
+            <ReactSVG src={alliance} alt="Search Guard is member of the Alliance for Cybersecurity"/>
           </a>
           <h5 className="certified-col-headline">
             Allianz for Cyber-Sicherheit
@@ -53,7 +55,7 @@ const Certified = () => {
             rel="noopener noreferrer"
             className="certified-col-img"
           >
-            <img loading="lazy" src={cve} alt="ove logo" />
+            <ReactSVG src={cve} alt="Floragunn GmbH is the official CVE numbering authority for Search Guard."/>
           </a>
           <h5 className="certified-col-headline">CVE</h5>
           <div className="body1 certified-col-text">
@@ -68,7 +70,7 @@ const Certified = () => {
             rel="noopener noreferrer"
             className="certified-col-img"
           >
-            <img loading="lazy" src={security} alt="security icon" />
+            <ReactSVG src={security} alt="Search Guard is member of TeleTrust"/>
           </a>
           <h5 className="certified-col-headline">TeleTrusT</h5>
           <div className="body1 certified-col-text">

@@ -177,6 +177,21 @@ div.row {
   background-color: $white;
 }
 
+.color-schema-svg-dark {
+  fill: $secondary-light;
+  stroke: $secondary-light;
+}
+
+.color-schema-svg-light {
+  fill: $secondary;
+  stroke: $secondary;
+}
+
+.color-schema-svg-white {
+  fill: $secondary-light;
+  stroke: $secondary-light;
+}
+
 .subtitle {
   font-family: "Inter-Regular";
   font-size: 16px;

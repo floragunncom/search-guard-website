@@ -1,4 +1,5 @@
 import React from 'react';
+import {ReactSVG} from "react-svg";
 import './PreFooter.scss';
 import Email from '../Email/Email';
 import sg_helmet_logo from '../../images/SG_Helmet_LOGO 1.svg';
@@ -20,8 +21,8 @@ const Info = () => {
               <Email />
             </div>
           </div>
-          <div className="prefooter-content-wrapper col s12 m12 l6 prefooter-logo">          
-            <img loading="lazy" src={sg_helmet_logo} alt="search guard logo" />
+          <div className="prefooter-content-wrapper col s12 m12 l6 prefooter-logo">
+            <ReactSVG src={sg_helmet_logo} alt="Search Guard Logo"/>
           </div>
         </div>
       </div>

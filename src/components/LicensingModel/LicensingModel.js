@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './LicensingModel.scss';
 import TableEditions from '../TableEditions/TableEditions';
+import iconSearchGuard from '../../images/icon-search-guard.svg';
 import enterprise from '../../images/icon-enterprise.svg';
 import compliance from '../../images/icon-compliance.svg';
 import community from '../../images/icon-community.svg';
@@ -51,7 +52,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
             <div className="licensing-edition">
               <div className="licensing-editions-icon">
                 <img
-                  src={community}
+                  src={iconSearchGuard}
                   alt="community icon"
                   className="licensing-icon"
                   width="145px" height="145px"
@@ -82,7 +83,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
             <div className="licensing-edition">
               <div className="licensing-editions-icon">
                 <img
-                  src={enterprise}
+                  src={iconSearchGuard}
                   alt="enterprise icon"
                   className="licensing-icon"
                   width="145px" height="145px"
@@ -115,7 +116,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
             <div className="licensing-edition">
               <div className="licensing-editions-icon">
                 <img
-                  src={compliance}
+                  src={iconSearchGuard}
                   alt="compliance icon"
                   className="licensing-icon"
                   width="145px" height="145px"
@@ -156,7 +157,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
             <div className="licensing-edition" id="custom-edition">
               <div className="licensing-editions-icon">
                 <img
-                  src={academic}
+                  src={iconSearchGuard}
                   alt="academic icon"
                   className="licensing-icon"
                   width="145px" height="145px"
@@ -189,7 +190,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
             <div className="licensing-edition">
               <div className="licensing-editions-icon">
                 <img
-                  src={custom}
+                  src={iconSearchGuard}
                   alt="custom icon"
                   className="licensing-icon"
                   width="145px" height="145px"

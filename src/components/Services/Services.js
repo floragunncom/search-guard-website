@@ -9,6 +9,8 @@ import check from '../../images/list-check-solid.svg';
 import id from '../../images/id-card-regular.svg';
 import audit from '../../images/pen-to-square-regular.svg';
 import shield from '../../images/file-shield-solid.svg';
+import {ReactSVG} from "react-svg";
+import bg_arrow from "../../images/arrows_group.svg";
 
 const Services = ({ landing }) => {
   return (
@@ -28,49 +30,89 @@ const Services = ({ landing }) => {
       <div className="row services-icons">
         <div className="col s6 m3 security-detail-dark">
           <div className="security-detail-icon">
-            <img className="filter-icons-color" loading="lazy" src={shield} alt="key shield icon" width="100px" height="100px" />
+            <ReactSVG src={shield} alt="Search Guard Encryption" className="color-schema-svg-dark"
+                beforeInjection={(svg) => {
+                  svg.setAttribute('width', "100");
+                  svg.setAttribute('height', "100");
+                }}
+            />
           </div>
           <div className="security-detail-title">Encryption</div>
         </div>
         <div className="col s6 m3 security-detail-light">
           <div className="security-detail-icon">
-            <img className="filter-icons-color" loading="lazy" src={user_check} alt="dblock icon" width="100px" height="100px" />
+            <ReactSVG src={user_check} alt="Search Guard Authentication" className="color-schema-svg-dark"
+                      beforeInjection={(svg) => {
+                        svg.setAttribute('width', "100");
+                        svg.setAttribute('height', "100");
+                      }}
+            />
           </div>
           <div className="security-detail-title">Authentication</div>
         </div>
         <div className="col s6 m3 security-detail-dark-mobile">
           <div className="security-detail-icon">
-            <img className="filter-icons-color" loading="lazy" src={key} alt="key icon" width="100px" height="100px" />
+            <ReactSVG src={key} alt="Search Guard Authorization" className="color-schema-svg-dark"
+                      beforeInjection={(svg) => {
+                        svg.setAttribute('width', "100");
+                        svg.setAttribute('height', "100");
+                      }}
+            />
           </div>
           <div className="security-detail-title">Authorization</div>
         </div>
         <div className="col s6 m3 security-detail-light-mobile">
           <div className="security-detail-icon">
-            <img className="filter-icons-color" loading="lazy" src={id} alt="identity icon" width="100px" height="100px" />
+            <ReactSVG src={id} alt="Search Guard Role Based Access Control" className="color-schema-svg-dark"
+                      beforeInjection={(svg) => {
+                        svg.setAttribute('width', "100");
+                        svg.setAttribute('height', "100");
+                      }}
+            />
           </div>
           <div className="security-detail-title">Role-based access control</div>
         </div>
         <div className="col s6 m3 security-detail-light-mobile">
           <div className="security-detail-icon">
-            <img className="filter-icons-color" loading="lazy" src={audit} alt="audit icon" width="100px" height="100px" />
+            <ReactSVG src={audit} alt="Search Guard Audit Logging" className="color-schema-svg-dark"
+                      beforeInjection={(svg) => {
+                        svg.setAttribute('width', "100");
+                        svg.setAttribute('height', "100");
+                      }}
+            />
           </div>
           <div className="security-detail-title">Audit logging</div>
         </div>
         <div className="col s6 m3 security-detail-dark-mobile">
           <div className="security-detail-icon">
-            <img className="filter-icons-color" loading="lazy" src={people} alt="people icon" width="100px" height="100px" />
+            <ReactSVG src={people} alt="Search Guard Multi Tenancy" className="color-schema-svg-dark"
+                      beforeInjection={(svg) => {
+                        svg.setAttribute('width', "100");
+                        svg.setAttribute('height', "100");
+                      }}
+            />
           </div>
           <div className="security-detail-title">Multitenancy</div>
         </div>
         <div className="col s6 m3 security-detail-light">
           <div className="security-detail-icon">
-            <img className="filter-icons-color" loading="lazy" src={db} alt="db icon" width="100px" height="100px" />
+            <ReactSVG src={db} alt="Search Guard Elastic Stack Support" className="color-schema-svg-dark"
+                      beforeInjection={(svg) => {
+                        svg.setAttribute('width', "100");
+                        svg.setAttribute('height', "100");
+                      }}
+            />
           </div>
           <div className="security-detail-title">Elastic Stack Support</div>
         </div>
         <div className="col s6 m3 security-detail-dark">
           <div className="security-detail-icon">
-            <img className="filter-icons-color" loading="lazy" src={check} alt="computer icon" width="100px" height="100px" />
+            <ReactSVG src={check} alt="Search Guard Compliance" className="color-schema-svg-dark"
+                      beforeInjection={(svg) => {
+                        svg.setAttribute('width', "100");
+                        svg.setAttribute('height', "100");
+                      }}
+            />
           </div>
           <div className="security-detail-title">Compliance</div>
         </div>

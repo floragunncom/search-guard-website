@@ -23,7 +23,7 @@
   justify-content: center;
 }
 
-img.tilesimple-icon-style-left {
+.tilesimple-icon-style-left {
   max-height: 320px;
   height: fit-content;
   @media only screen and (max-width: $tabletBig) {
@@ -37,7 +37,7 @@ img.tilesimple-icon-style-left {
   };
 }
 
-img.tilesimple-icon-style-right {
+.tilesimple-icon-style-right {
   max-height: 320px;
   height: fit-content;
   @media only screen and (max-width: $tabletBig) {

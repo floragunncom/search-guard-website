@@ -24,7 +24,6 @@ import DataProtection from './views/DataProtection/DataProtection';
 import SecurityInformation from './views/SecurityInformation/SecurityInformation';
 import Advisory from './views/Advisory/Advisory';
 import Disclosure from './views/Disclosure/Disclosure';
-import Education from './views/Education/Education';
 import TlsGenerator from './views/TlsGenerator/TlsGenerator';
 import NotFound from './views/NotFound/NotFound';
 import Thanks from './views/Thanks/Thanks';
@@ -75,7 +74,6 @@ const Routes = () => {
           <Route exact path="/impressum/" component={Imprint} />
           <Route exact path="/presentations/" component={Presentations} />
           <Route exact path="/datenschutz/" component={DataProtection} />
-          <Route exact path="/education-program/" component={Education} />
           <Route exact path="/outdated-elasticsearch-versions-suppport/" component={OldElasticsearchVersions} />
           <Route exact path="/newsletter/" component={Newsletter} />
 

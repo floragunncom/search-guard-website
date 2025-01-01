@@ -1,11 +1,13 @@
 import React from 'react';
+import {ReactSVG} from "react-svg";
 import './Footer.scss';
 import x_twitter from '../../images/x-twitter.svg';
 import linkedIn from '../../images/linkedin.svg';
 import youtube from '../../images/youtube.svg';
 import facebook from '../../images/facebook.svg';
-
 import RichSnippetCompany from '../RichSnippets/RichSnippetCompany';
+
+
 
 const Footer = ({ landing }) => {
 
@@ -223,28 +225,28 @@ const Footer = ({ landing }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img loading="lazy" src={x_twitter} alt="twitter icon" />
+                  <ReactSVG src={x_twitter} alt="Join Search Guard on X/Twitter"/>
                 </a>
                 <a
                   href="https://www.facebook.com/searchguard/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img loading="lazy" src={facebook} alt="facebook icon" />
+                  <ReactSVG src={facebook} alt="Join Search Guard on facebook"/>
                 </a>
                 <a
                   href="https://www.linkedin.com/company/search-guard/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img loading="lazy" src={linkedIn} alt="linkedIn icon" />
+                  <ReactSVG src={linkedIn} alt="Join Search Guard on LinkedIn"/>
                 </a>
                 <a
                   href="https://www.youtube.com/channel/UCUw93I0DHMvoA8HNQ31AeJw"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img loading="lazy" src={youtube} alt="youtube icon"  />
+                  <ReactSVG src={youtube} alt="Visit Search Guard on YouTube"/>
                 </a>
                 <hr className="footer-hr" />
               </div>

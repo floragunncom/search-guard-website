@@ -3,7 +3,6 @@
 
 
 .journey-wrapper {
-  background-color: $secondary;
   padding: 96px 30px 96px 104px;
   @media only screen and (max-width: $mobile) {
     display: none;
@@ -63,7 +62,6 @@
         h2{
           margin-top: -45px;
           margin-bottom: 16px;
-          color: $primary;
           font-weight: 300;
           font-size: 48px;
           line-height: 57px;
@@ -73,7 +71,7 @@
           }
         }
         p{
-          background: $lightGrey;
+          background: $white;
           padding: 16px;
           #headline {
             color: $primary;
@@ -185,6 +183,7 @@
 .details {
   opacity: 0;
   transition: opacity 250ms ease-in-out;
+  border-radius: 15px;
 }
 
 .details.fadein {

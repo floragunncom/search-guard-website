@@ -46,7 +46,7 @@ const Aim = () => {
                 <ImageTextTile
                     icon={aim5}
                     iconPosition="left"
-                    backgroundColor="light"
+                    colorschema="light"
                     headline="Goodbye Manual Index Management"
                     text="Say farewell to tedious index oversight. Search Guard's Automated Index Management handles routine tasks 24/7,
                     freeing you to focus on strategic initiatives. Trust that your indices are managed efficiently without constant attention,
@@ -56,7 +56,7 @@ const Aim = () => {
             <ImageTextTile
                 icon={aim3}
                 iconPosition="right"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Operational Efficiency Redefined"
                 text="Our system continuously optimizes your indices based on predefined policies, ensuring peak cluster performance.
                 Experience reduced query latency and optimized resource allocation without constant intervention.
@@ -65,7 +65,9 @@ const Aim = () => {
             <ImageTextTile
                 icon={aim4}
                 iconPosition="left"
-                backgroundColor="light"
+                colorschema="light"
+                sv
+
                 headline="Cluster Operator's Peace of Mind"
                 text="Let Search Guard be your silent, vigilant partner. Set policies once and relax.
                 Comprehensive logging keeps you informed without constant monitoring.
@@ -76,7 +78,7 @@ const Aim = () => {
             <ImageTextTile
                 icon={aim2}
                 iconPosition="right"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Scalability Without the Growing Pains"
                 text="As your data grows, so does Search Guard's capability.
                 Our Automated Index Management scales seamlessly with your cluster, handling gigabytes to petabytes with equal efficiency.
