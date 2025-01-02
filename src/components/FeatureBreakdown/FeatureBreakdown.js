@@ -1,10 +1,10 @@
 import React from 'react';
-import './TableEditions.scss';
+import './FeatureBreakdown.scss';
 import compliance from '../../images/checkmark-red.svg';
 import enterprise from '../../images/checkmark-green.svg';
 import community from '../../images/checkmark-gold.svg';
 
-const TableEditions = () => {
+const FeatureBreakdown = () => {
   const matrixContent = [
     {
       name: 'Encryption',
@@ -493,4 +493,4 @@ const TableEditions = () => {
   );
 };
 
-export default TableEditions;
+export default FeatureBreakdown;

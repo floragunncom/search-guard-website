@@ -2,11 +2,6 @@ import React, { useState } from 'react';
 import './LicensingModel.scss';
 import TableEditions from '../TableEditions/TableEditions';
 import iconSearchGuard from '../../images/icon-search-guard.svg';
-import enterprise from '../../images/icon-enterprise.svg';
-import compliance from '../../images/icon-compliance.svg';
-import community from '../../images/icon-community.svg';
-import academic from '../../images/icon-academic.svg';
-import custom from '../../images/icon-custom.svg';
 import Button from '../Button/Button';
 
 const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline }) => {
@@ -245,20 +240,6 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
         >
           academic & custom
         </div>
-      </div>
-    );
-  }
-
-  if (tableView) {
-    renderTableView = (
-      <div className="licensing-comparison-wrapper" id="feature">
-        <h2
-          className="licensing-comparison-headline"
-          onClick={ontableViewPress}
-        >
-          Feature breakdown
-        </h2>
-        <TableEditions />
       </div>
     );
   }

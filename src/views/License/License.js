@@ -10,6 +10,7 @@ import Cta from '../../components/Cta/Cta';
 import ctaIcon from '../../images/icon-sg.svg';
 import CustomizeLicense from '../../components/LicensingModel/CustomizeLicense';
 import FilledDivider from '../../components/FilledDivider/FilledDivider';
+import FeatureBreakdown from "../../components/FeatureBreakdown/FeatureBreakdown";
 
 const License = () => {
   useEffect(() => {
@@ -45,6 +46,17 @@ const License = () => {
         topButtons={false}
         tableView
       />
+
+        <div className="row default-padding-top-bottom">
+            <div className="col s12">
+                <h2>Feature Breakdown</h2>
+            </div>
+            <div className="col s12">
+                <FeatureBreakdown />
+            </div>
+        </div>
+
+
       <div id="academic">
           <CustomizeLicense />
       </div>
