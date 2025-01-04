@@ -5,17 +5,13 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
-import Cta from '../../components/Cta/Cta';
 import Certified from '../../components/Certified/Certified';
 import Integrators from '../../components/Integrators/Integrators';
-import ctaIcon from '../../images/icon-sg.svg';
-import fileCode from '../../images/file-code.svg';
-import worldLock from '../../images/world-lock.svg';
-import certificate from '../../images/certificate-big.svg';
-import server_lock from '../../images/server-lock.svg';
 import handsHolding from '../../images/hands-holding-circle-solid.svg';
 import umbrella from '../../images/umbrella-solid.svg';
 import tableCellsLock from '../../images/table-cells-column-lock-solid.svg';
+import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
+
 const Security = () => {
     useEffect(() => {
         initGA();
@@ -72,13 +68,7 @@ const Security = () => {
             <Integrators/>
             <Certified/>
             <div id="quote">
-                <Cta
-                    headline="Free 60-day Trial"
-                    text="Want to see how your company can benefit from Search Guard? Give our 60-day trial a spin, free of charge, no credit card required."
-                    ctaText="start free trial"
-                    icon={ctaIcon}
-                    link="/search-guard-free-trial/"
-                />
+                <CTAStartFreeTrial colorschema="white"/>
             </div>
             <PreFooter/>
         </PageWrapper>

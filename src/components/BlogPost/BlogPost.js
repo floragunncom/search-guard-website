@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import './BlogPost.scss';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import {LazyLoadImage} from 'react-lazy-load-image-component';
 import Button from '../Button/Button';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import './BlogBox.scss';

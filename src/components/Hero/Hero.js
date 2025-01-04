@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import Button from '../Button/Button';
 import heroCertificates from '../../images/hero-certificates.svg';
 import veracode from '../../images/veracode.svg';
@@ -7,7 +6,7 @@ import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
 import './Hero.scss';
 import hero from '../../images/hero-static.svg';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import {LazyLoadImage} from 'react-lazy-load-image-component';
 
 const Hero = () => {
   return (

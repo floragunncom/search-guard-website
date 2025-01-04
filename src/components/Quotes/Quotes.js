@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './Quotes.scss';
 import M from 'materialize-css';
 import quoteUp from '../../images/quote-up.svg';

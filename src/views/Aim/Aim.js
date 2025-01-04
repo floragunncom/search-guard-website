@@ -1,18 +1,16 @@
-import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import React from 'react';
+import {Helmet} from 'react-helmet';
 import '../Alerting/Alerting.scss';
 import './Aim.scss';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
-import Cta from '../../components/Cta/Cta';
-import ctaIcon from '../../images/icon-sg.svg';
-import aim1 from '../../images/elasticsearch_index_management_1.svg';
 import aim2 from '../../images/elasticsearch_index_management_2.svg';
 import aim3 from '../../images/elasticsearch_index_management_3.svg';
 import aim4 from '../../images/elasticsearch_index_management_4.svg';
 import aim5 from '../../images/elasticsearch_index_management_5.svg';
+import CTAAIM from "../../components/CTA/CTAAIM";
 
 const Aim = () => {
 
@@ -175,13 +173,7 @@ const Aim = () => {
             </div>
 
             <div id="tryit">
-                <Cta
-                    headline="Give AIM a spin!"
-                    text="Follow these simple steps to install AIM to your Elasticsearch cluster for free. "
-                    ctaText="Documentation"
-                    icon={ctaIcon}
-                    link="https://docs.search-guard.com/latest/automated-index-management"
-                />
+                <CTAAIM colorschema="white"/>
             </div>
             <PreFooter />
         </PageWrapper>

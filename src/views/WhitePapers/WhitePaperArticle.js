@@ -1,11 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  LinkedinShareButton,
-  RedditShareButton,
-} from 'react-share';
+import {Helmet} from 'react-helmet';
+import {FacebookShareButton, LinkedinShareButton, RedditShareButton, TwitterShareButton,} from 'react-share';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Markdown from 'markdown-to-jsx';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';

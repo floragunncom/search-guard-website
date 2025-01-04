@@ -29,7 +29,7 @@ const ImageTextTile = ({
     }
 
     imageCSS = getColorSchemaCSSForSVG(svgcolor);
-console.log(imageCSS);
+
     if (backgroundColor === 'dark') {
         wrapperStyle = 'tilesimple-wrapper-dark';
         textStyle = 'tilesimple-text-dark';
@@ -61,7 +61,7 @@ console.log(imageCSS);
                     <div className="col s12 l6 tilesimple-icon-wrapper-left tilesimple-icon-style-left ">
                         <ReactSVG
                             src={icon}
-                            alt="background arrows"
+                            title="Title"
                             beforeInjection={(svg) => {
                                 svg.querySelectorAll('*').forEach((element) => {
                                     element.removeAttribute('fill');
@@ -74,6 +74,7 @@ console.log(imageCSS);
                                 svg.setAttribute('width', "100%");
                                 svg.setAttribute('max-height', "320px");
                                 svg.setAttribute('class', imageCSS );
+                                svg.setAttribute('title', headline );
                             }}
                         />
                     </div>
@@ -106,6 +107,7 @@ console.log(imageCSS);
                                 svg.setAttribute('width', "100%");
                                 svg.setAttribute('max-height', "320px");
                                 svg.setAttribute('class', imageCSS );
+                                svg.setAttribute('title', headline );
                             }}
                         />
                     </div>

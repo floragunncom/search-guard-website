@@ -1,17 +1,16 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import DocumentationForum from '../../components/Resources/DocumentationForum';
 import PresentationsWhitepapers from '../../components/Resources/PresentationsWhitepapers';
 import SourceCodeNewsletter from '../../components/Resources/SourceCodeNewsletter';
-import CVEDisclosure  from '../../components/Resources/CVEDisclosure';
+import CVEDisclosure from '../../components/Resources/CVEDisclosure';
 import Title from '../../components/Title/Title';
-import Cta from '../../components/Cta/Cta';
 import Faq from '../../components/Faq/Faq';
 import Video from '../../components/Video/Video';
 import BlogBox from '../../components/BlogBox/BlogBox';
-import envelope from '../../images/icon-envelope.svg';
+import CTAContactUs from "../../components/CTA/CTAContactUs";
 
 
 const Resource = () => {
@@ -67,13 +66,7 @@ const Resource = () => {
         </div>
 
 
-      <Cta
-        headline="Can’t find what you’re looking for?"
-        text="No worries,we're here to help!."
-        ctaText="contact us"
-        icon={envelope}
-        link="/contacts/"
-      />
+      <CTAContactUs colorschema="white" />
       <PreFooter />
     </PageWrapper>
   );

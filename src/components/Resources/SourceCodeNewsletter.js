@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import nl from "../../images/envelope-open-text-solid.svg";
 import file from "../../images/file-lines-regular.svg";

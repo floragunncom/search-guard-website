@@ -6,20 +6,15 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
-import Cta from '../../components/Cta/Cta';
-import ctaIcon from '../../images/icon-sg.svg';
 import alertingAnomalies from '../../images/alerting_anomalies.svg';
 import alertingNotifications from '../../images/alerting_notifications.svg';
 import alertingEscalation from '../../images/alerting_escalation.svg';
 import alertingUI from '../../images/alerting_ui.svg';
 import iconSpeaker from "../../images/bullhorn-solid.svg";
-import iconBell from "../../images/bell-regular.svg";
 import FilledDivider from '../../components/FilledDivider/FilledDivider';
-import Card from '../../components/Card/Card';
 import AlertingNotificationModel from '../../components/Alerting/AlertingNotificationModel';
 import certificate from "../../images/clipboard-check-solid.svg";
-import support from "../../images/headset-solid.svg";
-import check from "../../images/thumbs-up-regular.svg";
+import CTAAlerting from "../../components/CTA/CTAAlerting";
 
 const Alerting = () => {
     useEffect(() => {
@@ -281,13 +276,7 @@ const Alerting = () => {
                 </div>
             </div>
             <div id="tryit">
-                <Cta
-                    headline="Give Signals Alerting a spin!"
-                    text="Follow these simple steps to install Signals Alerting to your Elasticsearch cluster for free. "
-                    ctaText="Installation"
-                    icon={ctaIcon}
-                    link="/search-guard-free-trial/"
-                />
+                <CTAAlerting colorschema="white"/>
             </div>
             <PreFooter/>
         </PageWrapper>

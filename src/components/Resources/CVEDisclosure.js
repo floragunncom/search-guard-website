@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import dharma from "../../images/dharmachakra-solid.svg";
 import eye from "../../images/eye-slash-solid.svg";

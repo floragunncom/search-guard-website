@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import iconBook from '../../images/book-solid.svg';
 import iconWheels from '../../images/gears-solid.svg';

@@ -4,7 +4,6 @@ import './WhitePapers.scss';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import pdf from '../../images/pdf-download.svg';
 import whitepaperarticles from '../../Api/contentfulWhitepapers.json';
 import Button from "../../components/Button/Button";
 

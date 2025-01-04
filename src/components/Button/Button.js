@@ -6,6 +6,7 @@ import ButtonDefault from './ButtonDefault';
 import LinkDefault from './LinkDefault';
 import LinkGhost from './LinkGhost';
 import ButtonSand from './ButtonSand';
+import './Button.scss';
 
 const Button = props => {
 console.log(props.buttonStyle);

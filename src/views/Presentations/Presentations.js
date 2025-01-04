@@ -1,12 +1,12 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 import './Presentations.scss';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import pdf from '../../images/pdf-download.svg';
 import presentations from '../../Api/presentations.json';
 import Button from "../../components/Button/Button";
+
 const breadcrumb = [
   { anchor: '/', name: 'Home' },
   { anchor: '/resource/', name: 'Resources' },

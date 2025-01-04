@@ -1,5 +1,5 @@
 import React from 'react';
-import  { Redirect } from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import posts from '../../Api/contentfulPosts.json';
 import BlogPostArticleContent from '../../components/BlogPost/BlogPostArticleContent';
 

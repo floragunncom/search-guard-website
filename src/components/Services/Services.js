@@ -10,7 +10,6 @@ import id from '../../images/id-card-regular.svg';
 import audit from '../../images/pen-to-square-regular.svg';
 import shield from '../../images/file-shield-solid.svg';
 import {ReactSVG} from "react-svg";
-import bg_arrow from "../../images/arrows_group.svg";
 
 const Services = ({ landing }) => {
   return (

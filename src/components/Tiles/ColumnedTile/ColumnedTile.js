@@ -43,7 +43,8 @@ const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, columns}) 
                                             svg.setAttribute('width', col.image.width);
                                             svg.setAttribute('height', col.image.height);
                                             svg.setAttribute('class', imageCss);
-                                        }
+                                            svg.setAttribute('title', col.headline);
+                                            }
                                         }
                                     />
                                 </div>

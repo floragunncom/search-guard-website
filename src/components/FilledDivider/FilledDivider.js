@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactSVG } from 'react-svg';
+import {ReactSVG} from 'react-svg';
 import {getColorSchemaCSS, getColorSchemaCSSForSVG} from "../../utils/styleUtils";
 import bg_arrow from '../../images/arrows_group.svg';
 import './FilledDivider.scss';

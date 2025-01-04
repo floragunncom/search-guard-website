@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import React, {useEffect} from 'react';
+import {Helmet} from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Button from '../../components/Button/Button';
-import { initGA, PageView } from '../../components/Tracking/Tracking';
+import {initGA, PageView} from '../../components/Tracking/Tracking';
 import './Thanks.scss';
 
 const Thanks = () => {

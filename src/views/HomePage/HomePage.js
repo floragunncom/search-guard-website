@@ -7,15 +7,14 @@ import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
 import Labels from '../../components/Labels/Labels';
 import TrustedBy from '../../components/TrustedBy/TrustedBy';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Cta from '../../components/Cta/Cta';
 import Services from '../../components/Services/Services';
 import Quotes from '../../components/Quotes/Quotes';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
-import ctaIcon from '../../images/icon-sg.svg';
 import cog_cog from '../../images/cog-cog.svg';
 import server_lock from '../../images/server-lock.svg';
 import objects_shield from '../../images/objects-shield.svg';
 import FilledDivider from "../../components/FilledDivider/FilledDivider";
+import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
 
 
 const HomePage = () => {
@@ -68,13 +67,7 @@ const HomePage = () => {
                 headline="Licensing models"
                 tableView={false}
             />
-            <Cta
-                headline="60-day Trial License"
-                text="Want to see how your company can benefit from Search Guard? Sign up to our 60-day trial, completely free of charge. No credit card required."
-                ctaText="start free search guard trial"
-                icon={ctaIcon}
-                link="/contacts/"
-            />
+            <CTAStartFreeTrial colorschema="white" />
             <Quotes/>
             <PreFooter/>
         </PageWrapper>

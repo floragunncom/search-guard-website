@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './Journey.scss';
-import { useRef } from "react";
 
 
 const Journey = () => {

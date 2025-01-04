@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
-import { initGA, PageView } from '../../components/Tracking/Tracking';
+import React, {useEffect} from 'react';
+import {Helmet} from 'react-helmet';
+import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
@@ -41,7 +41,7 @@ const Security = () => {
         <ImageTextTile
           icon={control}
           iconPosition="left"
-          backgroundColor="dark"
+          colorschema="dark"
           headline="Improved Control: New Command Line Interface "
           text="Configuring security for Elasticsearch has never been easier. sgadmin becomes sgctl."
           linktext="Read more"
@@ -51,7 +51,7 @@ const Security = () => {
       <ImageTextTile
         icon={variables}
         iconPosition="right"
-        backgroundColor="light"
+        colorschema="light"
         headline="Search Guard FLX Ships with Built-in Variables Store "
         text="With our new Variables Store you can now manage your sensitive configuration variables in a central place: Your Elasticsearch cluster."
         linktext="Read more"
@@ -60,7 +60,7 @@ const Security = () => {
       <ImageTextTile
         icon={kibana}
         iconPosition="left"
-        backgroundColor="dark"
+        colorschema="dark"
         headline="Kibana multiauth: New Configuration Structure"
         text="All configuration settings stored in one central place. Hot-reloadable: change your frontend settings in real time without restarting Kibana. Support for multiple authentication types."
         linktext="Read more"

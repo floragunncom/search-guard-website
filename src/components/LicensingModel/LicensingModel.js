@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './LicensingModel.scss';
-import TableEditions from '../TableEditions/TableEditions';
 import iconSearchGuard from '../../images/icon-search-guard.svg';
 import Button from '../Button/Button';
 

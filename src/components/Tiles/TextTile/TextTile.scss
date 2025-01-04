@@ -1,7 +1,7 @@
-@import '../../styles/Colors.scss';
-@import '../../styles/Breakpoints';
+@import '../../../styles/Colors.scss';
+@import '../../../styles/Breakpoints';
 
-.cta-container {
+.texttile-container {
   padding-top: 160px;
   padding-bottom: 160px;
   background: $white;
@@ -13,11 +13,11 @@
   };
 }
 
-.row.cta-row-wrapper {
+.row.texttile-row-wrapper {
   margin-bottom: 0px;
 }
 
-.cta-row {
+.texttile-row {
   @media only screen and (max-width: $tabletBig) {
     margin: 0px;
   };
@@ -27,7 +27,7 @@
   };
 }
 
-.cta-image-container {
+.texttile-image-container {
   background-size: cover;
   width: 25vw;
   height: 25vw;
@@ -39,25 +39,24 @@
   };
   @media only screen and (max-width: $mobile) {
     margin-bottom: 8px;
-  };  
+  };
 }
 
-.cta-text-container {
+.texttile-text-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 0 20px;
-  text-align: center; 
+  text-align: center;
   @media only screen and (max-width: 450px) {
     justify-content: space-between;
   }
 }
 
-.cta-headline {
-  color: $primary;
+.texttile-headline {
   margin-bottom: 32px;
-  margin-top: 0px; 
+  margin-top: 0px;
   @media only screen and (max-width: $tabletBig) {
     // font-size: 36px;
     // line-height: 43px;
@@ -70,9 +69,8 @@
   }
 }
 
-.cta-text {
+.texttile-text {
   text-align: center;
-  color: $black;
   margin-bottom: 64px;
   @media only screen and (max-width: $mobile) {
     // font-size: 16px;

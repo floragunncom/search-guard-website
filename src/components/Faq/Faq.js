@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import sections from '../../Api/pagecontent/sections.json';
 import './Faq.scss';
 import Markdown from "markdown-to-jsx";
+
 const Faq = () => {
 
   let faqs = sections.filter(section => section.sys.contentType.sys.id === "sectionTopFaq")[0];

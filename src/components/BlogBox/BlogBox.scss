@@ -1,6 +1,6 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
-  
+
 .blog-box {
   &__wrapper {
     padding: 128px 0;
@@ -133,6 +133,7 @@ img.blog-box__box-image {
   object-position: top;
   display: block;
   transition: all .3s ease-in-out;
+  text-decoration: none;
   &:hover {
     transform: scale(1.05);
   }

@@ -1,12 +1,8 @@
 import React from 'react';
 import eliatra from '../../images/logoEliatra.svg';
-import eliatraMobile from '../../images/eliatra-mobile.svg';
 import excelerate from '../../images/logoExcelerate.svg';
-import excelerateMobile from '../../images/excelerate-mobile.svg';
-import sirenPartnerMobile from '../../images/siren-mobile.svg';
 import sirenPartner from '../../images/logoSiren.svg';
 import './Partners.scss';
-import shieldWheel from "../../images/shield-halved.svg";
 import ColumnedTile from "../Tiles/ColumnedTile/ColumnedTile";
 
 const Partners = () => {

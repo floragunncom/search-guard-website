@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -48,7 +48,7 @@ const FreeTrial = () => {
                                 </div>
                                 <div className="free-trial-content-text">
                                     Download the Search Guard plugin matching the Elasticsearch version you are running. For example, if you are
-                                    running Elasticsearch 7.9.1, you need to download Search Guard 7.9.1 as well.
+                                    running Elasticsearch 8.16.1, you need to download Search Guard for 8.16.1 as well.
                                     The download is platform-independant.
                                 </div>
                                 <div className="free-trial-content-button">

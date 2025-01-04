@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import iconSpeaker from "../../images/bullhorn-solid.svg";
 import iconBell from "../../images/bell-regular.svg";

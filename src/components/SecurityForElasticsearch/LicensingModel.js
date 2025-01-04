@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './../LicensingModel/LicensingModel.scss';
-
-import TableEditions from '../TableEditions/TableEditions';
 import enterprise from '../../images/icon-enterprise.svg';
 import compliance from '../../images/icon-compliance.svg';
 import community from '../../images/icon-community.svg';
 import academic from '../../images/icon-academic.svg';
 import custom from '../../images/icon-custom.svg';
 import Button from '../Button/Button';
+import FeatureBreakdown from "../FeatureBreakdown/FeatureBreakdown";
 
 const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
   const [standardButton, setStandardButton] = useState(true);
@@ -274,7 +273,7 @@ const LicensingModel = ({ tableView, topButtons, headline, subheadline }) => {
         >
           Feature breakdown
         </div>
-        <TableEditions />
+        <FeatureBreakdown />
       </div>
     );
   }

@@ -8,7 +8,6 @@ import facebook from '../../images/facebook.svg';
 import RichSnippetCompany from '../RichSnippets/RichSnippetCompany';
 
 
-
 const Footer = ({ landing }) => {
 
   const currentYear = new Date().getFullYear();
@@ -47,10 +46,7 @@ const Footer = ({ landing }) => {
                     </a>
                   </div>
                 </div>
-
-                <div className="footer-list-headline">
-                </div>
-
+                <div className="filler-class" />
                 <div className="footer-list-headline">
                   <a href="/security/">alerting</a>
                 </div>
@@ -72,6 +68,9 @@ const Footer = ({ landing }) => {
                   </div>
                 </div>
                 <div className="filler-class" />
+                <div className="footer-list-headline">
+                  <a href="/indexmanagement/">index management</a>
+                </div>
               </div>
               <div className="footer-links-column-container col s12 m6 l3">
                 <div className="footer-list-headline">
@@ -264,8 +263,7 @@ const Footer = ({ landing }) => {
                 Search Guard is a trademark of floragunn GmbH, registered in the
                 U.S. and in other countries. Elasticsearch, Kibana, Logstash, and
                 Beats are trademarks of Elasticsearch BV, registered in the U.S. and
-                in other countries. Apache, Apache Lucene, Apache Hadoop, Hadoop,
-                HDFS and the yellow elephant logo are trademarks of the Apache
+                in other countries. Apache and Apache Lucene are trademarks of the Apache
                 Software Foundation in the United States and/or other countries.
               </p>
           </div>
