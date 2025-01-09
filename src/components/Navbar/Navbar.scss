@@ -33,8 +33,6 @@ nav ul a {
   outline-style: none;
 }
 
-
-
 .navbar {
   &__item {
     color: $white;
@@ -110,15 +108,19 @@ nav ul a {
 }
 
 nav .sidenav-trigger {
-  float: right;
+  right: 5%;
+  position: fixed;
 }
 
-.burger {
-  color: white;
-}
+@media only screen and (min-width: 994px) and (max-width: 1400px) {
 
-@media only screen and (max-width: 992px) {
-  nav .brand-logo {
-    left: 30%;
+  nav {
+    padding-right: 40px;
+    padding-left: 40px;
   }
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+  display: inline-block;
+  color: $secondary-light;
 }
