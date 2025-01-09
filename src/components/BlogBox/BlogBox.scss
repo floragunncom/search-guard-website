@@ -50,7 +50,7 @@
   
   &__box {
     padding-bottom: 32px;
-    background-color: $grey;
+    background-color: $lightGrey;
     display: flex;
     flex: 1 1 300px;
     flex-direction: column;
@@ -95,7 +95,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    color: $backButton;
+    color: $secondary;
     padding-right: 32px;
     margin-top: auto;
     text-transform: uppercase;

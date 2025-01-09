@@ -53,17 +53,17 @@
   margin-bottom: 32px;
   padding: 14px 20px;
   border-radius: 3px;
-  background-color: $navyBlue;
+  background-color: $primary-light;
   display: flex;
   width: fit-content;
   cursor: pointer;
   justify-content: center;
   &:hover {
     transition: 0.3s ease-in-out;
-    background-color: $navyBlueHover;
+    background-color: $primary;
   };
   &:active {
-    background-color: $navyBlueActive;
+    background-color: $primary;
   }
   @media only screen and (max-width: $mobile) {
     justify-content: center;

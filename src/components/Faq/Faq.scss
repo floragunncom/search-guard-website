@@ -40,7 +40,7 @@
 }
 
 .faq-info-box {
-  border: 3px solid $grey;
+  border: 3px solid $lightGrey;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -48,7 +48,7 @@
   padding: 32px;
   margin: 0px 15px;
   &:hover {
-    border-color: $turkis;
+    border-color: $secondary;
   };
   @media only screen and (max-width: $tabletBig) {
     margin: 32px 0px;

@@ -78,7 +78,7 @@
   &-item {
     flex: 1 1 400px;
     margin: 16px;
-    background-color: $grey;
+    background-color: $lightGrey;
     max-width: 550px;
     min-width: 400px;
     height: 425px;
@@ -110,12 +110,12 @@
         font-size: 16px;
       }
       &-date {
-        color: $navyBlue;
+        color: $primary;
         display: flex;
         align-items: center;
       }
       &-labels {
-        color: $turkis;
+        color: $secondary;
         text-transform: uppercase;
         font-weight: 700;
       }
@@ -130,7 +130,7 @@
           font-size: 15px;
       }
       &-booth {
-        color: $navyBlue;
+        color: $primary;
         text-transform: uppercase;
         font-weight: 700;
         margin-top: 8px;

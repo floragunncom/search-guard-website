@@ -50,19 +50,18 @@
   };
   a {
     color: $darkBlue;
-    border-bottom: 1px solid $green
   };
 }
 
 .faq-answer-section {
-  border-left: 3px solid $grey;
+  border-left: 3px solid $lightGrey;
   padding-left: 100px;
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 64px;
     border-left: unset;
     padding-left: 0px;
     &:first-child {
-      border-top: 3px solid $grey;
+      border-top: 3px solid $lightGrey;
     };
   }; 
   @media only screen and (max-width: $tabletBig) {

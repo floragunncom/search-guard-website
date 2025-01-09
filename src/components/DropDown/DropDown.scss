@@ -3,7 +3,7 @@
 
 .drop-down-container {
   cursor: pointer;
-  border-bottom: 2px solid $navyBlue;
+  border-bottom: 2px solid $primary;
   margin-top: 16px;
   margin-right: 21px !important;
   display: flex;
@@ -62,7 +62,7 @@
 
 select.browser-default {
   border: unset;
-  border-bottom: 2px solid $navyBlue;
+  border-bottom: 2px solid $primary;
   color: $darkBlue;
   padding: 10px;
   &:hover {

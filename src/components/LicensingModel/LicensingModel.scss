@@ -64,7 +64,7 @@
   padding: 15px 20px;
   font-size: 14px;
   line-height: 20px;
-  background-color: $grey;
+  background-color: $lightGrey;
   color: $primary;
   &:hover {
     padding: 18px 20px;
@@ -90,7 +90,7 @@
 }
 
 .licensing-right-border {
-  border-right: 3px solid $grey;
+  border-right: 3px solid $lightGrey;
   margin: 64px 0px;
   &:last-child {
     border-right: unset;
@@ -118,7 +118,7 @@
   @media only screen and (max-width: $tabletBig) {
     background-color: $white;
     padding: 32px 64px;
-    // border: 3px solid $grey;
+    // border: 3px solid $lightGrey;
   };
   // @media only screen and (max-width: $mobile) {
   //   padding: 16px 0px;
@@ -130,7 +130,7 @@
   padding-top: 32px;
   padding-bottom: 16px;
   margin-bottom: 32px;
-  color: $licensingEditionText;
+  color: $primary-dark;
   @media only screen and (max-width: $mobile) {
     font-size: 20px;
     line-height: 30px;

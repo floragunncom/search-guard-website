@@ -85,7 +85,7 @@ img.blogpost-feed-image {
 }
 
 .blog-headline {
-  color: $navyBlueActive;
+  color: $primary-dark;
   font-size: 18px;
   line-height: 27px;
   font-weight: bold;
@@ -96,14 +96,14 @@ img.blogpost-feed-image {
 }
 
 .blog-info-headline {
-  color: $navyBlueActive;
+  color: $primary-dark;
   font-size: 12px;
   line-height: 32px;
   letter-spacing: 3.3px;
 }
 
 .blog-paragraph {
-  color: $navyBlueActive;
+  color: $primary-dark;
   margin-bottom: 36px;
   font-size: 18px;
   line-height: 27px;
@@ -139,7 +139,7 @@ img.blog-arrow {
     display: flex;
     justify-content: center;
     text-align: center;
-    color: $backButton;
+    color: $secondary;
     font-size: 13px;
     line-height: 15px;
     letter-spacing: 1.5px;
@@ -208,7 +208,7 @@ img.blog-arrow {
 }
 
 i.material-icons.prefix {
-  color: $navyBlue;
+  color: $primary;
 }
 
 .blog-tags-headline, .blog-tags-tag {
@@ -266,13 +266,13 @@ i.material-icons.prefix {
     font-size: 14px;
     line-height: 20px;
     color: $darkBlue;
-    border: 1px solid $navyBlue;
+    border: 1px solid $primary;
     border-radius: 3px;
     margin-bottom: 10px;
     transition: all .2s;
     &:hover {
       color: $white;
-      background-color: $navyBlue;
+      background-color: $primary;
     }
     &:not(:last-child) {
       margin-right: 16px;

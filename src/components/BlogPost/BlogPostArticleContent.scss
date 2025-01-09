@@ -98,8 +98,8 @@
   font-size: 24px;
   letter-spacing: 0.8px;
   line-height: 27px;
-  border-top: 10px solid $grey;
-  border-bottom: 10px solid $grey;
+  border-top: 10px solid $lightGrey;
+  border-bottom: 10px solid $lightGrey;
   @media only screen and (max-width: $tabletBig) {
     max-width: 85%;
   };
@@ -144,8 +144,8 @@
 
 .blogpostarticle-sidebar-container {
   margin: 64px 0px;
-  border-top: 6px solid $grey;
-  border-bottom: 6px solid $grey;
+  border-top: 6px solid $lightGrey;
+  border-bottom: 6px solid $lightGrey;
   max-width: 68px;
   position: sticky;
   top: 64px;
@@ -165,7 +165,7 @@
   position: relative;
   @media only screen and (max-width: $tabletBig) {
     flex-direction: row;
-    border-bottom: 6px solid $grey;
+    border-bottom: 6px solid $lightGrey;
     border: unset;
   }
 }

@@ -35,7 +35,7 @@
   display: flex;
   justify-content: flex-start;
   @media only screen and (max-width: $tabletBig) {
-    background-color: $navyBlue;
+    background-color: $primary;
   }
 }
 
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: flex-end;
   @media only screen and (max-width: $tabletBig) {
-    background-color: $grey;
+    background-color: $lightGrey;
   }
 }
 

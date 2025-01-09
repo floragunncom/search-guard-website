@@ -91,7 +91,7 @@
           }
           #highlight {
             color: $darkGrey;
-            background-color: $turkis;
+            background-color: $secondary;
             text-transform: uppercase;
             letter-spacing: 1px;
             text-align: center;
@@ -104,7 +104,7 @@
         }
         &:before{
           content: '';
-          background: $turkis;
+          background: $secondary;
           position: absolute;
           top: 0px;
           width: 38px;
@@ -131,7 +131,7 @@
           text-align: right;
         }
         left: calc(-#{450px} - 45px);
-        // background: $turkis;
+        // background: $secondary;
         // background: -webkit-linear-gradient(-45deg, $lightGrey , $lightGrey);
         // background: linear-gradient(-45deg,  $lightGrey , $lightGrey);
       }
@@ -165,9 +165,9 @@
       h2 {
         text-align: left;
       }
-      // background: $turkis;
-      // background: -webkit-linear-gradient(-45deg, $turkis , $turkis);
-      // background: linear-gradient(-45deg,  $turkis , $turkis);
+      // background: $secondary;
+      // background: -webkit-linear-gradient(-45deg, $secondary , $secondary);
+      // background: linear-gradient(-45deg,  $secondary , $secondary);
     }
     
     &:nth-child(even) .content:before {

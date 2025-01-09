@@ -54,7 +54,7 @@
   color: $darkGrey;
   font-size: 14px;
   line-height: 20px;
-  border-right: 1px solid $borderGrey;
+  border-right: 1px solid;
   &:last-child {
     border-right: unset;
   };
