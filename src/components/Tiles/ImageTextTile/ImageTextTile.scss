@@ -1,97 +1,25 @@
 @import '../../../styles/Colors';
 @import '../../../styles/Breakpoints';
 
-.tilesimple-wrapper-dark {
-  background: $primary;
-}
-
-.tilesimple-wrapper-light {
-  background: $secondary-light;
-}
-
-.tilesimple-wrapper-white {
-  background: $white;
-}
-
-.tilesimple-icon-wrapper-left {
+.texttile-icon-wrapper {
   display: flex;
   justify-content: center;
 }
 
-.tilesimple-icon-wrapper-right {
-  display: flex;
-  justify-content: center;
-}
+.texttile-content-wrapper {
 
-.tilesimple-icon-style-left {
-  max-height: 320px;
-  height: fit-content;
-  @media only screen and (max-width: $tabletBig) {
-    max-height: 285px;
-    margin: 64px 0px;
-    width: 100%;
-  };
-  @media only screen and (max-width: $mobile) {
-    max-height: 170px;
-    margin: 32px 0px;
-  };
-}
-
-.tilesimple-icon-style-right {
-  max-height: 320px;
-  height: fit-content;
-  @media only screen and (max-width: $tabletBig) {
-    max-height: 285px;
-    margin: 64px 0px;
-    width: 100%;
-  };
-  @media only screen and (max-width: $mobile) {
-    max-height: 170px;
-    margin: 32px 0px;
-  };
-}
-
-.tilesimple-content-wrapper-left {
-  @media only screen and (max-width: $tabletBig) {
-    text-align: center;
-  };
   @media only screen and (max-width: $mobile) {
     padding: 32px 0px;
-  };
-}
-
-.tilesimple-content-wrapper-right {
-  @media only screen and (max-width: $tabletBig) {
     text-align: center;
   };
-  @media only screen and (max-width: $mobile) {
-    padding: 32px 0px;
-  };
 }
 
-.tilesimple-text-dark {
-  color: $white;
-}
-
-.tilesimple-text-light {
-  color: $primary;
-}
-
-.tilesimple-text-white {
-  color: $primary;
-}
-
-.tilesimple-headline {
+.texttile-headline {
   margin-bottom: 32px;
   margin-top: 0px;
-}
-
-.tilesimple-text {
-  font-size: 18px;
-  line-height: 27px;
   @media only screen and (max-width: $mobile) {
-    font-size: 16px;
-    line-height: 24px;
+    // font-size: 16px;
+    text-align: center;
   };
 }
 
@@ -104,8 +32,7 @@
   text-align: left;
 
   @media only screen and (max-width: $mobile) {
-    font-size: 24px;
-    line-height: 28px;
+    flex-direction: column;
+    padding-bottom: 0px;
   };
 }
-

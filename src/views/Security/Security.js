@@ -54,7 +54,7 @@ const Security = () => {
             <ImageTextTile
                 icon={tableCellsLock}
                 iconPosition="right"
-                colorschema="dark"
+                colorschema="light"
                 headline="Lock Down Your Elasticsearch Cluster"
                 text="Search Guard's comprehensive security suite provides end-to-end protection for your Elasticsearch data. From encryption to audit logging, our features ensure that your data is secure in transit and at rest. Don't leave your cluster vulnerable - secure it with Search Guard today!"
             />
