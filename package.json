@@ -42,7 +42,7 @@
     "build": "npm run fetch && react-scripts build",
     "build-local": "react-scripts build",
     "sitemap": "./scripts/sitemap.js",
-    "postbuild": "react-snap && ./scripts/sitemap.js -- --base-url='https://search-guard.com/' && npm run-script clearReactChunks",
+    "postbuild": "react-snap && ./scripts/sitemap.js -- --base-url='https://search-guard.com/' ",
     "clearReactChunks": "node ./src/Api/cleanReactChunksPostBuild.js ",
     "clean": "rm -rf build/*",
     "start:dev": "node config/webpack-dev-server.js",
