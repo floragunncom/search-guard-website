@@ -1,24 +1,9 @@
 import React from 'react';
 import logo from '../../images/sg_logo_white.svg';
-import M from "materialize-css";
 import './Navbar.scss';
 
 
 const Navbar = ({ background = 'white', landing }) => {
-
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        M.Sidenav.init(elems, {
-            edge: "right"
-        });
-
-        elems = document.querySelectorAll('.dropdown-trigger');
-        M.Dropdown.init(elems, {
-            hover: true,
-            coverTrigger: false
-        });
-    });
-
     return (
         <>
             <div className="navbar-fixed">

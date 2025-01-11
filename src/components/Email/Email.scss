@@ -38,3 +38,17 @@ div.input-field.col {
 .input-field {
   color: $secondary !important;
 }
+
+// initial display states
+
+.nl-processing {
+  display: none;
+}
+
+.nl-thanks {
+  display: none;
+}
+
+.nl-feedback{
+  text-align: left;
+}

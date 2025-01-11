@@ -7,8 +7,6 @@ import objectRocket from '../../images/objectRocket.svg';
 import mitratech from '../../images/mitratech.svg';
 import siren from '../../images/siren.svg';
 import kubedb from '../../images/kubedb.svg';
-import Carousel from 'react-multi-carousel';
-import "react-multi-carousel/lib/styles.css";
 import './TrustedBy.scss';
 
 
@@ -48,71 +46,23 @@ const TrustedBy = () => {
     }
   ];
 
-  const responsiveCarouselBreakpoints= {
-    desktop: {
-      breakpoint: {
-        max: 3000,
-        min: 1024
-      },
-      items: 4,
-      partialVisibilityGutter: 40
-    },
-    mobile: {
-      breakpoint: {
-        max: 464,
-        min: 0
-      },
-      items: 2,
-      partialVisibilityGutter: 30
-    },
-    tablet: {
-      breakpoint: {
-        max: 1024,
-        min: 464
-      },
-      items: 2,
-      partialVisibilityGutter: 30
-    }
-  };
-
   return (
     <div className="trusted-wrapper">
       <div className="row">
         <h2 className="trusted-headline">Search Guard is trusted by</h2>
-
-        <Carousel
-            additionalTransfrom={0}
-            arrows={false}
-            autoPlay
-            autoPlaySpeed={1500}
-            centerMode={false}
-            className=""
-            containerClass="container-with-dots"
-            dotListClass=""
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass=""
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover={false}
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={responsiveCarouselBreakpoints}
-        >
-
-        {icons.map((entry, index) => {
-          return (
-            <div className="col s12 m6 l4" key={index}>
-              <div className="">
-                <img loading="lazy" src={entry.logo} alt={entry.name} width="165px" height="165px" />
-              </div>
-            </div>
-          );
-        })}
-
-        </Carousel>
+        <div className="glide">
+          <div className="glide__track" data-glide-el="track">
+            <ul className="glide__slides">
+              {icons.map((entry, index) => {
+                return (
+                    <li className="glide__slide" key={index}>
+                        <img  loading="lazy" src={entry.logo} alt={entry.name} width="165px" height="165px" />
+                    </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

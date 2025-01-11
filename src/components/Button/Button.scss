@@ -5,7 +5,9 @@
     text-decoration: none;
 }
 
+
 .button-default-container {
+    background-color: $secondary;
     height: 48px;
     border-radius: 3px;
     display: flex;

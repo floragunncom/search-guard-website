@@ -1,17 +1,11 @@
 import React from 'react';
 import './Button.scss';
-import {getColorSchemaCSS} from "../../utils/styleUtils";
 
-const ButtonSubmit = ({style, text, onPress}) => {
-
-    let baseCss = getColorSchemaCSS(style);
+const ButtonSubmit = ({style, text, additionalCss}) => {
 
     return (
-        <button
-            className={`button button-default-container ${baseCss}` }
-            type="submit"
-        >
-            <div className={`button-large ${baseCss}`}>{text}</div>
+        <button className={`button button-large button-default-container ${additionalCss}`} type="submit">
+            {text}
         </button>
     );
 };

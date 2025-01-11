@@ -131,3 +131,14 @@ input#host10 {
     padding: 0;
   }
 }
+
+// initial display states
+
+.cf-feedback {
+  display: none;
+}
+
+.cf-feedback-text {
+  text-align: left;
+  color: $primary;
+}

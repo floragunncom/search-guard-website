@@ -26,7 +26,7 @@ const Button = props => {
             return <ButtonLink text={props.text} onPress={props.onPress} target={props.target}
                                link={props.link} style={style}/>;
         case 'submit':
-            return <ButtonSubmit text={props.text} style={style}/>;
+            return <ButtonSubmit text={props.text} style={style} additionalCss={props.additionalCss}/>;
         default:
             return <ButtonLink text={props.text} onPress={props.onPress} target={props.target}
                                link={props.link} style={style}/>;

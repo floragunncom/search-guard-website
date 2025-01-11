@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Helmet} from 'react-helmet';
 import './Alerting.scss';
-import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
@@ -16,69 +15,14 @@ import AlertingNotificationModel from '../../components/Alerting/AlertingNotific
 import certificate from "../../images/clipboard-check-solid.svg";
 import CTAAlerting from "../../components/CTA/CTAAlerting";
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
+import AlertingBenefits from "../../components/Alerting/AlertingBenefits";
 
 const Alerting = () => {
-    useEffect(() => {
-        initGA();
-        PageView();
-    }, []);
 
     const breadcrumb = [
         {id: 1, anchor: '/', name: 'Home'},
         {id: 1, anchor: '/alerting/', name: 'Alerting'},
     ];
-
-    let notificationmodel = [
-        {
-            headline: "Escalation by Severity Levels",
-            text: "Define severity levels and get notified on different channels for different levels. Send out Slack notifications for error conditions, and additional Email and PagerDuty alerts for critical conditions.",
-            image: {
-                src: certificate,
-                width: 150,
-                height: 150,
-            },
-        },
-        {
-            headline: "Resolve Notifications",
-            text: "A critical system condition is hopefully just temporary: Get notified once an alert is resolved and everything is back to normal.",
-            image: {
-                src: iconSpeaker,
-                width: 150,
-                height: 150,
-            },
-        },
-    ]
-
-    let benefits = [
-        {
-            headline: "Elasticsearch and Kibana Alerting for free",
-            text: "Signals provides free alerting for Elasticsearch and Kibana. The Community Edition of Signals Alerting is ASL2 licensed, and will always be. You can use it for any project, commercial or other, and even bundle it with your own projects.",
-            button: {
-                text: "Visit our GitLab Repos",
-                href: "https://git.floragunn.com/search-guard/search-guard-suite-enterprise",
-                target: "_blank"
-            }
-        },
-        {
-            headline: "Fully integrated with Search Guard Security",
-            text: "Signals Alerting is fully integrated with all Search Guard Security features. Control access to alerts, configure who can receive notifications, separate alert access by using Search Guard MultiTenancy and leverage advanced features like Document- and Field-level security.",
-            button: {
-                text: "View our Docs",
-                href: "https://docs.search-guard.com/latest/elasticsearch-alerting-security-overview",
-                target: "_blank"
-            }
-        },
-        {
-            headline: "Single download and install",
-            text: "Signals Alerting is bundled with any Search Guard download for Elasticsearch > 7.4. A single plugin install that provides both Security and Alerting features. It was never easier to supercharge\ your Elasticsearch cluster",
-            button: {
-                text: "Download now",
-                href: "https://docs.search-guard.com/latest/search-guard-versions",
-                target: "_blank"
-            }
-        },
-
-    ]
 
     return (
         <PageWrapper>
@@ -253,9 +197,8 @@ const Alerting = () => {
             <div id="escalationmodel">
                 <AlertingNotificationModel/>
             </div>
-            <div id="benefuts">
-                <ColumnedTile colorschema="light" columns={benefits}
-                              headline="Free Alerting for Elasticsearch and Kibana. Bundled and integrated with Search Guard."/>
+            <div id="benefits">
+                <AlertingBenefits/>
             </div>
             <div id="tryit">
                 <CTAAlerting colorschema="white"/>
