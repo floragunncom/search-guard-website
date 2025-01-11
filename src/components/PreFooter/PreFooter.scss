@@ -2,7 +2,7 @@
 @import '../../styles/Breakpoints';
 
 .prefooter-container {
-  background-color: $darkBlue;
+  background-color: $primary;
 }
 
 .prefooter-row {
@@ -61,4 +61,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
+  @media only screen and (max-width: $mobile) {
+    display: none;
+  }
 }

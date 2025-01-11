@@ -33,7 +33,7 @@ const Aim = () => {
                 />
             </Helmet>
             <Title
-                headline="Automated Index Management for Elasticsearch"
+                headline="Automated Index Ma&shy;na&shy;ge&shy;ment for Elastic&shy;search"
                 text="Streamline Elasticsearch operations with Search Guard's Automated Index Management. Boost efficiency, reduce manual tasks, and ensure peak cluster performance effortlessly."
                 breadcrumb={breadcrumb}
             />
@@ -91,9 +91,9 @@ const Aim = () => {
 
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5 >
                                 Index Lifecycle Management
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 AIM allows you to define policies that automatically manage the entire lifecycle of your indices. From creation to deletion, each stage is handled based on your specific requirements. This ensures that your data retention policies are consistently enforced without manual intervention.
                             </div>
@@ -101,9 +101,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Data Rollover
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 As your indices grow, AIM can automatically roll over to new indices based on size, document count, or age thresholds. This prevents individual indices from becoming too large and impacting performance.
                             </div>
@@ -111,9 +111,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Index Replication
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 AIM can manage index replication, ensuring that your data is properly distributed across your cluster for high availability and fault tolerance.
                             </div>
@@ -121,9 +121,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Index Shrinking
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 Over time, as data becomes less frequently accessed, AIM can automatically shrink indices to optimize storage and improve query performance on older data.
                             </div>
@@ -131,9 +131,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Snapshot and Restore
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 Regular backups are crucial. AIM can schedule and manage snapshots of your indices, providing peace of mind that your data is always protected.
                             </div>
@@ -141,9 +141,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Cron-based Scheduling
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 With cron expression support, you have granular control over when each policy executes, allowing you to align index management tasks with your cluster's low-usage periods.
                             </div>
@@ -151,9 +151,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Node Selection
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 AIM lets you specify which nodes should execute these tasks, distributing the workload efficiently across your cluster.
                             </div>
@@ -161,9 +161,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Security Integration
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 Fully integrated with Search Guard's security features, AIM ensures that all automated actions comply with your access control policies.
                             </div>

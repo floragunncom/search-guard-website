@@ -19,7 +19,7 @@
 .certified-headline {
   margin-bottom: 64px;
   text-align: center;
-  color: $darkBlue;
+  color: $primary;
   @media only screen and (max-width: $mobile) {
     margin-bottom: 32px;
   }
@@ -43,7 +43,7 @@
   margin-top: 32px;
   margin-bottom: 16px;
   text-align: center;
-  color: $darkBlue;
+  color: $primary;
   @media only screen and (max-width: $tabletBig) {
     margin-top: 16px;
   }

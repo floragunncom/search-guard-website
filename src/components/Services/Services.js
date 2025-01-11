@@ -16,7 +16,7 @@ const Services = ({ landing }) => {
     <div
       className={
         !landing
-          ? 'services-wrapper'
+          ? 'color-schema-dark default-padding-top-bottom'
           : 'services-wrapper services-landing-background'
       }
     >

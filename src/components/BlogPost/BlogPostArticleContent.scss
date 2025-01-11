@@ -9,6 +9,8 @@
 
 .row.blogpostarticle-wrapper {
   padding: 0 12px;
+  text-wrap: pretty;
+  word-break: break-word;
 }
 
 .row.blogpostarticle-author {
@@ -46,6 +48,7 @@
   font-size: 32px;
   letter-spacing: 0.8px;
   line-height: 30px;
+  text-align: left;
 }
 
 .blogpostarticle-headline3 {
@@ -56,6 +59,7 @@
   letter-spacing: 0.8px;
   line-height: 30px;
 }
+
 .blogpostarticle-code-snippet {
   background-color: $lightGrey;
   font-family: Courier;
@@ -64,6 +68,8 @@
   padding: 16px;
   word-break: break-all;
   overflow: scroll;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 

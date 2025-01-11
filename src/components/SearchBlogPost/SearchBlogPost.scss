@@ -18,7 +18,7 @@
 
 .searchblogpost-title,
 .searchblogpost-result-headline {
-  color: $darkBlue;
+  color: $primary;
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.8px;
@@ -37,7 +37,7 @@
 }
 
 .searchblogpost-author {
-  color: $darkBlue;
+  color: $primary;
   font-size: 12px;
   line-height: 32px;
   letter-spacing: 3.3px;
@@ -45,7 +45,7 @@
 }
 
 .searchblogpost-content {
-  color: $darkBlue;
+  color: $primary;
   font-size: 18px;
   line-height: 27px;
 }
@@ -53,7 +53,7 @@
 .searchblogpost-no-results {
   text-align: center;
   margin: 64px;
-  color: $darkBlue;
+  color: $primary;
   font-size: 48px;
   line-height: 57px;
 

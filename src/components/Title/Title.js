@@ -49,7 +49,7 @@ const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink
               : ""
           }
 
-        <h1 className={titleHeadlineStyle} dangerouslySetInnerHTML={{__html: headline}}></h1>
+        <h1 lang="en" className={titleHeadlineStyle} dangerouslySetInnerHTML={{__html: headline}}></h1>
         <h2 className={titleTextStyle} dangerouslySetInnerHTML={{__html: text}}></h2>
           {buttontext ?
               <div className={buttonWrapperStyle}>

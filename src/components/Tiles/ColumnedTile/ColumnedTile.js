@@ -20,7 +20,7 @@ const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, columns}) 
     let imageCss = getColorSchemaCSSForSVG(svgcolor);
 
     return (
-        <div className={`columnedtile ${baseCss} ${wrapperclass}`}>
+        <div className={`columnedtile default-padding-top-bottom ${baseCss} ${wrapperclass}`}>
             {headline && (
                 <div className={`row ${baseCss}`}>
                     <h2 className="col s12 columnedtile-wrapper-headline">

@@ -28,7 +28,7 @@
 
 .alerting-headline {
   margin-bottom: 32px;
-  color: $darkBlue;
+  color: $primary;
   text-align: center;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .alerting-content-headline {
-  color: $darkBlue;
+  color: $primary;
   text-align: center;
   margin-bottom: 16px;
   @media only screen and (max-width: $mobile) {
@@ -156,7 +156,7 @@
 }
 
 .alerting-connectors-wrapper {
-  background-color: $darkBlue;
+  background-color: $primary;
 }
 
 .alerting-escalation-wrapper {

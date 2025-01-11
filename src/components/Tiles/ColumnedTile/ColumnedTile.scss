@@ -39,6 +39,9 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  @media only screen and (max-width: $mobile) {
+    padding-bottom: 64px;
+  }
 }
 
 .columnedtile-icon-wrapper {
@@ -52,14 +55,13 @@
       max-width: 100px;
     }
   }
-
-  ;
 }
 
 .columnedtile-text-wrapper {
-  padding: 0px 12px;
   margin-bottom: 64px;
-  text-align: center;
+  @media only screen and (max-width: $tabletBig) {
+    margin-bottom: 32px;
+  }
 }
 
 .security-bg-wrapper {  
@@ -82,7 +84,6 @@ h2.columnedtile-headline {
     margin-bottom: 8px;
   }
 
-  ;
 
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: px;

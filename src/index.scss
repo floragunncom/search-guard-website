@@ -15,26 +15,35 @@
   margin: 0px;
   padding: 0px;
   scroll-behavior: smooth;
+
 }
 
 @mixin fonts {
   font-feature-settings: 'clig' off, 'liga' off;
+  text-wrap: wrap;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 @mixin font-headlines {
   @include fonts;
   font-style: normal;
   text-transform: uppercase;
+  text-align: center;
+  margin-top: 0px;
 }
 
 // HTML Elements
 body {
+  @include fonts;
   font-family: "Inter-Regular";
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.15px;
   text-align: left;
+  color: $primary;
+
 }
 
 h1 {
@@ -44,11 +53,12 @@ h1 {
   font-weight: 900;
   line-height: 100%;
   letter-spacing: -1.5px;
-  text-align: left;
-  margin-top: 0px;
-  text-wrap: balance;
-  word-break: break-word;
-  text-transform: uppercase;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 72px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 60px;
+  };
 }
 
 h2 {
@@ -58,10 +68,12 @@ h2 {
   font-weight: 900;
   line-height: 100%;
   letter-spacing: -0.5px;
-  text-align: center;
-  margin-top: 0px;
-  text-wrap: balance;
-  word-break: break-word;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 56px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 42px;
+  };
 }
 
 h3 {
@@ -71,10 +83,12 @@ h3 {
   font-size: 48px;
   font-weight: 900;
   line-height: 100%;
-  text-align: left;
-  margin-top: 0px;
-  text-wrap: balance;
-  word-break: break-word;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 42px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 36px;
+  };
 }
 
 h4 {
@@ -84,9 +98,12 @@ h4 {
   font-weight: 700;
   line-height: 100%;
   letter-spacing: 0.25px;
-  margin-top: 0px;
-  text-wrap: balance;
-  word-break: break-word;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 34px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 28px;
+  };
 }
 
 h5 {
@@ -95,11 +112,12 @@ h5 {
   font-size: 28px;
   font-weight: 700;
   line-height: 100%;
-  text-align: left;
-  text-transform: capitalize;
-  margin-top: 0px;
-  text-wrap: balance;
-  word-break: break-word;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 24px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 20px;
+  };
 }
 
 p {
@@ -145,20 +163,29 @@ div.row {
 
 // ## default padding for page sections
 .default-padding-top-bottom {
-  padding-top: 128px;
-  padding-bottom: 128px;
+  padding-top: 96px;
+  padding-bottom: 96px;
   @media only screen and (max-width: $tabletBig) {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
+  @media only screen and (max-width: $mobile) {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
 }
 
 .default-margin-top-bottom {
-  margin-top: 128px;
-  margin-bottom: 128px;
+  margin-top: 96px;
+  margin-bottom: 96px;
   @media only screen and (max-width: $tabletBig) {
-    margin-top: 64px;
-    margin-bottom: 64px;
+    margin-top: 56px;
+    margin-bottom: 56px;
+  }
+  @media only screen and (max-width: $mobile) {
+    margin-top: 42px;
+    margin-bottom: 42px;
   }
 }
 
@@ -205,6 +232,26 @@ div.row {
 
 .hidden {
   display: none;
+}
+
+// try to overwrite the default browser CSS for autofilled input fields
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /* Override default yellow background */
+  box-shadow: 0 0 0 30px #ffffff inset !important;
+  -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+
+  /* Set text color */
+  -webkit-text-fill-color: $primary !important;
+
+  border: 1px solid #ccc !important;
 }
 
 

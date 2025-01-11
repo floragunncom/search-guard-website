@@ -2,7 +2,7 @@
 @import '../../styles/Breakpoints';
 
 .footer-container {
-  background-color: $darkBlue;
+  background-color: $primary;
 }
 
 .footer-wrapper {
@@ -11,28 +11,18 @@
 
 div.row.footer-row {
   padding: 40px 0px;
-  // @media only screen and (max-width: $xl) {
-  //   padding: 64px 34px 0px 34px;
-  // };
 }
 
 .footer-links-column-container {
   margin-bottom: 32px;
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 0px;
+  }
 }
 
 .footer-list-items {
   margin-bottom: 64px;
-  @media only screen and (max-width: $tabletBig) {
-    margin-bottom: 64px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center; 
-    &:last-child {
-      margin-bottom: 0px;
-    }
-  };
+
 }
 
 a.footer-links {
@@ -68,6 +58,10 @@ a.footer-links {
 
 .footer-list-item {
   margin-bottom: 16px;
+  @media only screen and (max-width: $mobile) {
+    text-align: center;
+    margin-bottom: 0px;
+  };
   &:last-child {
     position: relative;
     top: 21px;
@@ -108,6 +102,10 @@ a.footer-links {
 
 .footer-headline {
   color: $white;
+  @media only screen and (max-width: $mobile) {
+    text-align: center;
+    margin-bottom: 0px;
+  };
 }
 
 .footer-content {

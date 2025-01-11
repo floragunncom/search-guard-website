@@ -21,7 +21,7 @@ const Hero = () => {
                     Security and Alerting for Elasticsearch and Kibana
                   </h1>
                   <div className="hero-text-wrapper-text">
-                    Search Guard is a security and alerting 8lugin that encrypts and protects your data
+                    Search Guard is a Security and Alerting Plugin that encrypts and protects your data
                     and data flows from unauthorized access in the entire Elastic Stack.
                   </div>
                 </div>
@@ -43,9 +43,9 @@ const Hero = () => {
           </div>
         </div>
         <div className="hero-certificate-wrapper-hidden">
-          <img loading="lazy" src={veracode} alt="veracode logo" width="128px" height="78px" />
-          <img loading="lazy" src={alliance} alt="alliance logo" width="200px" height="78px"/>
-          <img loading="lazy" src={security} alt="security logo" width="133px" height="81px"/>
+          <img loading="lazy" src={veracode} alt="veracode logo" width="128px"  />
+          <img loading="lazy" src={alliance} alt="alliance logo" width="200px"/>
+          <img loading="lazy" src={security} alt="security logo" width="133px"/>
         </div>
       </div>
   );

@@ -7,13 +7,17 @@ import './Button.scss';
 
 const Button = props => {
 
+    let style;
+
     // default
     if (!props.buttonStyle) {
-        props.buttonStyle = 'light-green-button';
+        style = 'light-green-button';
+    } else {
+        style = props.buttonStyle;
     }
 
     // REMOVE UNUSED BUTTONS
-    switch (props.buttonStyle) {
+    switch (style) {
         case 'default-button':
             return <ButtonDefault text={props.text} onPress={props.onPress}/>;
         case 'light-green-button':

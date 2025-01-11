@@ -59,9 +59,8 @@ div.col.s12.m5.l6 {
 }
 
 .hero-text-wrapper-headline {
-
+  text-align: left;
   margin-bottom: 32px;
-  color: $primary;
   @media only screen and (max-width: $tabletBig) {
     margin-top: 32px;
   }
@@ -86,7 +85,7 @@ div.col.s12.m5.l6 {
 }
 
 .hero-button-wrapper {
-  margin-bottom: 55px;
+  margin-bottom: 18px;
   display: flex;
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 92px;
@@ -97,7 +96,7 @@ div.col.s12.m5.l6 {
 }
 
 .hero-certificate-wrapper img {
-  width: 100%;
+  width: 70%;
   padding-bottom: 48px;
   @media only screen and (max-width: $tabletBig) {
     display: none;

@@ -7,9 +7,9 @@
 }
 
 .texttile-content-wrapper {
-
   @media only screen and (max-width: $mobile) {
-    padding: 32px 0px;
+    padding-bottom: 64px;
+    padding-top: 0px;
     text-align: center;
   };
 }
@@ -34,5 +34,6 @@
   @media only screen and (max-width: $mobile) {
     flex-direction: column;
     padding-bottom: 0px;
+    padding-top: 0px;
   };
 }

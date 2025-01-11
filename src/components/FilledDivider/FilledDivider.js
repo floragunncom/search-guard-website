@@ -8,14 +8,14 @@ const FilledDivider = ( {colorschema} ) => {
 
     let baseCss = getColorSchemaCSS(colorschema);
     let imageCss = getColorSchemaCSSForSVG(colorschema);
-console.log(imageCss);
+
     return (
-        <div className={baseCss || ''}>
-            <div className="row divider-base ">
-                <div className="col s12 m12 center">
+        <div className={baseCss}>
+            <div className="row ">
+                <div className="col s12 m12 center default-margin-top-bottom">
                     <ReactSVG
                         src={bg_arrow}
-                        className={`${imageCss} img-class`}
+                        className={`${imageCss}`}
                         alt="background arrows"
                         beforeInjection={(svg) => {
                             svg.querySelectorAll('*').forEach((element) => {
@@ -25,6 +25,7 @@ console.log(imageCss);
                                 element.removeAttribute('mask');
                             });
                             svg.setAttribute('width', "100%");
+                            svg.setAttribute('height', "auto");
                             svg.setAttribute('class', imageCss);
                         }}
                     />
