@@ -57,16 +57,18 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
               </h5>
               <ul className="licensing-editions-text-wrapper">
                 <li className="licensing-editions-text">
-                  Covers all your basic Security and Alerting needs
+                  Covers all essential Security and Alerting needs
                 </li>
-                <li className="licensing-editions-text">Free of charge</li>
+                <li className="licensing-editions-text">
+                  Free of charge
+                </li>
                 <li className="licensing-editions-text">
                   Integrated with the entire Elastic Stack
                 </li>
               </ul>
               <div className="licensing-editions-button">
                 <Button
-                  text="install community edition"
+                  text="install"
                   
                   link="/search-guard-free-trial/"
                 />
@@ -88,13 +90,13 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
               </h5>
               <ul className="licensing-editions-text-wrapper">
                 <li className="licensing-editions-text">
-                  Integrates with major security standards e.g. Active Directory
+                  Integrates with all major security standards
                 </li>
                 <li className="licensing-editions-text">
-                  Field and Document-level Security and access control
+                  Field-level and Document-level Security
                 </li>
                 <li className="licensing-editions-text">
-                  Professional management API and Kibana multitenancy
+                  Management API and Kibana Multitenancy
                 </li>
               </ul>
               <div className="licensing-editions-button">

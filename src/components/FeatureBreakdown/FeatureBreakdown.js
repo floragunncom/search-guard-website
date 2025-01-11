@@ -362,7 +362,7 @@ const FeatureBreakdown = () => {
 
   return (
     <div className="licensing-table-wrapper">
-      <table className="centered highlight hide-on-med-and-down">
+      <table className="centered highlight">
         <thead className="licensing-table-head">
           <tr>
             <th>
@@ -425,70 +425,6 @@ const FeatureBreakdown = () => {
           );
         })}
       </table>
-
-      <div className="row hide-on-large-only">
-        <h5 className="licensing-overview-headline">Community Edition</h5>
-        {matrixContent.map(service => {
-          return (
-            <div className="col s12 m6 licensing-overview-content" key={service.name}>
-              <div className="licensing-overview-content-box">
-                <div className="licensing-overview-content-headline">
-                  {service.name}
-                </div>
-                {service.content.map(serviceItem => {
-                  return (
-                    <div className="licensing-overview-content-text" key={serviceItem.type}>
-                      {serviceItem.community ? serviceItem.type : null}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="row hide-on-large-only">
-        <h5 className="licensing-overview-headline">Enterprise Edition</h5>
-        {matrixContent.map(service => {
-          return (
-            <div className="col s12 m6 licensing-overview-content" key={service.name}>
-              <div className="licensing-overview-content-box">
-                <div className="licensing-overview-content-headline">
-                  {service.name}
-                </div>
-                {service.content.map(serviceItem => {
-                  return (
-                    <div className="licensing-overview-content-text" key={serviceItem.type}>
-                      {serviceItem.enterprise ? serviceItem.type : null}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <div className="row hide-on-large-only">
-        <h5 className="licensing-overview-headline">Compliance Edition</h5>
-        {matrixContent.map(service => {
-          return (
-            <div className="col s12 m6 licensing-overview-content" key={service.name}>
-              <div className="licensing-overview-content-box">
-                <div className="licensing-overview-content-headline">
-                  {service.name}
-                </div>
-                {service.content.map(serviceItem => {
-                  return (
-                    <div className="licensing-overview-content-text" key={serviceItem.type}>
-                      {serviceItem.compliance ? serviceItem.type : null}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-      </div>
     </div>
   );
 };

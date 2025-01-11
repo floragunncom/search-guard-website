@@ -22,7 +22,11 @@
   font-feature-settings: 'clig' off, 'liga' off;
   text-wrap: wrap;
   word-break: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
   hyphens: auto;
+  /* for proper hyphenation */
+  lang: "en";
 }
 
 @mixin font-headlines {
