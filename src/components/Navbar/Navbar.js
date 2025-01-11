@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../images/sg_logo_white.svg';
 import './Navbar.scss';
+import {ReactSVG} from "react-svg";
 
 
 const Navbar = ({ background = 'white', landing }) => {
@@ -10,7 +11,27 @@ const Navbar = ({ background = 'white', landing }) => {
             <nav>
                 <div className="nav-wrapper">
                     <a href="/" className="brand-logo">
-                        <img loading="lazy" src={logo} alt="Search Guard" className="navbar__icon" width="200px"  />
+                        <ReactSVG
+                            src={logo}
+                            title="Title"
+                            beforeInjection={(svg) => {
+                                svg.querySelectorAll('*').forEach((element) => {
+                                    element.removeAttribute('fill');
+                                    element.removeAttribute('stroke');
+                                    element.removeAttribute('filter');
+                                    element.removeAttribute('mask');
+                                    element.removeAttribute('style');
+                                    element.removeAttribute('class');
+                                });
+                                svg.setAttribute('width', "200px");
+                                svg.setAttribute('height', "100%");
+                                svg.setAttribute('preserveAspectRatio', "xMidYMid meet");
+                                svg.setAttribute('title', "Search Guard Logo");
+                                svg.setAttribute('class', "navbar__icon");
+                                svg.setAttribute('fill', "white");
+                                svg.setAttribute('stroke', "white");
+                            }}
+                        />
                     </a>
                     <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger" >menu</i></a>
                     <ul className="right hide-on-med-and-down">
