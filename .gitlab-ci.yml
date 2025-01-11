@@ -42,8 +42,6 @@ build_prod:
   tags:
     - build
   stage: build
-  only:
-    - master
   <<: *build
 
 
