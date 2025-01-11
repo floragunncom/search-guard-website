@@ -34,14 +34,19 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
     // Carousel init
-    new Glide('.glide', {
-        type: 'carousel',
-        startAt: 0,
-        perView: 4,
-        autoplay: 2000,
-        hoverpause: false,
-    }).mount();
+    var glide =document.querySelector('.glide');
+    if (glide) {
+        new Glide(glide, {
+            type: 'carousel',
+            startAt: 0,
+            perView: 4,
+            autoplay: 2000,
+            hoverpause: false,
+        }).mount();
+
+    }
 
     var elems = document.querySelectorAll('.materialboxed');
     if (elems && elems.length > 0) {
