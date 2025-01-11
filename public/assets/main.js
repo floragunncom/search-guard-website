@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var elems = document.querySelectorAll('.materialboxed');
     if (elems && elems.length > 0) {
-        M.Materialbox.init(elems, options);
+        M.Materialbox.init(elems);
     }
 
     // Slider for Quotes - could be replaced with Glide
