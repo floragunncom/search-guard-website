@@ -1,60 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {withRouter} from 'react-router-dom';
 import './ContactForm.scss';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
-
-    const [newsletterValue, setNewsletterValue,] = useState(false);
-    const [sendbuttonValue, setSendbuttonValue] = useState("send message");
-
-    function changeNewsletterValue() {
-        setNewsletterValue(!newsletterValue);
-    }
-
-    async function handleSubmit(formElements) {
-        const data = {};
-        formElements.forEach(input => {
-            data[input.name] = input.value;
-        });
-        // Default options are marked with *
-        return fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
-            method: 'POST',
-            cache: 'no-cache',
-            headers: {
-                accept: 'application/json; charset=utf-8',
-                'content-type': 'application/json; charset=UTF-8',
-            },
-            body: JSON.stringify(data)
-        });
-    }
-
-    const postDataToCRM = async event => {
-
-        event.preventDefault();
-
-        setSendbuttonValue("Processing ...");
-
-        const formElements = Array.from(event.target);
-
-        handleSubmit(formElements)
-            .then(response => {
-                if (response && response.ok) {
-                    window.location.href = "/thanks/";
-                } else {
-                    window.location.href = "/thanks/";
-                }
-            }).catch(function (error) {
-                window.location.href = "/thanks/";
-        });
-    };
-
   return (
     <div className="row contact-wrapper">
       <div className="col s12 l7 push-l5" id="contact">
         <div className="contact-info-container">
-          <form onSubmit={postDataToCRM}>
+          <form className="cf-form">
             <div className="contact-info-wrapper">
               <div className="contact-information-headline">
                 contact information
@@ -299,8 +254,6 @@ const ContactForm = () => {
                     type="checkbox"
                     name="newsletter"
                     className="filled-in"
-                    onClick={changeNewsletterValue}
-                    value={newsletterValue}
                   />
                   <span>
                     Send me updates about Search Guard products and services
@@ -313,8 +266,11 @@ const ContactForm = () => {
                 and manage your submitted data.
               </div>
               <div className="cta-wrapper">
-                <Button buttonStyle="default-button"  text={sendbuttonValue} />
+                <Button text="Send Message" additionalCss="cf-submit" variant="submit"/>
               </div>
+                <div className="cf-feedback">
+                    <h5>Processing</h5>
+                </div>
             </div>
           </form>
         </div>

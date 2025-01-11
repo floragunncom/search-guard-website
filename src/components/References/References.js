@@ -15,83 +15,97 @@ import bucharest from '../../images/logo-bucharest.svg';
 import icfo from '../../images/logo-icfo.svg';
 import arnes from '../../images/logo-arnes.svg';
 import oxford from '../../images/logo-oxford.svg';
-import Carousel from 'react-multi-carousel';
-import "react-multi-carousel/lib/styles.css";
+
 
 const References = () => {
 
-  const responsiveCarouselBreakpoints= {
-    desktop: {
-      breakpoint: {
-        max: 3000,
-        min: 1024
-      },
-      items: 4,
-      partialVisibilityGutter: 180
+
+  const icons = [
+    {
+      name: 'Heanet',
+      logo: heanet
     },
-    mobile: {
-      breakpoint: {
-        max: 464,
-        min: 0
-      },
-      items: 2,
-      partialVisibilityGutter: 30
+    {
+      name: 'Harvard',
+      logo: harvard
     },
-    tablet: {
-      breakpoint: {
-        max: 1024,
-        min: 464
-      },
-      items: 2,
-      partialVisibilityGutter: 30
-    }
-  };
+    {
+      name: 'KIT',
+      logo: kit
+    },
+    {
+      name: 'Seges',
+      logo: seges
+    },
+    {
+      name: 'Deflect',
+      logo: deflect
+    },
+    {
+      name: 'Princeton',
+      logo: princeton
+    },
+    {
+      name: 'KOC',
+      logo: koc
+    },
+    {
+      name: 'MDC',
+      logo: mdc
+    },
+    {
+      name: 'Lavalle',
+      logo: laval
+    },
+    {
+      name: 'UC3M',
+      logo: uc3m
+    },
+    {
+      name: 'UB',
+      logo: ub
+    },
+    {
+      name: 'Bucarest',
+      logo: bucharest
+    },
+    {
+      name: 'ICFO',
+      logo: icfo
+    },
+    {
+      name: 'Arnes',
+      logo: arnes
+    },
+    {
+      name: 'Oxford',
+      logo: oxford
+    },
+  ];
 
   return (
     <div className="ref-wrapper">
       <div className="row ref-content-responsive">
         <h3 className="ref-headline">References</h3>
         <div className="ref-content">
-          <Carousel
-              additionalTransfrom={0}
-              arrows={false}
-              autoPlay
-              autoPlaySpeed={2000}
-              centerMode={false}
-              className=""
-              containerClass="container-with-dots"
-              dotListClass=""
-              draggable
-              focusOnSelect={false}
-              infinite
-              itemClass=""
-              keyBoardControl
-              minimumTouchDrag={80}
-              pauseOnHover={false}
-              renderArrowsWhenDisabled={false}
-              renderButtonGroupOutside={false}
-              renderDotsOutside={false}
-              responsive={responsiveCarouselBreakpoints}
-              showDots={false}
-              slidesToSlide={2}
-          >
-            <img loading="lazy" width="154px" height="154px" src={heanet} alt="heanet logo" />
-            <img loading="lazy" width="154px" height="154px" src={harvard} alt="harvard logo" />
-            <img loading="lazy" width="154px" height="154px" src={kit} alt="kit logo" />
-            <img loading="lazy" width="154px" height="154px" src={seges} alt="seges logo" />
-            <img loading="lazy" width="154px" height="154px" src={deflect} alt="deflect logo" />
-            <img loading="lazy" width="154px" height="154px" src={princeton} alt="princeton logo" />
-            <img loading="lazy" width="154px" height="154px" src={koc} alt="koc logo" />
-            <img loading="lazy" width="154px" height="154px" src={mdc} alt="mdc logo" />
-            <img loading="lazy" width="154px" height="154px" src={laval} alt="laval logo" />
-            <img loading="lazy" width="154px" height="154px" src={uc3m} alt="uc3m logo" />
-            <img loading="lazy" width="154px" height="154px" src={ub} alt="ub logo" />
-            <img loading="lazy" width="154px" height="154px" src={bucharest} alt="bucharest logo" />
-            <img loading="lazy" width="154px" height="154px" src={icfo} alt="icfo logo" />
-            <img loading="lazy" width="154px" height="154px" src={arnes} alt="arnes logo" />
-            <img loading="lazy" width="154px" height="154px" src={oxford} alt="oxford logo" />
-          </Carousel>
+
+          <div className="glide">
+            <div className="glide__track" data-glide-el="track">
+              <ul className="glide__slides">
+                {icons.map((entry, index) => {
+                  return (
+                      <li className="glide__slide" key={index}>
+                        <img  loading="lazy" src={entry.logo} alt={entry.name} width="154px" height="154px" />
+                      </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
+
+
+
+        </div>
         </div>
     </div>
   );

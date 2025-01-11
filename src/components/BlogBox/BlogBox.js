@@ -1,5 +1,4 @@
 import React from 'react';
-import {LazyLoadImage} from 'react-lazy-load-image-component';
 import Button from '../Button/Button';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import './BlogBox.scss';
@@ -81,12 +80,13 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
         >
           <div className="blog-box__box-image-container">
 
-            <LazyLoadImage
+            <img
                 alt={post.fields.postImage.fields.title}
                 src={post.fields.postImage.fields.file.url+ imageParameters }
                 className="blog-box__box-image"
                 width={500}
-           />
+                loading="lazy"
+            />
           </div>
           <div className="blog-box__box-content-headline">{fittedTitle}</div>
           <div className="blog-box__box-content-info">

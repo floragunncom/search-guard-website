@@ -5,7 +5,6 @@ import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../../../components/PreFooter/PreFooter';
 import Title from '../../../../components/Title/Title';
 import tmahler from "../../../../images/tmahler_press.jpg";
-import infoArrowBack from "../../../../images/info-arrow-back.svg";
 import CTATrialLicense from "../../../../components/CTA/CTAStartFreeTrial";
 
 

@@ -8,7 +8,6 @@ import watches from "../../../../images/Alerting_Watches.png";
 import watches_small from "../../../../images/Alerting_Watches_Small.png";
 import graph from "../../../../images/Alerting_Graph.png";
 import graph_small from "../../../../images/Alerting_Graph_Small.png";
-import infoArrowBack from "../../../../images/info-arrow-back.svg";
 import CTATrialLicense from "../../../../components/CTA/CTAStartFreeTrial";
 
 const Alerting = () => {

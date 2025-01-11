@@ -6,7 +6,6 @@ import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
 import './Hero.scss';
 import hero from '../../images/hero-static.svg';
-import {LazyLoadImage} from 'react-lazy-load-image-component';
 
 const Hero = () => {
   return (
@@ -38,7 +37,7 @@ const Hero = () => {
               </div>
             </div>
             <div className="col s12 m5 l4 hero-image">
-              <LazyLoadImage src={hero} className='hero-image-content'/>
+              <img loading="lazy" src={hero} alt="Search Guard provides Security and Alerting for Elasticsearch and Kibana" className='hero-image-content'/>
             </div>
           </div>
         </div>

@@ -24,11 +24,6 @@
     "react-ga": "^2.7.0",
     "react-headroom": "^3.0.0",
     "react-helmet": "^5.2.1",
-    "react-intl": "^2.8.0",
-    "react-intl-cra": "^0.3.4",
-    "react-intl-translations-manager": "^5.0.3",
-    "react-lazy-load-image-component": "^1.5.0",
-    "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^5.1.2",
     "react-router-hash-link": "^1.2.2",
     "react-scripts": "2.1.8",
@@ -45,8 +40,10 @@
     "start": "react-scripts start",
     "fetch": "node ./src/Api/fetchContentfulPosts.js && node ./src/Api/fetchContentfulEvents.js && node ./src/Api/fetchContentfulWhitepapers.js && node ./src/Api/fetchContentfulVideos.js && node ./src/Api/fetchContentfulPersons.js && node ./src/Api/fetchContentfulPageContents.js",
     "build": "npm run fetch && react-scripts build",
+    "build-local": "react-scripts build",
     "sitemap": "./scripts/sitemap.js",
-    "postbuild": "react-snap && ./scripts/sitemap.js -- --base-url='https://search-guard.com/'",
+    "postbuild": "react-snap && ./scripts/sitemap.js -- --base-url='https://search-guard.com/' && npm run-script clearReactChunks",
+    "clearReactChunks": "node ./src/Api/cleanReactChunksPostBuild.js ",
     "clean": "rm -rf build/*",
     "start:dev": "node config/webpack-dev-server.js",
     "start:prod": "npm build; serve build",
@@ -101,22 +98,11 @@
   "reactSnap": {
     "skipThirdPartyRequests": true,
     "preconnectThirdParty": false,
-    "concurrency": 16,
+    "concurrency": 1,
     "viewport": {
       "width": 1280,
       "height": 767
     },
-    "include": [
-      "/security-for-elasticsearch/",
-      "/elasticsearch-kibana-security/",
-      "/thanks/",
-      "/search-guard-flx/",
-      "/sitemap/",
-      "/heise/",
-      "/outdated-elasticsearch-versions-suppport/",
-      "/authors/",
-      "/newsletter/"
-    ],
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"

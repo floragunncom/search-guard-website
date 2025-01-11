@@ -11,7 +11,7 @@ const client = contentful.createClient({
 
 const fetchPosts = async () => {
   await client
-    .getEntries({ content_type: 'post', order: '-fields.date', limit: 500 })
+    .getEntries({ content_type: 'post', order: '-fields.date', limit: 3 })
     .then((res, err) => {
       fs.writeFile(
         './src/Api/contentfulPosts.json',

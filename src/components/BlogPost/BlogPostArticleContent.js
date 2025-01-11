@@ -17,15 +17,9 @@ import facebook from '../../images/facebook.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
 import './BlogPostArticleContent.scss';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
-import M from "materialize-css";
 import {ReactSVG} from "react-svg";
 
 const BlogPostArticleContent = ({postContent}) => {
-
-    document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.materialboxed');
-        M.Materialbox.init(elems, options);
-    });
 
     if (!postContent) {
         return (<Redirect to="/404/"/>);
@@ -289,7 +283,7 @@ const BlogPostArticleContent = ({postContent}) => {
                 </div>
 
                 <div className="col s12 offset-l1 l1 blogpostarticle-sidebar-container">
-                    <div className="blogpostarticle-sidebar-title">share</div>
+                    <div className="blogpostarticle-sidebar-title"></div>
                     <div className="blogpostarticle-sidebar-icons-container">
                         <FacebookShareButton
                             className="blogpostarticle-sidebar-icon"
