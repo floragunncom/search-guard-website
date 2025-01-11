@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import './Email.scss';
 import Button from '../Button/Button';
+import ButtonSubmit from "../Button/ButtonSubmit";
 
 const Email = () => {
 
@@ -8,6 +9,7 @@ const Email = () => {
     const [procesing, setProcessing] = useState(false);
 
    const onNewsletterSubscribeClick = async event => {
+       console.log("Click");
     event.preventDefault();
     setProcessing(true);
     const formValuesJson = {};
@@ -48,16 +50,14 @@ const Email = () => {
       {emailSendStatus ?
           (
             <div
-              className="prefooter-content-text bold"
-              style={{ color: '#246E94' }}
+              className="prefooter-content-text bold text-processing"
             >
               Thank you for signing up to our newsletter!
             </div>
           ) : (
           procesing ? (
                 <div
-                    className="prefooter-content-text bold"
-                    style={{ color: '#246E94' }}
+                    className="prefooter-content-text bold text-processing"
                 >
                   Processing
                 </div>
@@ -68,7 +68,7 @@ const Email = () => {
                           id="email"
                           name="email"
                           type="email"
-                          className="validate"
+                          className="validate input-field"
                           required
                       />
                       <label htmlFor="email" id="email-input">
@@ -85,7 +85,7 @@ const Email = () => {
                       />
                     </div>
                     <div className="input-field col s12 m6 l4">
-                      <Button text="subscribe" buttonStyle="default-button" type="submit"/>
+                      <Button text="subscribe" variant="submit"/>
                     </div>
                   </form>
             ))

@@ -12,7 +12,6 @@ import "react-multi-carousel/lib/styles.css";
 import './TrustedBy.scss';
 
 
-
 const TrustedBy = () => {
   const icons = [
     {

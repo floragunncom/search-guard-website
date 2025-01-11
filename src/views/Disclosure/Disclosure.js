@@ -94,14 +94,24 @@ const Disclosure = () => {
             <div className="disclosure-text">
               Source code of the following public Gitlab repos:
               <br />
+
               <ul className="disclosure-list">
+                <li>
+                  <a
+                      href="https://git.floragunn.com/search-guard/search-guard-suite-enterprise"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                  >
+                    Search Guard FLX
+                  </a>
+                </li>
                 <li>
                   <a
                     href="https://git.floragunn.com/search-guard/search-guard"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    Search Guard
+                    Search Guard Classic
                   </a>
                 </li>
                 <li>

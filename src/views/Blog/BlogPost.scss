@@ -85,7 +85,7 @@ img.blogpost-feed-image {
 }
 
 .blog-headline {
-  color: $navyBlueActive;
+  color: $primary-dark;
   font-size: 18px;
   line-height: 27px;
   font-weight: bold;
@@ -96,14 +96,14 @@ img.blogpost-feed-image {
 }
 
 .blog-info-headline {
-  color: $navyBlueActive;
+  color: $primary-dark;
   font-size: 12px;
   line-height: 32px;
   letter-spacing: 3.3px;
 }
 
 .blog-paragraph {
-  color: $navyBlueActive;
+  color: $primary-dark;
   margin-bottom: 36px;
   font-size: 18px;
   line-height: 27px;
@@ -139,7 +139,7 @@ img.blog-arrow {
     display: flex;
     justify-content: center;
     text-align: center;
-    color: $backButton;
+    color: $secondary;
     font-size: 13px;
     line-height: 15px;
     letter-spacing: 1.5px;
@@ -164,7 +164,7 @@ img.blog-arrow {
 
 .searchblogpost-title,
 .searchblogpost-result-headline {
-  color: $darkBlue;
+  color: $primary;
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.8px;
@@ -182,7 +182,7 @@ img.blog-arrow {
 }
 
 .searchblogpost-author {
-  color: $darkBlue;
+  color: $primary;
   font-size: 12px;
   line-height: 32px;
   letter-spacing: 3.3px;
@@ -190,7 +190,7 @@ img.blog-arrow {
 }
 
 .searchblogpost-content {
-  color: $darkBlue;
+  color: $primary;
   font-size: 18px;
   line-height: 27px;
 }
@@ -198,7 +198,7 @@ img.blog-arrow {
 .searchblogpost-no-results {
   text-align: center;
   margin: 64px;
-  color: $darkBlue;
+  color: $primary;
   font-size: 48px;
   line-height: 57px;
   @media only screen and (max-width: $mobile) {
@@ -208,14 +208,14 @@ img.blog-arrow {
 }
 
 i.material-icons.prefix {
-  color: $navyBlue;
+  color: $primary;
 }
 
 .blog-tags-headline, .blog-tags-tag {
   font-size: 12px;
   line-height: 32px;
   letter-spacing: 3.3px;
-  color: $darkBlue;
+  color: $primary;
   text-transform: uppercase;
   text-align: center;
 }
@@ -228,14 +228,14 @@ i.material-icons.prefix {
 }
 
 .blog-tags-tag {
-  border: 1px solid $darkBlue;
+  border: 1px solid $primary;
   padding: 8px 16px;
   margin: 8px;
   @media only screen and (max-width: $mobile) {
     margin: 4px;
   }
   &:hover {
-    background-color: $darkBlue;
+    background-color: $primary;
     color: $white;
   }
 }
@@ -253,7 +253,7 @@ i.material-icons.prefix {
     font-size: 12px;
     line-height: 32px;
     letter-spacing: 3.3px;
-    color: $darkBlue;
+    color: $primary;
     text-transform: uppercase;
   }
   &-items-wrapper {
@@ -265,14 +265,14 @@ i.material-icons.prefix {
     padding: 8px 16px;
     font-size: 14px;
     line-height: 20px;
-    color: $darkBlue;
-    border: 1px solid $navyBlue;
+    color: $primary;
+    border: 1px solid $primary;
     border-radius: 3px;
     margin-bottom: 10px;
     transition: all .2s;
     &:hover {
       color: $white;
-      background-color: $navyBlue;
+      background-color: $primary;
     }
     &:not(:last-child) {
       margin-right: 16px;

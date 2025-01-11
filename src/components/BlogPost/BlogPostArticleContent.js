@@ -1,12 +1,7 @@
 import React from 'react';
-import  { Redirect } from 'react-router-dom'
-import { Helmet } from 'react-helmet';
-import {
-    FacebookShareButton,
-    TwitterShareButton,
-    LinkedinShareButton,
-    RedditShareButton,
-} from 'react-share';
+import {Redirect} from 'react-router-dom'
+import {Helmet} from 'react-helmet';
+import {FacebookShareButton, LinkedinShareButton, RedditShareButton, TwitterShareButton,} from 'react-share';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Markdown from 'markdown-to-jsx';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
@@ -15,24 +10,25 @@ import BlogBox from '../../components/BlogBox/BlogBox';
 import Blockquote from '../../components/Blockquote/Blockquote';
 import CodeBlock from './CodeBlock';
 import infoArrowBack from '../../images/info-arrow-back.svg';
-import iconTwitter from '../../images/icon-tw-loud.svg';
-import iconY from '../../images/icon-y-loud.svg';
-import iconIn from '../../images/icon-in-loud.svg';
-import iconFb from '../../images/icon-fb-loud.svg';
+import x_twitter from '../../images/x-twitter.svg';
+import linkedIn from '../../images/linkedin.svg';
+import reddit from '../../images/reddit.svg';
+import facebook from '../../images/facebook.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
 import './BlogPostArticleContent.scss';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 import M from "materialize-css";
+import {ReactSVG} from "react-svg";
 
-const BlogPostArticleContent = ({ postContent }) => {
+const BlogPostArticleContent = ({postContent}) => {
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         var elems = document.querySelectorAll('.materialboxed');
         M.Materialbox.init(elems, options);
     });
 
     if (!postContent) {
-        return (<Redirect to="/404/" />);
+        return (<Redirect to="/404/"/>);
     }
 
     const options = {
@@ -119,24 +115,24 @@ const BlogPostArticleContent = ({ postContent }) => {
         renderAuthor = (
             <>
 
-                    <div className="col">
-                        <a href={`/author/${authorProfile.fields.slug}`}>
-                            <img loading="lazy" src={`https:${authorProfile.fields.avatar.fields.file.url}?w=80&fit=scale`}
-                                 alt={`${authorProfile.fields.avatar.fields.title}`}
-                                 className="blogpostarticle-avatar"
-                                 width={80}
-                            />
-                        </a>
-                    </div>
-                    <div className="col">
+                <div className="col">
+                    <a href={`/author/${authorProfile.fields.slug}`}>
+                        <img loading="lazy" src={`https:${authorProfile.fields.avatar.fields.file.url}?w=80&fit=scale`}
+                             alt={`${authorProfile.fields.avatar.fields.title}`}
+                             className="blogpostarticle-avatar"
+                             width={80}
+                        />
+                    </a>
+                </div>
+                <div className="col">
                 <span className="blogpostarticle-authorname">
                   By&nbsp;
                     <a href={`/author/${authorProfile.fields.slug}`}>
                       <b>{authorProfile.fields.firstName} {authorProfile.fields.lastName}</b>
                     </a>
                 </span>
-                        <div>{authorProfile.fields.position}</div>
-                    </div>
+                    <div>{authorProfile.fields.position}</div>
+                </div>
 
             </>
         );
@@ -144,20 +140,22 @@ const BlogPostArticleContent = ({ postContent }) => {
         renderAuthor = (
             <div className="blogpostarticle-authorname">By <b>{postContent.fields.author}</b></div>
         )
-    };
+    }
+    ;
 
     let renderAuthorMetaTag;
     if (
         authorProfile
     ) {
         renderAuthorMetaTag = (
-            <meta name="author" content={`${authorProfile.fields.firstName} ${authorProfile.fields.lastName}`} />
+            <meta name="author" content={`${authorProfile.fields.firstName} ${authorProfile.fields.lastName}`}/>
         );
     } else {
         renderAuthorMetaTag = (
-            <meta name="author" content={`${postContent.fields.author}`} />
+            <meta name="author" content={`${postContent.fields.author}`}/>
         )
-    };
+    }
+    ;
 
     let audio;
     let renderAudio = "";
@@ -175,14 +173,15 @@ const BlogPostArticleContent = ({ postContent }) => {
     if (
         video
     ) {
-        renderVideo = '<div className="video-container"> <iframe width="560" height="315" src="' + video.fields.embedUrl +'" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div>'
-    };
+        renderVideo = '<div className="video-container"> <iframe width="560" height="315" src="' + video.fields.embedUrl + '" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe></div>'
+    }
+    ;
 
     let renderVideoJson = '';
     if (
         video
     ) {
-        renderVideoJson =`
+        renderVideoJson = `
             {
               "@context": "https://schema.org",
               "@type": "VideoObject",
@@ -193,55 +192,56 @@ const BlogPostArticleContent = ({ postContent }) => {
               "embedUrl": "${video.fields.embedUrl}",
             }
         `
-    };
+    }
+    ;
 
     let renderAuthorJson = '';
-       if (authorProfile) {
-           renderAuthorJson =`
+    if (authorProfile) {
+        renderAuthorJson = `
             "author": {
                "@type": "Person",
                "name": "${authorProfile.fields.firstName} ${authorProfile.fields.lastName}",
                "url": "https://search-guard.com/author/${authorProfile.fields.slug}"
             }`
-       } else {
-           renderAuthorJson =`
+    } else {
+        renderAuthorJson = `
             "author": {
                "@type": "Person",
                "name": "${postContent.fields.author}"               
             }`
-       }
+    }
 
     return (
         <PageWrapper>
             <Helmet>
-                <meta charSet="utf-8" />
+                <meta charSet="utf-8"/>
                 <title>{postContent.fields.htmlTitle}</title>
                 <link
                     rel="canonical"
                     href={`https://search-guard.com/blog/${postContent.fields.slug}`}
                 />
 
-                <meta name="description" content={postContent.fields.htmlDescription} />
-                <meta name="copyright" content="floragunn GmbH" />
+                <meta name="description" content={postContent.fields.htmlDescription}/>
+                <meta name="copyright" content="floragunn GmbH"/>
                 {renderAuthorMetaTag}
 
-                <meta property="og:title" content={postContent.fields.htmlTitle} />
-                <meta property="og:type" content="article" />
-                <meta property="og:url" content={`https://search-guard.com/blog/${postContent.fields.slug}`} />
+                <meta property="og:title" content={postContent.fields.htmlTitle}/>
+                <meta property="og:type" content="article"/>
+                <meta property="og:url" content={`https://search-guard.com/blog/${postContent.fields.slug}`}/>
                 <meta property="og:description" content={postContent.fields.htmlDescription}/>
                 <meta property="og:image" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
                 <meta property="og:image:alt" content={postContent.fields.title}/>
-                <meta property="og:locale" content="en_US" />
+                <meta property="og:locale" content="en_US"/>
 
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:site" content="@searchguard"/>
                 <meta name="twitter:creator" content="@searchguard"/>
-                <meta name="twitter:title" content={postContent.fields.htmlTitle} />
-                <meta name="twitter:description" content={postContent.fields.htmlDescription} />
+                <meta name="twitter:title" content={postContent.fields.htmlTitle}/>
+                <meta name="twitter:description" content={postContent.fields.htmlDescription}/>
 
-                <meta name="twitter:image" content={`https:${postContent.fields.postImage.fields.file.url}`} />
-                <meta name="twitter:image:src" content={`https:${postContent.fields.postImage.fields.file.url}`} />
-                <meta name="twitter:image:alt" content={postContent.fields.title} />
+                <meta name="twitter:image" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
+                <meta name="twitter:image:src" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
+                <meta name="twitter:image:alt" content={postContent.fields.title}/>
 
             </Helmet>
             <BlogTitle
@@ -252,13 +252,14 @@ const BlogPostArticleContent = ({ postContent }) => {
                 authorProfile={postContent.fields.authorProfile}
                 image={postContent.fields.postImage.fields.file.url}
             />
-            
+
             <div className="row blogpostarticle-wrapper blogpostarticle-author">
                 <div className="col s12 l8 offset-l2 center">
-                    <img loading="lazy" src={postContent.fields.postImage.fields.file.url + "?fm=jpg&fl=progressive&w=800&fit=scale"}
+                    <img loading="lazy"
+                         src={postContent.fields.postImage.fields.file.url + "?fm=jpg&fl=progressive&w=800&fit=scale"}
                          className="blogpostarticle-headerimage responsive-img"
                          alt={postContent.fields.title}
-                        width={800}
+                         width={800}
                     />
                 </div>
             </div>
@@ -266,12 +267,12 @@ const BlogPostArticleContent = ({ postContent }) => {
             <div className="row blogpostarticle-wrapper blogpostarticle-author">
 
                 <div className="col s12 offset-l2 l8">
-                        <div className="col s12 l6">
-                            {renderAuthor}
-                        </div>
-                        <div className="col s12 l6">
-                            {renderAudio}
-                        </div>
+                    <div className="col s12 l6">
+                        {renderAuthor}
+                    </div>
+                    <div className="col s12 l6">
+                        {renderAudio}
+                    </div>
                 </div>
             </div>
 
@@ -285,32 +286,6 @@ const BlogPostArticleContent = ({ postContent }) => {
                             .replace(/http:\/\/localhost:8080/g, '')}
                     </Markdown>
                     <div className="blogpostarticle-text">Published: {postContent.fields.date}</div>
-
-
-                    {/*
-          <div>
-            <div className="flex-center">
-              <div className="col m6 s12 flex-center">
-                <div className="valign-wrapper">
-                  <Button
-                      text="start free trial"
-                      link="/search-guard-free-trial/"
-                  />
-                </div>
-              </div>
-
-              <div className="col m6 s12 flex-center ">
-                <div className="valign-wrapper">
-                  <Button
-                      text="Contact us!"
-                      link="/contacts/"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-           */}
-
                 </div>
 
                 <div className="col s12 offset-l1 l1 blogpostarticle-sidebar-container">
@@ -319,30 +294,67 @@ const BlogPostArticleContent = ({ postContent }) => {
                         <FacebookShareButton
                             className="blogpostarticle-sidebar-icon"
                             url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
-                            quote={postContent.fields.title}
-                        >
-                            <img loading="lazy" src={iconFb} alt="facebook icon" width="32px" height="32px"/>
+                            quote={postContent.fields.title}>
+                            <ReactSVG src={facebook}
+                                      alt="Share on facebook"
+                                      className="blogpostarticle-share-icon"
+                                      beforeInjection={(svg) => {
+                                          svg.querySelectorAll('*').forEach((element) => {
+                                              element.removeAttribute('fill');
+                                          });
+                                          svg.setAttribute('class', "blogpostarticle-share-icon");
+                                        }
+                                      }
+                            />
                         </FacebookShareButton>
                         <TwitterShareButton
                             className="blogpostarticle-sidebar-icon"
                             url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
                             title={postContent.fields.title}
-                            hastags={postContent.fields.tags}
-                        >
-                            <img loading="lazy" src={iconTwitter} alt="twitter icon" width="32px" height="32px"/>
+                            hastags={postContent.fields.tags}>
+                            <ReactSVG src={x_twitter}
+                                      alt="Share on X/Twitter"
+                                      className="blogpostarticle-share-icon"
+                                      beforeInjection={(svg) => {
+                                          svg.querySelectorAll('*').forEach((element) => {
+                                              element.removeAttribute('fill');
+                                          });
+                                          svg.setAttribute('class', "blogpostarticle-share-icon");
+                                        }
+                                      }
+                            />
                         </TwitterShareButton>
                         <LinkedinShareButton
                             className="blogpostarticle-sidebar-icon"
-                            url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
-                        >
-                            <img loading="lazy" src={iconIn} alt="linkedIn icon" width="32px" height="32px"/>
+                            url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}>
+                            <ReactSVG src={linkedIn}
+                                      alt="Share on LinkedIn"
+                                      className="blogpostarticle-share-icon"
+                                      beforeInjection={(svg) => {
+                                          svg.querySelectorAll('*').forEach((element) => {
+                                              element.removeAttribute('fill');
+                                          });
+                                          svg.setAttribute('class', "blogpostarticle-share-icon");
+                                        }
+                                      }
+                            />
                         </LinkedinShareButton>
                         <RedditShareButton
                             className="blogpostarticle-sidebar-icon"
                             url={`https://www.search-guard.com/blog/${postContent.fields.slug}`}
                             title={postContent.fields.title}
                         >
-                            <img loading="lazy" src={iconY} alt="Reddit icon" width="32px" height="32px"/>
+                            <ReactSVG src={reddit}
+                                      alt="Share on LinkedIn"
+                                      className="blogpostarticle-share-icon"
+                                      beforeInjection={(svg) => {
+                                          svg.querySelectorAll('*').forEach((element) => {
+                                              element.removeAttribute('fill');
+                                          });
+                                          svg.setAttribute('class', "blogpostarticle-share-icon");
+                                      }
+                                      }
+                            />
                         </RedditShareButton>
                     </div>
                 </div>
@@ -361,12 +373,12 @@ const BlogPostArticleContent = ({ postContent }) => {
 
             <BlogBox
                 headline="Other posts you may like"
-                postsyoulike
-                randomize
+                postsyoulike={true}
+                randomize={true}
                 category={postContent.fields.tags[0]}
             />
 
-            <div className="col s12 l4" />
+            <div className="col s12 l4"/>
 
             <div className="col s12 blogpostarticle-link">
                 <a href="/blog/" className="blog-back ">
@@ -380,7 +392,7 @@ const BlogPostArticleContent = ({ postContent }) => {
                 </a>
             </div>
 
-            <PreFooter />
+            <PreFooter/>
 
             <script type="application/ld+json">{`
           {

@@ -8,7 +8,9 @@ const options = {
   public: './build',
   trailingSlash: true,
   redirects: [
-    { source: '/search-guard-43-for-elasticsearch-7.8.0/', destination: '/search-guard-43-released/' },
+    { source: '/security-for-elasticsearch/', destination: '/security/' },
+      { source: '/elasticsearch-kibana-security/', destination: '/security/' },
+      { source: '/search-guard-43-for-elasticsearch-7.8.0/', destination: '/search-guard-43-released/' },
     { source: '/search-guard-43-for-elasticsearch-7.8.0', destination: '/search-guard-43-released/' },
     { source: '/white-papers', destination: '/whitepapers/' },
     { source: '/white-papers/', destination: '/whitepapers/' },

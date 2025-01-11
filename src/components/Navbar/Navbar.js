@@ -27,7 +27,7 @@ const Navbar = ({ background = 'white', landing }) => {
                     <a href="/" className="brand-logo">
                         <img loading="lazy" src={logo} alt="Search Guard" className="navbar__icon" width="200px"  />
                     </a>
-                    <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger">menu</i></a>
+                    <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger" >menu</i></a>
                     <ul className="right hide-on-med-and-down">
                         <li><a href="/security/" data-target="nav-solutions" className="dropdown-trigger navbar__item" >Solutions</a></li>
                         <li><a className="navbar__item" href="/search-guard-free-trial/">Download</a></li>

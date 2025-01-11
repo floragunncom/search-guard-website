@@ -6,7 +6,7 @@
   margin-top: 64px;
   font-size: 24px;
   line-height: 30px;
-  color: $darkBlue;
+  color: $primary;
   letter-spacing: 0.8px;
   text-align: center;
   @media only screen and (max-width: $tabletBig) {
@@ -56,7 +56,7 @@
     font-size: 48px;
     line-height: 57px;
     text-align: center;
-    color: $darkBlue;
+    color: $primary;
     font-weight: 300;
     @media only screen and (max-width: $tabletBig) {
       font-size: 36px;
@@ -78,7 +78,7 @@
   &-item {
     flex: 1 1 400px;
     margin: 16px;
-    background-color: $grey;
+    background-color: $lightGrey;
     max-width: 550px;
     min-width: 400px;
     height: 425px;
@@ -110,17 +110,17 @@
         font-size: 16px;
       }
       &-date {
-        color: $navyBlue;
+        color: $primary;
         display: flex;
         align-items: center;
       }
       &-labels {
-        color: $turkis;
+        color: $secondary;
         text-transform: uppercase;
         font-weight: 700;
       }
       &-headline {
-        color: $darkBlue;
+        color: $primary;
         font-weight: 700;
         line-height: 20px;
         margin: 8px 0;
@@ -130,7 +130,7 @@
           font-size: 15px;
       }
       &-booth {
-        color: $navyBlue;
+        color: $primary;
         text-transform: uppercase;
         font-weight: 700;
         margin-top: 8px;

@@ -3,7 +3,7 @@
 
 .trusted-wrapper {
   padding: 128px;
-  background-color: $lightGrey;
+  background-color: $secondary-light;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 32px 0px 32px;
   }
@@ -15,7 +15,7 @@
 .trusted-headline {
   margin-bottom: 64px;
   margin-top: 0px;
-  color: $darkBlue;
+  color: $primary;
   font-size: 48px;
   line-height: 57px;
   text-align: center;

@@ -22,7 +22,7 @@
   line-height: 57px;
   font-weight: 300;
   padding-bottom: 64px;
-  color: $darkBlue;
+  color: $primary;
   @media only screen and (max-width: $tabletBig) {
     font-size: 36px;
     line-height: 43px;
@@ -63,7 +63,7 @@
   margin-bottom: 16px;
   font-size: 24px;
   line-height: 30px;
-  color: $darkBlue;
+  color: $primary;
   letter-spacing: 0.8px;
   text-align: center;
   @media only screen and (max-width: $mobile) {
@@ -88,7 +88,7 @@
 
 .video-playlist-headline {
   text-align: center;
-  color: $darkBlue;
+  color: $primary;
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.8px;

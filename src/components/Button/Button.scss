@@ -1,0 +1,28 @@
+@import '../../styles/Colors.scss';
+@import '../../styles/Breakpoints';
+
+.button {
+    text-decoration: none;
+}
+
+.button-default-container {
+    height: 48px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    padding: 14px 20px;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.28);
+        -webkit-transition: box-shadow 0.1s linear;
+        transition: box-shadow 0.1s linear;
+    };
+    &:active {
+        background-color: $secondary;
+    }
+    @media only screen and (max-width: $mobile) {
+        width: 100%;
+    };
+}

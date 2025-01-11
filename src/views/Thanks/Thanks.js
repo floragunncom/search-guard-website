@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import React, {useEffect} from 'react';
+import {Helmet} from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Button from '../../components/Button/Button';
-import { initGA, PageView } from '../../components/Tracking/Tracking';
+import {initGA, PageView} from '../../components/Tracking/Tracking';
 import './Thanks.scss';
 
 const Thanks = () => {
@@ -26,7 +26,7 @@ const Thanks = () => {
       <div className="thanks-wrapper">
         <div className="row">
           <div className="col s12 m10 offset-m1 l8 offset-l2">
-            <div className="thanks-warning">Thank you!</div>
+            <h2 className="thanks-warning">Thank you!</h2>
             <div className="thanks-text">
               Your contact form was successfully submitted.
               <br />

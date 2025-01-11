@@ -12,7 +12,7 @@
   text-align: center;
   font-size: 48px;
   line-height: 57px;
-  color: $darkBlue;
+  color: $primary;
   margin-top: 64px;
   margin-bottom: 64px;
   font-weight: 300;
@@ -29,7 +29,7 @@
 }
 
 .certifications-image {
-  background-color: $grey;
+  background-color: $lightGrey;
   display: flex;
   justify-content: center;
   img {
@@ -65,7 +65,7 @@ div.col.s12.l6.certifications-button {
 }
 
 .certifications-button {
-  background-color: $navyBlue;
+  background-color: $primary;
   border-radius: 3px;
   display: flex;
   justify-content: space-around;
@@ -86,7 +86,7 @@ div.col.s12.l6.certifications-button {
 }
 
 .certifications-bottom-line {
-  border-bottom: 3px solid $grey;
+  border-bottom: 3px solid $lightGrey;
   // &:last-child {
   //   border-bottom: unset;
   // }

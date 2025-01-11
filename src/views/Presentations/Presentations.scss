@@ -15,7 +15,7 @@
 }
   
 .presentations-headline {
-  color: $darkBlue;
+  color: $primary;
   margin-top: 32px;
   margin-bottom: 16px;
   font-size: 24px;
@@ -49,33 +49,20 @@
 }
 
 .presentations-button {
-  padding: 14px 20px;
-  border-radius: 3px;
-  background-color: $navyBlue;
-  margin-bottom: 128px;
+  margin-bottom: 96px;
+  margin-top: 64px;
   display: flex;
   width: fit-content;
   cursor: pointer;
   &:hover {
     transition: 0.3s ease-in-out;
-    background-color: $navyBlueHover;
   };
   &:active {
-    background-color: $navyBlueActive;
+    background-color: $secondary;
   }
   @media only screen and (max-width: $mobile) {
     justify-content: center;
     width: 100%;
     margin-bottom: 64px;
   };
-}
-
-.presentations-button-text {
-  color: $white;
-  font-size: 14px;
-  line-height: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-left: 18px;
 }

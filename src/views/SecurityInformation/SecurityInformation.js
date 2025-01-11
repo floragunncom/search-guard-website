@@ -1,12 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 import './SecurityInformation.scss';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import Card from '../../components/Card/Card';
-import iconLock from '../../images/icon-multilayer-security.svg';
-import iconShield from '../../images/icon-wheel-shield.svg';
+import CVEDisclosure from '../../components/Resources/CVEDisclosure';
 
 const Security = () => {
 
@@ -143,16 +141,7 @@ const Security = () => {
           </div>
         </div>
       </div>
-      <Card
-        iconLeft={iconShield}
-        iconRight={iconLock}
-        headlineLeft="CVE advisory"
-        headlineRight="Disclosure Policy"
-        textLeft="floragunn GmbH has been named as a CVE numbering authority by MITRE for all issues related to Search Guard."
-        textRight="How we handle security related bugs and issues in Search Guard. If you have found one, please read this first."
-        linkLeft="/cve-advisory/"
-        linkRight="/disclosure-policy/"
-      />
+      <CVEDisclosure colorschema="light"/>
       <PreFooter />
     </PageWrapper>
   );

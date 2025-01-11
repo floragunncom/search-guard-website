@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './Journey.scss';
-import { useRef } from "react";
 
 
 const Journey = () => {
@@ -345,7 +344,7 @@ const Journey = () => {
   });
 
   return (
-    <div className="journey-wrapper" id="journey">
+    <div className="journey-wrapper color-schema-light" id="journey">
       <div className="row">
         <h3 className="journey-headline"> The Search Guard Journey </h3>
         <div className="journey-timeline-wrapper">

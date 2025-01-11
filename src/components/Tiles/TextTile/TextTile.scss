@@ -1,0 +1,81 @@
+@import '../../../styles/Colors.scss';
+@import '../../../styles/Breakpoints';
+
+.texttile-container {
+  padding-top: 160px;
+  padding-bottom: 160px;
+  background: $white;
+  @media only screen and (max-width: $tabletBig) {
+    padding: 64px 0px;
+  };
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 0px 32px 0px;
+  };
+}
+
+.row.texttile-row-wrapper {
+  margin-bottom: 0px;
+}
+
+.texttile-row {
+  @media only screen and (max-width: $tabletBig) {
+    margin: 0px;
+  };
+  @media only screen and (max-width: $mobile) {
+    margin-buttom: 32px;
+    width: 100%;
+  };
+}
+
+.texttile-image-container {
+  background-size: cover;
+  width: 25vw;
+  height: 25vw;
+  max-width: 360px;
+  max-height: 360px;
+  @media only screen and (max-width: $tabletBig) {
+    margin-left: auto;
+    margin-right: auto;
+  };
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 8px;
+  };
+}
+
+.texttile-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+  text-align: center;
+  @media only screen and (max-width: 450px) {
+    justify-content: space-between;
+  }
+}
+
+.texttile-headline {
+  margin-bottom: 32px;
+  margin-top: 0px;
+  @media only screen and (max-width: $tabletBig) {
+    // font-size: 36px;
+    // line-height: 43px;
+  };
+  @media only screen and (max-width: $mobile) {
+    // font-size: 24px;
+    // line-height: 28px;
+    margin-bottom: 8px;
+    margin-top: 24px;
+  }
+}
+
+.texttile-text {
+  text-align: center;
+  margin-bottom: 64px;
+  @media only screen and (max-width: $mobile) {
+    // font-size: 16px;
+    // line-height: 24px;
+    letter-spacing: normal;
+    margin-bottom: 32px;
+  }
+}

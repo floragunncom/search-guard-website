@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './BlogTitle.scss';
 import posts from '../../Api/contentfulPosts';
 
@@ -13,18 +12,9 @@ const Title = ({ text, subText, tags, link, authorProfile, image }) => {
           post.fields.tags.includes(tag.name),
         );
         return (
-          <Link
-            to={{
-              pathname: `/blog/category/${slug}/`,
-              categoryName: tag,
-              categoryPosts,
-              slug,
-            }}
-            key={tag}
-            className="blogtitle-tag"
-          >
-            {tag}
-          </Link>
+            <a href={`/blog/category/${slug}/`} className="blogtitle-tag" key={tag}>
+                {tag}
+            </a>
         );
       })}
     </div>

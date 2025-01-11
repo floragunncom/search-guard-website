@@ -1,6 +1,6 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
-  
+
 .blog-box {
   &__wrapper {
     padding: 128px 0;
@@ -23,10 +23,14 @@
   }
 
   &__headline, &__headline-overview {
-    color: $darkBlue;
+    color: $primary;
     text-align: center;
     padding: 64px 0;
     font-weight: 300;
+    @media only screen and (max-width: $mobile) {
+      padding-top: 64px;
+      padding-bottom: 12px;
+    }
   }
   
   &__headline {
@@ -50,29 +54,29 @@
   
   &__box {
     padding-bottom: 32px;
-    background-color: $grey;
+    background-color: $lightGrey;
     display: flex;
     flex: 1 1 300px;
     flex-direction: column;
     max-width: 500px;
     margin-bottom: 12px;
-    // overflow: hidden;
     text-decoration: none;
-    color: $darkBlue;
+    color: $primary;
     line-height: 27px;
     font-size: 18px;
     cursor: pointer;
+
     &:nth-child(2) {
-      margin: 0 12px;
-      margin-bottom: 12px;
+      margin: 0 112px 12px;
     }
     @media only screen and (max-width: $tabletBig) {
       &:nth-child(2) {
         margin: 0;
       }
       max-width: 100%;
-      margin-bottom: 0px;
+      margin-bottom: 12px;
     }
+
     &-content {
       &-headline {
         font-weight: bold;
@@ -95,7 +99,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    color: $backButton;
     padding-right: 32px;
     margin-top: auto;
     text-transform: uppercase;
@@ -133,6 +136,7 @@ img.blog-box__box-image {
   object-position: top;
   display: block;
   transition: all .3s ease-in-out;
+  text-decoration: none;
   &:hover {
     transform: scale(1.05);
   }

@@ -1,4 +1,3 @@
-import './index.scss';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import React from 'react';
 import HomePage from './views/HomePage/HomePage';
@@ -25,14 +24,10 @@ import DataProtection from './views/DataProtection/DataProtection';
 import SecurityInformation from './views/SecurityInformation/SecurityInformation';
 import Advisory from './views/Advisory/Advisory';
 import Disclosure from './views/Disclosure/Disclosure';
-import Education from './views/Education/Education';
-import TlsGenerator from './views/TlsGenerator/TlsGenerator';
 import NotFound from './views/NotFound/NotFound';
 import Thanks from './views/Thanks/Thanks';
 import Heise from './views/Heise/Heise';
-import CertificatesOnTheWay from './views/CertificatesOnTheWay/CertificatesOnTheWay';
 import Certifications from './views/Certifications/Certifications';
-import SecurityForElasticsearch from './views/SecurityForElasticsearch/SecurityForElasticsearch';
 import FreeTrial from './views/FreeTrial/FreeTrial';
 import PressDEDach from './views/Press/DE/20200620_Vertrieb_Dach/20200620_Vertrieb_Dach';
 import PressENDach from './views/Press/EN/20200620_Sales_Activities_Dach/20200620_Sales_Activities_Dach';
@@ -74,27 +69,20 @@ const Routes = () => {
           <Route exact path="/impressum/" component={Imprint} />
           <Route exact path="/presentations/" component={Presentations} />
           <Route exact path="/datenschutz/" component={DataProtection} />
-          <Route exact path="/education-program/" component={Education} />
           <Route exact path="/outdated-elasticsearch-versions-suppport/" component={OldElasticsearchVersions} />
           <Route exact path="/newsletter/" component={Newsletter} />
 
-          <Route
-            exact
-            path="/security-for-elasticsearch/"
-            component={SecurityForElasticsearch}
-          />
-          <Route
-            exact
-            path="/elasticsearch-kibana-security/"
-            component={SecurityForElasticsearch}
-          />
+          <Route exact path="/security-for-elasticsearch/">
+            <Redirect to="/security/" />
+          </Route>
+
+          <Route exact path="/elasticsearch-kibana-security/">
+            <Redirect to="/security/" />
+          </Route>
+
           <Route exact path="/thanks/" component={Thanks} />
           <Route exact path="/error/" component={Error} />
-          <Route
-            exact
-            path="/certificates-on-the-way/"
-            component={CertificatesOnTheWay}
-          />
+
           <Route
               exact
               path="/search-guard-free-trial/"
@@ -103,11 +91,10 @@ const Routes = () => {
           <Route exact path="/security-information/" component={SecurityInformation} />
           <Route exact path="/cve-advisory/" component={Advisory} />
           <Route exact path="/disclosure-policy/" component={Disclosure} />
-          <Route
-            exact
-            path="/tls-certificate-generator/"
-            component={TlsGenerator}
-          />
+
+          <Route exact path="/tls-certificate-generator/">
+            <Redirect to="/security/" />
+          </Route>
 
           <Route exact path="/authors/" component={Authors} />
           <Route exact path="/author/:slug" component={Author} />
@@ -115,9 +102,9 @@ const Routes = () => {
           <Route exact path="/certificates/" component={Certifications} />
 
 
-          <Route exact path="/blog/category/:slug" component={BlogCategory} />
+          <Route exact path="/blog/category/:slug/" component={BlogCategory} />
           <Route exact path="/blog/" component={Blog} />
-          <Route exact path="/blog/page/:slug/" component={Blog} />
+          <Route exact path="/blog/page/:pageNumber/" component={Blog} />
           <Route exact path="/blog/:slug/" component={BlogPostArticle} />
 
           <Route exact path="/whitepapers/:slug" component={WhitePaperArticle} />

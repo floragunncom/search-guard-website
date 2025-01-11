@@ -2,7 +2,8 @@
 @import '../../styles/Breakpoints';
 
 .quotes-container {
-  padding: 128px 0px;
+  padding-top: 160px;
+  padding-bottom: 160px;
   @media only screen and (max-width: $tabletBig) {
     display: none;
   };
@@ -23,11 +24,7 @@ ul li .quotes-wrapper {
 
 .quotes-headline {
   margin-bottom: 26px;
-  color: $darkBlue;
-  font-size: 48px;
-  line-height: 57px;
   text-align: center;
-  font-weight: 300;
 }
 
 .quotes-right-icon {
@@ -45,10 +42,7 @@ ul li .quotes-wrapper {
 
 .quotes-text {
   padding: 0px 20px;
-  font-size: 24px;
-  line-height: 39px;
-  letter-spacing: 0.8px;
-  color: $darkBlue;
+  color: $black;
   text-align: center;
 }
 
@@ -57,14 +51,14 @@ ul li .quotes-wrapper {
   margin-top: 64px;
   font-size: 18px;
   line-height: 27px;
-  color: $darkGrey;
+  color: $primary-dark;
 }
 
 .quotes-author-title, .quotes-author-company {
   text-align: center;
   font-size: 14px;
   line-height: 20px;
-  color: $darkGrey;
+  color: $primary-dark;
 }
 
 .slider {
@@ -79,9 +73,9 @@ ul li .quotes-wrapper {
 
 li.indicator-item {
   background-color: white !important;
-  border: 1px solid $buttonGreen;
+  border: 1px solid $secondary-dark;
 }
   
 li.indicator-item.active {
-  background-color: $buttonGreen !important;
+  background-color: $secondary-dark !important;
 }

@@ -55,7 +55,7 @@ img.blogpost-feed-image {
 
 .blogpost-headline {
   padding: 32px 32px 0 32px;
-  color: $navyBlueActive;
+  color: $primary-dark;
   font-size: 18px;
   line-height: 27px;
   font-weight: bold;
@@ -70,14 +70,14 @@ img.blogpost-feed-image {
 
 .blogpost-info-headline {
   padding: 0 32px;
-  color: $navyBlueActive;
+  color: $primary-dark;
   font-size: 12px;
   line-height: 32px;
   letter-spacing: 3.3px;
 }
 
 .blogpost-paragraph {
-  color: $navyBlueActive;
+  color: $primary-dark;
   padding: 0 32px;
   margin-bottom: 36px;
   font-size: 18px;
@@ -95,7 +95,7 @@ img.blogpost-feed-image {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  color: $backButton;
+  color: $secondary;
   padding-right: 32px;
   text-transform: uppercase;
   font-size: 13px;

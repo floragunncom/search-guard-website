@@ -23,7 +23,7 @@
 }
 
 .faq-question-headline, .faq-answer-section-headline {
-  color: $darkBlue;
+  color: $primary;
   margin-bottom: 16px;
   text-transform: uppercase;
   font-size: 12px;
@@ -49,20 +49,19 @@
     line-height: 24px;
   };
   a {
-    color: $darkBlue;
-    border-bottom: 1px solid $green
+    color: $primary;
   };
 }
 
 .faq-answer-section {
-  border-left: 3px solid $grey;
+  border-left: 3px solid $lightGrey;
   padding-left: 100px;
   @media only screen and (max-width: $tabletBig) {
     margin-bottom: 64px;
     border-left: unset;
     padding-left: 0px;
     &:first-child {
-      border-top: 3px solid $grey;
+      border-top: 3px solid $lightGrey;
     };
   }; 
   @media only screen and (max-width: $tabletBig) {
@@ -76,7 +75,7 @@
   margin-bottom: 32px;
   font-size: 24px;
   line-height: 30px;
-  color: $darkBlue;
+  color: $primary;
   letter-spacing: 0.8px;
   @media only screen and (max-width: $mobile) {
     font-size: 20px;

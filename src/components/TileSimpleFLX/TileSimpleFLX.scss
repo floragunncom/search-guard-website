@@ -35,7 +35,7 @@
   display: flex;
   justify-content: flex-start;
   @media only screen and (max-width: $tabletBig) {
-    background-color: $navyBlue;
+    background-color: $primary;
   }
 }
 
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: flex-end;
   @media only screen and (max-width: $tabletBig) {
-    background-color: $grey;
+    background-color: $lightGrey;
   }
 }
 
@@ -102,30 +102,6 @@ img.tilesimple-flx-icon-style-left {
   };
   @media only screen and (max-width: $mobile) {
     padding: 0px 0px 0px 0px;
-  };
-}
-
-.tilesimple-headline {
-  color: $darkBlue;
-  font-size: 48px;
-  line-height: 57px;
-  font-weight: 300;
-  margin-bottom: 32px;
-  margin-top: 0px;
-  @media only screen and (max-width: $mobile) {
-    font-size: 24px;
-    line-height: 28px;
-  };
-}
-
-.tilesimple-text {
-  font-size: 18px;
-  line-height: 27px;
-  color: $darkGrey;
-  margin-bottom: 24px;
-  @media only screen and (max-width: $mobile) {
-    font-size: 16px;
-    line-height: 24px;
   };
 }
 

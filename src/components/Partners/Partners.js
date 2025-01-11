@@ -1,75 +1,41 @@
 import React from 'react';
-import eliatra from '../../images/eliatra.svg';
-import eliatraMobile from '../../images/eliatra-mobile.svg';
-import excelerate from '../../images/ref2.svg';
-import excelerateMobile from '../../images/excelerate-mobile.svg';
-import sirenPartnerMobile from '../../images/siren-mobile.svg';
-import sirenPartner from '../../images/ref3.svg';
+import eliatra from '../../images/logoEliatra.svg';
+import excelerate from '../../images/logoExcelerate.svg';
+import sirenPartner from '../../images/logoSiren.svg';
 import './Partners.scss';
+import ColumnedTile from "../Tiles/ColumnedTile/ColumnedTile";
 
 const Partners = () => {
+
+  let partners = [
+    {
+      image: {
+        src: eliatra,
+        width: 350,
+        height: 350,
+        alt: "Eliatra - The OpenSearch Experts",
+      },
+    },
+    {
+      image: {
+        src: excelerate,
+        width: 350,
+        height: 350,
+        alt: "Search Guard Partner Excelerate Systems"
+      },
+    },
+    {
+      image: {
+        src: sirenPartner,
+        width: 350,
+        height: 350,
+        alt: "Search Guard Partner Siren Solutions"
+      },
+    },
+  ]
+
   return (
-    <div className="company-partners-wrapper" id="partners">
-      <div className="row">
-        <h3 className="company-partners-headline">Partners</h3>
-        <div className="company-partners-pic-wrapper">
-          <div className="col s12 m4 company-partners-pic hide-on-small-only">
-            <a href="https://eliatra.com/">
-              <img
-                  src={eliatra}
-                  alt="Eliatra - The OpenSearch Experts"
-                  width="360" height="360"
-              />{' '}
-            </a>
-          </div>
-          <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
-            <a href="https://eliatra.com/">
-              <img
-                  src={eliatraMobile}
-                  alt="Eliatra - The OpenSearch Experts"
-                  width="731" height="216"
-              />{' '}
-            </a>
-          </div>
-          <div className="col s12 m4 company-partners-pic hide-on-small-only">
-            <a href="https://www.exceleratesystems.com/">
-              <img
-                src={excelerate}
-                alt="Search Guard Partner Excelerate Systems"
-                width="360" height="360"
-              />{' '}
-            </a>
-          </div>
-          <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
-            <a href="https://www.exceleratesystems.com/">
-              <img
-                src={excelerateMobile}
-                alt="Search Guard Partner Excelerate Systems"
-                width="170" height="170"
-              />{' '}
-            </a>
-          </div>
-          <div className="col s12 m4 company-partners-pic hide-on-small-only">
-            <a href="https://siren.io/">
-              <img
-                src={sirenPartner}
-                alt="Search Guard Partner Siren Solutions"
-                width="360" height="360"
-              />{' '}
-            </a>
-          </div>
-          <div className="col s12 m4 company-partners-pic-mobile hide-on-med-and-up">
-            <a href="https://siren.io/">
-              <img
-                src={sirenPartnerMobile}
-                alt="Search Guard Partner Siren Solutions"
-                width="170" height="170"
-              />{' '}
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+      <ColumnedTile colorschema="white" svgcolor="none" wrapperclass="default-padding-top-bottom" columns={partners} headline="Partners" />
   );
 };
 

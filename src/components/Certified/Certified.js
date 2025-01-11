@@ -1,14 +1,16 @@
 import React from 'react';
+import {ReactSVG} from "react-svg";
 import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
 import cve from '../../images/ove.svg';
 import './Certified.scss';
 
+
 const Certified = () => {
   return (
     <div className="certified-wrapper" id="certified">
-      <h4 className="certified-headline">Certified</h4>
+      <h3 className="certified-headline">Certified</h3>
       <div className="row certified-row-wrapper">
         <div className="col s12 m6">
           <a
@@ -17,10 +19,10 @@ const Certified = () => {
             rel="noopener noreferrer"
             className="certified-col-img"
           >
-            <img loading="lazy" src={veracode} alt="veracode logo" />
+            <ReactSVG src={veracode} alt="Search Guard is verified by Veracode"/>
           </a>
-          <div className="subtitle certified-col-headline">Veracode</div>
-          <div className="certified-col-text">
+          <h5 className="certified-col-headline">Veracode</h5>
+          <div className="body1 certified-col-text">
             All Search Guard versions and all third-party libraries are verified
             and scanned for vulnerabilities by Veracode. CA Veracode Verified
             empowers us to demonstrate our commitment to creating secure
@@ -34,12 +36,12 @@ const Certified = () => {
             rel="noopener noreferrer"
             className="certified-col-img"
           >
-            <img loading="lazy" src={alliance} alt="alliance logo" />
+            <ReactSVG src={alliance} alt="Search Guard is member of the Alliance for Cybersecurity"/>
           </a>
-          <div className="subtitle certified-col-headline">
+          <h5 className="certified-col-headline">
             Allianz for Cyber-Sicherheit
-          </div>
-          <div className="certified-col-text">
+          </h5>
+          <div className="body1 certified-col-text">
             floragunn is member of the "Alliance for Cybersecurity", a body of
             the Federal Office for Information Security in Germany.
           </div>
@@ -53,11 +55,11 @@ const Certified = () => {
             rel="noopener noreferrer"
             className="certified-col-img"
           >
-            <img loading="lazy" src={cve} alt="ove logo" />
+            <ReactSVG src={cve} alt="Floragunn GmbH is the official CVE numbering authority for Search Guard."/>
           </a>
-          <div className="subtitle certified-col-headline">CVE</div>
-          <div className="certified-col-text">
-            floragunn GmbH is the official CVE numbering authority for Search
+          <h5 className="certified-col-headline">CVE</h5>
+          <div className="body1 certified-col-text">
+            Floragunn GmbH is the official CVE numbering authority for Search
             Guard.
           </div>
         </div>
@@ -68,11 +70,11 @@ const Certified = () => {
             rel="noopener noreferrer"
             className="certified-col-img"
           >
-            <img loading="lazy" src={security} alt="security icon" />
+            <ReactSVG src={security} alt="Search Guard is member of TeleTrust"/>
           </a>
-          <div className="subtitle certified-col-headline">TeleTrusT</div>
-          <div className="certified-col-text">
-            floragunn is member of TeleTrust, a German federal association for
+          <h5 className="certified-col-headline">TeleTrusT</h5>
+          <div className="body1 certified-col-text">
+            Floragunn is member of TeleTrust, a German federal association for
             IT security.
           </div>
         </div>

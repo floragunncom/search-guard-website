@@ -1,7 +1,5 @@
-import React, {useEffect} from 'react';
-import  { Redirect } from 'react-router-dom'
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {Redirect, useParams} from 'react-router-dom'
 import BlogPostArticleContent from "../../components/BlogPost/BlogPostArticleContent";
 
 const BlogPostArticlePreview = ({ match }) => {

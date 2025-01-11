@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import * as lunr from 'lunr';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -11,13 +11,16 @@ import posts from '../../Api/contentfulPosts.json';
 import Pagination from '../../components/Pagination/Pagination';
 import './Blog.scss';
 
-const Blog = () => {
+const Blog = ({ match } ) => {
 
   const breadcrumb = [
     { anchor: '/', name: 'Home' },
     { anchor: '/resource/', name: 'Resources' },
     { anchor: '/blog/', name: 'Blog' },
   ];
+
+  const { pageNumber } = match.params;
+  const currentPage = parseInt(pageNumber, 10) || 1;
 
   const [searchResultsPresented, setSearchResultsPresented] = useState(false);
   const [categoryResultsPresented, setCategoryResultsPresented] = useState(
@@ -28,14 +31,11 @@ const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-  const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const documentsGeneral = [];
 
@@ -231,7 +231,6 @@ const Blog = () => {
         <Pagination
           postsPerPage={postsPerPage}
           totalPosts={posts.length}
-          paginate={paginate}
         />
       )}
       <PreFooter />

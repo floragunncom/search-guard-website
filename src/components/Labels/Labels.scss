@@ -2,7 +2,7 @@
 @import '../../styles/Breakpoints';
 
 .securityinfo-wrapper {
-  background: $grey;
+  background: $white;
   padding-top: 128px;
 
   @media only screen and (max-width: $tabletBig) {
@@ -30,10 +30,19 @@
 .securityinfo-text-wrapper {
   padding: 0px 12px;
   margin-bottom: 64px;
+  text-align: center;
+}
+
+.security-bg-wrapper {  
+  text-align: center;
+
+  @media only screen and (max-width: $tabletBig) {
+    max-width: $tabletBig;
+  }
 }
 
 .securityinfo-headline {
-  color: $darkBlue;
+  color: $primary;
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.8px;
@@ -56,15 +65,10 @@
 }
 
 .securityinfo-content {
-  color: $darkGrey;
-  font-size: 18px;
-  line-height: 27px;
   text-align: center;
 
   @media only screen and (max-width: $tabletBig) {
     font-size: 16px;
     line-height: 24px;
-  }
-
-  ;
+  };
 }

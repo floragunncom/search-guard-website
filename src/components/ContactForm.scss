@@ -9,7 +9,7 @@
 }
 
 .company-information-container {
-  border-right: 3px solid $grey;
+  border-right: 3px solid $lightGrey;
   margin-right: 40px;
   padding-right: 32px;
   @media only screen and (max-width: $tabletBig) {
@@ -52,7 +52,7 @@
   display: flex;
   flex-direction: column;
   @media only screen and (max-width: $tabletBig) {
-    border-top: 3px solid $grey;
+    border-top: 3px solid $lightGrey;
     border-left: none;
     padding-top: 32px;
     padding-left: 0;
@@ -72,7 +72,7 @@
 }
 
 .contact-information-headline {
-  color: $darkBlue;
+  color: $primary;
   font-size: 12px;
   line-height: 32px;
   letter-spacing: 3.3px;
@@ -84,7 +84,7 @@
 }
 
 .input-field-label {
-  color: $darkBlue !important;
+  color: $primary !important;
 }
 
 input#first_name,
@@ -114,7 +114,7 @@ input#host7,
 input#host8,
 input#host9,
 input#host10 {
-  border-bottom: 2px solid $navyBlue;
+  border-bottom: 2px solid $primary;
   box-shadow: none;
 }
 

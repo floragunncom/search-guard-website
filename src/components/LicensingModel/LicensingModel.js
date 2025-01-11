@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './LicensingModel.scss';
-import TableEditions from '../TableEditions/TableEditions';
-import enterprise from '../../images/icon-enterprise.svg';
-import compliance from '../../images/icon-compliance.svg';
-import community from '../../images/icon-community.svg';
-import academic from '../../images/icon-academic.svg';
-import custom from '../../images/icon-custom.svg';
+import iconSearchGuard from '../../images/icon-search-guard.svg';
 import Button from '../Button/Button';
 
 const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline }) => {
@@ -36,7 +31,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
           for your personal needs.
         </div>
         <div className="liccensing-info-button">
-          <Button text="see all license models" link="/licensing/" />
+          <Button  text="see all license models" link="/licensing/" />
         </div>
       </div>
     );
@@ -51,30 +46,31 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
             <div className="licensing-edition">
               <div className="licensing-editions-icon">
                 <img
-                  src={community}
+                  src={iconSearchGuard}
                   alt="community icon"
                   className="licensing-icon"
                   width="145px" height="145px"
                 />
               </div>
-              <h3 className="licensing-editions-headline community-border">
+              <h5 className="licensing-editions-headline">
                 Search Guard Community Edition
-              </h3>
-              <div className="licensing-editions-text-wrapper">
-                <div className="licensing-editions-text">
-                  Covers all your basic Security and Alerting needs
-                </div>
-                <div className="licensing-editions-text">Free of charge</div>
-                <div className="licensing-editions-text">
+              </h5>
+              <ul className="licensing-editions-text-wrapper">
+                <li className="licensing-editions-text">
+                  Covers all essential Security and Alerting needs
+                </li>
+                <li className="licensing-editions-text">
+                  Free of charge
+                </li>
+                <li className="licensing-editions-text">
                   Integrated with the entire Elastic Stack
-                </div>
-              </div>
+                </li>
+              </ul>
               <div className="licensing-editions-button">
                 <Button
-                  text="install community edition"
-                  buttonStyle="ghost-link"
+                  text="install"
+                  
                   link="/search-guard-free-trial/"
-                  color="#00C9B7"
                 />
               </div>
             </div>
@@ -83,32 +79,31 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
             <div className="licensing-edition">
               <div className="licensing-editions-icon">
                 <img
-                  src={enterprise}
+                  src={iconSearchGuard}
                   alt="enterprise icon"
                   className="licensing-icon"
                   width="145px" height="145px"
                 />
               </div>
-              <h3 className="licensing-editions-headline enterprise-border">
+              <h5 className="licensing-editions-headline">
                 Search Guard Enterprise Edition
-              </h3>
-              <div className="licensing-editions-text-wrapper">
-                <div className="licensing-editions-text">
-                  Integrates with major security standards e.g. Active Directory
-                </div>
-                <div className="licensing-editions-text">
-                  Field and Document-level Security and access control
-                </div>
-                <div className="licensing-editions-text">
-                  Professional management API and Kibana multitenancy
-                </div>
-              </div>
+              </h5>
+              <ul className="licensing-editions-text-wrapper">
+                <li className="licensing-editions-text">
+                  Integrates with all major security standards
+                </li>
+                <li className="licensing-editions-text">
+                  Field-level and Document-level Security
+                </li>
+                <li className="licensing-editions-text">
+                  Management API and Kibana Multitenancy
+                </li>
+              </ul>
               <div className="licensing-editions-button">
                 <Button
                   text="start free trial"
-                  buttonStyle="ghost-link"
+                  
                   link="/search-guard-free-trial/"
-                  color="#009688"
                 />
               </div>
             </div>
@@ -117,32 +112,31 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
             <div className="licensing-edition">
               <div className="licensing-editions-icon">
                 <img
-                  src={compliance}
+                  src={iconSearchGuard}
                   alt="compliance icon"
                   className="licensing-icon"
                   width="145px" height="145px"
                 />
               </div>
-              <h3 className="licensing-editions-headline compliance-border">
+              <h5 className="licensing-editions-headline">
                 Search Guard Compliance Edition
-              </h3>
-              <div className="licensing-editions-text-wrapper">
-                <div className="licensing-editions-text">
+              </h5>
+              <ul className="licensing-editions-text-wrapper">
+                <li className="licensing-editions-text">
                   Designed for meeting compliance regulations e.g. GDPR
-                </div>
-                <div className="licensing-editions-text">
+                </li>
+                <li className="licensing-editions-text">
                   Record all read-and-write access to data
-                </div>
-                <div className="licensing-editions-text">
+                </li>
+                <li className="licensing-editions-text">
                   Monitor integrity of Elasticsearch installation
-                </div>
-              </div>
+                </li>
+              </ul>
               <div className="licensing-editions-button">
                 <Button
                   text="start free trial"
-                  buttonStyle="ghost-link"
+                  
                   link="/search-guard-free-trial/"
-                  color="#007D71"
                 />
               </div>
             </div>
@@ -159,32 +153,31 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
             <div className="licensing-edition" id="custom-edition">
               <div className="licensing-editions-icon">
                 <img
-                  src={academic}
+                  src={iconSearchGuard}
                   alt="academic icon"
                   className="licensing-icon"
                   width="145px" height="145px"
                 />
               </div>
-              <div className="licensing-editions-headline academic-border">
+              <h5 className="licensing-editions-headline">
                 Academic & Scientific edition
-              </div>
-              <div className="licensing-editions-text-wrapper">
-                <div className="licensing-editions-text">
+              </h5>
+              <ul className="licensing-editions-text-wrapper">
+                <li className="licensing-editions-text">
                   Search Guard Enterprise and Compliance licenses free of charge
-                </div>
-                <div className="licensing-editions-text">
+                </li>
+                <li className="licensing-editions-text">
                   For all non-profit academic and scientific projects
-                </div>
-                <div className="licensing-editions-text">
+                </li>
+                <li className="licensing-editions-text">
                   Unlimited clusters, unlimited nodes.
-                </div>
-              </div>
+                </li>
+              </ul>
               <div className="licensing-editions-button">
                 <Button
                   text="Contact us"
-                  buttonStyle="ghost-link"
+                  
                   link="/contacts/"
-                  color="#246E94"
                 />
               </div>
             </div>
@@ -193,30 +186,29 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
             <div className="licensing-edition">
               <div className="licensing-editions-icon">
                 <img
-                  src={custom}
+                  src={iconSearchGuard}
                   alt="custom icon"
                   className="licensing-icon"
                   width="145px" height="145px"
                 />
               </div>
-              <div className="licensing-editions-headline custom-border">
+              <h5 className="licensing-editions-headline">
                 Custom edition
-              </div>
-              <div className="licensing-editions-text-wrapper">
-                <div className="licensing-editions-text">
+              </h5>
+              <ul className="licensing-editions-text-wrapper">
+                <li className="licensing-editions-text">
                   For OEM partners and system integrators
-                </div>
-                <div className="licensing-editions-text">No upfront fees</div>
-                <div className="licensing-editions-text">
+                </li>
+                <li className="licensing-editions-text">No upfront fees</li>
+                <li className="licensing-editions-text">
                   Direct support from the Search Guard team
-                </div>
-              </div>
+                </li>
+              </ul>
               <div className="licensing-editions-button">
                 <Button
                   text="Contact us"
-                  buttonStyle="ghost-link"
+                  
                   link="/contacts/"
-                  color="#246E94"
                 />
               </div>
             </div>
@@ -232,7 +224,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
 
   if (topButtons) {
     buttons = (
-      <div className="licensing-buttons">
+      <div className="licensing-buttons button-large">
         <div
           className={
             standardButton ? 'licensing-button-active' : 'licensing-button'
@@ -253,22 +245,8 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
     );
   }
 
-  if (tableView) {
-    renderTableView = (
-      <div className="licensing-comparison-wrapper" id="feature">
-        <div
-          className="licensing-comparison-headline"
-          onClick={ontableViewPress}
-        >
-          Feature breakdown
-        </div>
-        <TableEditions />
-      </div>
-    );
-  }
-
   return (
-    <div>
+    <div className="color-schema-light">
       <div
         className={
           tableView ? 'licensing-wrapper-expanded' : plain ? '' : 'licensing-wrapper'
@@ -277,17 +255,15 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
       >
         <div className="row">
           <div className="col s12">
-            <div className="licensing-headline">{headline}</div>
-            <div className="licensing-subheadline">{subheadline}</div>
+            <h3 className="licensing-headline">{headline}</h3>
+            {subheadline ? <div className="licensing-subheadline">{subheadline}</div> : null}
             {buttons}
             {renderContent}
           </div>
         </div>
       </div>
-      <div style={{ backgroundColor: 'white' }}>
-        <div className="row">
-          <div className="col s12">{renderTableView}</div>
-        </div>
+      <div className="row">
+        <div className="col s12">{renderTableView}</div>
       </div>
     </div>
   );

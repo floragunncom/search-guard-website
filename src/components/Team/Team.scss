@@ -2,7 +2,9 @@
 @import '../../styles/Breakpoints';
 
 .company-team-wrapper {
-  padding: 64px 0px;
+  background-color: $primary;
+  padding-top: 96px;
+  padding-bottom: 104px;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 32px;
   }
@@ -13,11 +15,8 @@
 
 .company-team-headline {
   margin-bottom: 10px;
-  font-size: 48px;
-  line-height: 57px;
   text-align: center;
-  color: $darkBlue;
-  font-weight: 300;
+  color: $white;
   @media only screen and (max-width: $tabletBig) {
     font-size: 36px;
     line-height: 43px;
@@ -41,7 +40,8 @@
 }
 
 img.profile-pic {
-  max-width: 300px;
+  max-width: 160px;
+  max-height: 160px;
   margin: auto;
   @media only screen and (max-width: $mobile) {
     height: 121px;
@@ -59,35 +59,30 @@ img.profile-linkedIn {
 
 .profile-name {
   margin-top: 32px;
-  font-size: 24px;
-  line-height: 30px;
   text-align: center;
-  color: $darkBlue;
-  letter-spacing: 0.8px;
+  color: $white;
   @media only screen and (max-width: $tabletBig) {
     margin-top: 8px;
-    letter-spacing: 0.67px;
+    // letter-spacing: 0.67px;
   }
   @media only screen and (max-width: $mobile) {
-    font-size: 14px;
-    line-height: 20px;
+    // font-size: 14px;
+    // line-height: 20px;
     margin-top: 16px;
   }
 }
 
 .profile-position {
   margin-top: 8px;
-  font-size: 18px;
-  line-height: 27px;
   text-align: center;
-  color: $darkGrey;
+  color: $white;
   @media only screen and (max-width: $tabletBig) {
     margin-top: 0px;
   }
-  @media only screen and (max-width: $mobile) {
-    font-size: 14px;
-    line-height: 20px;
-  }
+  // @media only screen and (max-width: $mobile) {
+  //   font-size: 14px;
+  //   line-height: 20px;
+  // }
 }
 
 .profile-link {

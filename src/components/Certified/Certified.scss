@@ -3,7 +3,7 @@
 
 .certified-wrapper {
   padding: 128px 0px;
-  background-color: $lightGrey;
+  background-color: $secondary-light;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 0px;
   }
@@ -18,18 +18,9 @@
 
 .certified-headline {
   margin-bottom: 64px;
-  font-size: 48px;
-  line-height: 57px;
-  font-weight: 300;
   text-align: center;
-  color: $darkBlue;
-  @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
-  }
+  color: $primary;
   @media only screen and (max-width: $mobile) {
-    font-size: 24px;
-    line-height: 28px;
     margin-bottom: 32px;
   }
 }
@@ -40,12 +31,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $grey;
-  width: 280px;
-  height: 280px;
-  border-radius: 140px;
+  width: 160px;
+  height: 160px;
   @media only screen and (max-width: $tabletBig) {
-    background-color: unset;
     height: unset;
     width: unset;
   }
@@ -54,26 +42,18 @@
 .certified-col-headline {
   margin-top: 32px;
   margin-bottom: 16px;
-  font-size: 24px;
-  line-height: 30px;
-  letter-spacing: 0.8px;
   text-align: center;
-  color: $darkBlue;
+  color: $primary;
   @media only screen and (max-width: $tabletBig) {
     margin-top: 16px;
   }
   @media only screen and (max-width: $mobile) {
     margin-bottom: 8px;
-    font-size: 20px;
-    letter-spacing: 0.67px;
   }
 }
 
 .certified-col-text {
-  font-size: 18px;
-  line-height: 27px;
   text-align: center;
-  color: $darkGrey;
   @media only screen and (max-width: $tabletBig) {
     margin: 0px 16px;
   }
@@ -81,7 +61,5 @@
     margin-bottom: 64px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 16px;
-    line-height: 24px;
   }
 }

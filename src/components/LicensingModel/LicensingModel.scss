@@ -1,38 +1,21 @@
 @import '../../styles/Colors';
 @import '../../styles/Breakpoints';
 
-.licensing-wrapper {
-  background: linear-gradient(180deg, $grey 550px, $lightGrey 550px);
-  @media only screen and (max-width: $mobile) {
-    background: linear-gradient(180deg, $grey 250px, $lightGrey 250px);
-  };
-}
-
-.licensing-wrapper-expanded {
-  background: linear-gradient(180deg, $grey 1180px, $lightGrey 1180px);
-  @media only screen and (max-width: $tabletBig) {
-    background: $grey;
-  };
+.licensing-wrapper, .licensing-wrapper-expanded {
+  padding-top: 96px;  
+  padding-bottom: 104px;
 }
 
 .licensing-headline {
+  text-transform: uppercase;
   text-align: center;
-  padding-top: 128px;
-  padding-bottom: 0px;
-  font-size: 48px;
-  line-height: 57px;
-  font-weight: 300;
-  color: $darkBlue;
-  @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
-    padding-top: 64px;
-    padding-bottom: 32px;
-  };
-  @media only screen and (max-width: $mobile) {
-    font-size: 24px;
-    line-height: 28px;
-  };
+  margin-top: 0px;
+  padding-bottom: 48px;
+  color: $primary;
+  // @media only screen and (max-width: $tabletBig) {
+  //   padding-top: 64px;
+  //   padding-bottom: 32px;
+  // };
 }
 
 .licensing-subheadline {
@@ -42,20 +25,15 @@
   font-size: 24px;
   line-height: 57px;
   font-weight: 300;
-  color: $darkBlue;
-  @media only screen and (max-width: $tabletBig) {
-    font-size: 16px;
-    line-height: 43px;
-    padding-top: 64px;
-    padding-bottom: 32px;
-  };
-  @media only screen and (max-width: $mobile) {
-    font-size: 12px;
-    line-height: 28px;
-  };
+  color:  $primary;
+  // @media only screen and (max-width: $tabletBig) {
+  //   padding-top: 64px;
+  //   padding-bottom: 32px;
+  // };
 }
 
 .licensing-buttons {
+  text-align: left;  
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -68,8 +46,8 @@
 }
 
 .licensing-button-active, .licensing-button {
-  border: 2px solid $navyBlue;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  border: 2px solid $primary;
   letter-spacing: 1.5px;
   font-weight: bold;
 }
@@ -78,7 +56,7 @@
   padding: 18px 20px;
   font-size: 14px;
   line-height: 14px;
-  background-color: $navyBlue;
+  background-color: $primary;
   color: $white;
 }
 
@@ -86,34 +64,33 @@
   padding: 15px 20px;
   font-size: 14px;
   line-height: 20px;
-  background-color: $grey;
-  color: $navyBlue;
+  background-color: $lightGrey;
+  color: $primary;
   &:hover {
     padding: 18px 20px;
     font-size: 14px;
     line-height: 14px;
-    background-color: $navyBlue;
+    background-color: $primary;
     color: $white;
   }
 }
 
 .licensing-editions-wrapper {
   background-color: $white;
-  margin-bottom: 128px;
   @media only screen and (max-width: $tabletBig) {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 0px 22px 32px 22px;
-    background-color: unset;
+    // background-color: unset;
   }
-  @media only screen and (max-width: $tabletBig) {
-    margin-bottom: 0px;
-  };
+  // @media only screen and (max-width: $tabletBig) {
+  //   margin-bottom: 0px;
+  // };
 }
 
 .licensing-right-border {
-  border-right: 3px solid $grey;
+  border-right: 3px solid $lightGrey;
   margin: 64px 0px;
   &:last-child {
     border-right: unset;
@@ -129,23 +106,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  &#custom-edition {
-    padding: 0px 25px;
-    @media only screen and (max-width: $tabletBig) {
-      padding: 32px 25px;
-    }
-    @media only screen and (max-width: $mobile) {
-      padding: 16px 0;
-    }
-  }
   @media only screen and (max-width: $tabletBig) {
-    background-color: $white;
-    padding: 32px 64px;
-    border: 3px solid $grey;
-  };
+    padding: 32px 25px;
+  }
   @media only screen and (max-width: $mobile) {
-    padding: 16px 0px;
-  };
+    padding: 16px 0;
+  }
 }
 
 .licensing-editions-headline {
@@ -153,11 +119,7 @@
   padding-top: 32px;
   padding-bottom: 16px;
   margin-bottom: 32px;
-  font-size: 24px;
-  line-height: 30px;
-  letter-spacing: 0.8px;
-  font-weight: 500;
-  color: $editionText;
+  color: $primary-dark;
   @media only screen and (max-width: $mobile) {
     font-size: 20px;
     line-height: 30px;
@@ -182,11 +144,10 @@ img.licensing-icon {
 }
 
 .licensing-editions-text {
+  list-style-type: disc !important;
   padding: 0px 18px 16px 18px;
-  color: $darkGrey;
-  font-size: 18px;
-  line-height: 27px;
-  text-align: center;
+  color: $primary;
+  text-align: left;
   @media only screen and (max-width: $tabletBig) {
     padding-bottom: 8px;
   };
@@ -196,41 +157,8 @@ img.licensing-icon {
   };
 }
 
-.community-border, .compliance-border, .enterprise-border{
-  width: 100%;
-  @media only screen and (max-width: $tabletBig) {
-    width: 65%;
-  };  
-}
-
-.academic-border, .custom-border {
-  width: 70%;
-}
-
-.community-border {
-  border-bottom: 2.5px solid $communityEdition;
-}
-
-.enterprise-border {
-  border-bottom: 2.5px solid $enterpriseEdition;
-}
-
-.compliance-border {
-  border-bottom: 2.5px solid $complianceEdition;
-}
-
-.academic-border {
-  border-bottom: 2.5px solid $darkGrey;
-  color: $darkGrey;
-}
-
-.custom-border {
-  border-bottom: 2.5px solid $navyBlue;
-  color: $navyBlue;
-}
-
 .licensing-editions-button {
-  margin-top: 16px;
+  margin-top: 32px;
 }
 
 .licensing-info-wrapper {
@@ -247,7 +175,7 @@ img.licensing-icon {
     font-size: 20px;
     line-height: 30px;
     letter-spacing: 0.67px;
-    color: $darkBlue;
+    color: $primary;
     text-align: center;
   };
 }
@@ -269,6 +197,8 @@ img.licensing-icon {
 }
 
 .licensing-comparison-wrapper {
+  padding-top: 96px;
+  padding-bottom: 104px;
   @media only screen and (max-width: $tabletBig) {
     margin: 0px 32px;
   };
@@ -280,21 +210,15 @@ img.licensing-icon {
 
 .licensing-comparison-headline {
   cursor: pointer;
-  padding-top: 128px;
+  margin-top: 0;
   padding-bottom: 64px;
   text-align: center;
-  font-size: 48px;
-  line-height: 57px;
-  font-weight: 300;
-  color: $darkBlue;
+  color: $primary;
   @media only screen and (max-width: $tabletBig) {
     padding: 64px 24px;
-    font-size: 36px;
-    line-height: 43px;
+
   };
   @media only screen and (max-width: $mobile) {
-    font-size: 24px;
-    line-height: 26px;
     padding-bottom: 0px;
     margin-bottom: -16px;
   };

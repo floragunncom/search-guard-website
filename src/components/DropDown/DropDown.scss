@@ -3,7 +3,7 @@
 
 .drop-down-container {
   cursor: pointer;
-  border-bottom: 2px solid $navyBlue;
+  border-bottom: 2px solid $primary;
   margin-top: 16px;
   margin-right: 21px !important;
   display: flex;
@@ -30,7 +30,7 @@
 .drop-down-text-field {
   font-family: Roboto;	
   font-size: 15px;
-  color: $darkBlue;
+  color: $primary;
   line-height: 22px;
   padding: 0px;
   margin: 12px 0;
@@ -54,7 +54,7 @@
   position: absolute;
   top: 47px;
   left: 0px;
-  color: $darkBlue;
+  color: $primary;
   width: 100%;
   background-color: white;
   z-index: 1;
@@ -62,11 +62,11 @@
 
 select.browser-default {
   border: unset;
-  border-bottom: 2px solid $navyBlue;
-  color: $darkBlue;
+  border-bottom: 2px solid $primary;
+  color: $primary;
   padding: 10px;
   &:hover {
-    background-color: $darkBlue;
+    background-color: $primary;
     color: white;
   }
 }

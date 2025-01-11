@@ -1,19 +1,16 @@
-import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import React from 'react';
+import {Helmet} from 'react-helmet';
 import '../Alerting/Alerting.scss';
 import './Aim.scss';
-import { initGA, PageView } from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
-import TileSimple from '../../components/TileSimple/TileSimple';
-import Cta from '../../components/Cta/Cta';
-import ctaIcon from '../../images/icon-sg.svg';
-import aim1 from '../../images/elasticsearch_index_management_1.svg';
+import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
 import aim2 from '../../images/elasticsearch_index_management_2.svg';
 import aim3 from '../../images/elasticsearch_index_management_3.svg';
 import aim4 from '../../images/elasticsearch_index_management_4.svg';
 import aim5 from '../../images/elasticsearch_index_management_5.svg';
+import CTAAIM from "../../components/CTA/CTAAIM";
 
 const Aim = () => {
 
@@ -36,7 +33,7 @@ const Aim = () => {
                 />
             </Helmet>
             <Title
-                headline="Automated Index Management for Elasticsearch"
+                headline="Automated Index Ma&shy;na&shy;ge&shy;ment for Elastic&shy;search"
                 text="Streamline Elasticsearch operations with Search Guard's Automated Index Management. Boost efficiency, reduce manual tasks, and ensure peak cluster performance effortlessly."
                 breadcrumb={breadcrumb}
             />
@@ -44,29 +41,31 @@ const Aim = () => {
             <PreFooter />
             
             <div id="concept">
-                <TileSimple
+                <ImageTextTile
                     icon={aim5}
                     iconPosition="left"
-                    backgroundColor="light"
+                    colorschema="light"
                     headline="Goodbye Manual Index Management"
                     text="Say farewell to tedious index oversight. Search Guard's Automated Index Management handles routine tasks 24/7,
                     freeing you to focus on strategic initiatives. Trust that your indices are managed efficiently without constant attention,
                     allowing you to redirect your expertise where it matters most."
                 />
             </div>
-            <TileSimple
+            <ImageTextTile
                 icon={aim3}
                 iconPosition="right"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Operational Efficiency Redefined"
                 text="Our system continuously optimizes your indices based on predefined policies, ensuring peak cluster performance.
                 Experience reduced query latency and optimized resource allocation without constant intervention.
                 Enjoy a leaner, more responsive Elasticsearch deployment that adapts to your data needs automatically."
             />
-            <TileSimple
+            <ImageTextTile
                 icon={aim4}
                 iconPosition="left"
-                backgroundColor="light"
+                colorschema="light"
+                sv
+
                 headline="Cluster Operator's Peace of Mind"
                 text="Let Search Guard be your silent, vigilant partner. Set policies once and relax.
                 Comprehensive logging keeps you informed without constant monitoring.
@@ -74,10 +73,10 @@ const Aim = () => {
                 Rest easy knowing your indices are cared for around the clock,
                 allowing you to maintain work-life balance without compromising cluster health."
             />
-            <TileSimple
+            <ImageTextTile
                 icon={aim2}
                 iconPosition="right"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Scalability Without the Growing Pains"
                 text="As your data grows, so does Search Guard's capability.
                 Our Automated Index Management scales seamlessly with your cluster, handling gigabytes to petabytes with equal efficiency.
@@ -92,9 +91,9 @@ const Aim = () => {
 
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5 >
                                 Index Lifecycle Management
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 AIM allows you to define policies that automatically manage the entire lifecycle of your indices. From creation to deletion, each stage is handled based on your specific requirements. This ensures that your data retention policies are consistently enforced without manual intervention.
                             </div>
@@ -102,9 +101,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Data Rollover
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 As your indices grow, AIM can automatically roll over to new indices based on size, document count, or age thresholds. This prevents individual indices from becoming too large and impacting performance.
                             </div>
@@ -112,9 +111,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Index Replication
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 AIM can manage index replication, ensuring that your data is properly distributed across your cluster for high availability and fault tolerance.
                             </div>
@@ -122,9 +121,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Index Shrinking
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 Over time, as data becomes less frequently accessed, AIM can automatically shrink indices to optimize storage and improve query performance on older data.
                             </div>
@@ -132,9 +131,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Snapshot and Restore
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 Regular backups are crucial. AIM can schedule and manage snapshots of your indices, providing peace of mind that your data is always protected.
                             </div>
@@ -142,9 +141,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Cron-based Scheduling
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 With cron expression support, you have granular control over when each policy executes, allowing you to align index management tasks with your cluster's low-usage periods.
                             </div>
@@ -152,9 +151,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Node Selection
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 AIM lets you specify which nodes should execute these tasks, distributing the workload efficiently across your cluster.
                             </div>
@@ -162,9 +161,9 @@ const Aim = () => {
                     </div>
                     <div className="aim-section" >
                         <div className="alerting-content">
-                            <h2 className="subtitle alerting-content-headline">
+                            <h5>
                                 Security Integration
-                            </h2>
+                            </h5>
                             <div className="alerting-content-text">
                                 Fully integrated with Search Guard's security features, AIM ensures that all automated actions comply with your access control policies.
                             </div>
@@ -174,13 +173,7 @@ const Aim = () => {
             </div>
 
             <div id="tryit">
-                <Cta
-                    headline="Give AIM a spin!"
-                    text="Follow these simple steps to install AIM to your Elasticsearch cluster for free. "
-                    ctaText="Documentation"
-                    icon={ctaIcon}
-                    link="https://docs.search-guard.com/latest/automated-index-management"
-                />
+                <CTAAIM colorschema="white"/>
             </div>
             <PreFooter />
         </PageWrapper>

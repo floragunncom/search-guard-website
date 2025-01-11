@@ -1,0 +1,116 @@
+@import '../../../styles/Colors';
+@import '../../../styles/Breakpoints';
+
+.columnedtile {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+/* Headline of this component */
+.columnedtile-wrapper-headline {
+  margin-bottom: 64px;
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 32px;
+  }
+}
+
+/* Ensure the row behaves as a flex container so all columns are the same height and buttons are at the bottom of each column */
+.columnedtile-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Make columns stretch to the same height */
+.columnedtile-row .col {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnedtile-wrapper {
+  background: $white;
+  padding-top: 128px;
+
+  @media only screen and (max-width: $tabletBig) {
+    padding-top: 64px;
+  }
+}
+
+.columnedtile-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  @media only screen and (max-width: $mobile) {
+    padding-bottom: 64px;
+  }
+}
+
+.columnedtile-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+
+  @media only screen and (max-width: $mobile) {
+    img {
+      max-height: 100px;
+      max-width: 100px;
+    }
+  }
+}
+
+.columnedtile-text-wrapper {
+  margin-bottom: 64px;
+  @media only screen and (max-width: $tabletBig) {
+    margin-bottom: 32px;
+  }
+}
+
+.security-bg-wrapper {  
+  text-align: center;
+
+  @media only screen and (max-width: $tabletBig) {
+    max-width: $tabletBig;
+  }
+}
+
+/* Headline of this column */
+h2.columnedtile-headline {
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.8px;
+  text-align: center;
+  margin-bottom: 16px;
+
+  @media only screen and (max-width: $tabletBig) {
+    margin-bottom: 8px;
+  }
+
+
+  @media only screen and (max-width: $tabletBig) {
+    margin-bottom: px;
+    font-size: 20px;
+    letter-spacing: 0.67px;
+  }
+
+  ;
+}
+
+.columnedtile-content {
+  text-align: center;
+  flex: 1;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 16px;
+    line-height: 24px;
+  };
+}
+
+// REMOVE
+/*.columnedtile-icons {
+  @extend .image-on-light-bg;
+}*/
+
+.columnedtile-button-container {
+  margin-top: auto;
+  height: auto;
+}
+
+

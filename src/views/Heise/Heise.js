@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -25,7 +25,6 @@ const Heise = () => {
             </Helmet>
             <Title
                 headline="Scale your cluster,<br/> not your cost."
-                titlestyle="heise"
             />
 
             <div className="row heise-textbox">

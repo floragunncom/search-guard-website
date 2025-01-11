@@ -1,7 +1,7 @@
 import './Author.scss';
 import persons from '../../Api/contentfulPersons.json';
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Title from "../../components/Title/Title";

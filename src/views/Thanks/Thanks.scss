@@ -11,10 +11,6 @@
 }
 
 .thanks-warning {
-  color: $turkisHover;
-  font-size: 120px;
-  line-height: 140px;
-  font-weight: 500;
   letter-spacing: 4px;
   margin-bottom: 32px;
 
@@ -26,12 +22,7 @@
 }
 
 .thanks-headline {
-  color: $darkBlue;
-  font-size: 48px;
-  line-height: 57px;
-  font-weight: 300;
   margin-bottom: 16px;
-
   @media only screen and (max-width: $tabletBig) {
     font-size: 36px;
     line-height: 43px;
@@ -44,7 +35,6 @@
 }
 
 .thanks-text {
-  color: $darkBlue;
   font-size: 24px;
   line-height: 30px;
   letter-spacing: 0.8px;

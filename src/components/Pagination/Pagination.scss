@@ -11,11 +11,11 @@ li.pagination-number {
   a {
     padding: 14px 18px;
     font-size: 18px;
-    color: $green;
+    color: $secondary;
     font-weight: bold;
     cursor: pointer;
     &:focus {
-      border-bottom: 2px solid $green;
+      border-bottom: 2px solid $secondary-dark;
     }
   }
 }
