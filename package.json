@@ -98,7 +98,7 @@
   "reactSnap": {
     "skipThirdPartyRequests": true,
     "preconnectThirdParty": false,
-    "concurrency": 1,
+    "concurrency": 32,
     "viewport": {
       "width": 1280,
       "height": 767
