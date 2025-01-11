@@ -19,7 +19,7 @@ const TextTile = ({ colorschema, headline, text, ctaText, link }) => {
                             <div className="body-din texttile-text">{text}</div>
                         }
                         {link && link.length > 0 && ctaText && ctaText.length > 0 &&
-                            <Button text={ctaText} buttonStyle="light-green-button" link={link} />
+                            <Button text={ctaText}  link={link} />
                         }
                     </div>
                 </div>

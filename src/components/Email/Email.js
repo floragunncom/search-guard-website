@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './Email.scss';
 import Button from '../Button/Button';
+import ButtonSubmit from "../Button/ButtonSubmit";
 
 const Email = () => {
 
@@ -8,6 +9,7 @@ const Email = () => {
     const [procesing, setProcessing] = useState(false);
 
    const onNewsletterSubscribeClick = async event => {
+       console.log("Click");
     event.preventDefault();
     setProcessing(true);
     const formValuesJson = {};
@@ -83,7 +85,7 @@ const Email = () => {
                       />
                     </div>
                     <div className="input-field col s12 m6 l4">
-                      <Button text="subscribe" buttonStyle="light-green-button" type="submit"/>
+                      <Button text="subscribe" variant="submit"/>
                     </div>
                   </form>
             ))

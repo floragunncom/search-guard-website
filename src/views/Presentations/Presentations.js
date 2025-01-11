@@ -48,7 +48,7 @@ const Presentations = () => {
               <div className="presenations-download presentations-button">
 
                   <Button
-                      buttonStyle="light-green-button"
+                      
                       text="Download PDF"
                       link={item.link}
                       target="_blank"

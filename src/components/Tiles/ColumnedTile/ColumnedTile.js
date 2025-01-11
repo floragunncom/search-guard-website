@@ -44,7 +44,7 @@ const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, columns}) 
                                             svg.setAttribute('height', col.image.height);
                                             svg.setAttribute('class', imageCss);
                                             svg.setAttribute('title', col.headline);
-                                            }
+                                        }
                                         }
                                     />
                                 </div>
@@ -64,11 +64,9 @@ const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, columns}) 
                             <div className="columnedtile-button-container">
                                 {col.button && (
                                     <Button
-                                        buttonStyle="light-green-button"
                                         text={col.button.text}
                                         link={col.button.href}
                                         target={col.button.target}
-
                                     />
                                 )}
                             </div>

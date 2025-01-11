@@ -1,48 +1,35 @@
 import React from 'react';
-import ButtonLightGreen from './ButtonLightGreen';
-import ButtonDefault from './ButtonDefault';
-import LinkDefault from './LinkDefault';
-import LinkGhost from './LinkGhost';
 import './Button.scss';
+import ButtonLink from './ButtonLink';
+import ButtonSubmit from "./ButtonSubmit";
 
 const Button = props => {
 
     let style;
+    let variant;
 
-    // default
-    if (!props.buttonStyle) {
-        style = 'light-green-button';
+    // defaults
+    if (!props.variant) {
+        variant = 'link';
     } else {
-        style = props.buttonStyle;
+        variant = props.variant;
     }
 
-    // REMOVE UNUSED BUTTONS
-    switch (style) {
-        case 'default-button':
-            return <ButtonDefault text={props.text} onPress={props.onPress}/>;
-        case 'light-green-button':
-            return <ButtonLightGreen text={props.text} onPress={props.onPress} target={props.target}
-                                     link={props.link}/>;
-        case 'default-link':
-            return (
-                <LinkDefault
-                    text={props.text}
-                    target={props.target}
-                    link={props.link}
-                />
-            );
-        case 'ghost-link':
-            return (
-                <LinkGhost
-                    text={props.text}
-                    target={props.target}
-                    link={props.link}
-                    color={props.color}
-                />
-            );
+    if (!props.style) {
+        style = 'light';
+    } else {
+        style = props.style;
+    }
+
+    switch (variant) {
+        case 'link':
+            return <ButtonLink text={props.text} onPress={props.onPress} target={props.target}
+                               link={props.link} style={style}/>;
+        case 'submit':
+            return <ButtonSubmit text={props.text} style={style}/>;
         default:
-            return <ButtonLightGreen text={props.text} onPress={props.onPress} target={props.target}
-                                     link={props.link}/>;
+            return <ButtonLink text={props.text} onPress={props.onPress} target={props.target}
+                               link={props.link} style={style}/>;
     }
 };
 

@@ -118,7 +118,7 @@ const Services = ({ landing }) => {
       </div>
       <div className={!landing ? 'security-button' : 'hidden'}>
         <Button
-          buttonStyle="light-green-button"
+          
           text="see all features"
           link="/licensing/#feature"
         />

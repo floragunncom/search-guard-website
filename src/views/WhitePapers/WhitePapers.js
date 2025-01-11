@@ -67,7 +67,7 @@ const Whitepapers = () => {
                                 <div className="col m6 s12 center-align">
                                     <div className="whitepapers-download ">
                                         <Button
-                                            buttonStyle="light-green-button"
+                                            
                                             text="Download PDF"
                                             link={item.download}
                                             target="_blank"
@@ -78,7 +78,7 @@ const Whitepapers = () => {
                                 <div className="col m6 s12 ">
                                     <div className="whitepapers-download ">
                                         <Button
-                                            buttonStyle="light-green-button"
+                                            
                                             text="Read Online"
                                             link={`/whitepapers/${whitepaperContent.fields.slug}`}
                                             target="_blank"
