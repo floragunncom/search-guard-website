@@ -84,7 +84,7 @@ const Compliance = () => {
                 <ImageTextTile
                     icon={lock}
                     iconPosition="right"
-                    backgroundColor="light"
+                    colorschema="light"
                     headline="Data encryption"
                     text="
                     Search Guard enforces TLS encryption for all data in transit. This ensures data protection and data integrity, and makes sure only
@@ -96,7 +96,7 @@ const Compliance = () => {
                 <ImageTextTile
                     icon={multilevel}
                     iconPosition="left"
-                    backgroundColor="dark"
+                    colorschema="dark"
                     headline="Fine-grained access control to all data"
                     text="
             Search Guard blocks any unauthorized access to any information inside Elasticsearch. With our fine-grained role-based
@@ -107,7 +107,7 @@ const Compliance = () => {
             <ImageTextTile
                 icon={complianceDataChanges}
                 iconPosition="right"
-                backgroundColor="light"
+                colorschema="light"
                 headline="Data access tracking and change tracking"
                 text="
                 Search Guard produces and audit trail that records who has created, accessed and modified senstive data. In an compliance audit you can
@@ -117,7 +117,7 @@ const Compliance = () => {
             <ImageTextTile
                 icon={complianceAnon}
                 iconPosition="left"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Data anonymization"
                 text="
                 Not all data that is being recorded has to present for everyone to see in clear text at all times. Search Guard supports on-the-fly data
@@ -128,7 +128,7 @@ const Compliance = () => {
             <ImageTextTile
                 icon={complianceForgotten}
                 iconPosition="right"
-                backgroundColor="light"
+                colorschema="light"
                 headline="Right to be forgotten"
                 text="
                 Customers can demand that PII data that is not required for ongoing business activites must be deleted. With the Search Guard Compliance

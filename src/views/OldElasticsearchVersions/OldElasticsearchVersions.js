@@ -49,7 +49,7 @@ const OldElasticsearchVersions = () => {
                 <ImageTextTile
                     icon={oldversions}
                     iconPosition="left"
-                    backgroundColor="light"
+                    colorschema="light"
                     headline="We provide security for ES2/5/6"
                     text="Stuck on Elasticsearch 6, or even Elastic Search 5 or 2 without a viable migration path? Search Guard can help you migrate while providing core Enterprise security on older versions of Elasticsearch."
                 />
@@ -57,7 +57,7 @@ const OldElasticsearchVersions = () => {
             <ImageTextTile
                 icon={jail}
                 iconPosition="right"
-                backgroundColor="dark"
+                colorschema="dark"
                 headline="Get out of jail card "
                 text="
             Older versions of Elasticsearch have a list of known issues. Search Guard can help you stabilize your security framework with enterprise level authz/authn and provide a way forward to upgrade to current versions of Elasticsearch and Search guard that are not End of life.
@@ -66,7 +66,7 @@ const OldElasticsearchVersions = () => {
             <ImageTextTile
                 icon={security}
                 iconPosition="left"
-                backgroundColor="light"
+                colorschema="light"
                 headline="Stabilize your security framework"
                 text="
             By deploying the relevant version of Search  Guard on Elasticsearch 6, 5 or even version 2, we can stabilize your security frameworks. Then you can migrate over time to current versions of Elasticsearch without compromising your security. Once you migrate you access all the bug fixes and updates that are accessible in later versions of Elasticsearch (and Search Guard) such as Version 8).
