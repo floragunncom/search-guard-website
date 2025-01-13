@@ -29,7 +29,7 @@ const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink
       <div className="row">
 
           {breadcrumb ?
-              <div itemScope itemType="https://schema.org/BreadcrumbList" className="col s12 center breadcrumblist">
+              <div itemScope itemType="https://schema.org/BreadcrumbList" className="col s12 center">
                   {
 
                       breadcrumb.map((item, i) => {

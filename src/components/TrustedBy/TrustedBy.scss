@@ -14,23 +14,6 @@
 
 .trusted-headline {
   margin-bottom: 64px;
-  margin-top: 0px;
-  color: $primary;
-  font-size: 48px;
-  line-height: 57px;
-  text-align: center;
-  font-weight: 300;
-
-  @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
-  }
-
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 32px;
-    font-size: 24px;
-    line-height: 28px;
-  }
 }
 
 .trusted-pic {

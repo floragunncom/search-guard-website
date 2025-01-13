@@ -6,6 +6,8 @@ import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
 import './Hero.scss';
 import hero from '../../images/hero-static.svg';
+import {ReactSVG} from "react-svg";
+import logo from "../../images/sg_logo_white.svg";
 
 const Hero = () => {
   return (
@@ -37,7 +39,23 @@ const Hero = () => {
               </div>
             </div>
             <div className="col s12 m5 l4 hero-image">
-              <img loading="lazy" src={hero} alt="Search Guard provides Security and Alerting for Elasticsearch and Kibana" className='hero-image-content'/>
+              <ReactSVG
+                  src={hero}
+                  title="Search Guard"
+                  beforeInjection={(svg) => {
+                    svg.querySelectorAll('*').forEach((element) => {
+                      element.removeAttribute('filter');
+                      element.removeAttribute('mask');
+                      element.removeAttribute('style');
+                      element.removeAttribute('class');
+                    });
+
+                    svg.setAttribute('height', "100%");
+                    svg.setAttribute('preserveAspectRatio', "xMidYMid meet");
+                    svg.setAttribute('title', "Search Guard");
+                    svg.setAttribute('class', "hero-image-content");
+                  }}
+              />
             </div>
           </div>
         </div>
