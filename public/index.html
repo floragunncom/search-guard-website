@@ -49,13 +49,14 @@
     </script>
 
     <!-- preload critical resources -->
-    <link rel="preload" as="style" href="/assets/materialize.min.css">
-    <link rel="preload" as="style" href="/assets/fonts/fonts.css">
     <link rel="preload" href="/assets/fonts/Inter-Regular.ttf" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/Parafina-BoldS.otf" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/Parafina-BlackS.otf" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/Material-Icons.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="main.js" as="script" />
+    <link rel="preload" as="style" href="/assets/materialize.min.css">
+    <link rel="preload" as="style" href="/assets/fonts/fonts.css">
+    <link rel="preload" href="/assets/main.js" as="script" />
+    <link rel="preload" href="https://cdn.cookie-script.com/s/a521e590130162749ba95a6c3ffc0462.js" as="script" />
 
     <!-- critical above the fold CSS -->
     <!-- todo add the materialize grid system? -->
@@ -77,12 +78,6 @@
             font-weight: 900;
             line-height: 100%;
             letter-spacing: -1.5px;
-            @media only screen and (max-width: 992px) {
-                font-size: 72px;
-            };
-            @media only screen and (max-width: 600px) {
-                font-size: 60px;
-            };
         }
 
         h2 {
@@ -91,12 +86,6 @@
             font-weight: 900;
             line-height: 100%;
             letter-spacing: -0.5px;
-            @media only screen and (max-width: 992px) {
-                font-size: 56px;
-            };
-            @media only screen and (max-width: 600px) {
-                font-size: 42px;
-            };
         }
 
         h3 {
@@ -105,12 +94,6 @@
             font-size: 48px;
             font-weight: 900;
             line-height: 100%;
-            @media only screen and (max-width: 992px) {
-                font-size: 42px;
-            };
-            @media only screen and (max-width: 600px) {
-                font-size: 36px;
-            };
         }
 
         .container, .row, .container .row {
@@ -132,38 +115,16 @@
         .default-padding-top-bottom {
             padding-top: 96px;
             padding-bottom: 96px;
-            @media only screen and (max-width: 992px) {
-                padding-top: 56px;
-                padding-bottom: 56px;
-            }
-            @media only screen and (max-width: 600px) {
-                padding-top: 42px;
-                padding-bottom: 42px;
-            }
         }
 
         .default-margin-top-bottom {
             margin-top: 96px;
             margin-bottom: 96px;
-            @media only screen and (max-width: 992px) {
-                margin-top: 56px;
-                margin-bottom: 56px;
-            }
-            @media only screen and (max-width: 600px) {
-                margin-top: 42px;
-                margin-bottom: 42px;
-            }
         }
 
         .title-wrapper-style {
             background-color: white;
             padding: 64px 32px;
-            @media only screen and (max-width: 992px) {
-                padding-bottom: 32px;
-            };
-            @media only screen and (max-width: 600px) {
-                padding: 32px 24px;
-            };
         }
 
         .title-headline-style {
@@ -171,28 +132,85 @@
             text-align: center;
             padding: 40px 20px 0px 20px;
             margin-top: 20px;
-            @media only screen and (max-width: 992px) {
-                padding: 0px 0px 0px 0px;
-                margin-top: 15px;
-            };
-            @media only screen and (max-width: 600px) {
-                padding: 0px 0px 0px 0px;
-                margin-top: 15px;
-            };
         }
 
         .hero-text-wrapper-headline {
             text-align: left;
             margin-bottom: 32px;
-            @media only screen and (max-width: 992px) {
-                margin-top: 32px;
+        }
+
+        @media (max-width: 600px) {
+            .h1 {
+                font-size: 60px;
             }
-            @media only screen and (max-width: 600px) {
+            .h2 {
+                font-size: 42px;
+            }
+
+            .h3 {
+                font-size: 36px;
+            }
+
+            .default-padding-top-bottom {
+                padding-top: 42px;
+                padding-bottom: 42px;
+            }
+
+            .default-margin-top-bottom {
+                margin-top: 42px;
+                margin-bottom: 42px;
+            }
+
+            .title-wrapper-style {
+                padding: 32px 24px;
+            }
+
+            .title-headline-style {
+                padding: 0px 0px 0px 0px;
+                margin-top: 15px;
+            }
+
+            .hero-text-wrapper-headline {
                 margin-top: -72px;
                 text-align: center;
             }
         }
 
+        @media (max-width: 992px) {
+            .h1 {
+                font-size: 72px;
+            }
+            .h2 {
+                font-size: 56px;
+            }
+
+            .h3 {
+                font-size: 42px;
+            }
+
+            .default-padding-top-bottom {
+                padding-top: 56px;
+                padding-bottom: 56px;
+            }
+
+            .default-margin-top-bottom {
+                margin-top: 56px;
+                margin-bottom: 56px;
+            }
+
+            .title-wrapper-style {
+                padding-bottom: 32px;
+            }
+
+            .title-headline-style {
+                padding: 0px 0px 0px 0px;
+                margin-top: 15px;
+            }
+
+            .hero-text-wrapper-headline {
+                margin-top: 32px;
+            }
+        }
 
     </style>
 
@@ -205,9 +223,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="theme-color" content="#000000"/>
     <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96"/>
-    <link rel="icon" type="image/svg+xml" href="/assets//favicon.svg"/>
-    <link rel="shortcut icon" href="/assets//favicon.ico"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets//apple-touch-icon.png"/>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+    <link rel="shortcut icon" href="/assets/favicon.svg"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
     <meta name="apple-mobile-web-app-title" content="Search Guard"/>
     <link rel="manifest" href="/manifest.json"/>
     <title>Search Guard</title>
@@ -233,7 +251,6 @@
     <script
             type="text/javascript"
             async
-            defer
             src="https://app.papercups.io/widget.js"
     ></script>
 </head>
@@ -248,15 +265,15 @@
             }
         });
         var n = document.createElement("script");
+        n.async = true;
         n.async = !0, n.setAttribute("src", "https://cdn.getkoala.com/v1/pk_b87a9c7327b29d2baa870bbb7e85e88ea58e/sdk.js"), (document.body || document.head).appendChild(n)
     }();
 </script>
 <div id="root"></div>
 </body>
 <!-- All font definitions -->
-<link href="/assets/fonts/fonts.css" rel="stylesheet" media="print" onload="this.media='all'">
-<link href="/assets/glide.core.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-<link href="/assets/glide.theme.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+<link href="/assets/fonts/fonts.css" rel="stylesheet" media="screen" >
+<link href="/assets/glide.core.min.css" rel="stylesheet" media="screen" >
 
 <script src="/assets/materialize.min.js" defer></script>
 <script src="/assets/glide.min.js" defer></script>
