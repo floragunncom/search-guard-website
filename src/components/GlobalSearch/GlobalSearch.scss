@@ -1,0 +1,192 @@
+@import '../../styles/Colors';
+@import '../../styles/Breakpoints';
+
+.div-search-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+}
+  
+.div-search-button-close {
+    cursor: pointer;  
+    position: relative;
+    right: 15px;
+    height: fit-content;
+    background: none;
+    filter: invert(100%) sepia(0%) saturate(7460%) hue-rotate(125deg) brightness(111%) contrast(110%);
+}
+  
+.div-search {
+    width: 100%;
+    padding: 2rem;
+    background-color: $navyBlue !important;
+    overflow-y: auto;
+    max-height: 80vh;
+    box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.2); /* Shadow */
+    border-radius: 0 0 15px 15px; /* Rounded corners */
+    position: relative;
+    display: flex;
+    flex-direction: column;  
+}
+  
+.div-search::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    position: absolute; /* Keeps it relative to the container */
+}
+  
+.div-search::-webkit-scrollbar-thumb {
+    background: rgba($white, 0.4); /* Scrollbar thumb color */
+    border-radius: 15px; /* Rounded scrollbar */
+}
+  
+.div-search::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4); /* Hover effect for scrollbar thumb */
+}
+  
+.div-search::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Scrollbar track color */
+    border-radius: 15px; /* rounded scrollbar track*/  
+    margin-bottom: 10px;
+}
+  
+.div-search-index-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+  
+.div-search-index-menu-item {
+    display: block;
+    margin: 5px 0;
+}
+  
+.div-search input[type="radio"]:not(:checked)+span:before, .div-search input[type="radio"]:checked+span:before,
+.div-search input[type="radio"]:not(:checked)+span:after, .div-search input[type="radio"]:checked+span:after {
+    display: none;
+}
+  
+.div-search [type="radio"]:not(:checked)+span, .div-search [type="radio"]:checked+span {
+    padding: 0.2em 0.5em; 
+    display: unset;
+}
+  
+.div-search input[type="radio"]:not(:checked), .div-search input[type="radio"]:checked {
+    appearance: auto; /* Resets browser styles to default */
+    -webkit-appearance: radio; /* For Safari */
+    margin: 0;
+    width: auto; /* Use browser-defined size */
+    width: 16px;
+    height: 16px;
+    position: unset;
+    opacity: unset;
+    pointer-events: none;
+    cursor: pointer;
+}
+  
+.div-search input label {
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+.div-search-text {
+    color: $white;
+    background-color: $navyBlue;
+}
+  
+.div-close-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+  
+.div-search .ais-Hits-list {
+    list-style-type: none; /* Removes default numbering */
+}
+  
+.div-search .ais-Menu {
+    margin-bottom: 20px;  
+}
+  
+.globalsearchresult-item {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px 64px 20px;
+  
+    @media only screen and (max-width: $mobile) {
+      margin: 16px 4px;
+    }
+  }
+  
+.globalsearchresult-item:hover {
+    background-color: rgba($color: $black, $alpha: 0.1);
+    box-shadow: 0px 4px 15px rgba($color: $black, $alpha: 0.1);
+    border-radius: 10px;
+}
+  
+.globalsearchresult-title-group {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.globalsearchresult-title,
+.globalsearchresult-result-headline {
+    color: $white;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+  
+    @media only screen and (max-width: $mobile) {
+      font-size: 20px;
+      letter-spacing: 0.67px;
+    }
+}
+  
+.globalsearchresult-result-headline {
+    padding: 0px 20px 32px 20px;
+    font-weight: bold;
+    text-align: center;
+}
+  
+.globalsearchresult-author {
+    color: $white;
+    font-size: 12px;
+    line-height: 32px;
+    letter-spacing: 3.3px;
+    margin-bottom: 8px;
+}
+  
+.globalsearchresult-content {
+    color: $white;
+    font-size: 18px;
+    line-height: 27px;
+} 
+
+.truncate-to-num-lines {
+    display: -webkit-box;          /* establish a block formatting context */
+    -webkit-box-orient: vertical;  /* set the box orientation to vertical */
+    line-clamp: 3;                 /* limit the text to n lines */
+    -webkit-line-clamp: 3;         /* limit the text to n lines */
+    overflow: hidden;              /* ensure content outside is hidden */
+    text-overflow: ellipsis;       /* add an ellipsis (...) at the end */
+}
+
+$index-menu-badges-colors: (
+    'indexBadgeBgColor': $secondary,
+    'indexBadgeTextColor': $black,
+    'badgeMarginBig': 10px,
+    'badgeMarginSmall': 4px,
+);
+  
+:export {
+    @each $key, $value in $index-menu-badges-colors {
+        #{unquote($key)}: $value;
+    }
+}
