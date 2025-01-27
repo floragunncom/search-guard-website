@@ -42,7 +42,7 @@ const Certified = () => {
             Allianz for Cyber-Sicherheit
           </h5>
           <div className="body1 certified-col-text">
-            floragunn is member of the "Alliance for Cybersecurity", a body of
+            Floragunn is member of the "Alliance for Cybersecurity", a body of
             the Federal Office for Information Security in Germany.
           </div>
         </div>

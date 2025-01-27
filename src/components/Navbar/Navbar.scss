@@ -2,7 +2,7 @@
 @import '../../styles/Breakpoints';
 
 nav {
-  background-color: #133346;
+  background-color: $darkBlueNav;
   padding-left: 200px;
   padding-right: 200px;
 }
@@ -57,7 +57,7 @@ nav ul a {
 .sidenav {
   left: -20px;
   color: $white;
-  background-color: #133346;
+  background-color: $darkBlueNav;
 }
 
 .sidenav li>a {
@@ -71,18 +71,22 @@ nav ul a {
   min-width: 250px;
 }
 
+#nav-search {
+  min-width: 500px;
+}
+
 .dropdown-content  {
   background-color: unset !important;
 }
 
 .dropdown-content li > a {
-  background-color: #133346;
-  color: white;
+  background-color: $darkBlueNav;
+  color: $white;
 }
 
 .dropdown-content li:hover,
 .dropdown-content li.active {
-  background-color: #133346;
+  background-color: $darkBlueNav;
   border-bottom: 2px solid #01EFDD;
   margin-bottom: -2px;
 }
@@ -95,6 +99,18 @@ nav ul a {
   line-height:1.5rem;
   width:100%;
   text-align:left
+}
+
+.btn-search {
+  width: 3rem; /* to dont have a change in width when clicking on/off */
+}
+
+.btn-search-open {
+  background-color: $darkBlueNav;
+}
+
+.btn-search-close {
+  background-color: $darkBlueNav;
 }
 
 .dropdown-trigger {
