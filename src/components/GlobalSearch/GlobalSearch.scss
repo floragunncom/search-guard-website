@@ -27,6 +27,15 @@
     position: relative;
     display: flex;
     flex-direction: column;  
+
+    @media only screen and (max-width: $mobile){
+        left: 0;
+        right: 0;
+        width: -webkit-fill-available;
+        margin: 0 20px 0 20px;
+        position: absolute;
+        margin-right: 30px;
+    }
 }
   
 .div-search::-webkit-scrollbar {
