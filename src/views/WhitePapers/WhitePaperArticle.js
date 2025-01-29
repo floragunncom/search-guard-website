@@ -112,7 +112,7 @@ const WhitePaperArticle = ({ match }) => {
         <title>{postContent.fields.title}</title>
         <link
           rel="canonical"
-          href={`https://search-guard.com/${postContent.fields.slug}`}
+          href={`https://search-guard.com/whitepapers/${postContent.fields.slug}`}
         />
         <meta name="description" content={postContent.fields.description} />
 
