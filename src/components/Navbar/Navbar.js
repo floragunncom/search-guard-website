@@ -9,15 +9,15 @@ import { SEARCH_GUARD_ALGOLIA_APP_ID, SEARCH_GUARD_ALGOLIA_SEARCH_API_KEY } from
 const Navbar = ({ background = 'white', landing }) => {
   const [searchEnabled, setSearchEnabled ] = React.useState(false);
 
-  const handleEnableSearch = React.useCallback(() => setSearchEnabled(true), []);
-
-  const handleDisableSearch = React.useCallback(() => setSearchEnabled(false), []);
+  const handleToggleSearch = React.useCallback(() => {
+    setSearchEnabled(enabled => !enabled);
+  }, []);
 
   const algoliasearchClient = React.useMemo(
     () => { return window['@algolia/client-search'] ? window['@algolia/client-search'].searchClient(
       SEARCH_GUARD_ALGOLIA_APP_ID,
       SEARCH_GUARD_ALGOLIA_SEARCH_API_KEY
-    ) : null}, 
+    ) : null},
     [window['@algolia/client-search']]
   );
 
@@ -25,7 +25,8 @@ const Navbar = ({ background = 'white', landing }) => {
       <>
         <div className="navbar-fixed">
           <nav>
-            <div className="nav-wrapper">
+            <div className="nav-wrapper">               
+              <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger">menu</i></a>
               <a href="/" className="brand-logo">
               <ReactSVG
                 src={logo}
@@ -49,7 +50,12 @@ const Navbar = ({ background = 'white', landing }) => {
                   }}
                 />
               </a>
-              <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger">menu</i></a>
+              {
+                searchEnabled === false ?  
+                <a className='btn-search-mobile btn-search-open' onClick={handleToggleSearch}><i className="fa fa-search" /></a>
+                :
+                <a className='btn-search-mobile btn-search-close' onClick={handleToggleSearch}><i className="fa fa-times" /></a>
+              }               
               <ul className="right hide-on-med-and-down">
                 <li><a href="/security/" data-target="nav-solutions" className="dropdown-trigger navbar__item" >Solutions</a></li>
                 <li><a className="navbar__item" href="/search-guard-free-trial/">Download</a></li>
@@ -60,14 +66,14 @@ const Navbar = ({ background = 'white', landing }) => {
                 <li><a className="navbar__item" href="/contacts/">Contact</a></li>
                 <li>
                   {searchEnabled === false ? 
-                    <a className='btn-search btn-search-open navbar__item' onClick={handleEnableSearch}><i className="fa fa-search" /></a>
+                    <a className='btn-search btn-search-open navbar__item' onClick={handleToggleSearch}><i className="fa fa-search" /></a>
                     :
-                    <a className='btn-search btn-search-close navbar__item' onClick={handleDisableSearch}><i className="fa fa-times" /></a>
+                    <a className='btn-search btn-search-close navbar__item' onClick={handleToggleSearch}><i className="fa fa-times" /></a>
                   }
                 </li>                        
               </ul>
             </div>
-            {searchEnabled && algoliasearchClient ? <GlobalSearch searchClient={algoliasearchClient} /> : null}   
+            {algoliasearchClient ? <GlobalSearch searchClient={algoliasearchClient} opened={searchEnabled} className="search-mobile"/> : null}   
           </nav>
         </div>
         <ul className="sidenav" id="sg-sidenav">
@@ -97,11 +103,7 @@ const Navbar = ({ background = 'white', landing }) => {
           <li><a className="navbar__item" href="/company/">About</a></li>
           <li><a className="navbar__item" href="/contacts/">Contact</a></li>
           <li>
-            {searchEnabled === false ? 
-              <a className='btn-search btn-search-open navbar__item' onClick={handleEnableSearch}><i className="fa fa-search" /></a>
-              :
-              <a className='btn-search btn-search-close navbar__item' onClick={handleDisableSearch}><i className="fa fa-times" /></a>
-            }
+
           </li>                 
         </ul>
         <ul id="nav-resources" className="dropdown-content">

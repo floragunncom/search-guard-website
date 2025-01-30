@@ -61,6 +61,7 @@ div.col.s12.m5.l6 {
 .hero-text-wrapper-headline {
   text-align: left;
   margin-bottom: 32px;
+  word-break: keep-all;
   @media only screen and (max-width: $tabletBig) {
     margin-top: 32px;
   }

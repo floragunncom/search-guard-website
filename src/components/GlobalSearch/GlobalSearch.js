@@ -1,8 +1,9 @@
 import React from 'react';
 import {Highlight, Hits, Index, InstantSearch, Menu, SearchBox, Snippet} from 'react-instantsearch';
 import { Badge } from '../Badge/Badge';
-import { indexBadgeBgColor, indexBadgeTextColor, badgeMarginBig, badgeMarginSmall } from './GlobalSearch.scss';
+import styles from './GlobalSearch.scss';
 import 'font-awesome/css/font-awesome.min.css';
+import classNames from 'classnames';
 
 const SEARCH_GUARD_DOCS_URL = 'https://docs.search-guard.com';
 const SEARCH_GUARD_DOCS_SEARCH_INDEX = 'latest';
@@ -65,10 +66,10 @@ const IndexMenu = ({ activeIndex, setActiveIndex  }) => {
                         value={index}
                     />
                     <Badge 
-                        style={{marginLeft: badgeMarginBig}} 
+                        style={{marginLeft: styles.badgeMarginBig}} 
                         text={component.label} 
-                        bgColor={indexBadgeBgColor} 
-                        textColor={indexBadgeTextColor}
+                        bgColor={styles.indexBadgeBgColor} 
+                        textColor={styles.indexBadgeTextColor}
                     />
                 </label>
             ))}
@@ -76,9 +77,9 @@ const IndexMenu = ({ activeIndex, setActiveIndex  }) => {
     );
 };
 
-export const GlobalSearch = ({ searchClient }) => {
+export const GlobalSearch = ({ searchClient, opened, className }) => {
     const [activeIndex, setActiveIndex] = React.useState(DEFAULT_SEARCH_INDEX); // State to track active index 
-   
+
     const transformHitItems = React.useCallback(
         ( _, { results }) => {
             if (results.query === '') return [];
@@ -93,10 +94,10 @@ export const GlobalSearch = ({ searchClient }) => {
             return items.map((item) => ({
                 ...item,
                 count: 
-                    <Badge style={{marginLeft: badgeMarginSmall}} 
+                    <Badge style={{marginLeft: styles.badgeMarginSmall}} 
                         text={item.count} 
-                        bgColor={indexBadgeBgColor} 
-                        textColor={indexBadgeTextColor}
+                        bgColor={styles.indexBadgeBgColor} 
+                        textColor={styles.indexBadgeTextColor}
                     />,
                 })
             );
@@ -105,9 +106,16 @@ export const GlobalSearch = ({ searchClient }) => {
     );
   
     const submitIconComponent = React.useCallback(() => null, []);
-        
+    
     return (
-        <div className='div-search-text div-search'>
+        <div className={classNames(
+                'div-search-text div-search', 
+                { 
+                    'div-search-expand-animation':  opened,
+                    'div-search-collapse-animation': !opened,
+                },
+                className
+            )}>
             <InstantSearch 
                 indexName={activeIndex} 
                 searchClient={searchClient}
@@ -117,7 +125,7 @@ export const GlobalSearch = ({ searchClient }) => {
             >
                 <SearchBox
                     autoFocus
-                    placeholder='Start typing to search to places like Blog or SearchGuard documentation'
+                    placeholder='Type to search eg. in Blog or Docs'
                     classNames={{
                         reset: 'div-search-button-close', 
                         input: 'div-search-text', 
@@ -142,5 +150,5 @@ export const GlobalSearch = ({ searchClient }) => {
                 </Index>         
             </InstantSearch>              
         </div>
-    )  
+    )
 }

@@ -20,15 +20,43 @@
     width: 100%;
     padding: 2rem;
     background-color: $navyBlue !important;
-    overflow-y: auto;
-    max-height: 80vh;
+    overflow: auto;
+    max-height: 0;
+    padding: 2rem;
     box-shadow: 0px 4px 15px 4px rgba(0, 0, 0, 0.2); /* Shadow */
     border-radius: 0 0 15px 15px; /* Rounded corners */
     position: relative;
     display: flex;
     flex-direction: column;  
+
+    @media only screen and (max-width: $mobile){
+        left: 0;
+        right: 0;
+        width: -webkit-fill-available;
+        margin: 0 20px 0 20px;
+        position: absolute;
+        margin-right: 30px;
+    }
+} 
+
+$div-search-animation-time-ms: 500;
+
+.div-search-collapse-animation {
+    padding: 0 2rem 0 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height #{$div-search-animation-time-ms}ms linear, padding #{$div-search-animation-time-ms}ms linear, overflow #{$div-search-animation-time-ms}ms linear;
 }
-  
+
+.div-search-expand-animation {
+    max-height: 80vh;
+    @media only screen and (max-width: $mobile){
+        padding: 2rem;
+    }
+    overflow: auto;
+    transition: max-height #{$div-search-animation-time-ms}ms linear, padding #{$div-search-animation-time-ms}ms linear, overflow #{$div-search-animation-time-ms}ms linear;
+}
+ 
 .div-search::-webkit-scrollbar {
     width: 10px; /* Width of the scrollbar */
     position: absolute; /* Keeps it relative to the container */
@@ -85,6 +113,10 @@
     pointer-events: none;
     cursor: pointer;
 }
+
+.sidenav li>a>i, .sidenav li>a>[class^="mdi-"], .sidenav li>a li>a>[class*="mdi-"], .sidenav li>a>i.material-icons {
+    color: unset;
+}
   
 .div-search input label {
     font-size: 16px;
@@ -133,6 +165,9 @@
     align-items: center;
     flex-direction: row;
     justify-content: flex-start;
+    align-content: center;
+    flex-wrap: wrap;    
+    margin-bottom: 8px;
 }
 
 .globalsearchresult-title,
@@ -141,7 +176,6 @@
     font-size: 24px;
     line-height: 30px;
     letter-spacing: 0.8px;
-    margin-bottom: 8px;
   
     @media only screen and (max-width: $mobile) {
       font-size: 20px;
@@ -167,7 +201,7 @@
     color: $white;
     font-size: 18px;
     line-height: 27px;
-} 
+}
 
 .truncate-to-num-lines {
     display: -webkit-box;          /* establish a block formatting context */
@@ -189,4 +223,5 @@ $index-menu-badges-colors: (
     @each $key, $value in $index-menu-badges-colors {
         #{unquote($key)}: $value;
     }
+    divSearchAnimationTimeMs: $div-search-animation-time-ms;    
 }
