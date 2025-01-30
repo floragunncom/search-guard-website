@@ -75,6 +75,22 @@ nav ul a {
   min-width: 500px;
 }
 
+////////// as in materialize //////////
+$navbar-height: 56px;
+@media only screen and (max-width: $mobile){
+  nav {
+    color: #fff;
+    width: 100%;
+    height: $navbar-height;
+    line-height: $navbar-height;
+  }
+
+  .search-mobile {
+    margin-top: $navbar-height;
+  }
+}
+////////////////////////////////////////
+
 .dropdown-content  {
   background-color: unset !important;
 }
@@ -101,8 +117,47 @@ nav ul a {
   text-align:left
 }
 
+.btn-search-mobile {
+  text-align: center;
+  width: 1.5rem;
+  display: none;
+
+  @media only screen and (max-width: $mobile) {    
+    display: unset;
+  }
+}
+
 .btn-search {
   width: 3rem; /* to dont have a change in width when clicking on/off */
+  @media only screen and (max-width: $mobile) {
+    display: none;
+  }
+}
+
+nav .sidenav-trigger {
+  display: contents;
+}
+
+@media only screen and (max-width: $mobile) {
+  nav .brand-logo {
+    left: unset;
+    -webkit-transform: unset;
+    transform: unset;
+    display: contents;
+  }
+}
+
+@media only screen and (max-width: $mobile) {  
+  nav .nav-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+  }
 }
 
 .btn-search-open {
