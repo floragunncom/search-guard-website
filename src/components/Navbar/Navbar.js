@@ -25,12 +25,8 @@ const Navbar = ({ background = 'white', landing }) => {
       <>
         <div className="navbar-fixed">
           <nav>
-            <div className="nav-wrapper">
-            {searchEnabled === false ?  
-              <a className='btn-search-mobile btn-search-open' onClick={handleToggleSearch}><i className="fa fa-search" /></a>
-              :
-              <a className='btn-search-mobile btn-search-close' onClick={handleToggleSearch}><i className="fa fa-times" /></a>
-            }                
+            <div className="nav-wrapper">               
+              <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger">menu</i></a>
               <a href="/" className="brand-logo">
               <ReactSVG
                 src={logo}
@@ -54,7 +50,12 @@ const Navbar = ({ background = 'white', landing }) => {
                   }}
                 />
               </a>
-              <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger">menu</i></a>
+              {
+                searchEnabled === false ?  
+                <a className='btn-search-mobile btn-search-open' onClick={handleToggleSearch}><i className="fa fa-search" /></a>
+                :
+                <a className='btn-search-mobile btn-search-close' onClick={handleToggleSearch}><i className="fa fa-times" /></a>
+              }               
               <ul className="right hide-on-med-and-down">
                 <li><a href="/security/" data-target="nav-solutions" className="dropdown-trigger navbar__item" >Solutions</a></li>
                 <li><a className="navbar__item" href="/search-guard-free-trial/">Download</a></li>
