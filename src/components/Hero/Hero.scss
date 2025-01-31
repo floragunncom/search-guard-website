@@ -61,13 +61,15 @@ div.col.s12.m5.l6 {
 .hero-text-wrapper-headline {
   text-align: left;
   margin-bottom: 32px;
-  word-break: keep-all;
+  word-break: auto-phrase;
   @media only screen and (max-width: $tabletBig) {
     margin-top: 32px;
   }
   @media only screen and (max-width: $mobile) {
     margin-top: -72px;
     text-align: center;
+    font-size: xxx-large;
+    font-size: -webkit-xxx-large;
   }
 }
 
