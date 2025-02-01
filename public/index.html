@@ -132,8 +132,10 @@
         }
 
         h1.title-headline-style {
-            font-size: xxx-large;
-            font-size: -webkit-xxx-large;
+            @media (max-width: 600px) {
+                font-size: xxx-large;
+                font-size: -webkit-xxx-large;                 
+            }
             color: #184962;
             word-break: auto-phrase;
             text-align: center;
