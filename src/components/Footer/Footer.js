@@ -192,7 +192,7 @@ const Footer = ({landing}) => {
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/datenschutz/" className="footer-links">
+                                        <a href="/dataprotection/" className="footer-links">
                                             Data protection
                                         </a>
                                     </div>

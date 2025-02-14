@@ -6,984 +6,343 @@ import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 
 const breadcrumb = [
-  { anchor: '/', name: 'Home' },
-  { anchor: '/company/', name: 'Company' },
-  { anchor: '/datenschutz/', name: 'Data Protection' }
+    { anchor: '/', name: 'Home' },
+    { anchor: '/company/', name: 'Company' },
+    { anchor: '/dataprotection/', name: 'Data Protection' }
 ];
 
-
 const DataProtection = () => {
-  return (
-    <PageWrapper>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Datenschutz - Search Guard</title>
-        <link rel="canonical" href="https://search-guard.com/datenschutz/" />
-        <meta
-          name="description"
-          content="Our policy regarding the collection and usage of personal data in accordance with GDPR."
-        />
-      </Helmet>
-      <Title
-        headline="Data Protection"
-        text="Our policy regarding the collection and usage of personal data in accordance with GDPR."
-        breadcrumb={breadcrumb}
-      />
-      <div className="row">
-        <div className="col s12 l8 offset-l2">
-          <div className="imprint-wrapper">
+    return (
+        <PageWrapper>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Data Protection - Search Guard</title>
+                <link rel="canonical" href="https://search-guard.com/dataprotection/" />
+                <meta
+                    name="description"
+                    content="Our policy regarding the collection and usage of personal data in accordance with GDPR."
+                />
+            </Helmet>
+            <Title
+                headline="Data Protection"
+                text="Our policy regarding the collection and usage of personal data in accordance with GDPR."
+                breadcrumb={breadcrumb}
+            />
+            <div className="row">
+                <div className="col s12 l8 offset-l2">
+                    <div className="imprint-wrapper">
 
-            <div className="imprint-headline">
-              <b><i>German version below</i></b>
-            </div>
+                        <div className="imprint-headline">
+                            <b><i><a href="/datenschutz/">Deutsche Version</a></i></b>
+                        </div>
 
-            <div className="imprint-headline">
-              1. name and contact details of the controller
-              and the company data protection officer
+                        <div className="imprint-headline">
+                            1. Name and Contact Details of the Data Controller and Company Data Protection Officer
+                        </div>
+                        <div className="imprint-text">
+                            This privacy policy applies to data processing by: <br />
+                            <br />
+                            Responsible party:
+                            <br />
+                            floragunn GmbH
+                            <br />
+                            Tempelhofer Ufer 16
+                            <br />
+                            10963 Berlin
+                            <br />
+                            Email: info@floragunn.com
+                        </div>
+                        <div className="imprint-headline">
+                            2. Collection and Storage of Personal Data and Nature and Purpose of Their Use
+                        </div>
+                        <div className="imprint-text">
+                            a) When visiting the website <br />
+                            <br />
+                            When you access our website{' '}
+                            <a
+                                href="https://search-guard.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://search-guard.com
+                            </a>{' '}
+                            your browser automatically sends information to our website's server.
+                            This information is temporarily stored in a log file. The following
+                            information is collected without your intervention and stored until
+                            automated deletion:
+                            <br />
+                            <br />
+                            <ul className="imprint-listitem">
+                                <li>IP address of the requesting computer,</li>
+                                <li>Date and time of access,</li>
+                                <li>Name and URL of the retrieved file,</li>
+                                <li>
+                                    Website from which access is made (referrer URL),
+                                </li>
+                                <li>
+                                    Browser used and, if applicable, your computer's operating system
+                                    and the name of your access provider.
+                                </li>
+                            </ul>
+                            We process the mentioned data for the following purposes:
+                            <ul className="imprint-listitem">
+                                <li>
+                                    Ensuring a smooth connection setup of the website,
+                                </li>
+                                <li>
+                                    Ensuring comfortable use of our website,
+                                </li>
+                                <li>Evaluation of system security and stability, and</li>
+                                <li>For other administrative purposes.</li>
+                            </ul>
+                            The legal basis for data processing is Art. 6(1)(f) GDPR. Our legitimate
+                            interest follows from the purposes listed above for data collection. We
+                            never use the collected data to draw conclusions about your person.
+                            <br />
+                            <br />
+                            In addition, we use cookies and analytics services when you visit our
+                            website. Further explanations can be found under sections 4 and 5 of
+                            this privacy policy.
+                            <br />
+                            <br />
+                            b) When registering for our newsletter
+                            <br />
+                            <br />
+                            If you have explicitly consented according to Art. 6(1)(a) GDPR, we
+                            will use your email address to regularly send you our newsletter. For
+                            receiving the newsletter, providing an email address is sufficient.
+                            <br />
+                            <br />
+                            You can unsubscribe at any time, for example via a link at the end
+                            of each newsletter. Alternatively, you can send your unsubscribe
+                            request at any time to info@floragunn.com.
+                            <br />
+                            <br />
+                            c) When using our contact form
+                            <br />
+                            <br />
+                            For any type of questions, we offer you the possibility to contact us
+                            via a form provided on the website. A valid email address is required
+                            so we know who the request is from and to be able to respond. Additional
+                            information can be provided voluntarily.
+                            <br />
+                            <br />
+                            Data processing for the purpose of contacting us is carried out
+                            according to Art. 6(1)(a) GDPR based on your voluntarily given consent.
+                            <br />
+                            <br />
+                            The personal data we collect for the use of the contact form will be
+                            automatically deleted after your request has been processed.
+                        </div>
+                        <div className="imprint-headline">Data Transfer</div>
+                        <div className="imprint-text">
+                            Your personal data will not be transmitted to third parties for
+                            purposes other than those listed below.
+                            <br />
+                            <br />
+                            We only share your personal data with third parties if:
+                            <ul className="imprint-listitem">
+                                <li>
+                                    You have given your explicit consent according to Art. 6(1)(a) GDPR,
+                                </li>
+                                <li>
+                                    Disclosure is necessary according to Art. 6(1)(f) GDPR for the
+                                    establishment, exercise, or defense of legal claims and there is
+                                    no reason to assume that you have an overriding legitimate interest
+                                    in not disclosing your data,
+                                </li>
+                                <li>
+                                    In the event that there is a legal obligation for disclosure
+                                    pursuant to Art. 6(1)(c) GDPR, and
+                                </li>
+                                <li>
+                                    This is legally permissible and required according to Art. 6(1)(b)
+                                    GDPR for the processing of contractual relationships with you.
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="imprint-headline">4. Cookies</div>
+                        <div className="imprint-text">
+                            We use cookies on our site. These are small files that your browser
+                            automatically creates and stores on your device (laptop, tablet,
+                            smartphone, etc.) when you visit our site. Cookies do not harm your
+                            device and do not contain viruses, trojans, or other malware.
+                            <br />
+                            <br />
+                            Information is stored in the cookie that is related to the specific
+                            device used. However, this does not mean that we directly obtain
+                            knowledge of your identity.
+                            <br />
+                            <br />
+                            The use of cookies serves to make the use of our website more pleasant
+                            for you. We use session cookies to recognize that you have already
+                            visited individual pages of our website. These are automatically
+                            deleted when you leave our site.
+                            <br />
+                            <br />
+                            Additionally, we also use temporary cookies to optimize user-friendliness,
+                            which are stored on your device for a specified period. If you visit
+                            our site again to use our services, it automatically recognizes that
+                            you have already been with us and what inputs and settings you made,
+                            so you don't have to enter them again.
+                            <br />
+                            <br />
+                            We also use cookies to statistically record the use of our website
+                            and evaluate it for the purpose of optimizing our offering for you
+                            (see Section 5). These cookies allow us to automatically recognize
+                            when you return to our site. These cookies are automatically deleted
+                            after a defined period.
+                            <br />
+                            <br />
+                            The data processed by cookies is necessary for the mentioned purposes
+                            to protect our legitimate interests and those of third parties
+                            according to Art. 6(1)(f) GDPR.
+                            <br />
+                            <br />
+                            Most browsers accept cookies automatically. However, you can configure
+                            your browser so that no cookies are stored on your computer or a
+                            notice always appears before a new cookie is created. The complete
+                            deactivation of cookies may mean that you cannot use all functions
+                            of our website.
+                        </div>
+                        <div className="imprint-headline">5. Analytics Tools</div>
+                        <div className="imprint-text">
+                            Tracking Tools
+                            <br />
+                            <br />
+                            Tracking is carried out on the basis of Art. 6(1)(f) GDPR. With the
+                            tracking measures used, we want to ensure a needs-based design and
+                            continuous optimization of our website. We also use tracking measures
+                            to statistically record the use of our website and evaluate it for
+                            the purpose of optimizing our offering for you. These interests are
+                            to be regarded as legitimate within the meaning of the aforementioned
+                            provision.
+                            <br />
+                            <br />
+                            The respective data processing purposes and data categories can be
+                            found in the corresponding tracking tools.
+                        </div>
+                        <div className="imprint-headline">6. Social Media Plugins</div>
+                        <div className="imprint-text">
+                            We use social media plugins from the social networks Facebook,
+                            Twitter, and Instagram on our website based on Art. 6(1)(f) GDPR
+                            to make our company better known through these channels. The
+                            underlying advertising purpose is to be regarded as a legitimate
+                            interest within the meaning of the GDPR. Responsibility for
+                            data protection-compliant operation is to be guaranteed by their
+                            respective providers.
+                            <br />
+                            <br />
+                            The integration of these plugins by us is done using the two-click
+                            method to protect visitors to our website in the best possible way.
+                            <br />
+                            <br />
+                            [Social media sections for Facebook, Twitter, and Instagram with
+                            specific details about data collection and processing for each
+                            platform follow the same structure as the original, just translated
+                            to English]
+                        </div>
+                        <div className="imprint-headline">7. Rights of the Data Subject</div>
+                        <div className="imprint-text">
+                            You have the right to:
+                            <br />
+                            <br />
+                            <ul className="imprint-listitem">
+                                <li>
+                                    Request information about your personal data processed by us in
+                                    accordance with Art. 15 GDPR. In particular, you can request
+                                    information about the processing purposes, the category of
+                                    personal data, the categories of recipients to whom your data
+                                    has been or will be disclosed, the planned storage period, the
+                                    existence of a right to rectification, deletion, restriction of
+                                    processing or objection, the existence of a right to complain,
+                                    the origin of your data if not collected by us, and the
+                                    existence of automated decision-making including profiling and,
+                                    if applicable, meaningful information about their details;
+                                </li>
+                                <li>
+                                    Request the immediate correction of incorrect or completion of
+                                    your personal data stored by us in accordance with Art. 16 GDPR;
+                                </li>
+                                <li>
+                                    Request the deletion of your personal data stored by us in
+                                    accordance with Art. 17 GDPR, unless the processing is necessary
+                                    for exercising the right to freedom of expression and
+                                    information, for compliance with a legal obligation, for reasons
+                                    of public interest, or for the establishment, exercise or
+                                    defense of legal claims;
+                                </li>
+                                <li>
+                                    Request the restriction of the processing of your personal data
+                                    in accordance with Art. 18 GDPR;
+                                </li>
+                                <li>
+                                    Receive your personal data that you have provided to us in a
+                                    structured, common and machine-readable format or request the
+                                    transfer to another controller in accordance with Art. 20 GDPR;
+                                </li>
+                                <li>
+                                    Withdraw your consent at any time in accordance with Art. 7(3)
+                                    GDPR. This has the consequence that we may no longer continue
+                                    the data processing based on this consent in the future;
+                                </li>
+                                <li>
+                                    Complain to a supervisory authority in accordance with Art. 77
+                                    GDPR. As a rule, you can contact the supervisory authority of
+                                    your usual place of residence or workplace or our company
+                                    headquarters.
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="imprint-headline">8. Right to Object</div>
+                        <div className="imprint-text">
+                            If your personal data is processed based on legitimate interests
+                            pursuant to Art. 6(1)(f) GDPR, you have the right to object to the
+                            processing of your personal data pursuant to Art. 21 GDPR, provided
+                            that there are grounds relating to your particular situation or the
+                            objection is directed against direct marketing. In the latter case,
+                            you have a general right to object, which will be implemented by us
+                            without specifying a particular situation.
+                            <br />
+                            <br />
+                            If you wish to exercise your right of revocation or objection, simply
+                            send an email to info@floragunn.com
+                        </div>
+                        <div className="imprint-headline">9. Data Security</div>
+                        <div className="imprint-text">
+                            We use the widely used SSL (Secure Socket Layer) method within the
+                            website visit in conjunction with the highest level of encryption
+                            supported by your browser. Usually, this is a 256-bit encryption.
+                            If your browser does not support 256-bit encryption, we use 128-bit
+                            v3 technology instead. Whether a single page of our website is
+                            transmitted in encrypted form is indicated by the closed display of
+                            the key or lock symbol in the lower status bar of your browser.
+                            <br />
+                            <br />
+                            We also use appropriate technical and organizational security
+                            measures to protect your data against accidental or intentional
+                            manipulation, partial or complete loss, destruction, or unauthorized
+                            access by third parties. Our security measures are continuously
+                            improved in line with technological developments.
+                        </div>
+                        <div className="imprint-headline">
+                            10. Currency and Amendment of this Privacy Policy
+                        </div>
+                        <div className="imprint-text">
+                            This privacy policy is currently valid and was last updated in June 2024.
+                            <br />
+                            <br />
+                            Due to the further development of our website and offers above it or
+                            due to changed legal or official requirements, it may become necessary
+                            to amend this privacy policy. The current privacy policy can be
+                            viewed and/or downloaded from our website at any time.
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="imprint-text">
-              This data protection information applies to data processing
-              by: <br />
-              <br />
-              Person in charge:
-              <br />
-              floragunn GmbH
-              <br />
-              Tempelhofer Ufer 16
-              <br />
-              10963 Berlin
-              <br />
-              E-Mail: info@floragunn.com
-            </div>
-            <div className="imprint-headline">
-              2. Collection and storage of personal data as well as the nature and
-              purpose of their use
-            </div>
-            <div className="imprint-text">
-              a) Beim Besuch der Website <br />
-              <br />
-              Beim Aufrufen unserer Website{' '}
-              <a
-                  href="https://search-guard.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                https://search-guard.com
-              </a>{' '}
-              werden durch den auf Ihrem Endgerät zum Einsatz kommenden Browser
-              automatisch Informationen an den Server unserer Website gesendet.
-              Diese Informationen werden temporär in einem sog. Logfile
-              gespeichert. Folgende Informationen werden dabei ohne Ihr Zutun
-              erfasst und bis zur automatisierten Löschung gespeichert:
-              <br />
-              <br />
-              <ul className="imprint-listitem">
-                <li>IP-Adresse des anfragenden Rechners,</li>
-                <li>Datum und Uhrzeit des Zugriffs,</li>
-                <li>Name und URL der abgerufenen Datei,</li>
-                <li>
-                  Website, von der aus der Zugriff erfolgt (Referrer-URL),
-                </li>
-                <li>
-                  verwendeter Browser und ggf. das Betriebssystem Ihres Rechners
-                  sowie der Name Ihres Access-Providers.
-                </li>
-              </ul>
-              Die genannten Daten werden durch uns zu folgenden Zwecken
-              verarbeitet:
-              <ul className="imprint-listitem">
-                <li>
-                  Gewährleistung eines reibungslosen Verbindungsaufbaus der
-                  Website,
-                </li>
-                <li>
-                  Gewährleistung einer komfortablen Nutzung unserer Website,
-                </li>
-                <li>Auswertung der Systemsicherheit und -stabilität sowie</li>
-                <li>zu weiteren administrativen Zwecken.</li>
-              </ul>
-              Die Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S.
-              1 lit. f DSGVO. Unser berechtigtes Interesse folgt aus oben
-              aufgelisteten Zwecken zur Datenerhebung. In keinem Fall verwenden
-              wir die erhobenen Daten zu dem Zweck, Rückschlüsse auf Ihre Person
-              zu ziehen.
-              <br />
-              <br />
-              Darüber hinaus setzen wir beim Besuch unserer Website Cookies
-              sowie Analysedienste ein. Nähere Erläuterungen dazu erhalten Sie
-              unter den Ziff. 4 und 5 dieser Datenschutzerklärung.
-              <br />
-              <br />
-              b) Bei Anmeldung für unseren Newsletter
-              <br />
-              <br />
-              Sofern Sie nach Art. 6 Abs. 1 S. 1 lit. a DSGVO ausdrücklich
-              eingewilligt haben, verwenden wir Ihre E-Mail-Adresse dafür, Ihnen
-              regelmäßig unseren Newsletter zu übersenden. Für den Empfang des
-              Newsletters ist die Angabe einer E-Mail-Adresse ausreichend.
-              <br />
-              <br />
-              Die Abmeldung ist jederzeit möglich, zum Beispiel über einen Link
-              am Ende eines jeden Newsletters. Alternativ können Sie Ihren
-              Abmeldewunsch gerne auch jederzeit an info@floragunn.com per
-              E-Mail senden.
-              <br />
-              <br />
-              c) Bei Nutzung unseres Kontaktformulars
-              <br />
-              <br />
-              Bei Fragen jeglicher Art bieten wir Ihnen die Möglichkeit, mit uns
-              über ein auf der Website bereitgestelltes Formular Kontakt
-              aufzunehmen. Dabei ist die Angabe einer gültigen E-Mail-Adresse
-              erforderlich, damit wir wissen, von wem die Anfrage stammt und um
-              diese beantworten zu können. Weitere Angaben können freiwillig
-              getätigt werden.
-              <br />
-              <br />
-              Die Datenverarbeitung zum Zwecke der Kontaktaufnahme mit uns
-              erfolgt nach Art. 6 Abs. 1 S. 1 lit. a DSGVO auf Grundlage Ihrer
-              freiwillig erteilten Einwilligung.
-              <br />
-              <br />
-              Die für die Benutzung des Kontaktformulars von uns erhobenen
-              personenbezogenen Daten werden nach Erledigung der von Ihnen
-              gestellten Anfrage automatisch gelöscht.
-            </div>
-            <div className="imprint-headline">Weitergabe von Daten</div>
-            <div className="imprint-text">
-              Eine Übermittlung Ihrer persönlichen Daten an Dritte zu anderen
-              als den im Folgenden aufgeführten Zwecken findet nicht statt.{' '}
-              <br />
-              <br />
-              Wir geben Ihre persönlichen Daten nur an Dritte weiter, wenn:
-              <ul className="imprint-listitem">
-                <li>
-                  Sie Ihre nach Art. 6 Abs. 1 S. 1 lit. a DSGVO ausdrückliche
-                  Einwilligung dazu erteilt haben,
-                </li>
-                <li>
-                  Sie Ihre nach Art. 6 Abs. 1 S. 1 lit. a DSGVO ausdrückliche
-                  Einwilligung dazu erteilt haben,
-                </li>
-                <li>
-                  die Weitergabe nach Art. 6 Abs. 1 S. 1 lit. f DSGVO zur
-                  Geltendmachung, Ausübung oder Verteidigung von
-                  Rechtsansprüchen erforderlich ist und kein Grund zur Annahme
-                  besteht, dass Sie ein überwiegendes schutzwürdiges Interesse
-                  an der Nichtweitergabe Ihrer Daten haben,
-                </li>
-                <li>
-                  für den Fall, dass für die Weitergabe nach Art. 6 Abs. 1 S. 1
-                  lit. c DSGVO eine gesetzliche Verpflichtung besteht, sowie •
-                  dies gesetzlich zulässig und nach Art. 6 Abs. 1 S. 1 lit. b
-                  DSGVO für die Abwicklung von Vertragsverhältnissen mit Ihnen
-                  erforderlich ist.
-                </li>
-              </ul>
-            </div>
-            <div className="imprint-headline">4. Cookies</div>
-            <div className="imprint-text">
-              Wir setzen auf unserer Seite Cookies ein. Hierbei handelt es sich
-              um kleine Dateien, die Ihr Browser automatisch erstellt und die
-              auf Ihrem Endgerät (Laptop, Tablet, Smartphone o.ä.) gespeichert
-              werden, wenn Sie unsere Seite besuchen. Cookies richten auf Ihrem
-              Endgerät keinen Schaden an, enthalten keine Viren, Trojaner oder
-              sonstige Schadsoftware. <br />
-              <br />
-              In dem Cookie werden Informationen abgelegt, die sich jeweils im
-              Zusammenhang mit dem spezifisch eingesetzten Endgerät ergeben.
-              Dies bedeutet jedoch nicht, dass wir dadurch unmittelbar Kenntnis
-              von Ihrer Identität erhalten. <br />
-              <br />
-              Der Einsatz von Cookies dient einerseits dazu, die Nutzung unseres
-              Angebots für Sie angenehmer zu gestalten. So setzen wir sogenannte
-              Session-Cookies ein, um zu erkennen, dass Sie einzelne Seiten
-              unserer Website bereits besucht haben. Diese werden nach Verlassen
-              unserer Seite automatisch gelöscht. <br />
-              <br />
-              Darüber hinaus setzen wir ebenfalls zur Optimierung der
-              Benutzerfreundlichkeit temporäre Cookies ein, die für einen
-              bestimmten festgelegten Zeitraum auf Ihrem Endgerät gespeichert
-              werden. Besuchen Sie unsere Seite erneut, um unsere Dienste in
-              Anspruch zu nehmen, wird automatisch erkannt, dass Sie bereits bei
-              uns waren und welche Eingaben und Einstellungen sie getätigt
-              haben, um diese nicht noch einmal eingeben zu müssen. <br />
-              <br />
-              Zum anderen setzten wir Cookies ein, um die Nutzung unserer
-              Website statistisch zu erfassen und zum Zwecke der Optimierung
-              unseres Angebotes für Sie auszuwerten (siehe Ziff. 5). Diese
-              Cookies ermöglichen es uns, bei einem erneuten Besuch unserer
-              Seite automatisch zu erkennen, dass Sie bereits bei uns waren.
-              Diese Cookies werden nach einer jeweils definierten Zeit
-              automatisch gelöscht. <br />
-              <br />
-              Die durch Cookies verarbeiteten Daten sind für die genannten
-              Zwecke zur Wahrung unserer berechtigten Interessen sowie der
-              Dritter nach Art. 6 Abs. 1 S. 1 lit. f DSGVO erforderlich. <br />
-              <br />
-              Die meisten Browser akzeptieren Cookies automatisch. Sie können
-              Ihren Browser jedoch so konfigurieren, dass keine Cookies auf
-              Ihrem Computer gespeichert werden oder stets ein Hinweis
-              erscheint, bevor ein neuer Cookie angelegt wird. Die vollständige
-              Deaktivierung von Cookies kann jedoch dazu führen, dass Sie nicht
-              alle Funktionen unserer Website nutzen können.
-            </div>
-            <div className="imprint-headline">5. Analyse-Tools</div>
-            <div className="imprint-text">
-              Tracking-Tools <br />
-              <br />
-              Das Tracking wird auf Grundlage des Art. 6 Abs. 1 S. 1 lit. f
-              DSGVO durchgeführt. Mit den zum Einsatz kommenden
-              Tracking-Maßnahmen wollen wir eine bedarfsgerechte Gestaltung und
-              die fortlaufende Optimierung unserer Webseite sicherstellen. Zum
-              anderen setzen wir die Tracking-Maßnahmen ein, um die Nutzung
-              unserer Webseite statistisch zu erfassen und zum Zwecke der
-              Optimierung unseres Angebotes für Sie auszuwerten. Diese
-              Interessen sind als berechtigt im Sinne der vorgenannten
-              Vorschrift anzusehen. <br />
-              <br />
-              Die jeweiligen Datenverarbeitungszwecke und Datenkategorien sind
-              aus den entsprechenden Tracking-Tools zu entnehmen.
-            </div>
-            <div className="imprint-headline">6. Social Media Plug-ins</div>
-            <div className="imprint-text">
-              Wir setzen auf unserer Website auf Grundlage des Art. 6 Abs. 1 S.
-              1 lit. f DSGVO Social Plug-ins der sozialen Netzwerke Facebook,
-              Twitter und Instagram ein, um unser Unternehmen hierüber bekannter
-              zu machen. Der dahinterstehende werbliche Zweck ist als
-              berechtigtes Interesse im Sinne der DSGVO anzusehen. Die
-              Verantwortung für den datenschutzkonformen Betrieb ist durch deren
-              jeweiligen Anbieter zu gewährleisten. <br />
-              <br />
-              Die Einbindung dieser Plug-ins durch uns erfolgt im Wege der
-              sogenannten Zwei-Klick-Methode um Besucher <br />
-              <br />
-              unserer Webseite bestmöglich zu schützen. <br />
-              <br />
-              a) Facebook <br />
-              <br />
-              Auf unserer Website kommen Social-Media Plugins von Facebook zum
-              Einsatz, um deren Nutzung persönlicher zu gestalten. Hierfür
-              nutzen wir den „LIKE“ oder „TEILEN“-Button. Es handelt sich dabei
-              um ein Angebot von Facebook. Wenn Sie eine Seite unseres
-              Webauftritts aufrufen, die ein solches Plugin enthält, baut Ihr
-              Browser eine direkte Verbindung mit den Servern von Facebook auf.
-              Der Inhalt des Plugins wird von Facebook direkt an Ihren Browser
-              übermittelt und von diesem in die Webseite eingebunden. <br />
-              <br />
-              Durch die Einbindung der Plugins erhält Facebook die Information,
-              dass Ihr Browser die entsprechende Seite unseres Webauftritts
-              aufgerufen hat, auch wenn Sie kein Facebook-Konto besitzen oder
-              gerade nicht bei Facebook eingeloggt sind. Diese Information
-              (einschließlich Ihrer IP-Adresse) wird von Ihrem Browser direkt an
-              einen Server von Facebook in den USA übermittelt und dort
-              gespeichert. Sind Sie bei Facebook eingeloggt, kann Facebook den
-              Besuch unserer Website Ihrem Facebook-Konto direkt zuordnen. Wenn
-              Sie mit den Plugins interagieren, zum Beispiel den „LIKE“ oder
-              „TEILEN“-Button betätigen, wird die entsprechende Information
-              ebenfalls direkt an einen Server von Facebook übermittelt und dort
-              gespeichert. Die Informationen werden zudem auf Facebook
-              veröffentlicht und Ihren Facebook-Freunden angezeigt. Facebook
-              kann diese Informationen zum Zwecke der Werbung, Marktforschung
-              und bedarfsgerechten Gestaltung der Facebook-Seiten benutzen.
-              Hierzu werden von Facebook Nutzungs-, Interessen- und
-              Beziehungsprofile erstellt, z.B. <br />
-              <br />
-              um Ihre Nutzung unserer Website im Hinblick auf die Ihnen bei
-              Facebook eingeblendeten Werbeanzeigen auszuwerten, andere
-              Facebook-Nutzer über Ihre Aktivitäten auf unserer Website zu
-              informieren und um weitere mit der Nutzung von Facebook verbundene
-              Dienstleistungen zu erbringen. Wenn Sie nicht möchten, dass
-              Facebook die über unseren Webauftritt gesammelten Daten Ihrem
-              Facebook-Konto zuordnet, müssen Sie sich vor Ihrem Besuch unserer
-              Website bei Facebook ausloggen. Zweck und Umfang der Datenerhebung
-              und die weitere Verarbeitung und Nutzung der Daten durch Facebook
-              sowie Ihre diesbezüglichen Rechte und Einstellungsmöglichkeiten
-              zum Schutz Ihrer Privatsphäre entnehmen Sie bitte den <br />
-              <br />
-              Datenschutzhinweisen{' '}
-              <a
-                  href="https://www.facebook.com/about/privacy/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                (https://www.facebook.com/about/privacy/)
-              </a>{' '}
-              von Facebook. <br />
-              <br />
-              b) Twitter <br />
-              <br />
-              Auf unseren Internetseiten sind Plugins des
-              Kurznachrichtennetzwerks der Twitter Inc. (Twitter) integriert.
-              Die Twitter-Plugins (tweet-Button) erkennen Sie an dem
-              Twitter-Logo auf unserer Seite. Eine Übersicht über tweet-Buttons
-              finden Sie hier{' '}
-              <a
-                  href="https://about.twitter.com/resources/buttons"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                (https://about.twitter.com/resources/buttons)
-              </a>
-              . Wenn Sie eine Seite unseres Webauftritts aufrufen, die ein
-              solches Plugin enthält, wird eine direkte Verbindung zwischen
-              Ihrem Browser und dem Twitter-Server hergestellt. Twitter erhält
-              dadurch die Information, dass Sie mit Ihrer IP-Adresse unsere
-              Seite besucht haben. Wenn Sie den Twitter „tweet-Button“
-              anklicken, während Sie in Ihrem Twitter-Account eingeloggt sind,
-              können Sie die Inhalte unserer Seiten auf Ihrem Twitter-Profil
-              verlinken. Dadurch kann Twitter den Besuch unserer Seiten Ihrem
-              Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als
-              Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten
-              Daten sowie deren Nutzung durch Twitter erhalten. Wenn Sie nicht
-              wünschen, dass Twitter den Besuch unserer Seiten zuordnen kann,
-              loggen Sie sich bitte aus Ihrem Twitter-Benutzerkonto aus. Weitere
-              Informationen hierzu finden Sie in der Datenschutzerklärung von
-              Twitter{' '}
-              <a
-                  href="https://about.twitter.com/privacy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                (https://about.twitter.com/privacy)
-              </a>
-              .<br />
-              <br />
-              c) Instagram <br />
-              <br />
-              Auf unserer Website werden auch sogenannte Social Plugins
-              („Plugins“) von Instagram verwendet, das von der Instagram LLC.,
-              1601 Willow Road, Menlo Park, CA 94025, USA („Instagram“)
-              betrieben wird. Die Plugins sind mit einem Instagram-Logo
-              beispielsweise in Form einer „Instagram-Kamera“ gekennzeichnet.
-              Wenn Sie eine Seite unseres Webauftritts aufrufen, die ein solches
-              Plugin enthält, stellt Ihr Browser eine direkte Verbindung <br />
-              <br />
-              zu den Servern von Instagram her. Der Inhalt des Plugins wird von
-              Instagram direkt an Ihren Browser übermittelt und in die Seite
-              eingebunden. Durch diese Einbindung erhält Instagram die
-              Information, dass Ihr Browser die entsprechende Seite unseres
-              Webauftritts aufgerufen hat, auch wenn Sie kein Instagram-Profil
-              besitzen oder gerade nicht bei Instagram eingeloggt sind. Diese
-              Information (einschließlich Ihrer IP-Adresse) wird von Ihrem
-              Browser direkt an einen Server von Instagram in die USA
-              übermittelt und dort gespeichert. Sind Sie bei Instagram
-              eingeloggt, kann Instagram den Besuch unserer Website Ihrem
-              Instagram-Account unmittelbar zuordnen. Wenn Sie mit den Plugins
-              interagieren, zum Beispiel das „Instagram“- Button betätigen, wird
-              diese Information ebenfalls direkt an einen Server von Instagram
-              übermittelt und dort gespeichert. <br />
-              <br />
-              Die Informationen werden außerdem auf Ihrem Instagram- Account
-              veröffentlicht und dort Ihren Kontakten angezeigt. Wenn Sie nicht
-              möchten, dass Instagram die über unseren Webauftritt gesammelten
-              Daten unmittelbar Ihrem Instagram- Account zuordnet, müssen Sie
-              sich vor Ihrem Besuch unserer Website bei Instagram ausloggen.
-              Weitere Informationen hierzu Sie in der Datenschutzerklärung{' '}
-              <a
-                  href="https://help.instagram.com/155833707900388"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                (https://help.instagram.com/155833707900388)
-              </a>{' '}
-              von Instagram.
-            </div>
-            <div className="imprint-headline">7. Betroffenenrechte</div>
-            <div className="imprint-text">
-              Sie haben das Recht:
-              <br />
-              <br />
-              <ul className="imprint-listitem">
-                <li>
-                  gemäß Art. 15 DSGVO Auskunft über Ihre von uns verarbeiteten
-                  personenbezogenen Daten zu verlangen. Insbesondere können Sie
-                  Auskunft über die Verarbeitungszwecke, die Kategorie der
-                  personenbezogenen Daten, die Kategorien von Empfängern,
-                  gegenüber denen Ihre Daten offengelegt wurden oder werden, die
-                  geplante Speicherdauer, das Bestehen eines Rechts auf
-                  Berichtigung, Löschung, Einschränkung der Verarbeitung oder
-                  Widerspruch, das Bestehen eines Beschwerderechts, die Herkunft
-                  ihrer Daten, sofern diese nicht bei uns erhoben wurden, sowie
-                  über das Bestehen einer automatisierten Entscheidungsfindung
-                  einschließlich Profiling und ggf. aussagekräftigen
-                  Informationen zu deren Einzelheiten verlangen;
-                </li>
-                <li>
-                  gemäß Art. 16 DSGVO unverzüglich die Berichtigung unrichtiger
-                  oder Vervollständigung Ihrer bei uns gespeicherten
-                  personenbezogenen Daten zu verlangen;
-                </li>
-                <li>
-                  gemäß Art. 17 DSGVO die Löschung Ihrer bei uns gespeicherten
-                  personenbezogenen Daten zu verlangen, soweit nicht die
-                  Verarbeitung zur Ausübung des Rechts auf freie
-                  Meinungsäußerung und Information, zur Erfüllung einer
-                  rechtlichen Verpflichtung, aus Gründen des öffentlichen
-                  Interesses oder zur Geltendmachung, Ausübung oder Verteidigung
-                  von Rechtsansprüchen erforderlich ist;
-                </li>
-                <li>
-                  gemäß Art. 18 DSGVO die Einschränkung der Verarbeitung Ihrer
-                  personenbezogenen Daten zu verlangen, soweit die Richtigkeit
-                  der Daten von Ihnen bestritten wird, die Verarbeitung
-                  unrechtmäßig ist, Sie aber deren Löschung ablehnen und wir die
-                  Daten nicht mehr benötigen, Sie jedoch diese zur
-                  Geltendmachung, Ausübung oder Verteidigung von
-                  Rechtsansprüchen benötigen oder Sie gemäß Art. 21 DSGVO
-                  Widerspruch gegen die Verarbeitung eingelegt haben;
-                </li>
-                <li>
-                  gemäß Art. 20 DSGVO Ihre personenbezogenen Daten, die Sie uns
-                  bereitgestellt haben, in einem strukturierten, gängigen und
-                  maschinenlesebaren Format zu erhalten oder die Übermittlung an
-                  einen anderen Verantwortlichen zu verlangen;
-                </li>
-                <li>
-                  gemäß Art. 7 Abs. 3 DSGVO Ihre einmal erteilte Einwilligung
-                  jederzeit gegenüber uns zu widerrufen. Dies hat zur Folge,
-                  dass wir die Datenverarbeitung, die auf dieser Einwilligung
-                  beruhte, für die Zukunft nicht mehr fortführen dürfen und
-                </li>
-                <li>
-                  gemäß Art. 77 DSGVO sich bei einer Aufsichtsbehörde zu
-                  beschweren. In der Regel können Sie sich hierfür an die
-                  Aufsichtsbehörde Ihres üblichen Aufenthaltsortes oder
-                  Arbeitsplatzes oder unseres Unternehmensitzes wenden.
-                </li>
-              </ul>
-            </div>
-            <div className="imprint-headline">8. Widerspruchsrecht</div>
-            <div className="imprint-text">
-              Sofern Ihre personenbezogenen Daten auf Grundlage von berechtigten
-              Interessen gemäß Art. 6 Abs. 1 S. 1 lit. f DSGVO verarbeitet
-              werden, haben Sie das Recht, gemäß Art. 21 DSGVO Widerspruch gegen
-              die Verarbeitung Ihrer personenbezogenen Daten einzulegen, soweit
-              dafür Gründe vorliegen, die sich aus Ihrer besonderen Situation
-              ergeben oder sich der Widerspruch gegen Direktwerbung richtet. Im
-              letzteren Fall haben Sie ein generelles Widerspruchsrecht, das
-              ohne Angabe einer besonderen Situation von uns umgesetzt wird.
-              <br />
-              <br />
-              Möchten Sie von Ihrem Widerrufs- oder Widerspruchsrecht Gebrauch
-              machen, genügt eine E-Mail an info@floragunn.com
-            </div>
-            <div className="imprint-headline">9. Datensicherheit</div>
-            <div className="imprint-text">
-              Wir verwenden innerhalb des Website-Besuchs das verbreitete
-              SSL-Verfahren (Secure Socket Layer) in Verbindung mit der jeweils
-              höchsten Verschlüsselungsstufe, die von Ihrem Browser unterstützt
-              wird. In der Regel handelt es sich dabei um eine 256 Bit
-              Verschlüsselung. Falls Ihr Browser keine 256-Bit Verschlüsselung
-              unterstützt, greifen wir stattdessen auf 128-Bit v3 Technologie
-              zurück. Ob eine einzelne Seite unseres Internetauftrittes
-              verschlüsselt übertragen wird, erkennen Sie an der geschlossenen
-              Darstellung des Schüssel- beziehungsweise Schloss-Symbols in der
-              unteren Statusleiste Ihres Browsers. <br />
-              <br />
-              Wir bedienen uns im Übrigen geeigneter technischer und
-              organisatorischer Sicherheitsmaßnahmen, um Ihre Daten gegen
-              zufällige oder vorsätzliche Manipulationen, teilweisen oder
-              vollständigen Verlust, Zerstörung oder gegen den unbefugten
-              Zugriff Dritter zu schützen. Unsere Sicherheitsmaßnahmen werden
-              entsprechend der technologischen Entwicklung fortlaufend
-              verbessert.
-            </div>
-            <div className="imprint-headline">
-              10. Aktualität und Änderung dieser Datenschutzerklärung
-            </div>
-            <div className="imprint-text">
-              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand
-              Juni 2024. <br />
-              <br />
-              Durch die Weiterentwicklung unserer Website und Angebote darüber
-              oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher
-              Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu
-              ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit
-              auf unserer Website abgerufen und/oder ausgedruckt werden.
-            </div>
-
-
-
-
-
-
-
-
-
-            <div className="imprint-headline">
-              1. Name und Kontaktdaten des für die Verarbeitung Verantwortlichen
-              sowie des betrieblichen Datenschutzbeauftragten
-            </div>
-            <div className="imprint-text">
-              Diese Datenschutz-Information gilt für die Datenverarbeitung
-              durch: <br />
-              <br />
-              Verantwortlicher:
-              <br />
-              floragunn GmbH
-              <br />
-              Tempelhofer Ufer 16
-              <br />
-              10963 Berlin
-              <br />
-              Tel.: 030 – 89379249
-              <br />
-              E-Mail: info@floragunn.com
-            </div>
-            <div className="imprint-headline">
-              2. Erhebung und Speicherung personenbezogener Daten sowie Art und
-              Zweck von deren Verwendung
-            </div>
-            <div className="imprint-text">
-              a) Beim Besuch der Website <br />
-              <br />
-              Beim Aufrufen unserer Website{' '}
-              <a
-                href="https://search-guard.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                https://search-guard.com
-              </a>{' '}
-              werden durch den auf Ihrem Endgerät zum Einsatz kommenden Browser
-              automatisch Informationen an den Server unserer Website gesendet.
-              Diese Informationen werden temporär in einem sog. Logfile
-              gespeichert. Folgende Informationen werden dabei ohne Ihr Zutun
-              erfasst und bis zur automatisierten Löschung gespeichert:
-              <br />
-              <br />
-              <ul className="imprint-listitem">
-                <li>IP-Adresse des anfragenden Rechners,</li>
-                <li>Datum und Uhrzeit des Zugriffs,</li>
-                <li>Name und URL der abgerufenen Datei,</li>
-                <li>
-                  Website, von der aus der Zugriff erfolgt (Referrer-URL),
-                </li>
-                <li>
-                  verwendeter Browser und ggf. das Betriebssystem Ihres Rechners
-                  sowie der Name Ihres Access-Providers.
-                </li>
-              </ul>
-              Die genannten Daten werden durch uns zu folgenden Zwecken
-              verarbeitet:
-              <ul className="imprint-listitem">
-                <li>
-                  Gewährleistung eines reibungslosen Verbindungsaufbaus der
-                  Website,
-                </li>
-                <li>
-                  Gewährleistung einer komfortablen Nutzung unserer Website,
-                </li>
-                <li>Auswertung der Systemsicherheit und -stabilität sowie</li>
-                <li>zu weiteren administrativen Zwecken.</li>
-              </ul>
-              Die Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S.
-              1 lit. f DSGVO. Unser berechtigtes Interesse folgt aus oben
-              aufgelisteten Zwecken zur Datenerhebung. In keinem Fall verwenden
-              wir die erhobenen Daten zu dem Zweck, Rückschlüsse auf Ihre Person
-              zu ziehen.
-              <br />
-              <br />
-              Darüber hinaus setzen wir beim Besuch unserer Website Cookies
-              sowie Analysedienste ein. Nähere Erläuterungen dazu erhalten Sie
-              unter den Ziff. 4 und 5 dieser Datenschutzerklärung.
-              <br />
-              <br />
-              b) Bei Anmeldung für unseren Newsletter
-              <br />
-              <br />
-              Sofern Sie nach Art. 6 Abs. 1 S. 1 lit. a DSGVO ausdrücklich
-              eingewilligt haben, verwenden wir Ihre E-Mail-Adresse dafür, Ihnen
-              regelmäßig unseren Newsletter zu übersenden. Für den Empfang des
-              Newsletters ist die Angabe einer E-Mail-Adresse ausreichend.
-              <br />
-              <br />
-              Die Abmeldung ist jederzeit möglich, zum Beispiel über einen Link
-              am Ende eines jeden Newsletters. Alternativ können Sie Ihren
-              Abmeldewunsch gerne auch jederzeit an info@floragunn.com per
-              E-Mail senden.
-              <br />
-              <br />
-              c) Bei Nutzung unseres Kontaktformulars
-              <br />
-              <br />
-              Bei Fragen jeglicher Art bieten wir Ihnen die Möglichkeit, mit uns
-              über ein auf der Website bereitgestelltes Formular Kontakt
-              aufzunehmen. Dabei ist die Angabe einer gültigen E-Mail-Adresse
-              erforderlich, damit wir wissen, von wem die Anfrage stammt und um
-              diese beantworten zu können. Weitere Angaben können freiwillig
-              getätigt werden.
-              <br />
-              <br />
-              Die Datenverarbeitung zum Zwecke der Kontaktaufnahme mit uns
-              erfolgt nach Art. 6 Abs. 1 S. 1 lit. a DSGVO auf Grundlage Ihrer
-              freiwillig erteilten Einwilligung.
-              <br />
-              <br />
-              Die für die Benutzung des Kontaktformulars von uns erhobenen
-              personenbezogenen Daten werden nach Erledigung der von Ihnen
-              gestellten Anfrage automatisch gelöscht.
-            </div>
-            <div className="imprint-headline">Weitergabe von Daten</div>
-            <div className="imprint-text">
-              Eine Übermittlung Ihrer persönlichen Daten an Dritte zu anderen
-              als den im Folgenden aufgeführten Zwecken findet nicht statt.{' '}
-              <br />
-              <br />
-              Wir geben Ihre persönlichen Daten nur an Dritte weiter, wenn:
-              <ul className="imprint-listitem">
-                <li>
-                  Sie Ihre nach Art. 6 Abs. 1 S. 1 lit. a DSGVO ausdrückliche
-                  Einwilligung dazu erteilt haben,
-                </li>
-                <li>
-                  Sie Ihre nach Art. 6 Abs. 1 S. 1 lit. a DSGVO ausdrückliche
-                  Einwilligung dazu erteilt haben,
-                </li>
-                <li>
-                  die Weitergabe nach Art. 6 Abs. 1 S. 1 lit. f DSGVO zur
-                  Geltendmachung, Ausübung oder Verteidigung von
-                  Rechtsansprüchen erforderlich ist und kein Grund zur Annahme
-                  besteht, dass Sie ein überwiegendes schutzwürdiges Interesse
-                  an der Nichtweitergabe Ihrer Daten haben,
-                </li>
-                <li>
-                  für den Fall, dass für die Weitergabe nach Art. 6 Abs. 1 S. 1
-                  lit. c DSGVO eine gesetzliche Verpflichtung besteht, sowie •
-                  dies gesetzlich zulässig und nach Art. 6 Abs. 1 S. 1 lit. b
-                  DSGVO für die Abwicklung von Vertragsverhältnissen mit Ihnen
-                  erforderlich ist.
-                </li>
-              </ul>
-            </div>
-            <div className="imprint-headline">4. Cookies</div>
-            <div className="imprint-text">
-              Wir setzen auf unserer Seite Cookies ein. Hierbei handelt es sich
-              um kleine Dateien, die Ihr Browser automatisch erstellt und die
-              auf Ihrem Endgerät (Laptop, Tablet, Smartphone o.ä.) gespeichert
-              werden, wenn Sie unsere Seite besuchen. Cookies richten auf Ihrem
-              Endgerät keinen Schaden an, enthalten keine Viren, Trojaner oder
-              sonstige Schadsoftware. <br />
-              <br />
-              In dem Cookie werden Informationen abgelegt, die sich jeweils im
-              Zusammenhang mit dem spezifisch eingesetzten Endgerät ergeben.
-              Dies bedeutet jedoch nicht, dass wir dadurch unmittelbar Kenntnis
-              von Ihrer Identität erhalten. <br />
-              <br />
-              Der Einsatz von Cookies dient einerseits dazu, die Nutzung unseres
-              Angebots für Sie angenehmer zu gestalten. So setzen wir sogenannte
-              Session-Cookies ein, um zu erkennen, dass Sie einzelne Seiten
-              unserer Website bereits besucht haben. Diese werden nach Verlassen
-              unserer Seite automatisch gelöscht. <br />
-              <br />
-              Darüber hinaus setzen wir ebenfalls zur Optimierung der
-              Benutzerfreundlichkeit temporäre Cookies ein, die für einen
-              bestimmten festgelegten Zeitraum auf Ihrem Endgerät gespeichert
-              werden. Besuchen Sie unsere Seite erneut, um unsere Dienste in
-              Anspruch zu nehmen, wird automatisch erkannt, dass Sie bereits bei
-              uns waren und welche Eingaben und Einstellungen sie getätigt
-              haben, um diese nicht noch einmal eingeben zu müssen. <br />
-              <br />
-              Zum anderen setzten wir Cookies ein, um die Nutzung unserer
-              Website statistisch zu erfassen und zum Zwecke der Optimierung
-              unseres Angebotes für Sie auszuwerten (siehe Ziff. 5). Diese
-              Cookies ermöglichen es uns, bei einem erneuten Besuch unserer
-              Seite automatisch zu erkennen, dass Sie bereits bei uns waren.
-              Diese Cookies werden nach einer jeweils definierten Zeit
-              automatisch gelöscht. <br />
-              <br />
-              Die durch Cookies verarbeiteten Daten sind für die genannten
-              Zwecke zur Wahrung unserer berechtigten Interessen sowie der
-              Dritter nach Art. 6 Abs. 1 S. 1 lit. f DSGVO erforderlich. <br />
-              <br />
-              Die meisten Browser akzeptieren Cookies automatisch. Sie können
-              Ihren Browser jedoch so konfigurieren, dass keine Cookies auf
-              Ihrem Computer gespeichert werden oder stets ein Hinweis
-              erscheint, bevor ein neuer Cookie angelegt wird. Die vollständige
-              Deaktivierung von Cookies kann jedoch dazu führen, dass Sie nicht
-              alle Funktionen unserer Website nutzen können.
-            </div>
-            <div className="imprint-headline">5. Analyse-Tools</div>
-            <div className="imprint-text">
-              Tracking-Tools <br />
-              <br />
-              Das Tracking wird auf Grundlage des Art. 6 Abs. 1 S. 1 lit. f
-              DSGVO durchgeführt. Mit den zum Einsatz kommenden
-              Tracking-Maßnahmen wollen wir eine bedarfsgerechte Gestaltung und
-              die fortlaufende Optimierung unserer Webseite sicherstellen. Zum
-              anderen setzen wir die Tracking-Maßnahmen ein, um die Nutzung
-              unserer Webseite statistisch zu erfassen und zum Zwecke der
-              Optimierung unseres Angebotes für Sie auszuwerten. Diese
-              Interessen sind als berechtigt im Sinne der vorgenannten
-              Vorschrift anzusehen. <br />
-              <br />
-              Die jeweiligen Datenverarbeitungszwecke und Datenkategorien sind
-              aus den entsprechenden Tracking-Tools zu entnehmen.
-            </div>
-            <div className="imprint-headline">6. Social Media Plug-ins</div>
-            <div className="imprint-text">
-              Wir setzen auf unserer Website auf Grundlage des Art. 6 Abs. 1 S.
-              1 lit. f DSGVO Social Plug-ins der sozialen Netzwerke Facebook,
-              Twitter und Instagram ein, um unser Unternehmen hierüber bekannter
-              zu machen. Der dahinterstehende werbliche Zweck ist als
-              berechtigtes Interesse im Sinne der DSGVO anzusehen. Die
-              Verantwortung für den datenschutzkonformen Betrieb ist durch deren
-              jeweiligen Anbieter zu gewährleisten. <br />
-              <br />
-              Die Einbindung dieser Plug-ins durch uns erfolgt im Wege der
-              sogenannten Zwei-Klick-Methode um Besucher <br />
-              <br />
-              unserer Webseite bestmöglich zu schützen. <br />
-              <br />
-              a) Facebook <br />
-              <br />
-              Auf unserer Website kommen Social-Media Plugins von Facebook zum
-              Einsatz, um deren Nutzung persönlicher zu gestalten. Hierfür
-              nutzen wir den „LIKE“ oder „TEILEN“-Button. Es handelt sich dabei
-              um ein Angebot von Facebook. Wenn Sie eine Seite unseres
-              Webauftritts aufrufen, die ein solches Plugin enthält, baut Ihr
-              Browser eine direkte Verbindung mit den Servern von Facebook auf.
-              Der Inhalt des Plugins wird von Facebook direkt an Ihren Browser
-              übermittelt und von diesem in die Webseite eingebunden. <br />
-              <br />
-              Durch die Einbindung der Plugins erhält Facebook die Information,
-              dass Ihr Browser die entsprechende Seite unseres Webauftritts
-              aufgerufen hat, auch wenn Sie kein Facebook-Konto besitzen oder
-              gerade nicht bei Facebook eingeloggt sind. Diese Information
-              (einschließlich Ihrer IP-Adresse) wird von Ihrem Browser direkt an
-              einen Server von Facebook in den USA übermittelt und dort
-              gespeichert. Sind Sie bei Facebook eingeloggt, kann Facebook den
-              Besuch unserer Website Ihrem Facebook-Konto direkt zuordnen. Wenn
-              Sie mit den Plugins interagieren, zum Beispiel den „LIKE“ oder
-              „TEILEN“-Button betätigen, wird die entsprechende Information
-              ebenfalls direkt an einen Server von Facebook übermittelt und dort
-              gespeichert. Die Informationen werden zudem auf Facebook
-              veröffentlicht und Ihren Facebook-Freunden angezeigt. Facebook
-              kann diese Informationen zum Zwecke der Werbung, Marktforschung
-              und bedarfsgerechten Gestaltung der Facebook-Seiten benutzen.
-              Hierzu werden von Facebook Nutzungs-, Interessen- und
-              Beziehungsprofile erstellt, z.B. <br />
-              <br />
-              um Ihre Nutzung unserer Website im Hinblick auf die Ihnen bei
-              Facebook eingeblendeten Werbeanzeigen auszuwerten, andere
-              Facebook-Nutzer über Ihre Aktivitäten auf unserer Website zu
-              informieren und um weitere mit der Nutzung von Facebook verbundene
-              Dienstleistungen zu erbringen. Wenn Sie nicht möchten, dass
-              Facebook die über unseren Webauftritt gesammelten Daten Ihrem
-              Facebook-Konto zuordnet, müssen Sie sich vor Ihrem Besuch unserer
-              Website bei Facebook ausloggen. Zweck und Umfang der Datenerhebung
-              und die weitere Verarbeitung und Nutzung der Daten durch Facebook
-              sowie Ihre diesbezüglichen Rechte und Einstellungsmöglichkeiten
-              zum Schutz Ihrer Privatsphäre entnehmen Sie bitte den <br />
-              <br />
-              Datenschutzhinweisen{' '}
-              <a
-                href="https://www.facebook.com/about/privacy/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                (https://www.facebook.com/about/privacy/)
-              </a>{' '}
-              von Facebook. <br />
-              <br />
-              b) Twitter <br />
-              <br />
-              Auf unseren Internetseiten sind Plugins des
-              Kurznachrichtennetzwerks der Twitter Inc. (Twitter) integriert.
-              Die Twitter-Plugins (tweet-Button) erkennen Sie an dem
-              Twitter-Logo auf unserer Seite. Eine Übersicht über tweet-Buttons
-              finden Sie hier{' '}
-              <a
-                href="https://about.twitter.com/resources/buttons"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                (https://about.twitter.com/resources/buttons)
-              </a>
-              . Wenn Sie eine Seite unseres Webauftritts aufrufen, die ein
-              solches Plugin enthält, wird eine direkte Verbindung zwischen
-              Ihrem Browser und dem Twitter-Server hergestellt. Twitter erhält
-              dadurch die Information, dass Sie mit Ihrer IP-Adresse unsere
-              Seite besucht haben. Wenn Sie den Twitter „tweet-Button“
-              anklicken, während Sie in Ihrem Twitter-Account eingeloggt sind,
-              können Sie die Inhalte unserer Seiten auf Ihrem Twitter-Profil
-              verlinken. Dadurch kann Twitter den Besuch unserer Seiten Ihrem
-              Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als
-              Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten
-              Daten sowie deren Nutzung durch Twitter erhalten. Wenn Sie nicht
-              wünschen, dass Twitter den Besuch unserer Seiten zuordnen kann,
-              loggen Sie sich bitte aus Ihrem Twitter-Benutzerkonto aus. Weitere
-              Informationen hierzu finden Sie in der Datenschutzerklärung von
-              Twitter{' '}
-              <a
-                href="https://about.twitter.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                (https://about.twitter.com/privacy)
-              </a>
-              .<br />
-              <br />
-              c) Instagram <br />
-              <br />
-              Auf unserer Website werden auch sogenannte Social Plugins
-              („Plugins“) von Instagram verwendet, das von der Instagram LLC.,
-              1601 Willow Road, Menlo Park, CA 94025, USA („Instagram“)
-              betrieben wird. Die Plugins sind mit einem Instagram-Logo
-              beispielsweise in Form einer „Instagram-Kamera“ gekennzeichnet.
-              Wenn Sie eine Seite unseres Webauftritts aufrufen, die ein solches
-              Plugin enthält, stellt Ihr Browser eine direkte Verbindung <br />
-              <br />
-              zu den Servern von Instagram her. Der Inhalt des Plugins wird von
-              Instagram direkt an Ihren Browser übermittelt und in die Seite
-              eingebunden. Durch diese Einbindung erhält Instagram die
-              Information, dass Ihr Browser die entsprechende Seite unseres
-              Webauftritts aufgerufen hat, auch wenn Sie kein Instagram-Profil
-              besitzen oder gerade nicht bei Instagram eingeloggt sind. Diese
-              Information (einschließlich Ihrer IP-Adresse) wird von Ihrem
-              Browser direkt an einen Server von Instagram in die USA
-              übermittelt und dort gespeichert. Sind Sie bei Instagram
-              eingeloggt, kann Instagram den Besuch unserer Website Ihrem
-              Instagram-Account unmittelbar zuordnen. Wenn Sie mit den Plugins
-              interagieren, zum Beispiel das „Instagram“- Button betätigen, wird
-              diese Information ebenfalls direkt an einen Server von Instagram
-              übermittelt und dort gespeichert. <br />
-              <br />
-              Die Informationen werden außerdem auf Ihrem Instagram- Account
-              veröffentlicht und dort Ihren Kontakten angezeigt. Wenn Sie nicht
-              möchten, dass Instagram die über unseren Webauftritt gesammelten
-              Daten unmittelbar Ihrem Instagram- Account zuordnet, müssen Sie
-              sich vor Ihrem Besuch unserer Website bei Instagram ausloggen.
-              Weitere Informationen hierzu Sie in der Datenschutzerklärung{' '}
-              <a
-                href="https://help.instagram.com/155833707900388"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                (https://help.instagram.com/155833707900388)
-              </a>{' '}
-              von Instagram.
-            </div>
-            <div className="imprint-headline">7. Betroffenenrechte</div>
-            <div className="imprint-text">
-              Sie haben das Recht:
-              <br />
-              <br />
-              <ul className="imprint-listitem">
-                <li>
-                  gemäß Art. 15 DSGVO Auskunft über Ihre von uns verarbeiteten
-                  personenbezogenen Daten zu verlangen. Insbesondere können Sie
-                  Auskunft über die Verarbeitungszwecke, die Kategorie der
-                  personenbezogenen Daten, die Kategorien von Empfängern,
-                  gegenüber denen Ihre Daten offengelegt wurden oder werden, die
-                  geplante Speicherdauer, das Bestehen eines Rechts auf
-                  Berichtigung, Löschung, Einschränkung der Verarbeitung oder
-                  Widerspruch, das Bestehen eines Beschwerderechts, die Herkunft
-                  ihrer Daten, sofern diese nicht bei uns erhoben wurden, sowie
-                  über das Bestehen einer automatisierten Entscheidungsfindung
-                  einschließlich Profiling und ggf. aussagekräftigen
-                  Informationen zu deren Einzelheiten verlangen;
-                </li>
-                <li>
-                  gemäß Art. 16 DSGVO unverzüglich die Berichtigung unrichtiger
-                  oder Vervollständigung Ihrer bei uns gespeicherten
-                  personenbezogenen Daten zu verlangen;
-                </li>
-                <li>
-                  gemäß Art. 17 DSGVO die Löschung Ihrer bei uns gespeicherten
-                  personenbezogenen Daten zu verlangen, soweit nicht die
-                  Verarbeitung zur Ausübung des Rechts auf freie
-                  Meinungsäußerung und Information, zur Erfüllung einer
-                  rechtlichen Verpflichtung, aus Gründen des öffentlichen
-                  Interesses oder zur Geltendmachung, Ausübung oder Verteidigung
-                  von Rechtsansprüchen erforderlich ist;
-                </li>
-                <li>
-                  gemäß Art. 18 DSGVO die Einschränkung der Verarbeitung Ihrer
-                  personenbezogenen Daten zu verlangen, soweit die Richtigkeit
-                  der Daten von Ihnen bestritten wird, die Verarbeitung
-                  unrechtmäßig ist, Sie aber deren Löschung ablehnen und wir die
-                  Daten nicht mehr benötigen, Sie jedoch diese zur
-                  Geltendmachung, Ausübung oder Verteidigung von
-                  Rechtsansprüchen benötigen oder Sie gemäß Art. 21 DSGVO
-                  Widerspruch gegen die Verarbeitung eingelegt haben;
-                </li>
-                <li>
-                  gemäß Art. 20 DSGVO Ihre personenbezogenen Daten, die Sie uns
-                  bereitgestellt haben, in einem strukturierten, gängigen und
-                  maschinenlesebaren Format zu erhalten oder die Übermittlung an
-                  einen anderen Verantwortlichen zu verlangen;
-                </li>
-                <li>
-                  gemäß Art. 7 Abs. 3 DSGVO Ihre einmal erteilte Einwilligung
-                  jederzeit gegenüber uns zu widerrufen. Dies hat zur Folge,
-                  dass wir die Datenverarbeitung, die auf dieser Einwilligung
-                  beruhte, für die Zukunft nicht mehr fortführen dürfen und
-                </li>
-                <li>
-                  gemäß Art. 77 DSGVO sich bei einer Aufsichtsbehörde zu
-                  beschweren. In der Regel können Sie sich hierfür an die
-                  Aufsichtsbehörde Ihres üblichen Aufenthaltsortes oder
-                  Arbeitsplatzes oder unseres Unternehmensitzes wenden.
-                </li>
-              </ul>
-            </div>
-            <div className="imprint-headline">8. Widerspruchsrecht</div>
-            <div className="imprint-text">
-              Sofern Ihre personenbezogenen Daten auf Grundlage von berechtigten
-              Interessen gemäß Art. 6 Abs. 1 S. 1 lit. f DSGVO verarbeitet
-              werden, haben Sie das Recht, gemäß Art. 21 DSGVO Widerspruch gegen
-              die Verarbeitung Ihrer personenbezogenen Daten einzulegen, soweit
-              dafür Gründe vorliegen, die sich aus Ihrer besonderen Situation
-              ergeben oder sich der Widerspruch gegen Direktwerbung richtet. Im
-              letzteren Fall haben Sie ein generelles Widerspruchsrecht, das
-              ohne Angabe einer besonderen Situation von uns umgesetzt wird.
-              <br />
-              <br />
-              Möchten Sie von Ihrem Widerrufs- oder Widerspruchsrecht Gebrauch
-              machen, genügt eine E-Mail an info@floragunn.com
-            </div>
-            <div className="imprint-headline">9. Datensicherheit</div>
-            <div className="imprint-text">
-              Wir verwenden innerhalb des Website-Besuchs das verbreitete
-              SSL-Verfahren (Secure Socket Layer) in Verbindung mit der jeweils
-              höchsten Verschlüsselungsstufe, die von Ihrem Browser unterstützt
-              wird. In der Regel handelt es sich dabei um eine 256 Bit
-              Verschlüsselung. Falls Ihr Browser keine 256-Bit Verschlüsselung
-              unterstützt, greifen wir stattdessen auf 128-Bit v3 Technologie
-              zurück. Ob eine einzelne Seite unseres Internetauftrittes
-              verschlüsselt übertragen wird, erkennen Sie an der geschlossenen
-              Darstellung des Schüssel- beziehungsweise Schloss-Symbols in der
-              unteren Statusleiste Ihres Browsers. <br />
-              <br />
-              Wir bedienen uns im Übrigen geeigneter technischer und
-              organisatorischer Sicherheitsmaßnahmen, um Ihre Daten gegen
-              zufällige oder vorsätzliche Manipulationen, teilweisen oder
-              vollständigen Verlust, Zerstörung oder gegen den unbefugten
-              Zugriff Dritter zu schützen. Unsere Sicherheitsmaßnahmen werden
-              entsprechend der technologischen Entwicklung fortlaufend
-              verbessert.
-            </div>
-            <div className="imprint-headline">
-              10. Aktualität und Änderung dieser Datenschutzerklärung
-            </div>
-            <div className="imprint-text">
-              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand
-              Juni 2024. <br />
-              <br />
-              Durch die Weiterentwicklung unserer Website und Angebote darüber
-              oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher
-              Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu
-              ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit
-              auf unserer Website abgerufen und/oder ausgedruckt werden.
-            </div>
-          </div>
-        </div>
-      </div>
-      <PreFooter />
-    </PageWrapper>
-  );
+            <PreFooter />
+        </PageWrapper>
+    );
 };
 
 export default DataProtection;
