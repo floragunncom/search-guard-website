@@ -9,12 +9,9 @@ import alertingAnomalies from '../../images/alerting_anomalies.svg';
 import alertingNotifications from '../../images/alerting_notifications.svg';
 import alertingEscalation from '../../images/alerting_escalation.svg';
 import alertingUI from '../../images/alerting_ui.svg';
-import iconSpeaker from "../../images/bullhorn-solid.svg";
 import FilledDivider from '../../components/FilledDivider/FilledDivider';
 import AlertingNotificationModel from '../../components/Alerting/AlertingNotificationModel';
-import certificate from "../../images/clipboard-check-solid.svg";
 import CTAAlerting from "../../components/CTA/CTAAlerting";
-import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import AlertingBenefits from "../../components/Alerting/AlertingBenefits";
 
 const Alerting = () => {

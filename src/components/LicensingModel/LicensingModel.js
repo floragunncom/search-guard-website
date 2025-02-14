@@ -5,14 +5,9 @@ import Button from '../Button/Button';
 
 const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline }) => {
   const [standardButton, setStandardButton] = useState(true);
-  const [tableVisible, setTableVisible] = useState(false);
-
+  
   const onButtonPress = () => {
     setStandardButton(!standardButton);
-  };
-
-  const ontableViewPress = () => {
-    setTableVisible(tableVisible);
   };
 
   let infoButton;

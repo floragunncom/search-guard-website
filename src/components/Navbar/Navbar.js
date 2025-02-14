@@ -52,9 +52,9 @@ const Navbar = ({ background = 'white', landing }) => {
               </a>
               {
                 searchEnabled === false ?  
-                <a className='btn-search-mobile btn-search-open' onClick={handleToggleSearch}><i className="fa fa-search" /></a>
+                <button className='btn-search-mobile btn-search-open' onClick={handleToggleSearch}><i className="fa fa-search" /></button>
                 :
-                <a className='btn-search-mobile btn-search-close' onClick={handleToggleSearch}><i className="fa fa-times" /></a>
+                <button className='btn-search-mobile btn-search-close' onClick={handleToggleSearch}><i className="fa fa-times" /></button>
               }               
               <ul className="right hide-on-med-and-down">
                 <li><a href="/security/" data-target="nav-solutions" className="dropdown-trigger navbar__item" >Solutions</a></li>
@@ -66,9 +66,9 @@ const Navbar = ({ background = 'white', landing }) => {
                 <li><a className="navbar__item" href="/contacts/">Contact</a></li>
                 <li>
                   {searchEnabled === false ? 
-                    <a className='btn-search btn-search-open navbar__item' onClick={handleToggleSearch}><i className="fa fa-search" /></a>
+                    <button className='btn-search btn-search-open navbar__item' onClick={handleToggleSearch}><i className="fa fa-search" /></button>
                     :
-                    <a className='btn-search btn-search-close navbar__item' onClick={handleToggleSearch}><i className="fa fa-times" /></a>
+                    <button className='btn-search btn-search-close navbar__item' onClick={handleToggleSearch}><i className="fa fa-times" /></button>
                   }
                 </li>                        
               </ul>

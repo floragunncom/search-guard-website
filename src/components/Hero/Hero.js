@@ -7,7 +7,6 @@ import security from '../../images/security.svg';
 import './Hero.scss';
 import hero from '../../images/hero-static.svg';
 import {ReactSVG} from "react-svg";
-import logo from "../../images/sg_logo_white.svg";
 
 const Hero = () => {
   return (

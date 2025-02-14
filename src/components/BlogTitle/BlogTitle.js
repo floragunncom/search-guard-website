@@ -1,6 +1,5 @@
 import React from 'react';
 import './BlogTitle.scss';
-import posts from '../../Api/contentfulPosts';
 
 const Title = ({ text, subText, tags, link, authorProfile, image }) => {
   const renderTags = (
@@ -8,9 +7,6 @@ const Title = ({ text, subText, tags, link, authorProfile, image }) => {
       Tags:{' '}
       {tags.map(tag => {
         const slug = tag.replace(/[ /]/g, '-').toLowerCase();
-        const categoryPosts = posts.filter(post =>
-          post.fields.tags.includes(tag.name),
-        );
         return (
             <a href={`/blog/category/${slug}/`} className="blogtitle-tag" key={tag}>
                 {tag}
