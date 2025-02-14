@@ -45,9 +45,18 @@ class Quotes extends Component {
       },
       {
         quote:
-          'We have chose SearchGuard because it matches our values of technical rigour, openness, and auditability. It is enabled us to ensure that data in transit is secure against eavesdropping in off-prem environments, to implement verifiable and granular access to our Elastic clusters, and most importantly to give our analysts access to restricted data sets with confidence that PII remains protected and confidential.',
+            'We have chose SearchGuard because it matches our values of technical rigour, openness, and auditability. It is enabled us to ensure that data in transit is secure against eavesdropping in off-prem environments, to implement verifiable and granular access to our Elastic clusters, and most importantly to give our analysts access to restricted data sets with confidence that PII remains protected and confidential.',
         author: 'Tom',
         company: 'Deflect (DDoS protection CDN) & Deflect Labs (DDoS research)',
+      },
+      {
+        quote:
+          'In 2019 we planned to install one large logging infrastructure cluster for about 100TB of data. Not as SIEM, but mainly to have logs available centrally for developers and admins. We chose one Elasticsearch instance as a large log repository.\n' +
+            'We decided to install the 8 data nodes and 10 VMs with one contractor. He proposed us 2 solutions for the “role-based access control” software. After testing, we quickly adopted SearchGuard.\n' +
+            'We actually send all our critical logs to this cluster. About 15 users can login in the system and see what they are looking for. With SearchGuard we can easily limit the accesses to the logs of their applications only.\n' +
+            'The right segregation is working well, and we are happy with the solution we chose for the user’s access control.\n',
+        author: 'Y. Ghennai',
+        company: 'Universite de Lausanne',
       },
     ];
     return (

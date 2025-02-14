@@ -7,6 +7,8 @@ import objectRocket from '../../images/objectRocket.svg';
 import mitratech from '../../images/mitratech.svg';
 import siren from '../../images/siren.svg';
 import kubedb from '../../images/kubedb.svg';
+import unil from '../../images/unil-universite-de-lausanne.png';
+
 import './TrustedBy.scss';
 
 
@@ -31,6 +33,10 @@ const TrustedBy = () => {
     {
       name: 'SieMonster',
       logo: sieMonster
+    },
+    {
+      name: 'UNIL Universite de Lausanne',
+      logo: unil
     },
     {
       name: 'Mitratech',
