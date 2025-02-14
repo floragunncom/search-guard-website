@@ -3,7 +3,7 @@ import Button from '../../Button/Button';
 import './TextTile.scss';
 import {getColorSchemaCSS} from "../../../utils/styleUtils";
 
-const TextTile = ({ colorschema, headline, text, ctaText, link }) => {
+const TextTile = ({ colorschema, headline, text, ctaText, link, target }) => {
 
     let baseCSS = getColorSchemaCSS(colorschema);
 
@@ -19,7 +19,7 @@ const TextTile = ({ colorschema, headline, text, ctaText, link }) => {
                             <div className="body-din texttile-text">{text}</div>
                         }
                         {link && link.length > 0 && ctaText && ctaText.length > 0 &&
-                            <Button text={ctaText}  link={link} />
+                            <Button text={ctaText}  link={link} target={target}/>
                         }
                     </div>
                 </div>

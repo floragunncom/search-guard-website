@@ -11,6 +11,7 @@ const CTAAIM = ({ colorschema }) => {
             ctaText="Documentation"
             icon={ctaIcon}
             link="https://docs.search-guard.com/latest/automated-index-management"
+            target="_blank"
         />
     )
 }
