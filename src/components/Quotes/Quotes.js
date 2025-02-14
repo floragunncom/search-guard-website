@@ -51,7 +51,7 @@ class Quotes extends Component {
       },
     ];
     return (
-      <div className="quotes-container color-schema-light">
+      <div className="quotes-container color-schema-light default-padding-top-bottom">
         <div className="row">
           <h2 className="quotes-headline">What our clients say</h2>
           <div className="slider">
