@@ -1,5 +1,5 @@
-@import '../../styles/Colors';
-@import '../../styles/Breakpoints';
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
 
 .presentations-wrapper {
   padding: 64px 32px 0px 32px;

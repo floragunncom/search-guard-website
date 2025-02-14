@@ -1,5 +1,5 @@
-@import '../../styles/Colors';
-@import '../../styles/Breakpoints';
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
 
 .tilesimple-flx-row {
   max-width: 100% !important;

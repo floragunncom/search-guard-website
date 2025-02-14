@@ -1,5 +1,5 @@
-@import '../../styles/Colors';
-@import '../../styles/Breakpoints';
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
 
 .blog-wrapper {
   display: flex;

@@ -1,6 +1,6 @@
-@import '../../styles/Colors';
-@import '../../styles/Breakpoints';
-@import '../../components/Integrators/Integrators';
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+@use '../../components/Integrators/Integrators' as *;
 
 .heise-textbox {
   margin-bottom: 25px;

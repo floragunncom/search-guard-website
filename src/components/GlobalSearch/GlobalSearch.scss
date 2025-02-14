@@ -1,5 +1,6 @@
-@import '../../styles/Colors';
-@import '../../styles/Breakpoints';
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+@use "sass:string";
 
 .div-search-form {
     display: flex;
@@ -50,11 +51,11 @@ $div-search-animation-time-ms: 500;
 
 .div-search-expand-animation {
     max-height: 80vh;
+    overflow: auto;
+    transition: max-height #{$div-search-animation-time-ms}ms linear, padding #{$div-search-animation-time-ms}ms linear, overflow #{$div-search-animation-time-ms}ms linear;
     @media only screen and (max-width: $mobile){
         padding: 2rem;
     }
-    overflow: auto;
-    transition: max-height #{$div-search-animation-time-ms}ms linear, padding #{$div-search-animation-time-ms}ms linear, overflow #{$div-search-animation-time-ms}ms linear;
 }
  
 .div-search::-webkit-scrollbar {
@@ -221,7 +222,7 @@ $index-menu-badges-colors: (
   
 :export {
     @each $key, $value in $index-menu-badges-colors {
-        #{unquote($key)}: $value;
+        #{string.unquote($key)}: $value;
     }
     divSearchAnimationTimeMs: $div-search-animation-time-ms;    
 }

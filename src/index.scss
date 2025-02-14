@@ -1,5 +1,5 @@
-@import '../src/styles/Colors.scss';
-@import '../src/styles/Breakpoints.scss';
+@use '../src/styles/Colors.scss' as *;
+@use '../src/styles/Breakpoints.scss' as *;
 
 ::selection {
   background-color: $primary;

@@ -1,6 +1,6 @@
-@import '../../styles/Colors';
-@import '../../styles/Breakpoints';
-@import '../../index.scss';
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+@use '../../index.scss' as *;
 
 .title-wrapper-style {
   background-color: $white;

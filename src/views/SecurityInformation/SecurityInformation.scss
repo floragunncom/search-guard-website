@@ -1,5 +1,5 @@
-@import '../../styles/Colors.scss';
-@import '../../styles/Breakpoints';
+@use '../../styles/Colors.scss' as *;
+@use '../../styles/Breakpoints' as *;
 
 .security-wrapper {
   margin: 32px 32px;

@@ -1,5 +1,5 @@
-@import '../../styles/Colors';
-@import '../../styles/Breakpoints';
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
 
 .press-profile-pic {
 
@@ -9,6 +9,10 @@
 }
 
 .row.pressarticle-wrapper {
+  padding: 0 12px;
+  margin-left:100px;
+  margin-right:100px;
+  max-width: 100%;
   @media only screen and (max-width: $tabletBig) {
     margin-left:0px;
     margin-right:0px;
@@ -16,10 +20,6 @@
   @media only screen and (max-width: $mobile) {
     padding: 0 6px;
   }
-  padding: 0 12px;
-  margin-left:100px;
-  margin-right:100px;
-  max-width: 100%;
 }
 
 .pressarticle-headline1 {
