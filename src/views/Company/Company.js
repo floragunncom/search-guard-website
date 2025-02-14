@@ -33,8 +33,8 @@ const Company = () => {
             />
             <Team/>
             <Partners/>
+            <CTAStartFreeTrial colorschema="dark"/>
             <Journey/>
-            <CTAStartFreeTrial colorschema="white"/>
             <PreFooter/>
         </PageWrapper>
     );

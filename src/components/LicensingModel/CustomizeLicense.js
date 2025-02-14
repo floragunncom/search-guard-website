@@ -13,6 +13,7 @@ const CustomizeLicense = () => {
                 src: iconBook,
                 width: 150,
                 height: 150,
+                alt: "Search Guard Academic & Scientific Programme",
             },
             button: {
                 href: "/contacts/",
@@ -26,6 +27,7 @@ const CustomizeLicense = () => {
                 src: iconWheels,
                 width: 150,
                 height: 150,
+                alt: "Search Guard for OEM, Integrators & Resellers",
             },
             button: {
                 href: "/contacts/",
