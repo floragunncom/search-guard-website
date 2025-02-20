@@ -36,12 +36,15 @@
     "serve": "^11.1.0",
     "serve-handler": "^6.1.2",
     "uuid": "^3.3.3",
-    "algoliasearch": "^5.20.0"
+    "algoliasearch": "^5.20.0",
+    "markdown-it": "^14.1.0",
+    "puppeteer": "^19.11.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "fetch": "node ./src/Api/fetchContentfulPosts.js && node ./src/Api/fetchContentfulEvents.js && node ./src/Api/fetchContentfulWhitepapers.js && node ./src/Api/fetchContentfulVideos.js && node ./src/Api/fetchContentfulPersons.js && node ./src/Api/fetchContentfulPageContents.js",
     "indexBlogPosts": "node ./src/Api/indexBlogposts.js",
+    "createBlogPostsPdf": "node ./src/Api/createBlogPostPdf.js",
     "build": "npm run fetch && react-scripts build",
     "build-local": "react-scripts build",
     "sitemap": "./scripts/sitemap.js",
