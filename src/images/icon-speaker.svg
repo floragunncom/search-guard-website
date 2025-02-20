@@ -46,7 +46,6 @@
                     <g id="top" transform="translate(155.000000, 32.000000)">
                         <g id="split-screen-illustration-tablet" transform="translate(154.000000, 0.000000)">
                             <g id="illustration-/-documentation">
-                                <circle id="Oval" fill="#FFFFFF" cx="75" cy="75" r="75"></circle>
                                 <g id="megaphone,-notification,-announcement,-ad,-advertisement" transform="translate(33.000000, 37.000000)">
                                     <circle id="Oval" fill="url(#linearGradient-1)" cx="69" cy="36.5" r="15.06"></circle>
                                     <path d="M8.94,48.5 L14.54,73.68 C14.7825433,74.7441554 15.7285544,75.4993046 16.82,75.5 L19.4,75.5 C20.2615642,75.5 20.96,74.8015642 20.96,73.94 L20.96,63.24 C20.9563623,61.4949257 21.681312,59.8275414 22.96,58.64 L29.2,52.88" id="Path" fill="url(#linearGradient-2)"></path>
