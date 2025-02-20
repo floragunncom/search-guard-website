@@ -101,11 +101,22 @@
   "reactSnap": {
     "skipThirdPartyRequests": true,
     "preconnectThirdParty": false,
-    "concurrency": 32,
+    "concurrency": 16,
     "viewport": {
       "width": 1280,
       "height": 767
     },
+    "include": [
+      "/security-for-elasticsearch/",
+      "/elasticsearch-kibana-security/",
+      "/thanks/",
+      "/search-guard-flx/",
+      "/sitemap/",
+      "/heise/",
+      "/outdated-elasticsearch-versions-suppport/",
+      "/authors/",
+      "/newsletter/"
+    ],
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
