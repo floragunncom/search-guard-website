@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import * as lunr from 'lunr';
 import {Helmet} from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
@@ -11,7 +11,7 @@ import posts from '../../Api/contentfulPosts.json';
 import Pagination from '../../components/Pagination/Pagination';
 import './Blog.scss';
 
-const Blog = ({ match } ) => {
+const Blog = ( ) => {
 
   const breadcrumb = [
     { anchor: '/', name: 'Home' },
@@ -19,7 +19,7 @@ const Blog = ({ match } ) => {
     { anchor: '/blog/', name: 'Blog' },
   ];
 
-  const { pageNumber } = match.params;
+  const { pageNumber } = useParams();
   const currentPage = parseInt(pageNumber, 10) || 1;
 
   const [searchResultsPresented, setSearchResultsPresented] = useState(false);
@@ -183,8 +183,8 @@ const Blog = ({ match } ) => {
           </div>
           {searchResultPosts.map(post => {
             return (
-              <div className="col m12 l8 offset-l2 searchblogpost-wrapper">
-                <SearchBlogPost key={post.sys.id} post={post} />
+              <div className="col m12 l8 offset-l2 searchblogpost-wrapper" key={post.sys.id}>
+                <SearchBlogPost post={post} />
               </div>
             );
           })}

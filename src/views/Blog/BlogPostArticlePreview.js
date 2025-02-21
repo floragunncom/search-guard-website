@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Redirect, useParams} from 'react-router-dom'
+import { Navigate } from 'react-router-dom';
 import BlogPostArticleContent from "../../components/BlogPost/BlogPostArticleContent";
 
 const BlogPostArticlePreview = ({ match }) => {
@@ -37,7 +37,7 @@ const BlogPostArticlePreview = ({ match }) => {
   }, [])
 
   if (error) {
-    return (<Redirect to="/404/" />);
+    return (<Navigate to="/404/" replace/>);
   }
 
   if (!postContent) {

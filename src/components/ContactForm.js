@@ -1,5 +1,4 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
 import './ContactForm.scss';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
@@ -329,4 +328,4 @@ const ContactForm = () => {
   );
 };
 
-export default withRouter(ContactForm);
+export default ContactForm;

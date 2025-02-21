@@ -1,4 +1,4 @@
-import {Redirect, Route, Switch} from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import React from 'react';
 import HomePage from './views/HomePage/HomePage';
 import ContactUs from './views/ContactUs/ContactUs';
@@ -41,99 +41,79 @@ import Newsletter from './views/Newsletter/Newsletter';
 import HtmlSitemap from './views/HtmlSitemap/HtmlSitemap';
 import Error from './views/Error/Error';
 
-const Routes = () => {
-  return (
-    <React.Fragment>
+const AllRoutes = () => {
+    return (
+        <Routes>
+                {/* Home route */}
+                <Route path="/" element={<HomePage />} />
 
-        <Switch>
+                {/* Main routes */}
+                <Route path="/search-guard-flx" element={<FlxLandingPage />} />
+                <Route path="/heise" element={<Heise />} />
+                <Route path="/contacts" element={<ContactUs />} />
+                <Route path="/security" element={<Security />} />
+                <Route path="/alerting" element={<Alerting />} />
+                <Route path="/indexmanagement" element={<Aim />} />
+                <Route path="/whitepapers" element={<WhitePapers />} />
+                <Route path="/compliance" element={<Compliance />} />
+                <Route path="/company" element={<Company />} />
+                <Route path="/resource" element={<Resource />} />
+                <Route path="/licensing" element={<License />} />
+                <Route path="/faq" element={<Faqs />} />
+                <Route path="/impressum" element={<Imprint />} />
+                <Route path="/presentations" element={<Presentations />} />
+                <Route path="/datenschutz" element={<Datenschutz />} />
+                <Route path="/dataprotection" element={<DataProtection />} />
+                <Route path="/outdated-elasticsearch-versions-suppport" element={<OldElasticsearchVersions />} />
+                <Route path="/newsletter" element={<Newsletter />} />
 
-          <Route exact path="/" component={HomePage} />
+                {/* Redirects */}
+                <Route path="/security-for-elasticsearch" element={<Navigate to="/security" replace />} />
+                <Route path="/elasticsearch-kibana-security" element={<Navigate to="/security" replace />} />
+                <Route path="/tls-certificate-generator" element={<Navigate to="/security" replace />} />
 
-          <Route exact path="/search-guard-flx/">
-            <FlxLandingPage />
-          </Route>
+                {/* Additional routes */}
+                <Route path="/thanks" element={<Thanks />} />
+                <Route path="/error" element={<Error />} />
+                <Route path="/search-guard-free-trial" element={<FreeTrial />} />
+                <Route path="/security-information" element={<SecurityInformation />} />
+                <Route path="/cve-advisory" element={<Advisory />} />
+                <Route path="/disclosure-policy" element={<Disclosure />} />
 
-          <Route exact path="/heise/" component={Heise} />
-          <Route exact path="/heise" component={Heise} />
+                {/* Dynamic routes */}
+                <Route path="/authors" element={<Authors />} />
+                <Route path="/author/:slug" element={<Author />} />
+                <Route path="/certificates" element={<Certifications />} />
 
-          <Route exact path="/search-guard-flx/" component={FlxLandingPage} />
-          <Route exact path="/contacts/" component={ContactUs} />
-          <Route exact path="/security/" component={Security} />
-          <Route exact path="/alerting/" component={Alerting} />
-          <Route exact path="/indexmanagement/" component={Aim} />
-          <Route exact path="/whitepapers/" component={WhitePapers} />
-          <Route exact path="/compliance/" component={Compliance} />
-          <Route exact path="/company/" component={Company} />
-          <Route exact path="/resource/" component={Resource} />
-          <Route exact path="/licensing/" component={License} />
-          <Route exact path="/faq/" component={Faqs} />
-          <Route exact path="/impressum/" component={Imprint} />
-          <Route exact path="/presentations/" component={Presentations} />
-          <Route exact path="/datenschutz/" component={Datenschutz} />
-          <Route exact path="/dataprotection/" component={DataProtection} />
-          <Route exact path="/outdated-elasticsearch-versions-suppport/" component={OldElasticsearchVersions} />
-          <Route exact path="/newsletter/" component={Newsletter} />
+                {/* Blog routes */}
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/category/:slug" element={<BlogCategory />} />
+                <Route path="/blog/page/:pageNumber" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPostArticle />} />
 
-          <Route exact path="/security-for-elasticsearch/">
-            <Redirect to="/security/" />
-          </Route>
+                {/* Whitepaper routes */}
+                <Route path="/whitepapers/:slug" element={<WhitePaperArticle />} />
 
-          <Route exact path="/elasticsearch-kibana-security/">
-            <Redirect to="/security/" />
-          </Route>
+                {/* Press routes */}
+                <Route path="/press/de/search-guard-vertrieb-dach" element={<PressDEDach />} />
+                <Route path="/press/en/search-guard-sales-dach" element={<PressENDach />} />
+                <Route path="/press/de/search-guard-alerting" element={<PressDEAlerting />} />
+                <Route path="/press/en/search-guard-alerting" element={<PressENAlerting />} />
+                <Route path="/press/de/elasticsearch-dsgvo" element={<PressDECompliance />} />
 
-          <Route exact path="/thanks/" component={Thanks} />
-          <Route exact path="/error/" component={Error} />
+                {/* Sitemap */}
+                <Route path="/sitemap" element={<HtmlSitemap />} />
 
-          <Route
-              exact
-              path="/search-guard-free-trial/"
-              component={FreeTrial}
-          />
-          <Route exact path="/security-information/" component={SecurityInformation} />
-          <Route exact path="/cve-advisory/" component={Advisory} />
-          <Route exact path="/disclosure-policy/" component={Disclosure} />
+                {/* Preview route */}
+                <Route path="/preview/blogpost/:slug" element={<BlogPostArticlePreview />} />
 
-          <Route exact path="/tls-certificate-generator/">
-            <Redirect to="/security/" />
-          </Route>
+                {/* 404 route */}
+                <Route path="/404" element={<NotFound />} />
 
-          <Route exact path="/authors/" component={Authors} />
-          <Route exact path="/author/:slug" component={Author} />
-
-          <Route exact path="/certificates/" component={Certifications} />
-
-
-          <Route exact path="/blog/category/:slug/" component={BlogCategory} />
-          <Route exact path="/blog/" component={Blog} />
-          <Route exact path="/blog/page/:pageNumber/" component={Blog} />
-          <Route exact path="/blog/:slug/" component={BlogPostArticle} />
-
-          <Route exact path="/whitepapers/:slug" component={WhitePaperArticle} />
-
-
-
-          <Route exact path="/press/de/search-guard-vertrieb-dach/" component={PressDEDach} />
-          <Route exact path="/press/en/search-guard-sales-dach/" component={PressENDach} />
-
-          <Route exact path="/press/de/search-guard-alerting/" component={PressDEAlerting} />
-          <Route exact path="/press/en/search-guard-alerting/" component={PressENAlerting} />
-
-          <Route exact path="/press/de/elasticsearch-dsgvo/" component={PressDECompliance} />
-
-          {/* Not: This is the HTML version of the sitemap. The XML one is generated by scripts/sitemap.js after the build process */}
-          <Route exact path="/sitemap/" component={HtmlSitemap} />
-
-          <Route exact path="/404/" component={NotFound} />
-
-          <Route exact path="/preview/blogpost/:slug" component={BlogPostArticlePreview} />
-
-          <Redirect to="/404/" />
-
-        </Switch>
-
-    </React.Fragment>
-  );
+                {/* Catch all route - must be last */}
+                <Route path="*" element={<Navigate to="/404" replace />} />
+        </Routes>
+    );
 };
 
-export default Routes;
+export default AllRoutes;

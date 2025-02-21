@@ -2,7 +2,7 @@ import './Author.scss';
 import persons from '../../Api/contentfulPersons.json';
 import posts from '../../Api/contentfulPosts.json';
 import React from 'react';
-import {Redirect} from 'react-router-dom'
+import { Navigate } from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Markdown from 'markdown-to-jsx';
@@ -20,7 +20,7 @@ const Author = ({ match }) => {
   );
 
   if (!person) {
-    return (<Redirect to="/404/" />);
+    return (<Navigate to="/404/" replace/>);
   }
 
   let postsOfAuthor = posts.filter(post => post.fields.authorProfile && post.fields.authorProfile.sys.id === person.sys.id);

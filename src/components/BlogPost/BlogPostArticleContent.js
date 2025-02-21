@@ -1,5 +1,5 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom'
+import { Navigate } from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 import {FacebookShareButton, LinkedinShareButton, RedditShareButton, TwitterShareButton,} from 'react-share';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
@@ -22,7 +22,7 @@ import {ReactSVG} from "react-svg";
 const BlogPostArticleContent = ({postContent}) => {
 
     if (!postContent) {
-        return (<Redirect to="/404/"/>);
+        return (<Navigate to="/404/" replace/>);
     }
 
     const options = {
