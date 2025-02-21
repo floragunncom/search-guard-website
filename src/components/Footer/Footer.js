@@ -67,7 +67,10 @@ const Footer = ({landing}) => {
                                         </a>
                                     </div>
                                 </div>
-                                <div className="filler-class"/>
+                                <div className="footer-list-headline">
+                                    <a href="/tlstool/">TLS tool</a>
+                                </div>
+
                                 <div className="footer-list-headline">
                                     <a href="/indexmanagement/">index management</a>
                                 </div>

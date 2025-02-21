@@ -9,6 +9,7 @@ import BlogCategory from './views/Blog/BlogCategory';
 import Resource from './views/Resource/Resource';
 import Company from './views/Company/Company';
 import Security from './views/Security/Security';
+import TlsTool from './views/TlsTool/TlsTool';
 import Alerting from './views/Alerting/Alerting';
 import Aim from './views/Aim/Aim';
 import Faqs from './views/Faqs/Faqs';
@@ -60,6 +61,7 @@ const Routes = () => {
           <Route exact path="/contacts/" component={ContactUs} />
           <Route exact path="/security/" component={Security} />
           <Route exact path="/alerting/" component={Alerting} />
+          <Route exact path="/tlstool/" component={TlsTool} />
           <Route exact path="/indexmanagement/" component={Aim} />
           <Route exact path="/whitepapers/" component={WhitePapers} />
           <Route exact path="/compliance/" component={Compliance} />

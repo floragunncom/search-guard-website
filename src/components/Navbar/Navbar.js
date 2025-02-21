@@ -82,6 +82,7 @@ const Navbar = ({ background = 'white', landing }) => {
             <ul >
               <li><a href="/security/">Security</a></li>
               <li><a href="/alerting/">Alerting</a></li>
+              <li><a href="/tlstool/">TLS Tool</a></li>
               <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
             </ul>
           </li>
@@ -118,6 +119,7 @@ const Navbar = ({ background = 'white', landing }) => {
         <ul id="nav-solutions" className="dropdown-content">
           <li><a href="/security/">Security</a></li>
           <li><a href="/alerting/">Alerting</a></li>
+          <li><a href="/tlstool/">TLS Tool</a></li>
           <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
         </ul>
       </>
