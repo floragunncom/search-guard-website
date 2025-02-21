@@ -111,6 +111,10 @@
         }
 
         .row .col {
+            @media only screen and (max-width: 600px) {
+                padding-top: 20px;
+                hyphens: none;
+            }
             padding: 0px 20px;
             margin-left: 0px;
             margin-right: 0px;
@@ -133,11 +137,11 @@
 
         h1.title-headline-style {
             @media (max-width: 600px) {
-                font-size: xxx-large;
-                font-size: -webkit-xxx-large;                 
+                font-size: 48px;                
             }
             color: #184962;
-            word-break: auto-phrase;
+            word-break: normal;
+            hyphens: none;
             text-align: center;
             padding: 40px 20px 0px 20px;
             margin-top: 20px;
