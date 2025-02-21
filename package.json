@@ -39,6 +39,7 @@
     "build": "npm run fetch && react-scripts build",
     "build-local": "react-scripts build",
     "sitemap": "./scripts/sitemap.js",
+    "fixsvg": "svgo ./src/images/*.svg ",
     "postbuild": "react-snap && ./scripts/sitemap.js -- --base-url='https://search-guard.com/' ",
     "clearReactChunks": "node ./src/Api/cleanReactChunksPostBuild.js ",
     "clean": "rm -rf build/*",
@@ -90,6 +91,7 @@
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
+    "svgo": "^3.3.2",
     "terser-webpack-plugin": "^5.3.9",
     "webpack": "^5.89.0",
     "webpack-merge": "^5.10.0"
