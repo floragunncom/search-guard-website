@@ -33,7 +33,7 @@ const HomePage = () => {
                 <link rel="canonical" href="https://search-guard.com/"/>
                 <meta
                     name="description"
-                    content="Search Guard is an Open Source security plugin for Elasticsearch, Kibana and the entire ELK stack. Search Guard offers encryption, authentication, authorization, audit logging, compliance as well as alerting and anomaly detection features."
+                    content="Search Guard is a security plugin for Elasticsearch and Kibana. Search Guard offers security, audit logging, compliance, alerting and anomaly detection."
                 />
             </Helmet>
             <Hero/>

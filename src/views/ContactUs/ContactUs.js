@@ -21,7 +21,7 @@ const ContactUs = () => {
                 <link rel="canonical" href="https://search-guard.com/contacts/"/>
                 <meta
                     name="description"
-                    content="Any questions regarding Search Guard licensing or pricing? Do you need OEM licenses or want to partner with us? Please fill out the contact form and we will get back to you as soon as possible."
+                    content="Any questions regarding Search Guard licensing, pricing or features? Drop us a message and we will get back to you as soon as possible."
                 />
             </Helmet>
             <Title

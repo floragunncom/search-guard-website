@@ -28,12 +28,12 @@ const Security = () => {
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>
-                    Search Guard Security | Securing your Elasticsearch cluster with Search Guard
+                    Secure Elasticsearch and Kibana with Search Guard
                 </title>
                 <link rel="canonical" href="https://search-guard.com/security/"/>
                 <meta
                     name="description"
-                    content="Find out more about Search Guard features for Elasticsearch like LDAP, Active Directory, Kerberos/SPNEGO, JSON web token, audit logging, Kibana SSO, Kibana multitenancy, field-level security, document-level security, read histroy, write history, audit log event routing and many more."
+                    content="Secure your Elasticsearch and Kibana installation with Search Guard and add access control, encryption, audit logging and alerting."
                 />
             </Helmet>
             <Title
