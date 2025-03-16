@@ -12,13 +12,13 @@ const Authors = ({ match }) => {
       <PageWrapper>
         <Helmet>
           <meta charSet="utf-8"/>
-          <title>Search Guard Authors</title>
+          <title>A list of all Search Guard Authors contributing to our blog</title>
           <link
               rel="canonical"
               href="https://search-guard.com/authors/"
           />
 
-          <meta name="description" content="A list of all Search Guard Authors"/>
+          <meta name="description" content="A list of all Search Guard Authors that are contributing to our blog and documentation."/>
 
           <meta property="og:title" content="Search Guard Authors"/>
           <meta property="og:url" content="https://search-guard.com/authors/"/>

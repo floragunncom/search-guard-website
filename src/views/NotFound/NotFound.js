@@ -19,7 +19,7 @@ const NotFound = () => {
       <div className="notfound-wrapper">
         <div className="row">
           <div className="col s12 m10 offset-m1 l8 offset-l2">
-            <div className="notfound-warning">We're sorry ...</div>
+            <h1 className="notfound-warning">We're sorry ...</h1>
             {/* <div className="notfound-headline">This unfortunately did not work</div> */}
             <div className="notfound-text">
               The page you are looking for was moved, removed, renamed or might

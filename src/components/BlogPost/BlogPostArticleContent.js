@@ -176,6 +176,7 @@ const BlogPostArticleContent = ({postContent}) => {
         video
     ) {
         renderVideoJson = `
+            <script type="application/ld+json">
             {
               "@context": "https://schema.org",
               "@type": "VideoObject",
@@ -184,7 +185,8 @@ const BlogPostArticleContent = ({postContent}) => {
               "uploadDate": "${video.fields.publishedAt}",
               "contentUrl": "${video.fields.url}",
               "embedUrl": "${video.fields.embedUrl}",
-            }
+            }            
+            </script>
         `
     }
     ;
@@ -205,11 +207,17 @@ const BlogPostArticleContent = ({postContent}) => {
             }`
     }
 
+    let title = '';
+    if (postContent.fields.htmlTitle) {
+        title = postContent.fields.htmlTitle;
+    } else {
+        title = postContent.fields.title;
+    }
     return (
         <PageWrapper>
             <Helmet>
                 <meta charSet="utf-8"/>
-                <title>{postContent.fields.htmlTitle}</title>
+                <title>{title}</title>
                 <link
                     rel="canonical"
                     href={`https://search-guard.com/blog/${postContent.fields.slug}`}
@@ -219,7 +227,7 @@ const BlogPostArticleContent = ({postContent}) => {
                 <meta name="copyright" content="floragunn GmbH"/>
                 {renderAuthorMetaTag}
 
-                <meta property="og:title" content={postContent.fields.htmlTitle}/>
+                <meta property="og:title" content={title}/>
                 <meta property="og:type" content="article"/>
                 <meta property="og:url" content={`https://search-guard.com/blog/${postContent.fields.slug}`}/>
                 <meta property="og:description" content={postContent.fields.htmlDescription}/>
@@ -230,12 +238,12 @@ const BlogPostArticleContent = ({postContent}) => {
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:site" content="@searchguard"/>
                 <meta name="twitter:creator" content="@searchguard"/>
-                <meta name="twitter:title" content={postContent.fields.htmlTitle}/>
+                <meta name="twitter:title" content={title}/>
                 <meta name="twitter:description" content={postContent.fields.htmlDescription}/>
 
                 <meta name="twitter:image" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
                 <meta name="twitter:image:src" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
-                <meta name="twitter:image:alt" content={postContent.fields.title}/>
+                <meta name="twitter:image:alt" content={title}/>
 
             </Helmet>
             <BlogTitle
@@ -413,9 +421,8 @@ const BlogPostArticleContent = ({postContent}) => {
           }
         `}</script>
 
-            <script type="application/ld+json">
-                {renderVideoJson}
-            </script>
+         {renderVideoJson}
+
 
         </PageWrapper>
     );

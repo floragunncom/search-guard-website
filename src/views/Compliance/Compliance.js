@@ -33,7 +33,7 @@ const Compliance = () => {
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>
-                    Elasticsearch Compliance | Stay compliant with GDPR, HIPAA, PCI, SOX and ISO
+                    Elasticsearch Compliance | GDPR, HIPAA, PCI, SOX and ISO
                 </title>
                 <link rel="canonical" href="https://search-guard.com/compliance/"/>
                 <meta

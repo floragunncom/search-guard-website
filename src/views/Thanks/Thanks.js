@@ -26,7 +26,7 @@ const Thanks = () => {
       <div className="thanks-wrapper">
         <div className="row">
           <div className="col s12 m10 offset-m1 l8 offset-l2">
-            <h2 className="thanks-warning">Thank you!</h2>
+            <h1 className="thanks-warning">Thank you!</h1>
             <div className="thanks-text">
               Your contact form was successfully submitted.
               <br />

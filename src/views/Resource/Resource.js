@@ -25,8 +25,7 @@ const Resource = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Resources | Search Guard Blog Posts, FAQ, Documentation and Presentations
-          and whitepapers
+          Search Guard Blog Posts, FAQ, and Documentation
         </title>
         <link rel="canonical" href="https://search-guard.com/resource/" />
         <meta

@@ -17,7 +17,7 @@ const Heise = () => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Search Guard reduces your TCO of Elasticsearch and Kibana</title>
-                <link rel="canonical" href="https://search-guard.com/elasticsearch-reduce-cost/" />
+                <link rel="canonical" href="https://search-guard.com/heise/" />
                 <meta
                     name="description"
                     content="Use Search Guard to reduce your TCO of Elasticsearch and Kibana"

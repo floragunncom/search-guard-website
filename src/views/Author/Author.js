@@ -142,7 +142,7 @@ const Author = ({ match }) => {
     <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{person.fields.firstName} {person.fields.lastName}</title>
+        <title>Search Guard Author: {person.fields.firstName} {person.fields.lastName}</title>
         <link
           rel="canonical"
           href={`https://search-guard.com/author/${person.fields.slug}`}
