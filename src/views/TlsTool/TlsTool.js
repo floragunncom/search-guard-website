@@ -119,11 +119,25 @@ const TlsTool = () => {
 
     "
             />
+
             <FilledDivider colorschema="white"/>
 
+            <div className="row center">
+                <div className="col s12">
+                    <div className="video-container video-margin-bottom">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/sq87TJBMlLM?si=P-_pFI2k7tlBBDCP"
+                                title="Search Guard TLS Tool"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerPolicy="strict-origin-when-cross-origin"
+                                allowFullScreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
 
             <div id="escalationmodel">
-                <ColumnedTile colorschema="dark" wrapperclass="default-padding-top-bottom" columns={eski} headline="TLS Support for Elastcsearch and Kibana" />
+                <ColumnedTile colorschema="dark" wrapperclass="default-padding-top-bottom" columns={eski}
+                              headline="TLS Support for Elastcsearch and Kibana"/>
             </div>
             <div id="benefits">
                 <ColumnedTile
