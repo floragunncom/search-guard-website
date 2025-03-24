@@ -48,7 +48,7 @@ const FreeTrial = () => {
                                 </div>
                                 <div className="free-trial-content-text">
                                     Download the Search Guard plugin matching the Elasticsearch version you are running. For example, if you are
-                                    running Elasticsearch 8.16.1, you need to download Search Guard for 8.16.1 as well.
+                                    running Elasticsearch 8.17.3, you need to download Search Guard for 8.17.3 as well.
                                     The download is platform-independant.
                                 </div>
                                 <div className="free-trial-content-button">
@@ -155,7 +155,7 @@ const FreeTrial = () => {
                                 To start the image, run:
 
                                 <pre className="free-trial-pre">
-                                    docker run -ti -p 9200:9200 -p 5601:5601 floragunncom/sgdemo
+                                    docker run -ti -p 9200:9200 -p 5601:5601 floragunncom/search-guard-flx-elasticsearch:latest
                                 </pre>
 
                                 After the container is up you can access Kibana on:
