@@ -63,7 +63,7 @@ const Routes = () => {
           <Route exact path="/security/" component={Security} />
           <Route exact path="/alerting/" component={Alerting} />
           <Route exact path="/tlstool/" component={TlsTool} />
-          <Route exact path="/encryptionatrest/" component={EncryptionAtRest} />
+          <Route exact path="/encryption-at-rest/" component={EncryptionAtRest} />
           <Route exact path="/indexmanagement/" component={Aim} />
           <Route exact path="/whitepapers/" component={WhitePapers} />
           <Route exact path="/compliance/" component={Compliance} />

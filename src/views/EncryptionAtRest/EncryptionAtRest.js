@@ -19,11 +19,11 @@ const EncryptionAtRest = () => {
     let eski = [
         {
             headline: "European Cyber Resilience Act Compliance",
-            text: "Get ahead of the curve with CloudLock's EU Cyber Resilience Act-ready design. Our cutting-edge encryption and authenticated data structures position you for seamless compliance with European regulations – no last-minute scrambling required!",
+            text: "Get ahead of the curve with Encryption at Rest's EU Cyber Resilience Act-ready design. Our cutting-edge encryption and authenticated data structures position you for seamless compliance with European regulations – no last-minute scrambling required!",
         },
         {
             headline: "NIST Framework Alignment",
-            text: "CloudLock delivers NIST-aligned protection that security professionals trust. Our encryption technology checks all the right boxes for NIST SP 800-171 compliance, strengthening your security posture with minimal operational overhead.",
+            text: "Encryption at Rest delivers NIST-aligned protection that security professionals trust. Our encryption technology checks all the right boxes for NIST SP 800-171 compliance, strengthening your security posture with minimal operational overhead.",
         },
     ]
 
@@ -59,7 +59,7 @@ const EncryptionAtRest = () => {
     ]
     const breadcrumb = [
         {id: 1, anchor: '/', name: 'Home'},
-        {id: 1, anchor: '/encryptionatrest/', name: 'Encryption at Rest'},
+        {id: 1, anchor: '/encryption-at-rest/', name: 'Encryption at Rest'},
     ];
 
     return (
@@ -77,7 +77,7 @@ const EncryptionAtRest = () => {
             </Helmet>
             <Title
                 headline="Encrption at Rest for Elasticsearch"
-                text="Take full control of your data with encryption at rest for Elasticsearch indices and snapshots."
+                text="Take full control of your data with Encryption at Rest for Elasticsearch indices and snapshots."
                 breadcrumb={breadcrumb}
             />
             <div id="concept">
@@ -86,7 +86,7 @@ const EncryptionAtRest = () => {
                     iconPosition="left"
                     colorschema="light"
                     headline="Full Data Protection at Rest"
-                    text="CloudLock encrypts all Lucene data files, snapshots, and Elasticsearch translog, ensuring your sensitive information remains secure even when stored on disk in public cloud environments."
+                    text="Encryption at Rest encrypts all Lucene data files, snapshots, and Elasticsearch translog, ensuring your sensitive information remains secure even when stored on disk in public cloud environments."
                 />
             </div>
             <ImageTextTile
@@ -95,7 +95,7 @@ const EncryptionAtRest = () => {
                 colorschema="dark"
                 headline="Your Keys, Your Control"
                 text="
-                    With CloudLock, encryption keys are held exclusively in secure memory on cluster nodes and never stored on disk, giving you complete authority over data access and enabling secure data destruction through simple key removal. Encryption operates at the core Lucene level of Elasticsearch, making it impossible to circumvent - your data is protected from the inside out
+                    With Encryption at Rest, encryption keys are held exclusively in secure memory on cluster nodes and never stored on disk, giving you complete authority over data access and enabling secure data destruction through simple key removal. Encryption operates at the core Lucene level of Elasticsearch, making it impossible to circumvent - your data is protected from the inside out
         "
             />
             <ImageTextTile
@@ -104,7 +104,7 @@ const EncryptionAtRest = () => {
                 colorschema="light"
                 headline="Security Without Compromise"
                 text="
-                    CloudLock integrates effortlessly with OpenSearch while maintaining full compatibility with critical features like vector search and k-NN, providing robust security without sacrificing functionality. As a standalone plugin, CloudLock operates independently of any other plugins, giving you maximum flexibility in your security architecture.
+                    Encryption at Rest integrates effortlessly with OpenSearch while maintaining full compatibility with critical features like vector search and k-NN, providing robust security without sacrificing functionality. As a standalone plugin, Encryption at Rest operates independently of any other plugins, giving you maximum flexibility in your security architecture.
                 "
             />
             <ImageTextTile
@@ -113,7 +113,7 @@ const EncryptionAtRest = () => {
                 colorschema="dark"
                 headline="Stay Compliant with Confidence"
                 text="
-                    Meet the stringent requirements of PCI, ISO, SOX, and similar regulations with CloudLock's advanced encryption capabilities, providing the essential documentation and security controls needed for compliance audits.
+                    Meet the stringent requirements of PCI, ISO, SOX, and similar regulations with Encryption at Rest's advanced encryption capabilities, providing the essential documentation and security controls needed for compliance audits.
 
     "
             />

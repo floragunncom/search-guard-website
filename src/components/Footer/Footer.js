@@ -76,7 +76,7 @@ const Footer = ({landing}) => {
                                 </div>
 
                                 <div className="footer-list-headline">
-                                    <a href="/encryptionatrest/">Encryption at Rest</a>
+                                    <a href="/encryption-at-rest/">Encryption at Rest</a>
                                 </div>
 
                             </div>
