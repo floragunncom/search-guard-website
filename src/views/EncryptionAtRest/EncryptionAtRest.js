@@ -76,7 +76,7 @@ const EncryptionAtRest = () => {
                 />
             </Helmet>
             <Title
-                headline="Encrption at Rest for Elasticsearch"
+                headline="Encryption at Rest for Elasticsearch"
                 text="Take full control of your data with Encryption at Rest for Elasticsearch indices and snapshots."
                 breadcrumb={breadcrumb}
             />
