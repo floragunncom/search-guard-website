@@ -74,6 +74,11 @@ const Footer = ({landing}) => {
                                 <div className="footer-list-headline">
                                     <a href="/indexmanagement/">index management</a>
                                 </div>
+
+                                <div className="footer-list-headline">
+                                    <a href="/encryptionatrest/">Encryption at Rest</a>
+                                </div>
+
                             </div>
                             <div className="footer-links-column-container col s12 m3 l3">
                                 <div className="footer-list-headline">

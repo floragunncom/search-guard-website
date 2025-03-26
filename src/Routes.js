@@ -41,6 +41,7 @@ import OldElasticsearchVersions from './views/OldElasticsearchVersions/OldElasti
 import Newsletter from './views/Newsletter/Newsletter';
 import HtmlSitemap from './views/HtmlSitemap/HtmlSitemap';
 import Error from './views/Error/Error';
+import EncryptionAtRest from "./views/EncryptionAtRest/EncryptionAtRest";
 
 const Routes = () => {
   return (
@@ -62,6 +63,7 @@ const Routes = () => {
           <Route exact path="/security/" component={Security} />
           <Route exact path="/alerting/" component={Alerting} />
           <Route exact path="/tlstool/" component={TlsTool} />
+          <Route exact path="/encryptionatrest/" component={EncryptionAtRest} />
           <Route exact path="/indexmanagement/" component={Aim} />
           <Route exact path="/whitepapers/" component={WhitePapers} />
           <Route exact path="/compliance/" component={Compliance} />

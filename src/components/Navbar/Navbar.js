@@ -84,6 +84,7 @@ const Navbar = ({ background = 'white', landing }) => {
               <li><a href="/alerting/">Alerting</a></li>
               <li><a href="/tlstool/">TLS Tool</a></li>
               <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
+              <li><a href="/encryptionatrest/">Encryption at Rest (Beta)</a></li>
             </ul>
           </li>
           <li><a className="navbar__item" href="/search-guard-free-trial/">Download</a></li>
@@ -121,6 +122,7 @@ const Navbar = ({ background = 'white', landing }) => {
           <li><a href="/alerting/">Alerting</a></li>
           <li><a href="/tlstool/">TLS Tool</a></li>
           <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
+          <li><a href="/encryptionatrest/">Encryption at Rest (Beta)</a></li>
         </ul>
       </>
     );
