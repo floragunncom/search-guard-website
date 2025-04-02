@@ -68,17 +68,15 @@ const Footer = ({landing}) => {
                                     </div>
                                 </div>
                                 <div className="footer-list-headline">
-                                    <a href="/tlstool/">TLS tool</a>
+                                    <a href="/encryption-at-rest/">Encryption at Rest</a>
                                 </div>
-
                                 <div className="footer-list-headline">
                                     <a href="/indexmanagement/">index management</a>
                                 </div>
 
                                 <div className="footer-list-headline">
-                                    <a href="/encryption-at-rest/">Encryption at Rest</a>
+                                    <a href="/tlstool/">TLS tool</a>
                                 </div>
-
                             </div>
                             <div className="footer-links-column-container col s12 m3 l3">
                                 <div className="footer-list-headline">

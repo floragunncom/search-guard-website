@@ -69,7 +69,7 @@ const EncryptionAtRest = () => {
                 <title>
                     Take full control of your data with Encryption at Rest for Elasticsearch
                 </title>
-                <link rel="canonical" href="https://search-guard.com/tlstool/"/>
+                <link rel="canonical" href="https://search-guard.com/encryption-at-rest/"/>
                 <meta
                     name="description"
                     content="We provide military-grade Encryption at Rest for Elasticsearch, ensuring complete data sovereignty and compliance with PCI, ISO, SOX and EU regulations. The only standalone plugin that encrypts all Lucene data at its core."
