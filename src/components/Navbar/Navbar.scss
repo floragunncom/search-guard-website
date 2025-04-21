@@ -160,6 +160,13 @@ nav .sidenav-trigger {
   }
 }
 
+.btn-search-open .fa, .btn-search-close .fa {
+  height: 63px;
+  @media only screen and (max-width: $mobile) {  
+    height: min-content;
+  }
+}
+
 .btn-search-open {
   background-color: $darkBlueNav;
 }
