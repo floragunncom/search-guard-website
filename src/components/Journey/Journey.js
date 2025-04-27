@@ -5,8 +5,45 @@ import './Journey.scss';
 const Journey = () => {
   const timelineContent = [
     {
+      year: 2025,
+      events: [
+        {
+          headline: 'March',
+          text: 'First technical preview of our Encryption at Rest plugin'
+        },
+        {
+          headline: 'February',
+          text: 'We start to work on our Anomaly Detection Feature'
+        },
+        {
+          headline: 'January',
+          text: 'Search Guard FLX 3.0.3 released'
+        },
+      ],
+    },
+    {
       year: 2024,
       events: [
+        {
+          headline: 'November',
+          text: 'Sponsored the OSMC conference and presented the latest Search Guard FLX features'
+        },
+        {
+          headline: 'November',
+          text: 'Search Guard FLX 3.0.0 released'
+        },
+        {
+          headline: 'June',
+          text: 'We are Sponsors of the Berlin Buzzwords Conference'
+        },
+        {
+          headline: 'May',
+          text: 'Search Guard FLX 2.0.0 released'
+        },
+        {
+          headline: 'February',
+          text: 'First technical preview of our Automated Index Management Feature'
+        },
         {
           headline: 'January',
           text: 'Search Guard FLX 1.5.0 released'

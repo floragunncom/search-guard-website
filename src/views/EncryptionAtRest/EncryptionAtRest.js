@@ -33,7 +33,7 @@ const EncryptionAtRest = () => {
             text: "Encryption at Rest installs seamlessly within Docker containers, Kubernetes or on-premise environments, securing your Elasticsearch data with minimal configuration changes to your existing deployment.",
             button: {
                 text: "Read the documentation",
-                href: "https://docs.search-guard.com/latest/cloud-lock",
+                href: "https://docs.search-guard.com/latest/encryption-at-rest-introduction",
                 target: "_blank"
             }
         },
@@ -42,7 +42,7 @@ const EncryptionAtRest = () => {
             text: "Supercharge your compliance posture with our military-grade encryption. Even if physical storage is compromised, your data remains locked down tight – giving you confidence and peace of mind.",
             button: {
                 text: "Read the documentation",
-                href: "https://docs.search-guard.com/latest/cloud-lock",
+                href: "https://docs.search-guard.com/latest/encryption-at-rest-introduction",
                 target: "_blank"
             }
         },
@@ -51,7 +51,7 @@ const EncryptionAtRest = () => {
             text: "Encryption at Rest is platform independent and works on Linux, Mac and Windows. Just download and run it.",
             button: {
                 text: "Read the documentation",
-                href: "https://docs.search-guard.com/latest/cloud-lock",
+                href: "https://docs.search-guard.com/latest/encryption-at-rest-introduction",
                 target: "_blank"
             }
         },
@@ -104,7 +104,7 @@ const EncryptionAtRest = () => {
                 colorschema="light"
                 headline="Security Without Compromise"
                 text="
-                    Encryption at Rest integrates effortlessly with OpenSearch while maintaining full compatibility with critical features like vector search and k-NN, providing robust security without sacrificing functionality. As a standalone plugin, Encryption at Rest operates independently of any other plugins, giving you maximum flexibility in your security architecture.
+                    Encryption at Rest integrates effortlessly with Elasticsearch while maintaining full compatibility with critical features like vector search and k-NN, providing robust security without sacrificing functionality. As a standalone plugin, Encryption at Rest operates independently of any other plugins, giving you maximum flexibility in your security architecture.
                 "
             />
             <ImageTextTile

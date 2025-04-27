@@ -11,41 +11,6 @@ import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
 
 const certificates = [
     {
-        headline: 'Veracode',
-        image: veracode,
-        text: (
-            <p>
-                All Search Guard versions and all used third-party libraries are
-                tested for security vulnerabilities automatically prior to release.
-                The Search Guard community, our customers and partners can always rely
-                on our mission to provide the highest level of security possible.{' '}
-                <br/>
-                <br/>
-                We use Veracode's patented static binary analysis technology that
-                inspects software executables (compiled binaries or bytecode) for
-                security flaws. Through advanced modeling, Veracode’s static engine
-                detects flaws in the software's inputs and outputs that cannot be seen
-                through penetration testing alone. Unlike source code review tools,
-                this approach accurately detects issues in the core application and
-                extends coverage to vulnerabilities found in 3rd party libraries,
-                pre-packaged components, and code introduced by compiler or
-                platform-specific interpretations.
-                <br/>
-                <br/>
-                Through automated analysis, Veracode tests to determine the presence
-                of common application vulnerabilities, such as those defined by the
-                current SANS Top 25 and OWASP Top 10.
-            </p>
-        ),
-        links: [
-            {name: 'Download Report 23.09.19', link: '/'},
-            {name: 'Download Report 23.09.19', link: '/'},
-            {name: 'Download Report 23.09.19', link: '/'},
-            {name: 'Download Report 23.09.19', link: '/'},
-        ],
-        homepage: 'https://www.veracode.com/verified/directory/floragunn-gmbh',
-    },
-    {
         headline: 'Allianz for Cyber-Sicherheit',
         image: alliance,
         text: (
@@ -119,12 +84,11 @@ const Certifications = () => {
                 <link rel="canonical" href="https://search-guard.com/certificates/"/>
                 <meta
                     name="description"
-                    content="Search Guard is security certified by CA Veracode and we are actively participating in various IT security associations."
+                    content="Search Guard is security certified and we are actively participating in various IT security associations."
                 />
             </Helmet>
             <Title
                 headline="Certifications"
-                text="Search Guard is security certified by CA Veracode and we are actively participating in various IT security associations."
             />
             <div className="row certifications-wrapper">
                 {certificates.map(certificate => {

@@ -347,17 +347,6 @@ const FeatureBreakdown = () => {
         },
       ],
     },
-    {
-      name: 'Certifications',
-      content: [
-        {
-          type: 'CA Veracode Verified',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-      ],
-    },
   ];
 
   return (

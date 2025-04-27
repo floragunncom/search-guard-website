@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button';
 import heroCertificates from '../../images/hero-certificates.svg';
-import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
 import './Hero.scss';
@@ -59,7 +58,6 @@ const Hero = () => {
           </div>
         </div>
         <div className="hero-certificate-wrapper-hidden">
-          <img loading="lazy" src={veracode} alt="veracode logo" width="128px"  />
           <img loading="lazy" src={alliance} alt="alliance logo" width="200px"/>
           <img loading="lazy" src={security} alt="security logo" width="133px"/>
         </div>

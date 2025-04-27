@@ -14,23 +14,6 @@ const Certified = () => {
       <div className="row certified-row-wrapper">
         <div className="col s12 m6">
           <a
-            href="https://www.veracode.com/verified/directory/floragunn-gmbh"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="certified-col-img"
-          >
-            <ReactSVG src={veracode} alt="Search Guard is verified by Veracode"/>
-          </a>
-          <h5 className="certified-col-headline">Veracode</h5>
-          <div className="body1 certified-col-text">
-            All Search Guard versions and all third-party libraries are verified
-            and scanned for vulnerabilities by Veracode. CA Veracode Verified
-            empowers us to demonstrate our commitment to creating secure
-            software.
-          </div>
-        </div>
-        <div className="col s12 m6">
-          <a
             href="https://www.bsi.bund.de/EN/"
             target="_blank"
             rel="noopener noreferrer"
@@ -74,7 +57,7 @@ const Certified = () => {
           </a>
           <h5 className="certified-col-headline">TeleTrusT</h5>
           <div className="body1 certified-col-text">
-            Floragunn is member of TeleTrust, a German federal association for
+            floragunn is member of TeleTrust, a German federal association for
             IT security.
           </div>
         </div>
