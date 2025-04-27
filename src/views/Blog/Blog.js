@@ -230,7 +230,7 @@ const Blog = ({ match } ) => {
       </Helmet>
       <Title headline="Blog" breadcrumb={breadcrumb}/>
       <div className="row">
-        {searchBar}
+        
         {renderPosts}
         {renderSearchResultPosts}
       </div>
