@@ -27,7 +27,6 @@ const Hero = () => {
                 <div className="hero-button-wrapper">
                   <Button
                       text="Free Search Guard Trial"
-
                       link="/search-guard-free-trial/"
                   />
                 </div>

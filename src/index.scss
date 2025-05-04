@@ -242,6 +242,24 @@ div.row {
   display: none;
 }
 
+.flex-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.flex-col-bottom {
+  display: flex;
+  align-items: flex-end;
+}
+
+.flex-col-center-on-med-down {
+  @media only screen and (max-width: $tabletBig) {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 // try to overwrite the default browser CSS for autofilled input fields
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
