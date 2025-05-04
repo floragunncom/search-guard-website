@@ -3,6 +3,7 @@ import {Helmet} from 'react-helmet';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Hero from '../../components/Hero/Hero';
+import SimpleHero from '../../components/Hero/SimpleHero';
 import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
 import Labels from '../../components/Labels/Labels';
 import TrustedBy from '../../components/TrustedBy/TrustedBy';
@@ -36,7 +37,7 @@ const HomePage = () => {
                     content="Search Guard is a security plugin for Elasticsearch and Kibana. Search Guard offers security, audit logging, compliance, alerting and anomaly detection."
                 />
             </Helmet>
-            <Hero/>
+            <SimpleHero/>
             <ImageTextTile
                 icon={server_lock}
                 iconPosition="left"
