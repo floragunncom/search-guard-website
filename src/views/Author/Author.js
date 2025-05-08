@@ -126,17 +126,21 @@ const Author = ({ match }) => {
 
   let socialMedia;
 
-  socialMedia = (
-      <div className="">
-        {person.fields.socialNetworks.map(network => {
-          return (
-              <div className="authors-profiles">
-                <a href={network.fields.url} style={{cursor: 'crosshair'}} rel="author">{network.fields.type}</a>
-              </div>
-          );
-        })}
-      </div>
-  );
+  if (
+      socialMedia && socialMedia.length > 0
+  ) {
+    socialMedia = (
+        <div className="">
+          {person.fields.socialNetworks.map(network => {
+            return (
+                <div className="authors-profiles">
+                  <a href={network.fields.url} style={{cursor: 'crosshair'}} rel="author">{network.fields.type}</a>
+                </div>
+            );
+          })}
+        </div>
+    );
+  }
 
   return (
     <PageWrapper>
