@@ -31,6 +31,7 @@
   font-size: 48px;
   font-weight: 300;
   line-height: 57px;
+  text-align: left;
   @media only screen and (max-width: $tabletBig) {
     font-size: 36px;
     line-height: 43px;
@@ -58,20 +59,18 @@
   font-size: 24px;
   letter-spacing: 0.8px;
   line-height: 30px;
+  text-align: left;
 }
 
-.blogpostarticle-code-snippet {
-  background-color: $lightGrey;
-  font-family: Courier;
-  font-size: 16px;
-  line-height: 19px;
-  padding: 16px;
-  word-break: break-all;
-  overflow: scroll;
+.blogpostarticle-headline4 {
   margin-top: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
+  color: $primary;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  line-height: 30px;
+  text-align: left;
 }
-
 
 .blogpostarticle-quote-wrapper {
   margin: 26px 30px 30px -15vw;

@@ -42,6 +42,11 @@ const BlogPostArticleContent = ({postContent}) => {
                     className: 'blogpostarticle-headline3',
                 },
             },
+            h4: {
+                props: {
+                    className: 'blogpostarticle-headline4',
+                },
+            },
             p: {
                 component: 'div',
                 props: {
@@ -54,6 +59,13 @@ const BlogPostArticleContent = ({postContent}) => {
                     className: 'bold',
                 },
             },
+            strong: {
+                component: 'div',
+                props: {
+                    className: 'bold',
+                },
+            },
+
             i: {
                 component: 'div',
                 props: {
@@ -67,10 +79,8 @@ const BlogPostArticleContent = ({postContent}) => {
                 },
             },
             code: {
-                component: 'div',
                 props: {
-                    className: 'blogpostarticle-code-snippet',
-                    id: 'post-code',
+                    className: 'blogpostarticle-code-inline',
                 },
             },
             a: {

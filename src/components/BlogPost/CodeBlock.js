@@ -23,8 +23,8 @@ const Blockquote = props => {
 
     return (
         <div className="code-highlight">
-            <span className="copy-code" onClick={copyCode}>copy</span>
-            <pre>
+            <span className="copy-code" onClick={copyCode}></span>
+            <pre className="blogpostarticle-code-block">
                 {props.children}
             </pre>
         </div>
