@@ -5,53 +5,9 @@ import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
 
-    const [newsletterValue, setNewsletterValue,] = useState(false);
-    const [sendbuttonValue, setSendbuttonValue] = useState("send message");
-
-    function changeNewsletterValue() {
-        setNewsletterValue(!newsletterValue);
-    }
-
-    async function handleSubmit(formElements) {
-        const data = {};
-        formElements.forEach(input => {
-            data[input.name] = input.value;
-        });
-        // Default options are marked with *
-        return fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
-            method: 'POST',
-            cache: 'no-cache',
-            headers: {
-                accept: 'application/json; charset=utf-8',
-                'content-type': 'application/json; charset=UTF-8',
-            },
-            body: JSON.stringify(data)
-        });
-    }
-
-    const postDataToCRM = async event => {
-
-        event.preventDefault();
-
-        setSendbuttonValue("Processing ...");
-
-        const formElements = Array.from(event.target);
-
-        handleSubmit(formElements)
-            .then(response => {
-                if (response && response.ok) {
-                    window.location.href = "/thanks/";
-                } else {
-                    window.location.href = "/thanks/";
-                }
-            }).catch(function (error) {
-            window.location.href = "/thanks/";
-        });
-    };
-
   return (
         <div className="contact-info-container">
-          <form onSubmit={postDataToCRM}>
+            <form className="cf-form">
             <div className="contact-info-wrapper">
               <div className="contact-info-input-fields">
                 <div className="input-field col s12 m6">
@@ -266,28 +222,29 @@ const ContactForm = () => {
             <div className="contact-newsletter-wrapper">
               <div className="contact-information-headline">newsletter</div>
               <div className="privacy-policy-checkbox">
-                <label>
-                  <input
-                    id="check"
-                    type="checkbox"
-                    name="newsletter"
-                    className="filled-in"
-                    onClick={changeNewsletterValue}
-                    value={newsletterValue}
-                  />
-                  <span>
-                    Send me updates about Search Guard products and services
-                  </span>
-                </label>
+                  <label>
+                      <input
+                          id="check"
+                          type="checkbox"
+                          name="newsletter"
+                          className="filled-in"
+                      />
+                      <span>
+                  Send me updates about Search Guard products and services
+                </span>
+                  </label>
               </div>
               <div className="privacy-policy">
                 This form collects your name and email. Please take a look in
                 our privacy policy for a better understanding on how we protect
                 and manage your submitted data.
               </div>
-              <div className="cta-wrapper">
-                <Button buttonStyle="default-button" text={sendbuttonValue}  />
-              </div>
+                <div className="cta-wrapper">
+                    <Button text="Send Message" additionalCss="cf-submit" variant="submit"/>
+                </div>
+                <div className="cf-feedback">
+                    <h5>Processing</h5>
+                </div>
             </div>
           </form>
         </div>
