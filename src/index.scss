@@ -197,6 +197,15 @@ div.row {
   }
 }
 
+.default-margin-bottom {
+  margin-bottom: 96px;
+  @media only screen and (max-width: $tabletBig) {
+    margin-bottom: 56px;
+  }
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 42px;
+  }
+}
 // ## background and text colors for dark, light and white sections
 .color-schema-dark {
   color: $white;

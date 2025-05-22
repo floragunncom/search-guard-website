@@ -12,7 +12,7 @@ const Newsletter = () => {
     return (<PageWrapper>
             <Helmet>
                 <meta charSet="utf-8"/>
-                <title>Search Guard Newslezzer</title>
+                <title>Search Guard Newsletter</title>
                 <link rel="canonical" href="https://search-guard.com/newsletter/"/>
                 <meta
                     name="description"

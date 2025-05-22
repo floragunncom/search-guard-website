@@ -26,9 +26,9 @@ const HtmlSitemap = () => {
 
             <div className="row textbox" style={{marginTop:  '30px'}}>
                 <div className="tilesimple-headline">
-                    Pages
+                    <h2>Pages</h2>
                 </div>
-                <div className="tilesimple-text">
+                <div className="tilesimple-text default-margin-bottom">
                     <a href="/search-guard-flx/">Search Guard FLX</a><br />
                     <a href="/contacts/">Contact</a><br />
                     <a href="/security/">Security</a><br />
@@ -55,9 +55,9 @@ const HtmlSitemap = () => {
 
             <div className="row textbox">
                 <div className="tilesimple-headline">
-                    Blog
+                    <h2>Blog</h2>
                 </div>
-                <div className="tilesimple-text">
+                <div className="tilesimple-text default-margin-bottom">
                     {posts.map(post => {
                         return (
                             <>
@@ -70,9 +70,9 @@ const HtmlSitemap = () => {
 
             <div className="row textbox">
                 <div className="tilesimple-headline">
-                    Authors
+                    <h2>Authors</h2>
                 </div>
-                <div className="tilesimple-text">
+                <div className="tilesimple-text default-margin-bottom">
                     {authors.map(author => {
                         return (
                             <>
@@ -84,10 +84,10 @@ const HtmlSitemap = () => {
             </div>
 
             <div className="row textbox">
-                <div className="tilesimple-headline">
-                    Press
+                <div className="tilesimple-headline" >
+                    <h2>Press</h2>
                 </div>
-                <div className="tilesimple-text">
+                <div className="tilesimple-text default-margin-bottom">
                     <a href="/press/de/search-guard-vertrieb-dach/">Search Guard Sales (DE)</a><br />
                     <a href="/press/en/search-guard-sales-dach/">Search Guard Sales (EN)</a><br />
                     <a href="/press/de/search-guard-alerting/">Search Guard Alerting (DE)</a><br />
@@ -98,9 +98,9 @@ const HtmlSitemap = () => {
 
             <div className="row textbox">
                 <div className="tilesimple-headline">
-                    Presentations
+                    <h2>Presentations</h2>
                 </div>
-                <div className="tilesimple-text">
+                <div className="tilesimple-text default-margin-bottom">
                     {presentations.map(presentation => {
                         return (
                             <>
@@ -113,9 +113,9 @@ const HtmlSitemap = () => {
 
             <div className="row textbox">
                 <div className="tilesimple-headline">
-                    Whitepapers
+                    <h2>Whitepapers</h2>
                 </div>
-                <div className="tilesimple-text">
+                <div className="tilesimple-text default-margin-bottom">
                     {whitepapers.map(whitepaper => {
                         return (
                             <>
@@ -125,7 +125,7 @@ const HtmlSitemap = () => {
                     })}
                 </div>
             </div>
-
+            <div className="default-margin-top-bottom" />
             <PreFooter />
         </PageWrapper>
     );
