@@ -106,7 +106,7 @@ const onNewsletterSubscribeClick = async () => {
 async function handleNewsletterSubmit(formProps) {
     const data = {};
     // Default options are marked with *
-    return fetch('https://sisag8b0fg.execute-api.eu-central-1.amazonaws.com/dev', {
+    return fetch('https://45xbqthu4l.execute-api.eu-central-1.amazonaws.com/prod/', {
         method: 'POST',
         cache: 'no-cache',
         headers: {
@@ -137,7 +137,7 @@ async function handleContactFormSubmit(formElements) {
         data[input.name] = input.value;
     });
     // Default options are marked with *
-    return fetch('https://eb4bhjiig1.execute-api.eu-central-1.amazonaws.com/dev/', {
+    return fetch('https://56dmarth25.execute-api.eu-central-1.amazonaws.com/prod/', {
         method: 'POST',
         cache: 'no-cache',
         headers: {
