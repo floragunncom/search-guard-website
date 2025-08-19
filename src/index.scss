@@ -9,7 +9,6 @@
 *,
 *::before,
 *::after {
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
   margin: 0px;
@@ -18,28 +17,17 @@
 
 }
 
-@mixin fonts {
-  font-feature-settings: 'clig' off, 'liga' off;
-  text-wrap: wrap;
-  word-break: break-word;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;
-  /* for proper hyphenation */
-  lang: "en";
-}
-
 @mixin font-headlines {
-  @include fonts;
   font-style: normal;
   text-transform: uppercase;
   text-align: center;
   margin-top: 0px;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "cpsp" 1
 }
 
 // HTML Elements
 body {
-  @include fonts;
   font-family: "Inter-Regular";
   font-size: 18px;
   font-weight: 400;
@@ -47,14 +35,12 @@ body {
   letter-spacing: 0.15px;
   text-align: left;
   color: $primary;
-
 }
 
 h1 {
   @include font-headlines;
   font-family: "Parafina-SemiWideXBold";
   font-size: 96px;
-  font-weight: 900;
   line-height: 100%;
   letter-spacing: -1.5px;
   @media only screen and (max-width: $tabletBig) {
@@ -67,9 +53,8 @@ h1 {
 
 h2 {
   @include font-headlines;
-  font-family: Parafina-SemiWideXBold;
+  font-family: "Parafina-SemiWideXBold";
   font-size: 60px;
-  font-weight: 900;
   line-height: 100%;
   letter-spacing: -0.5px;
   @media only screen and (max-width: $tabletBig) {
@@ -82,10 +67,10 @@ h2 {
 
 h3 {
   @include font-headlines;
-  font-family: Parafina-SemiWideXBold;
+  font-family: "Parafina-SemiWideXBold";
   font-size: 48px;
-  font-weight: 900;
   line-height: 100%;
+
   @media only screen and (max-width: $tabletBig) {
     font-size: 42px;
   };
@@ -96,7 +81,7 @@ h3 {
 
 h4 {
   @include font-headlines;
-  font-family: Parafina-SemiWideXBold;
+  font-family: "Parafina-SemiWideXBold";
   font-size: 40px;
   font-weight: 700;
   line-height: 100%;
@@ -111,9 +96,8 @@ h4 {
 
 h5 {
   @include font-headlines;
-  font-family: Parafina-SemiWideBold;
+  font-family: "Parafina-SemiWideBold";
   font-size: 28px;
-  font-weight: 700;
   line-height: 100%;
   @media only screen and (max-width: $tabletBig) {
     font-size: 24px;
@@ -294,7 +278,6 @@ select:-webkit-autofill:focus {
 
 // REMOVE
 .body1 {
-  @include fonts;
   font-family: "Inter-Regular";
   font-size: 16px;
   font-weight: 400;

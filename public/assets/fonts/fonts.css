@@ -2,12 +2,16 @@
     font-family: 'Parafina-SemiWideXBold';
     src: url('/assets/fonts/Parafina-BlackS.otf');
     font-display: swap;
+    font-weight: 900;
+    font-style: normal;
 }
 
 @font-face {
     font-family: 'Parafina-SemiWideBold';
     src: url('/assets/fonts/Parafina-BoldS.otf');
     font-display: swap;
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
