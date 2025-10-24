@@ -205,7 +205,7 @@ const bugs = [
         cve: 'n/a',
         date: '2017-08-10',
         vul:
-            'DLS/FLS leaking information when multitenancy module is installed and “do not fail on forbidden” is activated',
+            'DLS/FLS leaking information, when multitenancy module is installed and “do not fail on forbidden” is activated',
         rem: 'Update or deactivate “do not fail on forbidden”',
         fix: 'SG v15',
         report: 'Guy Moller',
