@@ -176,7 +176,7 @@ const bugs = [
         ),
         date: '2018-04-09',
         vul:
-            'A Kibana user could impersonate as kibanaserver user when providing wrong credentials',
+            'A Kibana user could impersonate as kibanaserver user, when providing wrong credentials',
         rem: 'Update',
         fix: 'Kibana Plugin 5.6.8-7 and Kibana Plugin 6.x-12',
         report: 'Guy Moller',
