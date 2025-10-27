@@ -12,7 +12,7 @@ const args = process.argv;
 const preFormattedBaseUrl = args.find((arg) => arg.startsWith('--base-url='));
 const exclusionList = args.find((arg) => arg.startsWith('--black-list='));
 const preFormattedChangeFrequency = args.find((arg) => arg.startsWith('--change-frequency='));
-let blackList = [];
+let blackList = ["https://search-guard.com/heise", "https://search-guard.com/thanks"];
 
 if (exclusionList) {
     let params = exclusionList.split('=')[1];
