@@ -96,7 +96,7 @@ const Navbar = ({ background = 'white', landing }) => {
               <li><a href="https://docs.search-guard.com" target="_blank" rel="noopener noreferrer">Documentation</a></li>
               <li><a href="https://forum.search-guard.com" target="_blank" rel="noopener noreferrer">Community Forum</a></li>
               <li><a href="https://git.floragunn.com/search-guard" target="_blank" rel="noopener noreferrer">Source Code</a></li>
-              <li><a href="/resource#videos">Videos</a></li>
+              <li><a href="/resource/#videos">Videos</a></li>
               <li><a href="/faq/">FAQ</a></li>
               <li><a href="/presentations/">Presentations</a></li>
               <li><a href="/whitepapers/">Whitepapers</a></li>
@@ -112,7 +112,7 @@ const Navbar = ({ background = 'white', landing }) => {
           <li><a href="https://docs.search-guard.com" target="_blank" rel="noopener noreferrer">Documentation</a></li>
           <li><a href="https://forum.search-guard.com" target="_blank" rel="noopener noreferrer">Community Forum</a></li>
           <li><a href="https://git.floragunn.com/search-guard" target="_blank" rel="noopener noreferrer">Source Code</a></li>
-          <li><a href="/resource#videos">Videos</a></li>
+          <li><a href="/resource/#videos">Videos</a></li>
           <li><a href="/faq/">FAQ</a></li>
           <li><a href="/presentations/">Presentations</a></li>
           <li><a href="/whitepapers/">Whitepapers</a></li>
