@@ -198,6 +198,11 @@ const Footer = ({landing}) => {
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
+                                        <a href="/authors/" className="footer-links">
+                                            Our Authors
+                                        </a>
+                                    </div>
+                                    <div className="footer-list-item">
                                         <a href="/dataprotection/" className="footer-links">
                                             Data protection
                                         </a>
@@ -209,7 +214,7 @@ const Footer = ({landing}) => {
                                     </div>
                                     <div className="footer-list-item">
                                         <a href="/security-information/" className="footer-links">
-                                            Public key & security
+                                            Public Key & Security
                                         </a>
                                     </div>
                                 </div>
