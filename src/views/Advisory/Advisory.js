@@ -14,6 +14,46 @@ const breadcrumb = [
 
 const bugs = [
     {
+        id: 'SGSA 18',
+        cve: (
+            <div>
+                <a
+                    href="https://www.cve.org/CVERecord?id=CVE-2025-12148"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    CVE-2025-12148
+                </a>
+            </div>
+        ),
+        date: '2025-10-29',
+        vul:
+            'When field masking (FM) is applied on fields of type IP, the document can still be searched using that IP field',
+        rem: 'Update',
+        fix: 'FLX3.1.2',
+        report: 'floragunn',
+    },
+    {
+        id: 'SGSA 17',
+        cve: (
+            <div>
+                <a
+                    href="https://www.cve.org/CVERecord?id=CVE-2025-12147"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    CVE-2025-12147
+                </a>
+            </div>
+        ),
+        date: '2025-10-29',
+        vul:
+            'When field level security (FLS) is applied on fields that hold objects, the member attribute of that object remains available to search queries',
+        rem: 'Update',
+        fix: 'FLX3.1.2',
+        report: 'floragunn',
+    },
+    {
         id: 'SGSA 16',
         cve: (
             <div>
