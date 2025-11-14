@@ -14,6 +14,26 @@ const breadcrumb = [
 
 const bugs = [
     {
+        id: 'SGSA 19',
+        cve: (
+            <div>
+                <a
+                    href="https://www.cve.org/CVERecord?id=CVE-2025-12149"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    CVE-2025-12149
+                </a>
+            </div>
+        ),
+        date: '2025-11-14',
+        vul:
+            'When the search is trigged from signal\'s watch, the DLS rule is not enforced, allowing access to all documents in the queried indices',
+        rem: 'Update',
+        fix: 'FLX3.1.2',
+        report: 'floragunn',
+    },
+    {
         id: 'SGSA 18',
         cve: (
             <div>
