@@ -82,7 +82,7 @@ const Alerting = () => {
 
                         With the new Signals feature in Search Guard, IT administrators can implement an alerting
                         strategy that delivers
-                        warning signals to various notification channels based on a multi-level escalation model. This
+                        warning Signals to various notification channels based on a multi-level escalation model. This
                         ensures that IT departments
                         remain capable of action both in the operational business and in the event of an attack. Signals
                         controls monitoring and
