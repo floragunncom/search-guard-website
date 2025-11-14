@@ -28,7 +28,7 @@ const bugs = [
         ),
         date: '2025-11-14',
         vul:
-            'When the search is trigged from signal\'s watch, the DLS rule is not enforced, allowing access to all documents in the queried indices',
+            'When the search is trigged from Signals watch, the DLS rule is not enforced, allowing access to all documents in the queried indices',
         rem: 'Update',
         fix: 'FLX3.1.3',
         report: 'floragunn',
