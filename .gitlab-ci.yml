@@ -46,7 +46,7 @@ build_prod:
     - build
   stage: build
   only:
-    - master
+    - infra-31
   <<: *build
 
 
@@ -59,7 +59,7 @@ deploy_to_prod:
   dependencies:
     - build_prod
   only:
-    - master
+    - infra-31
   variables:
     website_host: preview.search-guard.com    
   <<: *deploy
