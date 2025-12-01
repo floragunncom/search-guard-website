@@ -14,6 +14,26 @@ const breadcrumb = [
 
 const bugs = [
     {
+        id: 'SGSA 20',
+        cve: (
+            <div>
+                <a
+                    href="https://www.cve.org/CVERecord?id=CVE-2025-13653"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    CVE-2025-13653
+                </a>
+            </div>
+        ),
+        date: '2025-11-25',
+        vul:
+            'When the DLS/FLS module is disabled, selector-based queries on data streams may bypass access controls and return documents that should remain restricted.',
+        rem: 'Update',
+        fix: 'FLX4.0.1',
+        report: 'floragunn',
+    },
+    {
         id: 'SGSA 19',
         cve: (
             <div>
