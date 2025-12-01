@@ -26,7 +26,7 @@ const bugs = [
                 </a>
             </div>
         ),
-        date: '2025-11-25',
+        date: '2025-12-01',
         vul:
             'When the DLS/FLS module is disabled, selector-based queries on data streams may bypass access controls and return documents that should remain restricted.',
         rem: 'Update',
