@@ -28,7 +28,7 @@ const bugs = [
         ),
         date: '2025-12-01',
         vul:
-            'When the DLS/FLS module is disabled, selector-based queries on data streams may bypass access controls and return documents that should remain restricted.',
+            'When enterprise modules are disabled, there exists an issue which allows authenticated users to use specially crafted requests to read documents from data streams without having the respective privileges.',
         rem: 'Update',
         fix: 'FLX4.0.1',
         report: 'floragunn',
