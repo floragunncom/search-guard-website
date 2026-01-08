@@ -3,21 +3,39 @@ import {Link} from 'react-router-dom';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import './BlogPostSmall.scss';
 
+/**
+ * Truncates text to a maximum length, breaking at the last space before the limit.
+ * Falls back to hard truncation if no space is found.
+ *
+ * @param {string} text - The text to truncate
+ * @param {number} maxLength - Maximum length before truncation
+ * @returns {string} Truncated text with ellipsis if needed
+ */
+const truncateText = (text, maxLength) => {
+  if (!text || text.length <= maxLength) {
+    return text || '';
+  }
+
+  // Find the last space before maxLength
+  const truncated = text.substring(0, maxLength);
+  const lastSpaceIndex = truncated.lastIndexOf(' ');
+
+  // If we found a space and it's not too far back (at least 50% of maxLength),
+  // truncate at the space. Otherwise, hard truncate at maxLength.
+  if (lastSpaceIndex > maxLength * 0.5) {
+    return truncated.substring(0, lastSpaceIndex) + ' ...';
+  }
+
+  // Hard truncate if no reasonable space found
+  return truncated + '...';
+};
+
 const BlogPost = ({ post }) => {
 
     // let CDN scale images for blogbox
     const imageParameters = "?fm=jpg&fl=progressive&w=500&fit=scale";
 
     const blogPost = post.fields;
-
-  let infoTextIndex = 165;
-  let infoHeadlineIndex = 42;
-  while (blogPost.postContent[infoTextIndex] !== ' ') {
-    infoTextIndex -= 1;
-  }
-  while (blogPost.title[infoHeadlineIndex] !== ' ') {
-    infoHeadlineIndex -= 1;
-  }
 
   if (blogPost !== undefined) {
     return (
@@ -31,9 +49,7 @@ const BlogPost = ({ post }) => {
           />
         </div>
         <div className="blogpost-headline">
-          {blogPost.title.length < 145
-            ? blogPost.title
-            : `${blogPost.title.substring(0, infoHeadlineIndex)} ...`}
+          {truncateText(blogPost.title, 100)}
         </div>
         <div className="blogpost-info-headline">
             {blogPost.date}
