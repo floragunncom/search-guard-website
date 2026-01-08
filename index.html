@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TDLZ33C');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Test Plausible as GA Alternative -->
+    <script defer data-domain="search-guard.com" src="https://plausible.search-guard.com/js/script.file-downloads.outbound-links.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="https://matomo.search-guard.com/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '1']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-QHSP7VYSH1');
+    </script>
+
+
+    <!--Intermediate, track anomalies -->
+    <script type='text/javascript'>
+        window.smartlook || (function (d) {
+            var o = smartlook = function () {
+                o.api.push(arguments)
+            }, h = d.getElementsByTagName('head')[0];
+            var c = d.createElement('script');
+            o.api = new Array();
+            c.async = true;
+            c.type = 'text/javascript';
+            c.charset = 'utf-8';
+            c.src = 'https://web-sdk.smartlook.com/recorder.js';
+            h.appendChild(c);
+        })(document);
+        smartlook('init', '846683638cd3d1a420f53ad9df6b3e4368916605', {region: 'eu'});
+    </script>
+
+    <!-- preload critical resources -->
+    <link rel="preload" href="/assets/fonts/Inter-Regular.ttf" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Parafina-BoldS.otf" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Parafina-BlackS.otf" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Material-Icons.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="style" href="/assets/materialize.min.css">
+    <link rel="preload" as="style" href="/assets/fonts/fonts.css">
+    <link rel="preload" href="/assets/main.js" as="script" />
+    <link rel="preload" href="https://cdn.cookie-script.com/s/a521e590130162749ba95a6c3ffc0462.js" as="script" />
+
+    <!-- critical above the fold CSS -->
+    <!-- todo add the materialize grid system? -->
+
+    <style>
+        body {
+            font-family: "Inter-Regular";
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+            text-align: left;
+            color: #184962;
+        }
+
+        h1 {
+            font-family: "Parafina-SemiWideXBold";
+            font-size: 96px;
+            font-weight: 900;
+            line-height: 100%;
+            letter-spacing: -1.5px;
+        }
+
+        h2 {
+            font-family: Parafina-SemiWideXBold;
+            font-size: 60px;
+            font-weight: 900;
+            line-height: 100%;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            color: #184962;
+            font-family: Parafina-SemiWideXBold;
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 100%;
+        }
+
+        .container, .row, .container .row {
+            width: inherit;
+            margin: 0px auto;
+        }
+
+        div.row {
+            max-width: 1180px;
+            margin-bottom: 0px;
+        }
+
+        .row .col {
+            @media only screen and (max-width: 600px) {
+                padding-top: 20px;
+                hyphens: none;
+            }
+            padding: 0px 20px;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+
+        .default-padding-top-bottom {
+            padding-top: 96px;
+            padding-bottom: 96px;
+        }
+
+        .default-margin-top-bottom {
+            margin-top: 96px;
+            margin-bottom: 96px;
+        }
+
+        .title-wrapper-style {
+            background-color: white;
+            padding: 64px 32px;
+        }
+
+        h1.title-headline-style {
+            @media (max-width: 600px) {
+                font-size: 48px;
+            }
+            color: #184962;
+            word-break: normal;
+            hyphens: none;
+            text-align: center;
+            padding: 40px 20px 0px 20px;
+            margin-top: 20px;
+        }
+
+        .hero-text-wrapper-headline {
+            text-align: left;
+            margin-bottom: 32px;
+        }
+
+        @media (max-width: 600px) {
+            .h1 {
+                font-size: 60px;
+            }
+            .h2 {
+                font-size: 42px;
+            }
+
+            .h3 {
+                font-size: 36px;
+            }
+
+            .default-padding-top-bottom {
+                padding-top: 42px;
+                padding-bottom: 42px;
+            }
+
+            .default-margin-top-bottom {
+                margin-top: 42px;
+                margin-bottom: 42px;
+            }
+
+            .title-wrapper-style {
+                padding: 32px 24px;
+            }
+
+            .title-headline-style {
+                padding: 0px 0px 0px 0px;
+                margin-top: 15px;
+            }
+
+            .hero-text-wrapper-headline {
+                margin-top: -72px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .h1 {
+                font-size: 72px;
+            }
+            .h2 {
+                font-size: 56px;
+            }
+
+            .h3 {
+                font-size: 42px;
+            }
+
+            .default-padding-top-bottom {
+                padding-top: 56px;
+                padding-bottom: 56px;
+            }
+
+            .default-margin-top-bottom {
+                margin-top: 56px;
+                margin-bottom: 56px;
+            }
+
+            .title-wrapper-style {
+                padding-bottom: 32px;
+            }
+
+            .title-headline-style {
+                padding: 0px 0px 0px 0px;
+                margin-top: 15px;
+            }
+
+            .hero-text-wrapper-headline {
+                margin-top: 32px;
+            }
+        }
+
+    </style>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="/assets/materialize.min.css" media="screen">
+
+    <meta charset="utf-8"/>
+    <link rel="shortcut icon" href="/assets/favicon.ico"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="theme-color" content="#000000"/>
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"/>
+    <link rel="shortcut icon" href="/assets/favicon.svg"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png"/>
+    <meta name="apple-mobile-web-app-title" content="Search Guard"/>
+    <link rel="manifest" href="/manifest.json"/>
+    <title>Search Guard</title>
+    <script
+        type="text/javascript"
+        async
+        defer
+        src="https://cdn.jsdelivr.net/npm/@algolia/client-search@5.19.0/dist/builds/browser.umd.js"
+    ></script>
+
+    <!-- Vite Entry Point -->
+    <script type="module" src="/src/main.jsx"></script>
+</head>
+<body>
+<script>
+    !function (t) {
+        if (window.ko) return;
+        window.ko = [], ["identify", "track", "removeListeners", "open", "on", "off", "qualify", "ready"].forEach(function (t) {
+            ko[t] = function () {
+                var n = [].slice.call(arguments);
+                return n.unshift(t), ko.push(n), ko
+            }
+        });
+        var n = document.createElement("script");
+        n.async = true;
+        n.async = !0, n.setAttribute("src", "https://cdn.getkoala.com/v1/pk_b87a9c7327b29d2baa870bbb7e85e88ea58e/sdk.js"), (document.body || document.head).appendChild(n)
+    }();
+</script>
+<div id="root"><!--app-html--></div>
+</body>
+<!-- All font definitions -->
+<link href="/assets/fonts/fonts.css" rel="stylesheet" media="screen" >
+
+<script src="/assets/materialize.min.js" defer></script>
+<script src="/assets/glide.min.js" defer></script>
+<script src="/assets/main.js" defer></script>
+
+</html>
