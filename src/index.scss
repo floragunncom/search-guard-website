@@ -207,17 +207,26 @@ div.row {
   background-color: $white;
 }
 
-.color-schema-svg-dark {
+.color-schema-svg-dark,
+.color-schema-svg-dark svg,
+.color-schema-svg-dark svg * {
+  color: $secondary-light;
   fill: $secondary-light;
   stroke: $secondary-light;
 }
 
-.color-schema-svg-light {
+.color-schema-svg-light,
+.color-schema-svg-light svg,
+.color-schema-svg-light svg * {
+  color: $secondary;
   fill: $secondary;
   stroke: $secondary;
 }
 
-.color-schema-svg-white {
+.color-schema-svg-white,
+.color-schema-svg-white svg,
+.color-schema-svg-white svg * {
+  color: $secondary-light;
   fill: $secondary-light;
   stroke: $secondary-light;
 }

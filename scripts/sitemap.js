@@ -77,9 +77,9 @@ const readSite = async (dir) => {
 }
 
 (async () => {
-    await readSite('build');
+    await readSite('dist');
 
-    const siteUrls = allRoots.map(root => root.replace('build/', baseUrl).replace('/index.html', ''));
+    const siteUrls = allRoots.map(root => root.replace('dist/', baseUrl).replace('/index.html', ''));
 
     const urlset = builder.create('urlset', { encoding: 'UTF-8', version: '1.0' });
 
@@ -106,7 +106,7 @@ const readSite = async (dir) => {
 
     const sitemap = urlset.end({ pretty: true });
 
-    await asyncWriteFile('build/sitemap.xml', sitemap);
+    await asyncWriteFile('dist/sitemap.xml', sitemap);
 
-    console.log('🙂 Successfully built sitemap.xml in build directory');
+    console.log('🙂 Successfully built sitemap.xml in dist directory');
 })();

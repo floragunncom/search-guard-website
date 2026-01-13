@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(git tag:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(pkill:*)",
+      "Bash(npm run dev:*)",
+      "Bash(cat:*)",
+      "Bash(curl:*)",
+      "Bash(chmod:*)",
+      "Bash(ls:*)",
+      "Bash(node -e:*)",
+      "Bash(npm run build-local:*)",
+      "Bash(node scripts/rename-jsx-files.js:*)",
+      "WebFetch(domain:search-guard.com)",
+      "Bash(node:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run sitemap:*)",
+      "Bash(xargs ls:*)",
+      "Bash(test:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(npm run build:ssg:*)",
+      "Bash(xargs sed -i '' \"s/from ''react-helmet''/from ''react-helmet-async''/g\")"
+    ]
+  }
+}
