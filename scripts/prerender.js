@@ -18,7 +18,7 @@ const { getRoutes } = require('../src/routes-config.js');
 
 const BUILD_DIR = path.join(__dirname, '../dist');
 const BASE_URL = 'http://localhost:5000'; // Preview server
-const CONCURRENCY = 16; // Number of pages to render in parallel
+const CONCURRENCY = 8; // Number of pages to render in parallel
 
 /**
  * Ensure directory exists

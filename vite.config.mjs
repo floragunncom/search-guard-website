@@ -43,34 +43,10 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          // Split node_modules into smaller chunks
+          // Simplify chunking to avoid initialization order issues
           if (id.includes('node_modules')) {
-            // React ecosystem
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-              return 'vendor-react';
-            }
-            // Contentful
-            if (id.includes('contentful') || id.includes('rich-text')) {
-              return 'vendor-contentful';
-            }
-            // Markdown processing
-            if (id.includes('markdown')) {
-              return 'vendor-markdown';
-            }
-            // Search/Algolia
-            if (id.includes('algolia') || id.includes('instantsearch') || id.includes('algoliasearch')) {
-              return 'vendor-search';
-            }
-            // Social sharing
-            if (id.includes('react-share')) {
-              return 'vendor-social';
-            }
-            // SVG processing
-            if (id.includes('react-svg') || id.includes('svgr')) {
-              return 'vendor-svg';
-            }
-            // Other vendor code
-            return 'vendor-other';
+            // Put everything from node_modules into a single vendor chunk
+            return 'vendor';
           }
         },
         // Optimize chunk naming for better caching

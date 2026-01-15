@@ -1,5 +1,5 @@
 import React from 'react';
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 import PageWrapper from '../../components/PageWrapper/PageWrapper.jsx';
 import Title from '../../components/Title/Title.jsx';
 import PreFooter from '../../components/PreFooter/PreFooter.jsx';
