@@ -254,6 +254,7 @@ const BlogPostArticleContent = ({postContent}) => {
                 <meta name="twitter:image:alt" content={title}/>
 
             </Helmet>
+            <article>
             <BlogTitle
                 text={postContent.fields.title}
                 subText={`${postContent.fields.author} `}
@@ -298,7 +299,7 @@ const BlogPostArticleContent = ({postContent}) => {
                     <div className="blogpostarticle-text">Published: {postContent.fields.date}</div>
                 </div>
 
-                <div className="col s12 offset-l1 l1 blogpostarticle-sidebar-container">
+                <aside className="col s12 offset-l1 l1 blogpostarticle-sidebar-container">
                     <div className="blogpostarticle-sidebar-title"></div>
                     <div className="blogpostarticle-sidebar-icons-container">
                         <FacebookShareButton
@@ -367,8 +368,9 @@ const BlogPostArticleContent = ({postContent}) => {
                             />
                         </RedditShareButton>
                     </div>
-                </div>
+                </aside>
             </div>
+            </article>
 
             <div className="row blogpostarticle-wrapper">
                 <div className="col s12 offset-l2 l8">

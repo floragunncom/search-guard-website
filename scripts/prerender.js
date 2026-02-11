@@ -20,6 +20,20 @@ const BUILD_DIR = path.join(__dirname, '../dist');
 const BASE_URL = 'http://localhost:5000'; // Preview server
 const CONCURRENCY = 8; // Number of pages to render in parallel
 
+// Domains whose scripts are dynamically injected at runtime by analytics/tracking
+// inline code. Puppeteer captures these alongside the originals, causing duplicates.
+const DYNAMIC_SCRIPT_DOMAINS = [
+  'googletagmanager.com',
+  'google-analytics.com',
+  'matomo.search-guard.com',
+  'web-sdk.smartlook.com',
+  'cdn.cookie-script.com',
+  'redditstatic.com',
+  'snap.licdn.com',
+  'analytics.ahrefs.com',
+  'cdn.getkoala.com',
+];
+
 /**
  * Ensure directory exists
  */
@@ -31,6 +45,234 @@ function ensureDir(filePath) {
 }
 
 /**
+ * Get a deduplication key for a <meta> tag.
+ * Returns null if the tag doesn't have a recognizable identity (and should be kept as-is).
+ */
+function getMetaKey(tag) {
+  let match;
+
+  // <meta charset="...">
+  match = tag.match(/\bcharset\s*=\s*["']?([^"'\s>]+)/i);
+  if (match) return 'charset';
+
+  // <meta name="..." ...>
+  match = tag.match(/\bname\s*=\s*["']([^"']+)["']/i);
+  if (match) return `name:${match[1].toLowerCase()}`;
+
+  // <meta property="..." ...>
+  match = tag.match(/\bproperty\s*=\s*["']([^"']+)["']/i);
+  if (match) return `property:${match[1].toLowerCase()}`;
+
+  // <meta http-equiv="..." ...>
+  match = tag.match(/\bhttp-equiv\s*=\s*["']([^"']+)["']/i);
+  if (match) return `http-equiv:${match[1].toLowerCase()}`;
+
+  return null;
+}
+
+/**
+ * Get a deduplication key for a <link> tag.
+ */
+function getLinkKey(tag) {
+  const relMatch = tag.match(/\brel\s*=\s*["']([^"']+)["']/i);
+  const hrefMatch = tag.match(/\bhref\s*=\s*["']([^"']+)["']/i);
+  if (relMatch && hrefMatch) return `${relMatch[1].toLowerCase()}|${hrefMatch[1]}`;
+  if (relMatch) return `rel:${relMatch[1].toLowerCase()}`;
+  return null;
+}
+
+/**
+ * Check if a <script> tag was dynamically injected by analytics runtime code.
+ * These are identified by having async="" and an src matching known tracking domains.
+ */
+function isDynamicallyInjectedScript(tag) {
+  // Only target script tags with async attribute (dynamically created by inline code)
+  if (!/\basync\s*=\s*["']\s*["']/i.test(tag) && !/\basync(?:\s|>)/i.test(tag)) {
+    return false;
+  }
+  const srcMatch = tag.match(/\bsrc\s*=\s*["']([^"']+)["']/i);
+  if (!srcMatch) return false;
+  const src = srcMatch[1];
+  return DYNAMIC_SCRIPT_DOMAINS.some(domain => src.includes(domain));
+}
+
+/**
+ * Deduplicate the <head> section of captured HTML.
+ *
+ * Puppeteer's page.content() captures the full rendered DOM, which includes:
+ *  - The original template <head> content
+ *  - React Helmet's modifications (marked with data-rh="true")
+ *  - Scripts dynamically injected at runtime by analytics libraries
+ *
+ * This function:
+ *  1. Removes dynamically injected analytics <script> tags
+ *  2. Deduplicates <meta> tags (preferring React Helmet versions with data-rh)
+ *  3. Deduplicates <link> tags (preferring React Helmet versions with data-rh)
+ *  4. Keeps only one <title> in <head> (preferring the Helmet-set one)
+ */
+function deduplicateHead(html) {
+  // Split at </head> to isolate head content
+  const headEndIdx = html.indexOf('</head>');
+  if (headEndIdx === -1) return html;
+
+  const headStartTag = html.match(/<head[^>]*>/i);
+  if (!headStartTag) return html;
+
+  const headOpenEnd = headStartTag.index + headStartTag[0].length;
+  const beforeHead = html.slice(0, headOpenEnd);
+  const headContent = html.slice(headOpenEnd, headEndIdx);
+  const afterHead = html.slice(headEndIdx); // includes </head> and everything after
+
+  // --- 1. Remove dynamically injected analytics scripts ---
+  // Match <script ...>...</script> and self-closing <script ... /> in head
+  let cleaned = headContent.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, (match) => {
+    if (isDynamicallyInjectedScript(match)) return '';
+    return match;
+  });
+
+  // --- 2. Deduplicate <meta> tags ---
+  const metaSeen = new Map(); // key -> { tag, hasRh }
+  cleaned = cleaned.replace(/<meta\b[^>]*\/?>/gi, (match) => {
+    const key = getMetaKey(match);
+    if (!key) return match; // no identity — keep it
+
+    const hasRh = /data-rh\s*=\s*["']true["']/i.test(match);
+    const existing = metaSeen.get(key);
+
+    if (!existing) {
+      metaSeen.set(key, { tag: match, hasRh });
+      return match; // first occurrence — keep
+    }
+
+    // Prefer the data-rh version (React Helmet managed)
+    if (hasRh && !existing.hasRh) {
+      // This new one is from Helmet, previous wasn't — swap: remove previous, keep this
+      // We can't remove the previous in-place easily, so mark this as the winner
+      // and we'll do a second pass
+      metaSeen.set(key, { tag: match, hasRh: true });
+      return match;
+    }
+
+    // Duplicate — remove this one
+    return '';
+  });
+
+  // Second pass: if a key's winner changed (Helmet version appeared later), remove the earlier one
+  // Rebuild by collecting all metas, keeping only the last winner for each key
+  const metaFinal = new Map();
+  const metaOrder = [];
+  cleaned.replace(/<meta\b[^>]*\/?>/gi, (match) => {
+    const key = getMetaKey(match);
+    if (!key) {
+      metaOrder.push({ key: null, tag: match });
+      return match;
+    }
+    const hasRh = /data-rh\s*=\s*["']true["']/i.test(match);
+    const existing = metaFinal.get(key);
+    if (!existing || (hasRh && !existing.hasRh)) {
+      metaFinal.set(key, { tag: match, hasRh });
+    }
+    if (!metaOrder.some(m => m.key === key)) {
+      metaOrder.push({ key, tag: match });
+    }
+    return match;
+  });
+
+  // Remove all metas, then re-insert deduplicated ones at the position of the first <meta> occurrence
+  const firstMetaIdx = cleaned.search(/<meta\b/i);
+  const cleanedNoMetas = cleaned.replace(/<meta\b[^>]*\/?>/gi, '');
+  if (firstMetaIdx !== -1) {
+    const deduplicatedMetas = metaOrder
+      .map(m => {
+        if (m.key === null) return m.tag;
+        const winner = metaFinal.get(m.key);
+        return winner ? winner.tag : null;
+      })
+      .filter(Boolean)
+      .join('\n    ');
+
+    // Find where the first meta was in the cleaned-no-metas string (approximate: insert at same region)
+    const insertIdx = cleanedNoMetas.indexOf('\n', Math.max(0, firstMetaIdx - 50));
+    cleaned = cleanedNoMetas.slice(0, insertIdx) + '\n    ' + deduplicatedMetas + cleanedNoMetas.slice(insertIdx);
+  }
+
+  // --- 3. Deduplicate <link> tags ---
+  const linkSeen = new Map();
+  cleaned = cleaned.replace(/<link\b[^>]*\/?>/gi, (match) => {
+    const key = getLinkKey(match);
+    if (!key) return match;
+
+    const hasRh = /data-rh\s*=\s*["']true["']/i.test(match);
+    const existing = linkSeen.get(key);
+
+    if (!existing) {
+      linkSeen.set(key, { tag: match, hasRh });
+      return match;
+    }
+
+    // Prefer the data-rh version
+    if (hasRh && !existing.hasRh) {
+      linkSeen.set(key, { tag: match, hasRh: true });
+      return match;
+    }
+
+    return ''; // duplicate — remove
+  });
+
+  // Second pass for links: remove earlier non-rh duplicates if a later rh version was kept
+  const linkFinal = new Map();
+  cleaned.replace(/<link\b[^>]*\/?>/gi, (match) => {
+    const key = getLinkKey(match);
+    if (!key) return match;
+    const hasRh = /data-rh\s*=\s*["']true["']/i.test(match);
+    const existing = linkFinal.get(key);
+    if (!existing || (hasRh && !existing.hasRh)) {
+      linkFinal.set(key, { tag: match, hasRh });
+    }
+    return match;
+  });
+  cleaned = cleaned.replace(/<link\b[^>]*\/?>/gi, (match) => {
+    const key = getLinkKey(match);
+    if (!key) return match;
+    const winner = linkFinal.get(key);
+    if (winner && winner.tag !== match) return ''; // this is the loser duplicate
+    // After this match is kept, remove it from the map so only one survives
+    if (winner && winner.tag === match) {
+      linkFinal.delete(key);
+      return match;
+    }
+    return match;
+  });
+
+  // --- 4. Keep only one <title> tag in <head> ---
+  // Collect all title tags; prefer the non-default one (React Helmet's)
+  const titleRegex = /<title>[^<]*<\/title>/gi;
+  const titles = [];
+  let titleMatch;
+  while ((titleMatch = titleRegex.exec(cleaned)) !== null) {
+    titles.push(titleMatch[0]);
+  }
+
+  if (titles.length > 1) {
+    // Pick the best title: prefer one that isn't the default "Search Guard"
+    const bestTitle = titles.find(t => !t.includes('>Search Guard<') && !t.includes('>Title<')) || titles[0];
+    let kept = false;
+    cleaned = cleaned.replace(/<title>[^<]*<\/title>/gi, (match) => {
+      if (!kept && match === bestTitle) {
+        kept = true;
+        return match; // keep the first occurrence of the best title
+      }
+      return ''; // remove all others
+    });
+  }
+
+  // --- 5. Clean up empty lines left by removed tags ---
+  cleaned = cleaned.replace(/\n\s*\n\s*\n/g, '\n\n');
+
+  return beforeHead + cleaned + afterHead;
+}
+
+/**
  * Prerender a single route
  */
 async function prerenderRoute(page, route) {
@@ -38,6 +280,19 @@ async function prerenderRoute(page, route) {
 
   try {
     console.log(`  Rendering: ${route}`);
+
+    // Block analytics/tracking requests during prerendering — they are not needed
+    // for static HTML and their runtime script injection causes duplication
+    await page.setRequestInterception(true);
+    page.on('request', (req) => {
+      const reqUrl = req.url();
+      const shouldBlock = DYNAMIC_SCRIPT_DOMAINS.some(domain => reqUrl.includes(domain));
+      if (shouldBlock && req.resourceType() === 'script') {
+        req.abort();
+      } else {
+        req.continue();
+      }
+    });
 
     // Navigate to the route
     await page.goto(url, {
@@ -48,45 +303,12 @@ async function prerenderRoute(page, route) {
     // Wait for React to fully render and React Helmet to inject meta tags
     await new Promise(resolve => setTimeout(resolve, 3000));
 
-    // Extract the complete head HTML that React Helmet modified
-    const headHTML = await page.evaluate(() => {
-      // Get all elements that React Helmet typically manages
-      const helmet = {
-        title: document.querySelector('title') ? document.querySelector('title').outerHTML : '',
-        metas: [],
-        links: []
-      };
-
-      // Get meta tags (descriptions, OG tags, Twitter cards, etc.)
-      document.querySelectorAll('head meta').forEach(meta => {
-        helmet.metas.push(meta.outerHTML);
-      });
-
-      // Get link tags (canonical, etc.)
-      document.querySelectorAll('head link').forEach(link => {
-        helmet.links.push(link.outerHTML);
-      });
-
-      return helmet;
-    });
-
-    // Get the base HTML
+    // Get the fully rendered HTML — page.content() already includes
+    // React Helmet's title/meta/link modifications in the DOM
     let html = await page.content();
 
-    // Find the position to inject the helmet tags (after the existing title tag)
-    const titleMatch = html.match(/<title>[^<]*<\/title>/);
-    if (titleMatch && headHTML.title) {
-      // Replace title
-      html = html.replace(/<title>[^<]*<\/title>/, headHTML.title);
-
-      // Insert meta and link tags right after title
-      const insertPosition = html.indexOf('</title>') + '</title>'.length;
-      const helmetTags = '\n    ' + headHTML.metas.join('\n    ') + '\n    ' + headHTML.links.join('\n    ');
-
-      // Remove any existing duplicate meta/link tags from helmet to avoid duplication
-      // Keep only the ones from the static HTML that helmet doesn't manage
-      html = html.slice(0, insertPosition) + helmetTags + html.slice(insertPosition);
-    }
+    // Clean up the head: remove dynamic script duplicates, deduplicate meta/link/title
+    html = deduplicateHead(html);
 
     // Determine output path
     let outputPath;
@@ -217,4 +439,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { prerender };
+module.exports = { prerender, deduplicateHead };

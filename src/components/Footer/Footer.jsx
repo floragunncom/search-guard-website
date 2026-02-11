@@ -13,7 +13,7 @@ const Footer = ({landing}) => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <div className="footer-container">
+        <footer className="footer-container">
             <div className="footer-wrapper">
 
                 {!landing ? (
@@ -281,7 +281,7 @@ const Footer = ({landing}) => {
             </div>
 
             <RichSnippetCompany/>
-        </div>
+        </footer>
     );
 };
 

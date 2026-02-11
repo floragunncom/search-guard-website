@@ -6,7 +6,7 @@ const PageWrapper = ({ children, background, landing }) => {
   return (
     <>
       <Navbar background={background} landing={landing} />
-      {children}
+      <main>{children}</main>
       <Footer landing={landing} />
     </>
   );

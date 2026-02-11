@@ -71,7 +71,7 @@ const Navbar = ({ background = 'white', landing }) => {
   );
 
     return (
-      <>
+      <header>
         <div className="navbar-fixed">
           <nav>
             <div className="nav-wrapper">               
@@ -173,7 +173,7 @@ const Navbar = ({ background = 'white', landing }) => {
           <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
           <li><a href="/tlstool/">TLS Tool</a></li>
         </ul>
-      </>
+      </header>
     );
 };
 
