@@ -131,6 +131,14 @@ class MyDocument extends Document {
           {linkComponents}
           {scriptComponents}
 
+          <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+          <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+          <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+          <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+          <link rel="manifest" href="/manifest.json" />
+          <meta name="theme-color" content="#000000" />
+          <meta name="apple-mobile-web-app-title" content="Search Guard" />
+
           <link rel="preload" href="/assets/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossOrigin="" />
           <link rel="preload" href="/assets/fonts/Parafina-BoldS.otf" as="font" type="font/otf" crossOrigin="" />
           <link rel="preload" href="/assets/fonts/Parafina-BlackS.otf" as="font" type="font/otf" crossOrigin="" />
