@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import quoteUp from '../../images/quote-up.svg';
 import quoteDown from '../../images/quote-down.svg';
+import { loadScriptOnce } from '../../utils/loadScriptOnce';
 
 class Quotes extends Component {
   constructor(props) {
@@ -13,7 +14,13 @@ class Quotes extends Component {
   }
 
   componentDidMount() {
-    this.initSlider();
+    loadScriptOnce('/assets/materialize.min.js')
+      .then(() => {
+        this.initSlider();
+      })
+      .catch(() => {
+        // Show static quotes list if slider script cannot be loaded.
+      });
   }
 
   componentWillUnmount() {
