@@ -17,18 +17,24 @@ variables:
     - npm config set cache .npm --global
   artifacts:
     paths:
-      - dist
+      - out
     expire_in: 7 days
   script:
     - |
       set -euo pipefail
       npm ci
       npm run build
-      test -f dist/index.html
-      test -f dist/sitemap.xml
-      find dist -name 'index.html' | grep -q .
+      echo "Validating static output..."
+      test -f out/index.html
+      test -f out/sitemap.xml
+      index_count="$(find out -name 'index.html' | wc -l | tr -d ' ')"
+      echo "Found ${index_count} prerendered index.html files in out/"
+      test "${index_count}" -gt 0
       if [ -n "${ALGOLIA_APP_ID:-}" ] && [ -n "${ALGOLIA_API_KEY:-}" ]; then
-        npm run indexBlogPosts -- --ALGOLIA_APP_ID="$ALGOLIA_APP_ID" --ALGOLIA_API_KEY="$ALGOLIA_API_KEY"
+        echo "Running optional Algolia indexing..."
+        if ! npm run indexBlogPosts -- --ALGOLIA_APP_ID="$ALGOLIA_APP_ID" --ALGOLIA_API_KEY="$ALGOLIA_API_KEY"; then
+          echo "Warning: Algolia indexing failed, but build artifacts were created successfully."
+        fi
       else
         echo "Skipping Algolia indexing because ALGOLIA_APP_ID/ALGOLIA_API_KEY are not set."
       fi
@@ -45,7 +51,7 @@ variables:
       echo "Uploading files to SFTP server $sftp_server for host: $website_host"
       lftp --version
       echo "Start SFTP upload"
-      lftp -u $sftp_user_name, -e "set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no'; mirror --reverse --delete --parallel=20 --verbose dist/ /var/www/$website_host/html/; quit" sftp://$sftp_server
+      lftp -u $sftp_user_name, -e "set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no'; mirror --reverse --delete --parallel=20 --verbose out/ /var/www/$website_host/html/; quit" sftp://$sftp_server
 
 stages:
   - build

@@ -60,8 +60,7 @@ Excluded: `/404/`, `/500/` (managed separately)
 ### Output
 
 - Next export output is generated in `out/`.
-- Build script copies `out/` to `dist/`.
-- `dist/` is the deployable artifact.
+- `out/` is the deployable artifact.
 
 ## Contentful Data Flow
 
@@ -77,7 +76,6 @@ Fetch step includes posts, events, whitepapers, videos, persons, and page conten
 - `npm run build`: full production build
   - fetch Contentful data
   - `next build` (static export)
-  - copy `out/` -> `dist/`
   - generate sitemap
   - generate postbuild redirect fallback pages
 - `npm run build-local`: same as build, but skips Contentful fetch
@@ -86,8 +84,7 @@ Fetch step includes posts, events, whitepapers, videos, persons, and page conten
 ### Build internals
 
 - `npm run next:build`: Next build/export
-- `npm run next:export-dist`: refreshes `dist/` from `out/`
-- `npm run sitemap`: builds `dist/sitemap.xml`
+- `npm run sitemap`: builds `out/sitemap.xml`
 - `npm run postbuild:redirects`: writes fallback redirect page(s), including:
   - `/blog/page/1/` -> `/blog/`
   - legacy root blog slugs (for example `/elasticsearch-tls-certificates/` -> `/blog/elasticsearch-tls-certificates/`)
@@ -118,9 +115,9 @@ Implemented/expected behavior:
 
 The deployable directory is:
 
-- `dist/`
+- `out/`
 
-Typical static hosting/CDN deployment uploads `dist/` as website root.
+Typical static hosting/CDN deployment uploads `out/` as website root.
 
 ### Important for real 404 behavior
 
@@ -145,9 +142,9 @@ Build stage (`master` branch):
 - `npm ci`
 - `npm run build`
 - hard-gates required artifacts:
-  - `dist/index.html` must exist
-  - `dist/sitemap.xml` must exist
-  - at least one exported `index.html` page must exist in `dist/`
+  - `out/index.html` must exist
+  - `out/sitemap.xml` must exist
+  - at least one exported `index.html` page must exist in `out/`
 - optional Algolia indexing if `ALGOLIA_APP_ID` and `ALGOLIA_API_KEY` are present
 
 SEO/canonical gating in build job:
@@ -157,7 +154,7 @@ SEO/canonical gating in build job:
 
 Deploy stage:
 
-- uploads `dist/` via SFTP mirror
+- uploads `out/` via SFTP mirror
 
 Post-deploy:
 
@@ -173,7 +170,7 @@ Post-deploy:
 - `/scripts/sitemap.js` - sitemap generator
 - `/scripts/postbuild-redirects.js` - static fallback redirect pages
 - `/public/llms.txt` - AI crawler guidance file served at `/llms.txt`
-- `/dist` - deployment artifact (generated)
+- `/out` - deployment artifact (generated)
 
 ## Local Development
 
@@ -198,7 +195,7 @@ This indicates DNS/network restrictions in your environment. It is not a project
 
 Expected after migration to Next static export with deterministic route generation and without browser-driven snapshot crawling.
 
-### Missing page in `dist`
+### Missing page in `out`
 
 Check that route is discoverable via:
 
@@ -213,7 +210,7 @@ Configure hosting/CDN error-page behavior to serve `404.html` for unknown routes
 
 ## Notes
 
-- `dist/` and `out/` are build artifacts and should be treated as generated output.
+- `out/` is the generated build artifact.
 - Project linting currently targets `src/` (`npm run lint`).
 - Tests are not yet configured (`npm test` placeholder).
 
@@ -226,10 +223,10 @@ Use this checklist before every production release:
 2. Build a fresh production artifact:
    - `npm run build`
 3. Verify required output exists:
-   - `dist/index.html`
-   - `dist/sitemap.xml`
-   - `dist/404.html`
-4. Spot-check key routes in `dist/`:
+   - `out/index.html`
+   - `out/sitemap.xml`
+   - `out/404.html`
+4. Spot-check key routes in `out/`:
    - `/`
    - `/security/`
    - `/alerting/`

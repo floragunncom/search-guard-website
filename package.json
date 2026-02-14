@@ -43,10 +43,10 @@
     "indexBlogPosts": "node ./src/Api/indexBlogposts.js",
     "prerender:report": "node ./scripts/report-prerender-routes.js",
     "prerender": "node ./scripts/prerender.js",
-    "sitemap": "node ./scripts/sitemap.js --base-url=https://search-guard.com/ --out-dir=dist",
-    "postbuild:redirects": "node ./scripts/postbuild-redirects.js",
-    "build": "npm run fetch && npm run next:build && npm run next:export-dist && npm run sitemap && npm run postbuild:redirects",
-    "build-local": "npm run next:build && npm run next:export-dist && npm run sitemap && npm run postbuild:redirects",
+    "sitemap": "node ./scripts/sitemap.js --base-url=https://search-guard.com/ --out-dir=out",
+    "postbuild:redirects": "node ./scripts/postbuild-redirects.js --out-dir=out",
+    "build": "npm run fetch && npm run next:build && npm run sitemap && npm run postbuild:redirects",
+    "build-local": "npm run next:build && npm run sitemap && npm run postbuild:redirects",
     "clearReactChunks": "node ./src/Api/cleanReactChunksPostBuild.js",
     "clean": "rm -rf dist/*",
     "test": "echo 'No tests configured'",
@@ -59,7 +59,7 @@
     "vite:dev": "vite",
     "vite:build": "npm run fetch && npm run prerender:report && vite build && npm run prerender && npm run sitemap",
     "vite:build-local": "npm run prerender:report && vite build && npm run prerender && npm run sitemap",
-    "next:export-dist": "rm -rf dist && cp -R out dist"
+    "next:export-dist": "echo \"Deprecated: Next.js exports directly to out/\""
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -3,7 +3,17 @@
 const fs = require('fs/promises');
 const path = require('path');
 
-const DIST_DIR = path.resolve(process.cwd(), 'dist');
+const args = process.argv;
+const preFormattedOutDir = args.find((arg) => arg.startsWith('--out-dir='));
+const stripWrappingQuotes = (value) => {
+  if (!value) {
+    return value;
+  }
+  return value.replace(/^['"]|['"]$/g, '');
+};
+
+const OUT_DIR = stripWrappingQuotes(preFormattedOutDir ? preFormattedOutDir.split('=')[1] : 'out');
+const DIST_DIR = path.resolve(process.cwd(), OUT_DIR);
 const BLOG_PAGE_ONE_DIR = path.join(DIST_DIR, 'blog', 'page', '1');
 const BLOG_PAGE_ONE_INDEX = path.join(BLOG_PAGE_ONE_DIR, 'index.html');
 
