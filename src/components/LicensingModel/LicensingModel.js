@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import './LicensingModel.scss';
 import iconSearchGuard from '../../images/icon-search-guard.svg';
 import Button from '../Button/Button';
 

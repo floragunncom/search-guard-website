@@ -1,24 +1,37 @@
-image: node:14.21.3
+image: node:20.18.1
 variables:
   LC_ALL: "C.UTF-8"
   LANG: "en_US.UTF-8"
   LANGUAGE: "en_US.UTF-8"
+  NPM_CONFIG_AUDIT: "false"
+  NPM_CONFIG_FUND: "false"
 
 .build: &build
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - .npm/
+  before_script:
+    - npm config set cache .npm --global
   artifacts:
     paths:
-      - build
+      - dist
+    expire_in: 7 days
   script:
     - |
-      set -e
-      unset CI
-      # install dependencies required for pupeteer 
-      # The Debian repository has been archived, which is why it’s necessary to update the sources.list, remove if the Node image is updated to a version that includes a Debian release newer than 10 (Buster).
-      sed -i 's|http://deb.debian.org|http://archive.debian.org|g' /etc/apt/sources.list
-      apt update && apt-get install -y gconf-service libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libnss3 lsb-release xdg-utils wget
-      npm install
-      npm run-script build
-      npm run-script indexBlogPosts -- --ALGOLIA_APP_ID=$ALGOLIA_APP_ID --ALGOLIA_API_KEY=$ALGOLIA_API_KEY
+      set -euo pipefail
+      npm ci
+      npm run build
+      test -f dist/index.html
+      test -f dist/sitemap.xml
+      find dist -name 'index.html' | grep -q .
+      if [ -n "${ALGOLIA_APP_ID:-}" ] && [ -n "${ALGOLIA_API_KEY:-}" ]; then
+        npm run indexBlogPosts -- --ALGOLIA_APP_ID="$ALGOLIA_APP_ID" --ALGOLIA_API_KEY="$ALGOLIA_API_KEY"
+      else
+        echo "Skipping Algolia indexing because ALGOLIA_APP_ID/ALGOLIA_API_KEY are not set."
+      fi
 .deploy: &deploy
   before_script:
     - apt-get update -yqq
@@ -32,7 +45,7 @@ variables:
       echo "Uploading files to SFTP server $sftp_server for host: $website_host"
       lftp --version
       echo "Start SFTP upload"
-      lftp -u $sftp_user_name, -e "set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no'; mirror --reverse --delete --parallel=20 --verbose build/ /var/www/$website_host/html/; quit" sftp://$sftp_server
+      lftp -u $sftp_user_name, -e "set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no'; mirror --reverse --delete --parallel=20 --verbose dist/ /var/www/$website_host/html/; quit" sftp://$sftp_server
 
 stages:
   - build
@@ -44,8 +57,8 @@ build_prod:
   tags:
     - build
   stage: build
-  only:
-    - master
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
   <<: *build
 
 
@@ -57,8 +70,8 @@ deploy_to_prod:
   stage: deploy
   dependencies:
     - build_prod
-  only:
-    - master
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
   variables:
     website_host: search-guard.com    
   <<: *deploy
@@ -68,8 +81,8 @@ flush_cloudflare_cache:
   tags:
     - build
   stage: post_deploy
-  only:
-   - master
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
   script:
     - |
       apt update && apt-get install -y curl

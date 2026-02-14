@@ -1,5 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import {FacebookShareButton, LinkedinShareButton, RedditShareButton, TwitterShareButton,} from 'react-share';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Markdown from 'markdown-to-jsx';
@@ -12,23 +12,47 @@ import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
-import './WhitePaperArticle.scss';
 import articles from '../../Api/contentfulWhitepapers.json';
 import Button from "../../components/Button/Button";
 import pdf from "../../images/pdf-download.svg";
+const hipaaPdf = '/assets/20200831_HIPAA_Elastic_Stack.pdf';
 
 const WhitePaperArticle = ({ match }) => {
+  const publisherLogoUrl = typeof sgLogo === 'string' ? sgLogo : sgLogo?.src || '';
   // cannot dynamic require, so we need to define twice :(
 
   const whitepaperDownloads =
     {
-      "hipaa-compliance-elastic-slack/": require("../../downloads/20200831_HIPAA_Elastic_Stack.pdf"),
+      "hipaa-compliance-elastic-slack/": hipaaPdf,
     };
 
   const slug = match.url.split("/")[2] + "/";
   const postContent = articles.find(
     entry => entry.fields.slug === `${slug}`,
   );
+  const whitepaperSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://search-guard.com/whitepapers/${postContent.fields.slug}/`,
+    },
+    headline: postContent.fields.title,
+    description: postContent.fields.description,
+    image: postContent.fields.cover.fields.file.url,
+    author: {
+      '@type': 'Person',
+      name: 'Jochen Kressin',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Search Guard',
+      logo: {
+        '@type': 'ImageObject',
+        url: publisherLogoUrl,
+      },
+    },
+  };
 
   const options = {
     overrides: {
@@ -239,31 +263,10 @@ const WhitePaperArticle = ({ match }) => {
 
 
       <PreFooter />
-      <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://search-guard.com/whitepapers/${postContent.fields.slug}/"
-            },            
-            "headline": "${postContent.fields.title}",
-            "description": "${postContent.fields.description}",            
-            "image": "${postContent.fields.cover.fields.file.url}",
-            "author": {
-               "@type": "Person",
-               "name": "Jochen Kressin"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Search Guard",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "${sgLogo}"
-              }
-            }
-          }
-        `}</script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(whitepaperSchema) }}
+      />
     </PageWrapper>
   );
 };

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import * as lunr from 'lunr';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -9,7 +9,6 @@ import BlogPost from '../../components/BlogPost/BlogPost';
 import SearchBlogPost from '../../components/SearchBlogPost/SearchBlogPost';
 import posts from '../../Api/contentfulPosts.json';
 import Pagination from '../../components/Pagination/Pagination';
-import './Blog.scss';
 
 const Blog = ({ match } ) => {
 
@@ -21,7 +20,9 @@ const Blog = ({ match } ) => {
 
   const { pageNumber } = match.params;
   const currentPage = parseInt(pageNumber, 10) || 1;
+  const isPaginatedView = currentPage > 1;
   const [postsPerPage] = useState(10);
+  const totalPages = Math.ceil(posts.length / postsPerPage);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -35,6 +36,24 @@ const Blog = ({ match } ) => {
   } else {
     canonical="https://search-guard.com/blog/"
   };
+
+  const pageTitle = isPaginatedView
+    ? `Official Search Guard blog - Page ${currentPage}`
+    : 'Search Guard Blog: Elasticsearch Security News';
+
+  const pageDescription = isPaginatedView
+    ? `Official Search Guard blog page ${currentPage}. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch.`
+    : 'This is the official Search Guard blog. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch.';
+
+  const prevPageHref = currentPage > 1
+    ? currentPage === 2
+      ? 'https://search-guard.com/blog/'
+      : `https://search-guard.com/blog/page/${currentPage - 1}/`
+    : null;
+
+  const nextPageHref = currentPage < totalPages
+    ? `https://search-guard.com/blog/page/${currentPage + 1}/`
+    : null;
 
   if (posts !== undefined) {
     posts.map(post => {
@@ -96,14 +115,11 @@ const Blog = ({ match } ) => {
     <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>
-          Official Search Guard blog - news about security for Elasticsearch
-        </title>
+        <title>{pageTitle}</title>
         <link rel="canonical" href={canonical} />
-        <meta
-          name="description"
-          content="This is the official Search Guard blog. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch."
-        />
+        {prevPageHref && <link rel="prev" href={prevPageHref} />}
+        {nextPageHref && <link rel="next" href={nextPageHref} />}
+        <meta name="description" content={pageDescription} />
       </Helmet>
       <Title headline="Blog" breadcrumb={breadcrumb}/>
       <div className="row">

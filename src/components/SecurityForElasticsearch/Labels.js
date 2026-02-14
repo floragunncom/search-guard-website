@@ -2,7 +2,6 @@ import React from 'react';
 import certificate from '../../images/icon-certificate.svg';
 import check from '../../images/icon-check.svg';
 import shieldWheel from '../../images/shield-wheel.svg';
-import './../Labels/Labels.scss';
 
 
 const Labels = () => {

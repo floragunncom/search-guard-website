@@ -1,5 +1,4 @@
-import React, {useRef} from 'react';
-import './Journey.scss';
+import React from 'react';
 
 
 const Journey = () => {
@@ -351,34 +350,47 @@ const Journey = () => {
     },
   ];
 
-  const documentRef = useRef(document); // document here is window.document
-  documentRef.current.addEventListener("DOMContentLoaded", () => {
-
-    var elements = document.querySelectorAll('.collapse-header');
+  React.useEffect(() => {
+    const elements = document.querySelectorAll('.collapse-header');
+    const listeners = [];
 
     elements.forEach((element) => {
-      element.addEventListener('click', () => {
-        var collapseBody = element.nextSibling
-        var icon = element.querySelector("#icon")
-        if (collapseBody.classList.contains("hidden")) {
+      const listener = () => {
+        const collapseBody = element.nextSibling;
+        const icon = element.querySelector('#icon');
+
+        if (!collapseBody || !icon) {
+          return;
+        }
+
+        if (collapseBody.classList.contains('hidden')) {
           // up and down arrow
-          icon.innerHTML = "keyboard_arrow_down";
-          collapseBody.classList.remove("hidden");
+          icon.innerHTML = 'keyboard_arrow_down';
+          collapseBody.classList.remove('hidden');
           setTimeout(() => {
-            collapseBody.classList.add("fadein");
-            collapseBody.classList.remove("hidden");
-          }, "100");
+            collapseBody.classList.add('fadein');
+            collapseBody.classList.remove('hidden');
+          }, 100);
         } else {
           // up and down arrow
-          icon.innerHTML = "keyboard_arrow_up";
-          collapseBody.classList.remove("fadein");
+          icon.innerHTML = 'keyboard_arrow_up';
+          collapseBody.classList.remove('fadein');
           setTimeout(() => {
-            collapseBody.classList.add("hidden");
-          }, "200");
+            collapseBody.classList.add('hidden');
+          }, 200);
         }
-      });
+      };
+
+      element.addEventListener('click', listener);
+      listeners.push({ element, listener });
     });
-  });
+
+    return () => {
+      listeners.forEach(({ element, listener }) => {
+        element.removeEventListener('click', listener);
+      });
+    };
+  }, []);
 
   return (
     <div className="journey-wrapper color-schema-light" id="journey">

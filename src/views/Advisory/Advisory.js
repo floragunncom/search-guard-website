@@ -1,6 +1,5 @@
 import React from 'react';
-import './Advisory.scss';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';

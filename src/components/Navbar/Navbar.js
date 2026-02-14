@@ -1,7 +1,6 @@
 import React from 'react';
 import { GlobalSearch } from '../GlobalSearch/GlobalSearch';
 import logo from '../../images/sg_logo_white.svg';
-import './Navbar.scss';
 import {ReactSVG} from "react-svg";
 import 'font-awesome/css/font-awesome.min.css';
 import { SEARCH_GUARD_ALGOLIA_APP_ID, SEARCH_GUARD_ALGOLIA_SEARCH_API_KEY } from '../GlobalSearch/SgAlgolia';
@@ -14,12 +13,58 @@ const Navbar = ({ background = 'white', landing }) => {
   }, []);
 
   const algoliasearchClient = React.useMemo(
-    () => { return window['@algolia/client-search'] ? window['@algolia/client-search'].searchClient(
-      SEARCH_GUARD_ALGOLIA_APP_ID,
-      SEARCH_GUARD_ALGOLIA_SEARCH_API_KEY
-    ) : null},
-    [window['@algolia/client-search']]
+    () => {
+      if (typeof window === 'undefined') {
+        return null;
+      }
+
+      return window['@algolia/client-search']
+        ? window['@algolia/client-search'].searchClient(
+            SEARCH_GUARD_ALGOLIA_APP_ID,
+            SEARCH_GUARD_ALGOLIA_SEARCH_API_KEY,
+          )
+        : null;
+    },
+    []
   );
+
+  React.useEffect(() => {
+    let retries = 0;
+    const maxRetries = 20;
+    const retryDelayMs = 100;
+    let retryTimer;
+
+    const initMaterializeNav = () => {
+      if (!window.M) {
+        if (retries < maxRetries) {
+          retries += 1;
+          retryTimer = setTimeout(initMaterializeNav, retryDelayMs);
+        }
+        return;
+      }
+
+      const sidenavElements = document.querySelectorAll('.sidenav');
+      if (sidenavElements.length > 0) {
+        window.M.Sidenav.init(sidenavElements, { edge: 'right' });
+      }
+
+      const dropdownElements = document.querySelectorAll('.dropdown-trigger');
+      if (dropdownElements.length > 0) {
+        window.M.Dropdown.init(dropdownElements, {
+          hover: true,
+          coverTrigger: false,
+        });
+      }
+    };
+
+    initMaterializeNav();
+
+    return () => {
+      if (retryTimer) {
+        clearTimeout(retryTimer);
+      }
+    };
+  }, []);
 
     return (
       <>

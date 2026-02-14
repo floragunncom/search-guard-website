@@ -1,9 +1,8 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import './Newsletter.scss';
 import ctaIcon from "../../images/icon-sg.svg";
 import Email from "../../components/Email/Email";
 import TextTile from "../../components/Tiles/TextTile/TextTile";

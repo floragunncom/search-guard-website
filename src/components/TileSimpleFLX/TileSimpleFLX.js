@@ -1,5 +1,4 @@
 import React from 'react';
-import './TileSimpleFLX.scss';
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
 const TileSimple = ({

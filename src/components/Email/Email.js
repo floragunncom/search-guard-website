@@ -1,22 +1,66 @@
 import React from 'react';
-import './Email.scss';
 import Button from '../Button/Button';
 
 const Email = () => {
+    const [isProcessing, setIsProcessing] = React.useState(false);
+    const [isSubmitted, setIsSubmitted] = React.useState(false);
+
+    const handleNewsletterSubmit = async (formProps) => {
+        return fetch('https://45xbqthu4l.execute-api.eu-central-1.amazonaws.com/prod/', {
+            method: 'POST',
+            cache: 'no-cache',
+            headers: {
+                accept: 'application/json; charset=utf-8',
+                'content-type': 'application/json; charset=UTF-8',
+            },
+            body: JSON.stringify(formProps),
+        });
+    };
+
+    const onNewsletterSubscribeClick = async (event) => {
+        event.preventDefault();
+
+        setIsProcessing(true);
+
+        const formData = new FormData(event.target);
+        const formValuesJson = {
+            email: formData.get('email'),
+            ids: formData.getAll('ids'),
+        };
+
+        handleNewsletterSubmit(formValuesJson)
+            .then(() => {
+                setIsProcessing(false);
+                setIsSubmitted(true);
+            })
+            .catch(() => {
+                setIsProcessing(false);
+                setIsSubmitted(true);
+            });
+    };
 
     return (
         <div>
 
-            <div className="prefooter-content-text  text-processing nl-thanks">
+            <div
+                className="prefooter-content-text  text-processing nl-thanks"
+                style={{display: isSubmitted ? 'block' : 'none'}}
+            >
                 <h5 className="nl-feedback">Thank you for signing up to our newsletter!</h5>
             </div>
 
-            <div className="prefooter-content-text text-processing nl-processing">
+            <div
+                className="prefooter-content-text text-processing nl-processing"
+                style={{display: isProcessing ? 'block' : 'none'}}
+            >
                 <h5 className="nl-feedback">Processing</h5>
             </div>
 
-            {/* Event listeners are attached in main.js */}
-            <form className="nl-newsletterform">
+            <form
+                className="nl-newsletterform"
+                onSubmit={onNewsletterSubscribeClick}
+                style={{display: !isProcessing && !isSubmitted ? 'block' : 'none'}}
+            >
                 <div className="input-field col s12 m6 l8">
                     <input
                         id="email"

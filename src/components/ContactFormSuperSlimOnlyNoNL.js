@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import './ContactForm.scss';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import './Certifications.scss';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -93,7 +92,7 @@ const Certifications = () => {
             <div className="row certifications-wrapper">
                 {certificates.map(certificate => {
                     return (
-                        <div>
+                        <div key={certificate.headline}>
                             <div className="certifications-item-wrapper">
                                 <h3 className="col s12 certifications-headline">
                                     {certificate.headline}
@@ -104,7 +103,7 @@ const Certifications = () => {
                                     rel="noopener noreferrer"
                                     className="col s12 m3 certifications-image"
                                 >
-                                    <img loading="lazy" src={certificate.image} alt={certificate.image}/>
+                                    <img loading="lazy" src={certificate.image} alt={certificate.headline}/>
                                 </a>
                                 <div className="col s12 m8 certifications-context">
                                     <div className="col s12 certifications-text">

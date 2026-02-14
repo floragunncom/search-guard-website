@@ -1,5 +1,4 @@
 import React from 'react';
-import './CodeBlock.scss';
 
 const Blockquote = props => {
 

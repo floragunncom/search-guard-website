@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -27,13 +27,47 @@ const License = () => {
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>
-                    Pricing | Search Guard Community, Enterprise and Compliance Edition
+                    Search Guard Pricing: Community, Enterprise, Compliance
                 </title>
                 <link rel="canonical" href="https://search-guard.com/licensing/"/>
                 <meta
                     name="description"
                     content="Search Guard offers fair licensing to secure Elasticsearch and Kibana with an unlimited amount of nodes - scale your cluster not your costs."
                 />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'SoftwareApplication',
+                        name: 'Search Guard',
+                        applicationCategory: 'SecurityApplication',
+                        operatingSystem: 'Linux, Windows, macOS',
+                        url: 'https://search-guard.com/licensing/',
+                        description: 'Pricing and editions for Search Guard Security and Alerting for Elasticsearch and Kibana.',
+                        offers: [
+                            {
+                                '@type': 'Offer',
+                                name: 'Community Edition',
+                                price: '0',
+                                priceCurrency: 'USD',
+                                availability: 'https://schema.org/InStock',
+                            },
+                            {
+                                '@type': 'Offer',
+                                name: 'Enterprise Edition',
+                                priceCurrency: 'USD',
+                                availability: 'https://schema.org/InStock',
+                                url: 'https://search-guard.com/contacts/',
+                            },
+                            {
+                                '@type': 'Offer',
+                                name: 'Compliance Edition',
+                                priceCurrency: 'USD',
+                                availability: 'https://schema.org/InStock',
+                                url: 'https://search-guard.com/contacts/',
+                            },
+                        ],
+                    })}
+                </script>
             </Helmet>
             <Title
                 headline="Pricing"

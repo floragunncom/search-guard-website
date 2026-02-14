@@ -1,6 +1,3 @@
-@use '../src/styles/Colors.scss' as *;
-@use '../src/styles/Breakpoints.scss' as *;
-
 ::selection {
   background-color: $primary;
   color: $white;
@@ -207,17 +204,20 @@ div.row {
   background-color: $white;
 }
 
-.color-schema-svg-dark {
+.color-schema-svg-dark,
+.color-schema-svg-dark * {
   fill: $secondary-light;
   stroke: $secondary-light;
 }
 
-.color-schema-svg-light {
+.color-schema-svg-light,
+.color-schema-svg-light * {
   fill: $secondary;
   stroke: $secondary;
 }
 
-.color-schema-svg-white {
+.color-schema-svg-white,
+.color-schema-svg-white * {
   fill: $secondary-light;
   stroke: $secondary-light;
 }

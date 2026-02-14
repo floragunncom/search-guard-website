@@ -1,5 +1,4 @@
 import React from 'react';
-import './../Hero/Hero.scss';
 import Button from "../Button/Button";
 
 

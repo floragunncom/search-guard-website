@@ -1,6 +1,5 @@
 import React from 'react';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
-import './BlogPost.scss';
 
 const BlogPost = ({ post }) => {
 

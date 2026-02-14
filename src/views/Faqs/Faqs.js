@@ -1,5 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import {HashLink as Anchor} from 'react-router-hash-link';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -7,7 +7,6 @@ import Title from '../../components/Title/Title';
 import pages from '../../Api/pagecontent/pages.json';
 import Markdown from 'markdown-to-jsx';
 import slugify from 'react-slugify';
-import './Faqs.scss';
 import CTAContactUs from "../../components/CTA/CTAContactUs";
 
 const breadcrumb = [
@@ -19,29 +18,33 @@ const breadcrumb = [
 let faqPage = pages.filter(page => page.sys.contentType.sys.id === "pageFaq")[0];
 const Faqs = () => {
 
-    var htmlTags = /(<([^>]+)>)/ig;
-    var newlines = /(\r\n|\n|\r)/gm;
-    var whitespaces = /  +/g;
-    let jsonld = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": []
+    const htmlTags = /(<([^>]+)>)/ig;
+    const newlines = /(\r\n|\n|\r)/gm;
+    const whitespaces = /  +/g;
+    const jsonld = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: []
     };
 
-    faqPage.fields.categories.map(category => {
-        category.fields.entries.map(faqItem => {
-            let faqLd = {
-                "@type": "Question"
+    faqPage.fields.categories.forEach((category) => {
+        category.fields.entries.forEach((faqItem) => {
+            const faqLd = {
+                '@type': 'Question'
             };
 
-            faqLd["name"] = faqItem.question;
+            faqLd.name = faqItem.fields.question;
 
-            let answer = {
-                "@type": "Answer"
+            const answer = {
+                '@type': 'Answer'
             };
 
-            answer["text"] = faqItem.fields.answer.toString().replace(htmlTags, "").replace(newlines, "").replace(whitespaces, "");
-            faqLd["acceptedAnswer"] = answer;
+            answer.text = faqItem.fields.answer
+                .toString()
+                .replace(htmlTags, '')
+                .replace(newlines, '')
+                .replace(whitespaces, '');
+            faqLd.acceptedAnswer = answer;
             jsonld.mainEntity.push(faqLd);
         });
     });
@@ -52,13 +55,16 @@ const Faqs = () => {
                 <html lang="en" itemScope itemType="https://schema.org/FAQPage"/>
                 <meta charSet="utf-8"/>
                 <title>
-                    Frequently asked questions | Search Guard | Security for Elasticsearch
+                    Search Guard FAQ: Elasticsearch Security Answers
                 </title>
                 <link rel="canonical" href="https://search-guard.com/faq/"/>
                 <meta
                     name="description"
                     content="Find answers to frequently asked questions about Search Guard, the rock-solid and battle proven security suite for Elasticsearch."
                 />
+                <script type="application/ld+json">
+                    {JSON.stringify(jsonld)}
+                </script>
             </Helmet>
             <Title
                 headline="Frequently asked questions"

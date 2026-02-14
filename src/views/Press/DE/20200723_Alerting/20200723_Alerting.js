@@ -1,6 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import '../../PressArticle.scss';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../../../components/PreFooter/PreFooter';
 import Title from '../../../../components/Title/Title';
@@ -11,12 +10,16 @@ import graph_small from "../../../../images/Alerting_Graph_Small.png";
 import CTATrialLicense from "../../../../components/CTA/CTAStartFreeTrial";
 
 const Alerting = () => {
+    const assetUrl = (value) => (typeof value === 'string' ? value : value?.src || '');
+
     return (
         <PageWrapper>
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>Effizientes Alert-Management für Big Data und IT-Infrastruktur</title>
                 <link rel="canonical" href="https://search-guard.com/press/de/search-guard-alerting/"/>
+                <link rel="alternate" hrefLang="de" href="https://search-guard.com/press/de/search-guard-alerting/" />
+                <link rel="alternate" hrefLang="en" href="https://search-guard.com/press/en/search-guard-alerting/" />
                 <meta
                     name="description"
                     content="Effizientes Alert-Management für Elasticsearch und IT-Infrastruktur"
@@ -29,9 +32,9 @@ const Alerting = () => {
 
             <div className="row pressarticle-wrapper">
                 <div className="col l4 hide-on-med-and-down">
-                    <a href={watches} target="_blank" rel="noopener noreferrer">
+                    <a href={assetUrl(watches)} target="_blank" rel="noopener noreferrer">
 
-                        <img loading="lazy" src={watches_small}
+                        <img loading="lazy" src={assetUrl(watches_small)}
                                                                                      className="press-profile-pic"
                                                                                      alt="Free Alerting for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">
@@ -40,7 +43,7 @@ const Alerting = () => {
                         Checks, die die definierte Situation überwachen und analysieren.
                         Aktionen, die ausgeführt werden, wenn alle vorangegangenen Bedingungen erfüllt sind.
                     </div>
-                    <a href={graph} target="_blank" rel="noopener noreferrer"><img loading="lazy" src={graph_small}
+                    <a href={assetUrl(graph)} target="_blank" rel="noopener noreferrer"><img loading="lazy" src={assetUrl(graph_small)}
                                                                                    className="press-profile-pic"
                                                                                    alt="Free Alerting for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">

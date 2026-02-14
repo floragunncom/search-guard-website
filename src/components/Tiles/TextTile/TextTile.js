@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '../../Button/Button';
-import './TextTile.scss';
 import {getColorSchemaCSS} from "../../../utils/styleUtils";
 
 const TextTile = ({ colorschema, headline, text, ctaText, link, target }) => {

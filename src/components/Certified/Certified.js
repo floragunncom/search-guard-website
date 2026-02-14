@@ -4,7 +4,6 @@ import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
 import cve from '../../images/ove.svg';
-import './Certified.scss';
 
 
 const Certified = () => {

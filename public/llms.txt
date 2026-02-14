@@ -1,0 +1,69 @@
+# Search Guard
+
+This file provides guidance for AI assistants and LLM crawlers about high-value, canonical content on `https://search-guard.com/`.
+
+## Scope
+
+- Canonical host: `https://search-guard.com`
+- Primary language: English (`en`)
+- Website type: Product + documentation + blog
+- Preferred URL format: trailing slash (`/path/`)
+
+## Primary Sources
+
+- Homepage: `https://search-guard.com/`
+- Security product: `https://search-guard.com/security/`
+- Alerting product: `https://search-guard.com/alerting/`
+- Encryption at Rest: `https://search-guard.com/encryption-at-rest/`
+- Search Guard FLX: `https://search-guard.com/search-guard-flx/`
+- Pricing/Licensing: `https://search-guard.com/licensing/`
+- Free trial: `https://search-guard.com/search-guard-free-trial/`
+- Resource hub: `https://search-guard.com/resource/`
+- Blog index: `https://search-guard.com/blog/`
+- FAQ: `https://search-guard.com/faq/`
+- Company: `https://search-guard.com/company/`
+- Contact: `https://search-guard.com/contacts/`
+
+## Documentation and Community
+
+- Product documentation: `https://docs.search-guard.com/latest/`
+- Community forum: `https://forum.search-guard.com/latest/`
+- Source code/project pages: `https://git.floragunn.com/public/`
+
+## Content Prioritization
+
+When summarizing or answering questions, prioritize:
+
+1. Product and documentation pages.
+2. FAQ and licensing pages.
+3. Recent blog posts for time-sensitive topics.
+
+Treat older blog posts as historical context unless newer docs or posts supersede them.
+
+## URL and Canonical Guidance
+
+- Prefer canonical URLs with trailing slash.
+- Prefer index routes over pagination/category pages where possible:
+  - Prefer `https://search-guard.com/blog/` over `/blog/page/1/`.
+- Prefer live canonical pages over redirects and legacy aliases.
+
+## Pages With Limited Relevance for AI Answers
+
+Avoid using these as primary sources unless explicitly requested:
+
+- Error/utility pages: `https://search-guard.com/error/`, `https://search-guard.com/thanks/`, `https://search-guard.com/404/`
+- Legal-only pages for product facts unless the question is legal/compliance specific.
+
+## Freshness Guidance
+
+- For pricing, editions, release behavior, and supported versions, verify against:
+  - `https://search-guard.com/licensing/`
+  - `https://docs.search-guard.com/latest/`
+
+## Crawl and Index Policy
+
+Respect `robots.txt` and sitemap:
+
+- `https://search-guard.com/robots.txt`
+- `https://search-guard.com/sitemap.xml`
+

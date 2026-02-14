@@ -46,8 +46,10 @@
 
 .columnedtile-icon-wrapper {
   display: flex;
+  align-items: center;
   justify-content: center;
   margin-bottom: 32px;
+  min-height: 150px;
 
   @media only screen and (max-width: $mobile) {
     img {
@@ -55,6 +57,13 @@
       max-width: 100px;
     }
   }
+}
+
+.columnedtile-icon-wrapper svg,
+.columnedtile-icon-wrapper img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .columnedtile-text-wrapper {
@@ -112,5 +121,4 @@ h2.columnedtile-headline {
   margin-top: auto;
   height: auto;
 }
-
 

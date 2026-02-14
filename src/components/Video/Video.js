@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '../Button/Button';
-import './Video.scss';
 import allVideos from '../../Api/contentfulVideos.json';
 
 

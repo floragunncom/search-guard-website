@@ -1,5 +1,4 @@
 import React from 'react';
-import './PreFooterAnnouncement.scss';
 import Button from "../Button/Button";
 
 const PreFooterAnnouncement = ({ headline }) => {

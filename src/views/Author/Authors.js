@@ -1,35 +1,37 @@
-import './Author.scss';
 import persons from '../../Api/contentfulPersons.json';
 import React from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Title from "../../components/Title/Title";
 
 const Authors = ({ match }) => {
+  const pageTitle = 'A list of all Search Guard Authors contributing to our blog';
+  const pageDescription = 'A list of all Search Guard Authors that are contributing to our blog and documentation.';
+  const canonicalUrl = 'https://search-guard.com/authors/';
 
   return (
       <PageWrapper>
         <Helmet>
           <meta charSet="utf-8"/>
-          <title>A list of all Search Guard Authors contributing to our blog</title>
+          <title>{pageTitle}</title>
           <link
               rel="canonical"
-              href="https://search-guard.com/authors/"
+              href={canonicalUrl}
           />
 
-          <meta name="description" content="A list of all Search Guard Authors that are contributing to our blog and documentation."/>
+          <meta name="description" content={pageDescription}/>
 
-          <meta property="og:title" content="Search Guard Authors"/>
-          <meta property="og:url" content="https://search-guard.com/authors/"/>
-          <meta property="og:description" content="A list of all Search Guard Authors"/>
+          <meta property="og:title" content={pageTitle}/>
+          <meta property="og:url" content={canonicalUrl}/>
+          <meta property="og:description" content={pageDescription}/>
           <meta property="og:locale" content="en_US"/>
 
           <meta name="twitter:card" content="summary_large_image"/>
           <meta name="twitter:site" content="@searchguard"/>
           <meta name="twitter:creator" content="@searchguard"/>
-          <meta name="twitter:title" content="Search Guard Authors"/>
-          <meta name="twitter:description" content="A list of all Search Guard Authors"/>
+          <meta name="twitter:title" content={pageTitle}/>
+          <meta name="twitter:description" content={pageDescription}/>
 
 
         </Helmet>

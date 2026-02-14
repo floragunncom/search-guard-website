@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Button from '../../components/Button/Button';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
-import './Thanks.scss';
 
 const Thanks = () => {
 
@@ -18,6 +17,7 @@ const Thanks = () => {
         <meta charSet="utf-8" />
         <title>Search Guard | Thanks for your message</title>
         <link rel="canonical" href="https://search-guard.com/thanks/" />
+        <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
           content="Thank you very much for getting in contact with Search Guard and our team."

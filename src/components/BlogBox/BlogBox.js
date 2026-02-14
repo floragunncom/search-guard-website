@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
-import './BlogBox.scss';
 import allPosts from '../../Api/contentfulPosts.json';
 
 const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {

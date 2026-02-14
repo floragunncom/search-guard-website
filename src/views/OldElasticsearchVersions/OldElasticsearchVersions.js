@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
-import '../Alerting/Alerting.scss';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';

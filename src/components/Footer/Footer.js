@@ -1,6 +1,5 @@
 import React from 'react';
 import {ReactSVG} from "react-svg";
-import './Footer.scss';
 import x_twitter from '../../images/x-twitter.svg';
 import linkedIn from '../../images/linkedin.svg';
 import youtube from '../../images/youtube.svg';

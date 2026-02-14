@@ -3,7 +3,6 @@ import Button from '../Button/Button';
 import heroCertificates from '../../images/hero-certificates.svg';
 import alliance from '../../images/alliance.svg';
 import security from '../../images/security.svg';
-import './Hero.scss';
 import hero from '../../images/hero-static.svg';
 import {ReactSVG} from "react-svg";
 

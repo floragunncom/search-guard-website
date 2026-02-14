@@ -1,6 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom'
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import {FacebookShareButton, LinkedinShareButton, RedditShareButton, TwitterShareButton,} from 'react-share';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Markdown from 'markdown-to-jsx';
@@ -15,15 +15,48 @@ import linkedIn from '../../images/linkedin.svg';
 import reddit from '../../images/reddit.svg';
 import facebook from '../../images/facebook.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
-import './BlogPostArticleContent.scss';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 import {ReactSVG} from "react-svg";
 
 const BlogPostArticleContent = ({postContent}) => {
+    const publisherLogoUrl = typeof sgLogo === 'string' ? sgLogo : sgLogo?.src || '';
+    const toTrailingSlashUrl = (pathValue) => {
+        const normalizedPath = String(pathValue || '/')
+            .replace(/\/{2,}/g, '/')
+            .replace(/^([^/])/, '/$1');
+        return `https://search-guard.com${normalizedPath.endsWith('/') ? normalizedPath : `${normalizedPath}/`}`;
+    };
 
     if (!postContent) {
         return (<Redirect to="/404/"/>);
     }
+
+    const sanitizeInternalHref = (href) => {
+        if (!href || typeof href !== 'string') {
+            return href;
+        }
+
+        let normalized = href.trim();
+        normalized = normalized.replace(/^https?:\/\/(www\.)?search-guard\.com/i, '');
+
+        if (normalized.startsWith('/') && !normalized.includes('#') && !normalized.includes('?')) {
+            if (normalized !== '/' && !normalized.endsWith('/') && !/\.[a-z0-9]+$/i.test(normalized)) {
+                normalized = `${normalized}/`;
+            }
+        }
+
+        return normalized;
+    };
+
+    const MarkdownLink = ({ href, children, ...linkProps }) => (
+        <a
+            {...linkProps}
+            href={sanitizeInternalHref(href)}
+            className="blogpostarticle-link"
+        >
+            {children}
+        </a>
+    );
 
     const options = {
         overrides: {
@@ -84,10 +117,7 @@ const BlogPostArticleContent = ({postContent}) => {
                 },
             },
             a: {
-                component: 'a',
-                props: {
-                    className: 'blogpostarticle-link',
-                },
+                component: MarkdownLink,
             },
             li: {
                 component: 'div',
@@ -181,41 +211,28 @@ const BlogPostArticleContent = ({postContent}) => {
     }
     ;
 
-    let renderVideoJson = '';
-    if (
-        video
-    ) {
-        renderVideoJson = `
-            <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "VideoObject",
-              "name": "${video.fields.title}",
-              "description": "${video.fields.shortDescription}",
-              "uploadDate": "${video.fields.publishedAt}",
-              "contentUrl": "${video.fields.url}",
-              "embedUrl": "${video.fields.embedUrl}",
-            }            
-            </script>
-        `
-    }
-    ;
+    const videoSchema = video
+        ? {
+            '@context': 'https://schema.org',
+            '@type': 'VideoObject',
+            name: video.fields.title,
+            description: video.fields.shortDescription,
+            uploadDate: video.fields.publishedAt,
+            contentUrl: video.fields.url,
+            embedUrl: video.fields.embedUrl,
+        }
+        : null;
 
-    let renderAuthorJson = '';
-    if (authorProfile) {
-        renderAuthorJson = `
-            "author": {
-               "@type": "Person",
-               "name": "${authorProfile.fields.firstName} ${authorProfile.fields.lastName}",
-               "url": "https://search-guard.com/author/${authorProfile.fields.slug}"
-            }`
-    } else {
-        renderAuthorJson = `
-            "author": {
-               "@type": "Person",
-               "name": "${postContent.fields.author}"               
-            }`
-    }
+    const authorSchema = authorProfile
+        ? {
+            '@type': 'Person',
+            name: `${authorProfile.fields.firstName} ${authorProfile.fields.lastName}`,
+            url: `https://search-guard.com/author/${authorProfile.fields.slug}`,
+        }
+        : {
+            '@type': 'Person',
+            name: `${postContent.fields.author}`,
+        };
 
     let title = '';
     if (postContent.fields.htmlTitle) {
@@ -223,6 +240,29 @@ const BlogPostArticleContent = ({postContent}) => {
     } else {
         title = postContent.fields.title;
     }
+    const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': toTrailingSlashUrl(`/blog/${postContent.fields.slug}`),
+        },
+        headline: postContent.fields.title,
+        description: postContent.fields.htmlDescription,
+        image: postContent.fields.postImage.fields.file.url,
+        author: authorSchema,
+        datePublished: postContent.fields.date,
+        dateModified: postContent.sys.updatedAt,
+        publisher: {
+            '@type': 'Organization',
+            name: 'Search Guard',
+            logo: {
+                '@type': 'ImageObject',
+                url: publisherLogoUrl,
+            },
+        },
+    };
+
     return (
         <PageWrapper>
             <Helmet>
@@ -230,7 +270,7 @@ const BlogPostArticleContent = ({postContent}) => {
                 <title>{title}</title>
                 <link
                     rel="canonical"
-                    href={`https://search-guard.com/blog/${postContent.fields.slug}`}
+                    href={toTrailingSlashUrl(`/blog/${postContent.fields.slug}`)}
                 />
 
                 <meta name="description" content={postContent.fields.htmlDescription}/>
@@ -239,7 +279,7 @@ const BlogPostArticleContent = ({postContent}) => {
 
                 <meta property="og:title" content={title}/>
                 <meta property="og:type" content="article"/>
-                <meta property="og:url" content={`https://search-guard.com/blog/${postContent.fields.slug}`}/>
+                <meta property="og:url" content={toTrailingSlashUrl(`/blog/${postContent.fields.slug}`)}/>
                 <meta property="og:description" content={postContent.fields.htmlDescription}/>
                 <meta property="og:image" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
                 <meta property="og:image:alt" content={postContent.fields.title}/>
@@ -260,7 +300,7 @@ const BlogPostArticleContent = ({postContent}) => {
                 text={postContent.fields.title}
                 subText={`${postContent.fields.author} `}
                 tags={postContent.fields.tags}
-                link={`/blog/${postContent.fields.slug} `}
+                link={`/blog/${postContent.fields.slug}`}
                 authorProfile={postContent.fields.authorProfile}
                 image={postContent.fields.postImage.fields.file.url}
             />
@@ -406,32 +446,17 @@ const BlogPostArticleContent = ({postContent}) => {
 
             <PreFooter/>
 
-            <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://search-guard.com/blog/${postContent.fields.slug}"
-            },            
-            "headline": "${postContent.fields.title}",
-            "description": "${postContent.fields.htmlDescription}",            
-            "image": "${postContent.fields.postImage.fields.file.url}",
-               ${renderAuthorJson},
-            "datePublished": "${postContent.fields.date}",
-            "dateModified": "${postContent.sys.updatedAt}",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Search Guard",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "${sgLogo}"
-              }
-            }
-          }
-        `}</script>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
 
-         {renderVideoJson}
+            {videoSchema ? (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+                />
+            ) : null}
 
 
         </PageWrapper>

@@ -4,18 +4,35 @@
 // https://www.npmjs.com/package/@leadhome/react-snap-sitemap
 // License: MIT license
 
-const builder = require('xmlbuilder');
 const { readdir, writeFile, lstat } = require('fs');
 const { promisify } = require('util');
+const path = require('path');
 const args = process.argv;
 
 const preFormattedBaseUrl = args.find((arg) => arg.startsWith('--base-url='));
 const exclusionList = args.find((arg) => arg.startsWith('--black-list='));
 const preFormattedChangeFrequency = args.find((arg) => arg.startsWith('--change-frequency='));
-let blackList = ["https://search-guard.com/heise", "https://search-guard.com/thanks"];
+const preFormattedOutDir = args.find((arg) => arg.startsWith('--out-dir='));
+let blackList = [
+    'https://search-guard.com/heise/',
+    'https://search-guard.com/thanks/',
+    'https://search-guard.com/error/',
+    'https://search-guard.com/security-for-elasticsearch/',
+    'https://search-guard.com/elasticsearch-kibana-security/',
+    'https://search-guard.com/tls-certificate-generator/',
+    'https://search-guard.com/blog/page/1/',
+];
+const stripWrappingQuotes = (value) => {
+    if (!value) {
+        return value;
+    }
+    return value.replace(/^['"]|['"]$/g, '');
+};
+
+const outDir = stripWrappingQuotes(preFormattedOutDir ? preFormattedOutDir.split('=')[1] : 'dist');
 
 if (exclusionList) {
-    let params = exclusionList.split('=')[1];
+    let params = stripWrappingQuotes(exclusionList.split('=')[1]);
     blackList = params.split(',');
     console.log('👋 Exluding URLs:', blackList.join(', '))
 }
@@ -23,7 +40,7 @@ if (exclusionList) {
 let baseUrl;
 
 if (preFormattedBaseUrl) {
-    baseUrl  = preFormattedBaseUrl.split('=')[1];
+    baseUrl  = stripWrappingQuotes(preFormattedBaseUrl.split('=')[1]);
 } else {
     throw (new Error('Missing valid --base-url command line argument'));
 }
@@ -35,12 +52,20 @@ if (baseUrl.length === 0) {
 let changeFrequency;
 
 if (preFormattedChangeFrequency) {
-    changeFrequency  = preFormattedChangeFrequency.split('=')[1];
+    changeFrequency  = stripWrappingQuotes(preFormattedChangeFrequency.split('=')[1]);
 } else {
     changeFrequency = 'monthly';
 }
 
 const asyncReaddir = promisify(readdir), asyncWriteFile = promisify(writeFile), asyncLStat = promisify(lstat);
+
+const escapeXml = (value) =>
+    String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
 
 const asyncForEach = async (array, callback) => {
     for (let index = 0; index < array.length; index++) {
@@ -49,6 +74,64 @@ const asyncForEach = async (array, callback) => {
 }
 
 let allRoots = [];
+
+const PRODUCT_HIGH_PRIORITY_PATHS = new Set([
+    '/security/',
+    '/alerting/',
+    '/licensing/',
+    '/search-guard-flx/',
+    '/search-guard-free-trial/',
+    '/encryption-at-rest/',
+]);
+
+const LEGAL_UTILITY_PATH_PREFIXES = [
+    '/impressum/',
+    '/datenschutz/',
+    '/dataprotection/',
+    '/security-information/',
+    '/disclosure-policy/',
+    '/cve-advisory/',
+    '/sitemap/',
+    '/404/',
+];
+
+const resolvePriority = (url) => {
+    let pathname;
+    try {
+        pathname = new URL(url).pathname;
+    } catch (error) {
+        return '0.5';
+    }
+
+    const normalizedPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+
+    if (normalizedPath === '/') {
+        return '1.0';
+    }
+
+    if (PRODUCT_HIGH_PRIORITY_PATHS.has(normalizedPath)) {
+        return '0.8';
+    }
+
+    if (
+        normalizedPath.startsWith('/blog/page/') ||
+        normalizedPath.startsWith('/blog/category/') ||
+        normalizedPath.startsWith('/author/') ||
+        normalizedPath === '/authors/'
+    ) {
+        return '0.3';
+    }
+
+    if (LEGAL_UTILITY_PATH_PREFIXES.some((prefix) => normalizedPath.startsWith(prefix))) {
+        return '0.2';
+    }
+
+    if (normalizedPath.startsWith('/blog/')) {
+        return '0.6';
+    }
+
+    return '0.6';
+};
 
 const readSite = async (dir) => {
     const directory = await asyncReaddir(dir, { withFileTypes: true });
@@ -71,42 +154,70 @@ const readSite = async (dir) => {
         if (stat.isDirectory()) {
             await readSite(root);
         } else if (path === 'index.html') {
-            allRoots = [...allRoots, root];
+            allRoots = [
+                ...allRoots,
+                {
+                    root,
+                    lastmod: stat.mtime.toISOString(),
+                },
+            ];
         }
     });
 }
 
 (async () => {
-    await readSite('build');
+    await readSite(outDir);
 
-    const siteUrls = allRoots.map(root => root.replace('build/', baseUrl).replace('/index.html', ''));
+    const toTrailingSlashUrl = (url) => (url.endsWith('/') ? url : `${url}/`);
+    const normalizedBlackList = new Set(blackList.map((url) => toTrailingSlashUrl(url.trim())));
+    const sitemapEntriesByUrl = new Map();
+    allRoots.forEach((entry) => {
+        const rawUrl = entry.root.replace(`${outDir}/`, baseUrl).replace('/index.html', '');
+        const url = toTrailingSlashUrl(rawUrl);
+        if (normalizedBlackList.has(url)) {
+            return;
+        }
 
-    const urlset = builder.create('urlset', { encoding: 'UTF-8', version: '1.0' });
+        const current = sitemapEntriesByUrl.get(url);
+        if (!current || new Date(entry.lastmod) > new Date(current.lastmod)) {
+            sitemapEntriesByUrl.set(url, { url, lastmod: entry.lastmod });
+        }
+    });
 
-    urlset.attribute('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
+    const uniqueUrls = Array.from(sitemapEntriesByUrl.keys());
 
-    siteUrls
-        .filter(url => !blackList.includes(url))
-        .sort((a, b) => a.length - b.length)
-        .forEach(url => {
-            url = url + "/";
-            const u = urlset.ele('url');
-
-            u.ele('loc', url);
-            if (changeFrequency) {
-                u.ele('changefreq', changeFrequency);
-            }
-            u.ele('priority', 0.5);
+    const urlEntries = Array.from(sitemapEntriesByUrl.values())
+        .sort((a, b) => a.url.length - b.url.length)
+        .map((entry) => {
+            const changefreqTag = changeFrequency
+                ? `\n    <changefreq>${escapeXml(changeFrequency)}</changefreq>`
+                : '';
+            const lastmodTag = entry.lastmod
+                ? `\n    <lastmod>${escapeXml(entry.lastmod)}</lastmod>`
+                : '';
+            const priority = resolvePriority(entry.url);
+            return `  <url>\n    <loc>${escapeXml(entry.url)}</loc>${lastmodTag}${changefreqTag}\n    <priority>${priority}</priority>\n  </url>`;
         });
 
-    const u = urlset.ele('url');
-    u.ele('changefreq', 'monthly');
-    u.ele('loc', 'https://search-guard.com/sitemap/');
-    u.ele('priority', 0.5);
+    const htmlSitemapUrl = toTrailingSlashUrl(`${baseUrl.replace(/\/$/, '')}/sitemap`);
+    if (!uniqueUrls.includes(htmlSitemapUrl) && !normalizedBlackList.has(htmlSitemapUrl)) {
+        urlEntries.push(
+            '  <url>\n' +
+            `    <loc>${escapeXml(htmlSitemapUrl)}</loc>\n` +
+            '    <changefreq>monthly</changefreq>\n' +
+            `    <priority>${resolvePriority(htmlSitemapUrl)}</priority>\n` +
+            '  </url>'
+        );
+    }
 
-    const sitemap = urlset.end({ pretty: true });
+    const sitemap =
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
+        `${urlEntries.join('\n')}\n` +
+        '</urlset>\n';
 
-    await asyncWriteFile('build/sitemap.xml', sitemap);
+    const sitemapPath = path.resolve(process.cwd(), outDir, 'sitemap.xml');
+    await asyncWriteFile(sitemapPath, sitemap);
 
-    console.log('🙂 Successfully built sitemap.xml in build directory');
+    console.log(`🙂 Successfully built sitemap.xml: ${sitemapPath}`);
 })();

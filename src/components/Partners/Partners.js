@@ -2,7 +2,6 @@ import React from 'react';
 import eliatra from '../../images/partner-eliatra.png';
 import excelerate from '../../images/partner-xsys.png';
 import sirenPartner from '../../images/partner-siren.jpg';
-import './Partners.scss';
 import ColumnedTile from "../Tiles/ColumnedTile/ColumnedTile";
 
 const Partners = () => {

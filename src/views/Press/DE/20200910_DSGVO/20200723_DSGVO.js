@@ -1,6 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import '../../PressArticle.scss';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../../../components/PreFooter/PreFooter';
 import Title from '../../../../components/Title/Title';
@@ -8,6 +7,8 @@ import dsgvo from "../../../../images/elasticsearch_dsgvo.jpeg";
 import CTATrialLicense from "../../../../components/CTA/CTAStartFreeTrial";
 
 const Alerting = () => {
+    const assetUrl = (value) => (typeof value === 'string' ? value : value?.src || '');
+
     return (
         <PageWrapper>
             <Helmet>
@@ -26,7 +27,7 @@ const Alerting = () => {
 
             <div className="row pressarticle-wrapper">
                 <div className="col l4 hide-on-med-and-down">
-                    <a href={dsgvo} target="_blank" rel="noopener noreferrer"><img loading="lazy" src={dsgvo}
+                    <a href={assetUrl(dsgvo)} target="_blank" rel="noopener noreferrer"><img loading="lazy" src={assetUrl(dsgvo)}
                                                                                    className="press-profile-pic"
                                                                                    alt="GDPR for Elasticsearch"/></a>
                     <div className="pressarticle-image-subline">

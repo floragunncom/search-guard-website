@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Button from '../../components/Button/Button';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
-import './Error.scss';
 
 const Error = () => {
 
@@ -18,6 +17,7 @@ const Error = () => {
         <meta charSet="utf-8" />
         <title>Search Guard | An error occured</title>
         <link rel="canonical" href="https://search-guard.com/error/" />
+        <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
           content="An internal error occured, we humpy and deeply apologize"

@@ -1,9 +1,8 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import './Heise.scss';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnlyNoNL";
 import certificate from "../../images/icon-certificate.svg";
 import shieldWheel from "../../images/shield-wheel.svg";

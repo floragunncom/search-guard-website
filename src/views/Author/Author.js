@@ -1,9 +1,8 @@
-import './Author.scss';
 import persons from '../../Api/contentfulPersons.json';
 import posts from '../../Api/contentfulPosts.json';
 import React from 'react';
 import {Redirect} from 'react-router-dom'
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Markdown from 'markdown-to-jsx';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -12,6 +11,12 @@ import Title from "../../components/Title/Title";
 import BlogPostSmall from "../../components/BlogPost/BlogPostSmall";
 
 const Author = ({ match }) => {
+  const toTrailingSlashUrl = (pathValue) => {
+    const normalizedPath = String(pathValue || '/')
+      .replace(/\/{2,}/g, '/')
+      .replace(/^([^/])/, '/$1');
+    return `https://search-guard.com${normalizedPath.endsWith('/') ? normalizedPath : `${normalizedPath}/`}`;
+  };
 
   const slug = match.url.split("/")[2] + "/";
 
@@ -142,34 +147,39 @@ const Author = ({ match }) => {
     );
   }
 
+  const pageTitle = `Search Guard Author: ${person.fields.firstName} ${person.fields.lastName}`;
+  const pageDescription = person.fields.htmlDescription;
+  const pageCanonicalUrl = toTrailingSlashUrl(`/author/${person.fields.slug}`);
+  const avatarUrl = `https:${person.fields.avatar.fields.file.url}`;
+
   return (
     <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Search Guard Author: {person.fields.firstName} {person.fields.lastName}</title>
+        <title>{pageTitle}</title>
         <link
           rel="canonical"
-          href={`https://search-guard.com/author/${person.fields.slug}`}
+          href={pageCanonicalUrl}
         />
 
-        <meta name="description" content={person.fields.htmlDescription} />
+        <meta name="description" content={pageDescription} />
 
-        <meta property="og:title" content={`${person.fields.firstName} ${person.fields.lastName}`}/>
+        <meta property="og:title" content={pageTitle}/>
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://search-guard.com/author/${person.fields.slug}`} />
-        <meta property="og:description" content={person.fields.htmlDescription}/>
-        <meta property="og:image" content={`https:${person.fields.avatar.fields.file.url}`}/>
+        <meta property="og:url" content={pageCanonicalUrl} />
+        <meta property="og:description" content={pageDescription}/>
+        <meta property="og:image" content={avatarUrl}/>
         <meta property="og:image:alt" content={`${person.fields.firstName} ${person.fields.lastName}`}/>
         <meta property="og:locale" content="en_US" />
 
         <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:site" content="@searchguard"/>
         <meta name="twitter:creator" content="@searchguard"/>
-        <meta name="twitter:title" content={`${person.fields.firstName} ${person.fields.lastName}`} />
-        <meta name="twitter:description" content={person.fields.htmlDescription} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
 
-        <meta name="twitter:image" content={`https:${person.fields.avatar.fields.file.url}`} />
-        <meta name="twitter:image:src" content={`https:${person.fields.avatar.fields.file.url}`} />
+        <meta name="twitter:image" content={avatarUrl} />
+        <meta name="twitter:image:src" content={avatarUrl} />
         <meta name="twitter:image:alt" content={`${person.fields.firstName} ${person.fields.lastName}`} />
 
       </Helmet>
@@ -220,21 +230,24 @@ const Author = ({ match }) => {
       </div>
 
       <PreFooter />
-      <script type="application/ld+json">{`
-{
-      "@context": "https://schema.org",
-      "@type": "ProfilePage",
-      "dateCreated": "${person.sys.createdAt}",
-      "dateModified": "${person.sys.updatedAt}",
-      "mainEntity": {
-        "@type": "Person",
-        "name": "${person.fields.firstName} ${person.fields.lastName}",
-        "identifier": "${person.sys.id}",
-        "description": "${person.fields.htmlDescription}",
-        "image": "${person.fields.avatar.fields.file.url}"
-      }
-    }
-`}</script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ProfilePage',
+            dateCreated: person.sys.createdAt,
+            dateModified: person.sys.updatedAt,
+            mainEntity: {
+              '@type': 'Person',
+              name: `${person.fields.firstName} ${person.fields.lastName}`,
+              identifier: person.sys.id,
+              description: person.fields.htmlDescription,
+              image: person.fields.avatar.fields.file.url,
+            },
+          }),
+        }}
+      />
     </PageWrapper>
   );
 };

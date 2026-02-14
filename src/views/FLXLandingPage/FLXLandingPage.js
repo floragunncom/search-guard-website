@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
@@ -21,7 +21,7 @@ const Security = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Search Guard FLX | Securing your Elasticsearch cluster has never been easier
+          Search Guard FLX: Elasticsearch Security Made Easy
         </title>
         <link rel="canonical" href="https://search-guard.com/security/" />
         <meta

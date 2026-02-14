@@ -1,5 +1,4 @@
 import React from 'react';
-import './Title.scss';
 import Button from "../Button/Button";
 
 const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink, buttontarget, titlestyle }) => {

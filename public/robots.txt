@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# Explicitly allow major AI crawlers
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
 Sitemap: https://search-guard.com/sitemap.xml

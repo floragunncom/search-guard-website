@@ -1,6 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import './DataProtection.scss';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -18,6 +17,8 @@ const DataProtection = () => {
                 <meta charSet="utf-8" />
                 <title>Data Protection - Search Guard</title>
                 <link rel="canonical" href="https://search-guard.com/dataprotection/" />
+                <link rel="alternate" hrefLang="en" href="https://search-guard.com/dataprotection/" />
+                <link rel="alternate" hrefLang="de" href="https://search-guard.com/datenschutz/" />
                 <meta
                     name="description"
                     content="Our policy regarding the collection and usage of personal data in accordance with GDPR."
