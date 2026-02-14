@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './SearchBlogPost.scss';
 
 const SearchBlogPost = ({ post }) => {
   let previewContentTextLength = 165;

@@ -1,16 +1,17 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import './WhitePapers.scss';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import whitepaperarticles from '../../Api/contentfulWhitepapers.json';
 import Button from "../../components/Button/Button";
+const hipaaImage = '/assets/20200831_HIPAA_Elastic_Stack.jpg';
+const hipaaPdf = '/assets/20200831_HIPAA_Elastic_Stack.pdf';
 
 const whitepapers = [
     {
-        image: require("../../images/20200831_HIPAA_Elastic_Stack.jpg"),
-        download: require("../../downloads/20200831_HIPAA_Elastic_Stack.pdf"),
+        image: hipaaImage,
+        download: hipaaPdf,
         slug: 'hipaa-compliance-elastic-slack/'
     }
 ];

@@ -72,3 +72,28 @@
     line-height: 24px;
   };
 }
+
+.labels-section .columnedtile-row {
+  align-items: flex-start;
+}
+
+.labels-section .columnedtile-icon-wrapper {
+  min-height: 180px;
+  margin-bottom: 24px;
+}
+
+.labels-section .columnedtile-icon-wrapper .react-svg,
+.labels-section .columnedtile-icon-wrapper .react-svg > svg,
+.labels-section .columnedtile-icon-wrapper img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.labels-section .columnedtile-icon-wrapper svg,
+.labels-section .columnedtile-icon-wrapper svg * {
+  fill: $secondary-light !important;
+  stroke: $secondary-light !important;
+}

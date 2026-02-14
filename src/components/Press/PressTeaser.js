@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '../Button/Button';
-import './PressTeaser.scss';
 import alerting from "../../images/press_teaser_alerting.png";
 import tmahler from "../../images/tmahler_press.jpg";
 import dsgvo from "../../images/elasticsearch_dsgvo.jpeg";

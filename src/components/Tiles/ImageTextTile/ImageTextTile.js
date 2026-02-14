@@ -1,5 +1,4 @@
 import React from 'react';
-import './ImageTextTile.scss';
 import {getColorSchemaCSS, getColorSchemaCSSForSVG} from "../../../utils/styleUtils";
 import {ReactSVG} from "react-svg";
 

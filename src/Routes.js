@@ -1,5 +1,6 @@
-import {Redirect, Route, Switch} from 'react-router-dom';
-import React from 'react';
+import {Redirect, Route, Switch, useLocation} from 'react-router-dom';
+import React, {useEffect} from 'react';
+import { Helmet } from 'react-helmet-async';
 import HomePage from './views/HomePage/HomePage';
 import ContactUs from './views/ContactUs/ContactUs';
 import Blog from './views/Blog/Blog';
@@ -42,10 +43,65 @@ import Newsletter from './views/Newsletter/Newsletter';
 import HtmlSitemap from './views/HtmlSitemap/HtmlSitemap';
 import Error from './views/Error/Error';
 import EncryptionAtRest from "./views/EncryptionAtRest/EncryptionAtRest";
+import PageWrapper from './components/PageWrapper/PageWrapper';
+
+const PrerenderReadySignal = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return undefined;
+    }
+
+    window.__PRERENDER_READY__ = false;
+    const readyTimer = window.setTimeout(() => {
+      window.__PRERENDER_READY__ = true;
+    }, 0);
+
+    return () => {
+      window.clearTimeout(readyTimer);
+    };
+  }, [location.pathname]);
+
+  return null;
+};
 
 const Routes = () => {
+  const LegacyRedirect = ({ to, title }) => {
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+        window.location.replace(to);
+      }
+    }, [to]);
+
+    return (
+      <PageWrapper>
+        <Helmet>
+          <title>{title}</title>
+          <meta
+            name="description"
+            content={`This page has moved permanently to ${to}`}
+          />
+          <link rel="canonical" href={`https://search-guard.com${to}`} />
+          <meta name="robots" content="noindex,follow" />
+          <meta httpEquiv="refresh" content={`0;url=${to}`} />
+        </Helmet>
+        <div className="row">
+          <div className="col s12 center">
+            <h1>Redirecting...</h1>
+            <p>
+              This page has moved. Continue to{' '}
+              <a href={to}>{`https://search-guard.com${to}`}</a>.
+            </p>
+          </div>
+        </div>
+      </PageWrapper>
+    );
+  };
+
   return (
     <React.Fragment>
+        <PrerenderReadySignal />
 
         <Switch>
 
@@ -79,11 +135,17 @@ const Routes = () => {
           <Route exact path="/newsletter/" component={Newsletter} />
 
           <Route exact path="/security-for-elasticsearch/">
-            <Redirect to="/security/" />
+            <LegacyRedirect
+              to="/security/"
+              title="Redirecting to Security | Search Guard"
+            />
           </Route>
 
           <Route exact path="/elasticsearch-kibana-security/">
-            <Redirect to="/security/" />
+            <LegacyRedirect
+              to="/security/"
+              title="Redirecting to Security | Search Guard"
+            />
           </Route>
 
           <Route exact path="/thanks/" component={Thanks} />
@@ -99,7 +161,10 @@ const Routes = () => {
           <Route exact path="/disclosure-policy/" component={Disclosure} />
 
           <Route exact path="/tls-certificate-generator/">
-            <Redirect to="/security/" />
+            <LegacyRedirect
+              to="/security/"
+              title="Redirecting to Security | Search Guard"
+            />
           </Route>
 
           <Route exact path="/authors/" component={Authors} />

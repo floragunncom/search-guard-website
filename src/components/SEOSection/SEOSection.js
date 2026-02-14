@@ -1,5 +1,4 @@
 import React from 'react';
-import './SEOSection.scss';
 import arrow from '../../images/blog-info-arrow-forward.svg';
 
 const SEOSection = () => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Services.scss';
 import Button from '../Button/Button';
 import key from '../../images/key-solid.svg';
 import db from '../../images/database-solid.svg';

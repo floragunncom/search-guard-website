@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
@@ -35,6 +35,23 @@ const Security = () => {
                     name="description"
                     content="Secure your Elasticsearch and Kibana installation with Search Guard and add access control, encryption, audit logging and alerting."
                 />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'SoftwareApplication',
+                        name: 'Search Guard Security',
+                        applicationCategory: 'SecurityApplication',
+                        operatingSystem: 'Linux, Windows, macOS',
+                        url: 'https://search-guard.com/security/',
+                        description: 'Security suite for Elasticsearch and Kibana with access control, encryption, audit logging and compliance features.',
+                        offers: {
+                            '@type': 'Offer',
+                            priceCurrency: 'USD',
+                            availability: 'https://schema.org/InStock',
+                            url: 'https://search-guard.com/search-guard-free-trial/',
+                        },
+                    })}
+                </script>
             </Helmet>
             <Title
                 headline="Security for Elasticsearch and Kibana"

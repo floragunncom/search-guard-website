@@ -1,5 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Journey from '../../components/Journey/Journey';

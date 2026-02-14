@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import './../LicensingModel/LicensingModel.scss';
 import enterprise from '../../images/icon-enterprise.svg';
 import compliance from '../../images/icon-compliance.svg';
 import community from '../../images/icon-community.svg';

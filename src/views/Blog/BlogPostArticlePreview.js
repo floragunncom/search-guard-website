@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Redirect, useParams} from 'react-router-dom'
 import BlogPostArticleContent from "../../components/BlogPost/BlogPostArticleContent";
+import { createClient } from 'contentful';
 
 const BlogPostArticlePreview = ({ match }) => {
 
@@ -11,7 +12,7 @@ const BlogPostArticlePreview = ({ match }) => {
 
   const fetchPost = async() => {
 
-    const client = require('contentful').createClient({
+    const client = createClient({
       space: '95di84mqkkro',
       accessToken: '5c5c1b8657c1ff7356d0736bfa52dfc226d5617d4d50c992d9a6a21a64db86c6',
       host: 'preview.contentful.com',

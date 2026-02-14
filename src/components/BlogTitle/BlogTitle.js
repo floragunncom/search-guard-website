@@ -1,5 +1,4 @@
 import React from 'react';
-import './BlogTitle.scss';
 
 const Title = ({ text, subText, tags, link, authorProfile, image }) => {
   const renderTags = (
@@ -25,19 +24,19 @@ const Title = ({ text, subText, tags, link, authorProfile, image }) => {
             <div itemScope itemType="https://schema.org/BreadcrumbList" className="col s12 center breadcrumblist">
                 <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                     <a itemProp="item" href="/" className="title-breadcrumb-item">
-                        <span itemProp="name">Home ></span>
+                        <span itemProp="name">Home {'>'}</span>
                         <meta itemProp="position" content="1"/>
                     </a>
                 </span>
                 <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                     <a itemProp="item" href="/resource/" className="title-breadcrumb-item">
-                        <span itemProp="name">Resources ></span>
+                        <span itemProp="name">Resources {'>'}</span>
                         <meta itemProp="position" content="2"/>
                     </a>
                 </span>
                 <span itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                     <a itemProp="item" href="/blog/" className="title-breadcrumb-item">
-                        <span itemProp="name">Blog ></span>
+                        <span itemProp="name">Blog {'>'}</span>
                         <meta itemProp="position" content="3"/>
                     </a>
                 </span>

@@ -1,6 +1,5 @@
 import React from 'react';
 import {ReactSVG} from "react-svg";
-import './PreFooter.scss';
 import Email from '../Email/Email';
 import sg_helmet_logo from '../../images/SG_Helmet_LOGO 1.svg';
 

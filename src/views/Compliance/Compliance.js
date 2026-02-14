@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
-import {Helmet} from 'react-helmet';
-import '../FreeTrial/FreeTrial.scss';
-import './Compliance.scss';
+import {Helmet} from 'react-helmet-async';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
@@ -33,7 +31,7 @@ const Compliance = () => {
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>
-                    Elasticsearch Compliance | GDPR, HIPAA, PCI, SOX and ISO
+                    Elasticsearch Compliance | GDPR, HIPAA, PCI, SOX and ISO | Search Guard
                 </title>
                 <link rel="canonical" href="https://search-guard.com/compliance/"/>
                 <meta

@@ -1,5 +1,4 @@
 import React from 'react';
-import './../TableEditions/TableEditions.scss';
 import compliance from '../../images/checkmark-red.svg';
 import enterprise from '../../images/checkmark-green.svg';
 import community from '../../images/checkmark-gold.svg';

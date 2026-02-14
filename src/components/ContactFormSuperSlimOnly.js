@@ -1,13 +1,46 @@
-import React, {useState} from 'react';
-import './ContactForm.scss';
+import React from 'react';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 
 const ContactForm = () => {
+  const [sendbuttonValue, setSendbuttonValue] = React.useState('Send Message');
+
+  async function handleSubmit(formElements) {
+    const data = {};
+    formElements.forEach((input) => {
+      data[input.name] = input.value;
+    });
+
+    return fetch('https://56dmarth25.execute-api.eu-central-1.amazonaws.com/prod/', {
+      method: 'POST',
+      cache: 'no-cache',
+      headers: {
+        accept: 'application/json; charset=utf-8',
+        'content-type': 'application/json; charset=UTF-8',
+      },
+      body: JSON.stringify(data),
+    });
+  }
+
+  const postDataToCRM = async (event) => {
+    event.preventDefault();
+
+    setSendbuttonValue('Processing ...');
+
+    const formElements = Array.from(event.target);
+
+    handleSubmit(formElements)
+      .then(() => {
+        window.location.href = '/thanks/';
+      })
+      .catch(() => {
+        window.location.href = '/thanks/';
+      });
+  };
 
   return (
         <div className="contact-info-container">
-            <form className="cf-form">
+            <form onSubmit={postDataToCRM}>
             <div className="contact-info-wrapper">
               <div className="contact-info-input-fields">
                 <div className="input-field col s12 m6">
@@ -240,7 +273,7 @@ const ContactForm = () => {
                 and manage your submitted data.
               </div>
                 <div className="cta-wrapper">
-                    <Button text="Send Message" additionalCss="cf-submit" variant="submit"/>
+                    <Button text={sendbuttonValue} additionalCss="cf-submit" variant="submit"/>
                 </div>
                 <div className="cf-feedback">
                     <h5>Processing</h5>

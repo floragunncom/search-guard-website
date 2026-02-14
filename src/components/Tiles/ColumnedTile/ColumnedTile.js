@@ -1,6 +1,5 @@
 import React from 'react';
 import {ReactSVG} from 'react-svg';
-import "./ColumnedTile.scss";
 import Button from "../../Button/Button";
 import {getColorSchemaCSS, getColorSchemaCSSForSVG} from '../../../utils/styleUtils';
 
@@ -19,20 +18,65 @@ const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, columns}) 
 
     let imageCss = getColorSchemaCSSForSVG(svgcolor);
 
+    const getInlineSvgColor = (imageCSS) => {
+        if (imageCSS === 'color-schema-svg-light') {
+            return '#02F0DD';
+        }
+        if (imageCSS === 'color-schema-svg-dark' || imageCSS === 'color-schema-svg-white') {
+            return '#B0F8F2';
+        }
+        return null;
+    };
+
+    const resolveAssetSrc = (src) => {
+        if (typeof src === 'string') {
+            return src;
+        }
+        if (src && typeof src === 'object' && typeof src.src === 'string') {
+            return src.src;
+        }
+        if (src && typeof src === 'object' && typeof src.default === 'string') {
+            return src.default;
+        }
+        return '';
+    };
+
     // Helper function to check if the image is SVG
     const isSVG = (src) => {
-        return src.toLowerCase().endsWith('.svg');
+        const resolvedSrc = resolveAssetSrc(src);
+        if (!resolvedSrc) {
+            return false;
+        }
+        const normalizedSrc = resolvedSrc.split('?')[0].split('#')[0];
+        return normalizedSrc.toLowerCase().endsWith('.svg');
     };
 
     const renderImage = (imageJSON, imageCSS, headline) => {
+        const source = resolveAssetSrc(imageJSON.src);
+
         if (isSVG(imageJSON.src)) {
             return (
                 <ReactSVG
-                    src={imageJSON.src}
+                    src={source}
                     beforeInjection={(svg) => {
+                        const inlineSvgColor = getInlineSvgColor(imageCSS);
+                        svg.querySelectorAll('*').forEach((element) => {
+                            element.removeAttribute('fill');
+                            element.removeAttribute('stroke');
+                            element.removeAttribute('style');
+                            if (inlineSvgColor) {
+                                element.setAttribute('fill', inlineSvgColor);
+                                element.setAttribute('stroke', inlineSvgColor);
+                            }
+                        });
                         svg.setAttribute('width', imageJSON.width);
                         svg.setAttribute('height', imageJSON.height);
                         svg.setAttribute('class', imageCSS);
+                        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+                        if (inlineSvgColor) {
+                            svg.setAttribute('fill', inlineSvgColor);
+                            svg.setAttribute('stroke', inlineSvgColor);
+                        }
                         svg.setAttribute('title', imageJSON.alt);
                     }
                     }
@@ -41,8 +85,10 @@ const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, columns}) 
         } else {
             return (
                 <img
-                    src={imageJSON.src}
+                    src={source}
                     alt={imageJSON.alt}
+                    width={imageJSON.width}
+                    height={imageJSON.height}
                     className={`responsive-img ${imageCSS}`}
                 />
             );

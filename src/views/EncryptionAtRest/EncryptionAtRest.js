@@ -1,6 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import './EncryptionAtRest.scss';
+import {Helmet} from 'react-helmet-async';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
@@ -74,6 +73,23 @@ const EncryptionAtRest = () => {
                     name="description"
                     content="We provide military-grade Encryption at Rest for Elasticsearch, ensuring complete data sovereignty and compliance with PCI, ISO, SOX and EU regulations. The only standalone plugin that encrypts all Lucene data at its core."
                 />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'SoftwareApplication',
+                        name: 'Search Guard Encryption at Rest',
+                        applicationCategory: 'SecurityApplication',
+                        operatingSystem: 'Linux, Windows, macOS',
+                        url: 'https://search-guard.com/encryption-at-rest/',
+                        description: 'Encryption at Rest for Elasticsearch indices and snapshots with compliance-focused data protection.',
+                        offers: {
+                            '@type': 'Offer',
+                            priceCurrency: 'USD',
+                            availability: 'https://schema.org/InStock',
+                            url: 'https://search-guard.com/contacts/',
+                        },
+                    })}
+                </script>
             </Helmet>
             <Title
                 headline="Encryption at Rest for Elasticsearch"

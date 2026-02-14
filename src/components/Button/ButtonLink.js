@@ -1,5 +1,4 @@
 import React from 'react';
-import './Button.scss';
 
 const ButtonLink = ({style, link, target, text, onPress}) => {
 

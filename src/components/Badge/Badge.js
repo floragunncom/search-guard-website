@@ -1,5 +1,4 @@
 import React from 'react';
-import './Badge.scss';
 
 export const Badge = ({ text, bgColor, textColor, ...props }) => {
   return (

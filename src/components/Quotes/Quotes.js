@@ -1,9 +1,42 @@
 import React, {Component} from 'react';
-import './Quotes.scss';
 import quoteUp from '../../images/quote-up.svg';
 import quoteDown from '../../images/quote-down.svg';
 
 class Quotes extends Component {
+  constructor(props) {
+    super(props);
+    this.sliderRef = React.createRef();
+    this.initAttempts = 0;
+    this.maxInitAttempts = 20;
+    this.initRetryDelayMs = 100;
+    this.initTimer = null;
+  }
+
+  componentDidMount() {
+    this.initSlider();
+  }
+
+  componentWillUnmount() {
+    if (this.initTimer) {
+      clearTimeout(this.initTimer);
+    }
+  }
+
+  initSlider = () => {
+    if (!window.M || !this.sliderRef.current) {
+      if (this.initAttempts < this.maxInitAttempts) {
+        this.initAttempts += 1;
+        this.initTimer = setTimeout(this.initSlider, this.initRetryDelayMs);
+      }
+      return;
+    }
+
+    const options = {
+      indicators: true,
+      duration: 500,
+    };
+    window.M.Slider.init(this.sliderRef.current, options);
+  };
 
   render() {
     const quotes = [
@@ -63,7 +96,7 @@ class Quotes extends Component {
       <div className="quotes-container color-schema-light default-padding-top-bottom">
         <div className="row">
           <h2 className="quotes-headline">What our clients say</h2>
-          <div className="slider">
+          <div className="slider" ref={this.sliderRef}>
             <ul className="slides">
               {quotes.map(quote => {
                 return (

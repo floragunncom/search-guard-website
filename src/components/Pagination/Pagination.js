@@ -1,5 +1,4 @@
 import React from 'react';
-import './Pagination.scss';
 
 const Pagination = ({ postsPerPage, totalPosts}) => {
   const pageNumbers = [];
@@ -12,9 +11,10 @@ const Pagination = ({ postsPerPage, totalPosts}) => {
     <div>
       <ul className="pagination-wrapper">
         {pageNumbers.map(number => {
+          const href = number === 1 ? '/blog/' : `/blog/page/${number}/`;
           return (
             <li key={number} className="pagination-number">
-              <a href={ `/blog/page/${number}/` } >
+              <a href={href} >
                 {number}
               </a>
             </li>

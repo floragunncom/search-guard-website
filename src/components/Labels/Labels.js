@@ -2,7 +2,6 @@ import React from 'react';
 import certificate from '../../images/clipboard-check-solid.svg';
 import check from '../../images/thumbs-up-regular.svg';
 import support from '../../images/headset-solid.svg';
-import './Labels.scss';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 
 const Labels = () => {
@@ -39,7 +38,7 @@ const Labels = () => {
 
 
   return (
-      <ColumnedTile colorschema="white" wrapperclass="default-padding-top-bottom" columns={content} />
+      <ColumnedTile colorschema="white" wrapperclass="default-padding-top-bottom labels-section" columns={content} />
   );
 };
 

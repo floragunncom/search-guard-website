@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 
@@ -25,7 +25,6 @@
     <!-- Matomo -->
     <script>
         var _paq = window._paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         (function() {
@@ -50,8 +49,6 @@
         gtag('config', 'G-QHSP7VYSH1');
     </script>
 
-
-    <!--Intermediate, track anomalies -->
     <script type='text/javascript'>
         window.smartlook || (function (d) {
             var o = smartlook = function () {
@@ -68,7 +65,6 @@
         smartlook('init', '846683638cd3d1a420f53ad9df6b3e4368916605', {region: 'eu'});
     </script>
 
-    <!-- preload critical resources -->
     <link rel="preload" href="/assets/fonts/Inter-Regular.ttf" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/Parafina-BoldS.otf" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/Parafina-BlackS.otf" as="font" type="font/woff2" crossorigin>
@@ -77,9 +73,6 @@
     <link rel="preload" as="style" href="/assets/fonts/fonts.css">
     <link rel="preload" href="/assets/main.js" as="script" />
     <link rel="preload" href="https://cdn.cookie-script.com/s/a521e590130162749ba95a6c3ffc0462.js" as="script" />
-
-    <!-- critical above the fold CSS -->
-    <!-- todo add the materialize grid system? -->
 
     <style>
         body {
@@ -127,10 +120,6 @@
         }
 
         .row .col {
-            @media only screen and (max-width: 600px) {
-                padding-top: 20px;
-                hyphens: none;
-            }
             padding: 0px 20px;
             margin-left: 0px;
             margin-right: 0px;
@@ -152,9 +141,6 @@
         }
 
         h1.title-headline-style {
-            @media (max-width: 600px) {
-                font-size: 48px;
-            }
             color: #184962;
             word-break: normal;
             hyphens: none;
@@ -197,6 +183,10 @@
             .title-headline-style {
                 padding: 0px 0px 0px 0px;
                 margin-top: 15px;
+            }
+
+            h1.title-headline-style {
+              font-size: 48px;
             }
 
             .hero-text-wrapper-headline {
@@ -243,12 +233,10 @@
 
     </style>
 
-    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="/assets/materialize.min.css" media="screen">
 
     <meta charset="utf-8"/>
     <link rel="shortcut icon" href="/assets/favicon.ico"/>
-    <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="theme-color" content="#000000"/>
     <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96"/>
@@ -263,7 +251,7 @@
         async
         defer
         src="https://cdn.jsdelivr.net/npm/@algolia/client-search@5.19.0/dist/builds/browser.umd.js"
-    ></script>       
+    ></script>
 </head>
 <body>
 <script>
@@ -281,12 +269,12 @@
     }();
 </script>
 <div id="root"></div>
-</body>
-<!-- All font definitions -->
+
 <link href="/assets/fonts/fonts.css" rel="stylesheet" media="screen" >
 
 <script src="/assets/materialize.min.js" defer></script>
 <script src="/assets/glide.min.js" defer></script>
 <script src="/assets/main.js" defer></script>
-
+<script type="module" src="/src/index.js"></script>
+</body>
 </html>

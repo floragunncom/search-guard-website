@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Hero from '../../components/Hero/Hero';
@@ -29,13 +29,28 @@ const HomePage = () => {
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>
-                    Security and Alerting for Elasticsearch and Kibana | Search Guard
+                    Elasticsearch Security & Alerting | Search Guard
                 </title>
                 <link rel="canonical" href="https://search-guard.com/"/>
                 <meta
                     name="description"
                     content="Search Guard is a security plugin for Elasticsearch and Kibana. Search Guard offers security, audit logging, compliance, alerting and anomaly detection."
                 />
+                <script
+                    type="application/ld+json"
+                >
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'WebSite',
+                        name: 'Search Guard',
+                        url: 'https://search-guard.com/',
+                        potentialAction: {
+                            '@type': 'SearchAction',
+                            target: 'https://search-guard.com/?q={search_term_string}',
+                            'query-input': 'required name=search_term_string',
+                        },
+                    })}
+                </script>
             </Helmet>
             <SimpleHero/>
             <ImageTextTile

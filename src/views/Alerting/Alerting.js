@@ -1,6 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import './Alerting.scss';
+import {Helmet} from 'react-helmet-async';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
@@ -33,6 +32,23 @@ const Alerting = () => {
                     name="description"
                     content="Signals Alerting for Elasticsearch and Kibana detects data anomalies in your Elasticsearch cluster and sends notifications on various channels. For free."
                 />
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'SoftwareApplication',
+                        name: 'Search Guard Signals',
+                        applicationCategory: 'SecurityApplication',
+                        operatingSystem: 'Linux, Windows, macOS',
+                        url: 'https://search-guard.com/alerting/',
+                        description: 'Alerting for Elasticsearch and Kibana with anomaly detection, escalation levels, and connectors like email, Slack, PagerDuty, JIRA and webhooks.',
+                        offers: {
+                            '@type': 'Offer',
+                            price: '0',
+                            priceCurrency: 'USD',
+                            availability: 'https://schema.org/InStock',
+                        },
+                    })}
+                </script>
             </Helmet>
             <Title
                 headline="Alerting for Elasticsearch and Kibana"

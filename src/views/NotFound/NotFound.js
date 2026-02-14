@@ -1,8 +1,7 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
-import './NotFound.scss';
 
 const NotFound = () => {
   return (
@@ -11,6 +10,7 @@ const NotFound = () => {
         <meta charSet="utf-8" />
         <title>404 - Page not found</title>
         <link rel="canonical" href="https://search-guard.com/404.html" />
+        <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
           content="The page you tried to access could not be found."

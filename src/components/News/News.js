@@ -1,7 +1,6 @@
 import React from 'react';
 import events from '../../Api/contentfulEvents.json';
 import Markdown from 'markdown-to-jsx';
-import './News.scss';
 
 const News = () => {
   return (

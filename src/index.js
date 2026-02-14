@@ -1,23 +1,26 @@
 import React from 'react';
-import './index.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { render, hydrate } from 'react-dom';
+import { createRoot, hydrateRoot } from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
 import Routes from './Routes';
 
 
 const rootElement = document.getElementById('root');
 if (rootElement.hasChildNodes()) {
-  hydrate(
-    <Router>
-      <Routes />
-    </Router>,
+  hydrateRoot(
     rootElement,
+    <HelmetProvider>
+      <Router>
+        <Routes />
+      </Router>
+    </HelmetProvider>,
   );
 } else {
-  render(
-    <Router>
-      <Routes />
-    </Router>,
-    rootElement,
+  createRoot(rootElement).render(
+    <HelmetProvider>
+      <Router>
+        <Routes />
+      </Router>
+    </HelmetProvider>,
   );
 }

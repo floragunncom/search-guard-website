@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
-import './BlogPostSmall.scss';
 
 /**
  * Truncates text to a maximum length, breaking at the last space before the limit.

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Highlight, Hits, Index, InstantSearch, Menu, SearchBox, Snippet} from 'react-instantsearch';
 import { Badge } from '../Badge/Badge';
-import styles from './GlobalSearch.scss';
 import 'font-awesome/css/font-awesome.min.css';
 import classNames from 'classnames';
 
@@ -9,6 +8,10 @@ const SEARCH_GUARD_DOCS_URL = 'https://docs.search-guard.com';
 const SEARCH_GUARD_DOCS_SEARCH_INDEX = 'latest';
 const SEARCH_GUARD_BLOG_SEARCH_INDEX = 'blogposts';
 const DEFAULT_SEARCH_INDEX = SEARCH_GUARD_DOCS_SEARCH_INDEX;
+const INDEX_BADGE_BG_COLOR = '#F4E37D';
+const INDEX_BADGE_TEXT_COLOR = '#000000';
+const BADGE_MARGIN_BIG = 10;
+const BADGE_MARGIN_SMALL = 4;
 
 const DocsHit = ({ hit }) => ( 
     <a id={hit.objectID} target="_blank" rel='noopener noreferrer' href={new URL(`${SEARCH_GUARD_DOCS_URL}/${SEARCH_GUARD_DOCS_SEARCH_INDEX}/${hit.url}${hit.css_selector}`)} className='div-search-text'>
@@ -28,7 +31,7 @@ const DocsHit = ({ hit }) => (
 
 
 const BlogHit = ({ hit }) => (
-    <a id={hit.objectID} href={new URL(`/blog/${hit.slug}`, window.location)} className='div-search-text'>
+    <a id={hit.objectID} href={`/blog/${hit.slug}`} className='div-search-text'>
         <div className="globalsearchresult-item">
             <div className='globalsearchresult-title-group'>
                 <Badge text={SEARCH_INDEXES_COMPONENT_MAP[SEARCH_GUARD_BLOG_SEARCH_INDEX].label} bgColor={SEARCH_INDEXES_COMPONENT_MAP[SEARCH_GUARD_BLOG_SEARCH_INDEX].bgColor} textColor={SEARCH_INDEXES_COMPONENT_MAP[SEARCH_GUARD_BLOG_SEARCH_INDEX].textColor}/>    
@@ -66,10 +69,10 @@ const IndexMenu = ({ activeIndex, setActiveIndex  }) => {
                         value={index}
                     />
                     <Badge 
-                        style={{marginLeft: styles.badgeMarginBig}} 
+                        style={{marginLeft: BADGE_MARGIN_BIG}} 
                         text={component.label} 
-                        bgColor={styles.indexBadgeBgColor} 
-                        textColor={styles.indexBadgeTextColor}
+                        bgColor={INDEX_BADGE_BG_COLOR}
+                        textColor={INDEX_BADGE_TEXT_COLOR}
                     />
                 </label>
             ))}
@@ -94,10 +97,10 @@ export const GlobalSearch = ({ searchClient, opened, className }) => {
             return items.map((item) => ({
                 ...item,
                 count: 
-                    <Badge style={{marginLeft: styles.badgeMarginSmall}} 
+                    <Badge style={{marginLeft: BADGE_MARGIN_SMALL}} 
                         text={item.count} 
-                        bgColor={styles.indexBadgeBgColor} 
-                        textColor={styles.indexBadgeTextColor}
+                        bgColor={INDEX_BADGE_BG_COLOR}
+                        textColor={INDEX_BADGE_TEXT_COLOR}
                     />,
                 })
             );

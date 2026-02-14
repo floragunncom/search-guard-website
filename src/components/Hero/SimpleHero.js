@@ -2,7 +2,6 @@ import React from 'react';
 import Button from '../Button/Button';
 import heroCertificates from '../../images/hero-certificates.svg';
 import icons from '../../images/hero-icons.svg';
-import './Hero.scss';
 import hero from '../../images/hero-static.svg';
 import {ReactSVG} from "react-svg";
 

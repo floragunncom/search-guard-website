@@ -1,5 +1,4 @@
 import React from 'react';
-import './Button.scss';
 import ButtonLink from './ButtonLink';
 import ButtonSubmit from "./ButtonSubmit";
 

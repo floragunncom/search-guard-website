@@ -1,6 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
-import '../../PressArticle.scss';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../../../components/PreFooter/PreFooter';
 import Title from '../../../../components/Title/Title';
@@ -16,6 +15,8 @@ const Article = () => {
                 <meta charSet="utf-8"/>
                 <title>Search Guard weitet Vertriebsaktivitäten in DACH aus</title>
                 <link rel="canonical" href="https://search-guard.com/press/de/search-guard-vertrieb-dach/"/>
+                <link rel="alternate" hrefLang="de" href="https://search-guard.com/press/de/search-guard-vertrieb-dach/" />
+                <link rel="alternate" hrefLang="en" href="https://search-guard.com/press/en/search-guard-sales-dach/" />
                 <meta
                     name="description"
                     content="Die floragunn GmbH, Hersteller des Sicherheits-Plug-Ins Search Guard mit Sitz in Berlin, stärkt ihre Geschäftsaktivitäten auf dem deutschsprachigen Markt. "

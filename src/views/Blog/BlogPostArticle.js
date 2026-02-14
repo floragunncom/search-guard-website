@@ -5,10 +5,11 @@ import BlogPostArticleContent from '../../components/BlogPost/BlogPostArticleCon
 
 const BlogPostArticle = ({ match }) => {
 
-  const slug = match.url.split("/")[2] + "/";
+  const normalizeSlug = (value) => String(value || '').replace(/^\/+|\/+$/g, '');
+  const slug = normalizeSlug(match.url.split('/')[2]);
 
   const postContent = posts.find(
-    entry => entry.fields.slug === `${slug}`,
+    (entry) => normalizeSlug(entry.fields.slug) === slug,
   );
 
   if (!postContent) {

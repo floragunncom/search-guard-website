@@ -1,5 +1,5 @@
 import React from 'react';
-import {Helmet} from 'react-helmet';
+import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -8,7 +8,6 @@ import one from '../../images/1.svg';
 import two from '../../images/2.svg';
 import three from '../../images/3.svg';
 import four from '../../images/4.svg';
-import './FreeTrial.scss';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 
 const breadcrumb = [

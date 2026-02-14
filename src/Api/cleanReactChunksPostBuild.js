@@ -1,40 +1,35 @@
 const fs = require('fs');
 const path = require('path');
 
-// Directory to change into
-const targetDirectory = './build/static/js/';
+// Legacy helper kept for compatibility with older deployment scripts.
+const targetDirectory = './dist/assets/';
+const fileRegex = /\.js$/;
 
-// Regular expressions to match files
-const fileRegex1 = /main\.[\w]{8}.js|main\.[\w]{8}\.chunk\.js/;
-const fileRegex2 = /(\w+)\.[\w]{8}(\.chunk)?\.js/g;
-
-// Change into the target directory
-process.chdir(targetDirectory);
-
-// Function to find and process files
-function findAndClearFiles(directory) {
-    fs.readdir(directory, (err, files) => {
-        if (err) {
-            console.error('Error reading directory:', err);
-            return;
-        }
-
-        files.forEach(file => {
-            const filePath = path.join(directory, file);
-
-            // Check if the file matches either of the regular expressions
-            if (fileRegex1.test(file) || fileRegex2.test(file)) {
-                fs.writeFile(filePath, '', (err) => {
-                    if (err) {
-                        console.error('Error clearing file:', err);
-                    } else {
-                        console.log(`Cleared contents of file: ${filePath}`);
-                    }
-                });
-            }
-        });
-    });
+if (!fs.existsSync(targetDirectory)) {
+  console.log(`Skip clearReactChunks: ${targetDirectory} does not exist`);
+  process.exit(0);
 }
 
-// Call the function
-findAndClearFiles(process.cwd());
+function findAndClearFiles(directory) {
+  fs.readdir(directory, (err, files) => {
+    if (err) {
+      console.error('Error reading directory:', err);
+      return;
+    }
+
+    files.forEach((file) => {
+      const filePath = path.join(directory, file);
+      if (fileRegex.test(file)) {
+        fs.writeFile(filePath, '', (writeErr) => {
+          if (writeErr) {
+            console.error('Error clearing file:', writeErr);
+          } else {
+            console.log(`Cleared contents of file: ${filePath}`);
+          }
+        });
+      }
+    });
+  });
+}
+
+findAndClearFiles(targetDirectory);

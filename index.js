@@ -5,7 +5,7 @@ const URL = require('url');
 const port = process.env.PORT || 4444;
 
 const options = {
-  public: './build',
+  public: './dist',
   trailingSlash: true,
   redirects: [
     { source: '/security-for-elasticsearch/', destination: '/security/' },
