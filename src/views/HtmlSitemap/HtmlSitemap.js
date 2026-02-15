@@ -33,6 +33,7 @@ const HtmlSitemap = () => {
                     <a href="/contacts/">Contact</a><br />
                     <a href="/security/">Security</a><br />
                     <a href="/alerting/">Alerting</a><br />
+                    <a href="/anomaly-detection/">Anomaly Detection</a><br />
                     <a href="/whitepapers/">Whitepapers</a><br />
                     <a href="/compliance/">Compliance</a><br />
                     <a href="/company/">About us</a><br />

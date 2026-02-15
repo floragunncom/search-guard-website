@@ -1,3 +1,6 @@
+@use './styles/Colors' as *;
+@use './styles/Breakpoints' as *;
+
 ::selection {
   background-color: $primary;
   color: $white;

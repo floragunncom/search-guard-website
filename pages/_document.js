@@ -145,7 +145,6 @@ class MyDocument extends Document {
           <link rel="preload" href="/assets/fonts/Material-Icons.woff2" as="font" type="font/woff2" crossOrigin="" />
           <link rel="preload" as="style" href="/assets/materialize.min.css" />
           <link rel="preload" as="style" href="/assets/fonts/fonts.css" />
-          <link rel="preload" as="style" href="/assets/legacy.css" />
           <link
             rel="preload"
             href="https://cdn.cookie-script.com/s/a521e590130162749ba95a6c3ffc0462.js"
@@ -154,7 +153,6 @@ class MyDocument extends Document {
 
           <link rel="stylesheet" href="/assets/materialize.min.css" />
           <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-          <link rel="stylesheet" href="/assets/legacy.css" />
           <script
             type="text/javascript"
             src="https://cdn.cookie-script.com/s/a521e590130162749ba95a6c3ffc0462.js"

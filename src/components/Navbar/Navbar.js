@@ -115,7 +115,8 @@ const Navbar = ({ background = 'white', landing }) => {
             <ul >
               <li><a href="/security/">Security</a></li>
               <li><a href="/alerting/">Alerting</a></li>
-              <li><a href="/encryption-at-rest/">Encryption at Rest (Beta)</a></li>
+              <li><a href="/anomaly-detection/">Anomaly Detection (Beta)</a></li>
+              <li><a href="/encryption-at-rest/">Encryption at Rest</a></li>
               <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
               <li><a href="/tlstool/">TLS Tool</a></li>
             </ul>
@@ -153,7 +154,8 @@ const Navbar = ({ background = 'white', landing }) => {
         <ul id="nav-solutions" className="dropdown-content">
           <li><a href="/security/">Security</a></li>
           <li><a href="/alerting/">Alerting</a></li>
-          <li><a href="/encryption-at-rest/">Encryption at Rest (Beta)</a></li>
+          <li><a href="/anomaly-detection/">Anomaly Detection (Beta)</a></li>
+          <li><a href="/encryption-at-rest/">Encryption at Rest</a></li>
           <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
           <li><a href="/tlstool/">TLS Tool</a></li>
         </ul>
