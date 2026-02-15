@@ -1,0 +1,97 @@
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+
+// How it works
+.ad-how-it-works-wrapper {
+  background-color: $secondary-light;
+  padding: 96px 24px 104px;
+}
+
+.ad-how-it-works-wrapper .ad-how-it-works-headline {
+  margin-bottom: 64px;
+  text-align: center;
+  color: $primary;
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 32px;
+  }
+}
+
+.ad-how-it-works-wrapper .ad-step {
+  text-align: center;
+}
+
+.ad-how-it-works-wrapper .ad-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  min-height: 64px;
+  border-radius: 50%;
+  background-color: $primary;
+  color: $white;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 auto 24px;
+  line-height: 1;
+}
+
+.ad-how-it-works-wrapper .ad-step-headline {
+  color: $primary;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.ad-how-it-works-wrapper .ad-step-text {
+  color: $darkGrey;
+  line-height: 1.6;
+  text-align: center;
+}
+
+// Key capabilities
+.ad-capabilities-wrapper {
+  background-color: $primary;
+  padding: 96px 24px 104px;
+}
+
+.ad-capabilities-wrapper .ad-capabilities-headline {
+  margin-bottom: 64px;
+  text-align: center;
+  color: $white;
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 32px;
+  }
+}
+
+.ad-capabilities-wrapper .row {
+  margin-bottom: 48px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.ad-capabilities-wrapper .ad-capability {
+  text-align: center;
+}
+
+.ad-capabilities-wrapper .ad-capability-icon {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.ad-capabilities-wrapper .ad-capability-icon i.material-icons {
+  color: $white;
+  font-size: 64px;
+}
+
+.ad-capabilities-wrapper .ad-capability-headline {
+  color: $white;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.ad-capabilities-wrapper .ad-capability-text {
+  color: $white;
+  line-height: 1.6;
+  text-align: center;
+}

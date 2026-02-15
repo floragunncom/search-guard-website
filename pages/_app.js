@@ -1,5 +1,6 @@
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+import '../styles/main.scss';
 
 const normalizeAssetProp = (value) => {
   if (!value || typeof value !== 'object') {

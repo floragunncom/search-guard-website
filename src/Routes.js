@@ -12,6 +12,7 @@ import Company from './views/Company/Company';
 import Security from './views/Security/Security';
 import TlsTool from './views/TlsTool/TlsTool';
 import Alerting from './views/Alerting/Alerting';
+import AnomalyDetection from './views/AnomalyDetection/AnomalyDetection';
 import Aim from './views/Aim/Aim';
 import Faqs from './views/Faqs/Faqs';
 import Compliance from './views/Compliance/Compliance';
@@ -118,6 +119,7 @@ const Routes = () => {
           <Route exact path="/contacts/" component={ContactUs} />
           <Route exact path="/security/" component={Security} />
           <Route exact path="/alerting/" component={Alerting} />
+          <Route exact path="/anomaly-detection/" component={AnomalyDetection} />
           <Route exact path="/tlstool/" component={TlsTool} />
           <Route exact path="/encryption-at-rest/" component={EncryptionAtRest} />
           <Route exact path="/indexmanagement/" component={Aim} />
