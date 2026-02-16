@@ -1,0 +1,54 @@
+{
+  "/": {
+    "title": "Seguridad y alertas para Elasticsearch y Kibana | Search Guard",
+    "description": "Search Guard es un plugin de seguridad para Elasticsearch y Kibana. Search Guard ofrece seguridad, registro de auditoría, cumplimiento, alertas y detección de anomalías."
+  },
+  "/security/": {
+    "title": "Seguridad de Elasticsearch | Search Guard",
+    "description": "Search Guard añade seguridad de nivel empresarial a Elasticsearch y Kibana. Autenticación, autorización, cifrado TLS, registro de auditoría y funciones de cumplimiento."
+  },
+  "/alerting/": {
+    "title": "Alertas de Elasticsearch | Search Guard",
+    "description": "Search Guard Alerting permite alertas en tiempo real sobre datos de Elasticsearch. Configure watches, defina umbrales y reciba notificaciones por correo electrónico, Slack, PagerDuty y más."
+  },
+  "/anomaly-detection/": {
+    "title": "Detección de anomalías para Elasticsearch | Search Guard",
+    "description": "Detecte anomalías en sus datos de Elasticsearch automáticamente. La detección de anomalías de Search Guard utiliza aprendizaje automático para identificar patrones inusuales."
+  },
+  "/licensing/": {
+    "title": "Licencias y precios | Search Guard",
+    "description": "Opciones de licencia y precios de Search Guard. Ediciones Community, Standard y Enterprise para seguridad de Elasticsearch y Kibana."
+  },
+  "/contacts/": {
+    "title": "Contacto | Search Guard",
+    "description": "Ponte en contacto con el equipo de Search Guard. Estaremos encantados de responder a tus preguntas sobre seguridad de Elasticsearch y Kibana."
+  },
+  "/company/": {
+    "title": "Sobre floragunn GmbH | Search Guard",
+    "description": "Conoce floragunn GmbH, la empresa detrás de Search Guard. Nuestro equipo, socios y misión."
+  },
+  "/encryption-at-rest/": {
+    "title": "Cifrado en reposo para Elasticsearch | Search Guard",
+    "description": "Cifrado en reposo de grado militar para Elasticsearch. Soberanía total de datos y cumplimiento con PCI, ISO, SOX y normativas de la UE."
+  },
+  "/compliance/": {
+    "title": "Cumplimiento de Elasticsearch | RGPD, HIPAA, PCI, SOX | Search Guard",
+    "description": "Mantenga su stack de Elasticsearch y Kibana en cumplimiento con las regulaciones RGPD, PCI, SOX, HIPAA e ISO usando Search Guard."
+  },
+  "/tlstool/": {
+    "title": "Generador de certificados TLS para Elasticsearch | Search Guard",
+    "description": "Genere certificados TLS para Elasticsearch y Kibana fácilmente. Asegure su stack de Elasticsearch en minutos."
+  },
+  "/search-guard-free-trial/": {
+    "title": "Prueba gratuita | Search Guard",
+    "description": "Descargue e instale Search Guard gratis. Inicie su prueba Enterprise de 60 días o use la edición Community gratuita para siempre."
+  },
+  "/resource/": {
+    "title": "Centro de recursos | Search Guard",
+    "description": "Centro de recursos de Search Guard con documentación, publicaciones del blog, FAQ, presentaciones y whitepapers."
+  },
+  "/faq/": {
+    "title": "FAQ | Search Guard",
+    "description": "Preguntas frecuentes sobre Search Guard, la suite de seguridad para Elasticsearch."
+  }
+}

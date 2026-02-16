@@ -1,14 +1,19 @@
 import TextTile from "../Tiles/TextTile/TextTile";
 import ctaIcon from "../../images/icon-sg.svg";
 import React from "react";
+import { useTranslation } from 'react-i18next';
+import { useLocalizedPath } from '../../i18n/useLocalizedPath';
 
 const CTATLSTool = ({ colorschema }) => {
+    const { t } = useTranslation('common');
+    const lp = useLocalizedPath();
+
     return (
         <TextTile
             colorschema={colorschema}
-            headline="Download and use for free. Forever."
-            text="Want to see how simple TLS setup can be? Download the Search Guard TLS Tool for Elasticsearch and Kibana and give it a try."
-            ctaText="Download now."
+            headline={t('cta.tlsTool.headline')}
+            text={t('cta.tlsTool.text')}
+            ctaText={t('cta.tlsTool.button')}
             icon={ctaIcon}
             target="_blank"
             link="https://docs.search-guard.com/latest/offline-tls-tool"

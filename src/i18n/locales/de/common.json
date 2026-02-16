@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "solutions": "Lösungen",
+    "download": "Download",
+    "pricing": "Preise",
+    "blog": "Blog",
+    "resources": "Ressourcen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "security": "Security",
+    "alerting": "Alerting",
+    "anomalyDetection": "Anomaly Detection (Beta)",
+    "encryptionAtRest": "Encryption at Rest",
+    "indexManagement": "Index Management (Beta)",
+    "tlsTool": "TLS-Tool",
+    "documentation": "Dokumentation",
+    "communityForum": "Community-Forum",
+    "sourceCode": "Quellcode",
+    "videos": "Videos",
+    "faq": "FAQ",
+    "presentations": "Präsentationen",
+    "whitepapers": "Whitepapers"
+  },
+  "footer": {
+    "security": "Security",
+    "whatItIs": "Was ist Search Guard",
+    "howItWorks": "So funktioniert's",
+    "certifications": "Zertifizierungen",
+    "compliance": "Compliance",
+    "alerting": "Alerting",
+    "connectors": "Connectors",
+    "escalationModel": "Eskalationsmodell",
+    "encryptionAtRest": "Encryption at Rest",
+    "indexManagement": "Index Management",
+    "tlsTool": "TLS-Tool",
+    "license": "Lizenz",
+    "standardEditions": "Standard-Editionen",
+    "featureBreakdown": "Feature-Übersicht",
+    "academicEdition": "Akademische Edition",
+    "customEdition": "Custom Edition",
+    "resources": "Ressourcen",
+    "documentation": "Dokumentation",
+    "sourceCode": "Quellcode",
+    "faq": "FAQ",
+    "communityForum": "Community-Forum",
+    "blog": "Blog",
+    "presentations": "Präsentationen",
+    "whitePapers": "Whitepapers",
+    "newsletter": "Newsletter",
+    "sitemap": "Sitemap",
+    "company": "Unternehmen",
+    "whoWeAre": "Wer wir sind",
+    "partners": "Partner",
+    "integrators": "Integratoren",
+    "ourAuthors": "Unsere Autoren",
+    "dataProtection": "Datenschutz",
+    "imprint": "Impressum",
+    "publicKeySecurity": "Public Key & Security",
+    "followUs": "Folgen Sie uns",
+    "copyright": "floragunn GmbH – Alle Rechte vorbehalten",
+    "trademarks": "Search Guard ist eine Marke der floragunn GmbH, eingetragen in den USA und anderen Ländern. Elasticsearch, Kibana, Logstash und Beats sind Marken von Elasticsearch BV, eingetragen in den USA und anderen Ländern. Apache und Apache Lucene sind Marken der Apache Software Foundation in den USA und/oder anderen Ländern."
+  },
+  "prefooter": {
+    "headline": "Jetzt den Search Guard Newsletter abonnieren"
+  },
+  "cta": {
+    "freeTrial": {
+      "headline": "60 Tage kostenlos testen",
+      "text": "Sehen Sie selbst, wie Search Guard Ihren Elastic Stack absichert. 60 Tage kostenlos, keine Kreditkarte nötig.",
+      "button": "Kostenlos testen"
+    },
+    "contactUs": {
+      "headline": "Nicht gefunden, was Sie suchen?",
+      "text": "Kein Problem – wir helfen gerne weiter.",
+      "button": "Kontakt aufnehmen"
+    },
+    "resourceHub": {
+      "headline": "Ressourcen-Hub entdecken",
+      "text": "Dokumentation, Blog-Beiträge, FAQs und unser TLS-Zertifikatsgenerator – alles an einem Ort.",
+      "button": "Zum Ressourcen-Hub"
+    },
+    "compliance": {
+      "headline": "Compliance Edition testen!",
+      "text": "In wenigen Schritten Search Guard auf Ihrem Elasticsearch Cluster installieren.",
+      "button": "Installation"
+    },
+    "tlsTool": {
+      "headline": "Kostenlos. Für immer.",
+      "text": "TLS-Setup kann auch einfach sein. Laden Sie das Search Guard TLS-Tool für Elasticsearch und Kibana herunter und überzeugen Sie sich selbst.",
+      "button": "Jetzt herunterladen"
+    },
+    "aim": {
+      "headline": "AIM ausprobieren!",
+      "text": "In wenigen Schritten AIM kostenlos auf Ihrem Elasticsearch Cluster installieren.",
+      "button": "Dokumentation"
+    },
+    "encryptionAtRest": {
+      "headline": "Interesse? Sprechen Sie uns an!",
+      "text": "Wir senden Ihnen gerne einen Download-Link mit Installationsanleitung.",
+      "button": "Kontakt aufnehmen"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Sprache"
+  }
+}

@@ -1,14 +1,16 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import iconSpeaker from "../../images/bullhorn-solid.svg";
 import iconBell from "../../images/bell-regular.svg";
 
 const AlertingNotificationModel = () => {
+    const { t } = useTranslation('alerting');
 
     let notificationmodel = [
         {
-            headline: "Escalation by Severity Levels",
-            text: "Define severity levels and get notified on different channels for different levels. Send out Slack notifications for error conditions, and additional Email and PagerDuty alerts for critical conditions.",
+            headline: t('notificationModel.severity.headline'),
+            text: t('notificationModel.severity.text'),
             image: {
                 src: iconBell,
                 width: 150,
@@ -16,8 +18,8 @@ const AlertingNotificationModel = () => {
             },
         },
         {
-            headline: "Resolve Notifications",
-            text: "A critical system condition is hopefully just temporary: Get notified once an alert is resolved and everything is back to normal.",
+            headline: t('notificationModel.resolve.headline'),
+            text: t('notificationModel.resolve.text'),
             image: {
                 src: iconSpeaker,
                 width: 150,
@@ -28,7 +30,7 @@ const AlertingNotificationModel = () => {
 
 
     return (
-        <ColumnedTile colorschema="white" wrapperclass="default-padding-top-bottom" columns={notificationmodel} headline="Notifications model" />
+        <ColumnedTile colorschema="white" wrapperclass="default-padding-top-bottom" columns={notificationmodel} headline={t('notificationModel.headline')} />
     );
 };
 

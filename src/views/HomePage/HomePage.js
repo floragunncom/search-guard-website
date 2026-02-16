@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {Helmet} from 'react-helmet-async';
+import {useTranslation} from 'react-i18next';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Hero from '../../components/Hero/Hero';
@@ -19,6 +20,8 @@ import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
 
 
 const HomePage = () => {
+    const { t } = useTranslation('home');
+
     useEffect(() => {
         initGA();
         PageView();
@@ -29,12 +32,11 @@ const HomePage = () => {
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>
-                    Elasticsearch Security & Alerting | Search Guard
+                    {t('meta.title')}
                 </title>
-                <link rel="canonical" href="https://search-guard.com/"/>
                 <meta
                     name="description"
-                    content="Search Guard is a security plugin for Elasticsearch and Kibana. Search Guard offers security, audit logging, compliance, alerting and anomaly detection."
+                    content={t('meta.description')}
                 />
                 <script
                     type="application/ld+json"
@@ -57,22 +59,22 @@ const HomePage = () => {
                 icon={server_lock}
                 iconPosition="left"
                 colorschema="dark"
-                headline="Search Guard provides security on all levels"
-                text="Search Guard provides an all-encompassing security solution to keep your most confidential data safe. Utilizing RBAC, Search Guard ensures the highest level of protection in your clusters, indices, and documents by adding encryption, authentication, authorization, audit logging, compliance as well as alerting and anomaly detection features."
+                headline={t('tile1.headline')}
+                text={t('tile1.text')}
             />
             <ImageTextTile
                 icon={cog_cog}
                 iconPosition="right"
                 colorschema="dark"
-                headline="Search Guard supports all industry standards"
-                text="Search Guard supports all industry standards for authentication and authorization like LDAP, Active Directory, OpenID, SAML, Kerberos, JSON web tokens or client certificates. You can chose from a wide variety of modern and highly secure modern cipher suites."
+                headline={t('tile2.headline')}
+                text={t('tile2.text')}
             />
             <ImageTextTile
                 icon={objects_shield}
                 iconPosition="left"
                 colorschema="dark"
-                headline="Search Guard protects all components of the Elastic Stack"
-                text="Search Guard implements full access control over your entire Elasticsearch environment. Protect all components of the Elastic stack, including Kibana, Logstash and Beats."
+                headline={t('tile3.headline')}
+                text={t('tile3.text')}
             />
             <TrustedBy/>
             <Labels/>
@@ -80,7 +82,7 @@ const HomePage = () => {
             <Services/>
             <LicensingModel
                 topButtons
-                headline="Licensing models"
+                headline={t('licensing.headline')}
                 tableView={false}
             />
             <CTAStartFreeTrial colorschema="white" />

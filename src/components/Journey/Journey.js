@@ -1,7 +1,8 @@
 import React from 'react';
-
+import { useTranslation } from 'react-i18next';
 
 const Journey = () => {
+  const { t } = useTranslation('company');
   const timelineContent = [
     {
       year: 2025,
@@ -395,7 +396,7 @@ const Journey = () => {
   return (
     <div className="journey-wrapper color-schema-light" id="journey">
       <div className="row">
-        <h3 className="journey-headline"> The Search Guard Journey </h3>
+        <h3 className="journey-headline"> {t('journey.headline')} </h3>
         <div className="journey-timeline-wrapper">
           <section className="timeline">
             <ul>

@@ -13,7 +13,8 @@ const preFormattedBaseUrl = args.find((arg) => arg.startsWith('--base-url='));
 const exclusionList = args.find((arg) => arg.startsWith('--black-list='));
 const preFormattedChangeFrequency = args.find((arg) => arg.startsWith('--change-frequency='));
 const preFormattedOutDir = args.find((arg) => arg.startsWith('--out-dir='));
-let blackList = [
+const NON_DEFAULT_LOCALES = ['de', 'es', 'fr'];
+const baseBlackList = [
     'https://search-guard.com/heise/',
     'https://search-guard.com/thanks/',
     'https://search-guard.com/error/',
@@ -21,6 +22,15 @@ let blackList = [
     'https://search-guard.com/elasticsearch-kibana-security/',
     'https://search-guard.com/tls-certificate-generator/',
     'https://search-guard.com/blog/page/1/',
+];
+// Generate locale variants of blacklisted URLs for localizable pages
+let blackList = [
+    ...baseBlackList,
+    ...NON_DEFAULT_LOCALES.flatMap((locale) =>
+        baseBlackList
+            .filter((url) => !url.includes('/blog/'))
+            .map((url) => url.replace('https://search-guard.com/', `https://search-guard.com/${locale}/`))
+    ),
 ];
 const stripWrappingQuotes = (value) => {
     if (!value) {
@@ -103,7 +113,13 @@ const resolvePriority = (url) => {
         return '0.5';
     }
 
-    const normalizedPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+    let normalizedPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
+
+    // Strip locale prefix for priority resolution
+    const localeMatch = normalizedPath.match(/^\/(de|es|fr)\//);
+    if (localeMatch) {
+        normalizedPath = normalizedPath.slice(localeMatch[1].length + 1) || '/';
+    }
 
     if (normalizedPath === '/') {
         return '1.0';

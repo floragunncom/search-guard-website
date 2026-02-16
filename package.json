@@ -13,6 +13,7 @@
     "contentful": "^11.3.1",
     "country-list": "^2.2.0",
     "font-awesome": "^4.7.0",
+    "i18next": "^25.8.8",
     "lunr": "^2.3.9",
     "markdown-to-jsx": "^7.7.16",
     "materialize-css": "^1.0.0",
@@ -23,6 +24,8 @@
     "react-dom": "^18.3.1",
     "react-ga": "^3.3.1",
     "react-headroom": "^3.2.1",
+    "react-helmet-async": "^2.0.5",
+    "react-i18next": "^16.5.4",
     "react-instantsearch": "7.16.3",
     "react-router-dom": "^5.3.4",
     "react-router-hash-link": "^2.4.3",
@@ -31,8 +34,7 @@
     "react-svg": "^16.3.0",
     "react-transition-group": "^4.4.5",
     "serve-handler": "^6.1.6",
-    "uuid": "^9.0.1",
-    "react-helmet-async": "^2.0.5"
+    "uuid": "^9.0.1"
   },
   "scripts": {
     "start": "next dev",

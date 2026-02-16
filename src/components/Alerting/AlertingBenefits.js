@@ -1,32 +1,34 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 
 const AlertingBenefits = () => {
+    const { t } = useTranslation('alerting');
 
     let benefits = [
         {
-            headline: "Elasticsearch and Kibana Alerting for free",
-            text: "Signals provides free alerting for Elasticsearch and Kibana. The Community Edition of Signals Alerting is ASL2 licensed, and will always be. You can use it for any project, commercial or other, and even bundle it with your own projects.",
+            headline: t('benefits.free.headline'),
+            text: t('benefits.free.text'),
             button: {
-                text: "Visit our GitLab Repos",
+                text: t('benefits.free.button'),
                 href: "https://git.floragunn.com/search-guard/search-guard-suite-enterprise",
                 target: "_blank"
             }
         },
         {
-            headline: "Fully integrated with Search Guard Security",
-            text: "Signals Alerting is fully integrated with all Search Guard Security features. Control access to alerts, configure who can receive notifications, separate alert access by using Search Guard MultiTenancy and leverage advanced features like Document- and Field-level security.",
+            headline: t('benefits.integrated.headline'),
+            text: t('benefits.integrated.text'),
             button: {
-                text: "View our Docs",
+                text: t('benefits.integrated.button'),
                 href: "https://docs.search-guard.com/latest/elasticsearch-alerting-security-overview",
                 target: "_blank"
             }
         },
         {
-            headline: "Single download and install",
-            text: "Signals Alerting is bundled with any Search Guard download for Elasticsearch > 7.4. A single plugin install that provides both Security and Alerting features. It was never easier to supercharge your Elasticsearch cluster",
+            headline: t('benefits.install.headline'),
+            text: t('benefits.install.text'),
             button: {
-                text: "Download now",
+                text: t('benefits.install.button'),
                 href: "https://docs.search-guard.com/latest/search-guard-versions",
                 target: "_blank"
             }
@@ -40,7 +42,7 @@ const AlertingBenefits = () => {
             colorschema="light"
             wrapperclass="default-padding-top-bottom"
             columns={benefits}
-            headline="Free Alerting for Elasticsearch and Kibana. Bundled and integrated with Search Guard."/>
+            headline={t('benefits.headline')}/>
     );
 };
 

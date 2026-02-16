@@ -1,5 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
@@ -14,10 +15,11 @@ import CTAAlerting from "../../components/CTA/CTAAlerting";
 import AlertingBenefits from "../../components/Alerting/AlertingBenefits";
 
 const Alerting = () => {
+    const { t } = useTranslation('alerting');
 
     const breadcrumb = [
-        {id: 1, anchor: '/', name: 'Home'},
-        {id: 1, anchor: '/alerting/', name: 'Alerting'},
+        {id: 1, anchor: '/', name: t('breadcrumb.home')},
+        {id: 2, anchor: '/alerting/', name: t('breadcrumb.alerting')},
     ];
 
     return (
@@ -25,12 +27,11 @@ const Alerting = () => {
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>
-                    Free Elasticsearch and Kibana Alerting| Search Guard
+                    {t('meta.title')}
                 </title>
-                <link rel="canonical" href="https://search-guard.com/alerting/"/>
                 <meta
                     name="description"
-                    content="Signals Alerting for Elasticsearch and Kibana detects data anomalies in your Elasticsearch cluster and sends notifications on various channels. For free."
+                    content={t('meta.description')}
                 />
                 <script type="application/ld+json">
                     {JSON.stringify({
@@ -51,8 +52,8 @@ const Alerting = () => {
                 </script>
             </Helmet>
             <Title
-                headline="Alerting for Elasticsearch and Kibana"
-                text="Signals Alerting for Elasticsearch and Kibana detects data anomalies in your Elasticsearch cluster and sends notifications on various channels. Fully integrated with Search Guard Security. For free."
+                headline={t('title.headline')}
+                text={t('title.text')}
                 breadcrumb={breadcrumb}
             />
             <div id="concept">
@@ -60,51 +61,35 @@ const Alerting = () => {
                     icon={alertingAnomalies}
                     iconPosition="left"
                     colorschema="light"
-                    headline="Elasticsearch Anomaly detection"
-                    text="
-            Signals Alerting for Elasticsearch can detect anomalies in data stored in Elasticsearch and other IT systems.
-            Correlate your already existing Elasticsearch data with data from any REST endpoint, run calculations and statistics,
-            and trigger notification if an anomaly was detected. Fully integrated with Search Guard Security.
-          "
+                    headline={t('concept.headline')}
+                    text={t('concept.text')}
                 />
             </div>
             <ImageTextTile
                 icon={alertingNotifications}
                 iconPosition="right"
                 colorschema="dark"
-                headline="Elasticsearch Actions & Notifications"
-                text="
-            If an anomaly is detected in your Elasticsearch data you can use a wide range of connectors send alerting notifications: Create messages on Slack, send out an email,
-            trigger a Pager Duty event, open a JIRA issue, write data back to Elasticsearch or post to a Webhook. Supports multiple
-            connectors per Alert.
-        "
+                headline={t('notifications.headline')}
+                text={t('notifications.text')}
             />
             <ImageTextTile
                 icon={alertingEscalation}
                 iconPosition="left"
                 colorschema="light"
-                headline="Escalation levels"
-                text="
-            The Signals Alerting for Elasticsearch escalation model makes it possible to tailor notifications and actions to your specific use case. Define how often
-            alerts are sent to which connector, configure different thresholds and escalation levels and trigger one or more alerts for each level.
-            If a detected anomaly is resolved, you can send out additional notifications as well.
-        "
+                headline={t('escalation.headline')}
+                text={t('escalation.text')}
             />
             <ImageTextTile
                 icon={alertingUI}
                 iconPosition="right"
                 colorschema="dark"
-                headline="Kibana Alerting UI & REST API"
-                text="
-        Signals Alerting for Elasticsearch ships with a fully fledged Kibana user interface which only requires a couple of clicks to set up alerts.
-        You can use the Graph mode, Blocks mode or JSON mode based on the complexity of your use case. Use the extensive REST API to fully
-        automate your alerts configuration.
-    "
+                headline={t('ui.headline')}
+                text={t('ui.text')}
             />
             <FilledDivider colorschema="white"/>
 
             <div className="alerting-wrapper alerting-connectors-wrapper" id="connectors">
-                <h3 className="alerting-connectors-headline">Connectors</h3>
+                <h3 className="alerting-connectors-headline">{t('connectors.headline')}</h3>
                 <div className="row alerting-connectors-row-wrapper">
                     <div className="col s12 m4">
                         <a
@@ -115,11 +100,9 @@ const Alerting = () => {
                         >
                             <i className="material-icons md-96 md-dark alerting-icon">mail_outline</i>
                         </a>
-                        <h5 className="alering-col-headline">Email</h5>
+                        <h5 className="alering-col-headline">{t('connectors.email.title')}</h5>
                         <div className="alerting-col-text">
-                            Send out Email notifications from Elasticsearch and Kibana by connecting to any
-                            SMTP provider. Supports TLS, StartTLS, Proxies and
-                            default fields.
+                            {t('connectors.email.text')}
                         </div>
                     </div>
                     <div className="col s12 m4">
@@ -132,11 +115,10 @@ const Alerting = () => {
                             <i className="material-icons md-96 md-dark alerting-icon">message</i>
                         </a>
                         <h5 className="alering-col-headline">
-                            Slack
+                            {t('connectors.slack.title')}
                         </h5>
                         <div className="alerting-col-text">
-                            Inform your team or individuals about anomalies by sending out
-                            a message on Slack.
+                            {t('connectors.slack.text')}
                         </div>
                     </div>
                     <div className="col s12 m4">
@@ -149,12 +131,10 @@ const Alerting = () => {
                             <i className="material-icons md-96 md-dark alerting-icon">phone_callback</i>
                         </a>
                         <h5 className="alering-col-headline">
-                            PagerDuty
+                            {t('connectors.pagerduty.title')}
                         </h5>
                         <div className="alerting-col-text">
-                            Open PagerDuty incidents from Signals Alerting automatically. The connnector supports
-                            resolving incidents
-                            in PagerDuty as soon as the watch has left alert state.
+                            {t('connectors.pagerduty.text')}
                         </div>
                     </div>
                 </div>
@@ -168,10 +148,9 @@ const Alerting = () => {
                         >
                             <i className="material-icons md-96 md-dark alerting-icon">people_alt</i>
                         </a>
-                        <h5 className="alering-col-headline">JIRA</h5>
+                        <h5 className="alering-col-headline">{t('connectors.jira.title')}</h5>
                         <div className="alerting-col-text">
-                            Create, open or resolve JIRA issues based on the state of an alert. Supports labels,
-                            components, priorities and subtasks.
+                            {t('connectors.jira.text')}
                         </div>
                     </div>
                     <div className="col s12 m4">
@@ -183,11 +162,9 @@ const Alerting = () => {
                         >
                             <i className="material-icons md-96 md-dark alerting-icon">http</i>
                         </a>
-                        <h5 className="alering-col-headline">Webhooks</h5>
+                        <h5 className="alering-col-headline">{t('connectors.webhooks.title')}</h5>
                         <div className="alerting-col-text">
-                            Post data generated by an alert to any system that supports Webhooks. Includes full control
-                            over
-                            all HTTP headers.
+                            {t('connectors.webhooks.text')}
                         </div>
                     </div>
                     <div className="col s12 m4">
@@ -199,10 +176,9 @@ const Alerting = () => {
                         >
                             <i className="material-icons md-96 md-dark alerting-icon">storage</i>
                         </a>
-                        <h5 className="alering-col-headline">Elasticsearch</h5>
+                        <h5 className="alering-col-headline">{t('connectors.elasticsearch.title')}</h5>
                         <div className="alerting-col-text">
-                            Write any data back to a local or remote Elasticsearch index for building time-series based
-                            datapoints.
+                            {t('connectors.elasticsearch.text')}
                         </div>
                     </div>
                 </div>

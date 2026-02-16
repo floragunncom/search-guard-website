@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import Button from '../Button/Button';
 import key from '../../images/key-solid.svg';
 import db from '../../images/database-solid.svg';
@@ -11,6 +12,8 @@ import shield from '../../images/file-shield-solid.svg';
 import {ReactSVG} from "react-svg";
 
 const Services = ({ landing }) => {
+  const { t } = useTranslation('home');
+
   return (
     <div
       className={
@@ -23,7 +26,7 @@ const Services = ({ landing }) => {
         className="services-headline"
         style={landing ? { color: 'white' } : null}
       >
-        Enterprise security on all levels
+        {t('services.headline')}
       </h3>
       <div className="row services-icons">
         <div className="col s6 m3 security-detail-dark">
@@ -35,7 +38,7 @@ const Services = ({ landing }) => {
                 }}
             />
           </div>
-          <div className="security-detail-title">Encryption</div>
+          <div className="security-detail-title">{t('services.encryption')}</div>
         </div>
         <div className="col s6 m3 security-detail-light">
           <div className="security-detail-icon">
@@ -46,7 +49,7 @@ const Services = ({ landing }) => {
                       }}
             />
           </div>
-          <div className="security-detail-title">Authentication</div>
+          <div className="security-detail-title">{t('services.authentication')}</div>
         </div>
         <div className="col s6 m3 security-detail-dark-mobile">
           <div className="security-detail-icon">
@@ -57,7 +60,7 @@ const Services = ({ landing }) => {
                       }}
             />
           </div>
-          <div className="security-detail-title">Authorization</div>
+          <div className="security-detail-title">{t('services.authorization')}</div>
         </div>
         <div className="col s6 m3 security-detail-light-mobile">
           <div className="security-detail-icon">
@@ -68,7 +71,7 @@ const Services = ({ landing }) => {
                       }}
             />
           </div>
-          <div className="security-detail-title">Role-based access control</div>
+          <div className="security-detail-title">{t('services.rbac')}</div>
         </div>
         <div className="col s6 m3 security-detail-light-mobile">
           <div className="security-detail-icon">
@@ -79,7 +82,7 @@ const Services = ({ landing }) => {
                       }}
             />
           </div>
-          <div className="security-detail-title">Audit logging</div>
+          <div className="security-detail-title">{t('services.auditLogging')}</div>
         </div>
         <div className="col s6 m3 security-detail-dark-mobile">
           <div className="security-detail-icon">
@@ -90,7 +93,7 @@ const Services = ({ landing }) => {
                       }}
             />
           </div>
-          <div className="security-detail-title">Multitenancy</div>
+          <div className="security-detail-title">{t('services.multitenancy')}</div>
         </div>
         <div className="col s6 m3 security-detail-light">
           <div className="security-detail-icon">
@@ -101,7 +104,7 @@ const Services = ({ landing }) => {
                       }}
             />
           </div>
-          <div className="security-detail-title">Elastic Stack Support</div>
+          <div className="security-detail-title">{t('services.elasticStackSupport')}</div>
         </div>
         <div className="col s6 m3 security-detail-dark">
           <div className="security-detail-icon">
@@ -112,13 +115,13 @@ const Services = ({ landing }) => {
                       }}
             />
           </div>
-          <div className="security-detail-title">Compliance</div>
+          <div className="security-detail-title">{t('services.compliance')}</div>
         </div>
       </div>
       <div className={!landing ? 'security-button' : 'hidden'}>
         <Button
-          
-          text="see all features"
+
+          text={t('services.button')}
           link="/licensing/#feature"
         />
       </div>

@@ -49,9 +49,10 @@ class MyDocument extends Document {
   }
 
   getHtmlLang() {
-    const routePath = this.props?.__NEXT_DATA__?.props?.pageProps?.routePath;
-    const normalizedRoute = typeof routePath === 'string' ? routePath : '/';
+    const pageProps = this.props?.__NEXT_DATA__?.props?.pageProps;
+    const routePath = typeof pageProps?.routePath === 'string' ? pageProps.routePath : '/';
 
+    // Inherently German routes override the default locale
     const germanRoutes = new Set([
       '/datenschutz/',
       '/impressum/',
@@ -60,7 +61,16 @@ class MyDocument extends Document {
       '/press/de/search-guard-vertrieb-dach/',
     ]);
 
-    return germanRoutes.has(normalizedRoute) ? 'de' : 'en';
+    if (germanRoutes.has(routePath)) {
+      return 'de';
+    }
+
+    // Use locale from i18n routing if set
+    if (pageProps?.locale) {
+      return pageProps.locale;
+    }
+
+    return 'en';
   }
 
   render() {
