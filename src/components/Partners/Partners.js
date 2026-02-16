@@ -13,7 +13,6 @@ const Partners = () => {
       image: {
         src: eliatra,
         width: 350,
-        height: 350,
         alt: "Eliatra - The OpenSearch Experts",
       },
     },
@@ -21,7 +20,6 @@ const Partners = () => {
       image: {
         src: excelerate,
         width: 350,
-        height: 350,
         alt: "Search Guard Partner Excelerate Systems"
       },
     },
@@ -29,7 +27,6 @@ const Partners = () => {
       image: {
         src: sirenPartner,
         width: 350,
-        height: 350,
         alt: "Search Guard Partner Siren Solutions"
       },
     },
