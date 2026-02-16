@@ -1,35 +1,37 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import people from "../../images/people-arrows-solid.svg";
 import book from "../../images/book-solid.svg";
 
 const DocumentationForum = () => {
+    const { t } = useTranslation('resource');
 
     let documentationForum = [
         {
-            headline: "Documentation",
-            text: "Get the official technical documentation for all Search Guard versions.",
+            headline: t('documentation.headline'),
+            text: t('documentation.text'),
             image: {
                 src: book,
                 width: 150,
                 height: 150,
             },
             button: {
-                text: "Find out more",
+                text: t('documentation.button'),
                 href: "https://docs.search-guard.com/",
                 target: "_blank",
             },
         },
         {
-            headline: "Community forum",
-            text: "Any questions on installation or configuration? Ask our community forum.",
+            headline: t('forum.headline'),
+            text: t('forum.text'),
             image: {
                 src: people,
                 width: 150,
                 height: 150,
             },
             button: {
-                text: "Find out more",
+                text: t('forum.button'),
                 href: "https://forum.search-guard.com/",
                 target: "_blank",
             },

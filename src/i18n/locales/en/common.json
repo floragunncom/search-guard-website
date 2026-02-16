@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "solutions": "Solutions",
+    "download": "Download",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "resources": "Resources",
+    "about": "About",
+    "contact": "Contact",
+    "security": "Security",
+    "alerting": "Alerting",
+    "anomalyDetection": "Anomaly Detection (Beta)",
+    "encryptionAtRest": "Encryption at Rest",
+    "indexManagement": "Index Management (Beta)",
+    "tlsTool": "TLS Tool",
+    "documentation": "Documentation",
+    "communityForum": "Community Forum",
+    "sourceCode": "Source Code",
+    "videos": "Videos",
+    "faq": "FAQ",
+    "presentations": "Presentations",
+    "whitepapers": "Whitepapers"
+  },
+  "footer": {
+    "security": "security",
+    "whatItIs": "What it is",
+    "howItWorks": "How it works",
+    "certifications": "Certifications",
+    "compliance": "Compliance",
+    "alerting": "alerting",
+    "connectors": "Connectors",
+    "escalationModel": "Escalation model",
+    "encryptionAtRest": "Encryption at Rest",
+    "indexManagement": "index management",
+    "tlsTool": "TLS tool",
+    "license": "license",
+    "standardEditions": "Standard editions",
+    "featureBreakdown": "Feature breakdown",
+    "academicEdition": "Academic edition",
+    "customEdition": "Custom edition",
+    "resources": "resources",
+    "documentation": "Documentation",
+    "sourceCode": "Source Code",
+    "faq": "FAQ",
+    "communityForum": "Community forum",
+    "blog": "Blog",
+    "presentations": "Presentations",
+    "whitePapers": "White papers",
+    "newsletter": "Newsletter",
+    "sitemap": "Sitemap",
+    "company": "company",
+    "whoWeAre": "Who we are",
+    "partners": "Partners",
+    "integrators": "Integrators",
+    "ourAuthors": "Our Authors",
+    "dataProtection": "Data protection",
+    "imprint": "Imprint",
+    "publicKeySecurity": "Public Key & Security",
+    "followUs": "Follow us",
+    "copyright": "floragunn GmbH - All Rights Reserved",
+    "trademarks": "Search Guard is a trademark of floragunn GmbH, registered in the U.S. and in other countries. Elasticsearch, Kibana, Logstash, and Beats are trademarks of Elasticsearch BV, registered in the U.S. and in other countries. Apache and Apache Lucene are trademarks of the Apache Software Foundation in the United States and/or other countries."
+  },
+  "prefooter": {
+    "headline": "Sign up for Search Guard Newsletter"
+  },
+  "cta": {
+    "freeTrial": {
+      "headline": "Free 60-day Trial",
+      "text": "Want to see how your company can benefit from Search Guard? Give our 60-day trial a spin, free of charge, no credit card required.",
+      "button": "start free trial"
+    },
+    "contactUs": {
+      "headline": "Can't find what you're looking for?",
+      "text": "No worries, maybe we can help you find the answer.",
+      "button": "contact us"
+    },
+    "resourceHub": {
+      "headline": "Explore the resource hub",
+      "text": "From documentation and blog posts, to FAQs and more about our TLS certificate generator, take a look at our resource hub.",
+      "button": "see resource hub"
+    },
+    "compliance": {
+      "headline": "Give the Search Guard Compliance Edition a spin!",
+      "text": "Follow these simple steps to install Search Guard on your Elasticsearch cluster.",
+      "button": "Installation"
+    },
+    "tlsTool": {
+      "headline": "Download and use for free. Forever.",
+      "text": "Want to see how simple TLS setup can be? Download the Search Guard TLS Tool for Elasticsearch and Kibana and give it a try.",
+      "button": "Download now."
+    },
+    "aim": {
+      "headline": "Give AIM a spin!",
+      "text": "Follow these simple steps to install AIM to your Elasticsearch cluster for free.",
+      "button": "Documentation"
+    },
+    "encryptionAtRest": {
+      "headline": "Interested? Just contact us!",
+      "text": "Contact us and we will send you a download link and installation instructions",
+      "button": "contact us"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Language"
+  }
+}

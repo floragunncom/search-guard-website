@@ -1,5 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
@@ -13,52 +14,52 @@ import contract from "../../images/file-contract-solid.svg";
 import CTAEncryptionAtRest from "../../components/CTA/CTAEncryptionAtRest";
 
 const EncryptionAtRest = () => {
-
+    const { t } = useTranslation('encryptionAtRest');
 
     let eski = [
         {
-            headline: "European Cyber Resilience Act Compliance",
-            text: "Get ahead of the curve with Encryption at Rest's EU Cyber Resilience Act-ready design. Our cutting-edge encryption and authenticated data structures position you for seamless compliance with European regulations – no last-minute scrambling required!",
+            headline: t('standards.cyberResilience.headline'),
+            text: t('standards.cyberResilience.text'),
         },
         {
-            headline: "NIST Framework Alignment",
-            text: "Encryption at Rest delivers NIST-aligned protection that security professionals trust. Our encryption technology checks all the right boxes for NIST SP 800-171 compliance, strengthening your security posture with minimal operational overhead.",
+            headline: t('standards.nist.headline'),
+            text: t('standards.nist.text'),
         },
     ]
 
     let benefits = [
         {
-            headline: "Container-Ready Security",
-            text: "Encryption at Rest installs seamlessly within Docker containers, Kubernetes or on-premise environments, securing your Elasticsearch data with minimal configuration changes to your existing deployment.",
+            headline: t('benefits.container.headline'),
+            text: t('benefits.container.text'),
             button: {
-                text: "Read the documentation",
+                text: t('benefits.container.button'),
                 href: "https://docs.search-guard.com/latest/encryption-at-rest-introduction",
                 target: "_blank"
             }
         },
         {
-            headline: "Regulatory Compliance Made Simple",
-            text: "Supercharge your compliance posture with our military-grade encryption. Even if physical storage is compromised, your data remains locked down tight – giving you confidence and peace of mind.",
+            headline: t('benefits.regulatory.headline'),
+            text: t('benefits.regulatory.text'),
             button: {
-                text: "Read the documentation",
+                text: t('benefits.regulatory.button'),
                 href: "https://docs.search-guard.com/latest/encryption-at-rest-introduction",
                 target: "_blank"
             }
         },
         {
-            headline: "Available for Linux, Mac and Windows",
-            text: "Encryption at Rest is platform independent and works on Linux, Mac and Windows. Just download and run it.",
+            headline: t('benefits.platform.headline'),
+            text: t('benefits.platform.text'),
             button: {
-                text: "Read the documentation",
+                text: t('benefits.platform.button'),
                 href: "https://docs.search-guard.com/latest/encryption-at-rest-introduction",
                 target: "_blank"
             }
         },
-
     ]
+
     const breadcrumb = [
-        {id: 1, anchor: '/', name: 'Home'},
-        {id: 1, anchor: '/encryption-at-rest/', name: 'Encryption at Rest'},
+        {id: 1, anchor: '/', name: t('breadcrumb.home')},
+        {id: 1, anchor: '/encryption-at-rest/', name: t('breadcrumb.encryptionAtRest')},
     ];
 
     return (
@@ -66,12 +67,11 @@ const EncryptionAtRest = () => {
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>
-                    Take full control of your data with Encryption at Rest for Elasticsearch
+                    {t('meta.title')}
                 </title>
-                <link rel="canonical" href="https://search-guard.com/encryption-at-rest/"/>
                 <meta
                     name="description"
-                    content="We provide military-grade Encryption at Rest for Elasticsearch, ensuring complete data sovereignty and compliance with PCI, ISO, SOX and EU regulations. The only standalone plugin that encrypts all Lucene data at its core."
+                    content={t('meta.description')}
                 />
                 <script type="application/ld+json">
                     {JSON.stringify({
@@ -92,8 +92,8 @@ const EncryptionAtRest = () => {
                 </script>
             </Helmet>
             <Title
-                headline="Encryption at Rest for Elasticsearch"
-                text="Take full control of your data with Encryption at Rest for Elasticsearch indices and snapshots."
+                headline={t('title.headline')}
+                text={t('title.text')}
                 breadcrumb={breadcrumb}
             />
             <div id="concept">
@@ -101,37 +101,30 @@ const EncryptionAtRest = () => {
                     icon={lock}
                     iconPosition="left"
                     colorschema="light"
-                    headline="Full Data Protection at Rest"
-                    text="Encryption at Rest encrypts all Lucene data files, snapshots, and Elasticsearch translog, ensuring your sensitive information remains secure even when stored on disk in public cloud environments."
+                    headline={t('concept.headline')}
+                    text={t('concept.text')}
                 />
             </div>
             <ImageTextTile
                 icon={key}
                 iconPosition="right"
                 colorschema="dark"
-                headline="Your Keys, Your Control"
-                text="
-                    With Encryption at Rest, encryption keys are held exclusively in secure memory on cluster nodes and never stored on disk, giving you complete authority over data access and enabling secure data destruction through simple key removal. Encryption operates at the core Lucene level of Elasticsearch, making it impossible to circumvent - your data is protected from the inside out
-        "
+                headline={t('keys.headline')}
+                text={t('keys.text')}
             />
             <ImageTextTile
                 icon={shield}
                 iconPosition="left"
                 colorschema="light"
-                headline="Security Without Compromise"
-                text="
-                    Encryption at Rest integrates effortlessly with Elasticsearch while maintaining full compatibility with critical features like vector search and k-NN, providing robust security without sacrificing functionality. As a standalone plugin, Encryption at Rest operates independently of any other plugins, giving you maximum flexibility in your security architecture.
-                "
+                headline={t('security.headline')}
+                text={t('security.text')}
             />
             <ImageTextTile
                 icon={contract}
                 iconPosition="right"
                 colorschema="dark"
-                headline="Stay Compliant with Confidence"
-                text="
-                    Meet the stringent requirements of PCI, ISO, SOX, and similar regulations with Encryption at Rest's advanced encryption capabilities, providing the essential documentation and security controls needed for compliance audits.
-
-    "
+                headline={t('compliance.headline')}
+                text={t('compliance.text')}
             />
 
             <FilledDivider colorschema="white"/>
@@ -140,14 +133,14 @@ const EncryptionAtRest = () => {
                 <ColumnedTile colorschema="dark"
                               wrapperclass="default-padding-top-bottom"
                               columns={eski}
-                              headline="Meeting Global Security Standards"/>
+                              headline={t('standards.headline')}/>
             </div>
             <div id="benefits">
                 <ColumnedTile
                     colorschema="light"
                     wrapperclass="default-padding-top-bottom"
                     columns={benefits}
-                    headline="Easy Implementation for Any Environment"
+                    headline={t('benefits.headline')}
                 />
             </div>
             <div id="tryit">

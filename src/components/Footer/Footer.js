@@ -1,14 +1,17 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {ReactSVG} from "react-svg";
 import x_twitter from '../../images/x-twitter.svg';
 import linkedIn from '../../images/linkedin.svg';
 import youtube from '../../images/youtube.svg';
 import facebook from '../../images/facebook.svg';
 import RichSnippetCompany from '../RichSnippets/RichSnippetCompany';
+import { useLocalizedPath } from '../../i18n/useLocalizedPath';
 
 
 const Footer = ({landing}) => {
-
+    const { t } = useTranslation('common');
+    const lp = useLocalizedPath();
     const currentYear = new Date().getFullYear();
 
     return (
@@ -21,92 +24,92 @@ const Footer = ({landing}) => {
                             <div className="footer-links-column-container col s12 m3 l3">
 
                                 <div className="footer-list-headline">
-                                    <a href="/security/">security</a>
+                                    <a href={lp('/security/')}>{t('footer.security')}</a>
                                 </div>
                                 <div className="footer-list-items">
                                     <div className="footer-list-item">
-                                        <a href="/security/#concept" className="footer-links">
-                                            What it is
+                                        <a href={lp('/security/#concept')} className="footer-links">
+                                            {t('footer.whatItIs')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/resource/#videos" className="footer-links">
-                                            How it works
+                                        <a href={lp('/resource/#videos')} className="footer-links">
+                                            {t('footer.howItWorks')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/certificates/" className="footer-links">
-                                            Certifications
+                                        <a href={lp('/certificates/')} className="footer-links">
+                                            {t('footer.certifications')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/compliance/" className="footer-links">
-                                            Compliance
+                                        <a href={lp('/compliance/')} className="footer-links">
+                                            {t('footer.compliance')}
                                         </a>
                                     </div>
                                 </div>
                                 <div className="filler-class"/>
                                 <div className="footer-list-headline">
-                                    <a href="/security/">alerting</a>
+                                    <a href={lp('/alerting/')}>{t('footer.alerting')}</a>
                                 </div>
                                 <div className="footer-list-items">
                                     <div className="footer-list-item">
-                                        <a href="/alerting/#concept" className="footer-links">
-                                            What it is
+                                        <a href={lp('/alerting/#concept')} className="footer-links">
+                                            {t('footer.whatItIs')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/alerting/#connectors" className="footer-links">
-                                            Connectors
+                                        <a href={lp('/alerting/#connectors')} className="footer-links">
+                                            {t('footer.connectors')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/alerting/#escalationmodel" className="footer-links">
-                                            Escalation model
+                                        <a href={lp('/alerting/#escalationmodel')} className="footer-links">
+                                            {t('footer.escalationModel')}
                                         </a>
                                     </div>
                                 </div>
                                 <div className="footer-list-headline">
-                                    <a href="/encryption-at-rest/">Encryption at Rest</a>
+                                    <a href={lp('/encryption-at-rest/')}>{t('footer.encryptionAtRest')}</a>
                                 </div>
                                 <div className="footer-list-headline">
-                                    <a href="/indexmanagement/">index management</a>
+                                    <a href={lp('/indexmanagement/')}>{t('footer.indexManagement')}</a>
                                 </div>
 
                                 <div className="footer-list-headline">
-                                    <a href="/tlstool/">TLS tool</a>
+                                    <a href={lp('/tlstool/')}>{t('footer.tlsTool')}</a>
                                 </div>
                             </div>
                             <div className="footer-links-column-container col s12 m3 l3">
                                 <div className="footer-list-headline">
-                                    <a href="/licensing/">license</a>
+                                    <a href={lp('/licensing/')}>{t('footer.license')}</a>
                                 </div>
                                 <div className="footer-list-items">
                                     <div className="footer-list-item">
-                                        <a href="/licensing/#standard" className="footer-links">
-                                            Standard editions
+                                        <a href={lp('/licensing/#standard')} className="footer-links">
+                                            {t('footer.standardEditions')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/licensing/#feature" className="footer-links">
-                                            Feature breakdown
+                                        <a href={lp('/licensing/#feature')} className="footer-links">
+                                            {t('footer.featureBreakdown')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/licensing/#academic" className="footer-links">
-                                            Academic edition
+                                        <a href={lp('/licensing/#academic')} className="footer-links">
+                                            {t('footer.academicEdition')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/licensing/#academic" className="footer-links">
-                                            Custom edition
+                                        <a href={lp('/licensing/#academic')} className="footer-links">
+                                            {t('footer.customEdition')}
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div className="footer-links-column-container col s12 m3 l3">
                                 <div className="footer-list-headline">
-                                    <a href="/resource/">resources</a>
+                                    <a href={lp('/resource/')}>{t('footer.resources')}</a>
                                 </div>
                                 <div className="footer-list-items">
                                     <div className="footer-list-item">
@@ -116,7 +119,7 @@ const Footer = ({landing}) => {
                                             rel="noopener noreferrer"
                                             className="footer-links"
                                         >
-                                            Documentation
+                                            {t('footer.documentation')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
@@ -126,12 +129,12 @@ const Footer = ({landing}) => {
                                             rel="noopener noreferrer"
                                             className="footer-links"
                                         >
-                                            Source Code
+                                            {t('footer.sourceCode')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/faq/" className="footer-links">
-                                            FAQ
+                                        <a href={lp('/faq/')} className="footer-links">
+                                            {t('footer.faq')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
@@ -141,79 +144,79 @@ const Footer = ({landing}) => {
                                             rel="noopener noreferrer"
                                             className="footer-links"
                                         >
-                                            Community forum
+                                            {t('footer.communityForum')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
                                         <a href="/blog/" className="footer-links">
-                                            Blog
+                                            {t('footer.blog')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/presentations/" className="footer-links">
-                                            Presentations
+                                        <a href={lp('/presentations/')} className="footer-links">
+                                            {t('footer.presentations')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
                                         <a href="/whitepapers/" className="footer-links">
-                                            White papers
+                                            {t('footer.whitePapers')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/compliance/" className="footer-links">
-                                            Compliance
+                                        <a href={lp('/compliance/')} className="footer-links">
+                                            {t('footer.compliance')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/newsletter/" className="footer-links">
-                                            Newsletter
+                                        <a href={lp('/newsletter/')} className="footer-links">
+                                            {t('footer.newsletter')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/sitemap/" className="footer-links">
-                                            Sitemap
+                                        <a href={lp('/sitemap/')} className="footer-links">
+                                            {t('footer.sitemap')}
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div className="footer-links-column-container col s12 m3 l3">
                                 <div className="footer-list-headline">
-                                    <a href="/company/">company</a>
+                                    <a href={lp('/company/')}>{t('footer.company')}</a>
                                 </div>
                                 <div className="footer-list-items">
                                     <div className="footer-list-item">
-                                        <a href="/company/#team" className="footer-links">
-                                            Who we are
+                                        <a href={lp('/company/#team')} className="footer-links">
+                                            {t('footer.whoWeAre')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/company/#partners" className="footer-links">
-                                            Partners
+                                        <a href={lp('/company/#partners')} className="footer-links">
+                                            {t('footer.partners')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/security/#integrators" className="footer-links">
-                                            Integrators
+                                        <a href={lp('/security/#integrators')} className="footer-links">
+                                            {t('footer.integrators')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
                                         <a href="/authors/" className="footer-links">
-                                            Our Authors
+                                            {t('footer.ourAuthors')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/dataprotection/" className="footer-links">
-                                            Data protection
+                                        <a href={lp('/dataprotection/')} className="footer-links">
+                                            {t('footer.dataProtection')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/impressum/" className="footer-links">
-                                            Imprint
+                                        <a href={lp('/impressum/')} className="footer-links">
+                                            {t('footer.imprint')}
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
-                                        <a href="/security-information/" className="footer-links">
-                                            Public Key & Security
+                                        <a href={lp('/security-information/')} className="footer-links">
+                                            {t('footer.publicKeySecurity')}
                                         </a>
                                     </div>
                                 </div>
@@ -224,7 +227,7 @@ const Footer = ({landing}) => {
                 <div className="row footer-row">
                     <div className="footer-content-wrapper col s12 subtitle">
                         <div className="footer-col-content">
-                            <div className="footer-headline">Follow us</div>
+                            <div className="footer-headline">{t('footer.followUs')}</div>
                             <div className="footer-content footer-content-icons">
                                 <a
                                     href="https://twitter.com/searchguard?lang=en"
@@ -265,13 +268,9 @@ const Footer = ({landing}) => {
                 >
                     <div className="footer-content-wrapper col subtitle">
                         <div className="footer-col-content">
-                            <p>© {currentYear} floragunn GmbH - All Rights Reserved</p>
+                            <p>&copy; {currentYear} {t('footer.copyright')}</p>
                             <p className='body2'>
-                                Search Guard is a trademark of floragunn GmbH, registered in the
-                                U.S. and in other countries. Elasticsearch, Kibana, Logstash, and
-                                Beats are trademarks of Elasticsearch BV, registered in the U.S. and
-                                in other countries. Apache and Apache Lucene are trademarks of the Apache
-                                Software Foundation in the United States and/or other countries.
+                                {t('footer.trademarks')}
                             </p>
                         </div>
                     </div>

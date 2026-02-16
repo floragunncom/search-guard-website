@@ -1,9 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import dharma from "../../images/dharmachakra-solid.svg";
 import eye from "../../images/eye-slash-solid.svg";
 
 const CVEDisclosure = ({colorschema}) => {
+    const { t } = useTranslation('resource');
     let style = "dark";
     if (colorschema) {
         style = colorschema;
@@ -11,28 +13,28 @@ const CVEDisclosure = ({colorschema}) => {
 
     let cveDisclosure = [
         {
-            headline: "CVE advisory",
-            text: "We are the official CVE numbering authority for Search Guard. Browse the list of known issues..",
+            headline: t('cveAdvisory.headline'),
+            text: t('cveAdvisory.text'),
             image: {
                 src: dharma,
                 width: 150,
                 height: 150,
             },
             button: {
-                text: "Find out more",
+                text: t('cveAdvisory.button'),
                 href: "/cve-advisory/",
             },
         },
         {
-            headline: "Disclosure Policy",
-            text: "If you have found a security related issue, please read our disclosure policy.",
+            headline: t('disclosurePolicy.headline'),
+            text: t('disclosurePolicy.text'),
             image: {
                 src: eye,
                 width: 150,
                 height: 150,
             },
             button: {
-                text: "Find out more",
+                text: t('disclosurePolicy.button'),
                 href: "/disclosure-policy/",
             },
         },

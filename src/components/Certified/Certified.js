@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {ReactSVG} from "react-svg";
 import veracode from '../../images/veracode.svg';
 import alliance from '../../images/alliance.svg';
@@ -7,9 +8,11 @@ import cve from '../../images/ove.svg';
 
 
 const Certified = () => {
+  const { t } = useTranslation('security');
+
   return (
     <div className="certified-wrapper" id="certified">
-      <h3 className="certified-headline">Certified</h3>
+      <h3 className="certified-headline">{t('certified.headline')}</h3>
       <div className="row">
         <div className="col s12 m6">
           <a
@@ -18,14 +21,13 @@ const Certified = () => {
               rel="noopener noreferrer"
               className="certified-col-img"
           >
-            <ReactSVG src={alliance} alt="Search Guard is member of the Alliance for Cybersecurity"/>
+            <ReactSVG src={alliance} alt={t('certified.alliance.alt')}/>
           </a>
           <h5 className="certified-col-headline">
-            Allianz for Cyber-Sicherheit
+            {t('certified.alliance.headline')}
           </h5>
           <div className="body1 certified-col-text">
-            Floragunn is member of the "Alliance for Cybersecurity", a body of
-            the Federal Office for Information Security in Germany.
+            {t('certified.alliance.text')}
           </div>
         </div>
         <div className="col s12 m6">
@@ -35,12 +37,11 @@ const Certified = () => {
             rel="noopener noreferrer"
             className="certified-col-img"
           >
-            <ReactSVG src={security} alt="Search Guard is member of TeleTrust"/>
+            <ReactSVG src={security} alt={t('certified.teletrust.alt')}/>
           </a>
-          <h5 className="certified-col-headline">TeleTrusT</h5>
+          <h5 className="certified-col-headline">{t('certified.teletrust.headline')}</h5>
           <div className="body1 certified-col-text">
-            floragunn is member of TeleTrust, a German federal association for
-            IT security.
+            {t('certified.teletrust.text')}
           </div>
         </div>
       </div>

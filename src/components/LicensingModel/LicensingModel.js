@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
+import {useTranslation} from 'react-i18next';
+import { useLocalizedPath } from '../../i18n/useLocalizedPath';
 import iconSearchGuard from '../../images/icon-search-guard.svg';
 import Button from '../Button/Button';
 
 const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline }) => {
+  const { t } = useTranslation('license');
+  const lp = useLocalizedPath();
   const [standardButton, setStandardButton] = useState(true);
-  
+
   const onButtonPress = () => {
     setStandardButton(!standardButton);
   };
@@ -14,18 +18,18 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
     infoButton = (
       <div className="licensing-info-wrapper">
         <div className="licensing-info-text">
-          We offer an{' '}
+          {t('editions.infoText.prefix')}{' '}
           <div style={{ fontWeight: 'bold', display: 'inline' }}>
-            Academic & Scientific License
+            {t('editions.infoText.academic')}
           </div>
-          , as well as{' '}
+          {' '}{t('editions.infoText.middle')}{' '}
           <div style={{ fontWeight: 'bold', display: 'inline' }}>
-            Custom Licenses
+            {t('editions.infoText.custom')}
           </div>{' '}
-          for your personal needs.
+          {t('editions.infoText.suffix')}
         </div>
         <div className="liccensing-info-button">
-          <Button  text="see all license models" link="/licensing/" />
+          <Button  text={t('editions.infoButton')} link={lp('/licensing/')} />
         </div>
       </div>
     );
@@ -47,24 +51,24 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
                 />
               </div>
               <h5 className="licensing-editions-headline">
-                Search Guard Community Edition
+                {t('editions.community.headline')}
               </h5>
               <ul className="licensing-editions-text-wrapper">
                 <li className="licensing-editions-text">
-                  Covers all essential Security and Alerting needs
+                  {t('editions.community.feature1')}
                 </li>
                 <li className="licensing-editions-text">
-                  Free of charge
+                  {t('editions.community.feature2')}
                 </li>
                 <li className="licensing-editions-text">
-                  Integrated with the entire Elastic Stack
+                  {t('editions.community.feature3')}
                 </li>
               </ul>
               <div className="licensing-editions-button">
                 <Button
-                  text="install"
-                  
-                  link="/search-guard-free-trial/"
+                  text={t('editions.community.button')}
+
+                  link={lp('/search-guard-free-trial/')}
                 />
               </div>
             </div>
@@ -80,24 +84,24 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
                 />
               </div>
               <h5 className="licensing-editions-headline">
-                Search Guard Enterprise Edition
+                {t('editions.enterprise.headline')}
               </h5>
               <ul className="licensing-editions-text-wrapper">
                 <li className="licensing-editions-text">
-                  Integrates with all major security standards
+                  {t('editions.enterprise.feature1')}
                 </li>
                 <li className="licensing-editions-text">
-                  Field-level and Document-level Security
+                  {t('editions.enterprise.feature2')}
                 </li>
                 <li className="licensing-editions-text">
-                  Management API and Kibana Multitenancy
+                  {t('editions.enterprise.feature3')}
                 </li>
               </ul>
               <div className="licensing-editions-button">
                 <Button
-                  text="start free trial"
-                  
-                  link="/search-guard-free-trial/"
+                  text={t('editions.enterprise.button')}
+
+                  link={lp('/search-guard-free-trial/')}
                 />
               </div>
             </div>
@@ -113,24 +117,24 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
                 />
               </div>
               <h5 className="licensing-editions-headline">
-                Search Guard Compliance Edition
+                {t('editions.compliance.headline')}
               </h5>
               <ul className="licensing-editions-text-wrapper">
                 <li className="licensing-editions-text">
-                  Designed for meeting compliance regulations e.g. GDPR
+                  {t('editions.compliance.feature1')}
                 </li>
                 <li className="licensing-editions-text">
-                  Record all read-and-write access to data
+                  {t('editions.compliance.feature2')}
                 </li>
                 <li className="licensing-editions-text">
-                  Monitor integrity of Elasticsearch installation
+                  {t('editions.compliance.feature3')}
                 </li>
               </ul>
               <div className="licensing-editions-button">
                 <Button
-                  text="start free trial"
-                  
-                  link="/search-guard-free-trial/"
+                  text={t('editions.compliance.button')}
+
+                  link={lp('/search-guard-free-trial/')}
                 />
               </div>
             </div>
@@ -154,24 +158,24 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
                 />
               </div>
               <h5 className="licensing-editions-headline">
-                Academic & Scientific edition
+                {t('editions.academic.headline')}
               </h5>
               <ul className="licensing-editions-text-wrapper">
                 <li className="licensing-editions-text">
-                  Search Guard Enterprise and Compliance licenses free of charge
+                  {t('editions.academic.feature1')}
                 </li>
                 <li className="licensing-editions-text">
-                  For all non-profit academic and scientific projects
+                  {t('editions.academic.feature2')}
                 </li>
                 <li className="licensing-editions-text">
-                  Unlimited clusters, unlimited nodes.
+                  {t('editions.academic.feature3')}
                 </li>
               </ul>
               <div className="licensing-editions-button">
                 <Button
-                  text="Contact us"
-                  
-                  link="/contacts/"
+                  text={t('editions.academic.button')}
+
+                  link={lp('/contacts/')}
                 />
               </div>
             </div>
@@ -187,22 +191,24 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
                 />
               </div>
               <h5 className="licensing-editions-headline">
-                Custom edition
+                {t('editions.custom.headline')}
               </h5>
               <ul className="licensing-editions-text-wrapper">
                 <li className="licensing-editions-text">
-                  For OEM partners and system integrators
+                  {t('editions.custom.feature1')}
                 </li>
-                <li className="licensing-editions-text">No upfront fees</li>
                 <li className="licensing-editions-text">
-                  Direct support from the Search Guard team
+                  {t('editions.custom.feature2')}
+                </li>
+                <li className="licensing-editions-text">
+                  {t('editions.custom.feature3')}
                 </li>
               </ul>
               <div className="licensing-editions-button">
                 <Button
-                  text="Contact us"
-                  
-                  link="/contacts/"
+                  text={t('editions.custom.button')}
+
+                  link={lp('/contacts/')}
                 />
               </div>
             </div>
@@ -225,7 +231,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
           }
           onClick={onButtonPress}
         >
-          standard editions
+          {t('editions.tabs.standard')}
         </div>
         <div
           className={
@@ -233,7 +239,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
           }
           onClick={onButtonPress}
         >
-          academic & custom
+          {t('editions.tabs.academic')}
         </div>
       </div>
     );

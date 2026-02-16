@@ -1,31 +1,34 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import ColumnedTile from '../Tiles/ColumnedTile/ColumnedTile';
 
 const AnomalyDetectionBenefits = () => {
+  const { t } = useTranslation('anomalyDetection');
+
   const benefits = [
     {
-      headline: 'Fully integrated with Search Guard Security',
-      text: 'Anomaly Detection is fully integrated with Search Guard role-based access control. Define who can create and manage detectors, and separate access using Search Guard tenancy and document-level security.',
+      headline: t('benefits.security.headline'),
+      text: t('benefits.security.text'),
       button: {
-        text: 'View Security Docs',
+        text: t('benefits.security.button'),
         href: 'https://docs.search-guard.com/latest/anomaly-detection-security',
         target: '_blank',
       },
     },
     {
-      headline: 'Enterprise-grade performance',
-      text: 'Run up to 1,000 single-entity detectors and 10 high-cardinality detectors simultaneously. Built-in resource management protects your cluster with automatic memory limits and JVM safeguards.',
+      headline: t('benefits.performance.headline'),
+      text: t('benefits.performance.text'),
       button: {
-        text: 'View Configuration',
+        text: t('benefits.performance.button'),
         href: 'https://docs.search-guard.com/latest/anomaly-detection-settings',
         target: '_blank',
       },
     },
     {
-      headline: 'Quick and easy setup',
-      text: 'Get started in minutes with a straightforward installation process. Comprehensive documentation and sensible defaults let you deploy your first anomaly detector right away, with fine-tuning options for production workloads.',
+      headline: t('benefits.setup.headline'),
+      text: t('benefits.setup.text'),
       button: {
-        text: 'Getting Started',
+        text: t('benefits.setup.button'),
         href: 'https://docs.search-guard.com/latest/anomaly-detection-getting-started',
         target: '_blank',
       },
@@ -37,7 +40,7 @@ const AnomalyDetectionBenefits = () => {
       colorschema="light"
       wrapperclass="default-padding-top-bottom"
       columns={benefits}
-      headline="Built for production Elasticsearch clusters"
+      headline={t('benefits.headline')}
     />
   );
 };

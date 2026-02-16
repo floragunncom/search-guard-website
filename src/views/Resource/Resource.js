@@ -1,5 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import DocumentationForum from '../../components/Resources/DocumentationForum';
@@ -14,10 +15,11 @@ import CTAContactUs from "../../components/CTA/CTAContactUs";
 
 
 const Resource = () => {
+    const { t } = useTranslation('resource');
 
     const breadcrumb = [
-        { id: 1, anchor: '/', name: 'Home' },
-        { id: 1, anchor: '/resource/', name: 'Resources' },
+        { id: 1, anchor: '/', name: t('breadcrumb.home') },
+        { id: 1, anchor: '/resource/', name: t('breadcrumb.resources') },
     ];
 
   return (
@@ -25,17 +27,16 @@ const Resource = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Search Guard Blog Posts, FAQ, and Documentation
+          {t('meta.title')}
         </title>
-        <link rel="canonical" href="https://search-guard.com/resource/" />
         <meta
           name="description"
-          content="Search Guard Resource Hub including Blog Posts, FAQ, Documentation, Presentations and Whitepapers"
+          content={t('meta.description')}
         />
       </Helmet>
       <Title
-        headline="resources"
-        text="Search Guard Resource Hub including Blog Posts, FAQ, Documentation, Presentations and Whitepapers"
+        headline={t('title.headline')}
+        text={t('title.text')}
         breadcrumb={breadcrumb}
       />
 

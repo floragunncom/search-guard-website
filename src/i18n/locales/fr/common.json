@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "solutions": "Solutions",
+    "download": "Télécharger",
+    "pricing": "Tarifs",
+    "blog": "Blog",
+    "resources": "Ressources",
+    "about": "À propos",
+    "contact": "Contact",
+    "security": "Sécurité",
+    "alerting": "Alertes",
+    "anomalyDetection": "Détection d'anomalies (Bêta)",
+    "encryptionAtRest": "Chiffrement au repos",
+    "indexManagement": "Gestion d'index (Bêta)",
+    "tlsTool": "Outil TLS",
+    "documentation": "Documentation",
+    "communityForum": "Forum communautaire",
+    "sourceCode": "Code source",
+    "videos": "Vidéos",
+    "faq": "FAQ",
+    "presentations": "Présentations",
+    "whitepapers": "Livres blancs"
+  },
+  "footer": {
+    "security": "sécurité",
+    "whatItIs": "En quoi ça consiste",
+    "howItWorks": "Comment ça marche",
+    "certifications": "Certifications",
+    "compliance": "Conformité",
+    "alerting": "alertes",
+    "connectors": "Connecteurs",
+    "escalationModel": "Modèle d'escalade",
+    "encryptionAtRest": "Chiffrement au repos",
+    "indexManagement": "gestion d'index",
+    "tlsTool": "Outil TLS",
+    "license": "licence",
+    "standardEditions": "Éditions standard",
+    "featureBreakdown": "Détail des fonctionnalités",
+    "academicEdition": "Édition académique",
+    "customEdition": "Édition personnalisée",
+    "resources": "ressources",
+    "documentation": "Documentation",
+    "sourceCode": "Code source",
+    "faq": "FAQ",
+    "communityForum": "Forum communautaire",
+    "blog": "Blog",
+    "presentations": "Présentations",
+    "whitePapers": "Livres blancs",
+    "newsletter": "Newsletter",
+    "sitemap": "Plan du site",
+    "company": "entreprise",
+    "whoWeAre": "Qui nous sommes",
+    "partners": "Partenaires",
+    "integrators": "Intégrateurs",
+    "ourAuthors": "Nos auteurs",
+    "dataProtection": "Protection des données",
+    "imprint": "Mentions légales",
+    "publicKeySecurity": "Clé publique et sécurité",
+    "followUs": "Suivez-nous",
+    "copyright": "floragunn GmbH - Tous droits réservés",
+    "trademarks": "Search Guard est une marque de floragunn GmbH, enregistrée aux États-Unis et dans d'autres pays. Elasticsearch, Kibana, Logstash et Beats sont des marques d'Elasticsearch BV, enregistrées aux États-Unis et dans d'autres pays. Apache et Apache Lucene sont des marques de l'Apache Software Foundation aux États-Unis et/ou dans d'autres pays."
+  },
+  "prefooter": {
+    "headline": "Inscrivez-vous à la newsletter Search Guard"
+  },
+  "cta": {
+    "freeTrial": {
+      "headline": "Essai gratuit de 60 jours",
+      "text": "Vous voulez voir comment votre entreprise peut bénéficier de Search Guard ? Essayez notre version d'essai de 60 jours, gratuite et sans carte de crédit.",
+      "button": "démarrer l'essai gratuit"
+    },
+    "contactUs": {
+      "headline": "Vous ne trouvez pas ce que vous cherchez ?",
+      "text": "Pas de souci, nous pouvons peut-être vous aider à trouver la réponse.",
+      "button": "contactez-nous"
+    },
+    "resourceHub": {
+      "headline": "Explorez le centre de ressources",
+      "text": "De la documentation aux articles de blog, en passant par les FAQ et notre générateur de certificats TLS, consultez notre centre de ressources.",
+      "button": "voir le centre de ressources"
+    },
+    "compliance": {
+      "headline": "Essayez l'édition Search Guard Compliance !",
+      "text": "Suivez ces étapes simples pour installer Search Guard sur votre cluster Elasticsearch.",
+      "button": "Installation"
+    },
+    "tlsTool": {
+      "headline": "Téléchargez et utilisez gratuitement. Pour toujours.",
+      "text": "Vous voulez voir à quel point la configuration TLS peut être simple ? Téléchargez l'outil Search Guard TLS pour Elasticsearch et Kibana et essayez-le.",
+      "button": "Télécharger maintenant"
+    },
+    "aim": {
+      "headline": "Essayez AIM !",
+      "text": "Suivez ces étapes simples pour installer AIM gratuitement sur votre cluster Elasticsearch.",
+      "button": "Documentation"
+    },
+    "encryptionAtRest": {
+      "headline": "Intéressé ? Contactez-nous !",
+      "text": "Contactez-nous et nous vous enverrons un lien de téléchargement et des instructions d'installation.",
+      "button": "contactez-nous"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Langue"
+  }
+}

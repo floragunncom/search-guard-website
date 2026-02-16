@@ -1,33 +1,36 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import compliance from '../../images/checkmark-red.svg';
 import enterprise from '../../images/checkmark-green.svg';
 import community from '../../images/checkmark-gold.svg';
 
 const FeatureBreakdown = () => {
+  const { t } = useTranslation('license');
+
   const matrixContent = [
     {
-      name: 'Encryption',
+      name: t('featureBreakdown.encryption.name'),
       content: [
         {
-          type: 'REST encryption',
+          type: t('featureBreakdown.encryption.rest'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Inter-node encryption',
+          type: t('featureBreakdown.encryption.internode'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'PEM and JKS support',
+          type: t('featureBreakdown.encryption.pem'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'OpenSLL support',
+          type: t('featureBreakdown.encryption.openssl'),
           community: true,
           enterprise: true,
           compliance: true,
@@ -35,177 +38,52 @@ const FeatureBreakdown = () => {
       ],
     },
     {
-      name: 'Access control',
+      name: t('featureBreakdown.accessControl.name'),
       content: [
         {
-          type: 'Role-based access control',
+          type: t('featureBreakdown.accessControl.role'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Transport- and HTTP access control',
+          type: t('featureBreakdown.accessControl.transport'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Cluster-level access control',
+          type: t('featureBreakdown.accessControl.cluster'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Index-level access control',
+          type: t('featureBreakdown.accessControl.index'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Document-level access control',
+          type: t('featureBreakdown.accessControl.document'),
           community: false,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Field-level access control',
+          type: t('featureBreakdown.accessControl.field'),
           community: false,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Field anonymization',
+          type: t('featureBreakdown.accessControl.anonymization'),
           community: false,
           enterprise: false,
           compliance: true,
         },
         {
-          type: 'Immutable indices',
-          community: false,
-          enterprise: false,
-          compliance: true,
-        },
-      ],
-    },
-    {
-      name: 'Authentication',
-      content: [
-        {
-          type: 'Internal user management',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'HTTP Basic authentication',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'PKI authentication',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'Proxy authentication',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'LDAP / Active Directory',
-          community: false,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'Kerberos / SPNEGO',
-          community: false,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'JSON web tokens',
-          community: false,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'OpenID Connect',
-          community: false,
-          enterprise: true,
-          compliance: true,
-        },
-        { type: 'SAML', community: false, enterprise: true, compliance: true },
-        {
-          type: 'Custom implementations',
-          community: false,
-          enterprise: true,
-          compliance: true,
-        },
-      ],
-    },
-    {
-      name: 'Authorization',
-      content: [
-        {
-          type: 'Internal group managemet',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'Proxy headers',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'LDAP / Active Directory',
-          community: false,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'JSON web tokens',
-          community: false,
-          enterprise: true,
-          compliance: true,
-        },
-        { type: 'SAML', community: false, enterprise: true, compliance: true },
-      ],
-    },
-    {
-      name: 'Audit logging and compliance',
-      content: [
-        {
-          type: 'Security audit logging',
-          community: false,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'Read-access audit logging',
-          community: false,
-          enterprise: false,
-          compliance: true,
-        },
-        {
-          type: 'Write-access audit logging',
-          community: false,
-          enterprise: false,
-          compliance: true,
-        },
-        {
-          type: 'Configuration change tracking',
-          community: false,
-          enterprise: false,
-          compliance: true,
-        },
-        {
-          type: 'System change tracking',
+          type: t('featureBreakdown.accessControl.immutable'),
           community: false,
           enterprise: false,
           compliance: true,
@@ -213,46 +91,59 @@ const FeatureBreakdown = () => {
       ],
     },
     {
-      name: 'Alerting',
+      name: t('featureBreakdown.authentication.name'),
       content: [
         {
-          type: 'Elasticsearch data sources',
+          type: t('featureBreakdown.authentication.internal'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'External data sources',
+          type: t('featureBreakdown.authentication.basic'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Escalation levels',
+          type: t('featureBreakdown.authentication.pki'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Throttling and Acknowledgement',
+          type: t('featureBreakdown.authentication.proxy'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Email, Slack and Webhook actions',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'PagerDuty action',
+          type: t('featureBreakdown.authentication.ldap'),
           community: false,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'JIRA action',
+          type: t('featureBreakdown.authentication.kerberos'),
+          community: false,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.authentication.jwt'),
+          community: false,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.authentication.oidc'),
+          community: false,
+          enterprise: true,
+          compliance: true,
+        },
+        { type: t('featureBreakdown.authentication.saml'), community: false, enterprise: true, compliance: true },
+        {
+          type: t('featureBreakdown.authentication.custom'),
           community: false,
           enterprise: true,
           compliance: true,
@@ -260,22 +151,111 @@ const FeatureBreakdown = () => {
       ],
     },
     {
-      name: 'Configuration',
+      name: t('featureBreakdown.authorization.name'),
       content: [
         {
-          type: 'No cluster reboot',
+          type: t('featureBreakdown.authorization.internal'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'REST management API',
+          type: t('featureBreakdown.authorization.proxy'),
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.authorization.ldap'),
           community: false,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Configuration GUI',
+          type: t('featureBreakdown.authorization.jwt'),
+          community: false,
+          enterprise: true,
+          compliance: true,
+        },
+        { type: t('featureBreakdown.authorization.saml'), community: false, enterprise: true, compliance: true },
+      ],
+    },
+    {
+      name: t('featureBreakdown.audit.name'),
+      content: [
+        {
+          type: t('featureBreakdown.audit.security'),
+          community: false,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.audit.read'),
+          community: false,
+          enterprise: false,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.audit.write'),
+          community: false,
+          enterprise: false,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.audit.configChange'),
+          community: false,
+          enterprise: false,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.audit.systemChange'),
+          community: false,
+          enterprise: false,
+          compliance: true,
+        },
+      ],
+    },
+    {
+      name: t('featureBreakdown.alerting.name'),
+      content: [
+        {
+          type: t('featureBreakdown.alerting.elasticsearch'),
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.alerting.external'),
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.alerting.escalation'),
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.alerting.throttling'),
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.alerting.emailSlack'),
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.alerting.pagerduty'),
+          community: false,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.alerting.jira'),
           community: false,
           enterprise: true,
           compliance: true,
@@ -283,28 +263,22 @@ const FeatureBreakdown = () => {
       ],
     },
     {
-      name: 'Kibana',
+      name: t('featureBreakdown.configuration.name'),
       content: [
         {
-          type: 'Kibana access control',
+          type: t('featureBreakdown.configuration.noReboot'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Kibana feature control',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-        {
-          type: 'Single Sign On',
+          type: t('featureBreakdown.configuration.restApi'),
           community: false,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Multi tenancy',
+          type: t('featureBreakdown.configuration.gui'),
           community: false,
           enterprise: true,
           compliance: true,
@@ -312,34 +286,63 @@ const FeatureBreakdown = () => {
       ],
     },
     {
-      name: 'Compatibility',
+      name: t('featureBreakdown.kibana.name'),
       content: [
         {
-          type: 'Kibana, logstash and beats',
+          type: t('featureBreakdown.kibana.accessControl'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Cross-cluster search',
+          type: t('featureBreakdown.kibana.featureControl'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Cross-cluster replication',
+          type: t('featureBreakdown.kibana.sso'),
+          community: false,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.kibana.multiTenancy'),
+          community: false,
+          enterprise: true,
+          compliance: true,
+        },
+      ],
+    },
+    {
+      name: t('featureBreakdown.compatibility.name'),
+      content: [
+        {
+          type: t('featureBreakdown.compatibility.kibanaLogstash'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Elastic Stack Monitoring',
+          type: t('featureBreakdown.compatibility.crossClusterSearch'),
           community: true,
           enterprise: true,
           compliance: true,
         },
         {
-          type: 'Elastic Stack Machine Learning',
+          type: t('featureBreakdown.compatibility.crossClusterReplication'),
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.compatibility.monitoring'),
+          community: true,
+          enterprise: true,
+          compliance: true,
+        },
+        {
+          type: t('featureBreakdown.compatibility.machineLearning'),
           community: true,
           enterprise: true,
           compliance: true,
@@ -354,11 +357,11 @@ const FeatureBreakdown = () => {
         <thead className="licensing-table-head">
           <tr>
             <th>
-              <div className="licensing-table-left">feature</div>
+              <div className="licensing-table-left">{t('featureBreakdown.column.feature')}</div>
             </th>
-            <th>community edition</th>
-            <th>enterprise edition</th>
-            <th>Compliance edition</th>
+            <th>{t('featureBreakdown.column.community')}</th>
+            <th>{t('featureBreakdown.column.enterprise')}</th>
+            <th>{t('featureBreakdown.column.compliance')}</th>
           </tr>
         </thead>
         {matrixContent.map(service => {

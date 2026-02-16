@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {Helmet} from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -12,14 +13,16 @@ import FeatureBreakdown from "../../components/FeatureBreakdown/FeatureBreakdown
 import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
 
 const License = () => {
+    const { t } = useTranslation('license');
+
     useEffect(() => {
         initGA();
         PageView();
     }, []);
 
     const breadcrumb = [
-        {id: 1, anchor: '/', name: 'Home'},
-        {id: 1, anchor: '/licensing/', name: 'Licensing'},
+        {id: 1, anchor: '/', name: t('breadcrumb.home')},
+        {id: 1, anchor: '/licensing/', name: t('breadcrumb.licensing')},
     ];
 
     return (
@@ -27,12 +30,11 @@ const License = () => {
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>
-                    Search Guard Pricing: Community, Enterprise, Compliance
+                    {t('meta.title')}
                 </title>
-                <link rel="canonical" href="https://search-guard.com/licensing/"/>
                 <meta
                     name="description"
-                    content="Search Guard offers fair licensing to secure Elasticsearch and Kibana with an unlimited amount of nodes - scale your cluster not your costs."
+                    content={t('meta.description')}
                 />
                 <script type="application/ld+json">
                     {JSON.stringify({
@@ -70,19 +72,19 @@ const License = () => {
                 </script>
             </Helmet>
             <Title
-                headline="Pricing"
-                text="Unlimited nodes licensing for all Security and Alerting features. Scale your cluster, not your cost!"
+                headline={t('title.headline')}
+                text={t('title.text')}
                 breadcrumb={breadcrumb}
             />
             <LicensingModel
-                headline="Search Guard Editions"
+                headline={t('editions.headline')}
                 topButtons={false}
                 tableView
             />
 
             <div className="row default-padding-top-bottom">
                 <div className="col s12">
-                    <h2>Feature Breakdown</h2>
+                    <h2>{t('featureBreakdown.heading')}</h2>
                 </div>
                 <div className="col s12">
                     <FeatureBreakdown/>

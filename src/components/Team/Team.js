@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import claudia from '../../images/claudia.svg';
 import jochen from '../../images/jochen.svg';
 import hendrik from '../../images/hendrik.svg';
@@ -7,6 +8,7 @@ import anja from '../../images/anja.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 
 const Team = () => {
+  const { t } = useTranslation('company');
   const team = [
     {
       name: 'Claudia Kressin',
@@ -40,7 +42,7 @@ const Team = () => {
 
   return (
     <div className="company-team-wrapper" id="team">
-      <h3 className="company-team-headline">Management team</h3>
+      <h3 className="company-team-headline">{t('team.headline')}</h3>
       <div className="row">
         {team.map(person => {
           return (

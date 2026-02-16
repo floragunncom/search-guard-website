@@ -1,44 +1,48 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { useLocalizedPath } from '../../i18n/useLocalizedPath';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import iconBook from '../../images/book-solid.svg';
 import iconWheels from '../../images/gears-solid.svg';
 
 const CustomizeLicense = () => {
+    const { t } = useTranslation('license');
+    const lp = useLocalizedPath();
 
     let customizelicense = [
         {
-            headline: "Academic & Scientific Programme",
-            text: "We want to give back to education and science and provide free licenses and special discounts for eligible institutions. Get in touch with us to learn more.",
+            headline: t('customizeLicense.academic.headline'),
+            text: t('customizeLicense.academic.text'),
             image: {
                 src: iconBook,
                 width: 150,
                 height: 150,
-                alt: "Search Guard Academic & Scientific Programme",
+                alt: t('customizeLicense.academic.alt'),
             },
             button: {
-                href: "/contacts/",
-                text: "Find out more",
+                href: lp("/contacts/"),
+                text: t('customizeLicense.academic.button'),
             },
         },
         {
-            headline: "OEM, Integrators & Resellers",
-            text: "We provide tailor made custom licenses for system integrators, OEM partners and resellers.",
+            headline: t('customizeLicense.oem.headline'),
+            text: t('customizeLicense.oem.text'),
             image: {
                 src: iconWheels,
                 width: 150,
                 height: 150,
-                alt: "Search Guard for OEM, Integrators & Resellers",
+                alt: t('customizeLicense.oem.alt'),
             },
             button: {
-                href: "/contacts/",
-                text: "Find out more",
+                href: lp("/contacts/"),
+                text: t('customizeLicense.oem.button'),
             },
         },
     ]
 
 
     return (
-        <ColumnedTile colorschema="dark" wrapperclass="default-padding-top-bottom" columns={customizelicense} headline="Customize your license" />
+        <ColumnedTile colorschema="dark" wrapperclass="default-padding-top-bottom" columns={customizelicense} headline={t('customizeLicense.headline')} />
     );
 };
 

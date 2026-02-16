@@ -1,5 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -10,25 +11,27 @@ import three from '../../images/3.svg';
 import four from '../../images/4.svg';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 
-const breadcrumb = [
-    { anchor: '/', name: 'Home' },
-    { anchor: '/search-guard-free-trial/', name: 'Start free trial' }
-];
 const FreeTrial = () => {
+    const { t } = useTranslation('freeTrial');
+
+    const breadcrumb = [
+        { anchor: '/', name: t('breadcrumb.home') },
+        { anchor: '/search-guard-free-trial/', name: t('breadcrumb.freeTrial') }
+    ];
+
     return (
         <PageWrapper>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Start your free Search Guard Trial now</title>
-                <link rel="canonical" href="https://search-guard.com/search-guard-free-trial/" />
+                <title>{t('meta.title')}</title>
                 <meta
                     name="description"
-                    content="How to download and run your free 60 day Search Guard Enterprise Trial"
+                    content={t('meta.description')}
                 />
             </Helmet>
             <Title
-                headline="Start your free trial"
-                text="You can use the completely Open Source and forever-free Community Edition, or start your 60 day Search Guard Enterprise trial"
+                headline={t('title.headline')}
+                text={t('title.text')}
                 breadcrumb={breadcrumb}
             />
 
@@ -43,16 +46,14 @@ const FreeTrial = () => {
                             </div>
                             <div className="free-trial-content">
                                 <div className="subtitle free-trial-content-headline">
-                                    Download Search Guard
+                                    {t('step1.headline')}
                                 </div>
                                 <div className="free-trial-content-text">
-                                    Download the Search Guard plugin matching the Elasticsearch version you are running. For example, if you are
-                                    running Elasticsearch 8.17.3, you need to download Search Guard for 8.17.3 as well.
-                                    The download is platform-independant.
+                                    {t('step1.text')}
                                 </div>
                                 <div className="free-trial-content-button">
                                     <Button
-                                        text="visit our downloads page"
+                                        text={t('step1.button')}
                                         link="https://docs.search-guard.com/latest/search-guard-versions"
                                         target="_blank"
                                         rel="noopener norefferrer"
@@ -74,10 +75,10 @@ const FreeTrial = () => {
                         </div>
                         <div className="free-trial-content">
                             <div className="subtitle  free-trial-content-headline">
-                                Install Search Guard
+                                {t('step2.headline')}
                             </div>
                             <div className="free-trial-content-text">
-                                Stop your Elasticsearch cluster and install Search Guard on all nodes.
+                                {t('step2.text')}
 
                                 <pre>
                                     <div className="free-trial-pre">
@@ -101,10 +102,10 @@ const FreeTrial = () => {
                         </div>
                         <div className="free-trial-content">
                             <div className="subtitle free-trial-content-headline">
-                                (Optional) Install demo configuration
+                                {t('step3.headline')}
                             </div>
                             <div className="free-trial-content-text">
-                                Search Guard ships with demo users and roles that you can install for a quick PoC:
+                                {t('step3.text')}
 
                                 <pre className="free-trial-pre">
                                     cd plugins/search-guard/tools
@@ -129,10 +130,10 @@ const FreeTrial = () => {
                         </div>
                         <div className="free-trial-content">
                             <div className="subtitle free-trial-content-headline">
-                                Restart Elasticsearch
+                                {t('step4.headline')}
                             </div>
                             <div className="free-trial-content-text">
-                                After installing Search Guard, start your cluster as normal:
+                                {t('step4.text')}
 
                                 <pre className="free-trial-pre">
                                     bin/elasticsearch
@@ -144,20 +145,20 @@ const FreeTrial = () => {
                 </div>
 
                 <div className="row free-trial">
-                    <h3 className="free-trial-headline">Docker</h3>
+                    <h3 className="free-trial-headline">{t('docker.headline')}</h3>
 
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                We provide a <a href="https://docs.search-guard.com/latest/docker" target="_blank" rel="noopener noreferrer">Docker based demo</a> including Elasticsearch and Kibana with Search Guard and Signas Alerting pre-installed:
+                                {t('docker.text1_plain')}<a href="https://docs.search-guard.com/latest/docker" target="_blank" rel="noopener noreferrer">{t('docker.text1_link')}</a>{t('docker.text1_after')}
 
-                                To start the image, run:
+                                {t('docker.startText')}
 
                                 <pre className="free-trial-pre">
                                     docker run -ti -p 9200:9200 -p 5601:5601 floragunncom/search-guard-flx-elasticsearch:latest
                                 </pre>
 
-                                After the container is up you can access Kibana on:
+                                {t('docker.kibanaText')}
 
 
                                 <pre className="free-trial-pre">
@@ -165,14 +166,14 @@ const FreeTrial = () => {
                                 </pre>
 
 
-                                Elasticsearch runs on:
+                                {t('docker.esText')}
 
                                 <pre className="free-trial-pre">
                                     https://localhost:9200
                                 </pre>
 
 
-                                The container comes with some pre-installed demo users. For full access and to configure new roles and permissions, use admin/admin for login.
+                                {t('docker.usersText')}
 
                             </div>
 
@@ -183,12 +184,12 @@ const FreeTrial = () => {
                 </div>
 
                 <div className="row free-trial">
-                    <h3 className="free-trial-headline">Kubernetes</h3>
+                    <h3 className="free-trial-headline">{t('kubernetes.headline')}</h3>
 
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                We provide <a href="https://docs.search-guard.com/latest/search-guard-kubernetes-helm" target="_blank" rel="noopener noreferrer">Helm Charts</a> for running Search Guard on Kubernetes.
+                                {t('kubernetes.text1_plain')}<a href="https://docs.search-guard.com/latest/search-guard-kubernetes-helm" target="_blank" rel="noopener noreferrer">{t('kubernetes.text1_link')}</a>{t('kubernetes.text1_after')}
                             </div>
 
                         </div>
@@ -197,18 +198,18 @@ const FreeTrial = () => {
                 </div>
 
                 <div className="row free-trial">
-                    <h3 className="free-trial-headline">Other Resources</h3>
+                    <h3 className="free-trial-headline">{t('otherResources.headline')}</h3>
 
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                <a href="https://docs.search-guard.com/" target="_blank" rel="noopener noreferrer">Search Guard Documentation</a>
+                                <a href="https://docs.search-guard.com/" target="_blank" rel="noopener noreferrer">{t('otherResources.documentation')}</a>
                                 <br />
-                                <a href="https://forum.search-guard.com/" target="_blank" rel="noopener noreferrer">Search Guard Community Forum</a>
+                                <a href="https://forum.search-guard.com/" target="_blank" rel="noopener noreferrer">{t('otherResources.forum')}</a>
                                 <br />
-                                <a href="https://git.floragunn.com/" target="_blank" rel="noopener noreferrer">GitLab repositories</a>
+                                <a href="https://git.floragunn.com/" target="_blank" rel="noopener noreferrer">{t('otherResources.gitlab')}</a>
                                 <br />
-                                <a href="/blog/" target="_blank" rel="noopener noreferrer">Search Guard Blog</a>
+                                <a href="/blog/" target="_blank" rel="noopener noreferrer">{t('otherResources.blog')}</a>
                             </div>
 
                         </div>
@@ -218,7 +219,7 @@ const FreeTrial = () => {
             </div>
 
             <div className="row free-trial">
-                <div className="subtitle free-trial-headline">Any Questions? Drop us a line!</div>
+                <div className="subtitle free-trial-headline">{t('contactForm.headline')}</div>
 
                 <div className="free-trial-section" >
                     <div className="free-trial-content">

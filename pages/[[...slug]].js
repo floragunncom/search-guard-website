@@ -2,9 +2,14 @@ import React from 'react';
 import fs from 'fs/promises';
 import path from 'path';
 import NextRoutesApp from '../src/NextRoutesApp';
+import {
+  SUPPORTED_LOCALES,
+  DEFAULT_LOCALE,
+  LOCALIZABLE_ROUTES,
+} from '../src/i18n/locales';
 
-const CatchAllPage = ({ routePath }) => {
-  return <NextRoutesApp location={routePath} />;
+const CatchAllPage = ({ routePath, locale }) => {
+  return <NextRoutesApp location={routePath} locale={locale} />;
 };
 
 export const getStaticPaths = async () => {
@@ -68,8 +73,24 @@ export const getStaticPaths = async () => {
     .filter((routePath) => !excludedRoutes.has(routePath))
     .sort();
 
+  // Build the localizable routes set for quick lookup
+  const localizableSet = new Set(LOCALIZABLE_ROUTES);
+
+  // Generate locale-prefixed paths for localizable routes
+  const nonDefaultLocales = SUPPORTED_LOCALES.filter((l) => l !== DEFAULT_LOCALE);
+  const localizedRoutes = [];
+  for (const route of routes) {
+    if (localizableSet.has(route)) {
+      for (const locale of nonDefaultLocales) {
+        // /alerting/ → /de/alerting/, / → /de/
+        const localizedPath = route === '/' ? `/${locale}/` : `/${locale}${route}`;
+        localizedRoutes.push(localizedPath);
+      }
+    }
+  }
+
   return {
-    paths: routes,
+    paths: [...routes, ...localizedRoutes],
     fallback: false,
   };
 };
@@ -81,11 +102,22 @@ export const getStaticProps = async ({ params }) => {
       ? [params.slug]
       : [];
 
-  const routePath = segments.length > 0 ? `/${segments.join('/')}/` : '/';
+  // Check if first segment is a supported non-default locale
+  const nonDefaultLocales = new Set(SUPPORTED_LOCALES.filter((l) => l !== DEFAULT_LOCALE));
+  let locale = DEFAULT_LOCALE;
+  let routeSegments = segments;
+
+  if (segments.length > 0 && nonDefaultLocales.has(segments[0])) {
+    locale = segments[0];
+    routeSegments = segments.slice(1);
+  }
+
+  const routePath = routeSegments.length > 0 ? `/${routeSegments.join('/')}/` : '/';
 
   return {
     props: {
       routePath,
+      locale,
     },
   };
 };

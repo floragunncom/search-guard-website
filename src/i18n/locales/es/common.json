@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "solutions": "Soluciones",
+    "download": "Descargar",
+    "pricing": "Precios",
+    "blog": "Blog",
+    "resources": "Recursos",
+    "about": "Empresa",
+    "contact": "Contacto",
+    "security": "Seguridad",
+    "alerting": "Alertas",
+    "anomalyDetection": "Detección de anomalías (Beta)",
+    "encryptionAtRest": "Cifrado en reposo",
+    "indexManagement": "Gestión de índices (Beta)",
+    "tlsTool": "Herramienta TLS",
+    "documentation": "Documentación",
+    "communityForum": "Foro de la comunidad",
+    "sourceCode": "Código fuente",
+    "videos": "Vídeos",
+    "faq": "FAQ",
+    "presentations": "Presentaciones",
+    "whitepapers": "Whitepapers"
+  },
+  "footer": {
+    "security": "seguridad",
+    "whatItIs": "Qué es",
+    "howItWorks": "Cómo funciona",
+    "certifications": "Certificaciones",
+    "compliance": "Cumplimiento",
+    "alerting": "alertas",
+    "connectors": "Conectores",
+    "escalationModel": "Modelo de escalado",
+    "encryptionAtRest": "Cifrado en reposo",
+    "indexManagement": "gestión de índices",
+    "tlsTool": "Herramienta TLS",
+    "license": "licencia",
+    "standardEditions": "Ediciones estándar",
+    "featureBreakdown": "Desglose de funciones",
+    "academicEdition": "Edición académica",
+    "customEdition": "Edición personalizada",
+    "resources": "recursos",
+    "documentation": "Documentación",
+    "sourceCode": "Código fuente",
+    "faq": "FAQ",
+    "communityForum": "Foro de la comunidad",
+    "blog": "Blog",
+    "presentations": "Presentaciones",
+    "whitePapers": "Whitepapers",
+    "newsletter": "Newsletter",
+    "sitemap": "Mapa del sitio",
+    "company": "empresa",
+    "whoWeAre": "Quiénes somos",
+    "partners": "Socios",
+    "integrators": "Integradores",
+    "ourAuthors": "Nuestros autores",
+    "dataProtection": "Protección de datos",
+    "imprint": "Aviso legal",
+    "publicKeySecurity": "Clave pública y seguridad",
+    "followUs": "Síguenos",
+    "copyright": "floragunn GmbH - Todos los derechos reservados",
+    "trademarks": "Search Guard es una marca registrada de floragunn GmbH en EE. UU. y otros países. Elasticsearch, Kibana, Logstash y Beats son marcas registradas de Elasticsearch BV en EE. UU. y otros países. Apache y Apache Lucene son marcas registradas de la Apache Software Foundation en EE. UU. y/u otros países."
+  },
+  "prefooter": {
+    "headline": "Suscríbete al boletín de Search Guard"
+  },
+  "cta": {
+    "freeTrial": {
+      "headline": "Prueba gratuita de 60 días",
+      "text": "¿Quieres ver cómo tu empresa puede beneficiarse de Search Guard? Prueba nuestra versión de 60 días, gratis y sin tarjeta de crédito.",
+      "button": "iniciar prueba gratuita"
+    },
+    "contactUs": {
+      "headline": "¿No encuentras lo que buscas?",
+      "text": "No te preocupes, quizás podamos ayudarte a encontrar la respuesta.",
+      "button": "contáctanos"
+    },
+    "resourceHub": {
+      "headline": "Explora el centro de recursos",
+      "text": "Desde documentación y publicaciones de blog hasta FAQ y más sobre nuestro generador de certificados TLS, echa un vistazo a nuestro centro de recursos.",
+      "button": "ver centro de recursos"
+    },
+    "compliance": {
+      "headline": "¡Prueba la edición Search Guard Compliance!",
+      "text": "Sigue estos sencillos pasos para instalar Search Guard en tu clúster de Elasticsearch.",
+      "button": "Instalación"
+    },
+    "tlsTool": {
+      "headline": "Descarga y usa gratis. Para siempre.",
+      "text": "¿Quieres ver lo fácil que puede ser la configuración TLS? Descarga la herramienta Search Guard TLS para Elasticsearch y Kibana y pruébala.",
+      "button": "Descargar ahora"
+    },
+    "aim": {
+      "headline": "¡Prueba AIM!",
+      "text": "Sigue estos sencillos pasos para instalar AIM en tu clúster de Elasticsearch de forma gratuita.",
+      "button": "Documentación"
+    },
+    "encryptionAtRest": {
+      "headline": "¿Interesado? ¡Contáctanos!",
+      "text": "Contáctanos y te enviaremos un enlace de descarga e instrucciones de instalación.",
+      "button": "contáctanos"
+    }
+  },
+  "languageSwitcher": {
+    "label": "Idioma"
+  }
+}

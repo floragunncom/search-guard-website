@@ -1,13 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import shieldWheel from "../../images/shield-halved.svg";
 
 const ComplianceFeatures = () => {
+    const { t } = useTranslation('compliance');
 
     let complianceFeatures = [
         {
-            headline: "Data Encryption",
-            text: "Search Guard encrypts all the traffic inside your Elasticsearch cluster, shields from data breaches and ensures the integrity of your data.",
+            headline: t('features.encryption.headline'),
+            text: t('features.encryption.text'),
             image: {
                 src: shieldWheel,
                 width: 150,
@@ -15,8 +17,8 @@ const ComplianceFeatures = () => {
             },
         },
         {
-            headline: "Data Anonymization",
-            text: "Search Guard provides role-based access control to all data stored in your Elasticsearch cluster. Control exactly which users can access PII or other sensitive data in cleartext or anonymized.",
+            headline: t('features.anonymization.headline'),
+            text: t('features.anonymization.text'),
             image: {
                 src: shieldWheel,
                 width: 150,
@@ -24,8 +26,8 @@ const ComplianceFeatures = () => {
             },
         },
         {
-            headline: "Audit Trails",
-            text: "Search Guard generates audit trails on who has created, modified, accessed and deleted PII and other sensitive data in your Elasticsearch cluster.",
+            headline: t('features.auditTrails.headline'),
+            text: t('features.auditTrails.text'),
             image: {
                 src: shieldWheel,
                 width: 150,
@@ -33,7 +35,6 @@ const ComplianceFeatures = () => {
             },
         },
     ]
-
 
     return (
         <ColumnedTile colorschema="white" wrapperclass="default-padding-top-bottom" columns={complianceFeatures} />
