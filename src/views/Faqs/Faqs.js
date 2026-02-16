@@ -1,5 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import {HashLink as Anchor} from 'react-router-hash-link';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -9,14 +10,9 @@ import Markdown from 'markdown-to-jsx';
 import slugify from 'react-slugify';
 import CTAContactUs from "../../components/CTA/CTAContactUs";
 
-const breadcrumb = [
-    {anchor: '/', name: 'Home'},
-    {anchor: '/resource/', name: 'Resources'},
-    {anchor: '/faq/', name: 'FAQ'},
-];
-
 let faqPage = pages.filter(page => page.sys.contentType.sys.id === "pageFaq")[0];
 const Faqs = () => {
+    const { t } = useTranslation('faq');
 
     const htmlTags = /(<([^>]+)>)/ig;
     const newlines = /(\r\n|\n|\r)/gm;
@@ -49,26 +45,31 @@ const Faqs = () => {
         });
     });
 
+    const breadcrumb = [
+        {anchor: '/', name: t('breadcrumb.home')},
+        {anchor: '/resource/', name: t('breadcrumb.resources')},
+        {anchor: '/faq/', name: t('breadcrumb.faq')},
+    ];
+
     return (
         <PageWrapper>
             <Helmet>
-                <html lang="en" itemScope itemType="https://schema.org/FAQPage"/>
+                <html itemScope itemType="https://schema.org/FAQPage"/>
                 <meta charSet="utf-8"/>
                 <title>
-                    Search Guard FAQ: Elasticsearch Security Answers
+                    {t('meta.title')}
                 </title>
-                <link rel="canonical" href="https://search-guard.com/faq/"/>
                 <meta
                     name="description"
-                    content="Find answers to frequently asked questions about Search Guard, the rock-solid and battle proven security suite for Elasticsearch."
+                    content={t('meta.description')}
                 />
                 <script type="application/ld+json">
                     {JSON.stringify(jsonld)}
                 </script>
             </Helmet>
             <Title
-                headline="Frequently asked questions"
-                text="Find answers to the most frequently asked questions about Search Guard and Signals."
+                headline={t('title.headline')}
+                text={t('title.text')}
                 breadcrumb={breadcrumb}
             />
             <div className="row faq-row-wrapper">

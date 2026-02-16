@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { algoliasearch } from 'algoliasearch';
 import { GlobalSearch } from '../GlobalSearch/GlobalSearch';
 import logo from '../../images/sg_logo_white.svg';
@@ -6,6 +7,8 @@ import {ReactSVG} from "react-svg";
 import 'font-awesome/css/font-awesome.min.css';
 import { SEARCH_GUARD_ALGOLIA_APP_ID, SEARCH_GUARD_ALGOLIA_SEARCH_API_KEY } from '../GlobalSearch/SgAlgolia';
 import { loadScriptOnce } from '../../utils/loadScriptOnce';
+import { useLocalizedPath } from '../../i18n/useLocalizedPath';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 const algoliaSearchClient = algoliasearch(
   SEARCH_GUARD_ALGOLIA_APP_ID,
@@ -13,6 +16,8 @@ const algoliaSearchClient = algoliasearch(
 );
 
 const Navbar = ({ background = 'white', landing }) => {
+  const { t } = useTranslation('common');
+  const lp = useLocalizedPath();
   const [searchEnabled, setSearchEnabled ] = React.useState(false);
 
   const handleToggleSearch = React.useCallback(() => {
@@ -58,9 +63,9 @@ const Navbar = ({ background = 'white', landing }) => {
       <>
         <div className="navbar-fixed">
           <nav>
-            <div className="nav-wrapper">               
+            <div className="nav-wrapper">
               <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger">menu</i></a>
-              <a href="/" className="brand-logo">
+              <a href={lp('/')} className="brand-logo">
               <ReactSVG
                 src={logo}
                 title="Title"
@@ -84,26 +89,27 @@ const Navbar = ({ background = 'white', landing }) => {
                 />
               </a>
               {
-                searchEnabled === false ?  
+                searchEnabled === false ?
                 <button className='btn-search-mobile btn-search-open' onClick={handleToggleSearch}><i className="fa fa-search" /></button>
                 :
                 <button className='btn-search-mobile btn-search-close' onClick={handleToggleSearch}><i className="fa fa-times" /></button>
-              }               
+              }
               <ul className="right hide-on-med-and-down">
-                <li><a href="/security/" data-target="nav-solutions" className="dropdown-trigger navbar__item" >Solutions</a></li>
-                <li><a className="navbar__item" href="/search-guard-free-trial/">Download</a></li>
-                <li><a className="navbar__item" href="/licensing/">Pricing</a></li>
-                <li><a className="navbar__item" href="/blog/">Blog</a></li>
-                <li><a href="/resource/" data-target="nav-resources" className="dropdown-trigger navbar__item" >Resources</a></li>
-                <li><a className="navbar__item" href="/company/">About</a></li>
-                <li><a className="navbar__item" href="/contacts/">Contact</a></li>
+                <li><a href={lp('/security/')} data-target="nav-solutions" className="dropdown-trigger navbar__item" >{t('nav.solutions')}</a></li>
+                <li><a className="navbar__item" href={lp('/search-guard-free-trial/')}>{t('nav.download')}</a></li>
+                <li><a className="navbar__item" href={lp('/licensing/')}>{t('nav.pricing')}</a></li>
+                <li><a className="navbar__item" href="/blog/">{t('nav.blog')}</a></li>
+                <li><a href={lp('/resource/')} data-target="nav-resources" className="dropdown-trigger navbar__item" >{t('nav.resources')}</a></li>
+                <li><a className="navbar__item" href={lp('/company/')}>{t('nav.about')}</a></li>
+                <li><a className="navbar__item" href={lp('/contacts/')}>{t('nav.contact')}</a></li>
+                <LanguageSwitcher />
                 <li>
-                  {searchEnabled === false ? 
+                  {searchEnabled === false ?
                     <button className='btn-search btn-search-open navbar__item' onClick={handleToggleSearch}><i className="fa fa-search" /></button>
                     :
                     <button className='btn-search btn-search-close navbar__item' onClick={handleToggleSearch}><i className="fa fa-times" /></button>
                   }
-                </li>                        
+                </li>
               </ul>
             </div>
             <GlobalSearch searchClient={algoliaSearchClient} opened={searchEnabled} className="search-mobile"/>
@@ -111,53 +117,53 @@ const Navbar = ({ background = 'white', landing }) => {
         </div>
         <ul className="sidenav" id="sg-sidenav">
           <li>
-            <a href="#!" className="navbar__item" >Solutions</a>
+            <a href="#!" className="navbar__item" >{t('nav.solutions')}</a>
             <ul >
-              <li><a href="/security/">Security</a></li>
-              <li><a href="/alerting/">Alerting</a></li>
-              <li><a href="/anomaly-detection/">Anomaly Detection (Beta)</a></li>
-              <li><a href="/encryption-at-rest/">Encryption at Rest</a></li>
-              <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
-              <li><a href="/tlstool/">TLS Tool</a></li>
+              <li><a href={lp('/security/')}>{t('nav.security')}</a></li>
+              <li><a href={lp('/alerting/')}>{t('nav.alerting')}</a></li>
+              <li><a href={lp('/anomaly-detection/')}>{t('nav.anomalyDetection')}</a></li>
+              <li><a href={lp('/encryption-at-rest/')}>{t('nav.encryptionAtRest')}</a></li>
+              <li><a href={lp('/indexmanagement/')}>{t('nav.indexManagement')}</a></li>
+              <li><a href={lp('/tlstool/')}>{t('nav.tlsTool')}</a></li>
             </ul>
           </li>
-          <li><a className="navbar__item" href="/search-guard-free-trial/">Download</a></li>
-          <li><a className="navbar__item" href="/licensing/">Pricing</a></li>
-          <li><a className="navbar__item" href="/blog/">Blog</a></li>
+          <li><a className="navbar__item" href={lp('/search-guard-free-trial/')}>{t('nav.download')}</a></li>
+          <li><a className="navbar__item" href={lp('/licensing/')}>{t('nav.pricing')}</a></li>
+          <li><a className="navbar__item" href="/blog/">{t('nav.blog')}</a></li>
           <li>
-            <a href="/resource/" className="navbar__item" >Resources</a>
+            <a href={lp('/resource/')} className="navbar__item" >{t('nav.resources')}</a>
             <ul >
-              <li><a href="https://docs.search-guard.com" target="_blank" rel="noopener noreferrer">Documentation</a></li>
-              <li><a href="https://forum.search-guard.com" target="_blank" rel="noopener noreferrer">Community Forum</a></li>
-              <li><a href="https://git.floragunn.com/search-guard" target="_blank" rel="noopener noreferrer">Source Code</a></li>
-              <li><a href="/resource/#videos">Videos</a></li>
-              <li><a href="/faq/">FAQ</a></li>
-              <li><a href="/presentations/">Presentations</a></li>
-              <li><a href="/whitepapers/">Whitepapers</a></li>
+              <li><a href="https://docs.search-guard.com" target="_blank" rel="noopener noreferrer">{t('nav.documentation')}</a></li>
+              <li><a href="https://forum.search-guard.com" target="_blank" rel="noopener noreferrer">{t('nav.communityForum')}</a></li>
+              <li><a href="https://git.floragunn.com/search-guard" target="_blank" rel="noopener noreferrer">{t('nav.sourceCode')}</a></li>
+              <li><a href={lp('/resource/#videos')}>{t('nav.videos')}</a></li>
+              <li><a href={lp('/faq/')}>{t('nav.faq')}</a></li>
+              <li><a href={lp('/presentations/')}>{t('nav.presentations')}</a></li>
+              <li><a href="/whitepapers/">{t('nav.whitepapers')}</a></li>
             </ul>
           </li>
-          <li><a className="navbar__item" href="/company/">About</a></li>
-          <li><a className="navbar__item" href="/contacts/">Contact</a></li>
+          <li><a className="navbar__item" href={lp('/company/')}>{t('nav.about')}</a></li>
+          <li><a className="navbar__item" href={lp('/contacts/')}>{t('nav.contact')}</a></li>
           <li>
 
-          </li>                 
+          </li>
         </ul>
         <ul id="nav-resources" className="dropdown-content">
-          <li><a href="https://docs.search-guard.com" target="_blank" rel="noopener noreferrer">Documentation</a></li>
-          <li><a href="https://forum.search-guard.com" target="_blank" rel="noopener noreferrer">Community Forum</a></li>
-          <li><a href="https://git.floragunn.com/search-guard" target="_blank" rel="noopener noreferrer">Source Code</a></li>
-          <li><a href="/resource/#videos">Videos</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/presentations/">Presentations</a></li>
-          <li><a href="/whitepapers/">Whitepapers</a></li>
+          <li><a href="https://docs.search-guard.com" target="_blank" rel="noopener noreferrer">{t('nav.documentation')}</a></li>
+          <li><a href="https://forum.search-guard.com" target="_blank" rel="noopener noreferrer">{t('nav.communityForum')}</a></li>
+          <li><a href="https://git.floragunn.com/search-guard" target="_blank" rel="noopener noreferrer">{t('nav.sourceCode')}</a></li>
+          <li><a href={lp('/resource/#videos')}>{t('nav.videos')}</a></li>
+          <li><a href={lp('/faq/')}>{t('nav.faq')}</a></li>
+          <li><a href={lp('/presentations/')}>{t('nav.presentations')}</a></li>
+          <li><a href="/whitepapers/">{t('nav.whitepapers')}</a></li>
         </ul>
         <ul id="nav-solutions" className="dropdown-content">
-          <li><a href="/security/">Security</a></li>
-          <li><a href="/alerting/">Alerting</a></li>
-          <li><a href="/anomaly-detection/">Anomaly Detection (Beta)</a></li>
-          <li><a href="/encryption-at-rest/">Encryption at Rest</a></li>
-          <li><a href="/indexmanagement/">Index Management (Beta)</a></li>
-          <li><a href="/tlstool/">TLS Tool</a></li>
+          <li><a href={lp('/security/')}>{t('nav.security')}</a></li>
+          <li><a href={lp('/alerting/')}>{t('nav.alerting')}</a></li>
+          <li><a href={lp('/anomaly-detection/')}>{t('nav.anomalyDetection')}</a></li>
+          <li><a href={lp('/encryption-at-rest/')}>{t('nav.encryptionAtRest')}</a></li>
+          <li><a href={lp('/indexmanagement/')}>{t('nav.indexManagement')}</a></li>
+          <li><a href={lp('/tlstool/')}>{t('nav.tlsTool')}</a></li>
         </ul>
       </>
     );

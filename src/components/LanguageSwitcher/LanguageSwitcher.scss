@@ -1,0 +1,27 @@
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+
+.language-switcher {
+  position: relative;
+
+  &__trigger {
+    padding: 0 10px;
+    line-height: 64px;
+    cursor: pointer;
+  }
+
+  &__flag {
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  &__dropdown {
+    min-width: 170px !important;
+
+    li > a {
+      display: flex !important;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

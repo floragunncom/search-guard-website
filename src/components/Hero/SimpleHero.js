@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import Button from '../Button/Button';
 import heroCertificates from '../../images/hero-certificates.svg';
 import icons from '../../images/hero-icons.svg';
@@ -6,6 +7,8 @@ import hero from '../../images/hero-static.svg';
 import {ReactSVG} from "react-svg";
 
 const SimpleHero = () => {
+    const { t } = useTranslation('home');
+
     return (
             <div>
                 <div className="hero-wrapper">
@@ -13,15 +16,14 @@ const SimpleHero = () => {
                         <div className="col s12">
                                 <div className="hero-text-wrapper">
                                     <h1 className="hero-text-wrapper-headline">
-                                        Security and Alerting for Elasticsearch and Kibana
+                                        {t('hero.headline')}
                                     </h1>
                                 </div>
                         </div>
                         <div className="row">
                                 <div className="col s12 m12 l8">
                                     <div className="hero-text-wrapper-text">
-                                        Search Guard is a Security and Alerting Plugin that encrypts and protects your data
-                                        and data flows from unauthorized access in the entire Elastic Stack.
+                                        {t('hero.text')}
                                     </div>
                                 </div>
                         </div>
@@ -29,7 +31,7 @@ const SimpleHero = () => {
                             <div className="col s12 l6 flex-col-bottom flex-col-center-on-med-down">
                                 <div className="hero-button-wrapper">
                                     <Button
-                                        text="Free Search Guard Trial"
+                                        text={t('hero.button')}
                                         link="/search-guard-free-trial/"
                                     />
                                 </div>

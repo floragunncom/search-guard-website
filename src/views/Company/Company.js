@@ -1,5 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Journey from '../../components/Journey/Journey';
@@ -9,26 +10,26 @@ import Team from '../../components/Team/Team';
 import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
 
 const Company = () => {
+    const { t } = useTranslation('company');
 
     const breadcrumb = [
-        {id: 1, anchor: '/', name: 'Home'},
-        {id: 1, anchor: '/company/', name: 'Company'},
+        {id: 1, anchor: '/', name: t('breadcrumb.home')},
+        {id: 1, anchor: '/company/', name: t('breadcrumb.company')},
     ];
 
     return (
         <PageWrapper>
             <Helmet>
                 <meta charSet="utf-8"/>
-                <title>Team | Get to know the minds behind Search Guard</title>
-                <link rel="canonical" href="https://search-guard.com/company/"/>
+                <title>{t('meta.title')}</title>
                 <meta
                     name="description"
-                    content="Our mission is to shape IT security and Open Source business models. From day 1 until today, we follow our principles of putting security first and providing no-nonsense IT."
+                    content={t('meta.description')}
                 />
             </Helmet>
             <Title
-                headline="company"
-                text="We shape IT security and Open Source business models since 2013."
+                headline={t('title.headline')}
+                text={t('title.text')}
                 breadcrumb={breadcrumb}
             />
             <Team/>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+import '../src/i18n/config';
 import '../styles/main.scss';
 
 const normalizeAssetProp = (value) => {

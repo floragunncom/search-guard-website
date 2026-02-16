@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import sieMonster from '../../images/sie-monster.svg';
 import pivotal from '../../images/pivotal.svg';
 import wuerthPhoenix from '../../images/wuerth-phoenix.svg';
@@ -12,6 +13,7 @@ import { loadScriptOnce } from '../../utils/loadScriptOnce';
 
 
 const TrustedBy = () => {
+  const { t } = useTranslation('home');
   const carouselRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -105,7 +107,7 @@ const TrustedBy = () => {
   return (
     <div className="trusted-wrapper">
       <div className="row">
-        <h2 className="trusted-headline">Search Guard is trusted by</h2>
+        <h2 className="trusted-headline">{t('trustedBy.headline')}</h2>
         <div className="glide" ref={carouselRef}>
           <div className="glide__track" data-glide-el="track">
             <ul className="glide__slides">

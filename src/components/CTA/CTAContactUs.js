@@ -1,16 +1,21 @@
 import TextTile from "../Tiles/TextTile/TextTile";
 import React from "react";
 import envelope from "../../images/icon-envelope.svg";
+import { useTranslation } from 'react-i18next';
+import { useLocalizedPath } from '../../i18n/useLocalizedPath';
 
 const CTAContactUs = ({colorschema}) => {
+    const { t } = useTranslation('common');
+    const lp = useLocalizedPath();
+
     return (
         <TextTile
             colorschema={colorschema}
-            headline="Can’t find what you’re looking for?"
-            text="No worries, maybe we can help you find the answer."
-            ctaText="contact us"
+            headline={t('cta.contactUs.headline')}
+            text={t('cta.contactUs.text')}
+            ctaText={t('cta.contactUs.button')}
             icon={envelope}
-            link="/contacts/"
+            link={lp('/contacts/')}
         />
     )
 }
