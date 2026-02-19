@@ -1,4 +1,5 @@
 import React from 'react';
+import { ensureHttps, ensureTrailingSlash } from '../../utils/urlUtils';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 
 const BlogPost = ({ post }) => {
@@ -24,10 +25,10 @@ const BlogPost = ({ post }) => {
 
   if (blogPost !== undefined) {
     return (
-      <a href={ `/blog/${blogPost.slug}` } className="blogpost-wrapper">
+      <a href={ `/blog/${ensureTrailingSlash(blogPost.slug)}` } className="blogpost-wrapper">
         <div className="blogpost-image-wrapper">
           <img
-            src={blogPost.postImage.fields.file.url + imageParameters }
+            src={ensureHttps(blogPost.postImage.fields.file.url) + imageParameters }
             className="blogpost-feed-image"
             alt={blogPost.postImage.fields.title}
             width={500}

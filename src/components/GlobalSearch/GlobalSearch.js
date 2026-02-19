@@ -1,6 +1,7 @@
 import React from 'react';
 import {Highlight, Hits, Index, InstantSearch, Menu, SearchBox, Snippet} from 'react-instantsearch';
 import { Badge } from '../Badge/Badge';
+import { ensureTrailingSlash } from '../../utils/urlUtils';
 import 'font-awesome/css/font-awesome.min.css';
 import classNames from 'classnames';
 
@@ -31,7 +32,7 @@ const DocsHit = ({ hit }) => (
 
 
 const BlogHit = ({ hit }) => (
-    <a id={hit.objectID} href={`/blog/${hit.slug}`} className='div-search-text'>
+    <a id={hit.objectID} href={`/blog/${ensureTrailingSlash(hit.slug)}`} className='div-search-text'>
         <div className="globalsearchresult-item">
             <div className='globalsearchresult-title-group'>
                 <Badge text={SEARCH_INDEXES_COMPONENT_MAP[SEARCH_GUARD_BLOG_SEARCH_INDEX].label} bgColor={SEARCH_INDEXES_COMPONENT_MAP[SEARCH_GUARD_BLOG_SEARCH_INDEX].bgColor} textColor={SEARCH_INDEXES_COMPONENT_MAP[SEARCH_GUARD_BLOG_SEARCH_INDEX].textColor}/>    

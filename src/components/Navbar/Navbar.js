@@ -64,7 +64,7 @@ const Navbar = ({ background = 'white', landing }) => {
         <div className="navbar-fixed">
           <nav>
             <div className="nav-wrapper">
-              <a href="#!" data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger">menu</i></a>
+              <a role="button" tabIndex={0} data-target="sg-sidenav" className="sidenav-trigger"><i className="material-icons burger">menu</i></a>
               <a href={lp('/')} className="brand-logo">
               <ReactSVG
                 src={logo}
@@ -117,7 +117,7 @@ const Navbar = ({ background = 'white', landing }) => {
         </div>
         <ul className="sidenav" id="sg-sidenav">
           <li>
-            <a href="#!" className="navbar__item" >{t('nav.solutions')}</a>
+            <a role="button" tabIndex={0} className="navbar__item" >{t('nav.solutions')}</a>
             <ul >
               <li><a href={lp('/security/')}>{t('nav.security')}</a></li>
               <li><a href={lp('/alerting/')}>{t('nav.alerting')}</a></li>

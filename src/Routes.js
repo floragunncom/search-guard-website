@@ -84,6 +84,7 @@ const Routes = () => {
             content={`This page has moved permanently to ${to}`}
           />
           <link rel="canonical" href={`https://search-guard.com${to}`} />
+          <meta property="og:url" content={`https://search-guard.com${to}`} />
           <meta name="robots" content="noindex,follow" />
           <meta httpEquiv="refresh" content={`0;url=${to}`} />
         </Helmet>

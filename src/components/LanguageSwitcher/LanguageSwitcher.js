@@ -40,7 +40,8 @@ const LanguageSwitcher = () => {
   return (
     <li className="language-switcher">
       <a
-        href="#!"
+        role="button"
+        tabIndex={0}
         data-target="nav-languages"
         className="dropdown-trigger language-switcher__trigger"
         aria-label={LOCALE_LABELS[locale]}

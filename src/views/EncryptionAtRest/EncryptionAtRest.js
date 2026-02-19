@@ -12,9 +12,11 @@ import key from "../../images/key-solid.svg";
 import shield from "../../images/shield-halved.svg";
 import contract from "../../images/file-contract-solid.svg";
 import CTAEncryptionAtRest from "../../components/CTA/CTAEncryptionAtRest";
+import { toAbsoluteSiteUrl, toLocalePath } from '../../utils/urlUtils';
 
 const EncryptionAtRest = () => {
-    const { t } = useTranslation('encryptionAtRest');
+    const { t, i18n } = useTranslation('encryptionAtRest');
+    const locale = i18n?.resolvedLanguage || i18n?.language || 'en';
 
     let eski = [
         {
@@ -58,8 +60,8 @@ const EncryptionAtRest = () => {
     ]
 
     const breadcrumb = [
-        {id: 1, anchor: '/', name: t('breadcrumb.home')},
-        {id: 1, anchor: '/encryption-at-rest/', name: t('breadcrumb.encryptionAtRest')},
+        {id: 1, anchor: toLocalePath('/', locale), name: t('breadcrumb.home')},
+        {id: 1, anchor: toLocalePath('/encryption-at-rest/', locale), name: t('breadcrumb.encryptionAtRest')},
     ];
 
     return (
@@ -80,13 +82,13 @@ const EncryptionAtRest = () => {
                         name: 'Search Guard Encryption at Rest',
                         applicationCategory: 'SecurityApplication',
                         operatingSystem: 'Linux, Windows, macOS',
-                        url: 'https://search-guard.com/encryption-at-rest/',
+                        url: toAbsoluteSiteUrl('/encryption-at-rest/', locale),
                         description: 'Encryption at Rest for Elasticsearch indices and snapshots with compliance-focused data protection.',
                         offers: {
                             '@type': 'Offer',
                             priceCurrency: 'USD',
                             availability: 'https://schema.org/InStock',
-                            url: 'https://search-guard.com/contacts/',
+                            url: toAbsoluteSiteUrl('/contacts/', locale),
                         },
                     })}
                 </script>

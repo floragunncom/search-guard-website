@@ -9,6 +9,7 @@ import BlogPost from '../../components/BlogPost/BlogPost';
 import SearchBlogPost from '../../components/SearchBlogPost/SearchBlogPost';
 import posts from '../../Api/contentfulPosts.json';
 import Pagination from '../../components/Pagination/Pagination';
+import { toSeoDescription, toSeoTitle } from '../../utils/urlUtils';
 
 const Blog = ({ match } ) => {
 
@@ -44,6 +45,8 @@ const Blog = ({ match } ) => {
   const pageDescription = isPaginatedView
     ? `Official Search Guard blog page ${currentPage}. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch.`
     : 'This is the official Search Guard blog. Here you can find articles, guidelines and news about Search Guard, new features and security for Elasticsearch.';
+  const seoTitle = toSeoTitle(pageTitle, 60);
+  const seoDescription = toSeoDescription(pageDescription, 155);
 
   const prevPageHref = currentPage > 1
     ? currentPage === 2
@@ -115,11 +118,11 @@ const Blog = ({ match } ) => {
     <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{pageTitle}</title>
+        <title>{seoTitle}</title>
         <link rel="canonical" href={canonical} />
         {prevPageHref && <link rel="prev" href={prevPageHref} />}
         {nextPageHref && <link rel="next" href={nextPageHref} />}
-        <meta name="description" content={pageDescription} />
+        <meta name="description" content={seoDescription} />
       </Helmet>
       <Title headline="Blog" breadcrumb={breadcrumb}/>
       <div className="row">

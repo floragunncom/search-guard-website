@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { ensureHttps, ensureTrailingSlash } from '../../utils/urlUtils';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 
 /**
@@ -38,10 +39,10 @@ const BlogPost = ({ post }) => {
 
   if (blogPost !== undefined) {
     return (
-      <Link to={{ pathname: `/blog/${blogPost.slug}` }} className="blogpost-small-wrapper">
+      <Link to={{ pathname: `/blog/${ensureTrailingSlash(blogPost.slug)}` }} className="blogpost-small-wrapper">
         <div className="blogpost-small-image-wrapper">
           <img
-            src={blogPost.postImage.fields.file.url + imageParameters }
+            src={ensureHttps(blogPost.postImage.fields.file.url) + imageParameters }
             className="blogpost-feed-image"
             alt={blogPost.postImage.fields.title}
             width={500}

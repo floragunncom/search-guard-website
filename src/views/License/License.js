@@ -11,9 +11,11 @@ import CustomizeLicense from '../../components/LicensingModel/CustomizeLicense';
 import FilledDivider from '../../components/FilledDivider/FilledDivider';
 import FeatureBreakdown from "../../components/FeatureBreakdown/FeatureBreakdown";
 import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
+import { toAbsoluteSiteUrl, toLocalePath } from '../../utils/urlUtils';
 
 const License = () => {
-    const { t } = useTranslation('license');
+    const { t, i18n } = useTranslation('license');
+    const locale = i18n?.resolvedLanguage || i18n?.language || 'en';
 
     useEffect(() => {
         initGA();
@@ -21,8 +23,8 @@ const License = () => {
     }, []);
 
     const breadcrumb = [
-        {id: 1, anchor: '/', name: t('breadcrumb.home')},
-        {id: 1, anchor: '/licensing/', name: t('breadcrumb.licensing')},
+        {id: 1, anchor: toLocalePath('/', locale), name: t('breadcrumb.home')},
+        {id: 1, anchor: toLocalePath('/licensing/', locale), name: t('breadcrumb.licensing')},
     ];
 
     return (
@@ -43,7 +45,7 @@ const License = () => {
                         name: 'Search Guard',
                         applicationCategory: 'SecurityApplication',
                         operatingSystem: 'Linux, Windows, macOS',
-                        url: 'https://search-guard.com/licensing/',
+                        url: toAbsoluteSiteUrl('/licensing/', locale),
                         description: 'Pricing and editions for Search Guard Security and Alerting for Elasticsearch and Kibana.',
                         offers: [
                             {
@@ -58,14 +60,14 @@ const License = () => {
                                 name: 'Enterprise Edition',
                                 priceCurrency: 'USD',
                                 availability: 'https://schema.org/InStock',
-                                url: 'https://search-guard.com/contacts/',
+                                url: toAbsoluteSiteUrl('/contacts/', locale),
                             },
                             {
                                 '@type': 'Offer',
                                 name: 'Compliance Edition',
                                 priceCurrency: 'USD',
                                 availability: 'https://schema.org/InStock',
-                                url: 'https://search-guard.com/contacts/',
+                                url: toAbsoluteSiteUrl('/contacts/', locale),
                             },
                         ],
                     })}

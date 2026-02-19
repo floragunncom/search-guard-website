@@ -6,6 +6,7 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import BlogPost from '../../components/BlogPost/BlogPost';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 import posts from '../../Api/contentfulPosts.json';
+import { toSeoDescription, toSeoTitle } from '../../utils/urlUtils';
 
 const BlogCategory = ({ match }) => {
   const categoryFromSlug = match.params.slug.replace('-ssl', '/ssl').replace(/-/g, ' ');
@@ -21,8 +22,11 @@ const BlogCategory = ({ match }) => {
     })
     .join(' ');
 
-  const categoryTitle = `Search Guard Blog - ${categoryDisplayName} Articles`;
-  const categoryDescription = `Browse ${categoryName}-related articles on the Search Guard blog.`;
+  const categoryTitle = toSeoTitle(`Search Guard Blog: ${categoryDisplayName} Articles`, 60);
+  const categoryDescription = toSeoDescription(
+    `Browse ${categoryDisplayName} articles on the official Search Guard blog: Elasticsearch security guides, alerting tips, and product updates.`,
+    155
+  );
   const categoryPosts = posts.filter(post => {
     const tagsToLowercase = post.fields.tags.map(tag => tag.toLowerCase());
     return tagsToLowercase.includes(categoryName)

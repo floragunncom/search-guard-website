@@ -17,6 +17,7 @@ const Heise = () => {
                 <meta charSet="utf-8" />
                 <title>Search Guard reduces your TCO of Elasticsearch and Kibana</title>
                 <link rel="canonical" href="https://search-guard.com/heise/" />
+                <meta name="robots" content="noindex,follow" />
                 <meta
                     name="description"
                     content="Use Search Guard to reduce your TCO of Elasticsearch and Kibana"
@@ -100,7 +101,7 @@ const Heise = () => {
                     <a className="blog-box__box" href="/elasticsearch-cost-optimization/">
                         <div className="blog-box__box-image-container">
                             <img loading="lazy" alt="Elasticsearch Cost Optimizations"
-                                 src="//images.ctfassets.net/95di84mqkkro/7ou9XscGVTXw0dTiXX25s5/a12456487832418a989af0340dbc4b00/elasticsearch-cost_optimization.jpg?fm=jpg&amp;fl=progressive&amp;w=500&amp;fit=scale"
+                                 src="https://images.ctfassets.net/95di84mqkkro/7ou9XscGVTXw0dTiXX25s5/a12456487832418a989af0340dbc4b00/elasticsearch-cost_optimization.jpg?fm=jpg&amp;fl=progressive&amp;w=500&amp;fit=scale"
                                  className="blog-box__box-image" /></div>
                         <div className="blog-box__box-content-headline">Elasticsearch Cost Optimization</div>
                         <div className="blog-box__box-content-info">Jochen Kressin || 2023-03-28</div>
@@ -116,7 +117,7 @@ const Heise = () => {
                     <a className="blog-box__box" href="/signals-elasticsearch-alerting/">
                         <div className="blog-box__box-image-container">
                             <img loading="lazy" alt="Elasticsearch Cost Optimizations"
-                                 src="//images.ctfassets.net/95di84mqkkro/1Lsxx3o8PTyEXsKPLv2GHX/4f6e51589c9da7e7e486955abadbd611/elasticsearch_alerting_search_guard.jpg?fm=jpg&amp;fl=progressive&amp;w=500&amp;fit=scale"
+                                 src="https://images.ctfassets.net/95di84mqkkro/1Lsxx3o8PTyEXsKPLv2GHX/4f6e51589c9da7e7e486955abadbd611/elasticsearch_alerting_search_guard.jpg?fm=jpg&amp;fl=progressive&amp;w=500&amp;fit=scale"
                                  className="blog-box__box-image" /></div>
                         <div className="blog-box__box-content-headline">Signals Alerting: First steps</div>
                         <div className="blog-box__box-content-info">cstaley || 2019-12-12</div>
@@ -130,7 +131,7 @@ const Heise = () => {
 
                     <a className="blog-box__box" href="/elasticsearch-kibana-license-change/">
                     <div className="blog-box__box-image-container"><img loading="lazy" alt="Jackpotting"
-                                                                        src="//images.ctfassets.net/95di84mqkkro/18qCWMmdDqlSBrfoXdwWec/cb956b670257f70f5f3968b418c646ba/elastic-license-change.jpg?fm=jpg&amp;fl=progressive&amp;w=500&amp;fit=scale"
+                                                                        src="https://images.ctfassets.net/95di84mqkkro/18qCWMmdDqlSBrfoXdwWec/cb956b670257f70f5f3968b418c646ba/elastic-license-change.jpg?fm=jpg&amp;fl=progressive&amp;w=500&amp;fit=scale"
                                                                         className="blog-box__box-image"/>
                     </div>
                     <div className="blog-box__box-content-headline">Licensing changes to Elasticsearch</div>

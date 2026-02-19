@@ -7,6 +7,7 @@ import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Markdown from 'markdown-to-jsx';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Blockquote from '../../components/Blockquote/Blockquote';
+import { ensureHttps, toSeoDescription, toSeoTitle } from '../../utils/urlUtils';
 import Title from "../../components/Title/Title";
 import BlogPostSmall from "../../components/BlogPost/BlogPostSmall";
 
@@ -117,10 +118,9 @@ const Author = ({ match }) => {
         },
       },
       img: {
-        component: 'img',
-        props: {
-          className: 'blogpostarticle-image-wrapper blogpostarticle-image',
-        },
+        component: ({ src, ...props }) => (
+          <img {...props} src={ensureHttps(src)} className="blogpostarticle-image-wrapper blogpostarticle-image" />
+        ),
       },
       blockquote: {
         component: Blockquote,
@@ -147,8 +147,8 @@ const Author = ({ match }) => {
     );
   }
 
-  const pageTitle = `Search Guard Author: ${person.fields.firstName} ${person.fields.lastName}`;
-  const pageDescription = person.fields.htmlDescription;
+  const pageTitle = toSeoTitle(`Search Guard Author: ${person.fields.firstName} ${person.fields.lastName}`, 60);
+  const pageDescription = toSeoDescription(person.fields.htmlDescription, 155);
   const pageCanonicalUrl = toTrailingSlashUrl(`/author/${person.fields.slug}`);
   const avatarUrl = `https:${person.fields.avatar.fields.file.url}`;
 
@@ -243,7 +243,7 @@ const Author = ({ match }) => {
               name: `${person.fields.firstName} ${person.fields.lastName}`,
               identifier: person.sys.id,
               description: person.fields.htmlDescription,
-              image: person.fields.avatar.fields.file.url,
+              image: ensureHttps(person.fields.avatar.fields.file.url),
             },
           }),
         }}

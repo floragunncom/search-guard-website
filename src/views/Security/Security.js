@@ -12,9 +12,11 @@ import handsHolding from '../../images/hands-holding-circle-solid.svg';
 import umbrella from '../../images/umbrella-solid.svg';
 import tableCellsLock from '../../images/table-cells-column-lock-solid.svg';
 import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
+import { toAbsoluteSiteUrl, toLocalePath } from '../../utils/urlUtils';
 
 const Security = () => {
-    const { t } = useTranslation('security');
+    const { t, i18n } = useTranslation('security');
+    const locale = i18n?.resolvedLanguage || i18n?.language || 'en';
 
     useEffect(() => {
         initGA();
@@ -22,8 +24,8 @@ const Security = () => {
     }, []);
 
     const breadcrumb = [
-        {id: 1, anchor: '/', name: t('breadcrumb.home')},
-        {id: 2, anchor: '/security/', name: t('breadcrumb.security')},
+        {id: 1, anchor: toLocalePath('/', locale), name: t('breadcrumb.home')},
+        {id: 2, anchor: toLocalePath('/security/', locale), name: t('breadcrumb.security')},
     ];
 
     return (
@@ -44,13 +46,13 @@ const Security = () => {
                         name: 'Search Guard Security',
                         applicationCategory: 'SecurityApplication',
                         operatingSystem: 'Linux, Windows, macOS',
-                        url: 'https://search-guard.com/security/',
+                        url: toAbsoluteSiteUrl('/security/', locale),
                         description: 'Security suite for Elasticsearch and Kibana with access control, encryption, audit logging and compliance features.',
                         offers: {
                             '@type': 'Offer',
                             priceCurrency: 'USD',
                             availability: 'https://schema.org/InStock',
-                            url: 'https://search-guard.com/search-guard-free-trial/',
+                            url: toAbsoluteSiteUrl('/search-guard-free-trial/', locale),
                         },
                     })}
                 </script>

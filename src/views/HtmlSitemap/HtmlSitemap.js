@@ -3,6 +3,7 @@ import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
+import { ensureTrailingSlash } from '../../utils/urlUtils';
 import posts from '../../Api/contentfulPosts.json';
 import presentations from '../../Api/presentations.json';
 import whitepapers from '../../Api/contentfulWhitepapers.json';
@@ -62,7 +63,7 @@ const HtmlSitemap = () => {
                     {posts.map(post => {
                         return (
                             <>
-                                <a href={`/blog/${post.fields.slug}`}>{post.fields.title}</a><br />
+                                <a href={`/blog/${ensureTrailingSlash(post.fields.slug)}`}>{post.fields.title}</a><br />
                             </>
                         );
                     })}

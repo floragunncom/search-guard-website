@@ -14,15 +14,17 @@ import ad_machine_learning from '../../images/ad_machine_learning.svg';
 import ad_historical from '../../images/ad_historical.svg';
 import ad_cardinality from '../../images/ad_cardinality.svg';
 import alertingNotifications from '../../images/alerting_notifications.svg';
+import { toAbsoluteSiteUrl, toLocalePath } from '../../utils/urlUtils';
 
 const DOCS_ANOMALY_DETECTION_URL = 'https://docs.search-guard.com/latest/anomaly-detection';
 
 const AnomalyDetection = () => {
-  const { t } = useTranslation('anomalyDetection');
+  const { t, i18n } = useTranslation('anomalyDetection');
+  const locale = i18n?.resolvedLanguage || i18n?.language || 'en';
 
   const breadcrumb = [
-    { id: 1, anchor: '/', name: t('breadcrumb.home') },
-    { id: 2, anchor: '/anomaly-detection/', name: t('breadcrumb.anomalyDetection') },
+    { id: 1, anchor: toLocalePath('/', locale), name: t('breadcrumb.home') },
+    { id: 2, anchor: toLocalePath('/anomaly-detection/', locale), name: t('breadcrumb.anomalyDetection') },
   ];
 
   return (
@@ -41,7 +43,7 @@ const AnomalyDetection = () => {
             name: 'Search Guard Anomaly Detection',
             applicationCategory: 'SecurityApplication',
             operatingSystem: 'Linux, Windows, macOS',
-            url: 'https://search-guard.com/anomaly-detection/',
+            url: toAbsoluteSiteUrl('/anomaly-detection/', locale),
             description:
               'AI-powered anomaly detection for Elasticsearch using unsupervised machine learning. Detect spikes, dips, and unusual patterns in real time with no training data required.',
             offers: {

@@ -17,10 +17,12 @@ import server_lock from '../../images/server-lock.svg';
 import objects_shield from '../../images/objects-shield.svg';
 import FilledDivider from "../../components/FilledDivider/FilledDivider";
 import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
+import { toAbsoluteSiteUrl } from '../../utils/urlUtils';
 
 
 const HomePage = () => {
-    const { t } = useTranslation('home');
+    const { t, i18n } = useTranslation('home');
+    const locale = i18n?.resolvedLanguage || i18n?.language || 'en';
 
     useEffect(() => {
         initGA();
@@ -45,10 +47,10 @@ const HomePage = () => {
                         '@context': 'https://schema.org',
                         '@type': 'WebSite',
                         name: 'Search Guard',
-                        url: 'https://search-guard.com/',
+                        url: toAbsoluteSiteUrl('/', locale),
                         potentialAction: {
                             '@type': 'SearchAction',
-                            target: 'https://search-guard.com/?q={search_term_string}',
+                            target: `${toAbsoluteSiteUrl('/', locale)}?q={search_term_string}`,
                             'query-input': 'required name=search_term_string',
                         },
                     })}

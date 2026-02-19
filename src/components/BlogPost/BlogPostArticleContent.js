@@ -9,6 +9,13 @@ import PreFooter from '../../components/PreFooter/PreFooter';
 import BlogBox from '../../components/BlogBox/BlogBox';
 import Blockquote from '../../components/Blockquote/Blockquote';
 import CodeBlock from './CodeBlock';
+import {
+    ensureHttps,
+    ensureTrailingSlash,
+    toSeoDescription,
+    toSeoTitle,
+    upgradeToHttps,
+} from '../../utils/urlUtils';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 import x_twitter from '../../images/x-twitter.svg';
 import linkedIn from '../../images/linkedin.svg';
@@ -36,9 +43,24 @@ const BlogPostArticleContent = ({postContent}) => {
             return href;
         }
 
-        let normalized = href.trim();
-        normalized = normalized.replace(/^https?:\/\/(www\.)?search-guard\.com/i, '');
+        const trimmed = href.trim();
 
+        if (/^https?:\/\/(www\.)?search-guard\.com/i.test(trimmed)) {
+            const parsed = new URL(trimmed);
+            let normalized = parsed.pathname + (parsed.search || '') + (parsed.hash || '');
+            if (normalized.startsWith('/') && !normalized.includes('#') && !normalized.includes('?')) {
+                if (normalized !== '/' && !normalized.endsWith('/') && !/\.[a-z0-9]+$/i.test(normalized)) {
+                    normalized = `${normalized}/`;
+                }
+            }
+            return normalized;
+        }
+
+        if (/^http:\/\//i.test(trimmed)) {
+            return upgradeToHttps(trimmed);
+        }
+
+        let normalized = trimmed;
         if (normalized.startsWith('/') && !normalized.includes('#') && !normalized.includes('?')) {
             if (normalized !== '/' && !normalized.endsWith('/') && !/\.[a-z0-9]+$/i.test(normalized)) {
                 normalized = `${normalized}/`;
@@ -61,8 +83,9 @@ const BlogPostArticleContent = ({postContent}) => {
     const options = {
         overrides: {
             h1: {
+                component: 'h2',
                 props: {
-                    className: 'blogpostarticle-headline1',
+                    className: 'blogpostarticle-headline2',
                 },
             },
             h2: {
@@ -126,10 +149,9 @@ const BlogPostArticleContent = ({postContent}) => {
                 },
             },
             img: {
-                component: 'img',
-                props: {
-                    className: 'blogpostarticle-image-wrapper blogpostarticle-image materialboxed',
-                },
+                component: ({ src, ...props }) => (
+                    <img {...props} src={ensureHttps(src)} className="blogpostarticle-image-wrapper blogpostarticle-image materialboxed" />
+                ),
             },
             blockquote: {
                 component: Blockquote,
@@ -198,7 +220,7 @@ const BlogPostArticleContent = ({postContent}) => {
         postContent.fields.audio
     ) {
         renderAudio = (
-            <audio controls src={`${postContent.fields.audio.fields.file.url}`}></audio>
+            <audio controls src={ensureHttps(postContent.fields.audio.fields.file.url)}></audio>
         );
     }
 
@@ -240,6 +262,8 @@ const BlogPostArticleContent = ({postContent}) => {
     } else {
         title = postContent.fields.title;
     }
+    const seoTitle = toSeoTitle(title, 60);
+    const seoDescription = toSeoDescription(postContent.fields.htmlDescription, 155);
     const articleSchema = {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -248,8 +272,8 @@ const BlogPostArticleContent = ({postContent}) => {
             '@id': toTrailingSlashUrl(`/blog/${postContent.fields.slug}`),
         },
         headline: postContent.fields.title,
-        description: postContent.fields.htmlDescription,
-        image: postContent.fields.postImage.fields.file.url,
+        description: seoDescription,
+        image: ensureHttps(postContent.fields.postImage.fields.file.url),
         author: authorSchema,
         datePublished: postContent.fields.date,
         dateModified: postContent.sys.updatedAt,
@@ -267,20 +291,20 @@ const BlogPostArticleContent = ({postContent}) => {
         <PageWrapper>
             <Helmet>
                 <meta charSet="utf-8"/>
-                <title>{title}</title>
+                <title>{seoTitle}</title>
                 <link
                     rel="canonical"
                     href={toTrailingSlashUrl(`/blog/${postContent.fields.slug}`)}
                 />
 
-                <meta name="description" content={postContent.fields.htmlDescription}/>
+                <meta name="description" content={seoDescription}/>
                 <meta name="copyright" content="floragunn GmbH"/>
                 {renderAuthorMetaTag}
 
-                <meta property="og:title" content={title}/>
+                <meta property="og:title" content={seoTitle}/>
                 <meta property="og:type" content="article"/>
                 <meta property="og:url" content={toTrailingSlashUrl(`/blog/${postContent.fields.slug}`)}/>
-                <meta property="og:description" content={postContent.fields.htmlDescription}/>
+                <meta property="og:description" content={seoDescription}/>
                 <meta property="og:image" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
                 <meta property="og:image:alt" content={postContent.fields.title}/>
                 <meta property="og:locale" content="en_US"/>
@@ -288,8 +312,8 @@ const BlogPostArticleContent = ({postContent}) => {
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:site" content="@searchguard"/>
                 <meta name="twitter:creator" content="@searchguard"/>
-                <meta name="twitter:title" content={title}/>
-                <meta name="twitter:description" content={postContent.fields.htmlDescription}/>
+                <meta name="twitter:title" content={seoTitle}/>
+                <meta name="twitter:description" content={seoDescription}/>
 
                 <meta name="twitter:image" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
                 <meta name="twitter:image:src" content={`https:${postContent.fields.postImage.fields.file.url}`}/>
@@ -300,7 +324,7 @@ const BlogPostArticleContent = ({postContent}) => {
                 text={postContent.fields.title}
                 subText={`${postContent.fields.author} `}
                 tags={postContent.fields.tags}
-                link={`/blog/${postContent.fields.slug}`}
+                link={`/blog/${ensureTrailingSlash(postContent.fields.slug)}`}
                 authorProfile={postContent.fields.authorProfile}
                 image={postContent.fields.postImage.fields.file.url}
             />
@@ -308,7 +332,7 @@ const BlogPostArticleContent = ({postContent}) => {
             <div className="row blogpostarticle-wrapper blogpostarticle-author">
                 <div className="col s12 l8 offset-l2 center">
                     <img loading="lazy"
-                         src={postContent.fields.postImage.fields.file.url + "?fm=jpg&fl=progressive&w=800&fit=scale"}
+                         src={ensureHttps(postContent.fields.postImage.fields.file.url) + "?fm=jpg&fl=progressive&w=800&fit=scale"}
                          className="blogpostarticle-headerimage responsive-img"
                          alt={postContent.fields.title}
                          width={800}

@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Button from "../Button/Button";
 
 const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink, buttontarget, titlestyle }) => {
+    const { i18n } = useTranslation();
+    const pageLang = i18n?.resolvedLanguage || i18n?.language || 'en';
 
     let titleWrapperStyle = "title-wrapper-style";
     let titleHeadlineStyle = "title-headline-style";
@@ -48,7 +51,7 @@ const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink
               : ""
           }
 
-        <h1 lang="en" className={titleHeadlineStyle} dangerouslySetInnerHTML={{__html: headline}}></h1>
+        <h1 lang={pageLang} className={titleHeadlineStyle} dangerouslySetInnerHTML={{__html: headline}}></h1>
         <h2 className={titleTextStyle} dangerouslySetInnerHTML={{__html: text}}></h2>
           {buttontext ?
               <div className={buttonWrapperStyle}>

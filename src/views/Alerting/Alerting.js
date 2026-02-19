@@ -13,13 +13,15 @@ import FilledDivider from '../../components/FilledDivider/FilledDivider';
 import AlertingNotificationModel from '../../components/Alerting/AlertingNotificationModel';
 import CTAAlerting from "../../components/CTA/CTAAlerting";
 import AlertingBenefits from "../../components/Alerting/AlertingBenefits";
+import { toAbsoluteSiteUrl, toLocalePath } from '../../utils/urlUtils';
 
 const Alerting = () => {
-    const { t } = useTranslation('alerting');
+    const { t, i18n } = useTranslation('alerting');
+    const locale = i18n?.resolvedLanguage || i18n?.language || 'en';
 
     const breadcrumb = [
-        {id: 1, anchor: '/', name: t('breadcrumb.home')},
-        {id: 2, anchor: '/alerting/', name: t('breadcrumb.alerting')},
+        {id: 1, anchor: toLocalePath('/', locale), name: t('breadcrumb.home')},
+        {id: 2, anchor: toLocalePath('/alerting/', locale), name: t('breadcrumb.alerting')},
     ];
 
     return (
@@ -40,7 +42,7 @@ const Alerting = () => {
                         name: 'Search Guard Signals',
                         applicationCategory: 'SecurityApplication',
                         operatingSystem: 'Linux, Windows, macOS',
-                        url: 'https://search-guard.com/alerting/',
+                        url: toAbsoluteSiteUrl('/alerting/', locale),
                         description: 'Alerting for Elasticsearch and Kibana with anomaly detection, escalation levels, and connectors like email, Slack, PagerDuty, JIRA and webhooks.',
                         offers: {
                             '@type': 'Offer',

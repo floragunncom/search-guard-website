@@ -6,6 +6,7 @@ import Markdown from 'markdown-to-jsx';
 import BlogTitle from '../../components/BlogTitle/BlogTitle';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Blockquote from '../../components/Blockquote/Blockquote';
+import { ensureHttps, ensureTrailingSlash, upgradeToHttps } from '../../utils/urlUtils';
 import infoArrowBack from '../../images/info-arrow-back.svg';
 import iconTwitter from '../../images/icon-tw-loud.svg';
 import iconY from '../../images/icon-y-loud.svg';
@@ -26,7 +27,7 @@ const WhitePaperArticle = ({ match }) => {
       "hipaa-compliance-elastic-slack/": hipaaPdf,
     };
 
-  const slug = match.url.split("/")[2] + "/";
+  const slug = ensureTrailingSlash(match.url.split("/")[2] || '');
   const postContent = articles.find(
     entry => entry.fields.slug === `${slug}`,
   );
@@ -35,11 +36,11 @@ const WhitePaperArticle = ({ match }) => {
     '@type': 'Article',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://search-guard.com/whitepapers/${postContent.fields.slug}/`,
+      '@id': `https://search-guard.com/whitepapers/${ensureTrailingSlash(postContent.fields.slug)}`,
     },
     headline: postContent.fields.title,
     description: postContent.fields.description,
-    image: postContent.fields.cover.fields.file.url,
+    image: ensureHttps(postContent.fields.cover.fields.file.url),
     author: {
       '@type': 'Person',
       name: 'Jochen Kressin',
@@ -53,6 +54,21 @@ const WhitePaperArticle = ({ match }) => {
       },
     },
   };
+
+  const sanitizeHref = (href) => {
+    if (!href || typeof href !== 'string') return href;
+    const trimmed = href.trim();
+    if (/^http:\/\//i.test(trimmed)) {
+      return upgradeToHttps(trimmed);
+    }
+    return trimmed;
+  };
+
+  const WhitepaperLink = ({ href, children, ...linkProps }) => (
+    <a {...linkProps} href={sanitizeHref(href)} className="whitepaperarticle-link">
+      {children}
+    </a>
+  );
 
   const options = {
     overrides: {
@@ -103,10 +119,7 @@ const WhitePaperArticle = ({ match }) => {
         },
       },
       a: {
-        component: 'a',
-        props: {
-          className: 'whitepaperarticle-link',
-        },
+        component: WhitepaperLink,
       },
       li: {
         component: 'div',
@@ -115,10 +128,9 @@ const WhitePaperArticle = ({ match }) => {
         },
       },
       img: {
-        component: 'img',
-        props: {
-          className: 'whitepaperarticle-image-wrapper whitepaperarticle-image',
-        },
+        component: ({ src, ...props }) => (
+          <img {...props} src={ensureHttps(src)} className="whitepaperarticle-image-wrapper whitepaperarticle-image" />
+        ),
       },
       blockquote: {
         component: Blockquote,
@@ -142,9 +154,9 @@ const WhitePaperArticle = ({ match }) => {
 
         <meta property="og:title" content={postContent.fields.title} />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://search-guard.com/${postContent.fields.slug}`} />
+        <meta property="og:url" content={`https://search-guard.com/whitepapers/${postContent.fields.slug}`} />
         <meta property="og:description" content={postContent.fields.description}/>
-        <meta property="og:image" content={postContent.fields.cover.fields.file.url}/>
+        <meta property="og:image" content={ensureHttps(postContent.fields.cover.fields.file.url)}/>
         <meta property="og:image:alt" content={postContent.fields.description}/>
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary" />
@@ -154,6 +166,7 @@ const WhitePaperArticle = ({ match }) => {
       <BlogTitle
         text={postContent.fields.title}
         tags={postContent.fields.tags}
+        link={`/whitepapers/${ensureTrailingSlash(postContent.fields.slug)}`}
       />
 
       <div className="row whitepaperarticle-wrapper">

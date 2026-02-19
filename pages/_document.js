@@ -23,6 +23,18 @@ const getMetaContent = (metaComponents, matcher) => {
   return found?.props?.content || '';
 };
 
+const normalizeWhitespace = (value) => String(value || '').replace(/\s+/g, ' ').trim();
+
+const truncateAtWord = (value, maxLength) => {
+  const text = normalizeWhitespace(value);
+  if (!text || text.length <= maxLength) {
+    return text;
+  }
+  const hardCut = text.slice(0, maxLength);
+  const lastSpace = hardCut.lastIndexOf(' ');
+  return (lastSpace > Math.floor(maxLength * 0.6) ? hardCut.slice(0, lastSpace) : hardCut).trim();
+};
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const helmetContext = {};
@@ -82,12 +94,44 @@ class MyDocument extends Document {
     const scriptComponents = toArray(helmet?.script?.toComponent());
 
     const titleText = getTextContent(titleComponents).trim();
+    const normalizedTitleText = truncateAtWord(titleText, 58);
     const descriptionText = getMetaContent(
       metaComponents,
       (props) => typeof props.name === 'string' && props.name.toLowerCase() === 'description'
     );
 
-    const normalizedMetaComponents = [...metaComponents];
+    const normalizedMetaComponents = metaComponents.map((meta, index) => {
+      if (!React.isValidElement(meta)) {
+        return meta;
+      }
+
+      const props = meta.props || {};
+      const lowerName = typeof props.name === 'string' ? props.name.toLowerCase() : '';
+      const lowerProperty = typeof props.property === 'string' ? props.property.toLowerCase() : '';
+      const isDescriptionTag =
+        lowerName === 'description' || lowerName === 'twitter:description' || lowerProperty === 'og:description';
+      const isTitleTag =
+        lowerName === 'twitter:title' || lowerProperty === 'og:title';
+
+      if (!isDescriptionTag && !isTitleTag) {
+        return meta;
+      }
+
+      const content = typeof props.content === 'string' ? props.content : '';
+      const normalizedContent = isDescriptionTag
+        ? truncateAtWord(content, 150)
+        : truncateAtWord(content, 58);
+
+      if (content === normalizedContent) {
+        return meta;
+      }
+
+      return React.cloneElement(meta, {
+        ...props,
+        content: normalizedContent,
+        key: props.key || `normalized-meta-${index}`,
+      });
+    });
 
     if (
       titleText &&
@@ -136,7 +180,7 @@ class MyDocument extends Document {
     return (
       <Html lang={htmlLang}>
         <Head>
-          {titleComponents}
+          {normalizedTitleText ? <title>{normalizedTitleText}</title> : titleComponents}
           {normalizedMetaComponents}
           {linkComponents}
           {scriptComponents}

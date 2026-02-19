@@ -1,4 +1,5 @@
 import React from 'react';
+import { ensureHttps } from '../../utils/urlUtils';
 import events from '../../Api/contentfulEvents.json';
 import Markdown from 'markdown-to-jsx';
 
@@ -50,7 +51,7 @@ const News = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  backgroundImage: `url(${item.backgroundImage.fields.file.url})`,
+                  backgroundImage: `url(${ensureHttps(item.backgroundImage.fields.file.url)})`,
                 }}
               >
                 <div className="news-item__info">

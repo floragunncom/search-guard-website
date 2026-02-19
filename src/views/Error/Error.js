@@ -26,7 +26,7 @@ const Error = () => {
       <div className="error-wrapper">
         <div className="row">
           <div className="col s12 m10 offset-m1 l8 offset-l2">
-            <div className="error-warning">An error occured</div>
+            <h1 className="error-warning">An error occured</h1>
             <div className="error-text">
               It's not you, it's us!
               <br /><br />

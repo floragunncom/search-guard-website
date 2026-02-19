@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button';
+import { ensureHttps, ensureTrailingSlash } from '../../utils/urlUtils';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
 import allPosts from '../../Api/contentfulPosts.json';
 
@@ -73,7 +74,7 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
 
       return (
         <a
-          href={`/blog/${post.fields.slug}` }
+          href={`/blog/${ensureTrailingSlash(post.fields.slug)}` }
           className="blog-box__box"
           key={post.sys.id}
         >
@@ -81,7 +82,7 @@ const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
 
             <img
                 alt={post.fields.postImage.fields.title}
-                src={post.fields.postImage.fields.file.url+ imageParameters }
+                src={ensureHttps(post.fields.postImage.fields.file.url) + imageParameters }
                 className="blog-box__box-image"
                 width={500}
                 loading="lazy"

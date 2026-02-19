@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { ensureTrailingSlash } from '../../utils/urlUtils';
 
 const SearchBlogPost = ({ post }) => {
   let previewContentTextLength = 165;
@@ -10,7 +11,7 @@ const SearchBlogPost = ({ post }) => {
   return (
     <Link
       to={{
-        pathname: `/blog/${post.fields.slug}`,
+        pathname: `/blog/${ensureTrailingSlash(post.fields.slug)}`,
       }}
     >
       <div className="searchblogpost-item">
