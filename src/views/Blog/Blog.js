@@ -1,17 +1,16 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
-import * as lunr from 'lunr';
 import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import BlogPost from '../../components/BlogPost/BlogPost';
-import SearchBlogPost from '../../components/SearchBlogPost/SearchBlogPost';
-import posts from '../../Api/contentfulPosts.json';
 import Pagination from '../../components/Pagination/Pagination';
 import { toSeoDescription, toSeoTitle } from '../../utils/urlUtils';
+import { usePageData } from '../../context/PageDataContext';
 
 const Blog = ({ match } ) => {
+  const pageData = usePageData();
+  const posts = pageData?.posts || [];
 
   const breadcrumb = [
     { anchor: '/', name: 'Home' },
@@ -28,8 +27,6 @@ const Blog = ({ match } ) => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
-
-  const documentsGeneral = [];
 
   let canonical = '';
   if ( pageNumber) {
@@ -57,17 +54,6 @@ const Blog = ({ match } ) => {
   const nextPageHref = currentPage < totalPages
     ? `https://search-guard.com/blog/page/${currentPage + 1}/`
     : null;
-
-  if (posts !== undefined) {
-    posts.map(post => {
-      documentsGeneral.push({
-        id: post.sys.id,
-        author: post.fields.author,
-        title: post.fields.title,
-        content: post.fields.postContent,
-      });
-    });
-  }
 
   const categoryNameTags = () => {
     const tags = [];

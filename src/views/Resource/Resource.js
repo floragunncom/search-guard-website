@@ -12,9 +12,11 @@ import Faq from '../../components/Faq/Faq';
 import Video from '../../components/Video/Video';
 import BlogBox from '../../components/BlogBox/BlogBox';
 import CTAContactUs from "../../components/CTA/CTAContactUs";
+import { usePageData } from '../../context/PageDataContext';
 
 
 const Resource = () => {
+    const pageData = usePageData();
     const { t } = useTranslation('resource');
 
     const breadcrumb = [
@@ -50,7 +52,7 @@ const Resource = () => {
         </div>
 
         <div id="blog">
-            <BlogBox overview headline="Blog" />
+            <BlogBox overview headline="Blog" posts={pageData?.recentPosts} />
         </div>
 
       <div id="git">
@@ -58,7 +60,7 @@ const Resource = () => {
       </div>
 
         <div id="videos">
-            <Video playlist />
+            <Video playlist videos={pageData?.videos} />
         </div>
 
         <div id="cve">

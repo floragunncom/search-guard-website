@@ -1,9 +1,8 @@
 import React from 'react';
 import Button from '../Button/Button';
-import allVideos from '../../Api/contentfulVideos.json';
 
 
-const Video = props => {
+const Video = ({ playlist: showPlaylist, videos: allVideos = [] }) => {
 
   let playlist;
   let playlistButton;
@@ -11,7 +10,7 @@ const Video = props => {
     let videos = allVideos.filter(video => video.fields.displayOnVideoOverviewPage === true);
     let featuredVideo = allVideos.filter(video => video.fields.displayAsFeaturesVideo === true)[0];
 
-    if (props.playlist) {
+    if (showPlaylist) {
 
     playlist = (
       <div className="video-playlist-wrapper">
@@ -38,11 +37,13 @@ const Video = props => {
       </div>
     );
   }
+  if (!featuredVideo) return null;
+
   return (
     <div className="hide-on-med-and-down">
       <div
         className={
-          props.playlist ? 'video-wrapper video-wrapper-long' : 'video-wrapper'
+          showPlaylist ? 'video-wrapper video-wrapper-long' : 'video-wrapper'
         }
       >
         <div className="row">

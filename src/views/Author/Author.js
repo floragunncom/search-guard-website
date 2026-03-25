@@ -1,5 +1,3 @@
-import persons from '../../Api/contentfulPersons.json';
-import posts from '../../Api/contentfulPosts.json';
 import React from 'react';
 import {Redirect} from 'react-router-dom'
 import {Helmet} from 'react-helmet-async';
@@ -10,8 +8,13 @@ import Blockquote from '../../components/Blockquote/Blockquote';
 import { ensureHttps, toSeoDescription, toSeoTitle } from '../../utils/urlUtils';
 import Title from "../../components/Title/Title";
 import BlogPostSmall from "../../components/BlogPost/BlogPostSmall";
+import { usePageData } from '../../context/PageDataContext';
 
 const Author = ({ match }) => {
+  const pageData = usePageData();
+  const person = pageData?.person || null;
+  const postsOfAuthor = pageData?.authorPosts || [];
+
   const toTrailingSlashUrl = (pathValue) => {
     const normalizedPath = String(pathValue || '/')
       .replace(/\/{2,}/g, '/')
@@ -19,19 +22,9 @@ const Author = ({ match }) => {
     return `https://search-guard.com${normalizedPath.endsWith('/') ? normalizedPath : `${normalizedPath}/`}`;
   };
 
-  const slug = match.url.split("/")[2] + "/";
-
-  const person = persons.find(
-      entry => entry.fields.slug === `${slug}`,
-  );
-
   if (!person) {
     return (<Redirect to="/404/" />);
   }
-
-  let postsOfAuthor = posts.filter(post => post.fields.authorProfile && post.fields.authorProfile.sys.id === person.sys.id);
-
-  postsOfAuthor = postsOfAuthor.slice(0,8);
 
   let postTiles;
 

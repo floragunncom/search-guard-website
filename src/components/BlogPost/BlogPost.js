@@ -15,7 +15,7 @@ const BlogPost = ({ post }) => {
     let infoTextIndex = blogPost.htmlDescription.length;
     let infoHeadlineIndex = blogPost.title.length;
 
-    while (blogPost.htmlDescription.length > infoTextIndexMaxLength && blogPost.postContent[infoTextIndex] !== ' ') {
+    while (blogPost.htmlDescription.length > infoTextIndexMaxLength && blogPost.htmlDescription[infoTextIndex] !== ' ') {
         infoTextIndex -= 1;
     }
 

@@ -13,12 +13,15 @@ import iconY from '../../images/icon-y-loud.svg';
 import iconIn from '../../images/icon-in-loud.svg';
 import iconFb from '../../images/icon-fb-loud.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
-import articles from '../../Api/contentfulWhitepapers.json';
 import Button from "../../components/Button/Button";
+import { usePageData } from '../../context/PageDataContext';
 import pdf from "../../images/pdf-download.svg";
 const hipaaPdf = '/assets/20200831_HIPAA_Elastic_Stack.pdf';
 
 const WhitePaperArticle = ({ match }) => {
+  const pageData = usePageData();
+  const postContent = pageData?.whitepaper || null;
+
   const publisherLogoUrl = typeof sgLogo === 'string' ? sgLogo : sgLogo?.src || '';
   // cannot dynamic require, so we need to define twice :(
 
@@ -28,9 +31,6 @@ const WhitePaperArticle = ({ match }) => {
     };
 
   const slug = ensureTrailingSlash(match.url.split("/")[2] || '');
-  const postContent = articles.find(
-    entry => entry.fields.slug === `${slug}`,
-  );
   const whitepaperSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',

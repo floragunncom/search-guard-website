@@ -25,7 +25,7 @@ import sgLogo from '../../images/sg_dlic_small.png';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
 import {ReactSVG} from "react-svg";
 
-const BlogPostArticleContent = ({postContent}) => {
+const BlogPostArticleContent = ({postContent, relatedPosts}) => {
     const publisherLogoUrl = typeof sgLogo === 'string' ? sgLogo : sgLogo?.src || '';
     const toTrailingSlashUrl = (pathValue) => {
         const normalizedPath = String(pathValue || '/')
@@ -450,8 +450,7 @@ const BlogPostArticleContent = ({postContent}) => {
             <BlogBox
                 headline="Other posts you may like"
                 postsyoulike={true}
-                randomize={true}
-                category={postContent.fields.tags[0]}
+                posts={relatedPosts}
             />
 
             <div className="col s12 l4"/>

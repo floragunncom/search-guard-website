@@ -5,12 +5,14 @@ import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import BlogPost from '../../components/BlogPost/BlogPost';
 import infoArrowBack from '../../images/info-arrow-back.svg';
-import posts from '../../Api/contentfulPosts.json';
 import { toSeoDescription, toSeoTitle } from '../../utils/urlUtils';
+import { usePageData } from '../../context/PageDataContext';
 
 const BlogCategory = ({ match }) => {
+  const pageData = usePageData();
+  const categoryPosts = pageData?.posts || [];
+
   const categoryFromSlug = match.params.slug.replace('-ssl', '/ssl').replace(/-/g, ' ');
-  const categoryName = categoryFromSlug.toLowerCase();
   const categoryDisplayName = categoryFromSlug
     .split(' ')
     .filter(Boolean)
@@ -27,10 +29,6 @@ const BlogCategory = ({ match }) => {
     `Browse ${categoryDisplayName} articles on the official Search Guard blog: Elasticsearch security guides, alerting tips, and product updates.`,
     155
   );
-  const categoryPosts = posts.filter(post => {
-    const tagsToLowercase = post.fields.tags.map(tag => tag.toLowerCase());
-    return tagsToLowercase.includes(categoryName)
-  });
 
   return (
     <PageWrapper>
