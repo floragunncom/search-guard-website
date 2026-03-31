@@ -25,7 +25,7 @@ const bugs = [
                 </a>
             </div>
         ),
-        date: '2026-04-31',
+        date: '2026-03-31',
         vul:
             'The audit logging feature might log user credentials from users logging into Kibana',
         rem: 'Update or disable request-body logging, either globally searchguard.audit.log_request_body: false or specifically searchguard.audit.ignore_request_bodies: ["/_searchguard/auth/session"]',
@@ -45,7 +45,7 @@ const bugs = [
                 </a>
             </div>
         ),
-        date: '2026-04-31',
+        date: '2026-03-31',
         vul:
             'There exists an issue which allows users without the necessary privileges to execute some management operations against data streams',
         rem: 'Update or configure indices:admin/data_stream/modify as an admin-only action',
@@ -65,7 +65,7 @@ const bugs = [
                 </a>
             </div>
         ),
-        date: '2026-04-31',
+        date: '2026-03-31',
         vul:
             'It is possible to use specially crafted requests to redirect the user to an untrusted URL',
         rem: 'Update',
