@@ -13,6 +13,66 @@ const breadcrumb = [
 
 const bugs = [
     {
+        id: 'SGSA 23',
+        cve: (
+            <div>
+                <a
+                    href="https://www.cve.org/CVERecord?id=CVE-2026-4819"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    CVE-2026-4819
+                </a>
+            </div>
+        ),
+        date: '2026-03-31',
+        vul:
+            'The audit logging feature might log user credentials from users logging into Kibana',
+        rem: 'Update or disable request-body logging, either globally searchguard.audit.log_request_body: false or specifically searchguard.audit.ignore_request_bodies: ["/_searchguard/auth/session"]',
+        fix: 'FLX4.1.0',
+        report: 'floragunn',
+    },
+    {
+        id: 'SGSA 22',
+        cve: (
+            <div>
+                <a
+                    href="https://www.cve.org/CVERecord?id=CVE-2026-4818"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    CVE-2026-4818
+                </a>
+            </div>
+        ),
+        date: '2026-03-31',
+        vul:
+            'There exists an issue which allows users without the necessary privileges to execute some management operations against data streams',
+        rem: 'Update or configure indices:admin/data_stream/modify as an admin-only action',
+        fix: 'FLX4.1.0',
+        report: 'floragunn',
+    },
+    {
+        id: 'SGSA 21',
+        cve: (
+            <div>
+                <a
+                    href="https://www.cve.org/CVERecord?id=CVE-2026-4799"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    CVE-2026-4799
+                </a>
+            </div>
+        ),
+        date: '2026-03-31',
+        vul:
+            'It is possible to use specially crafted requests to redirect the user to an untrusted URL',
+        rem: 'Update',
+        fix: 'FLX4.1.0',
+        report: 'floragunn',
+    },
+    {
         id: 'SGSA 20',
         cve: (
             <div>
