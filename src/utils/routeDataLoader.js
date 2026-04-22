@@ -119,7 +119,24 @@ function loadPageData(routePath) {
   const blogPageMatch = routePath.match(/^\/blog\/(?:page\/(\d+)\/)?$/);
   if (blogPageMatch || routePath === '/blog/') {
     const posts = getPosts();
-    return { type: 'blogListing', posts: posts.map(toPostSummary) };
+    const postsPerPage = 10;
+    const pageNumber = blogPageMatch?.[1] ? parseInt(blogPageMatch[1], 10) : 1;
+    const totalPosts = posts.length;
+    const start = (pageNumber - 1) * postsPerPage;
+    const pagePosts = posts.slice(start, start + postsPerPage).map(toPostSummary);
+
+    // Precompute tag counts from ALL posts (needed for sidebar)
+    const tagCounts = {};
+    for (const post of posts) {
+      for (const tag of post.fields.tags || []) {
+        tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+      }
+    }
+    const tags = Object.entries(tagCounts)
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count);
+
+    return { type: 'blogListing', posts: pagePosts, totalPosts, tags };
   }
 
   // Blog category: /blog/category/:slug/

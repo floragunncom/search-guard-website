@@ -193,6 +193,8 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#000000" />
           <meta name="apple-mobile-web-app-title" content="Search Guard" />
 
+          <link rel="preconnect" href="https://images.ctfassets.net" crossOrigin="" />
+
           <link rel="preload" href="/assets/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossOrigin="" />
           <link rel="preload" href="/assets/fonts/Parafina-BoldS.otf" as="font" type="font/otf" crossOrigin="" />
           <link rel="preload" href="/assets/fonts/Parafina-BlackS.otf" as="font" type="font/otf" crossOrigin="" />
