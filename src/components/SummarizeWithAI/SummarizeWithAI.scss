@@ -1,0 +1,97 @@
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+
+.summarize-ai-container {
+  text-align: center;
+}
+
+.summarize-ai-headline {
+  margin-top: 0;
+  margin-bottom: 24px;
+
+  @media only screen and (max-width: $mobile) {
+    margin-bottom: 16px;
+  }
+}
+
+.summarize-ai-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  @media only screen and (max-width: $mobile) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+}
+
+.summarize-ai-item {
+  display: inline-block;
+  margin: 0;
+}
+
+.summarize-ai-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid $primary;
+  color: $primary;
+  background-color: $white;
+  font-family: "Inter-Regular";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: background-color 0.15s linear, color 0.15s linear,
+    box-shadow 0.15s linear, border-color 0.15s linear;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $primary;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.18);
+    text-decoration: none;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+    height: 44px;
+  }
+}
+
+.summarize-ai-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.summarize-ai-label {
+  display: inline-block;
+}
+
+.color-schema-dark .summarize-ai-link {
+  border-color: $white;
+  color: $white;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary;
+    border-color: $secondary;
+    color: $primary;
+  }
+}

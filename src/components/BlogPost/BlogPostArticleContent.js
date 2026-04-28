@@ -23,6 +23,7 @@ import reddit from '../../images/reddit.svg';
 import facebook from '../../images/facebook.svg';
 import sgLogo from '../../images/sg_dlic_small.png';
 import ContactFormSlimOnly from "../../components/ContactFormSuperSlimOnly";
+import SummarizeWithAI from "../../components/SummarizeWithAI/SummarizeWithAI";
 import {ReactSVG} from "react-svg";
 
 const BlogPostArticleContent = ({postContent}) => {
@@ -435,6 +436,10 @@ const BlogPostArticleContent = ({postContent}) => {
                     </div>
                 </div>
             </div>
+
+            <SummarizeWithAI
+                url={toTrailingSlashUrl(`/blog/${postContent.fields.slug}`)}
+            />
 
             <div className="row blogpostarticle-wrapper">
                 <div className="col s12 offset-l2 l8">
