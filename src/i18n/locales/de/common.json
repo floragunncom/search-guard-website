@@ -19,6 +19,7 @@
     "videos": "Videos",
     "faq": "FAQ",
     "presentations": "Präsentationen",
+    "webinars": "Webinare",
     "whitepapers": "Whitepapers"
   },
   "footer": {
@@ -45,6 +46,7 @@
     "communityForum": "Community-Forum",
     "blog": "Blog",
     "presentations": "Präsentationen",
+    "webinars": "Webinare",
     "whitePapers": "Whitepapers",
     "newsletter": "Newsletter",
     "sitemap": "Sitemap",

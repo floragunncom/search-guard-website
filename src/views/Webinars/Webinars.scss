@@ -1,0 +1,73 @@
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+
+.webinars-wrapper {
+  padding: 64px 32px 96px 32px;
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 13.5px 64px 13.5px;
+  };
+}
+
+.webinars-intro {
+  margin: 0 0 48px 0;
+
+  p {
+    color: $darkGrey;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 16px;
+    @media only screen and (max-width: $mobile) {
+      font-size: 16px;
+      line-height: 24px;
+    };
+  }
+}
+
+.webinars-lead-headline {
+  font-family: "Parafina-SemiWideXBold";
+  color: $primary;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 52px;
+  letter-spacing: -0.5px;
+  margin: 8px 0 32px 0;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 40px;
+    line-height: 44px;
+  };
+  @media only screen and (max-width: $mobile) {
+    font-size: 30px;
+    line-height: 34px;
+    margin-bottom: 24px;
+  };
+}
+
+.webinars-section-headline {
+  color: $primary;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: 0.8px;
+  text-align: center;
+  margin: 16px 0 32px 0;
+  @media only screen and (max-width: $mobile) {
+    font-size: 22px;
+    line-height: 28px;
+  };
+}
+
+.webinars-item {
+  margin-bottom: 32px;
+}
+
+.webinars-iframe-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+  iframe {
+    max-width: 100%;
+    border: none;
+  }
+}

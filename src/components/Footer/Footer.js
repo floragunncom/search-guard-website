@@ -158,6 +158,11 @@ const Footer = ({landing}) => {
                                         </a>
                                     </div>
                                     <div className="footer-list-item">
+                                        <a href={lp('/webinars/')} className="footer-links">
+                                            {t('footer.webinars')}
+                                        </a>
+                                    </div>
+                                    <div className="footer-list-item">
                                         <a href="/whitepapers/" className="footer-links">
                                             {t('footer.whitePapers')}
                                         </a>

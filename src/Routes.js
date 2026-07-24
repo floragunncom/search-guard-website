@@ -23,6 +23,7 @@ import WhitePaperArticle from './views/WhitePapers/WhitePaperArticle';
 import Authors from './views/Author/Authors';
 import Author from './views/Author/Author';
 import Presentations from './views/Presentations/Presentations';
+import Webinars from './views/Webinars/Webinars';
 import Datenschutz from './views/DataProtection/Datenschutz';
 import DataProtection from './views/DataProtection/DataProtection';
 import SecurityInformation from './views/SecurityInformation/SecurityInformation';
@@ -132,6 +133,7 @@ const Routes = () => {
           <Route exact path="/faq/" component={Faqs} />
           <Route exact path="/impressum/" component={Imprint} />
           <Route exact path="/presentations/" component={Presentations} />
+          <Route exact path="/webinars/" component={Webinars} />
           <Route exact path="/datenschutz/" component={Datenschutz} />
           <Route exact path="/dataprotection/" component={DataProtection} />
           <Route exact path="/outdated-elasticsearch-versions-suppport/" component={OldElasticsearchVersions} />

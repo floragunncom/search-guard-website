@@ -139,6 +139,7 @@ const Navbar = ({ background = 'white', landing }) => {
               <li><a href={lp('/resource/#videos')}>{t('nav.videos')}</a></li>
               <li><a href={lp('/faq/')}>{t('nav.faq')}</a></li>
               <li><a href={lp('/presentations/')}>{t('nav.presentations')}</a></li>
+              <li><a href={lp('/webinars/')}>{t('nav.webinars')}</a></li>
               <li><a href="/whitepapers/">{t('nav.whitepapers')}</a></li>
             </ul>
           </li>
@@ -155,6 +156,7 @@ const Navbar = ({ background = 'white', landing }) => {
           <li><a href={lp('/resource/#videos')}>{t('nav.videos')}</a></li>
           <li><a href={lp('/faq/')}>{t('nav.faq')}</a></li>
           <li><a href={lp('/presentations/')}>{t('nav.presentations')}</a></li>
+          <li><a href={lp('/webinars/')}>{t('nav.webinars')}</a></li>
           <li><a href="/whitepapers/">{t('nav.whitepapers')}</a></li>
         </ul>
         <ul id="nav-solutions" className="dropdown-content">
