@@ -152,10 +152,8 @@ const FreeTrial = () => {
                             <div className="free-trial-content-text">
                                 {t('docker.text1_plain')}<a href="https://docs.search-guard.com/latest/" target="_blank" rel="noopener noreferrer">{t('docker.text1_link')}</a>{t('docker.text1_after')}
 
-                                {t('docker.startText')}
-
                                 <pre className="free-trial-pre">
-                                    docker run -ti -p 9200:9200 -p 5601:5601 floragunncom/search-guard-flx-elasticsearch:latest
+                                    docker run -it --rm -p 5601:5601 -p 9200:9200 floragunncom/search-guard-flx-demo
                                 </pre>
 
                                 {t('docker.kibanaText')}

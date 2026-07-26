@@ -6,7 +6,7 @@
   "title.headline": "Démarrez votre essai gratuit",
   "title.text": "Vous pouvez utiliser l'édition Community, entièrement Open Source et gratuite à vie, ou démarrer votre essai de 60 jours de Search Guard Enterprise",
   "step1.headline": "Téléchargez Search Guard",
-  "step1.text": "Téléchargez le plugin Search Guard correspondant à la version d'Elasticsearch que vous utilisez. Par exemple, si vous utilisez Elasticsearch 8.17.3, vous devez également télécharger Search Guard pour la version 8.17.3. Le téléchargement est indépendant de la plateforme.",
+  "step1.text": "Téléchargez le plugin Search Guard correspondant à la version d'Elasticsearch que vous utilisez. Par exemple, si vous utilisez Elasticsearch 9.4.3, vous devez également télécharger Search Guard pour la version 9.4.3. Le téléchargement est indépendant de la plateforme.",
   "step1.button": "visitez notre page de téléchargements",
   "step2.headline": "Installez Search Guard",
   "step2.text": "Arrêtez votre cluster Elasticsearch et installez Search Guard sur tous les nœuds.",
