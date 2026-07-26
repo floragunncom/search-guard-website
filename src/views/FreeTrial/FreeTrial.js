@@ -189,7 +189,7 @@ const FreeTrial = () => {
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                {t('kubernetes.text1_plain')}<a href="https://docs.search-guard.com/latest/search-guard-kubernetes-helm" target="_blank" rel="noopener noreferrer">{t('kubernetes.text1_link')}</a>{t('kubernetes.text1_after')}
+                                {t('kubernetes.text1_plain')}<a href="https://git.floragunn.com/search-guard/search-guard-flx-helm-charts" target="_blank" rel="noopener noreferrer">{t('kubernetes.text1_link')}</a>{t('kubernetes.text1_after')}
                             </div>
 
                         </div>
