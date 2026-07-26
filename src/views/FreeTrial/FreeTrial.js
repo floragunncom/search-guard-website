@@ -150,7 +150,7 @@ const FreeTrial = () => {
                     <div className="free-trial-section" >
                         <div className="free-trial-content">
                             <div className="free-trial-content-text">
-                                {t('docker.text1_plain')}<a href="https://docs.search-guard.com/latest/docker" target="_blank" rel="noopener noreferrer">{t('docker.text1_link')}</a>{t('docker.text1_after')}
+                                {t('docker.text1_plain')}<a href="https://docs.search-guard.com/latest/" target="_blank" rel="noopener noreferrer">{t('docker.text1_link')}</a>{t('docker.text1_after')}
 
                                 {t('docker.startText')}
 
