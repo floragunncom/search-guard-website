@@ -89,6 +89,11 @@ purge_cloudflare_cache:
   tags:
     - build
   stage: cache
+  # TODO: Cache purge is disabled for now. To reactivate, replace the
+  # `rules: - when: never` below with a branch-scoped rule, e.g.:
+  #   rules:
+  #     - if: '$CI_COMMIT_BRANCH == "cloudflare-migration"'
+  #       when: on_success
   rules:
     - when: never #disabled for now
   image: curlimages/curl:latest
@@ -118,6 +123,3 @@ purge_cloudflare_cache:
       fi
   #environment:
   #  name: production
-  only:
-    - cloudflare-migration
-  when: on_success
