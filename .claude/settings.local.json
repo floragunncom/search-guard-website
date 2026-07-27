@@ -10,7 +10,9 @@
       "Bash(find /private/tmp/claude-501 /tmp /var/folders -type f \\\\\\( -iname \"*.png\" -o -iname \"*.jpg\" -o -iname \"*.jpeg\" \\\\\\) -newermt \"-10 minutes\" 2>/dev/null | head -20; echo \"=== scratchpad ===\"; ls -la \"/private/tmp/claude-501/-Users-anjaglauch-Websites-search-guard-website/6c07bf81-6e71-4378-9b2f-f6ab28874d60/scratchpad\" 2>/dev/null)",
       "Bash(git checkout *)",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git stash *)"
     ]
   }
 }
