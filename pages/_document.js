@@ -185,10 +185,10 @@ class MyDocument extends Document {
           {linkComponents}
           {scriptComponents}
 
-          <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
-          <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
-          <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-          <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+          <link rel="icon" type="image/x-icon" href="/assets/favicon.ico?v=2" />
+          <link rel="icon" type="image/png" href="/assets/favicon-96x96.png?v=2" sizes="96x96" />
+          <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=2" />
+          <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2" sizes="180x180" />
           <link rel="manifest" href="/manifest.json" />
           <meta name="theme-color" content="#000000" />
           <meta name="apple-mobile-web-app-title" content="Search Guard" />
