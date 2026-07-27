@@ -1,28 +1,42 @@
-image: node:20.18.1
+# GitLab CI/CD Pipeline for Search Guard Website
+# Builds static site and deploys to Cloudflare Pages
+
+stages:
+  - build
+  - deploy
+  - cache
+
 variables:
+  NODE_VERSION: "26"
+  CLOUDFLARE_PROJECT_NAME: "search-guard-website"
   LC_ALL: "C.UTF-8"
   LANG: "en_US.UTF-8"
   LANGUAGE: "en_US.UTF-8"
   NPM_CONFIG_AUDIT: "false"
   NPM_CONFIG_FUND: "false"
 
-.build: &build
-  cache:
-    key:
-      files:
-        - package-lock.json
-    paths:
-      - .npm/
-  before_script:
-    - npm config set cache .npm --global
-  artifacts:
-    paths:
-      - out
-    expire_in: 7 days
+# Cache node_modules for faster builds
+cache:
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - node_modules/
+    - .npm/
+
+
+# Build job - runs for all branches
+build:
+  tags:
+    - build
+  stage: build
+  image: node:${NODE_VERSION}
   script:
     - |
       set -euo pipefail
-      npm ci
+      echo "Installing dependencies..."
+      npm ci --cache .npm --prefer-offline
+      echo "Building static site ..."
       npm run build
       echo "Validating static output..."
       test -f out/index.html
@@ -30,80 +44,80 @@ variables:
       index_count="$(find out -name 'index.html' | wc -l | tr -d ' ')"
       echo "Found ${index_count} prerendered index.html files in out/"
       test "${index_count}" -gt 0
-      if [ -n "${ALGOLIA_APP_ID:-}" ] && [ -n "${ALGOLIA_API_KEY:-}" ]; then
-        echo "Running optional Algolia indexing..."
-        if ! npm run indexBlogPosts -- --ALGOLIA_APP_ID="$ALGOLIA_APP_ID" --ALGOLIA_API_KEY="$ALGOLIA_API_KEY"; then
-          echo "Warning: Algolia indexing failed, but build artifacts were created successfully."
-        fi
-      else
-        echo "Skipping Algolia indexing because ALGOLIA_APP_ID/ALGOLIA_API_KEY are not set."
-      fi
-.deploy: &deploy
-  before_script:
-    - apt-get update -yqq
-    - apt-get install -yqq lftp openssh-client
-    - echo "Building branch $CI_COMMIT_REF_NAME"
-    - echo "Set SSH configuration for SFTP"
-    - eval $(ssh-agent -s)
-    - echo "$sftp_user_private_key_base64" | base64 -d | tr -d '\r' | ssh-add -
-  script:
-    - |
-      echo "Uploading files to SFTP server $sftp_server for host: $website_host"
-      lftp --version
-      echo "Start SFTP upload"
-      lftp -u $sftp_user_name, -e "set sftp:connect-program 'ssh -a -x -o StrictHostKeyChecking=no'; mirror --reverse --delete --parallel=20 --verbose out/ /var/www/$website_host/html/; quit" sftp://$sftp_server
+#      if [ -n "${ALGOLIA_APP_ID:-}" ] && [ -n "${ALGOLIA_API_KEY:-}" ]; then
+#        echo "Running optional Algolia indexing..."
+#        if ! npm run indexBlogPosts -- --ALGOLIA_APP_ID="$ALGOLIA_APP_ID" --ALGOLIA_API_KEY="$ALGOLIA_API_KEY"; then
+#          echo "Warning: Algolia indexing failed, but build artifacts were created successfully."
+#        fi
+#      else
+#        echo "Skipping Algolia indexing because ALGOLIA_APP_ID/ALGOLIA_API_KEY are not set."
+#      fi
+      mv out/ dist/
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 hour
+  only:
+    - branches
+    - tags
 
-stages:
-  - build
-  - deploy
-  - post_deploy
-
-
-build_prod:
-  tags:
-    - build
-  stage: build
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
-  <<: *build
-
-
-
-deploy_to_prod:
-  image: ubuntu:22.04
+# Deploy to Cloudflare Pages - Production (main branch)
+deploy_production:
   tags:
     - build
   stage: deploy
+  image: node:${NODE_VERSION}
   dependencies:
-    - build_prod
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
-  variables:
-    website_host: search-guard.com    
-  <<: *deploy
+    - build
+  before_script:
+    - npm install -g wrangler
+  script:
+    - echo "Deploying to Cloudflare Pages (Production)..."
+    - wrangler pages deploy dist --project-name=${CLOUDFLARE_PROJECT_NAME} --branch=cloudflare-migration --commit-hash=${CI_COMMIT_SHA} --commit-message="${CI_COMMIT_MESSAGE}"
+    - echo "Production deployment complete!"
+    - echo "Main URL - https://search-guard-website.pages.dev"
+    - echo "Deployment URL - https://$(echo ${CI_COMMIT_SHA} | cut -c1-8).search-guard-website.pages.dev"
+  #environment:
+  #  name: migration
+  #  url: https://coretex-axiom.pages.dev
+  only:
+    - cloudflare-migration
+  when: on_success
 
-flush_cloudflare_cache:
-  image: ubuntu:22.04
+# Purge Cloudflare cache after production deployment
+purge_cloudflare_cache:
   tags:
     - build
-  stage: post_deploy
+  stage: cache
   rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
+    - when: never #disabled for now
+  image: curlimages/curl:latest
+  dependencies: []
   script:
+    - echo "Purging Cloudflare cache for production deployment..."
     - |
-      apt update && apt-get install -y curl
-      if [ ! ${SG_CLOUDFLARE_ZONEID+x} ];  then
-        SG_CLOUDFLARE_ZONEID=21f0b97bf3df0f55bba6ca46b746da1f
+      if [ -z "$CLOUDFLARE_ZONE_ID" ] || [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+        echo "ERROR: CLOUDFLARE_ZONE_ID or CLOUDFLARE_API_TOKEN not set!"
+        echo "Please configure these variables in GitLab CI/CD settings."
+        exit 1
       fi
-      if [ ! ${REMOVE_CLOUDFLARE_CACHE+x} ];  then
-        REMOVE_CLOUDFLARE_CACHE=true
+    - echo "Zone ID - ${CLOUDFLARE_ZONE_ID}"
+    - |
+      RESPONSE=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+        -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+        -H "Content-Type: application/json" \
+        --data '{"purge_everything":true}')
+    - echo "API Response - ${RESPONSE}"
+    - |
+      if echo "$RESPONSE" | grep -q '"success": true'; then
+        echo "✓ Cache purged successfully!"
+      else
+        echo "✗ Cache purge failed!"
+        echo "$RESPONSE"
+        exit 1
       fi
-
-      if $REMOVE_CLOUDFLARE_CACHE ; then
-         echo "Deleting Cloudflare Cache"
-         curl --fail-with-body \
-         -X POST "https://api.cloudflare.com/client/v4/zones/$SG_CLOUDFLARE_ZONEID/purge_cache" \
-         -H "Authorization: Bearer $SG_CLOUDFLARE_DECACHE_TOKEN" \
-         -H "Content-Type: application/json" \
-         --data '{"purge_everything":true}'
-      fi
+  #environment:
+  #  name: production
+  only:
+    - cloudflare-migration
+  when: on_success
