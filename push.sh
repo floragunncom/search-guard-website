@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-git push github
-git push gitlab
-git push heroku
