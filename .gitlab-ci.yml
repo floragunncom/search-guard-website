@@ -44,14 +44,14 @@ build:
       index_count="$(find out -name 'index.html' | wc -l | tr -d ' ')"
       echo "Found ${index_count} prerendered index.html files in out/"
       test "${index_count}" -gt 0
-#      if [ -n "${ALGOLIA_APP_ID:-}" ] && [ -n "${ALGOLIA_API_KEY:-}" ]; then
-#        echo "Running optional Algolia indexing..."
-#        if ! npm run indexBlogPosts -- --ALGOLIA_APP_ID="$ALGOLIA_APP_ID" --ALGOLIA_API_KEY="$ALGOLIA_API_KEY"; then
-#          echo "Warning: Algolia indexing failed, but build artifacts were created successfully."
-#        fi
-#      else
-#        echo "Skipping Algolia indexing because ALGOLIA_APP_ID/ALGOLIA_API_KEY are not set."
-#      fi
+      #      if [ -n "${ALGOLIA_APP_ID:-}" ] && [ -n "${ALGOLIA_API_KEY:-}" ]; then
+      #        echo "Running optional Algolia indexing..."
+      #        if ! npm run indexBlogPosts -- --ALGOLIA_APP_ID="$ALGOLIA_APP_ID" --ALGOLIA_API_KEY="$ALGOLIA_API_KEY"; then
+      #          echo "Warning: Algolia indexing failed, but build artifacts were created successfully."
+      #        fi
+      #      else
+      #        echo "Skipping Algolia indexing because ALGOLIA_APP_ID/ALGOLIA_API_KEY are not set."
+      #      fi
       mv out/ dist/
   artifacts:
     paths:
