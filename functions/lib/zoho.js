@@ -181,19 +181,23 @@ export async function searchAccountByName(accountName, accessToken, logger = nul
 }
 
 /**
- * Create or update a contact in Zoho CRM
+ * Create a contact in Zoho CRM. Field mapping mirrors the old AWS Lambda:
+ * First_Name, Last_Name, Email, Title (job title), Phone, Newsletter (opt-in).
+ * The company relationship is established via linkContactToAccount, and the
+ * submission message is stored as a Note (see addNoteToContact) rather than a
+ * field, so it is preserved for existing contacts too.
  * @param {Object} contactData - Contact information
  * @param {string} contactData.firstName - First name
  * @param {string} contactData.lastName - Last name
  * @param {string} contactData.email - Email address
  * @param {string} contactData.phone - Phone number (optional)
- * @param {string} contactData.jobTitle - Job title (optional)
- * @param {string} contactData.company - Company name
- * @param {string} source - Lead source (e.g., 'Website Contact Form', 'Website Demo Request')
+ * @param {string} contactData.jobTitle - Job title -> Title (optional)
+ * @param {boolean} contactData.newsletter - Newsletter opt-in flag
  * @param {string} accessToken - Zoho CRM access token
  * @param {Object} logger - Logger instance (optional)
+ * @param {string} apiBase - Zoho CRM API base URL (optional)
  */
-export async function createContact(contactData, source, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
+export async function createContact(contactData, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
   // Create a default logger if none provided
   if (!logger) {
     logger = createLogger('zoho', {}, null);
@@ -205,13 +209,11 @@ export async function createContact(contactData, source, accessToken, logger = n
     email,
     phone,
     jobTitle,
-    company,
+    newsletter,
   } = contactData;
 
   logger.debug('Creating Zoho contact', {
     email,
-    company,
-    source,
     hasAccessToken: !!accessToken,
     accessTokenLength: accessToken?.length || 0,
     accessTokenPrefix: accessToken ? accessToken.substring(0, 10) + '...' : 'MISSING',
@@ -225,16 +227,10 @@ export async function createContact(contactData, source, accessToken, logger = n
         Email: email,
         ...(phone && { Phone: phone }),
         ...(jobTitle && { Title: jobTitle }),
-        Company: company,
-        Lead_Source: source,
-        // Add custom tag/label to segment leads from website
-        Tag: [
-          { name: 'Website Lead' },
-          { name: source.replace('Website ', '') }, // e.g., 'Contact Form' or 'Demo Request'
-        ],
+        Newsletter: !!newsletter,
       }
     ],
-    trigger: ['workflow'], // Trigger Zoho workflows
+    trigger: [],
   };
 
   logger.debug('Sending request to Zoho CRM Contacts API', {
@@ -292,18 +288,17 @@ export async function createContact(contactData, source, accessToken, logger = n
 }
 
 /**
- * Create or update an account in Zoho CRM
+ * Create an account in Zoho CRM. Field mapping mirrors the old AWS Lambda:
+ * Account_Name (company) and Billing_Country (country). Other legacy fields
+ * (website/address/version/stage) are not collected by the current forms.
  * @param {Object} accountData - Account information
  * @param {string} accountData.accountName - Account/Company name
- * @param {string} accountData.website - Company website (optional)
- * @param {string} accountData.industry - Industry
- * @param {string} accountData.employees - Number of employees (optional)
- * @param {string} accountData.phone - Company phone (optional)
- * @param {string} source - Account source
+ * @param {string} accountData.country - Country -> Billing_Country (optional)
  * @param {string} accessToken - Zoho CRM access token
  * @param {Object} logger - Logger instance (optional)
+ * @param {string} apiBase - Zoho CRM API base URL (optional)
  */
-export async function createAccount(accountData, source, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
+export async function createAccount(accountData, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
   // Create a default logger if none provided
   if (!logger) {
     logger = createLogger('zoho', {}, null);
@@ -311,35 +306,22 @@ export async function createAccount(accountData, source, accessToken, logger = n
 
   const {
     accountName,
-    website,
-    industry,
-    employees,
-    phone,
+    country,
   } = accountData;
 
   logger.debug('Creating Zoho account', {
     accountName,
-    industry,
-    source,
+    country,
   });
 
   const payload = {
     data: [
       {
         Account_Name: accountName,
-        ...(website && { Website: website }),
-        ...(industry && { Industry: industry }),
-        ...(employees && { Employees: employees }),
-        ...(phone && { Phone: phone }),
-        Account_Source: source,
-        // Add custom tag to segment accounts from website
-        Tag: [
-          { name: 'Website Lead' },
-          { name: source.replace('Website ', '') },
-        ],
+        ...(country && { Billing_Country: country }),
       }
     ],
-    trigger: ['workflow'],
+    trigger: [],
   };
 
   logger.debug('Sending request to Zoho CRM Accounts API', {
@@ -393,6 +375,67 @@ export async function createAccount(accountData, source, accessToken, logger = n
     logger.error('Zoho Account creation failed with unexpected response', { result });
     throw new Error(`Zoho Account creation failed: ${JSON.stringify(result)}`);
   }
+}
+
+/**
+ * Attach a Note (the submission message) to a contact. Works for both newly
+ * created and pre-existing contacts, so every submission's message is preserved
+ * even when the contact is deduplicated by email.
+ * @param {string} contactId - Zoho contact id
+ * @param {Object} note - Note content
+ * @param {string} note.title - Note title
+ * @param {string} note.content - Note body
+ * @param {string} accessToken - Zoho CRM access token
+ * @param {Object} logger - Logger instance (optional)
+ * @param {string} apiBase - Zoho CRM API base URL (optional)
+ */
+export async function addNoteToContact(contactId, { title, content }, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
+  // Create a default logger if none provided
+  if (!logger) {
+    logger = createLogger('zoho', {}, null);
+  }
+
+  logger.debug('Attaching note to Zoho contact', { contactId });
+
+  const payload = {
+    data: [
+      {
+        Note_Title: title,
+        Note_Content: content,
+      },
+    ],
+  };
+
+  const response = await fetch(`${apiBase}/Contacts/${contactId}/Notes`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Zoho-oauthtoken ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    logger.error('Zoho Note creation API error', {
+      status: response.status,
+      error,
+      contactId,
+    });
+    throw new Error(`Zoho Note creation error: ${response.status} - ${error}`);
+  }
+
+  const result = await response.json();
+  const success = result.data && result.data[0].code === 'SUCCESS';
+  if (success) {
+    logger.info('Note attached to Zoho contact successfully', {
+      contactId,
+      noteId: result.data[0].details?.id,
+    });
+  } else {
+    logger.warn('Zoho note creation had unexpected result', { result, contactId });
+  }
+  return { success };
 }
 
 /**
