@@ -26,6 +26,7 @@ import {
   refreshAccessToken,
   searchContactByEmail,
   searchAccountByName,
+  resolveZohoHosts,
 } from '../lib/zoho.js';
 import { sendMatrixNotification } from '../lib/matrix.js';
 import { createLogger, sanitizeForLogging } from '../lib/logger.js';
@@ -169,10 +170,10 @@ export async function onRequestPost(context) {
         logger
       ),
 
-      // 2. Send the country-routed welcome email via SendGrid
-      sendContactWelcomeEmail(body, env.SENDGRID_API_KEY, logger),
+      // 2. Send the country-routed welcome email via SendGrid (Mail Send scope)
+      sendContactWelcomeEmail(body, env.SENDGRID_SENDMAIL_KEY, logger),
 
-      // 3. Add to SendGrid marketing list
+      // 3. Add to SendGrid marketing list (Marketing scope)
       addContactToList(
         {
           email,
@@ -183,22 +184,26 @@ export async function onRequestPost(context) {
           },
         },
         env.SENDGRID_CONTACT_LIST_ID,
-        env.SENDGRID_API_KEY,
+        env.SENDGRID_MARKETING_KEY,
         logger
       ),
 
       // 4. Create contact and account in Zoho CRM
       (async () => {
+        // Resolve the Zoho data center hosts (ZOHO_DC: US | EU | IN | AU | JP)
+        const { apiBase, accountsBase } = resolveZohoHosts(env.ZOHO_DC);
+
         // Refresh Zoho access token
         const { accessToken } = await refreshAccessToken(
           env.ZOHO_REFRESH_TOKEN,
           env.ZOHO_CLIENT_ID,
           env.ZOHO_CLIENT_SECRET,
-          logger
+          logger,
+          accountsBase
         );
 
         // Search for existing contact by email
-        const existingContact = await searchContactByEmail(email, accessToken, logger);
+        const existingContact = await searchContactByEmail(email, accessToken, logger, apiBase);
         let contactResult;
 
         if (existingContact) {
@@ -225,12 +230,13 @@ export async function onRequestPost(context) {
             },
             'Website Contact Form',
             accessToken,
-            logger
+            logger,
+            apiBase
           );
         }
 
         // Search for existing account by company name
-        const existingAccount = await searchAccountByName(company, accessToken, logger);
+        const existingAccount = await searchAccountByName(company, accessToken, logger, apiBase);
         let accountResult;
 
         if (existingAccount) {
@@ -252,7 +258,8 @@ export async function onRequestPost(context) {
             },
             'Website Contact Form',
             accessToken,
-            logger
+            logger,
+            apiBase
           );
         }
 
@@ -262,7 +269,8 @@ export async function onRequestPost(context) {
             contactResult.contactId,
             accountResult.accountId,
             accessToken,
-            logger
+            logger,
+            apiBase
           );
         }
 

@@ -91,8 +91,8 @@ export async function onRequestPost(context) {
     });
 
     const results = await Promise.allSettled([
-      // 1. Add to SendGrid marketing list(s)
-      subscribeToLists({ email, listIds }, env.SENDGRID_API_KEY, logger),
+      // 1. Add to SendGrid marketing list(s) (Marketing scope)
+      subscribeToLists({ email, listIds }, env.SENDGRID_MARKETING_KEY, logger),
 
       // 2. Send notification to Matrix room
       sendMatrixNotification(

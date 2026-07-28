@@ -1,0 +1,37 @@
+# Example environment for the Cloudflare Pages Functions (functions/api/*).
+#
+# Copy this file to `.dev.vars` (gitignored) and fill in real values, or run
+# `./scripts/pull-dev-secrets.sh` to populate `.dev.vars` from AWS SSM.
+# `wrangler pages dev` auto-loads `.dev.vars`. The same variables must be set in
+# the Cloudflare Pages dashboard for the deployed site.
+
+# Environment name. Anything other than "production" enables DEBUG logging
+# (see functions/lib/logger.js).
+ENVIRONMENT=migration
+
+# --- SendGrid (two-key design, matching the old AWS Lambda) ---
+# Transactional mail (welcome email) uses a key with the "Mail Send" scope;
+# marketing list operations use a key with the "Marketing" scope. These are two
+# separate SendGrid API keys, exactly as the old Lambda used them.
+SENDGRID_SENDMAIL_KEY=SG.xxxxxxxxxxxxxxxxxxxxxx
+SENDGRID_MARKETING_KEY=SG.xxxxxxxxxxxxxxxxxxxxxx
+# SendGrid marketing list the contact form subscribes people to.
+# (The old contact-form code hardcoded ce911ea8-88b2-4574-80be-adc58b67a87a.)
+SENDGRID_CONTACT_LIST_ID=00000000-0000-0000-0000-000000000000
+
+# --- Matrix (room notifications) ---
+# Server URL and room id are configuration, not secrets. Only the token is secret.
+MATRIX_SERVER_URL=https://matrix.eliatra.com
+MATRIX_ROOM_ID=!xxxxxxxxxxxxxxxxxx:eliatra.com
+MATRIX_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxx
+
+# --- Zoho CRM ---
+# Data center the Zoho account/OAuth client is registered in: US | EU | IN | AU | JP
+# (defaults to US if unset). Zoho OAuth clients only validate against their own
+# data center — a mismatch yields "invalid_client" on token refresh.
+ZOHO_DC=US
+# The function refreshes the access token itself, so only the OAuth app
+# credentials + refresh token are needed (no access token).
+ZOHO_CLIENT_ID=1000.xxxxxxxxxxxxxxxxxxxxxx
+ZOHO_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxx
+ZOHO_REFRESH_TOKEN=1000.xxxxxxxxxxxxxxxxxxxxxx
