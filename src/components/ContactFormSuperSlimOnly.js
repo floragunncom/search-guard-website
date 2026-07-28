@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
+import {CONTACT_API_URL} from '../config/apiEndpoints';
 
 const ContactForm = () => {
   const [sendbuttonValue, setSendbuttonValue] = React.useState('Send Message');
@@ -11,7 +12,7 @@ const ContactForm = () => {
       data[input.name] = input.value;
     });
 
-    return fetch('https://56dmarth25.execute-api.eu-central-1.amazonaws.com/prod/', {
+    return fetch(CONTACT_API_URL, {
       method: 'POST',
       cache: 'no-cache',
       headers: {

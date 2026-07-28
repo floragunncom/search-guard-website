@@ -1,12 +1,13 @@
 import React from 'react';
 import Button from '../Button/Button';
+import {NEWSLETTER_API_URL} from '../../config/apiEndpoints';
 
 const Email = () => {
     const [isProcessing, setIsProcessing] = React.useState(false);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
 
     const handleNewsletterSubmit = async (formProps) => {
-        return fetch('https://45xbqthu4l.execute-api.eu-central-1.amazonaws.com/prod/', {
+        return fetch(NEWSLETTER_API_URL, {
             method: 'POST',
             cache: 'no-cache',
             headers: {
