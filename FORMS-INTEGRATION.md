@@ -1,531 +1,296 @@
 # Forms Integration Guide
 
-This document explains how to set up the contact and demo request forms with SendGrid and Zoho CRM integration using Cloudflare Pages Functions.
+How the Search Guard website's **contact** and **newsletter** forms are processed
+by Cloudflare Pages Functions, and how to configure, run, and debug them.
+
+This replaces the previous AWS Lambda / API Gateway backend
+(`56dmarth25.execute-api…` for contact, `45xbqthu4l.execute-api…` for
+newsletter). **The AWS Lambdas and their AWS SSM parameters are obsolete** — the
+source of truth for secrets is now Cloudflare Pages (production) and a local
+`.dev.vars` file (development). The old code is kept for reference only under
+`old_aws_functions/`.
 
 ## Overview
 
-When a user submits a contact or demo request form, the following happens automatically:
+There are exactly **two** forms, each backed by one Pages Function:
 
-1. **SendGrid Email**: A thank you email is sent to the user (with BCCs to your team)
-2. **SendGrid List**: The contact is added to a specific email list for marketing
-3. **Zoho CRM**: A contact and account are created in Zoho CRM with tags for segmentation
+| Form | Endpoint | Function | Frontend components |
+|------|----------|----------|---------------------|
+| Contact | `POST /api/contact` | `functions/api/contact.js` | `ContactForm`, `ContactFormSuperSlim`, `ContactFormSuperSlimOnly`, `ContactFormSuperSlimOnlyNoNL` |
+| Newsletter | `POST /api/newsletter` | `functions/api/newsletter.js` | `Email/Email.js` (in `PreFooter`) |
 
-All integrations run in parallel for optimal performance using serverless Cloudflare Functions.
+Both endpoints are defined once in `src/config/apiEndpoints.js` (overridable via
+`NEXT_PUBLIC_CONTACT_API_URL` / `NEXT_PUBLIC_NEWSLETTER_API_URL`). They are
+same-origin relative paths, so no CORS is involved in production.
+
+All integrations run in parallel via `Promise.allSettled`, so one failing
+integration never blocks the others — the response reports per-integration
+status and the endpoint still returns HTTP 200.
 
 ## Architecture
 
 ```
 User submits form
-    |
-    v
-Cloudflare Pages Function (/api/contact or /api/demo)
-    |
-    +-- SendGrid API (send email)
-    |
-    +-- SendGrid API (add to list)
-    |
-    +-- Zoho CRM API (create contact & account)
-    |
-    v
-Response to user
+      |
+      v
+Cloudflare Pages Function  (/api/contact  or  /api/newsletter)
+      |
+      +-- Matrix        (room notification)
+      +-- SendGrid mail (contact only: country-routed welcome email + partner BCC)
+      +-- SendGrid list (add contact / subscribe)
+      +-- Zoho CRM      (contact only: create/dedup Contact + Account, link, add Note)
+      |
+      v
+JSON response { success, message, details: { matrix, email, list, crm } }
 ```
 
-## Prerequisites
+Shared helpers live in `functions/lib/`: `sendgrid.js`, `zoho.js`, `matrix.js`,
+`logger.js`.
 
-1. **SendGrid Account** with:
-   - API key with Mail Send and Marketing permissions
-   - At least one marketing list created
+## Field contracts
 
-2. **Zoho CRM Account** with:
-   - OAuth client credentials
-   - Refresh token for API access
+### Contact (`/api/contact`) — snake_case
 
-3. **Cloudflare Pages** deployment (already configured)
+| Field | Required | Notes |
+|-------|----------|-------|
+| `first_name` | ✅ | |
+| `last_name` | ✅ | |
+| `email` | ✅ | validated; `gmail.com` is rejected as spam (see below) |
+| `company` | ✅ | |
+| `message` | ✅ | |
+| `job_position` | optional | → Zoho `Title` |
+| `phone` | optional | → Zoho `Phone` |
+| `country` | optional | drives email routing + Zoho `Billing_Country` |
+| `newsletter` | optional | opt-in checkbox; submitted as `"on"` (or boolean) |
 
-## Step 1: SendGrid Setup
+### Newsletter (`/api/newsletter`)
 
-### 1.1 Create API Key
+| Field | Required | Notes |
+|-------|----------|-------|
+| `email` | ✅ | validated |
+| `ids` | ✅ | SendGrid marketing list id(s); single value or array |
 
-1. Log in to [SendGrid Dashboard](https://app.sendgrid.com)
-2. Go to **Settings** → **API Keys**
-3. Click **Create API Key**
-4. Name: `Coretex Axiom Website`
-5. Permissions: **Restricted Access**
-   - **Mail Send**: Full Access
-   - **Marketing**: Full Access (for lists)
-6. Click **Create & View**
-7. **Copy the API key immediately** (you won't see it again!)
+## Emails sent
 
-### 1.2 Create Marketing Lists
+The two forms behave very differently — be clear about who receives what.
 
-1. Go to **Marketing** → **Contacts**
-2. Click **Create List**
-3. Create two lists:
-   - **Contact Form Submissions**
-   - **Demo Requests**
-4. Copy the List IDs:
-   - Click on each list
-   - The ID is in the URL: `.../lists/{list-id}/...`
+### Contact form (`/api/contact`)
 
-### 1.3 Create Dynamic Templates
+Sends **exactly one** transactional email via SendGrid (`sendContactWelcomeEmail`):
 
-The website uses SendGrid Dynamic Templates with multi-language support. You need to create 4 templates (2 forms × 2 languages):
+- **To:** the requestor (the `email` they submitted) — a thank-you / welcome email.
+- **From:** "The Search Guard Team" &lt;sales@floragunn.com&gt;.
+- **Template:** country-routed dynamic template (see routing table below).
+- **BCC:** `sales@floragunn.com` **and** the country-specific partner(s)
+  (e.g. `exceleratesystems@pipedrivemail.com`; France also adds
+  `iquackenbos@search-guard.com`).
 
-#### Contact Form Templates
+So a single send reaches the requestor **and** — via BCC — the internal sales
+team and the regional partner. There is **no separate standalone internal
+email**; internal awareness comes from that BCC plus the Matrix room notice.
+Adding the contact to the SendGrid marketing list does **not** itself send an
+email (unless a double opt-in / welcome automation is configured on the list in
+SendGrid).
 
-1. Go to **Email API** → **Dynamic Templates**
-2. Click **Create a Dynamic Template**
-3. Name: `Contact Form - English`
-4. Click **Add Version** → **Blank Template** → **Code Editor**
-5. Design your email template with these available variables:
-   ```handlebars
-   {{firstName}}   <!-- First name -->
-   {{lastName}}    <!-- Last name -->
-   {{topic}}       <!-- Contact topic (sales, support, etc.) -->
-   {{message}}     <!-- User's message -->
-   {{language}}    <!-- Language code (en/de) -->
-   ```
-6. Save and copy the **Template ID** (starts with `d-`)
-7. Repeat for `Contact Form - German` with German content
+### Newsletter form (`/api/newsletter`)
 
-#### Demo Request Templates
+Sends **no email** from this code. It only:
 
-1. Create another Dynamic Template
-2. Name: `Demo Request - English`
-3. Design your email template with these available variables:
-   ```handlebars
-   {{firstName}}   <!-- First name -->
-   {{lastName}}    <!-- Last name -->
-   {{company}}     <!-- Company name -->
-   {{jobTitle}}    <!-- Job title -->
-   {{industry}}    <!-- Industry -->
-   {{companySize}} <!-- Company size -->
-   {{message}}     <!-- Optional message -->
-   {{language}}    <!-- Language code (en/de) -->
-   ```
-4. Save and copy the **Template ID**
-5. Repeat for `Demo Request - German` with German content
+- subscribes the address to the given SendGrid marketing list(s), and
+- posts a Matrix room notification.
 
-**Language Detection**: The system automatically detects the user's language from:
-1. Explicit `language` field in form data (if provided)
-2. Referer URL path (e.g., `/en/contact` → English, `/de/contact` → German)
-3. Defaults to English if no language detected
+Any welcome/confirmation email to the subscriber would come from SendGrid-side
+list automation (double opt-in), not from this function.
 
-### 1.4 Set Up Sender Email
+### At a glance
 
-1. Go to **Settings** → **Sender Authentication**
-2. Verify your domain or single sender email
-3. Use `noreply@coretex-axiom.com` as sender (update in `functions/lib/sendgrid.js` if different)
+| | Email to requestor | Email to sales/partners | Non-email notice |
+|---|---|---|---|
+| Contact | ✅ thank-you email | ✅ same email, via BCC | Matrix room message |
+| Newsletter | ❌ none | ❌ none | Matrix room message |
 
-## Step 2: Zoho CRM Setup
+## Integrations
 
-### 2.1 Create OAuth Client
+### Matrix
+Posts an HTML notice to the configured room. Never hard-fails. Config:
+`MATRIX_SERVER_URL`, `MATRIX_ROOM_ID`, `MATRIX_TOKEN`.
 
-1. Log in to [Zoho API Console](https://api-console.zoho.eu) (use .eu for European data center)
-2. Click **Add Client**
-3. Choose **Server-based Applications**
-4. Fill in details:
-   - **Client Name**: Coretex Axiom Website
-   - **Homepage URL**: `https://coretex-axiom.pages.dev`
-   - **Authorized Redirect URIs**: `https://coretex-axiom.pages.dev/callback`
-5. Click **Create**
-6. Copy **Client ID** and **Client Secret**
+### SendGrid — two keys (matches the old Lambda)
+- **`SENDGRID_SENDMAIL_KEY`** — "Mail Send" scope; sends the contact welcome email.
+- **`SENDGRID_MARKETING_KEY`** — "Marketing" scope; adds contacts to lists /
+  subscribes newsletter emails.
 
-### 2.2 Generate Refresh Token
+A single key does **not** work: mail send and marketing are separate SendGrid
+scopes, and the project's keys are scoped individually.
 
-To get a long-lived refresh token:
+**Country-routed welcome email** (`functions/lib/sendgrid.js`): the contact form
+selects a dynamic template and partner BCC list based on the `country` form
+field (mapped to an ISO code via `countryNameToCode`). Sender is
+`sales@floragunn.com` / "The Search Guard Team". Template IDs and BCC routing are
+ported verbatim from the old Lambda:
 
-1. Build authorization URL (replace placeholders):
-   ```
-   https://accounts.zoho.eu/oauth/v2/auth?
-     scope=ZohoCRM.modules.ALL,ZohoCRM.settings.ALL&
-     client_id={CLIENT_ID}&
-     response_type=code&
-     access_type=offline&
-     redirect_uri=https://coretex-axiom.pages.dev/callback
-   ```
+| Country group | Template | BCC (besides sales@floragunn.com) |
+|---------------|----------|-----------------------------------|
+| DE | `d-facb4519…` | exceleratesystems@pipedrivemail.com |
+| AT, CH | `d-b7e911a6…` | exceleratesystems@pipedrivemail.com |
+| FR (+FR territories) | `d-e377e3d2…` | exceleratesystems@…, iquackenbos@search-guard.com |
+| US, UM, CA | `d-bfdb550d…` | exceleratesystems@… |
+| Latin America (MX, BR, AR, …) | `d-88b2734f…` | exceleratesystems@… |
+| GB, UK | `d-f57641b0…` | exceleratesystems@… |
+| RU | `d-849d4d53…` | exceleratesystems@… (note: RU is spam-blocked upstream) |
+| default / everything else | `d-74bd1335…` | exceleratesystems@… |
 
-2. Open this URL in a browser
-3. Authorize the application
-4. Copy the **authorization code** from the redirect URL
+> Note: `CF-IPCountry` is only present on real Cloudflare traffic, so country
+> routing is exercised via the `country` **form field**, not the header. Locally
+> (`wrangler pages dev`) the header is absent.
 
-5. Exchange code for refresh token (use curl or Postman):
-   ```bash
-   curl -X POST "https://accounts.zoho.eu/oauth/v2/token" \
-     -d "code={AUTHORIZATION_CODE}" \
-     -d "client_id={CLIENT_ID}" \
-     -d "client_secret={CLIENT_SECRET}" \
-     -d "redirect_uri=https://coretex-axiom.pages.dev/callback" \
-     -d "grant_type=authorization_code"
-   ```
+### Zoho CRM (contact only)
+US data center (`ZOHO_DC=US`). The function refreshes its own access token, then
+**deduplicates**: it searches for an existing Contact by email and Account by
+name, reuses them if found, otherwise creates them, and links the Contact to the
+Account. Field mapping mirrors the old Lambda:
 
-6. Save the **refresh_token** from the response (this never expires)
+| Submitted field | Zoho field |
+|-----------------|-----------|
+| `first_name` | Contact `First_Name` |
+| `last_name` | Contact `Last_Name` |
+| `email` | Contact `Email` |
+| `job_position` | Contact `Title` |
+| `phone` | Contact `Phone` |
+| `newsletter` (opt-in) | Contact `Newsletter` (boolean) |
+| `company` | Account `Account_Name` (+ Contact↔Account link) |
+| `country` | Account `Billing_Country` |
+| `message` | **Note** attached to the Contact (see below) |
 
-### 2.3 Configure CRM Fields (Optional)
+**Message as a Note:** the message is stored as a Zoho **Note** on the contact
+(`addNoteToContact`), not a record field. This runs for both newly created and
+pre-existing (deduplicated) contacts, so every inquiry is preserved. The note
+body also includes company/country/phone/job-title/newsletter context.
 
-To use custom fields:
+We intentionally do **not** set `Lead_Source`, `Account_Source`, `Tag`, or
+`trigger: ['workflow']` (those were speculative additions in the boilerplate;
+unknown Zoho picklist/tag values are silently dropped, and workflow triggers can
+fire unintended automation). Record creation uses `trigger: []`.
 
-1. Go to **Settings** → **Customization** → **Modules and Fields**
-2. Select **Contacts** or **Accounts**
-3. Add any custom fields you need
-4. Update the field API names in `functions/lib/zoho.js`
+> The `Newsletter` field is a **custom** field on the Contacts layout — it must
+> exist in the Zoho org or that write is silently ignored.
 
-## Step 3: Cloudflare Environment Variables
+### Spam handling (contact only)
+Ported from the old Lambda and evaluated **before anything else runs**. If a
+submission matches any rule below, the function returns HTTP `400` with a
+deliberately cryptic body (`"INVALID FORMAT 0x7c"`, or `0x7d` on a malformed
+request) and **no integrations fire** — no email is sent, no CRM record is
+created, no list add, no Matrix notice.
 
-### 3.1 Set Environment Variables in Cloudflare
+Rejection rules:
+- `CF-IPCountry` header == `RU` (present only on real Cloudflare traffic, not local dev)
+- `first_name` or `last_name` contains `:` or `http`
+- `message` contains `www.gclnk.com`
+- `email` contains `gmail.com`
 
-1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
-2. Select **Pages** → **coretex-axiom**
-3. Go to **Settings** → **Environment variables**
-4. Add **Production** variables:
+The cryptic error text is intentional — it gives bots no useful signal about why
+they were blocked. The **newsletter** endpoint has no spam filter; it only
+validates the email format and that at least one list id is present.
 
-#### SendGrid Variables
+## Environment variables
 
-| Variable Name | Value | Type |
-|---------------|-------|------|
-| `SENDGRID_API_KEY` | Your SendGrid API key | Encrypted |
-| `SENDGRID_BCC_EMAILS` | `sales@eliatra.com,info@eliatra.com` | Plain text |
-| `SENDGRID_CONTACT_LIST_ID` | Your contact list ID | Plain text |
-| `SENDGRID_DEMO_LIST_ID` | Your demo list ID | Plain text |
-| `SENDGRID_TEMPLATE_CONTACT_EN` | Template ID for English contact form (e.g., `d-abc123...`) | Plain text |
-| `SENDGRID_TEMPLATE_CONTACT_DE` | Template ID for German contact form | Plain text |
-| `SENDGRID_TEMPLATE_DEMO_EN` | Template ID for English demo request | Plain text |
-| `SENDGRID_TEMPLATE_DEMO_DE` | Template ID for German demo request | Plain text |
+Set these as **Cloudflare Pages secrets** (production) and in local `.dev.vars`.
+`ENVIRONMENT` is provided via `wrangler.toml [vars]`, not as a secret.
 
-#### Zoho CRM Variables
+| Variable | Purpose |
+|----------|---------|
+| `ENVIRONMENT` | `migration` = DEBUG logging; `production` = INFO (see `functions/lib/logger.js`) |
+| `SENDGRID_SENDMAIL_KEY` | SendGrid key, Mail Send scope |
+| `SENDGRID_MARKETING_KEY` | SendGrid key, Marketing scope |
+| `SENDGRID_CONTACT_LIST_ID` | Marketing list the contact form subscribes to |
+| `MATRIX_SERVER_URL` | e.g. `https://matrix.eliatra.com` |
+| `MATRIX_ROOM_ID` | e.g. `!cDItuVWiwhqITUADtb:eliatra.com` |
+| `MATRIX_TOKEN` | Matrix access token |
+| `ZOHO_DC` | Data center: `US` (default) \| `EU` \| `IN` \| `AU` \| `JP` |
+| `ZOHO_CLIENT_ID` | Zoho OAuth client id |
+| `ZOHO_CLIENT_SECRET` | Zoho OAuth client secret |
+| `ZOHO_REFRESH_TOKEN` | Zoho refresh token (scope `ZohoCRM.modules.ALL`) |
 
-| Variable Name | Value | Type |
-|---------------|-------|------|
-| `ZOHO_CLIENT_ID` | Your Zoho Client ID | Plain text |
-| `ZOHO_CLIENT_SECRET` | Your Zoho Client Secret | Encrypted |
-| `ZOHO_REFRESH_TOKEN` | Your Zoho refresh token | Encrypted |
+`.dev.vars.example` documents the full set. `.dev.vars` is git-ignored.
 
-### 3.2 Set Preview Environment Variables (Optional)
+## Local development / debugging
 
-Repeat the same for **Preview** environments if you want forms to work on feature branches.
-
-## Step 4: Deploy
-
-### 4.1 Local Testing
-
-For local development:
-
-1. Create `.env` file (from `.env.example`):
-   ```bash
-   cp .env.example .env
-   ```
-
-2. Add all the environment variables with real values
-
-3. Run locally:
-   ```bash
-   npm run dev
-   ```
-
-4. Test forms at `http://localhost:5173`
-
-**Note**: Cloudflare Pages Functions only work in production/preview environments, not with `vite dev`. For local testing, consider using [Wrangler](https://developers.cloudflare.com/workers/wrangler/):
+`next dev` does **not** run the Pages Functions — use Cloudflare's local runtime:
 
 ```bash
-npx wrangler pages dev dist
+# 1. Provide secrets (choose one):
+cp .dev.vars.example .dev.vars   # then fill in real values
+#   -- or, legacy one-off seed from AWS SSM (SSM is obsolete; Zoho creds there
+#      are stale — you'll still need to supply fresh Zoho values manually):
+./scripts/pull-dev-secrets.sh
+
+# 2. Build the static site once (Functions are auto-discovered from functions/)
+npm run build-local && rm -rf dist && mv out dist
+
+# 3. Run the local Pages runtime (serves site + functions at :8788)
+npx wrangler pages dev
 ```
 
-### 4.2 Deploy to Production
-
-Push to the main branch:
+Fastest iteration is curl against the endpoints (functions hot-reload on save):
 
 ```bash
-git add .
-git commit -m "Add forms integration with SendGrid and Zoho CRM"
-git push origin main
+curl -i -X POST http://localhost:8788/api/newsletter \
+  -H 'content-type: application/json' \
+  -d '{"email":"you@example.com","ids":["<list-id>"]}'
+
+curl -i -X POST http://localhost:8788/api/contact \
+  -H 'content-type: application/json' \
+  -d '{"first_name":"A","last_name":"B","email":"you@example.com",
+       "company":"Acme","country":"Germany","message":"hi"}'
 ```
 
-The GitLab CI/CD pipeline will automatically deploy to Cloudflare Pages.
+Do **not** test with a `@gmail.com` address (spam-blocked). Read the DEBUG logs in
+the wrangler terminal and the `details` object in the response to see which
+integration failed and why.
 
-## Step 5: Testing
+To validate Zoho creds without side effects (no email, no CRM write):
 
-### 5.1 Test Contact Form
-
-1. Go to `https://coretex-axiom.pages.dev/en/company/contact`
-2. Fill out the form
-3. Submit
-
-**Expected Results**:
-- User receives thank you email
-- Contact appears in SendGrid contact list
-- Contact created in Zoho CRM with "Website Lead" tag
-
-### 5.2 Test Demo Form
-
-1. Go to `https://coretex-axiom.pages.dev/en/demo`
-2. Fill out the form with company information
-3. Submit
-
-**Expected Results**:
-- User receives demo request confirmation email
-- Contact appears in SendGrid demo list
-- Contact AND Account created in Zoho CRM
-- Both tagged with "Website Lead" and "Demo Request"
-
-### 5.3 Check Logs
-
-To debug issues:
-
-1. Go to Cloudflare Dashboard → **Pages** → **coretex-axiom**
-2. Click on the deployment
-3. Go to **Functions** tab
-4. Check **Real-time logs** for errors
-
-## Customization
-
-### Modify Email Templates
-
-The website uses SendGrid Dynamic Templates for emails. To customize:
-
-1. Go to [SendGrid Dashboard](https://app.sendgrid.com) → **Email API** → **Dynamic Templates**
-2. Find the template you want to edit (Contact Form or Demo Request)
-3. Click **Edit** → Select the version
-4. Use the visual editor or code editor to customize:
-   - **Subject line**: Can include dynamic variables like `{{name}}`
-   - **Email content**: Design using drag-and-drop or HTML
-   - **Variables**: Access form data using handlebars syntax (e.g., `{{company}}`, `{{message}}`)
-
-#### Available Template Variables
-
-**Contact Form Templates**:
-- `{{firstName}}` - First name of the submitter
-- `{{lastName}}` - Last name of the submitter
-- `{{topic}}` - Contact topic (e.g., "sales", "support")
-- `{{message}}` - User's message
-- `{{language}}` - Language code ("en" or "de")
-
-**Demo Request Templates**:
-- `{{firstName}}`, `{{lastName}}` - Name components
-- `{{company}}` - Company name
-- `{{jobTitle}}` - Job title
-- `{{industry}}` - Industry
-- `{{companySize}}` - Company size
-- `{{message}}` - Optional message
-- `{{language}}` - Language code ("en" or "de")
-
-### Add New Language Support
-
-To add a new language (e.g., French):
-
-1. **Create new templates** in SendGrid:
-   - `Contact Form - French`
-   - `Demo Request - French`
-2. **Add environment variables**:
-   - `SENDGRID_TEMPLATE_CONTACT_FR=d-your-french-template-id`
-   - `SENDGRID_TEMPLATE_DEMO_FR=d-your-french-demo-template-id`
-3. **Update language detection** in `functions/lib/sendgrid.js`:
-   ```javascript
-   export function detectLanguage(formData, request = null) {
-     // Check explicit language in form data
-     if (formData.language && ['en', 'de', 'fr'].includes(formData.language)) {
-       return formData.language;
-     }
-     // Check referer header
-     if (request) {
-       const referer = request.headers.get('referer') || '';
-       if (referer.includes('/de/')) return 'de';
-       if (referer.includes('/en/')) return 'en';
-       if (referer.includes('/fr/')) return 'fr';
-     }
-     return 'en'; // default
-   }
-   ```
-
-### Change BCC Recipients
-
-Update the environment variable `SENDGRID_BCC_EMAILS`:
-
-```
-sales@eliatra.com,support@eliatra.com,ceo@eliatra.com
+```bash
+curl -s -X POST "https://accounts.zoho.com/oauth/v2/token" \
+  --data-urlencode "refresh_token=$RT" --data-urlencode "client_id=$CI" \
+  --data-urlencode "client_secret=$CS" --data-urlencode "grant_type=refresh_token"
+# ok => access_token + scope; invalid_client => client id/secret wrong;
+# invalid_code => refresh token wrong
 ```
 
-### Add Custom Fields to Zoho CRM
+## Production secrets & deploy
 
-Edit `functions/lib/zoho.js` → `createContact()`:
+- **Project:** `search-guard-website`. **Production branch:** `cloudflare-migration`
+  (so the CLI's production-scoped secret store is the one in use).
+- Upload/refresh secrets in bulk from a KEY=VALUE file (e.g. a filtered `.dev.vars`):
 
-```javascript
-const payload = {
-  data: [
-    {
-      First_Name: firstName,
-      Last_Name: lastName,
-      // Add your custom fields
-      Custom_Field_API_Name: value,
-    }
-  ]
-};
-```
+  ```bash
+  npx wrangler pages secret bulk <file> --project-name search-guard-website
+  npx wrangler pages secret list --project-name search-guard-website
+  ```
 
-### Modify Tags/Labels
+  `wrangler pages secret` writes to the **production** environment only; preview
+  secrets must be set in the Cloudflare dashboard.
+- Secrets apply on the **next deploy** — existing deployments are not
+  retroactively updated.
+- Deploy is via `.gitlab-ci.yml` (`wrangler pages deploy dist --project-name …`).
 
-Edit `functions/lib/zoho.js`:
+## Troubleshooting (issues actually seen during migration)
 
-```javascript
-Tag: [
-  { name: 'Website Lead' },
-  { name: 'High Priority' },  // Add custom tags
-],
-```
+| Symptom | Cause / fix |
+|---------|-------------|
+| `email: failed`, SendGrid `401 "not authorized to send mail"` | The key lacks Mail Send scope. `SENDGRID_SENDMAIL_KEY` must have Mail Send; `SENDGRID_MARKETING_KEY` must have Marketing. |
+| `crm: failed`, Zoho `invalid_client` (all DCs) | `client_id`/`client_secret` pair rejected — stale/wrong. Copy both together from the same Self Client; regenerate the secret if unsure. |
+| Zoho `invalid_code` | Client is valid but the refresh token is wrong / from a different client. Mint a new refresh token from that client. |
+| Zoho `OAUTH_SCOPE_MISMATCH` (401 on CRM calls) | Refresh token has the wrong scope (e.g. ZohoInvoice). Regenerate the grant code with `ZohoCRM.modules.ALL`. |
+| Zoho `INVALID_QUERY` (400) on search | A value with `(` `)` `,` `:` breaks the search criteria. Handled by `sanitizeCriteriaValue()` in `zoho.js` — searches are sanitized; records still store the original value. |
+| `Newsletter` value not saved in Zoho | The custom `Newsletter` field is missing from the Contacts layout. |
+| Country routing always default locally | `CF-IPCountry` is absent under `wrangler pages dev`; routing uses the `country` form field regardless. |
 
-## Troubleshooting
+## Reference
 
-### Form Submission Fails
-
-**Error**: "Unable to submit form"
-
-**Solutions**:
-1. Check browser console for errors
-2. Verify environment variables are set in Cloudflare
-3. Check Cloudflare Functions logs
-
-### Email Not Received
-
-**Solutions**:
-1. Check spam folder
-2. Verify sender email is authenticated in SendGrid
-3. Check SendGrid Activity Feed for delivery status
-4. Verify `SENDGRID_API_KEY` has Mail Send permissions
-
-### Contact Not Added to List
-
-**Solutions**:
-1. Verify `SENDGRID_CONTACT_LIST_ID` is correct
-2. Check SendGrid API key has Marketing permissions
-3. View Cloudflare Functions logs for errors
-
-### Zoho CRM Not Creating Records
-
-**Solutions**:
-1. Verify refresh token is valid:
-   ```bash
-   curl -X POST "https://accounts.zoho.eu/oauth/v2/token" \
-     -d "refresh_token={REFRESH_TOKEN}" \
-     -d "client_id={CLIENT_ID}" \
-     -d "client_secret={CLIENT_SECRET}" \
-     -d "grant_type=refresh_token"
-   ```
-2. Check Zoho CRM API permissions
-3. Verify field API names match your CRM configuration
-4. Check Cloudflare Functions logs
-
-### Duplicate Contacts in Zoho
-
-This is expected! The API checks for duplicates by email:
-- If contact exists: Uses existing contact ID
-- If account exists: Uses existing account ID
-- Still links them and updates tags
-
-## Segmentation in Zoho CRM
-
-### Create Segments
-
-To segment leads from the website:
-
-1. Go to Zoho CRM → **Contacts** or **Accounts**
-2. Create a custom view:
-   - **Name**: Website Leads
-   - **Criteria**: `Tag` contains `Website Lead`
-3. Further segment by:
-   - **Demo Requests**: `Tag` contains `Demo Request`
-   - **Contact Form**: `Tag` contains `Contact Form`
-
-### Automation
-
-Set up workflows in Zoho CRM:
-
-1. Go to **Setup** → **Automation** → **Workflow Rules**
-2. Create rules triggered by:
-   - **Tag** = "Demo Request"
-   - **Lead Source** = "Website Demo Request"
-3. Actions:
-   - Assign to sales rep
-   - Send internal notification
-   - Create follow-up task
-
-## Security Best Practices
-
-1. **Never commit** `.env` file with real credentials
-2. **Use encrypted** environment variables for API keys
-3. **Rotate tokens** periodically (SendGrid API keys, Zoho refresh tokens)
-4. **Monitor** Cloudflare Functions logs for suspicious activity
-5. **Rate limiting**: Consider adding rate limiting to prevent abuse
-6. **CAPTCHA**: Consider adding CAPTCHA for production (hCaptcha, Turnstile)
-
-## API Endpoints
-
-### POST /api/contact
-
-**Request Body**:
-```json
-{
-  "firstName": "John",
-  "lastName": "Doe",
-  "email": "john@example.com",
-  "topic": "sales",
-  "message": "I'm interested in learning more...",
-  "privacyAccepted": true
-}
-```
-
-**Response**:
-```json
-{
-  "success": true,
-  "message": "Thank you for your message...",
-  "details": {
-    "email": "sent",
-    "list": "added",
-    "crm": "created"
-  }
-}
-```
-
-### POST /api/demo
-
-**Request Body**:
-```json
-{
-  "firstName": "John",
-  "lastName": "Doe",
-  "email": "john@example.com",
-  "company": "Acme Corp",
-  "jobTitle": "CTO",
-  "industry": "technology",
-  "companySize": "201-500",
-  "message": "We need AI for...",
-  "privacyAccepted": true
-}
-```
-
-**Response**:
-```json
-{
-  "success": true,
-  "message": "Thank you for your demo request...",
-  "details": {
-    "email": "sent",
-    "list": "added",
-    "crm": "created"
-  }
-}
-```
-
-## Additional Resources
-
-- [SendGrid API Documentation](https://docs.sendgrid.com/api-reference)
-- [Zoho CRM API Documentation](https://www.zoho.com/crm/developer/docs/api/v3/)
-- [Cloudflare Pages Functions](https://developers.cloudflare.com/pages/platform/functions/)
-- [Cloudflare Environment Variables](https://developers.cloudflare.com/pages/platform/build-configuration/#environment-variables)
-
-## Support
-
-For issues or questions:
-- Check Cloudflare Functions logs first
-- Review SendGrid Activity Feed
-- Check Zoho CRM API logs
-- Contact your development team
+- Old AWS implementations (parity reference): `old_aws_functions/`
+- SendGrid API: https://www.twilio.com/docs/sendgrid/api-reference
+- Zoho CRM API v3: https://www.zoho.com/crm/developer/docs/api/v3/
+- Cloudflare Pages Functions: https://developers.cloudflare.com/pages/functions/
+- Wrangler: https://developers.cloudflare.com/workers/wrangler/

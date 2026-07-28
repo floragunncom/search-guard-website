@@ -8,7 +8,7 @@ Use it as the first-read context before making changes.
 
 - Project: Search Guard Website
 - Owner: floragunn GmbH
-- Deployment model: static website build, deployed via GitLab CI to SFTP + Cloudflare cache purge
+- Deployment model: static website build (Next static export) deployed to **Cloudflare Pages** via GitLab CI (`wrangler pages deploy`). Contact/newsletter form processing runs as **Cloudflare Pages Functions** under `functions/` (see section 20 and `FORMS-INTEGRATION.md`). The former SFTP + AWS-Lambda-forms infrastructure is obsolete.
 - Current architecture: **Next.js static export** + existing React Router app
 
 ## 2) Core Migration Decisions (Do Not Undo)
@@ -250,7 +250,8 @@ CI/CD gating currently enforced:
 - Build always regenerates sitemap and postbuild redirects through `npm run build`.
 
 Deploy expectations:
-- Upload `out/` via SFTP mirror (`lftp` with `--parallel=20`).
+- Deploy `dist/` to Cloudflare Pages via `wrangler pages deploy dist --project-name search-guard-website` (production branch: `master`).
+- Cloudflare Pages Functions under `functions/` are auto-discovered and deployed with the site; they require the form secrets to be set as Pages secrets (see section 20).
 - Optional Cloudflare cache purge.
 
 ## 11) Reusable Component Catalog
@@ -305,6 +306,11 @@ Page-specific sub-components go in `src/components/<PageName>/` (e.g. `src/compo
 - `.prettierrc`: Prettier config (single quotes, trailing commas)
 - `README.md`: human-readable project docs + release checklist
 - `SEO.md`: SEO findings and backlog context
+- `FORMS-INTEGRATION.md`: contact/newsletter forms backend guide (Cloudflare Pages Functions)
+- `functions/api/{contact,newsletter}.js`: form-processing Pages Functions
+- `functions/lib/{sendgrid,zoho,matrix,logger}.js`: integration helpers
+- `src/config/apiEndpoints.js`: single source of truth for the two form API URLs
+- `.dev.vars.example` / `scripts/pull-dev-secrets.sh`: local secrets template / legacy seed helper
 
 ## 13) Legacy/Transitional Parts
 
@@ -471,3 +477,51 @@ Code-side fallback options:
    - `npm run build`
 2. Run checklist from `README.md` (Release Checklist section).
 3. Confirm CI assumptions are still valid (`.gitlab-ci.yml` contract not broken), especially artifact gates.
+
+## 20) Contact & Newsletter Forms Backend (Cloudflare Pages Functions)
+
+Full details in `FORMS-INTEGRATION.md`. Summary for AI agents:
+
+- Two forms, two functions: `POST /api/contact` (`functions/api/contact.js`) and
+  `POST /api/newsletter` (`functions/api/newsletter.js`). These replaced the old
+  AWS Lambda endpoints; **the AWS Lambdas and their SSM parameters are obsolete**
+  (`old_aws_functions/` is reference only).
+- Frontend posts to same-origin `/api/*`, configured once in
+  `src/config/apiEndpoints.js`.
+- Contact fields are **snake_case**: required `first_name,last_name,email,company,message`;
+  optional `job_position,phone,country,newsletter`. Newsletter fields: `email`, `ids` (list id(s)).
+- Integrations run via `Promise.allSettled` (partial failures don't block; response
+  reports `details.{matrix,email,list,crm}`):
+  - Matrix notification.
+  - SendGrid **two keys**: `SENDGRID_SENDMAIL_KEY` (Mail Send) for the country-routed
+    welcome email + partner BCC; `SENDGRID_MARKETING_KEY` (Marketing) for list adds.
+  - Zoho CRM (US DC, `ZOHO_DC`): dedup Contact + Account, link, and store the message
+    as a **Note** (`addNoteToContact`) so it survives dedup. Mapping mirrors the old
+    Lambda (`First_Name/Last_Name/Email/Title/Phone/Newsletter`, `Account_Name/Billing_Country`);
+    no tags/lead-source/workflow triggers.
+- Contact spam filter (ported): rejects `CF-IPCountry==RU`, names with `:`/`http`,
+  `www.gclnk.com` in message, and `gmail.com` emails.
+- Zoho search criteria are sanitized (`sanitizeCriteriaValue` in `zoho.js`) — values
+  with `( ) , :` would otherwise 400 with INVALID_QUERY.
+
+### Secrets & environments
+
+- Required env vars: `SENDGRID_SENDMAIL_KEY`, `SENDGRID_MARKETING_KEY`,
+  `SENDGRID_CONTACT_LIST_ID`, `MATRIX_SERVER_URL`, `MATRIX_ROOM_ID`, `MATRIX_TOKEN`,
+  `ZOHO_DC`, `ZOHO_CLIENT_ID`, `ZOHO_CLIENT_SECRET`, `ZOHO_REFRESH_TOKEN`.
+  `ENVIRONMENT` comes from `wrangler.toml [vars]`.
+- Local: values in `.dev.vars` (git-ignored; template `.dev.vars.example`), then
+  `npx wrangler pages dev`. `next dev` does NOT run the functions.
+- Production: Cloudflare Pages **secrets** on project `search-guard-website`
+  (production branch `cloudflare-migration`); set via
+  `wrangler pages secret bulk <file> --project-name search-guard-website`. Secrets
+  apply on the next deploy.
+
+### Guardrails
+
+- Do not reintroduce a single `SENDGRID_API_KEY` — mail send and marketing need
+  separate scopes.
+- Keep `ZOHO_DC=US` unless the Zoho account is confirmed migrated; the OAuth
+  refresh token must carry `ZohoCRM.modules.ALL` scope.
+- Do not re-add Zoho tags / `Lead_Source` / `trigger:['workflow']` without
+  confirming the picklist values/automation exist in the Zoho org.
