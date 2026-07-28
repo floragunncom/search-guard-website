@@ -6,7 +6,55 @@
 
 import { createLogger } from './logger.js';
 
-const ZOHO_API_BASE = 'https://www.zohoapis.com/crm/v3'; // Use .eu for European data center
+// Default to the US data center. Override per-environment with ZOHO_DC
+// (see resolveZohoHosts) — Zoho accounts are region-pinned and OAuth clients
+// only validate against the data center they were registered in.
+const ZOHO_API_BASE = 'https://www.zohoapis.com/crm/v3';
+const ZOHO_ACCOUNTS_BASE = 'https://accounts.zoho.com/oauth/v2/token';
+
+/**
+ * Resolve the Zoho API + OAuth hosts for a given data center.
+ * @param {string} dc - Data center code: US | EU | IN | AU | JP (default US)
+ * @returns {{ apiBase: string, accountsBase: string }}
+ */
+export function resolveZohoHosts(dc) {
+  // TLD suffix per Zoho data center.
+  const suffixes = {
+    US: 'com',
+    EU: 'eu',
+    IN: 'in',
+    AU: 'com.au',
+    JP: 'jp',
+  };
+  const suffix = suffixes[(dc || 'US').toUpperCase()] || 'com';
+  return {
+    apiBase: `https://www.zohoapis.${suffix}/crm/v3`,
+    accountsBase: `https://accounts.zoho.${suffix}/oauth/v2/token`,
+  };
+}
+
+/**
+ * Sanitize a value for use inside a Zoho CRM search `criteria` expression.
+ *
+ * Zoho criteria have the grammar `(field:operator:value)` and treat the
+ * characters `(` `)` `,` `:` as structural, with no documented way to escape
+ * them inside a value. A raw value containing any of them (e.g. a company name
+ * like "Acme (EMEA)" or "Foo, Inc.") produces an INVALID_QUERY (400) and fails
+ * the whole lookup. We neutralize those characters (and collapse whitespace) so
+ * the search is well-formed. Worst case the sanitized value no longer matches an
+ * existing record and a new one is created — acceptable for a contact form, and
+ * far better than failing the CRM write. The record is still created with the
+ * original, unsanitized value.
+ *
+ * @param {string} value
+ * @returns {string}
+ */
+function sanitizeCriteriaValue(value) {
+  return String(value == null ? '' : value)
+    .replace(/[(),:]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
 /**
  * Search for a contact by email
@@ -15,7 +63,7 @@ const ZOHO_API_BASE = 'https://www.zohoapis.com/crm/v3'; // Use .eu for European
  * @param {Object} logger - Logger instance (optional)
  * @returns {Object|null} Contact record if found, null otherwise
  */
-export async function searchContactByEmail(email, accessToken, logger = null) {
+export async function searchContactByEmail(email, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
   // Create a default logger if none provided
   if (!logger) {
     logger = createLogger('zoho', {}, null);
@@ -24,8 +72,8 @@ export async function searchContactByEmail(email, accessToken, logger = null) {
   logger.debug('Searching for contact by email', { email });
 
   // Use Zoho search API with email criteria
-  const searchCriteria = `(Email:equals:${email})`;
-  const url = `${ZOHO_API_BASE}/Contacts/search?criteria=${encodeURIComponent(searchCriteria)}`;
+  const searchCriteria = `(Email:equals:${sanitizeCriteriaValue(email)})`;
+  const url = `${apiBase}/Contacts/search?criteria=${encodeURIComponent(searchCriteria)}`;
 
   logger.debug('Sending search request to Zoho CRM', { url: url.replace(accessToken, '***') });
 
@@ -77,7 +125,7 @@ export async function searchContactByEmail(email, accessToken, logger = null) {
  * @param {Object} logger - Logger instance (optional)
  * @returns {Object|null} Account record if found, null otherwise
  */
-export async function searchAccountByName(accountName, accessToken, logger = null) {
+export async function searchAccountByName(accountName, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
   // Create a default logger if none provided
   if (!logger) {
     logger = createLogger('zoho', {}, null);
@@ -86,8 +134,8 @@ export async function searchAccountByName(accountName, accessToken, logger = nul
   logger.debug('Searching for account by name', { accountName });
 
   // Use Zoho search API with account name criteria
-  const searchCriteria = `(Account_Name:equals:${accountName})`;
-  const url = `${ZOHO_API_BASE}/Accounts/search?criteria=${encodeURIComponent(searchCriteria)}`;
+  const searchCriteria = `(Account_Name:equals:${sanitizeCriteriaValue(accountName)})`;
+  const url = `${apiBase}/Accounts/search?criteria=${encodeURIComponent(searchCriteria)}`;
 
   logger.debug('Sending search request to Zoho CRM', { url: url.replace(accessToken, '***') });
 
@@ -145,7 +193,7 @@ export async function searchAccountByName(accountName, accessToken, logger = nul
  * @param {string} accessToken - Zoho CRM access token
  * @param {Object} logger - Logger instance (optional)
  */
-export async function createContact(contactData, source, accessToken, logger = null) {
+export async function createContact(contactData, source, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
   // Create a default logger if none provided
   if (!logger) {
     logger = createLogger('zoho', {}, null);
@@ -190,11 +238,11 @@ export async function createContact(contactData, source, accessToken, logger = n
   };
 
   logger.debug('Sending request to Zoho CRM Contacts API', {
-    url: `${ZOHO_API_BASE}/Contacts`,
+    url: `${apiBase}/Contacts`,
     method: 'POST',
   });
 
-  const response = await fetch(`${ZOHO_API_BASE}/Contacts`, {
+  const response = await fetch(`${apiBase}/Contacts`, {
     method: 'POST',
     headers: {
       'Authorization': `Zoho-oauthtoken ${accessToken}`,
@@ -255,7 +303,7 @@ export async function createContact(contactData, source, accessToken, logger = n
  * @param {string} accessToken - Zoho CRM access token
  * @param {Object} logger - Logger instance (optional)
  */
-export async function createAccount(accountData, source, accessToken, logger = null) {
+export async function createAccount(accountData, source, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
   // Create a default logger if none provided
   if (!logger) {
     logger = createLogger('zoho', {}, null);
@@ -295,11 +343,11 @@ export async function createAccount(accountData, source, accessToken, logger = n
   };
 
   logger.debug('Sending request to Zoho CRM Accounts API', {
-    url: `${ZOHO_API_BASE}/Accounts`,
+    url: `${apiBase}/Accounts`,
     method: 'POST',
   });
 
-  const response = await fetch(`${ZOHO_API_BASE}/Accounts`, {
+  const response = await fetch(`${apiBase}/Accounts`, {
     method: 'POST',
     headers: {
       'Authorization': `Zoho-oauthtoken ${accessToken}`,
@@ -354,7 +402,7 @@ export async function createAccount(accountData, source, accessToken, logger = n
  * @param {string} accessToken - Zoho CRM access token
  * @param {Object} logger - Logger instance (optional)
  */
-export async function linkContactToAccount(contactId, accountId, accessToken, logger = null) {
+export async function linkContactToAccount(contactId, accountId, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
   // Create a default logger if none provided
   if (!logger) {
     logger = createLogger('zoho', {}, null);
@@ -376,7 +424,7 @@ export async function linkContactToAccount(contactId, accountId, accessToken, lo
     ]
   };
 
-  const response = await fetch(`${ZOHO_API_BASE}/Contacts`, {
+  const response = await fetch(`${apiBase}/Contacts`, {
     method: 'PUT',
     headers: {
       'Authorization': `Zoho-oauthtoken ${accessToken}`,
@@ -422,7 +470,7 @@ export async function linkContactToAccount(contactId, accountId, accessToken, lo
  * @param {string} clientSecret - Zoho OAuth client secret
  * @param {Object} logger - Logger instance (optional)
  */
-export async function refreshAccessToken(refreshToken, clientId, clientSecret, logger = null) {
+export async function refreshAccessToken(refreshToken, clientId, clientSecret, logger = null, accountsBase = ZOHO_ACCOUNTS_BASE) {
   // Create a default logger if none provided
   if (!logger) {
     logger = createLogger('zoho', {}, null);
@@ -437,7 +485,7 @@ export async function refreshAccessToken(refreshToken, clientId, clientSecret, l
     grant_type: 'refresh_token',
   });
 
-  const response = await fetch(`https://accounts.zoho.com/oauth/v2/token?${params}`, {
+  const response = await fetch(`${accountsBase}?${params}`, {
     method: 'POST',
   });
 
