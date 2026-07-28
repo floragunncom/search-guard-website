@@ -38,7 +38,7 @@ function getEnvironment(env, request = null) {
     const hostname = url.hostname;
 
     // Production domains (customize based on your actual domain)
-    if (hostname === 'coretex-axiom.com' || hostname === 'www.coretex-axiom.com') {
+    if (hostname === 'search-guard.com' || hostname === 'www.search-guard.com') {
       return {
         environment: 'production',
         logLevel: LOG_LEVELS.INFO,

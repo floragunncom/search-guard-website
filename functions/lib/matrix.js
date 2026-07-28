@@ -9,7 +9,7 @@ import { createLogger } from './logger.js';
 /**
  * Send a notification to a Matrix room
  * @param {Object} formData - Form submission data
- * @param {string} formType - Type of form ('contact' or 'demo')
+ * @param {string} formType - Type of form ('contact' or 'newsletter')
  * @param {string} matrixRoomId - Matrix room ID (e.g., !roomid:server.com)
  * @param {string} matrixServerUrl - Matrix homeserver URL
  * @param {string} matrixToken - Matrix access token
@@ -124,12 +124,12 @@ export async function sendMatrixNotification(formData, formType, matrixRoomId, m
 /**
  * Format form data into a Matrix message
  * @param {Object} formData - Form submission data
- * @param {string} formType - Type of form ('contact' or 'demo')
+ * @param {string} formType - Type of form ('contact' or 'newsletter')
  * @returns {Object} Formatted message with plain and HTML versions
  */
 function formatMessage(formData, formType) {
-  if (formType === 'demo') {
-    return formatDemoMessage(formData);
+  if (formType === 'newsletter') {
+    return formatNewsletterMessage(formData);
   } else if (formType === 'contact') {
     return formatContactMessage(formData);
   }
@@ -142,88 +142,48 @@ function formatMessage(formData, formType) {
 }
 
 /**
- * Format demo form data
+ * Format newsletter subscription data.
+ * Ported from the old AWS Lambda newsletter `matrix.js`.
  */
-function formatDemoMessage(data) {
-  const {
-    firstName,
-    lastName,
-    email,
-    company,
-    jobTitle,
-    industry,
-    companySize,
-    message,
-  } = data;
+function formatNewsletterMessage(data) {
+  const { email, country } = data;
 
-  const plain = `🎯 New Coretex Axiom Demo Request
+  const plain = `New Search Guard newsletter subscriber ${email}`;
 
-👤 Contact Information:
-Name: ${firstName} ${lastName}
-Email: ${email}
-${jobTitle ? `Job Title: ${jobTitle}` : ''}
-
-🏢 Company Information:
-Company: ${company}
-Industry: ${industry}
-${companySize ? `Company Size: ${companySize}` : ''}
-
-💬 Message:
-${message || 'No message provided'}`;
-
-  const html = `<h3>🎯 New Coretex Axiom Demo Request</h3>
-<h4>👤 Contact Information:</h4>
+  const html = `<h3>New Search Guard newsletter subscriber:</h3>
 <ul>
-<li><strong>Name:</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</li>
-<li><strong>Email:</strong> ${escapeHtml(email)}</li>
-${jobTitle ? `<li><strong>Job Title:</strong> ${escapeHtml(jobTitle)}</li>` : ''}
-</ul>
-<h4>🏢 Company Information:</h4>
-<ul>
-<li><strong>Company:</strong> ${escapeHtml(company)}</li>
-<li><strong>Industry:</strong> ${escapeHtml(industry)}</li>
-${companySize ? `<li><strong>Company Size:</strong> ${escapeHtml(companySize)}</li>` : ''}
-</ul>
-<h4>💬 Message:</h4>
-<p>${escapeHtml(message || 'No message provided')}</p>`;
+<li><strong>email:</strong> ${escapeHtml(email)}</li>
+<li><strong>country:</strong> ${escapeHtml(country || '')}</li>
+</ul>`;
 
   return { plain, html };
 }
 
 /**
- * Format contact form data
+ * Format contact form data.
+ * Uses the snake_case field names sent by the website contact forms.
  */
 function formatContactMessage(data) {
   const {
-    firstName,
-    lastName,
+    first_name,
+    last_name,
     email,
     company,
-    topic,
+    country,
     message,
   } = data;
 
-  const plain = `📧 New Coretex Axiom Contact Form Submission
+  const plain = `New Search Guard contact form filled out by ${email}`;
 
-👤 Contact Information:
-Name: ${firstName} ${lastName}
-Email: ${email}
-Company: ${company}
-Topic: ${topic}
-
-💬 Message:
-${message}`;
-
-  const html = `<h3>📧 New Coretex Axiom Contact Form Submission</h3>
-<h4>👤 Contact Information:</h4>
+  const html = `<h3>New Search Guard contact form filled out</h3>
 <ul>
-<li><strong>Name:</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</li>
-<li><strong>Email:</strong> ${escapeHtml(email)}</li>
-<li><strong>Company:</strong> ${escapeHtml(company)}</li>
-<li><strong>Topic:</strong> ${escapeHtml(topic)}</li>
-</ul>
-<h4>💬 Message:</h4>
-<p>${escapeHtml(message)}</p>`;
+<li><strong>firstname:</strong> ${escapeHtml(first_name)}</li>
+<li><strong>lastname:</strong> ${escapeHtml(last_name)}</li>
+<li><strong>email:</strong> ${escapeHtml(email)}</li>
+<li><strong>company:</strong> ${escapeHtml(company)}</li>
+<li><strong>country:</strong> ${escapeHtml(country || '')}</li>
+<li><strong>message:</strong> ${escapeHtml(message)}</li>
+</ul>`;
 
   return { plain, html };
 }
