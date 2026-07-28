@@ -23,6 +23,7 @@ import {
   createContact,
   createAccount,
   linkContactToAccount,
+  addNoteToContact,
   refreshAccessToken,
   searchContactByEmail,
   searchAccountByName,
@@ -193,6 +194,11 @@ export async function onRequestPost(context) {
         // Resolve the Zoho data center hosts (ZOHO_DC: US | EU | IN | AU | JP)
         const { apiBase, accountsBase } = resolveZohoHosts(env.ZOHO_DC);
 
+        // Normalize the newsletter opt-in checkbox: the plain forms submit "on"
+        // when checked, ContactFormSuperSlim submits a boolean.
+        const newsletterOptIn =
+          body.newsletter === 'on' || body.newsletter === 'true' || body.newsletter === true;
+
         // Refresh Zoho access token
         const { accessToken } = await refreshAccessToken(
           env.ZOHO_REFRESH_TOKEN,
@@ -224,11 +230,10 @@ export async function onRequestPost(context) {
               firstName: first_name,
               lastName: last_name,
               email,
-              company,
               phone: body.phone,
               jobTitle: body.job_position,
+              newsletter: newsletterOptIn,
             },
-            'Website Contact Form',
             accessToken,
             logger,
             apiBase
@@ -255,8 +260,8 @@ export async function onRequestPost(context) {
           accountResult = await createAccount(
             {
               accountName: company,
+              country: body.country,
             },
-            'Website Contact Form',
             accessToken,
             logger,
             apiBase
@@ -268,6 +273,28 @@ export async function onRequestPost(context) {
           await linkContactToAccount(
             contactResult.contactId,
             accountResult.accountId,
+            accessToken,
+            logger,
+            apiBase
+          );
+        }
+
+        // Store the submission message as a Note on the contact (new or existing),
+        // so each inquiry is preserved even when the contact is deduplicated.
+        if (contactResult.contactId) {
+          await addNoteToContact(
+            contactResult.contactId,
+            {
+              title: `Website contact form – ${company}`,
+              content:
+                `${message}\n\n` +
+                `— Submitted via website contact form —\n` +
+                `Company: ${company}\n` +
+                `Country: ${body.country || ''}\n` +
+                `Phone: ${body.phone || ''}\n` +
+                `Job title: ${body.job_position || ''}\n` +
+                `Newsletter opt-in: ${newsletterOptIn ? 'yes' : 'no'}`,
+            },
             accessToken,
             logger,
             apiBase
