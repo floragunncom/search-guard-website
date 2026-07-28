@@ -4,14 +4,29 @@
  * Endpoint: /api/contact
  * Method: POST
  *
- * Handles contact form submissions by:
- * 1. Sending thank you email via SendGrid (with BCCs)
- * 2. Adding contact to SendGrid email list
- * 3. Creating contact and account in Zoho CRM with tags
+ * Replaces the old AWS Lambda "sg-contact-form" endpoint
+ * (56dmarth25.execute-api.eu-central-1.amazonaws.com).
+ *
+ * Accepts the snake_case fields sent by the website contact forms:
+ *   Required: first_name, last_name, email, company, message
+ *   Optional: job_position, phone, country, newsletter
+ *
+ * Handles a submission by (in parallel):
+ * 1. Sending a Matrix room notification
+ * 2. Sending the country-routed welcome email via SendGrid (with partner BCCs)
+ * 3. Adding the contact to a SendGrid marketing list
+ * 4. Creating/deduplicating contact + account in Zoho CRM
  */
 
-import { sendEmail, addContactToList, getTemplateId, detectLanguage } from '../lib/sendgrid.js';
-import { createContact, createAccount, linkContactToAccount, refreshAccessToken, searchContactByEmail, searchAccountByName } from '../lib/zoho.js';
+import { sendContactWelcomeEmail, addContactToList } from '../lib/sendgrid.js';
+import {
+  createContact,
+  createAccount,
+  linkContactToAccount,
+  refreshAccessToken,
+  searchContactByEmail,
+  searchAccountByName,
+} from '../lib/zoho.js';
 import { sendMatrixNotification } from '../lib/matrix.js';
 import { createLogger, sanitizeForLogging } from '../lib/logger.js';
 
@@ -46,16 +61,60 @@ export async function onRequestPost(context) {
     // Parse request body
     const body = await request.json();
     logger.debug('Request body parsed', sanitizeForLogging(body));
-    const { firstName, lastName, email, company, topic, message } = body;
+
+    const {
+      first_name,
+      last_name,
+      email,
+      company,
+      message,
+    } = body;
+
+    // ---------------------------------------------------------------------
+    // Spam filtering (ported from the old AWS Lambda processor.js).
+    // Cloudflare exposes the visitor country via the CF-IPCountry header
+    // (the old Lambda used the CloudFront-Viewer-Country header).
+    // A deliberately cryptic error is returned so bots get no useful signal.
+    // ---------------------------------------------------------------------
+    const visitorCountry = request.headers.get('CF-IPCountry') || '';
+    try {
+      if (
+        // handle all mails from Russia as spam
+        visitorCountry === 'RU' ||
+        // handle mails as spam where first or last name contains ':' or 'http'
+        (first_name || '').indexOf(':') !== -1 ||
+        (first_name || '').indexOf('http') !== -1 ||
+        (last_name || '').indexOf(':') !== -1 ||
+        (last_name || '').indexOf('http') !== -1 ||
+        // handle mails as spam where message contains www.gclnk.com
+        (message || '').indexOf('www.gclnk.com') !== -1 ||
+        // handle gmail.com senders as spam
+        (email || '').indexOf('gmail.com') !== -1
+      ) {
+        logger.warn('Submission rejected as spam', {
+          visitorCountry,
+          email,
+        });
+        return new Response(JSON.stringify('INVALID FORMAT 0x7c'), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    } catch (spamErr) {
+      logger.warn('Spam check threw, rejecting', { error: spamErr.message });
+      return new Response(JSON.stringify('INVALID FORMAT 0x7d'), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
 
     // Validate required fields
-    if (!firstName || !lastName || !email || !company || !topic || !message) {
+    if (!first_name || !last_name || !email || !company || !message) {
       logger.warn('Validation failed: missing required fields', {
-        firstName: !!firstName,
-        lastName: !!lastName,
+        first_name: !!first_name,
+        last_name: !!last_name,
         email: !!email,
         company: !!company,
-        topic: !!topic,
         message: !!message,
       });
       return new Response(
@@ -84,23 +143,11 @@ export async function onRequestPost(context) {
 
     logger.debug('Email format validation passed');
 
-    // Construct full name
-    const fullName = `${firstName} ${lastName}`;
-
-    // Detect language from form data or request
-    const language = detectLanguage(body, request);
-    logger.debug('Language detected', { language });
-
-    // Get appropriate SendGrid template ID
-    const templateId = getTemplateId('contact', language, env, logger);
-    logger.debug('SendGrid template selected', { templateId, language });
-
     logger.info('Starting parallel execution of integrations', {
       email,
-      topic,
-      language,
-      bccEmailsRaw: env.SENDGRID_BCC_EMAILS,
-      bccEmailsArray: env.SENDGRID_BCC_EMAILS?.split(',') || [],
+      company,
+      country: body.country,
+      visitorCountry,
     });
 
     // Parallel execution of all integrations for better performance
@@ -108,11 +155,11 @@ export async function onRequestPost(context) {
       // 1. Send notification to Matrix room
       sendMatrixNotification(
         {
-          firstName,
-          lastName,
+          first_name,
+          last_name,
           email,
           company,
-          topic,
+          country: body.country,
           message,
         },
         'contact',
@@ -122,34 +169,17 @@ export async function onRequestPost(context) {
         logger
       ),
 
-      // 2. Send thank you email via SendGrid with Dynamic Template
-      sendEmail(
-        {
-          to: email,
-          toName: fullName,
-          templateId,
-          templateData: {
-            firstName,
-            lastName,
-            topic,
-            message,
-            language,
-          },
-          bccEmails: env.SENDGRID_BCC_EMAILS?.split(',') || [],
-        },
-        env.SENDGRID_API_KEY,
-        logger
-      ),
+      // 2. Send the country-routed welcome email via SendGrid
+      sendContactWelcomeEmail(body, env.SENDGRID_API_KEY, logger),
 
-      // 3. Add to SendGrid email list
+      // 3. Add to SendGrid marketing list
       addContactToList(
         {
           email,
-          firstName,
-          lastName,
+          firstName: first_name,
+          lastName: last_name,
           customFields: {
-            topic,
-            message: message.substring(0, 200), // Limit message length
+            company,
           },
         },
         env.SENDGRID_CONTACT_LIST_ID,
@@ -168,7 +198,7 @@ export async function onRequestPost(context) {
         );
 
         // Search for existing contact by email
-        let existingContact = await searchContactByEmail(email, accessToken, logger);
+        const existingContact = await searchContactByEmail(email, accessToken, logger);
         let contactResult;
 
         if (existingContact) {
@@ -186,11 +216,12 @@ export async function onRequestPost(context) {
           // Create new contact
           contactResult = await createContact(
             {
-              firstName,
-              lastName,
+              firstName: first_name,
+              lastName: last_name,
               email,
               company,
-              jobTitle: topic,
+              phone: body.phone,
+              jobTitle: body.job_position,
             },
             'Website Contact Form',
             accessToken,
@@ -199,7 +230,7 @@ export async function onRequestPost(context) {
         }
 
         // Search for existing account by company name
-        let existingAccount = await searchAccountByName(company, accessToken, logger);
+        const existingAccount = await searchAccountByName(company, accessToken, logger);
         let accountResult;
 
         if (existingAccount) {
@@ -218,7 +249,6 @@ export async function onRequestPost(context) {
           accountResult = await createAccount(
             {
               accountName: company,
-              industry: topic, // Use topic as a placeholder for industry
             },
             'Website Contact Form',
             accessToken,
@@ -307,7 +337,7 @@ export async function onRequestPost(context) {
 
     logger.info('Contact form request completed successfully', {
       email,
-      topic,
+      company,
       integrationStatus: response.details,
     });
 
