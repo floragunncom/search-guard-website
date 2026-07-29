@@ -212,8 +212,43 @@ class MyDocument extends Document {
             src="https://cdn.cookie-script.com/s/a521e590130162749ba95a6c3ffc0462.js"
             async
           />
+
+          {/* Plausible Analytics — cookieless, no consent required */}
+          <script
+            defer
+            data-domain="search-guard.com"
+            src="https://plausible.search-guard.com/js/script.file-downloads.outbound-links.js"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html:
+                'window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}',
+            }}
+          />
+
+          {/* Google Tag Manager (GTM-TDLZ33C) — gated behind Cookie-Script "performance" consent.
+              type="text/plain" keeps it inert until the visitor accepts; Cookie-Script then
+              rewrites it to an executable script. */}
+          <script
+            type="text/plain"
+            data-cookiecategory="performance"
+            dangerouslySetInnerHTML={{
+              __html:
+                "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TDLZ33C');",
+            }}
+          />
         </Head>
         <body>
+          {/* Google Tag Manager (noscript fallback) */}
+          <noscript>
+            <iframe
+              title="gtm"
+              src="https://www.googletagmanager.com/ns.html?id=GTM-TDLZ33C"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
           <Main />
           <NextScript />
         </body>
