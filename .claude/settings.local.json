@@ -12,7 +12,10 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(node -e 'const h=require\\(\"./src/i18n/locales/en/home.json\"\\); console.log\\(JSON.stringify\\(h.hero,null,2\\)\\)')",
+      "Bash(node -e 'const h=require\\(\"./src/i18n/locales/en/home.json\"\\); console.log\\(\"top keys:\", Object.keys\\(h\\)\\); console.log\\(\"hero:\", JSON.stringify\\(h.hero||h[\"hero\"], null, 2\\)\\); ')",
+      "Bash(grep -rniE \"gtag|googletagmanager|gtm-|plausible|G-[A-Z0-9]{6,}|UA-[0-9]{4,}|matomo|posthog|mixpanel|hotjar|clarity\\\\.ms|fathom|data-domain\" index.html pages/_document.js pages/_app.js \"pages/[[...slug]].js\")"
     ]
   }
 }
