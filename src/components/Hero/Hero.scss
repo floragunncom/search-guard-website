@@ -1,6 +1,50 @@
 @use '../../styles/Colors' as *;
 @use '../../styles/Breakpoints' as *;
 
+// Centered hero: headline, subheadline, and a row of CTA pills.
+.hero-centered {
+  text-align: center;
+
+  .hero-text-wrapper-headline {
+    text-align: center;
+  }
+
+  .hero-text-wrapper-text {
+    text-align: center;
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media only screen and (max-width: $tabletBig) {
+      margin-right: auto;
+    }
+  }
+}
+
+// Two bright-turquoise pill buttons, centered under the subheadline.
+.hero-cta-pills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+
+  .button-default-container {
+    border-radius: 999px;
+    padding: 14px 28px;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    flex-direction: column;
+    gap: 12px;
+
+    .button-default-container {
+      width: 100%;
+    }
+  }
+}
+
 .hero-wrapper {
   padding: 96px;
   background-color: $white;

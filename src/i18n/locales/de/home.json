@@ -5,6 +5,7 @@
   "hero.headline": "Security und Alerting für Elasticsearch und Kibana",
   "hero.text": "Search Guard schützt Ihre Daten und Datenflüsse im gesamten Elastic Stack – mit Verschlüsselung, Zugriffskontrolle und Echtzeit-Alerting.",
   "hero.button": "Kostenlos testen",
+  "hero.teaser": "Zu unseren Webinaren",
 
   "tile1.headline": "Security auf allen Ebenen",
   "tile1.text": "Search Guard bietet umfassenden Schutz für Ihre sensibelsten Daten. Mit RBAC, Verschlüsselung, Authentifizierung, Autorisierung, Audit-Logging und Compliance sichern Sie Cluster, Indizes und einzelne Dokumente zuverlässig ab.",

@@ -4,6 +4,7 @@
   "hero.headline": "Seguridad y Alertas para Elasticsearch y Kibana",
   "hero.text": "Search Guard es un plugin de seguridad y alertas que cifra y protege sus datos y flujos de datos contra el acceso no autorizado en todo el Elastic Stack.",
   "hero.button": "Prueba gratuita de Search Guard",
+  "hero.teaser": "Ver nuestros webinars",
   "tile1.headline": "Search Guard ofrece seguridad en todos los niveles",
   "tile1.text": "Search Guard proporciona una solución de seguridad integral para mantener sus datos más confidenciales a salvo. Utilizando RBAC, Search Guard garantiza el más alto nivel de protección en sus clústeres, índices y documentos añadiendo cifrado, autenticación, autorización, registro de auditoría, cumplimiento, así como funciones de alertas y detección de anomalías.",
   "tile2.headline": "Search Guard es compatible con todos los estándares de la industria",
