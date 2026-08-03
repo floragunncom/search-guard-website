@@ -85,10 +85,6 @@ Fetch step includes posts, events, whitepapers, videos, persons, and page conten
 
 - `npm run next:build`: Next build/export
 - `npm run sitemap`: builds `out/sitemap.xml`
-- `npm run postbuild:redirects`: writes fallback redirect page(s), including:
-  - `/blog/page/1/` -> `/blog/`
-  - legacy root blog slugs (for example `/elasticsearch-tls-certificates/` -> `/blog/elasticsearch-tls-certificates/`)
-  - explicit legacy/typo routes (for example `/imprint/` -> `/impressum/`)
 
 ### Legacy / migration scripts
 
