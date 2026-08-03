@@ -3,8 +3,8 @@ import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import whitepaperarticles from '../../Api/contentfulWhitepapers.json';
 import Button from "../../components/Button/Button";
+import { usePageData } from '../../context/PageDataContext';
 const hipaaImage = '/assets/20200831_HIPAA_Elastic_Stack.jpg';
 const hipaaPdf = '/assets/20200831_HIPAA_Elastic_Stack.pdf';
 
@@ -23,6 +23,9 @@ const breadcrumb = [
 ];
 
 const Whitepapers = () => {
+    const pageData = usePageData();
+    const whitepaperarticles = pageData?.whitepapers || [];
+
     return (
         <PageWrapper>
             <Helmet>

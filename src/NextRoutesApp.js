@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter, StaticRouter } from 'react-router-dom';
 import i18n from './i18n/config';
 import { LocaleProvider } from './i18n/LocaleContext';
+import { PageDataProvider } from './context/PageDataContext';
 import { DEFAULT_LOCALE } from './i18n/locales';
 import Routes from './Routes';
 
-const NextRoutesApp = ({ location, locale = DEFAULT_LOCALE }) => {
+const NextRoutesApp = ({ location, locale = DEFAULT_LOCALE, pageData = null }) => {
   // Set i18n language synchronously before render
   if (i18n.language !== locale) {
     i18n.changeLanguage(locale);
@@ -15,7 +16,9 @@ const NextRoutesApp = ({ location, locale = DEFAULT_LOCALE }) => {
 
   const content = (
     <LocaleProvider locale={locale}>
-      <Routes />
+      <PageDataProvider data={pageData}>
+        <Routes />
+      </PageDataProvider>
     </LocaleProvider>
   );
 

@@ -1,11 +1,13 @@
-import persons from '../../Api/contentfulPersons.json';
 import React from 'react';
 import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import Title from "../../components/Title/Title";
+import { usePageData } from '../../context/PageDataContext';
 
 const Authors = ({ match }) => {
+  const pageData = usePageData();
+  const persons = pageData?.persons || [];
   const pageTitle = 'A list of all Search Guard Authors contributing to our blog';
   const pageDescription = 'A list of all Search Guard Authors that are contributing to our blog and documentation.';
   const canonicalUrl = 'https://search-guard.com/authors/';

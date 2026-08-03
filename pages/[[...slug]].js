@@ -8,8 +8,8 @@ import {
   LOCALIZABLE_ROUTES,
 } from '../src/i18n/locales';
 
-const CatchAllPage = ({ routePath, locale }) => {
-  return <NextRoutesApp location={routePath} locale={locale} />;
+const CatchAllPage = ({ routePath, locale, pageData }) => {
+  return <NextRoutesApp location={routePath} locale={locale} pageData={pageData} />;
 };
 
 export const getStaticPaths = async () => {
@@ -96,6 +96,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
+  const { loadPageData } = require('../src/utils/routeDataLoader');
+
   const segments = Array.isArray(params?.slug)
     ? params.slug
     : typeof params?.slug === 'string'
@@ -113,11 +115,13 @@ export const getStaticProps = async ({ params }) => {
   }
 
   const routePath = routeSegments.length > 0 ? `/${routeSegments.join('/')}/` : '/';
+  const pageData = loadPageData(routePath);
 
   return {
     props: {
       routePath,
       locale,
+      pageData,
     },
   };
 };

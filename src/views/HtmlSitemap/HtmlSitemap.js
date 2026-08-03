@@ -4,12 +4,14 @@ import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import { ensureTrailingSlash } from '../../utils/urlUtils';
-import posts from '../../Api/contentfulPosts.json';
-import presentations from '../../Api/presentations.json';
-import whitepapers from '../../Api/contentfulWhitepapers.json';
-import authors from '../../Api/contentfulPersons.json';
+import { usePageData } from '../../context/PageDataContext';
 
 const HtmlSitemap = () => {
+    const pageData = usePageData();
+    const posts = pageData?.posts || [];
+    const authors = pageData?.authors || [];
+    const whitepapers = pageData?.whitepapers || [];
+    const presentations = pageData?.presentations || [];
     return (
         <PageWrapper>
             <Helmet>
@@ -62,9 +64,9 @@ const HtmlSitemap = () => {
                 <div className="tilesimple-text default-margin-bottom">
                     {posts.map(post => {
                         return (
-                            <>
-                                <a href={`/blog/${ensureTrailingSlash(post.fields.slug)}`}>{post.fields.title}</a><br />
-                            </>
+                            <React.Fragment key={post.slug}>
+                                <a href={`/blog/${ensureTrailingSlash(post.slug)}`}>{post.title}</a><br />
+                            </React.Fragment>
                         );
                     })}
                 </div>
@@ -77,9 +79,9 @@ const HtmlSitemap = () => {
                 <div className="tilesimple-text default-margin-bottom">
                     {authors.map(author => {
                         return (
-                            <>
-                                <a href={`/author/${author.fields.slug}` } rel="author">{author.fields.firstName} {author.fields.lastName}</a><br />
-                            </>
+                            <React.Fragment key={author.slug}>
+                                <a href={`/author/${author.slug}` } rel="author">{author.firstName} {author.lastName}</a><br />
+                            </React.Fragment>
                         );
                     })}
                 </div>
@@ -105,9 +107,9 @@ const HtmlSitemap = () => {
                 <div className="tilesimple-text default-margin-bottom">
                     {presentations.map(presentation => {
                         return (
-                            <>
+                            <React.Fragment key={presentation.link}>
                                 <a href={presentation.link}>{presentation.headline}</a><br />
-                            </>
+                            </React.Fragment>
                         );
                     })}
                 </div>
@@ -120,9 +122,9 @@ const HtmlSitemap = () => {
                 <div className="tilesimple-text default-margin-bottom">
                     {whitepapers.map(whitepaper => {
                         return (
-                            <>
-                                <a href={`/whitepapers/${whitepaper.fields.slug}` }>{whitepaper.fields.title}</a><br />
-                            </>
+                            <React.Fragment key={whitepaper.slug}>
+                                <a href={`/whitepapers/${whitepaper.slug}` }>{whitepaper.title}</a><br />
+                            </React.Fragment>
                         );
                     })}
                 </div>

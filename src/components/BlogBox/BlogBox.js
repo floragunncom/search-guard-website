@@ -2,41 +2,13 @@ import React from 'react';
 import Button from '../Button/Button';
 import { ensureHttps, ensureTrailingSlash } from '../../utils/urlUtils';
 import infoArrowForward from '../../images/blog-info-arrow-forward.svg';
-import allPosts from '../../Api/contentfulPosts.json';
 
-const BlogBox = ({ overview, headline, randomize, category, postsyoulike }) => {
+const BlogBox = ({ overview, headline, postsyoulike, posts: postsProp }) => {
 
   // let CDN scale images for blogbox
   const imageParameters = "?fm=jpg&fl=progressive&w=500&fit=scale";
 
-  function shuffle(array) {
-    // Fisher-Yates Shuffle
-    let counter = array.length;
-
-    // While there are elements in the array
-    while (counter > 1) {
-      // Pick a random index
-      const index = Math.floor(Math.random() * counter);
-      counter--;
-      const temp = array[counter];
-      array[counter] = array[index];
-      array[index] = temp;
-    }
-
-    return array;
-  }
-
-  let posts;
-
-  if (category !== undefined) {
-    posts = allPosts.filter(post => post.fields.tags.includes(category));
-  } else {
-    posts = allPosts;
-  }
-
-  if (randomize) {
-    posts = shuffle(posts);
-  }
+  const posts = postsProp || [];
 
   const startPoint1 = 0;
   const startPoint2 = 3;
