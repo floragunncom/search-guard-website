@@ -8,7 +8,7 @@ Use it as the first-read context before making changes.
 
 - Project: Search Guard Website
 - Owner: floragunn GmbH
-- Deployment model: static website build (Next static export) deployed to **Cloudflare Pages** via GitLab CI (`wrangler pages deploy`). Contact/newsletter form processing runs as **Cloudflare Pages Functions** under `functions/` (see section 20 and `FORMS-INTEGRATION.md`). The former SFTP + AWS-Lambda-forms infrastructure is obsolete.
+- Deployment model: static website build, deployed via GitLab CI to SFTP + Cloudflare cache purge
 - Current architecture: **Next.js static export** + existing React Router app
 
 ## 2) Core Migration Decisions (Do Not Undo)
@@ -77,7 +77,6 @@ Runs:
 1. `npm run fetch`
 2. `npm run next:build` (static export → `out/`)
 3. `npm run sitemap`
-4. `npm run postbuild:redirects`
 
 Note: `next:export-dist` (copy `out/` → `dist/`) is deprecated. Output goes directly to `out/`.
 
@@ -135,11 +134,6 @@ Important:
 
 ## 7) Redirects and Canonical Rules
 
-- `scripts/postbuild-redirects.js` creates static fallback page:
-  - `/blog/page/1/index.html` => immediate redirect to `/blog/`.
-- `scripts/postbuild-redirects.js` also creates:
-  - legacy root blog slug redirects to canonical `/blog/.../` routes
-  - explicit typo/legacy redirects (for example `/imprint/` => `/impressum/`)
 - Preferred production canonical redirect handling remains Cloudflare 301 rules.
 - Do not reintroduce `.htaccess` generation inside `out/` for this project.
 
@@ -247,7 +241,7 @@ CI/CD gating currently enforced:
 - Build fails if `out/index.html` is missing.
 - Build fails if `out/sitemap.xml` is missing.
 - Build fails if no exported `index.html` pages are found in `out`.
-- Build always regenerates sitemap and postbuild redirects through `npm run build`.
+- Build always regenerates sitemap through `npm run build`.
 
 Deploy expectations:
 - Deploy `dist/` to Cloudflare Pages via `wrangler pages deploy dist --project-name search-guard-website` (production branch: `master`).
@@ -297,7 +291,6 @@ Page-specific sub-components go in `src/components/<PageName>/` (e.g. `src/compo
 - `src/Routes.js`: route table and redirect logic
 - `src/components/PageWrapper/PageWrapper.js`: default metadata
 - `scripts/sitemap.js`: sitemap generation
-- `scripts/postbuild-redirects.js`: fallback redirect page generation
 - `styles/main.scss`: central SCSS entry point (all component SCSS aggregated via `@use`, imported by `_app.js`)
 - `src/utils/styleUtils.js`: color schema CSS class utilities
 - `src/utils/routeDataLoader.js`: build-time page data loader (posts, persons, whitepapers)
@@ -306,11 +299,6 @@ Page-specific sub-components go in `src/components/<PageName>/` (e.g. `src/compo
 - `.prettierrc`: Prettier config (single quotes, trailing commas)
 - `README.md`: human-readable project docs + release checklist
 - `SEO.md`: SEO findings and backlog context
-- `FORMS-INTEGRATION.md`: contact/newsletter forms backend guide (Cloudflare Pages Functions)
-- `functions/api/{contact,newsletter}.js`: form-processing Pages Functions
-- `functions/lib/{sendgrid,zoho,matrix,logger}.js`: integration helpers
-- `src/config/apiEndpoints.js`: single source of truth for the two form API URLs
-- `.dev.vars.example` / `scripts/pull-dev-secrets.sh`: local secrets template / legacy seed helper
 
 ## 13) Legacy/Transitional Parts
 
@@ -332,7 +320,6 @@ Treat Vite pipeline as legacy/migration residue unless explicitly asked to reviv
 6. If SEO-sensitive changes were made, check:
    - `out/sitemap.xml`
    - 404 output
-   - redirect fallback output (`/blog/page/1/` + generated legacy redirects)
 
 ## 15) Frequent Failure Modes
 
@@ -424,9 +411,8 @@ Preferred: Cloudflare 301 rule.
 
 Code-side fallback options:
 1. Add a route in `src/Routes.js` using `LegacyRedirect` to canonical path.
-2. If hard requirement exists for static fallback file route, extend `scripts/postbuild-redirects.js`.
-3. Keep canonical URL tag on target page correct.
-4. Run `npm run build-local` and verify redirect behavior in generated HTML.
+2. Keep canonical URL tag on target page correct.
+3. Run `npm run build-local` and verify redirect behavior in generated HTML.
 
 ### D) Fix missing/incorrect page metadata
 
@@ -477,51 +463,3 @@ Code-side fallback options:
    - `npm run build`
 2. Run checklist from `README.md` (Release Checklist section).
 3. Confirm CI assumptions are still valid (`.gitlab-ci.yml` contract not broken), especially artifact gates.
-
-## 20) Contact & Newsletter Forms Backend (Cloudflare Pages Functions)
-
-Full details in `FORMS-INTEGRATION.md`. Summary for AI agents:
-
-- Two forms, two functions: `POST /api/contact` (`functions/api/contact.js`) and
-  `POST /api/newsletter` (`functions/api/newsletter.js`). These replaced the old
-  AWS Lambda endpoints; **the AWS Lambdas and their SSM parameters are obsolete**
-  (`old_aws_functions/` is reference only).
-- Frontend posts to same-origin `/api/*`, configured once in
-  `src/config/apiEndpoints.js`.
-- Contact fields are **snake_case**: required `first_name,last_name,email,company,message`;
-  optional `job_position,phone,country,newsletter`. Newsletter fields: `email`, `ids` (list id(s)).
-- Integrations run via `Promise.allSettled` (partial failures don't block; response
-  reports `details.{matrix,email,list,crm}`):
-  - Matrix notification.
-  - SendGrid **two keys**: `SENDGRID_SENDMAIL_KEY` (Mail Send) for the country-routed
-    welcome email + partner BCC; `SENDGRID_MARKETING_KEY` (Marketing) for list adds.
-  - Zoho CRM (US DC, `ZOHO_DC`): dedup Contact + Account, link, and store the message
-    as a **Note** (`addNoteToContact`) so it survives dedup. Mapping mirrors the old
-    Lambda (`First_Name/Last_Name/Email/Title/Phone/Newsletter`, `Account_Name/Billing_Country`);
-    no tags/lead-source/workflow triggers.
-- Contact spam filter (ported): rejects `CF-IPCountry==RU`, names with `:`/`http`,
-  `www.gclnk.com` in message, and `gmail.com` emails.
-- Zoho search criteria are sanitized (`sanitizeCriteriaValue` in `zoho.js`) — values
-  with `( ) , :` would otherwise 400 with INVALID_QUERY.
-
-### Secrets & environments
-
-- Required env vars: `SENDGRID_SENDMAIL_KEY`, `SENDGRID_MARKETING_KEY`,
-  `SENDGRID_CONTACT_LIST_ID`, `MATRIX_SERVER_URL`, `MATRIX_ROOM_ID`, `MATRIX_TOKEN`,
-  `ZOHO_DC`, `ZOHO_CLIENT_ID`, `ZOHO_CLIENT_SECRET`, `ZOHO_REFRESH_TOKEN`.
-  `ENVIRONMENT` comes from `wrangler.toml [vars]`.
-- Local: values in `.dev.vars` (git-ignored; template `.dev.vars.example`), then
-  `npx wrangler pages dev`. `next dev` does NOT run the functions.
-- Production: Cloudflare Pages **secrets** on project `search-guard-website`
-  (production branch `cloudflare-migration`); set via
-  `wrangler pages secret bulk <file> --project-name search-guard-website`. Secrets
-  apply on the next deploy.
-
-### Guardrails
-
-- Do not reintroduce a single `SENDGRID_API_KEY` — mail send and marketing need
-  separate scopes.
-- Keep `ZOHO_DC=US` unless the Zoho account is confirmed migrated; the OAuth
-  refresh token must carry `ZohoCRM.modules.ALL` scope.
-- Do not re-add Zoho tags / `Lead_Source` / `trigger:['workflow']` without
-  confirming the picklist values/automation exist in the Zoho org.
