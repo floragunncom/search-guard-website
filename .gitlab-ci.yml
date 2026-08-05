@@ -82,6 +82,9 @@ deploy_production:
   #  url: https://coretex-axiom.pages.dev
   only:
     - cloudflare-migration
+    # Temporary: also deploy the Turnstile branch to the staging env
+    # (https://search-guard-website.pages.dev). Remove after merge.
+    - 15-add-turnstile
   when: on_success
 
 # Purge Cloudflare cache after production deployment
