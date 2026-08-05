@@ -236,6 +236,12 @@ export async function sendContactWelcomeEmail(formValues, apiKey, logger = null)
     bccCount: settings.bcc.length,
   });
 
+  // NOTE: In the SendGrid v3 Mail Send REST API, `dynamic_template_data` must
+  // live *inside* each personalization object. The old AWS Lambda used the
+  // @sendgrid/mail helper, which hoisted a top-level `dynamic_template_data`
+  // into the personalization automatically. Calling the raw REST API here we
+  // must place it in the personalization ourselves, otherwise SendGrid ignores
+  // it and every template substitution renders blank.
   const payload = {
     personalizations: [
       {
@@ -246,26 +252,26 @@ export async function sendContactWelcomeEmail(formValues, apiKey, logger = null)
           },
         ],
         bcc: settings.bcc.map((email) => ({ email })),
+        dynamic_template_data: {
+          firstname: formValues.first_name || '',
+          lastname: formValues.last_name || '',
+          jobposition: formValues.job_position || '',
+          email: formValues.email || '',
+          phone: formValues.phone || '',
+          company: formValues.company || '',
+          address: formValues.address || '',
+          city: formValues.city || '',
+          zipcode: formValues.zip || '',
+          country: formValues.country || '',
+          elasticsearchversion: formValues.version || '',
+          actualstage: formValues.stage || '',
+          message: formValues.message || '',
+        },
       },
     ],
     from: SG_FROM,
     template_id: settings.templateId,
     categories: ['contactform'],
-    dynamic_template_data: {
-      firstname: formValues.first_name || '',
-      lastname: formValues.last_name || '',
-      jobposition: formValues.job_position || '',
-      email: formValues.email || '',
-      phone: formValues.phone || '',
-      company: formValues.company || '',
-      address: formValues.address || '',
-      city: formValues.city || '',
-      zipcode: formValues.zip || '',
-      country: formValues.country || '',
-      elasticsearchversion: formValues.version || '',
-      actualstage: formValues.stage || '',
-      message: formValues.message || '',
-    },
   };
 
   const response = await fetch(`${SENDGRID_API_BASE}/mail/send`, {
