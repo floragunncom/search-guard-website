@@ -31,7 +31,7 @@ import {
   searchAccountByName,
   resolveZohoHosts,
 } from '../lib/zoho.js';
-import { sendMatrixNotification } from '../lib/matrix.js';
+import { sendMatrixNotification, sendMatrixFailureAlert } from '../lib/matrix.js';
 import { validateTurnstile } from '../lib/turnstile.js';
 import { createLogger, sanitizeForLogging } from '../lib/logger.js';
 
@@ -323,7 +323,10 @@ export async function onRequestPost(context) {
       success: true,
       message: 'Thank you for your message. We\'ll be in touch soon!',
       details: {
-        matrix: matrixResult.status === 'fulfilled' ? 'sent' : 'failed',
+        matrix:
+          matrixResult.status === 'fulfilled'
+            ? (matrixResult.value?.skipped ? 'skipped' : 'sent')
+            : 'failed',
         email: emailResult.status === 'fulfilled' ? 'sent' : 'failed',
         list: listResult.status === 'fulfilled' ? 'added' : 'failed',
         crm: zohoResult.status === 'fulfilled' ? 'created' : 'failed',
@@ -335,6 +338,8 @@ export async function onRequestPost(context) {
       logger.error('Matrix notification failed', {
         error: matrixResult.reason?.message || matrixResult.reason,
       });
+    } else if (matrixResult.value?.skipped) {
+      logger.warn('Matrix notification skipped (missing configuration)');
     } else {
       logger.info('Matrix notification sent successfully', {
         eventId: matrixResult.value?.eventId,
@@ -368,6 +373,54 @@ export async function onRequestPost(context) {
         contactIsExisting: zohoResult.value?.contact?.isExisting,
         accountIsExisting: zohoResult.value?.account?.isExisting,
       });
+    }
+
+    // Alert the Matrix room when any integration failed, so failures are
+    // noticed despite function logs not being persistent. Matrix runs on
+    // separate infrastructure, so it is likely up when SendGrid or Zoho fail.
+    const failures = [];
+    if (matrixResult.status === 'rejected') {
+      failures.push({
+        step: 'Matrix notification',
+        error: matrixResult.reason?.message || String(matrixResult.reason),
+      });
+    }
+    if (emailResult.status === 'rejected') {
+      failures.push({
+        step: 'SendGrid welcome email',
+        error: emailResult.reason?.message || String(emailResult.reason),
+      });
+    }
+    if (listResult.status === 'rejected') {
+      failures.push({
+        step: 'SendGrid marketing list',
+        error: listResult.reason?.message || String(listResult.reason),
+      });
+    }
+    if (zohoResult.status === 'rejected') {
+      failures.push({
+        step: 'Zoho CRM',
+        error: zohoResult.reason?.message || String(zohoResult.reason),
+      });
+    }
+
+    if (failures.length > 0) {
+      try {
+        await sendMatrixFailureAlert(
+          { email, company },
+          'contact',
+          failures,
+          env.MATRIX_ROOM_ID,
+          env.MATRIX_SERVER_URL,
+          env.MATRIX_TOKEN,
+          logger
+        );
+      } catch (alertErr) {
+        logger.error('Matrix failure alert could not be sent', {
+          error: alertErr.message,
+          failedSteps: failures.map((f) => f.step),
+        });
+      }
     }
 
     logger.info('Contact form request completed successfully', {
