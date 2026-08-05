@@ -35,3 +35,11 @@ ZOHO_DC=US
 ZOHO_CLIENT_ID=1000.xxxxxxxxxxxxxxxxxxxxxx
 ZOHO_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxx
 ZOHO_REFRESH_TOKEN=1000.xxxxxxxxxxxxxxxxxxxxxx
+
+# --- Cloudflare Turnstile (contact + newsletter form spam protection) ---
+# Secret key of the Turnstile widget, used server-side by functions/api/contact.js
+# and functions/api/newsletter.js to verify the `cf-turnstile-response` token
+# via the /siteverify API (see functions/lib/turnstile.js).
+# The matching public site key must be provided at BUILD time as
+# NEXT_PUBLIC_TURNSTILE_SITE_KEY (it is inlined into the client bundle by Next).
+TURNSTILE_SECRET_KEY=0x4AAAAAAAxxxxxxxxxxxxxxxxxxxxxxxxx

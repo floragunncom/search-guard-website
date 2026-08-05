@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button';
+import Turnstile from '../Turnstile/Turnstile';
 import {NEWSLETTER_API_URL} from '../../config/apiEndpoints';
 
 const Email = () => {
@@ -27,6 +28,9 @@ const Email = () => {
         const formValuesJson = {
             email: formData.get('email'),
             ids: formData.getAll('ids'),
+            // Injected into the form by the Turnstile widget; verified
+            // server-side in functions/api/newsletter.js.
+            'cf-turnstile-response': formData.get('cf-turnstile-response'),
         };
 
         handleNewsletterSubmit(formValuesJson)
@@ -85,6 +89,9 @@ const Email = () => {
                 </div>
                 <div className="input-field col s12 m6 l4">
                     <Button text="subscribe" variant="submit"/>
+                </div>
+                <div className="input-field col s12">
+                    <Turnstile />
                 </div>
             </form>
         </div>

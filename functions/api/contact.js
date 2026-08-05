@@ -9,6 +9,8 @@
  *
  * Accepts the snake_case fields sent by the website contact forms:
  *   Required: first_name, last_name, email, company, message
+ *   Required: cf-turnstile-response (Cloudflare Turnstile token, injected
+ *             into the form by the Turnstile widget)
  *   Optional: job_position, phone, country, newsletter
  *
  * Handles a submission by (in parallel):
@@ -30,6 +32,7 @@ import {
   resolveZohoHosts,
 } from '../lib/zoho.js';
 import { sendMatrixNotification } from '../lib/matrix.js';
+import { validateTurnstile } from '../lib/turnstile.js';
 import { createLogger, sanitizeForLogging } from '../lib/logger.js';
 
 export async function onRequestPost(context) {
@@ -73,38 +76,35 @@ export async function onRequestPost(context) {
     } = body;
 
     // ---------------------------------------------------------------------
-    // Spam filtering (ported from the old AWS Lambda processor.js).
-    // Cloudflare exposes the visitor country via the CF-IPCountry header
-    // (the old Lambda used the CloudFront-Viewer-Country header).
-    // A deliberately cryptic error is returned so bots get no useful signal.
+    // Spam protection: Cloudflare Turnstile server-side token validation
+    // (replaces the old heuristic spam check ported from the AWS Lambda).
+    // The Turnstile widget on the contact forms injects a hidden
+    // `cf-turnstile-response` input into the form, and the token must be
+    // verified with the /siteverify API before the submission is processed.
+    // Deliberately cryptic errors are returned so bots get no useful signal.
     // ---------------------------------------------------------------------
     const visitorCountry = request.headers.get('CF-IPCountry') || '';
-    try {
-      if (
-        // handle all mails from Russia as spam
-        visitorCountry === 'RU' ||
-        // handle mails as spam where first or last name contains ':' or 'http'
-        (first_name || '').indexOf(':') !== -1 ||
-        (first_name || '').indexOf('http') !== -1 ||
-        (last_name || '').indexOf(':') !== -1 ||
-        (last_name || '').indexOf('http') !== -1 ||
-        // handle mails as spam where message contains www.gclnk.com
-        (message || '').indexOf('www.gclnk.com') !== -1 ||
-        // handle gmail.com senders as spam
-        (email || '').indexOf('gmail.com') !== -1
-      ) {
-        logger.warn('Submission rejected as spam', {
-          visitorCountry,
-          email,
-        });
-        return new Response(JSON.stringify('INVALID FORMAT 0x7c'), {
-          status: 400,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        });
-      }
-    } catch (spamErr) {
-      logger.warn('Spam check threw, rejecting', { error: spamErr.message });
-      return new Response(JSON.stringify('INVALID FORMAT 0x7d'), {
+
+    const turnstileResult = await validateTurnstile({
+      token: body['cf-turnstile-response'],
+      secretKey: env.TURNSTILE_SECRET_KEY,
+      remoteIp: request.headers.get('CF-Connecting-IP'),
+      logger,
+    });
+
+    if (!turnstileResult.ok) {
+      // 0x7d = server-side problem (missing config / verify API unreachable),
+      // 0x7c = the submission itself failed the challenge.
+      const crypticCode =
+        turnstileResult.reason === 'config' || turnstileResult.reason === 'verify-error'
+          ? '0x7d'
+          : '0x7c';
+      logger.warn('Submission rejected by Turnstile', {
+        reason: turnstileResult.reason,
+        visitorCountry,
+        email,
+      });
+      return new Response(JSON.stringify(`INVALID FORMAT ${crypticCode}`), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });

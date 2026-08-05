@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
+import Turnstile from './Turnstile/Turnstile';
 import {CONTACT_API_URL} from '../config/apiEndpoints';
 
 const ContactForm = () => {
@@ -300,6 +301,7 @@ const ContactForm = () => {
                 our privacy policy for a better understanding on how we protect
                 and manage your submitted data.
               </div>
+              <Turnstile />
               <div className="cta-wrapper">
                 <Button text={sendbuttonValue} additionalCss="cf-submit" variant="submit"/>
               </div>
