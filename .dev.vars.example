@@ -44,3 +44,8 @@ UPTIME_WEBHOOK_TOKEN=change-me-to-a-long-random-string
 UPTIME_MATRIX_ROOM_ID=!yyyyyyyyyyyyyyyyyy:eliatra.com
 # Optional: override the alert recipient (defaults to uptime@floragunn.com).
 # UPTIME_ALERT_EMAIL=uptime@floragunn.com
+# Sender for uptime alert emails (a no-reply address, not the sales@ sender used
+# by the contact form). Defaults to no-reply@floragunn.com / "Search Guard Uptime".
+# The sender domain/address must be verified in SendGrid, or the send is rejected.
+# UPTIME_FROM_EMAIL=no-reply@floragunn.com
+# UPTIME_FROM_NAME=Search Guard Uptime
