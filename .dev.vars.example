@@ -35,3 +35,10 @@ ZOHO_DC=US
 ZOHO_CLIENT_ID=1000.xxxxxxxxxxxxxxxxxxxxxx
 ZOHO_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxx
 ZOHO_REFRESH_TOKEN=1000.xxxxxxxxxxxxxxxxxxxxxx
+
+# --- Uptime Kuma webhook (functions/api/uptime.js) ---
+# Static shared secret the Uptime Kuma instance must send in the
+# "X-Webhook-Token" HTTP header. Requests without a matching token are rejected.
+UPTIME_WEBHOOK_TOKEN=change-me-to-a-long-random-string
+# Optional: override the alert recipient (defaults to uptime@floragunn.com).
+# UPTIME_ALERT_EMAIL=uptime@floragunn.com

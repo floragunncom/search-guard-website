@@ -302,6 +302,55 @@ export async function sendContactWelcomeEmail(formValues, apiKey, logger = null)
 }
 
 /**
+ * Send a plain-text email with an arbitrary subject and body (no template).
+ *
+ * Used by the uptime webhook to forward raw monitoring payloads. Uses the
+ * Mail Send scope key (SENDGRID_SENDMAIL_KEY), same as the contact email.
+ *
+ * @param {Object} params
+ * @param {string} params.to - Recipient email address
+ * @param {string} params.subject - Email subject line
+ * @param {string} params.text - Plain-text email body
+ * @param {string} apiKey - SendGrid API key (Mail Send scope)
+ * @param {Object} logger - Logger instance (optional)
+ */
+export async function sendRawEmail({ to, subject, text }, apiKey, logger = null) {
+  if (!logger) {
+    logger = createLogger('sendgrid', {}, null);
+  }
+
+  const payload = {
+    personalizations: [{ to: [{ email: to }] }],
+    from: SG_FROM,
+    subject,
+    content: [{ type: 'text/plain', value: text }],
+  };
+
+  const response = await fetch(`${SENDGRID_API_BASE}/mail/send`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    logger.error('SendGrid raw email API error', {
+      status: response.status,
+      error,
+      to,
+    });
+    throw new Error(`SendGrid email error: ${response.status} - ${error}`);
+  }
+
+  logger.info('Raw email sent successfully via SendGrid', { to, subject });
+
+  return { success: true };
+}
+
+/**
  * Subscribe an email address to one or more SendGrid marketing lists.
  * Ported from the old AWS Lambda newsletter `addNewsletterSubscriber`.
  *
