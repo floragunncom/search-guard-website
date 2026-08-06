@@ -111,22 +111,27 @@ export async function onRequestPost(context) {
 
     const alertEmail = env.UPTIME_ALERT_EMAIL || DEFAULT_ALERT_EMAIL;
 
-    logger.info('Forwarding uptime webhook payload', {
-      hasJson: parsed !== null,
-      subject,
-      alertEmail,
-    });
-
     // Matrix expects an object; pass the parsed payload (unknown formType falls
     // through to the raw JSON dump formatter) or wrap the raw text.
     const matrixData = parsed !== null ? parsed : { message: rawBody };
 
+    // Uptime alerts go to their own Matrix room; fall back to the shared room
+    // (MATRIX_ROOM_ID) if a dedicated one isn't configured.
+    const matrixRoomId = env.UPTIME_MATRIX_ROOM_ID || env.MATRIX_ROOM_ID;
+
+    logger.info('Forwarding uptime webhook payload', {
+      hasJson: parsed !== null,
+      subject,
+      alertEmail,
+      matrixRoomId,
+    });
+
     const results = await Promise.allSettled([
-      // 1. Matrix room (defaults to the shared MATRIX_ROOM_ID)
+      // 1. Matrix room (dedicated UPTIME_MATRIX_ROOM_ID, else shared MATRIX_ROOM_ID)
       sendMatrixNotification(
         matrixData,
         'uptime',
-        env.MATRIX_ROOM_ID,
+        matrixRoomId,
         env.MATRIX_SERVER_URL,
         env.MATRIX_TOKEN,
         logger

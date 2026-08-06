@@ -40,5 +40,7 @@ ZOHO_REFRESH_TOKEN=1000.xxxxxxxxxxxxxxxxxxxxxx
 # Static shared secret the Uptime Kuma instance must send in the
 # "X-Webhook-Token" HTTP header. Requests without a matching token are rejected.
 UPTIME_WEBHOOK_TOKEN=change-me-to-a-long-random-string
+# Dedicated Matrix room for uptime alerts. Falls back to MATRIX_ROOM_ID if unset.
+UPTIME_MATRIX_ROOM_ID=!yyyyyyyyyyyyyyyyyy:eliatra.com
 # Optional: override the alert recipient (defaults to uptime@floragunn.com).
 # UPTIME_ALERT_EMAIL=uptime@floragunn.com
