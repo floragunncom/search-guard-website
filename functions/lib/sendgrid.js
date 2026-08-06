@@ -311,17 +311,28 @@ export async function sendContactWelcomeEmail(formValues, apiKey, logger = null)
  * @param {string} params.to - Recipient email address
  * @param {string} params.subject - Email subject line
  * @param {string} params.text - Plain-text email body
+ * @param {string|Object} [params.from] - Sender override; an email string or a
+ *   { email, name } object. Defaults to the shared SG_FROM (sales@floragunn.com).
  * @param {string} apiKey - SendGrid API key (Mail Send scope)
  * @param {Object} logger - Logger instance (optional)
  */
-export async function sendRawEmail({ to, subject, text }, apiKey, logger = null) {
+export async function sendRawEmail({ to, subject, text, from }, apiKey, logger = null) {
   if (!logger) {
     logger = createLogger('sendgrid', {}, null);
   }
 
+  // Normalise the sender: accept a plain email string, a { email, name } object,
+  // or nothing (fall back to the shared sender identity).
+  let fromField = SG_FROM;
+  if (typeof from === 'string' && from) {
+    fromField = { email: from };
+  } else if (from && typeof from === 'object' && from.email) {
+    fromField = from;
+  }
+
   const payload = {
     personalizations: [{ to: [{ email: to }] }],
-    from: SG_FROM,
+    from: fromField,
     subject,
     content: [{ type: 'text/plain', value: text }],
   };

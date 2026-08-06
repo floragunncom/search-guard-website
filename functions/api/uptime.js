@@ -29,6 +29,11 @@ const AUTH_HEADER = 'X-Webhook-Token';
 // Default recipient for uptime alert emails (overridable via env).
 const DEFAULT_ALERT_EMAIL = 'uptime@floragunn.com';
 
+// Default sender for uptime alert emails: a no-reply address rather than the
+// shared sales@ sender used by the contact form (overridable via env).
+const DEFAULT_FROM_EMAIL = 'no-reply@floragunn.com';
+const DEFAULT_FROM_NAME = 'Search Guard Uptime';
+
 /**
  * Length-aware, constant-time string comparison to avoid leaking the secret
  * through response timing. (Node's crypto.timingSafeEqual isn't available in
@@ -110,6 +115,10 @@ export async function onRequestPost(context) {
     const subject = `[Uptime Kuma] ${subjectDetail}`;
 
     const alertEmail = env.UPTIME_ALERT_EMAIL || DEFAULT_ALERT_EMAIL;
+    const fromEmail = {
+      email: env.UPTIME_FROM_EMAIL || DEFAULT_FROM_EMAIL,
+      name: env.UPTIME_FROM_NAME || DEFAULT_FROM_NAME,
+    };
 
     // Matrix expects an object; pass the parsed payload (unknown formType falls
     // through to the raw JSON dump formatter) or wrap the raw text.
@@ -123,6 +132,7 @@ export async function onRequestPost(context) {
       hasJson: parsed !== null,
       subject,
       alertEmail,
+      fromEmail: fromEmail.email,
       matrixRoomId,
     });
 
@@ -143,6 +153,7 @@ export async function onRequestPost(context) {
           to: alertEmail,
           subject,
           text: rawBody,
+          from: fromEmail,
         },
         env.SENDGRID_SENDMAIL_KEY,
         logger
