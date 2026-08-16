@@ -36,7 +36,7 @@ User submits form
 Cloudflare Pages Function  (/api/contact  or  /api/newsletter)
       |
       +-- Matrix        (room notification)
-      +-- SendGrid mail (contact only: country-routed welcome email + partner BCC)
+      +-- SendGrid mail (contact only: welcome email to filler+partners, plus guaranteed sales@ copy)
       +-- SendGrid list (add contact / subscribe)
       +-- Zoho CRM      (contact only: create/dedup Contact + Account, link, add Note)
       |
@@ -76,18 +76,35 @@ The two forms behave very differently — be clear about who receives what.
 
 ### Contact form (`/api/contact`)
 
-Sends **exactly one** transactional email via SendGrid (`sendContactWelcomeEmail`):
+Sends the country-routed welcome email via SendGrid (`sendContactWelcomeEmail`)
+as **two separate Mail Send requests** (built by `buildContactWelcomePayloads`):
 
-- **To:** the requestor (the `email` they submitted) — a thank-you / welcome email.
-- **From:** "The Search Guard Team" &lt;sales@floragunn.com&gt;.
-- **Template:** country-routed dynamic template (see routing table below).
-- **BCC:** `sales@floragunn.com` **and** the country-specific partner(s)
-  (e.g. `exceleratesystems@pipedrivemail.com`; France also adds
-  `iquackenbos@search-guard.com`).
+1. **Form-filler copy** — **To:** the requestor (the `email` they submitted);
+   **BCC:** the country-specific partner(s) only (e.g.
+   `exceleratesystems@pipedrivemail.com`; France also adds
+   `iquackenbos@search-guard.com`). Normal, compliant handling (suppression lists
+   respected; unsubscribe untouched).
+2. **Guaranteed sales@ copy** — **To:** `sales@floragunn.com`, a dedicated request
+   that **bypasses all SendGrid suppression lists** and carries **no unsubscribe
+   mechanism** (`mail_settings.bypass_list_management.enable = true`,
+   `tracking_settings.subscription_tracking.enable = false`, no `asm`, no
+   `List-Unsubscribe` header). This guarantees the internal sales team always
+   receives the lead even if `sales@` ever landed on a suppression list.
 
-So a single send reaches the requestor **and** — via BCC — the internal sales
-team and the regional partner. There is **no separate standalone internal
-email**; internal awareness comes from that BCC plus the Matrix room notice.
+Both use the same `from` ("The Search Guard Team" &lt;sales@floragunn.com&gt;),
+country-routed template, and `dynamic_template_data`. **Why split:**
+`bypass_list_management` and `subscription_tracking` are request-level in the v3
+Mail Send API — they can't be scoped to just the BCC — so sales@ gets its own
+request to keep the bypass away from the requestor and partners. The guarantee is
+applied by `applyGuaranteedDelivery(payload)`, which triggers on any payload whose
+to/cc/bcc includes `sales@floragunn.com` (a no-op otherwise). Both requests are
+sent with `Promise.allSettled`; if either fails the function throws so
+`details.email` reflects it.
+
+> **Template caveat (item 4):** the `[unsubscribe]` tag, if present, would live
+> inside the SendGrid **dynamic template** (`d-…`), not in this payload. The code
+> adds none — but verify the templates in the SendGrid UI to be fully certain.
+
 Adding the contact to the SendGrid marketing list does **not** itself send an
 email (unless a double opt-in / welcome automation is configured on the list in
 SendGrid).
@@ -106,7 +123,7 @@ list automation (double opt-in), not from this function.
 
 | | Email to requestor | Email to sales/partners | Non-email notice |
 |---|---|---|---|
-| Contact | ✅ thank-you email | ✅ same email, via BCC | Matrix room message |
+| Contact | ✅ thank-you email (partners BCC'd) | ✅ dedicated guaranteed copy to sales@ | Matrix room message |
 | Newsletter | ❌ none | ❌ none | Matrix room message |
 
 ## Integrations
