@@ -60,7 +60,7 @@ Shared helpers live in `functions/lib/`: `sendgrid.js`, `zoho.js`, `matrix.js`,
 | `message` | ✅ | |
 | `job_position` | optional | → Zoho `Title` |
 | `phone` | optional | → Zoho `Phone` |
-| `country` | optional | drives email routing + Zoho `Billing_Country` |
+| `country` | optional | drives email routing + Zoho `Mailing_Country` (Contact) & `Billing_Country` (Account) |
 | `newsletter` | optional | opt-in checkbox; submitted as `"on"` (or boolean) |
 
 ### Newsletter (`/api/newsletter`)
@@ -148,19 +148,37 @@ ported verbatim from the old Lambda:
 US data center (`ZOHO_DC=US`). The function refreshes its own access token, then
 **deduplicates**: it searches for an existing Contact by email and Account by
 name, reuses them if found, otherwise creates them, and links the Contact to the
-Account. Field mapping mirrors the old Lambda:
+Account. Field mapping:
 
 | Submitted field | Zoho field |
 |-----------------|-----------|
-| `first_name` | Contact `First_Name` |
-| `last_name` | Contact `Last_Name` |
+| `first_name` | Contact `First_Name` (create only) |
+| `last_name` | Contact `Last_Name` (create only) |
 | `email` | Contact `Email` |
 | `job_position` | Contact `Title` |
 | `phone` | Contact `Phone` |
-| `newsletter` (opt-in) | Contact `Newsletter` (boolean) |
+| `country` | Contact `Mailing_Country` **and** Account `Billing_Country` |
+| `newsletter` (opt-in) | Contact `Newsletter` (boolean, create only) |
 | `company` | Account `Account_Name` (+ Contact↔Account link) |
-| `country` | Account `Billing_Country` |
 | `message` | **Note** attached to the Contact (see below) |
+
+**Existing records are backfilled, never overwritten.** New records get the full
+mapping (all fields start empty). When a submission is deduplicated onto an
+existing record, the code fills only the fields that are **currently empty** and
+never changes a value that already exists:
+
+- Existing **Contact** (`updateContact`): backfills `Phone`, `Title`,
+  `Mailing_Country` only where blank. `First_Name`/`Last_Name` and `Newsletter`
+  are never touched — a web form must not clobber curated names or silently
+  revoke a newsletter opt-in.
+- Existing **Account** (`updateAccount`): backfills `Billing_Country` only if the
+  account has none. An account is company-level data shared across contacts, so
+  a single submitter never overwrites a curated billing country.
+
+This holds across all four new/existing combinations of Contact × Account. (The
+backfill reads the existing record returned by the search; on the rare case
+where the search misses but Zoho reports a duplicate on create, the record is
+re-fetched so the backfill still sees current values.)
 
 **Message as a Note:** the message is stored as a Zoho **Note** on the contact
 (`addNoteToContact`), not a record field. This runs for both newly created and
