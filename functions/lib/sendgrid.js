@@ -14,6 +14,12 @@ const SG_FROM = {
   name: 'The Search Guard Team',
 };
 
+// Internal address whose deliverability we guarantee: any message reaching it
+// bypasses all SendGrid suppression lists and never carries an unsubscribe
+// mechanism (see applyGuaranteedDelivery). This is our own internal notification
+// address, so guaranteed internal delivery is the intended, compliant behaviour.
+const SALES_INTERNAL_EMAIL = 'sales@floragunn.com';
+
 /**
  * Add a contact to a SendGrid list
  * @param {Object} contact - Contact information
@@ -214,66 +220,69 @@ function contactCountrySettings(code) {
 }
 
 /**
- * Send the contact-form "welcome" email with country-based template and
- * partner BCC routing. Ported from the old AWS Lambda `sendWelcomeMail`.
- *
- * @param {Object} formValues - Raw contact form values (snake_case field names)
- * @param {string} apiKey - SendGrid API key
- * @param {Object} logger - Logger instance (optional)
+ * Remove any custom List-Unsubscribe / List-Unsubscribe-Post entries from a
+ * SendGrid `headers` object (case-insensitive), in place.
  */
-export async function sendContactWelcomeEmail(formValues, apiKey, logger = null) {
-  if (!logger) {
-    logger = createLogger('sendgrid', {}, null);
+function stripUnsubscribeHeaders(headers) {
+  if (!headers || typeof headers !== 'object') return;
+  for (const key of Object.keys(headers)) {
+    const k = key.toLowerCase();
+    if (k === 'list-unsubscribe' || k === 'list-unsubscribe-post') {
+      delete headers[key];
+    }
   }
+}
 
-  const countryCode = countryNameToCode(formValues.country);
-  const settings = contactCountrySettings(countryCode);
+/**
+ * Guarantee delivery to sales@floragunn.com.
+ *
+ * If sales@ is a recipient (to/cc/bcc) of the given payload, force the message
+ * to ignore every SendGrid suppression list and to never carry an unsubscribe
+ * mechanism. These are all REQUEST-level settings in the v3 Mail Send API — they
+ * cannot be scoped to a single recipient — which is why the contact email sends
+ * sales@ its own dedicated request (see buildContactWelcomePayloads) so external
+ * recipients are never affected. This function is a no-op for any payload that
+ * does not include sales@. Mutates and returns the payload.
+ */
+function applyGuaranteedDelivery(payload) {
+  const personalizations = payload.personalizations || [];
+  const reachesSales = personalizations.some((p) =>
+    ['to', 'cc', 'bcc'].some((field) =>
+      (p[field] || []).some(
+        (r) => (r.email || '').toLowerCase() === SALES_INTERNAL_EMAIL
+      )
+    )
+  );
+  if (!reachesSales) return payload;
 
-  logger.debug('Contact welcome email routing resolved', {
-    country: formValues.country,
-    countryCode,
-    templateId: settings.templateId,
-    bccCount: settings.bcc.length,
-  });
-
-  // NOTE: In the SendGrid v3 Mail Send REST API, `dynamic_template_data` must
-  // live *inside* each personalization object. The old AWS Lambda used the
-  // @sendgrid/mail helper, which hoisted a top-level `dynamic_template_data`
-  // into the personalization automatically. Calling the raw REST API here we
-  // must place it in the personalization ourselves, otherwise SendGrid ignores
-  // it and every template substitution renders blank.
-  const payload = {
-    personalizations: [
-      {
-        to: [
-          {
-            email: formValues.email,
-            name: `${formValues.first_name} ${formValues.last_name}`,
-          },
-        ],
-        bcc: settings.bcc.map((email) => ({ email })),
-        dynamic_template_data: {
-          firstname: formValues.first_name || '',
-          lastname: formValues.last_name || '',
-          jobposition: formValues.job_position || '',
-          email: formValues.email || '',
-          phone: formValues.phone || '',
-          company: formValues.company || '',
-          address: formValues.address || '',
-          city: formValues.city || '',
-          zipcode: formValues.zip || '',
-          country: formValues.country || '',
-          elasticsearchversion: formValues.version || '',
-          actualstage: formValues.stage || '',
-          message: formValues.message || '',
-        },
-      },
-    ],
-    from: SG_FROM,
-    template_id: settings.templateId,
-    categories: ['contactform'],
+  // 1. Ignore ALL suppression lists (unsubscribes, bounces, spam reports,
+  //    blocks, invalid). Must be used alone — not combined with granular
+  //    bypass_* filters.
+  payload.mail_settings = {
+    ...payload.mail_settings,
+    bypass_list_management: { enable: true },
   };
+  // 2. Never auto-inject an unsubscribe footer or List-Unsubscribe header.
+  payload.tracking_settings = {
+    ...payload.tracking_settings,
+    subscription_tracking: { enable: false },
+  };
+  // 3. Never attach an ASM unsubscribe group.
+  delete payload.asm;
+  // 5. Drop any custom List-Unsubscribe headers (message- and per-personalization).
+  stripUnsubscribeHeaders(payload.headers);
+  personalizations.forEach((p) => stripUnsubscribeHeaders(p.headers));
+  // 4. No "[unsubscribe]" substitution tag is ever added in code; if one lives
+  //    inside a SendGrid dynamic template it must be removed in the SendGrid UI.
 
+  return payload;
+}
+
+/**
+ * POST a prepared payload to the SendGrid v3 Mail Send API. Throws on a non-2xx
+ * response. `description` is used only for logging/error context.
+ */
+async function postMailSend(payload, apiKey, logger, description = 'mail/send') {
   const response = await fetch(`${SENDGRID_API_BASE}/mail/send`, {
     method: 'POST',
     headers: {
@@ -285,17 +294,165 @@ export async function sendContactWelcomeEmail(formValues, apiKey, logger = null)
 
   if (!response.ok) {
     const error = await response.text();
-    logger.error('SendGrid contact email API error', {
+    logger.error('SendGrid mail/send API error', {
       status: response.status,
       error,
-      recipientEmail: formValues.email,
+      description,
     });
-    throw new Error(`SendGrid email error: ${response.status} - ${error}`);
+    throw new Error(`SendGrid ${description}: ${response.status} - ${error}`);
+  }
+
+  logger.debug('SendGrid mail/send accepted', { description });
+  return { success: true };
+}
+
+/**
+ * Build the SendGrid v3 mail/send request payload(s) for a contact-form
+ * submission. Pure and synchronous, so the payloads can be inspected/unit-tested
+ * without sending anything.
+ *
+ * Returns one or two requests:
+ *  1. Primary copy — TO the form-filler, partner addresses BCC'd. Identical to
+ *     the previous single send except sales@ is removed from the BCC list.
+ *  2. Guaranteed sales@ copy — a dedicated request addressed TO sales@, run
+ *     through applyGuaranteedDelivery (bypass suppression, no unsubscribe).
+ *     Only produced when sales@ is in the country's routing BCC list.
+ *
+ * Splitting sales@ into its own request is required because bypass_list_management
+ * and subscription_tracking are request-level: they cannot be applied to just the
+ * BCC without also changing the form-filler's copy.
+ *
+ * @param {Object} formValues - Raw contact form values (snake_case field names)
+ * @returns {Array<{ description: string, payload: Object }>}
+ */
+export function buildContactWelcomePayloads(formValues) {
+  const countryCode = countryNameToCode(formValues.country);
+  const settings = contactCountrySettings(countryCode);
+
+  // NOTE: In the SendGrid v3 Mail Send REST API, `dynamic_template_data` must
+  // live *inside* each personalization object (the old @sendgrid/mail helper
+  // hoisted a top-level one automatically; the raw REST API does not).
+  const dynamicTemplateData = {
+    firstname: formValues.first_name || '',
+    lastname: formValues.last_name || '',
+    jobposition: formValues.job_position || '',
+    email: formValues.email || '',
+    phone: formValues.phone || '',
+    company: formValues.company || '',
+    address: formValues.address || '',
+    city: formValues.city || '',
+    zipcode: formValues.zip || '',
+    country: formValues.country || '',
+    elasticsearchversion: formValues.version || '',
+    actualstage: formValues.stage || '',
+    message: formValues.message || '',
+  };
+
+  const common = {
+    from: SG_FROM,
+    template_id: settings.templateId,
+    categories: ['contactform'],
+  };
+
+  // Split sales@ out of the routing BCC list: it gets its own guaranteed request,
+  // the remaining partner addresses stay BCC'd on the form-filler's copy.
+  const salesBcc = settings.bcc.filter(
+    (e) => e.toLowerCase() === SALES_INTERNAL_EMAIL
+  );
+  const partnerBcc = settings.bcc.filter(
+    (e) => e.toLowerCase() !== SALES_INTERNAL_EMAIL
+  );
+
+  const payloads = [];
+
+  // 1. Primary copy: form-filler + partner BCCs (behaviour unchanged).
+  const primaryPersonalization = {
+    to: [
+      {
+        email: formValues.email,
+        name: `${formValues.first_name} ${formValues.last_name}`,
+      },
+    ],
+    dynamic_template_data: dynamicTemplateData,
+  };
+  if (partnerBcc.length) {
+    primaryPersonalization.bcc = partnerBcc.map((email) => ({ email }));
+  }
+  // No-op unless the form-filler themselves entered sales@ as their address.
+  payloads.push({
+    description: 'contact welcome (form-filler + partners)',
+    payload: applyGuaranteedDelivery({
+      personalizations: [primaryPersonalization],
+      ...common,
+    }),
+  });
+
+  // 2. Dedicated guaranteed copy addressed TO sales@.
+  if (salesBcc.length) {
+    payloads.push({
+      description: 'contact welcome (guaranteed sales@ copy)',
+      payload: applyGuaranteedDelivery({
+        personalizations: [
+          {
+            to: salesBcc.map((email) => ({ email })),
+            dynamic_template_data: dynamicTemplateData,
+          },
+        ],
+        ...common,
+      }),
+    });
+  }
+
+  return payloads;
+}
+
+/**
+ * Send the contact-form "welcome" email with country-based template and partner
+ * routing. Sends the form-filler copy (partners BCC'd) and, as a separate
+ * request, a guaranteed copy to sales@ (see buildContactWelcomePayloads).
+ *
+ * @param {Object} formValues - Raw contact form values (snake_case field names)
+ * @param {string} apiKey - SendGrid API key
+ * @param {Object} logger - Logger instance (optional)
+ */
+export async function sendContactWelcomeEmail(formValues, apiKey, logger = null) {
+  if (!logger) {
+    logger = createLogger('sendgrid', {}, null);
+  }
+
+  const payloads = buildContactWelcomePayloads(formValues);
+
+  logger.debug('Contact welcome email routing resolved', {
+    country: formValues.country,
+    requests: payloads.length,
+    templateId: payloads[0]?.payload.template_id,
+  });
+
+  const results = await Promise.allSettled(
+    payloads.map(({ payload, description }) =>
+      postMailSend(payload, apiKey, logger, description)
+    )
+  );
+
+  const failures = results
+    .map((r, i) => ({ r, description: payloads[i].description }))
+    .filter(({ r }) => r.status === 'rejected');
+
+  if (failures.length) {
+    const detail = failures
+      .map(({ r, description }) => `${description}: ${r.reason?.message || r.reason}`)
+      .join('; ');
+    logger.error('SendGrid contact email failed', {
+      failed: failures.length,
+      total: payloads.length,
+      detail,
+    });
+    throw new Error(`SendGrid contact email error: ${detail}`);
   }
 
   logger.info('Contact welcome email sent successfully via SendGrid', {
     to: formValues.email,
-    templateId: settings.templateId,
+    requests: payloads.length,
   });
 
   return { success: true };
@@ -330,31 +487,16 @@ export async function sendRawEmail({ to, subject, text, from }, apiKey, logger =
     fromField = from;
   }
 
-  const payload = {
+  // applyGuaranteedDelivery is a no-op unless `to` is sales@ (current callers
+  // send to uptime@); it future-proofs the guarantee for any recipient.
+  const payload = applyGuaranteedDelivery({
     personalizations: [{ to: [{ email: to }] }],
     from: fromField,
     subject,
     content: [{ type: 'text/plain', value: text }],
-  };
-
-  const response = await fetch(`${SENDGRID_API_BASE}/mail/send`, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
   });
 
-  if (!response.ok) {
-    const error = await response.text();
-    logger.error('SendGrid raw email API error', {
-      status: response.status,
-      error,
-      to,
-    });
-    throw new Error(`SendGrid email error: ${response.status} - ${error}`);
-  }
+  await postMailSend(payload, apiKey, logger, `raw email to ${to}`);
 
   logger.info('Raw email sent successfully via SendGrid', { to, subject });
 
