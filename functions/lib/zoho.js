@@ -57,6 +57,16 @@ function sanitizeCriteriaValue(value) {
 }
 
 /**
+ * True when a Zoho field value is considered empty (null/undefined/blank).
+ * Used by the backfill-only update helpers so we never overwrite existing data.
+ * @param {*} value
+ * @returns {boolean}
+ */
+function isBlank(value) {
+  return value == null || String(value).trim() === '';
+}
+
+/**
  * Search for a contact by email
  * @param {string} email - Email address to search for
  * @param {string} accessToken - Zoho CRM access token
@@ -181,8 +191,9 @@ export async function searchAccountByName(accountName, accessToken, logger = nul
 }
 
 /**
- * Create a contact in Zoho CRM. Field mapping mirrors the old AWS Lambda:
- * First_Name, Last_Name, Email, Title (job title), Phone, Newsletter (opt-in).
+ * Create a contact in Zoho CRM. Field mapping:
+ * First_Name, Last_Name, Email, Title (job title), Phone,
+ * Mailing_Country (country), Newsletter (opt-in).
  * The company relationship is established via linkContactToAccount, and the
  * submission message is stored as a Note (see addNoteToContact) rather than a
  * field, so it is preserved for existing contacts too.
@@ -190,8 +201,9 @@ export async function searchAccountByName(accountName, accessToken, logger = nul
  * @param {string} contactData.firstName - First name
  * @param {string} contactData.lastName - Last name
  * @param {string} contactData.email - Email address
- * @param {string} contactData.phone - Phone number (optional)
+ * @param {string} contactData.phone - Phone number -> Phone (optional)
  * @param {string} contactData.jobTitle - Job title -> Title (optional)
+ * @param {string} contactData.country - Country -> Mailing_Country (optional)
  * @param {boolean} contactData.newsletter - Newsletter opt-in flag
  * @param {string} accessToken - Zoho CRM access token
  * @param {Object} logger - Logger instance (optional)
@@ -209,6 +221,7 @@ export async function createContact(contactData, accessToken, logger = null, api
     email,
     phone,
     jobTitle,
+    country,
     newsletter,
   } = contactData;
 
@@ -227,6 +240,7 @@ export async function createContact(contactData, accessToken, logger = null, api
         Email: email,
         ...(phone && { Phone: phone }),
         ...(jobTitle && { Title: jobTitle }),
+        ...(country && { Mailing_Country: country }),
         Newsletter: !!newsletter,
       }
     ],
@@ -285,6 +299,163 @@ export async function createContact(contactData, accessToken, logger = null, api
     logger.error('Zoho Contact creation failed with unexpected response', { result });
     throw new Error(`Zoho Contact creation failed: ${JSON.stringify(result)}`);
   }
+}
+
+/**
+ * Backfill selected profile fields on an existing Zoho contact.
+ *
+ * Used when a submission is deduplicated onto a contact that already exists
+ * (createContact is skipped in that case, so its field mapping never runs).
+ * This is **backfill-only**: a field is written only when the incoming value is
+ * non-empty AND the existing record has no value there. Existing values are
+ * never overwritten, and curated data (First/Last name, Newsletter opt-in) is
+ * never touched — a web form must not clobber names, revoke a newsletter
+ * opt-in, or change data a person already has on file.
+ *
+ * @param {string} contactId - Zoho contact id
+ * @param {Object} incoming - Incoming form values
+ * @param {string} incoming.phone - Phone number -> Phone (optional)
+ * @param {string} incoming.jobTitle - Job title -> Title (optional)
+ * @param {string} incoming.country - Country -> Mailing_Country (optional)
+ * @param {Object} existing - The existing Zoho contact record (from search)
+ * @param {string} accessToken - Zoho CRM access token
+ * @param {Object} logger - Logger instance (optional)
+ * @param {string} apiBase - Zoho CRM API base URL (optional)
+ */
+export async function updateContact(contactId, incoming = {}, existing = {}, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
+  if (!logger) {
+    logger = createLogger('zoho', {}, null);
+  }
+
+  const { phone, jobTitle, country } = incoming;
+
+  // Backfill-only: write a field solely when we have an incoming value AND the
+  // existing record's field is currently empty.
+  const fields = {
+    ...(phone && isBlank(existing.Phone) && { Phone: phone }),
+    ...(jobTitle && isBlank(existing.Title) && { Title: jobTitle }),
+    ...(country && isBlank(existing.Mailing_Country) && { Mailing_Country: country }),
+  };
+
+  if (Object.keys(fields).length === 0) {
+    logger.debug('No empty contact fields to backfill; skipping', { contactId });
+    return { success: true, skipped: true };
+  }
+
+  logger.debug('Backfilling empty Zoho contact fields', {
+    contactId,
+    fields: Object.keys(fields),
+  });
+
+  const payload = {
+    data: [{ id: contactId, ...fields }],
+    trigger: [],
+  };
+
+  const response = await fetch(`${apiBase}/Contacts`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Zoho-oauthtoken ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    logger.error('Zoho Contact update API error', {
+      status: response.status,
+      error,
+      contactId,
+    });
+    throw new Error(`Zoho Contact update error: ${response.status} - ${error}`);
+  }
+
+  const result = await response.json();
+  const success = result.data && result.data[0].code === 'SUCCESS';
+  if (success) {
+    logger.info('Zoho contact fields backfilled successfully', {
+      contactId,
+      fields: Object.keys(fields),
+    });
+  } else {
+    logger.warn('Zoho contact update had unexpected result', { result, contactId });
+  }
+  return { success };
+}
+
+/**
+ * Backfill Billing_Country on an existing Zoho account.
+ *
+ * Backfill-only, symmetric to updateContact: the account's Billing_Country is
+ * set only when the submission carries a country AND the account doesn't already
+ * have one. An account is company-level data shared across contacts, so a single
+ * submitter must never overwrite a curated billing country.
+ *
+ * @param {string} accountId - Zoho account id
+ * @param {Object} incoming - Incoming form values
+ * @param {string} incoming.country - Country -> Billing_Country (optional)
+ * @param {Object} existing - The existing Zoho account record (from search)
+ * @param {string} accessToken - Zoho CRM access token
+ * @param {Object} logger - Logger instance (optional)
+ * @param {string} apiBase - Zoho CRM API base URL (optional)
+ */
+export async function updateAccount(accountId, incoming = {}, existing = {}, accessToken, logger = null, apiBase = ZOHO_API_BASE) {
+  if (!logger) {
+    logger = createLogger('zoho', {}, null);
+  }
+
+  const { country } = incoming;
+
+  const fields = {
+    ...(country && isBlank(existing.Billing_Country) && { Billing_Country: country }),
+  };
+
+  if (Object.keys(fields).length === 0) {
+    logger.debug('No empty account fields to backfill; skipping', { accountId });
+    return { success: true, skipped: true };
+  }
+
+  logger.debug('Backfilling empty Zoho account fields', {
+    accountId,
+    fields: Object.keys(fields),
+  });
+
+  const payload = {
+    data: [{ id: accountId, ...fields }],
+    trigger: [],
+  };
+
+  const response = await fetch(`${apiBase}/Accounts`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Zoho-oauthtoken ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    logger.error('Zoho Account update API error', {
+      status: response.status,
+      error,
+      accountId,
+    });
+    throw new Error(`Zoho Account update error: ${response.status} - ${error}`);
+  }
+
+  const result = await response.json();
+  const success = result.data && result.data[0].code === 'SUCCESS';
+  if (success) {
+    logger.info('Zoho account fields backfilled successfully', {
+      accountId,
+      fields: Object.keys(fields),
+    });
+  } else {
+    logger.warn('Zoho account update had unexpected result', { result, accountId });
+  }
+  return { success };
 }
 
 /**

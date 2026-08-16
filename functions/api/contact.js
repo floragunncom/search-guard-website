@@ -21,7 +21,9 @@
 import { sendContactWelcomeEmail, addContactToList } from '../lib/sendgrid.js';
 import {
   createContact,
+  updateContact,
   createAccount,
+  updateAccount,
   linkContactToAccount,
   addNoteToContact,
   refreshAccessToken,
@@ -208,23 +210,27 @@ export async function onRequestPost(context) {
           accountsBase
         );
 
-        // Search for existing contact by email
-        const existingContact = await searchContactByEmail(email, accessToken, logger, apiBase);
+        // Search for existing contact by email. The search returns the full
+        // record, which we keep so the backfill below can tell which fields are
+        // still empty.
+        let contactRecord = await searchContactByEmail(email, accessToken, logger, apiBase);
         let contactResult;
 
-        if (existingContact) {
+        if (contactRecord) {
           logger.info('Using existing contact', {
-            contactId: existingContact.id,
+            contactId: contactRecord.id,
             email,
           });
           contactResult = {
             success: true,
-            contactId: existingContact.id,
+            contactId: contactRecord.id,
             message: 'Contact already exists',
             isExisting: true,
           };
         } else {
-          // Create new contact
+          // Create new contact. On a brand-new record every field is empty, so
+          // createContact writes the full mapping (names, phone, title, mailing
+          // country, newsletter).
           contactResult = await createContact(
             {
               firstName: first_name,
@@ -232,36 +238,81 @@ export async function onRequestPost(context) {
               email,
               phone: body.phone,
               jobTitle: body.job_position,
+              country: body.country,
               newsletter: newsletterOptIn,
             },
             accessToken,
             logger,
             apiBase
           );
+
+          // Rare: the email search missed but Zoho rejected the create as a
+          // duplicate. Re-fetch the record so the backfill can see which fields
+          // are already populated.
+          if (contactResult.isDuplicate) {
+            contactRecord = await searchContactByEmail(email, accessToken, logger, apiBase);
+          }
         }
 
-        // Search for existing account by company name
-        const existingAccount = await searchAccountByName(company, accessToken, logger, apiBase);
+        // Backfill-only update for an existing contact: fill Phone / Title /
+        // Mailing_Country ONLY where the record currently has no value. Never
+        // overwrite existing values, names, or the newsletter opt-in.
+        if (contactRecord && contactResult.contactId) {
+          await updateContact(
+            contactResult.contactId,
+            {
+              phone: body.phone,
+              jobTitle: body.job_position,
+              country: body.country,
+            },
+            contactRecord,
+            accessToken,
+            logger,
+            apiBase
+          );
+        }
+
+        // Search for existing account by company name (full record retained so
+        // we can tell whether Billing_Country is already set).
+        let accountRecord = await searchAccountByName(company, accessToken, logger, apiBase);
         let accountResult;
 
-        if (existingAccount) {
+        if (accountRecord) {
           logger.info('Using existing account', {
-            accountId: existingAccount.id,
+            accountId: accountRecord.id,
             accountName: company,
           });
           accountResult = {
             success: true,
-            accountId: existingAccount.id,
+            accountId: accountRecord.id,
             message: 'Account already exists',
             isExisting: true,
           };
         } else {
-          // Create new account
+          // Create new account (Billing_Country written on the fresh record).
           accountResult = await createAccount(
             {
               accountName: company,
               country: body.country,
             },
+            accessToken,
+            logger,
+            apiBase
+          );
+
+          // Rare duplicate: re-fetch so the backfill can see the current value.
+          if (accountResult.isDuplicate) {
+            accountRecord = await searchAccountByName(company, accessToken, logger, apiBase);
+          }
+        }
+
+        // Backfill-only update for an existing account: set Billing_Country ONLY
+        // if the account doesn't already have one.
+        if (accountRecord && accountResult.accountId) {
+          await updateAccount(
+            accountResult.accountId,
+            { country: body.country },
+            accountRecord,
             accessToken,
             logger,
             apiBase
