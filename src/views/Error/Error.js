@@ -15,22 +15,22 @@ const Error = () => {
     <PageWrapper>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Search Guard | An error occured</title>
+        <title>Search Guard | An error occurred</title>
         <link rel="canonical" href="https://search-guard.com/error/" />
         <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
-          content="An internal error occured, we humpy and deeply apologize"
+          content="An internal error occurred, we humpy and deeply apologize"
         />
       </Helmet>
       <div className="error-wrapper">
         <div className="row">
           <div className="col s12 m10 offset-m1 l8 offset-l2">
-            <h1 className="error-warning">An error occured</h1>
+            <h1 className="error-warning">An error occurred</h1>
             <div className="error-text">
               It's not you, it's us!
               <br /><br />
-              We are very sorry, but an error occured. We are working on it, please try again later.
+              We are very sorry, but an error occurred. We are working on it, please try again later.
               <br />
               <br />
               We apologize deeply and humbly for the inconvenience,

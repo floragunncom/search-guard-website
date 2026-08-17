@@ -22,9 +22,9 @@
   "benefits.free.text": "The Search Guard TLS Tool is completely free and licensed under the Apache v2 license. You can use it for any project, commercial or other, and even bundle it with your own projects.",
   "benefits.free.button": "Visit our GitLab Repo",
   "benefits.platform.headline": "Available for Linux, Mac and Windows",
-  "benefits.platform.text": "Our TLS Tool is platform independant and works on Linux, Mac and Windows. Just download and run it.",
+  "benefits.platform.text": "Our TLS Tool is platform independent and works on Linux, Mac and Windows. Just download and run it.",
   "benefits.platform.button": "Download now",
   "benefits.easy.headline": "Easy to install, setup and use",
   "benefits.easy.text": "TLS Tool makes it super easy to generate all certificates you need for Elasticsearch, Kibana and Search Guard. If your cluster grows, simply add more nodes and TLS Tool can generate new certificates for you.",
-  "benefits.easy.button": "Read the documenttion"
+  "benefits.easy.button": "Read the documentation"
 }

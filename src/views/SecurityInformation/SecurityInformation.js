@@ -41,7 +41,7 @@ const Security = () => {
             Type Bits/KeyID Date User ID
             <br />
             {
-              'pub 2048/51EDB2FE 2015/05/23 Search Guard <infos@earch-guard.com>'
+              'pub 2048/51EDB2FE 2015/05/23 Search Guard <info@search-guard.com>'
             }
             <br />
             <br />

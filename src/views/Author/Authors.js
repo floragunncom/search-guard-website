@@ -66,7 +66,7 @@ const Authors = ({ match }) => {
                         {person.fields.shortDescription}
                       </div>
                       <div className="authors-position">
-                        <a href={`/author/${person.fields.slug}`} rel="author">View {person.fields.firstName}s Profile</a>
+                        <a href={`/author/${person.fields.slug}`} rel="author">View {person.fields.firstName}&apos;s Profile</a>
                       </div>
                     </div>
                   </div>

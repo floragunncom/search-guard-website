@@ -19,7 +19,7 @@
   "connectors.slack.title": "Slack",
   "connectors.slack.text": "Inform your team or individuals about anomalies by sending out a message on Slack.",
   "connectors.pagerduty.title": "PagerDuty",
-  "connectors.pagerduty.text": "Open PagerDuty incidents from Signals Alerting automatically. The connnector supports resolving incidents in PagerDuty as soon as the watch has left alert state.",
+  "connectors.pagerduty.text": "Open PagerDuty incidents from Signals Alerting automatically. The connector supports resolving incidents in PagerDuty as soon as the watch has left alert state.",
   "connectors.jira.title": "JIRA",
   "connectors.jira.text": "Create, open or resolve JIRA issues based on the state of an alert. Supports labels, components, priorities and subtasks.",
   "connectors.webhooks.title": "Webhooks",

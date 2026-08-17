@@ -10,7 +10,7 @@
   "tile1.headline": "Search Guard provides security on all levels",
   "tile1.text": "Search Guard provides an all-encompassing security solution to keep your most confidential data safe. Utilizing RBAC, Search Guard ensures the highest level of protection in your clusters, indices, and documents by adding encryption, authentication, authorization, audit logging, compliance as well as alerting and anomaly detection features.",
   "tile2.headline": "Search Guard supports all industry standards",
-  "tile2.text": "Search Guard supports all industry standards for authentication and authorization like LDAP, Active Directory, OpenID, SAML, Kerberos, JSON web tokens or client certificates. You can chose from a wide variety of modern and highly secure modern cipher suites.",
+  "tile2.text": "Search Guard supports all industry standards for authentication and authorization like LDAP, Active Directory, OpenID, SAML, Kerberos, JSON web tokens or client certificates. You can choose from a wide variety of modern and highly secure cipher suites.",
   "tile3.headline": "Search Guard protects all components of the Elastic Stack",
   "tile3.text": "Search Guard implements full access control over your entire Elasticsearch environment. Protect all components of the Elastic stack, including Kibana, Logstash and Beats.",
 
@@ -95,10 +95,10 @@
   "quotes.4.author": "Arno Haß",
   "quotes.4.profession": "Project Manager",
   "quotes.4.company": "Max-Delbrück Centre for Molecular Medicine",
-  "quotes.5.quote": "We have chose SearchGuard because it matches our values of technical rigour, openness, and auditability. It is enabled us to ensure that data in transit is secure against eavesdropping in off-prem environments, to implement verifiable and granular access to our Elastic clusters, and most importantly to give our analysts access to restricted data sets with confidence that PII remains protected and confidential.",
+  "quotes.5.quote": "We have chosen SearchGuard because it matches our values of technical rigor, openness, and auditability. It has enabled us to ensure that data in transit is secure against eavesdropping in off-prem environments, to implement verifiable and granular access to our Elastic clusters, and most importantly to give our analysts access to restricted data sets with confidence that PII remains protected and confidential.",
   "quotes.5.author": "Tom",
   "quotes.5.company": "Deflect (DDoS protection CDN) & Deflect Labs (DDoS research)",
-  "quotes.6.quote": "In 2019 we planned to install one large logging infrastructure cluster for about 100TB of data. Not as SIEM, but mainly to have logs available centrally for developers and admins. We chose one Elasticsearch instance as a large log repository.\nWe decided to install the 8 data nodes and 10 VMs with one contractor. He proposed us 2 solutions for the \"role-based access control\" software. After testing, we quickly adopted SearchGuard.\nWe actually send all our critical logs to this cluster. About 15 users can login in the system and see what they are looking for. With SearchGuard we can easily limit the accesses to the logs of their applications only.\nThe right segregation is working well, and we are happy with the solution we chose for the user's access control.",
+  "quotes.6.quote": "In 2019 we planned to install one large logging infrastructure cluster for about 100TB of data. Not as SIEM, but mainly to have logs available centrally for developers and admins. We chose one Elasticsearch instance as a large log repository.\nWe decided to install the 8 data nodes and 10 VMs with one contractor. He proposed two solutions to us for the \"role-based access control\" software. After testing, we quickly adopted SearchGuard.\nWe actually send all our critical logs to this cluster. About 15 users can log in to the system and see what they are looking for. With SearchGuard we can easily limit access to the logs of their applications only.\nThe right segregation is working well, and we are happy with the solution we chose for the user's access control.",
   "quotes.6.author": "Y. Ghennai",
   "quotes.6.company": "Universite de Lausanne"
 }

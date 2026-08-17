@@ -1,6 +1,29 @@
+/*
+ * Only the families the site actually uses are declared here. Ten further
+ * @font-face blocks (Inter-Black/Bold/SemiBold/Medium/Light/Thin,
+ * Parafina-Bold/Regular/Light/Thin) were removed: nothing in src/ or styles/
+ * ever referenced them.
+ *
+ * Sources are WOFF2 subset to latin + latin-ext + general punctuation,
+ * currency, arrows, box-drawing and misc symbols. No glyph that the source
+ * TTF/OTF actually contained was dropped. Emoji are intentionally excluded --
+ * they render from the system emoji font, as they always did.
+ *
+ * Regenerate after adding characters outside those ranges:
+ *
+ *   UNI="U+0000-00FF,U+0100-024F,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,\
+ *   U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2190-21FF,U+2212,U+2215,\
+ *   U+2500-257F,U+25A0-25FF,U+2600-27BF,U+FEFF,U+FFFD"
+ *   python3 -m fontTools.subset Inter-Regular.ttf --unicodes="$UNI" \
+ *     --flavor=woff2 --layout-features='*' --name-IDs='*' \
+ *     --output-file=Inter-Regular.woff2
+ *
+ * The original .ttf/.otf files are kept in this directory as the masters.
+ */
+
 @font-face {
     font-family: 'Parafina-SemiWideXBold';
-    src: url('/assets/fonts/Parafina-BlackS.otf');
+    src: url('/assets/fonts/Parafina-BlackS.woff2') format('woff2');
     font-display: swap;
     font-weight: 900;
     font-style: normal;
@@ -8,85 +31,28 @@
 
 @font-face {
     font-family: 'Parafina-SemiWideBold';
-    src: url('/assets/fonts/Parafina-BoldS.otf');
+    src: url('/assets/fonts/Parafina-BoldS.woff2') format('woff2');
     font-display: swap;
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Parafina-Bold';
-    src: url('/assets/fonts/Parafina-MediumS.otf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Parafina-Regular';
-    src: url('/assets/fonts/Parafina-RegularS.otf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Parafina-Light';
-    src: url('/assets/fonts/Parafina-LightS.otf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Parafina-Thin';
-    src: url('/assets/fonts/Parafina-ThinS.otf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter-Black';
-    src: url('/assets/fonts/Inter-Black.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter-Bold';
-    src: url('/assets/fonts/Inter-Bold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter-SemiBold';
-    src: url('/assets/fonts/Inter-SemiBold.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter-Medium';
-    src: url('/assets/fonts/Inter-Medium.ttf');
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'Inter-Regular';
-    src: url('/assets/fonts/Inter-Regular.ttf');
+    src: url('/assets/fonts/Inter-Regular.woff2') format('woff2');
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'Inter-Light';
-    src: url('/assets/fonts/Inter-Light.ttf');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter-Thin';
-    src: url('/assets/fonts/Inter-Thin.ttf');
-    font-display: swap;
-}
-
-/* swap */
+/* font-display: block (not swap) -- an icon font renders its ligature source
+   text ("menu", "storage", ...) in the fallback face, so swap flashes raw
+   words at the user. block hides them until the font arrives; it is preloaded
+   in _document.js so the wait is short. */
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
     src: url('/assets/fonts/Material-Icons.woff2') format('woff2');
-    font-display: swap;
+    font-display: block;
 }
 
 .material-icons {
@@ -104,4 +70,3 @@
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
 }
-

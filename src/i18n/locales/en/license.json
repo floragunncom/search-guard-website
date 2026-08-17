@@ -70,7 +70,7 @@
   "featureBreakdown.authentication.saml": "SAML",
   "featureBreakdown.authentication.custom": "Custom implementations",
   "featureBreakdown.authorization.name": "Authorization",
-  "featureBreakdown.authorization.internal": "Internal group managemet",
+  "featureBreakdown.authorization.internal": "Internal group management",
   "featureBreakdown.authorization.proxy": "Proxy headers",
   "featureBreakdown.authorization.ldap": "LDAP / Active Directory",
   "featureBreakdown.authorization.jwt": "JSON web tokens",

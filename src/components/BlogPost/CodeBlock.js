@@ -16,7 +16,7 @@ const Blockquote = props => {
             setTimeout(function() {elem.textContent = "copy"}, 1000);
         }
         catch (error) {
-            elem.textContent = "An error occured";
+            elem.textContent = "An error occurred";
         }
     }
 

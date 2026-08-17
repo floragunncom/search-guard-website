@@ -139,7 +139,7 @@ const TableEditions = () => {
       name: 'Authorization',
       content: [
         {
-          type: 'Internal group managemet',
+          type: 'Internal group management',
           community: true,
           enterprise: true,
           compliance: true,

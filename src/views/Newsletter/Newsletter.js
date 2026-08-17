@@ -62,7 +62,7 @@ const Newsletter = () => {
                             </div>
                             <div className="newsletter-content-text">
                                 Learn from the experts! Receive practical advice, tutorials, and best practices on how
-                                to optimize your search security setup, protect your clusters, and manage cmpliance
+                                to optimize your search security setup, protect your clusters, and manage compliance
                                 requirements effectively.
                             </div>
                         </div>
