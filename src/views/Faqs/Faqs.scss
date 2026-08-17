@@ -5,24 +5,29 @@
   padding: 64px 32px;
   @media only screen and (max-width: $mobile) {
     padding: 32px 24px;
-  };
+  }
 }
 
-.faq-question-section {
-  margin-bottom: 48px;
-  max-width: 75%;
-  @media only screen and (max-width: $tabletBig) {
-    &:last-child {
-      margin-bottom: 32px;
-    };
-  };
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 32px;
-    max-width: 100%;
-  };
+/* ---------------------------------------------------------------- Jump to nav */
+
+.faq-nav-col {
+  /* Materialize floats .col, so the sticky element needs its own wrapper. */
+  .faq-jumpto {
+    position: sticky;
+    top: 96px;
+    @media only screen and (max-width: $tabletBig) {
+      position: static;
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 3px solid $lightGrey;
+    }
+  }
 }
 
-.faq-question-headline, .faq-answer-section-headline {
+/* Rendered as a role="navigation" div, not a <nav>, so neither Materialize's
+   navbar styles nor Navbar.scss's global `nav` rule apply here. See Faqs.js. */
+
+.faq-jumpto-headline {
   color: $primary;
   margin-bottom: 16px;
   text-transform: uppercase;
@@ -31,81 +36,295 @@
   letter-spacing: 3.3px;
 }
 
-.faq-answer-section-headline {
-  @media only screen and (max-width: $tabletBig) {
-    padding-top: 64px;
-    &:first-child {
-      padding-top: 32px;
-    };
-  };
-}
+.faq-jumpto-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
-.faq-question-text {
-  font-size: 18px;
-  padding-bottom: 16px;
-  line-height: 27px;
-  @media only screen and (max-width: $tabletBig) {
-    font-size: 16px;
-    line-height: 24px;
-  };
-  a {
-    color: $primary;
-  };
-}
-
-.faq-answer-section {
-  border-left: 3px solid $lightGrey;
-  padding-left: 100px;
-  @media only screen and (max-width: $tabletBig) {
-    margin-bottom: 64px;
-    border-left: unset;
-    padding-left: 0px;
-    &:first-child {
-      border-top: 3px solid $lightGrey;
-    };
-  }; 
-  @media only screen and (max-width: $tabletBig) {
-    &:last-child {
-      margin-bottom: 0px;
-    };
-  };
-}
-
-.faq-answer-headline {
-  margin-bottom: 32px;
-  font-size: 24px;
-  line-height: 30px;
-  color: $primary;
-  letter-spacing: 0.8px;
-  @media only screen and (max-width: $mobile) {
-    font-size: 20px;
-    letter-spacing: 0.67px;
-    margin-bottom: 16px;
+  li {
+    margin-bottom: 12px;
   }
-}
 
-.faq-answer-text {
-  font-size: 18px;
-  line-height: 27px;
-  color: $darkGrey;
-  padding-bottom: 96px;
-  @media only screen and (max-width: $tabletBig) {
-    padding-bottom: 64px;
-  };
-  @media only screen and (max-width: $mobile) {
-    font-size: 16px;
+  a {
+    color: $darkGrey;
+    font-size: 17px;
     line-height: 24px;
-    padding-bottom: 32px;
-  };
-  ul {
-    li:before {
-      content: '•';
-      margin-right: 20px;
-      margin-left: -10px;
+    border-left: 3px solid transparent;
+    padding-left: 12px;
+    display: block;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: $primary;
+      border-left-color: $secondary;
+    }
+  }
+
+  @media only screen and (max-width: $tabletBig) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+
+    li {
+      margin-bottom: 0;
+    }
+
+    a {
+      border-left: none;
+      padding-left: 0;
+      font-size: 16px;
+
+      &:hover,
+      &:focus {
+        border-left-color: transparent;
+        text-decoration: underline;
+      }
     }
   }
 }
 
-.faq-answer-links {
-  word-break: break-all;
+/* ---------------------------------------------------------------- Intro + sections */
+
+.faq-intro {
+  font-size: 18px;
+  line-height: 27px;
+  color: $darkGrey;
+  margin-bottom: 40px;
+
+  a {
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.faq-answer-section {
+  margin-bottom: 56px;
+  /* Keeps the sticky navbar from covering the heading on scroll/deep link. */
+  scroll-margin-top: 96px;
+
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+}
+
+/* Section headings outrank the questions: Parafina (the site heading face) and
+   clearly larger than the 20px question rows below them. */
+.faq-answer-section-headline {
+  color: $primary;
+  margin: 0 0 20px;
+  font-family: 'Parafina-SemiWideXBold';
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-transform: none;
+
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 28px;
+  }
+  @media only screen and (max-width: $mobile) {
+    font-size: 24px;
+  }
+}
+
+/* ---------------------------------------------------------------- Accordion item */
+
+.faq-item {
+  border-top: 1px solid $lightGrey;
+  scroll-margin-top: 96px;
+
+  &:last-child {
+    border-bottom: 1px solid $lightGrey;
+  }
+}
+
+/* index.scss gives every h3 the Parafina heading face; questions read as body
+   copy, so pull them back to Inter. */
+.faq-question-heading {
+  margin: 0;
+  font-family: 'Inter-Regular';
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.faq-question-toggle {
+  /* Reset the button so it reads as page copy, not a form control. */
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  color: $primary;
+
+  /* Materialize sets `button:focus { background-color: #2ab7a9 }`, which flashed a
+     green block over the clicked question. Suppress it, but keep a visible focus
+     ring for keyboard users. */
+  &:focus,
+  &:active {
+    background-color: transparent;
+  }
+
+  &:hover .faq-question-label,
+  &:focus-visible .faq-question-label {
+    color: $primary-light;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $secondary-dark;
+    outline-offset: 4px;
+  }
+}
+
+.faq-question-label {
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: $primary;
+  transition: color 0.2s ease;
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
+/* Chevron marker: signals the row is clickable, rotates to point up when open. */
+.faq-question-icon {
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  margin-top: 8px;
+  border-right: 2px solid $primary;
+  border-bottom: 2px solid $primary;
+  transform: rotate(45deg);
+  transform-origin: center;
+  transition: transform 0.28s ease, border-color 0.2s ease;
+}
+
+.faq-item.is-open .faq-question-icon {
+  transform: rotate(-135deg);
+  margin-top: 12px;
+  border-color: $secondary-dark;
+}
+
+.faq-question-toggle:hover .faq-question-icon {
+  border-color: $secondary-dark;
+}
+
+/* ---------------------------------------------------------------- Answer panel */
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: max-height 0.28s ease, visibility 0s linear 0.28s;
+}
+
+.faq-item.is-open .faq-answer {
+  /* Large enough for the longest answer; max-height cannot animate from/to auto. */
+  max-height: 1200px;
+  visibility: visible;
+  transition: max-height 0.28s ease, visibility 0s;
+}
+
+.faq-answer-text {
+  font-size: 17px;
+  line-height: 27px;
+  color: $darkGrey;
+  padding: 0 40px 24px 0;
+
+  p {
+    margin-top: 0;
+  }
+
+  a {
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  strong {
+    color: $primary;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 16px;
+    line-height: 24px;
+    padding-right: 0;
+  }
+}
+
+/* ---------------------------------------------------------------- Closing CTAs */
+
+.faq-closing {
+  margin-top: 64px;
+  padding: 40px;
+  background-color: $secondary-light;
+
+  @media only screen and (max-width: $mobile) {
+    padding: 24px;
+    margin-top: 40px;
+  }
+}
+
+.faq-closing-headline {
+  color: $primary;
+  font-size: 24px;
+  line-height: 30px;
+  margin: 0 0 8px;
+}
+
+.faq-closing-text {
+  color: $darkGrey;
+  font-size: 17px;
+  line-height: 26px;
+  margin: 0 0 24px;
+}
+
+.faq-closing-actions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  li {
+    flex: 1 1 220px;
+  }
+}
+
+.faq-closing-action {
+  display: block;
+
+  .faq-closing-action-label {
+    display: block;
+    color: $primary;
+    font-size: 17px;
+    line-height: 26px;
+    margin-bottom: 4px;
+    text-decoration: underline;
+  }
+
+  .faq-closing-action-text {
+    display: block;
+    color: $darkGrey;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  &:hover .faq-closing-action-label {
+    color: $secondary-dark;
+  }
 }

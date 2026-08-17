@@ -40,7 +40,7 @@
     "start:dev": "next dev",
     "start:prod": "npm run build && node .",
     "preview": "next start",
-    "fetch": "node ./src/Api/fetchContentfulPosts.js && node ./src/Api/fetchContentfulEvents.js && node ./src/Api/fetchContentfulWhitepapers.js && node ./src/Api/fetchContentfulVideos.js && node ./src/Api/fetchContentfulPersons.js && node ./src/Api/fetchContentfulPageContents.js",
+    "fetch": "node ./src/Api/fetchContentfulPosts.js && node ./src/Api/fetchContentfulEvents.js && node ./src/Api/fetchContentfulWhitepapers.js && node ./src/Api/fetchContentfulVideos.js && node ./src/Api/fetchContentfulPersons.js",
     "indexBlogPosts": "node ./src/Api/indexBlogposts.js",
     "prerender:report": "node ./scripts/report-prerender-routes.js",
     "prerender": "node ./scripts/prerender.js",
