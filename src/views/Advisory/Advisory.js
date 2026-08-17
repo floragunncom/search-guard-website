@@ -276,7 +276,7 @@ const bugs = [
         ),
         date: '2018-09-14',
         vul:
-            'For aggregations, clear text values of anonymised fields were leaked',
+            'For aggregations, clear text values of anonymized fields were leaked',
         rem: 'Update',
         fix: '6.x-23.1',
         report: 'floragunn',
@@ -428,7 +428,7 @@ const Advisory = () => {
                         About Search Guard Security Advisories
                     </div>
                     <div className="advisory-info-text">
-                        An Search Guard Security Advisory (“SGSA”) is a notice from Search
+                        A Search Guard Security Advisory (“SGSA”) is a notice from Search
                         Guard/floragunn GmbH to its users of security issues with the Search
                         Guard products. Search Guard/floragunn assigns both a{' '}
                         <a href="/">CVE</a> and an SGSA identifier to each advisory along

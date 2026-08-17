@@ -45,7 +45,7 @@ const Article = () => {
                             in Germany, Austria and Switzerland
                             who want to expand their portfolio in the area of Big Data Security with a user-friendly
                             solution now have a direct person to contact.
-                            Search Guard is an open source plug-in for use in ​enterprise search for the protection of
+                            Search Guard is an open source plug-in for use in enterprise search for the protection of
                             Elasticsearch clusters.
                         </b>
                         <br/><br/>
@@ -67,13 +67,13 @@ const Article = () => {
                         security costs.
                         With Search Guard, users receive a comprehensively equipped security plug-in for Elasticsearch
                         clusters which allows
-                        them to stay one step ahead of attacks and unauthorised control​. ​The licensing model is
+                        them to stay one step ahead of attacks and unauthorized control. The licensing model is
                         cluster-based so that
                         costs are stable and calculable from the outset. This creates many added values and makes it
                         easier for resellers
                         to increase the data security of their customers”.
 
-                        <h2 className="pressarticle-headline2">Special features of the licensing model in favour of the
+                        <h2 className="pressarticle-headline2">Special features of the licensing model in favor of the
                             users</h2>
 
                         To make license management easier for users, the fee is usually calculated based on the clusters
@@ -86,7 +86,7 @@ const Article = () => {
                         extend the license,
                         our sales partners participate in the same way," says Thomas Mahler.
 
-                        In addition to the free Community Edition, Search Guard is also available as a premium liscence
+                        In addition to the free Community Edition, Search Guard is also available as a premium license
                         version in the
                         Enterprise Edition and Compliance Edition. The Enterprise Edition contains additional features
                         that are significant

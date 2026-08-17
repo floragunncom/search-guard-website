@@ -6,7 +6,7 @@
   "title.headline": "Start your free trial",
   "title.text": "You can use the completely Open Source and forever-free Community Edition, or start your 60 day Search Guard Enterprise trial",
   "step1.headline": "Download Search Guard",
-  "step1.text": "Download the Search Guard plugin matching the Elasticsearch version you are running. For example, if you are running Elasticsearch 9.4.3, you need to download Search Guard for 9.4.3 as well. The download is platform-independant.",
+  "step1.text": "Download the Search Guard plugin matching the Elasticsearch version you are running. For example, if you are running Elasticsearch 9.4.3, you need to download Search Guard for 9.4.3 as well. The download is platform-independent.",
   "step1.button": "visit our downloads page",
   "step2.headline": "Install Search Guard",
   "step2.text": "Stop your Elasticsearch cluster and install Search Guard on all nodes.",

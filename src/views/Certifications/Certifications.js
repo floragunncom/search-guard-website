@@ -10,11 +10,11 @@ import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
 
 const certificates = [
     {
-        headline: 'Allianz for Cyber-Sicherheit',
+        headline: 'Alliance for Cyber Security',
         image: alliance,
         text: (
             <p>
-                floragunn GmbH is member of the Alliance for Cyber Security, a body of
+                floragunn GmbH is a member of the Alliance for Cyber Security, a body of
                 the Federal Office for Information Security in Germany.
                 <br/>
                 <br/>

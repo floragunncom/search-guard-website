@@ -195,12 +195,16 @@ class MyDocument extends Document {
 
           <link rel="preconnect" href="https://images.ctfassets.net" crossOrigin="" />
 
-          <link rel="preload" href="/assets/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossOrigin="" />
-          <link rel="preload" href="/assets/fonts/Parafina-BoldS.otf" as="font" type="font/otf" crossOrigin="" />
-          <link rel="preload" href="/assets/fonts/Parafina-BlackS.otf" as="font" type="font/otf" crossOrigin="" />
+          <link rel="preload" href="/assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossOrigin="" />
+          <link rel="preload" href="/assets/fonts/Parafina-BoldS.woff2" as="font" type="font/woff2" crossOrigin="" />
+          <link rel="preload" href="/assets/fonts/Parafina-BlackS.woff2" as="font" type="font/woff2" crossOrigin="" />
           <link rel="preload" href="/assets/fonts/Material-Icons.woff2" as="font" type="font/woff2" crossOrigin="" />
           <link rel="preload" as="style" href="/assets/materialize.min.css" />
-          <link rel="preload" as="style" href="/assets/fonts/fonts.css" />
+          {/* fonts.css is not content-hashed and the origin serves /assets/* with
+              max-age=2592000, so returning visitors would keep the 30-day-old copy
+              (and its .ttf/.otf sources) after a font change. Bump ?v= whenever
+              fonts.css changes — same cache-busting pattern as the favicon above. */}
+          <link rel="preload" as="style" href="/assets/fonts/fonts.css?v=2" />
           <link
             rel="preload"
             href="https://cdn.cookie-script.com/s/a521e590130162749ba95a6c3ffc0462.js"
@@ -208,7 +212,12 @@ class MyDocument extends Document {
           />
 
           <link rel="stylesheet" href="/assets/materialize.min.css" />
-          <link rel="stylesheet" href="/assets/fonts/fonts.css" />
+          <link rel="stylesheet" href="/assets/fonts/fonts.css?v=2" />
+          <script
+            type="text/javascript"
+            src="https://cdn.cookie-script.com/s/a521e590130162749ba95a6c3ffc0462.js"
+            async
+          />
 
           {/* Plausible Analytics — cookieless, no consent required */}
           <script

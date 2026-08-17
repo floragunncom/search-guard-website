@@ -183,7 +183,7 @@ const Journey = () => {
         },
         {
           headline: 'June',
-          text: 'Added dynamic salts for field anonymization and attachement support for Alerting Email actions'
+          text: 'Added dynamic salts for field anonymization and attachment support for Alerting Email actions'
         },
         {
           headline: 'May',
