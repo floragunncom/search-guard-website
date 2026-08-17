@@ -1,9 +1,182 @@
 {
-  "meta.title": "Preguntas frecuentes de Search Guard: Respuestas sobre seguridad de Elasticsearch",
-  "meta.description": "Encuentre respuestas a las preguntas más frecuentes sobre Search Guard, la suite de seguridad sólida y probada en batalla para Elasticsearch.",
+  "meta.title": "FAQ de Search Guard: respuestas sobre seguridad en Elasticsearch",
+  "meta.description": "Respuestas a las preguntas más frecuentes sobre Search Guard, la solución de seguridad probada para Elasticsearch y Kibana.",
   "breadcrumb.home": "Inicio",
   "breadcrumb.resources": "Recursos",
-  "breadcrumb.faq": "Preguntas frecuentes",
+  "breadcrumb.faq": "FAQ",
   "title.headline": "Preguntas frecuentes",
-  "title.text": "Encuentre respuestas a las preguntas más frecuentes sobre Search Guard y Signals."
+  "title.text": "Todo lo que necesita saber sobre Search Guard, las licencias y los primeros pasos.",
+  "intro": "¿No encuentra su respuesta? [Hable con nosotros](/contacts/): le respondemos en un día laborable.",
+  "jumpTo": "Ir a",
+  "closing.headline": "¿Le queda alguna duda?",
+  "closing.text": "Tres formas de avanzar, según el punto en el que se encuentre:",
+  "closing.actions.0.label": "Solicitar una demo",
+  "closing.actions.0.text": "Vea Search Guard en directo con uno de nuestros ingenieros.",
+  "closing.actions.0.link": "/contacts/",
+  "closing.actions.1.label": "Pedir presupuesto",
+  "closing.actions.1.text": "Indíquenos cuántos clústeres tiene; le respondemos en un día laborable.",
+  "closing.actions.1.link": "/contacts/",
+  "closing.actions.2.label": "Empezar la prueba gratuita",
+  "closing.actions.2.text": "Todas las funciones, en su infraestructura, sin tarjeta de crédito.",
+  "closing.actions.2.link": "/search-guard-free-trial/",
+  "teaser.headline": "Preguntas frecuentes",
+  "teaser.button": "ver más",
+  "categories": [
+    {
+      "id": "about",
+      "title": "Sobre Search Guard",
+      "entries": [
+        {
+          "question": "¿Qué es Search Guard?",
+          "answer": "Search Guard es una suite empresarial de seguridad y alertas para Elasticsearch y Kibana. Añade a su Elastic Stack autenticación, control de acceso basado en roles, seguridad a nivel de documento y de campo, registro de auditoría, cifrado en reposo y alertas: todo lo que las organizaciones reguladas necesitan para operar Elasticsearch de forma segura y cumplir la normativa."
+        },
+        {
+          "question": "¿Cuáles son las funciones principales?",
+          "answer": "Search Guard cubre todo el ciclo de vida de seguridad de un clúster de Elasticsearch: cifrado TLS para todo el tráfico, autenticación mediante LDAP, Active Directory, SAML, OpenID Connect, Kerberos y JSON Web Tokens, control de acceso basado en roles hasta el nivel de documentos y campos individuales, multitenancy en Kibana, registro de auditoría completo, cifrado en reposo y el módulo de alertas Signals para supervisar sus datos y enviar notificaciones por correo electrónico, Slack, PagerDuty, Jira, webhooks y más."
+        },
+        {
+          "question": "¿En qué se diferencia Search Guard de las funciones de seguridad incluidas en Elasticsearch?",
+          "answer": "Elasticsearch incluye funciones de seguridad básicas sin coste y, para configuraciones sencillas, pueden ser suficientes. Search Guard está pensado para organizaciones que necesitan más: autenticación empresarial (SAML, OpenID Connect, LDAP/Active Directory), seguridad granular a nivel de documento y de campo, registro de auditoría completo para cumplimiento normativo, cifrado en reposo y multitenancy. Todo ello con una licencia sencilla por clúster que no crece con el número de nodos y con soporte prestado directamente por los ingenieros que desarrollan el producto."
+        },
+        {
+          "question": "¿A quién está dirigido Search Guard?",
+          "answer": "A organizaciones de cualquier tamaño que utilicen Elasticsearch, con especial atención a sectores regulados como finanzas, sanidad, administración pública, investigación e infraestructuras críticas, donde el control de acceso, la trazabilidad y la protección de datos son obligatorios. Empresas, universidades e instituciones públicas de todo el mundo confían en Search Guard."
+        },
+        {
+          "question": "¿Quién está detrás de Search Guard?",
+          "answer": "Search Guard lo desarrolla floragunn GmbH, una empresa de software de seguridad con sede en Berlín (Alemania). Protegemos clústeres de Elasticsearch desde 2013 y desarrollamos, alojamos y damos soporte a Search Guard íntegramente desde Alemania."
+        },
+        {
+          "question": "¿Search Guard es de código abierto?",
+          "answer": "La Community Edition es de código abierto bajo licencia Apache 2.0: gratuita para siempre, también para uso comercial. Las ediciones Enterprise y Compliance requieren una licencia para su uso en producción. Search Guard se desarrolla de forma transparente: nuestros repositorios de código fuente y nuestros gestores de incidencias son públicos."
+        }
+      ]
+    },
+    {
+      "id": "pricing",
+      "title": "Ediciones y precios",
+      "entries": [
+        {
+          "question": "¿Qué ediciones existen?",
+          "answer": "Search Guard está disponible en tres ediciones. La **Community Edition** es gratuita para siempre e incluye las funciones de seguridad esenciales y el módulo completo de alertas Signals. La **Enterprise Edition** añade funciones avanzadas como LDAP/Active Directory, autenticación SAML y OpenID Connect, seguridad a nivel de documento y de campo, y registro de auditoría. La **Compliance Edition** incluye todo lo de Enterprise y añade funciones diseñadas para el cumplimiento normativo del RGPD, HIPAA, SOX, PCI e ISO, como el seguimiento de accesos de lectura a datos sensibles. Consulte la [comparativa completa de funciones](/licensing/)."
+        },
+        {
+          "question": "¿Cómo funcionan los precios de Search Guard?",
+          "answer": "Licenciamos Search Guard **por clúster de producción, no por nodo**. Puede escalar su clúster a cualquier número de nodos sin que cambie el coste de la licencia. Los sistemas de desarrollo, staging y QA están incluidos sin coste adicional. Una licencia, un precio previsible y crecimiento ilimitado."
+        },
+        {
+          "question": "¿La Community Edition es realmente gratuita, incluso para uso comercial?",
+          "answer": "Sí. La Community Edition se distribuye bajo licencia Apache 2.0 y es gratuita para cualquier uso, incluido el uso comercial en producción, sin límite de tiempo ni de nodos."
+        },
+        {
+          "question": "¿Qué se considera un clúster de producción?",
+          "answer": "Un clúster de producción es cualquier clúster que atiende cargas de trabajo reales. Todos los sistemas de apoyo que no son de producción (desarrollo, staging, pruebas, QA) quedan cubiertos por la misma licencia sin coste adicional. Si su configuración no encaja claramente en esa definición (por ejemplo, clústeres de recuperación ante desastres o en espera), consúltenos: encontraremos una solución razonable."
+        },
+        {
+          "question": "¿Ofrecen licencias académicas o para organizaciones sin ánimo de lucro?",
+          "answer": "Sí. Universidades, centros de investigación y organizaciones sin ánimo de lucro pueden obtener todas las funciones de Search Guard en condiciones especiales. [Póngase en contacto](/contacts/) y cuéntenos más sobre su institución."
+        },
+        {
+          "question": "¿Puedo integrar Search Guard en mi propio producto (OEM)?",
+          "answer": "Sí. Si comercializa un producto o un servicio gestionado basado en Elasticsearch, ofrecemos licencias OEM que le permiten integrar y redistribuir Search Guard. [Contáctenos](/contacts/) para conocer los detalles."
+        },
+        {
+          "question": "¿Cómo puedo solicitar un presupuesto?",
+          "answer": "Indíquenos el número de clústeres de producción y la edición que le interesa a través del [formulario de contacto](/contacts/) y recibirá un presupuesto en un día laborable. ¿Prefiere comentarlo por teléfono? [Reserve una llamada](/contacts/) con nuestro equipo."
+        }
+      ]
+    },
+    {
+      "id": "trial",
+      "title": "Prueba gratuita y primeros pasos",
+      "entries": [
+        {
+          "question": "¿Cómo puedo probar Search Guard?",
+          "answer": "De dos formas, según cómo prefiera evaluarlo. **Por su cuenta:** inicie una [prueba gratuita](/search-guard-free-trial/) de la edición Enterprise o Compliance, con todas las funciones y sobre su propia infraestructura. **Acompañado:** [reserve una demo](/contacts/) y uno de nuestros ingenieros le mostrará Search Guard en directo y resolverá sus dudas."
+        },
+        {
+          "question": "¿Cuál es la forma más rápida de ver Search Guard en funcionamiento?",
+          "answer": "Un único comando de Docker le proporciona en segundos un entorno completo de Elasticsearch, Kibana y Search Guard en su máquina local: consulte la [guía de inicio rápido de nuestra documentación](https://docs.search-guard.com/latest/). No requiere configuración."
+        },
+        {
+          "question": "¿Necesito una tarjeta de crédito para empezar la prueba?",
+          "answer": "No. La prueba no requiere datos de pago y finaliza automáticamente: no hay nada que cancelar."
+        },
+        {
+          "question": "¿Qué ocurre cuando termina mi prueba?",
+          "answer": "Nada disruptivo: su clúster sigue funcionando. Para continuar usando las funciones Enterprise o Compliance en producción, basta con adquirir una licencia. Si necesita más tiempo para evaluarlo, díganoslo: ampliar la prueba no suele ser ningún problema."
+        },
+        {
+          "question": "Estamos migrando desde otra solución de seguridad para Elasticsearch. ¿Pueden ayudarnos?",
+          "answer": "Sí. Nuestros ingenieros ayudan habitualmente a equipos a migrar configuraciones de seguridad existentes a Search Guard y pueden asesorarle sobre cómo trasladar sus usuarios, roles y permisos actuales. [Reserve una llamada](/contacts/) y cuéntenos cómo es su entorno."
+        }
+      ]
+    },
+    {
+      "id": "versions",
+      "title": "Compatibilidad y versiones",
+      "entries": [
+        {
+          "question": "¿Qué versiones de Elasticsearch admite Search Guard?",
+          "answer": "Search Guard admite la versión principal actual de Elasticsearch, incluidas las últimas versiones 9.x, y proporciona además correcciones críticas para la versión principal anterior, conforme a nuestra [política de fin de vida](https://docs.search-guard.com/latest/eol-policy). Para conocer la correspondencia exacta entre las versiones de Search Guard, Elasticsearch y Kibana, consulte la [matriz de versiones](https://docs.search-guard.com/latest/search-guard-versions), siempre actualizada, en nuestra documentación."
+        },
+        {
+          "question": "¿Search Guard es compatible con Kibana?",
+          "answer": "Sí. Search Guard incluye un plugin para Kibana con inicio de sesión, acceso basado en roles y multitenancy, que se publica al mismo tiempo que el plugin de Elasticsearch. La [matriz de versiones](https://docs.search-guard.com/latest/search-guard-versions) indica las versiones correspondientes."
+        },
+        {
+          "question": "¿Con qué rapidez está disponible Search Guard tras una nueva versión de Elasticsearch?",
+          "answer": "Nuestro proceso de compilación y pruebas se activa automáticamente con cada nueva versión de Elasticsearch, por lo que las versiones correspondientes de Search Guard suelen publicarse en cuestión de días."
+        },
+        {
+          "question": "¿Qué es Search Guard FLX?",
+          "answer": "FLX es la generación actual de Search Guard: una reescritura que ha hecho la configuración más sencilla y robusta. Si empieza hoy, FLX es lo que instalará; si actualiza desde una versión anterior de Search Guard, nuestra [guía de actualización](https://docs.search-guard.com/latest/) le acompaña durante la transición."
+        }
+      ]
+    },
+    {
+      "id": "trust",
+      "title": "Seguridad, cumplimiento y confianza",
+      "entries": [
+        {
+          "question": "¿Puede Search Guard ayudarnos a cumplir el RGPD, HIPAA, SOX o ISO?",
+          "answer": "Sí: para eso está pensada la Compliance Edition. La seguridad a nivel de campo y de documento restringe quién ve los datos sensibles, el registro de auditoría y el seguimiento de accesos de lectura documentan quién accedió a qué y cuándo, el cifrado en reposo protege los datos almacenados y el seguimiento de cambios de configuración refuerza su pista de auditoría. Muchos clientes de Search Guard operan precisamente bajo estas normativas."
+        },
+        {
+          "question": "¿Dónde se desarrolla Search Guard?",
+          "answer": "Íntegramente en Alemania. floragunn GmbH tiene su sede en Berlín, y Search Guard se desarrolla, mantiene y soporta desde la UE, algo relevante para organizaciones con requisitos de soberanía de datos o con políticas de compra basadas en la UE."
+        },
+        {
+          "question": "¿Cómo gestiona Search Guard las vulnerabilidades de seguridad?",
+          "answer": "Aplicamos a nuestro propio producto un enfoque de seguridad ante todo: floragunn es una CVE Numbering Authority autorizada, publica avisos de seguridad y mantiene un proceso de divulgación responsable. Encontrará los detalles en nuestra [página de información de seguridad](/security-information/)."
+        },
+        {
+          "question": "¿Search Guard se somete a auditorías o certificaciones?",
+          "answer": "Somos miembros de la Alianza para la Ciberseguridad (una iniciativa de la Oficina Federal Alemana de Seguridad de la Información, BSI) y de TeleTrusT, la asociación alemana de seguridad informática. Nuestro proceso de desarrollo incluye además el análisis continuo de seguridad del código."
+        },
+        {
+          "question": "¿Search Guard envía datos a servidores externos?",
+          "answer": "No. Search Guard se ejecuta por completo dentro de su infraestructura y no transmite datos de telemetría, de uso ni contenidos del clúster ni a nosotros ni a terceros. Sus datos permanecen donde deben estar: con usted."
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "Soporte",
+      "entries": [
+        {
+          "question": "¿Qué soporte incluye una licencia Enterprise o Compliance?",
+          "answer": "Soporte con SLA prestado directamente por quienes desarrollan Search Guard: su ticket lo responde el ingeniero que escribió el código, no un centro de atención de primer nivel. Los tiempos de respuesta se definen en su contrato de licencia."
+        },
+        {
+          "question": "¿Qué soporte existe para la Community Edition?",
+          "answer": "El [foro de la comunidad](https://forum.search-guard.com/) es gratuito para todos y nuestro equipo participa activamente en él. La documentación, con guías paso a paso y resolución de problemas, está disponible libremente en [docs.search-guard.com](https://docs.search-guard.com/latest/)."
+        },
+        {
+          "question": "¿Dónde comunico un error o solicito una función?",
+          "answer": "Publique un mensaje en el [foro de la comunidad](https://forum.search-guard.com/) o abra una incidencia en nuestro gestor público. Los clientes con licencia pueden utilizar además los canales de soporte definidos en su contrato."
+        }
+      ]
+    }
+  ]
 }

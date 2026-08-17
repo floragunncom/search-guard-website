@@ -165,6 +165,33 @@ Common classes: `.row`, `.col .s12 .m4 .m6 .l4 .l6`, `.push-m6`, `.pull-m6`.
 
 **Pitfall:** Materialize `.col` floats break flexbox centering. When you need centered content inside a Materialize grid column, use a wrapper `<div>` inside the `.col` and apply `text-align: center` on it. Use higher-specificity selectors (scope under a wrapper class, e.g. `.my-wrapper .my-element`) to override Materialize defaults.
 
+### Bare element selectors are styled globally — do not use `<nav>`
+
+Two stylesheets style bare HTML elements site-wide, so using those elements anywhere else
+silently inherits site-chrome styling:
+
+- **Materialize** styles `nav` as a navbar: dark background, fixed `height`/`line-height: 56px`,
+  white links, and `float: left` on `nav ul li`.
+- **`src/components/Navbar/Navbar.scss:4`** additionally styles bare `nav` with
+  `background-color: $darkBlueNav` and `padding-left/right: 200px`, with further overrides in
+  media queries further down the same file.
+
+**Do not use `<nav>` for in-page navigation** (sidebars, "jump to" lists, tables of contents).
+Use `<div role="navigation" aria-label="…">` instead — identical landmark semantics for
+accessibility, with none of the inherited styling. Resetting the properties one by one is not
+worth it: the rules are spread across several media queries and will drift.
+
+Real example: the FAQ page "Jump to" sidebar (`src/views/Faqs/Faqs.js`) originally used `<nav>`
+and rendered with a dark box behind it on desktop; on mobile the 200px side padding pushed the
+list off-centre and forced every category onto three lines.
+
+Before styling any semantic element (`nav`, `header`, `footer`, `main`, `aside`), grep for a
+bare selector first:
+
+```bash
+grep -rn "^\s*nav\s*{" src styles --include="*.scss"
+```
+
 ### Color schema system
 
 Most tile/section components accept a `colorschema` prop with values `"dark"`, `"light"`, or `"white"`:
@@ -323,6 +350,12 @@ Treat Vite pipeline as legacy/migration residue unless explicitly asked to reviv
    - Wrap content inside `.col` divs in an inner `<div>` for independent styling.
 8. Sass `@use` namespace collision:
    - If two SCSS files have the same basename (e.g. `BlogPost.scss` in different dirs), add `as AliasName` to the second `@use` in `styles/main.scss`.
+9. A new component renders with unexpected dark backgrounds, huge padding, or wrongly floated list items:
+   - It is probably using a bare semantic element that is styled globally — most often `<nav>`.
+   - Materialize styles `nav` as a navbar, and `src/components/Navbar/Navbar.scss:4` adds
+     `padding-left/right: 200px` to every `nav` on the site.
+   - Use `<div role="navigation" aria-label="…">` for in-page navigation. See §8
+     "Bare element selectors are styled globally".
 
 ## 16) Environment and Version Constraints
 
