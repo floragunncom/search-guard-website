@@ -1,0 +1,13 @@
+{
+  "meta.title": "Search Guard Webinars | Live Elasticsearch Security & Alerting Sessions",
+  "meta.description": "Join free Search Guard webinars on Elasticsearch and Kibana security, alerting, and anomaly detection. Register for upcoming live sessions with expert Q&A.",
+  "breadcrumb.home": "Home",
+  "breadcrumb.resources": "Resources",
+  "breadcrumb.webinars": "Webinars",
+  "title.headline": "Search Guard Webinars",
+  "title.text": "Live sessions on securing, alerting, and monitoring Elasticsearch and Kibana — register for upcoming webinars and expert Q&A.",
+  "lead.headline": "Practical Elasticsearch security sessions from the engineers who spend all day fixing it in production.",
+  "lead.text": "Most vendor webinars are 40 minutes of positioning and 5 minutes of substance. These aren't that. Each session is built around a real problem our engineers keep seeing in customer environments: auth setups that break at scale, RBAC models that leak, audit logs that miss what auditors care about, encryption that's technically enabled but functionally useless. We show the fix, walk through the config, and answer the questions you actually want to ask.",
+  "section.headline": "Live now — watch instantly",
+  "iframe.title": "Search Guard webinar registration"
+}

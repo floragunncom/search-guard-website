@@ -16,6 +16,7 @@ import enContactUs from './locales/en/contactUs.json';
 import enCompany from './locales/en/company.json';
 import enResource from './locales/en/resource.json';
 import enFaq from './locales/en/faq.json';
+import enWebinars from './locales/en/webinars.json';
 
 import deCommon from './locales/de/common.json';
 import deMeta from './locales/de/meta.json';
@@ -32,6 +33,7 @@ import deContactUs from './locales/de/contactUs.json';
 import deCompany from './locales/de/company.json';
 import deResource from './locales/de/resource.json';
 import deFaq from './locales/de/faq.json';
+import deWebinars from './locales/de/webinars.json';
 
 import esCommon from './locales/es/common.json';
 import esMeta from './locales/es/meta.json';
@@ -48,6 +50,7 @@ import esContactUs from './locales/es/contactUs.json';
 import esCompany from './locales/es/company.json';
 import esResource from './locales/es/resource.json';
 import esFaq from './locales/es/faq.json';
+import esWebinars from './locales/es/webinars.json';
 
 import frCommon from './locales/fr/common.json';
 import frMeta from './locales/fr/meta.json';
@@ -64,6 +67,7 @@ import frContactUs from './locales/fr/contactUs.json';
 import frCompany from './locales/fr/company.json';
 import frResource from './locales/fr/resource.json';
 import frFaq from './locales/fr/faq.json';
+import frWebinars from './locales/fr/webinars.json';
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -83,6 +87,7 @@ i18n.use(initReactI18next).init({
       company: enCompany,
       resource: enResource,
       faq: enFaq,
+      webinars: enWebinars,
     },
     de: {
       common: deCommon,
@@ -100,6 +105,7 @@ i18n.use(initReactI18next).init({
       company: deCompany,
       resource: deResource,
       faq: deFaq,
+      webinars: deWebinars,
     },
     es: {
       common: esCommon,
@@ -117,6 +123,7 @@ i18n.use(initReactI18next).init({
       company: esCompany,
       resource: esResource,
       faq: esFaq,
+      webinars: esWebinars,
     },
     fr: {
       common: frCommon,
@@ -134,6 +141,7 @@ i18n.use(initReactI18next).init({
       company: frCompany,
       resource: frResource,
       faq: frFaq,
+      webinars: frWebinars,
     },
   },
   lng: 'en',
