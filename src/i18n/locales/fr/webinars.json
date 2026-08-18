@@ -1,0 +1,13 @@
+{
+  "meta.title": "Webinaires Search Guard : sécurité et alerting Elasticsearch en direct",
+  "meta.description": "Webinaires gratuits Search Guard sur la sécurité, l'alerting et la détection d'anomalies pour Elasticsearch et Kibana. Inscrivez-vous aux prochaines sessions en direct avec Q&R d'experts.",
+  "breadcrumb.home": "Accueil",
+  "breadcrumb.resources": "Ressources",
+  "breadcrumb.webinars": "Webinaires",
+  "title.headline": "Webinaires Search Guard",
+  "title.text": "Des sessions en direct sur la sécurité, la supervision et l'alerting d'Elasticsearch et Kibana : inscrivez-vous aux prochains webinaires avec Q&R d'experts.",
+  "lead.headline": "Des sessions concrètes sur la sécurité d'Elasticsearch, animées par les ingénieurs qui s'y confrontent chaque jour en production.",
+  "lead.text": "La plupart des webinaires d'éditeurs, c'est 40 minutes de discours marketing et 5 minutes de contenu utile. Pas les nôtres. Chaque session part d'un problème concret que nos ingénieurs rencontrent en permanence chez les clients : des configurations d'authentification qui lâchent à grande échelle, des modèles RBAC qui laissent fuiter des droits, des journaux d'audit qui passent à côté de ce qui compte vraiment pour les auditeurs, et un chiffrement activé sur le papier mais inutile en pratique. On montre la solution, on parcourt la configuration en détail et on répond aux questions que vous vous posez vraiment.",
+  "section.headline": "En direct maintenant : à regarder tout de suite",
+  "iframe.title": "Inscription au webinaire Search Guard"
+}

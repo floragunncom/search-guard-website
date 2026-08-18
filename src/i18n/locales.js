@@ -35,6 +35,7 @@ export const LOCALIZABLE_ROUTES = [
   '/contacts/',
   '/company/',
   '/resource/',
+  '/webinars/',
   '/faq/',
   '/search-guard-free-trial/',
   '/search-guard-flx/',

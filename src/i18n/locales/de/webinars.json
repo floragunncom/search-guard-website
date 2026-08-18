@@ -1,0 +1,13 @@
+{
+  "meta.title": "Search Guard Webinare: Elasticsearch-Security & Alerting live",
+  "meta.description": "Kostenlose Search Guard Webinare zu Security, Alerting und Anomalie-Erkennung für Elasticsearch und Kibana. Jetzt für kommende Live-Sessions mit Experten-Q&A anmelden.",
+  "breadcrumb.home": "Startseite",
+  "breadcrumb.resources": "Ressourcen",
+  "breadcrumb.webinars": "Webinare",
+  "title.headline": "Search Guard Webinare",
+  "title.text": "Live-Sessions rund um Security, Monitoring und Alerting für Elasticsearch und Kibana – jetzt für kommende Webinare mit Experten-Q&A anmelden.",
+  "lead.headline": "Praxisnahe Security-Sessions für Elasticsearch – von den Engineers, die genau diese Probleme täglich in der Produktion lösen.",
+  "lead.text": "Die meisten Hersteller-Webinare sind 40 Minuten Selbstvermarktung und 5 Minuten Inhalt. Unsere nicht. Jede Session dreht sich um ein echtes Problem, das unseren Engineers bei Kunden ständig begegnet: Auth-Setups, die bei wachsender Last zusammenbrechen, RBAC-Modelle, durch die Rechte durchsickern, Audit-Logs, die ausgerechnet das übersehen, worauf Prüfer achten, und Verschlüsselung, die zwar aktiviert, aber praktisch nutzlos ist. Wir zeigen die Lösung, gehen die Konfiguration Schritt für Schritt durch und beantworten die Fragen, die Sie wirklich beschäftigen.",
+  "section.headline": "Jetzt live – sofort ansehen",
+  "iframe.title": "Search Guard Webinar-Anmeldung"
+}

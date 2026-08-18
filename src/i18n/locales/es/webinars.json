@@ -1,0 +1,13 @@
+{
+  "meta.title": "Webinars de Search Guard: seguridad y alertas en vivo para Elasticsearch",
+  "meta.description": "Webinars gratuitos de Search Guard sobre seguridad, alertas y detección de anomalías en Elasticsearch y Kibana. Apúntate a las próximas sesiones en vivo con Q&A de expertos.",
+  "breadcrumb.home": "Inicio",
+  "breadcrumb.resources": "Recursos",
+  "breadcrumb.webinars": "Webinars",
+  "title.headline": "Webinars de Search Guard",
+  "title.text": "Sesiones en vivo sobre seguridad, monitorización y alertas en Elasticsearch y Kibana: apúntate a los próximos webinars con Q&A de expertos.",
+  "lead.headline": "Sesiones prácticas de seguridad en Elasticsearch, impartidas por los ingenieros que lidian con ella cada día en producción.",
+  "lead.text": "La mayoría de los webinars de fabricantes son 40 minutos de autopromoción y 5 de contenido real. Los nuestros no. Cada sesión parte de un problema real que nuestros ingenieros ven una y otra vez en los entornos de sus clientes: configuraciones de autenticación que se caen al escalar, modelos RBAC por los que se filtran permisos, registros de auditoría que se dejan justo lo que le importa al auditor y cifrado que sobre el papel está activado, pero que en la práctica no sirve de nada. Te enseñamos cómo se soluciona, repasamos la configuración paso a paso y respondemos las preguntas que de verdad quieres hacer.",
+  "section.headline": "En vivo ahora: míralo al instante",
+  "iframe.title": "Registro al webinar de Search Guard"
+}
