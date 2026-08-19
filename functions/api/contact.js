@@ -152,14 +152,10 @@ export async function onRequestPost(context) {
       visitorCountry,
     });
 
-    // Parallel execution of all integrations for better performance.
-    // NOTE: steps 1-3 are temporarily DISABLED for testing/debugging. Each
-    // disabled call is replaced by a resolved placeholder so the array keeps
-    // its four slots and the positional destructuring below stays correct.
+    // Parallel execution of all integrations for better performance
     const results = await Promise.allSettled([
-      // 1. Send notification to Matrix room — DISABLED for testing
-      Promise.resolve({ success: false, skipped: true }),
-      /* sendMatrixNotification(
+      // 1. Send notification to Matrix room
+      sendMatrixNotification(
         {
           first_name,
           last_name,
@@ -173,15 +169,13 @@ export async function onRequestPost(context) {
         env.MATRIX_SERVER_URL,
         env.MATRIX_TOKEN,
         logger
-      ), */
+      ),
 
-      // 2. Country-routed welcome email via SendGrid — DISABLED for testing
-      Promise.resolve({ success: false, skipped: true }),
-      // sendContactWelcomeEmail(body, env.SENDGRID_SENDMAIL_KEY, logger),
+      // 2. Send the country-routed welcome email via SendGrid (Mail Send scope)
+      sendContactWelcomeEmail(body, env.SENDGRID_SENDMAIL_KEY, logger),
 
-      // 3. Add to SendGrid marketing list — DISABLED for testing
-      Promise.resolve({ success: false, skipped: true }),
-      /* addContactToList(
+      // 3. Add to SendGrid marketing list (Marketing scope)
+      addContactToList(
         {
           email,
           firstName: first_name,
@@ -193,7 +187,7 @@ export async function onRequestPost(context) {
         env.SENDGRID_CONTACT_LIST_ID,
         env.SENDGRID_MARKETING_KEY,
         logger
-      ), */
+      ),
 
       // 4. Create contact and account in Zoho CRM
       (async () => {
