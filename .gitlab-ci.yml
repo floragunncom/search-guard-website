@@ -5,6 +5,7 @@ stages:
   - build
   - deploy
   - cache
+  - index
 
 variables:
   NODE_VERSION: "26"
@@ -44,24 +45,18 @@ build:
       index_count="$(find out -name 'index.html' | wc -l | tr -d ' ')"
       echo "Found ${index_count} prerendered index.html files in out/"
       test "${index_count}" -gt 0
-      #      if [ -n "${ALGOLIA_APP_ID:-}" ] && [ -n "${ALGOLIA_API_KEY:-}" ]; then
-      #        echo "Running optional Algolia indexing..."
-      #        if ! npm run indexBlogPosts -- --ALGOLIA_APP_ID="$ALGOLIA_APP_ID" --ALGOLIA_API_KEY="$ALGOLIA_API_KEY"; then
-      #          echo "Warning: Algolia indexing failed, but build artifacts were created successfully."
-      #        fi
-      #      else
-      #        echo "Skipping Algolia indexing because ALGOLIA_APP_ID/ALGOLIA_API_KEY are not set."
-      #      fi
       mv out/ dist/
   artifacts:
     paths:
       - dist/
+      # Freshly fetched Contentful posts, consumed by the algolia_index job
+      - src/Api/contentfulPosts.json
     expire_in: 1 hour
   only:
     - branches
     - tags
 
-# Deploy to Cloudflare Pages - Production (main branch)
+# Deploy to Cloudflare Pages - Production (master branch)
 deploy_production:
   tags:
     - build
@@ -73,7 +68,7 @@ deploy_production:
     - npm install -g wrangler
   script:
     - echo "Deploying to Cloudflare Pages (Production)..."
-    - wrangler pages deploy dist --project-name=${CLOUDFLARE_PROJECT_NAME} --branch=cloudflare-migration --commit-hash=${CI_COMMIT_SHA} --commit-message="${CI_COMMIT_MESSAGE}"
+    - wrangler pages deploy dist --project-name=${CLOUDFLARE_PROJECT_NAME} --branch=${CI_COMMIT_BRANCH} --commit-hash=${CI_COMMIT_SHA} --commit-message="${CI_COMMIT_MESSAGE}"
     - echo "Production deployment complete!"
     - echo "Main URL - https://search-guard-website.pages.dev"
     - echo "Deployment URL - https://$(echo ${CI_COMMIT_SHA} | cut -c1-8).search-guard-website.pages.dev"
@@ -81,23 +76,23 @@ deploy_production:
   #  name: migration
   #  url: https://coretex-axiom.pages.dev
   only:
+    - master
     - cloudflare-migration
   when: on_success
 
-# Purge Cloudflare cache after production deployment
+# Purge Cloudflare cache after a successful production deployment - master only
 purge_cloudflare_cache:
   tags:
     - build
   stage: cache
-  # TODO: Cache purge is disabled for now. To reactivate, replace the
-  # `rules: - when: never` below with a branch-scoped rule, e.g.:
-  #   rules:
-  #     - if: '$CI_COMMIT_BRANCH == "cloudflare-migration"'
-  #       when: on_success
-  rules:
-    - when: never #disabled for now
   image: curlimages/curl:latest
   dependencies: []
+  needs:
+    - job: deploy_production
+      artifacts: false
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+      when: on_success
   script:
     - echo "Purging Cloudflare cache for production deployment..."
     - |
@@ -123,3 +118,32 @@ purge_cloudflare_cache:
       fi
   #environment:
   #  name: production
+
+# Reindex blog posts in Algolia - master only, after a successful production deployment
+algolia_index:
+  tags:
+    - build
+  stage: index
+  image: node:${NODE_VERSION}
+  needs:
+    # artifacts: true pulls in the freshly fetched src/Api/contentfulPosts.json
+    - job: build
+      artifacts: true
+    - job: deploy_production
+      artifacts: false
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+      when: on_success
+  # A failed reindex must not fail the deployment pipeline
+  allow_failure: true
+  script:
+    - |
+      set -euo pipefail
+      if [ -z "${ALGOLIA_APP_ID:-}" ] || [ -z "${ALGOLIA_API_KEY:-}" ]; then
+        echo "Skipping Algolia indexing because ALGOLIA_APP_ID/ALGOLIA_API_KEY are not set."
+        exit 0
+      fi
+      echo "Installing dependencies..."
+      npm ci --cache .npm --prefer-offline
+      echo "Running Algolia indexing..."
+      npm run indexBlogPosts -- --ALGOLIA_APP_ID="$ALGOLIA_APP_ID" --ALGOLIA_API_KEY="$ALGOLIA_API_KEY" --FORCE=true
