@@ -352,8 +352,11 @@ Treat Vite pipeline as legacy/migration residue unless explicitly asked to reviv
 
 ## 16) Environment and Version Constraints
 
-- Node engine target: `>=20 <23`
-- Expected runtime in current setup: Node 20/22
+- Node engine target: `>=24`
+- Expected runtime in current setup: Node 24 (Active LTS); CI builds on `node:24`
+- No dependency in the tree caps the Node major, so the engine range has no
+  upper bound. Do not add one: the previous `<23` cap silently pinned the
+  project to Node versions that are now end-of-life.
 - Static host/CDN must support:
   - direct file serving for trailing slash routes
   - custom error page mapping to `404.html`

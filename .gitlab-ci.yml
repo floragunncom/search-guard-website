@@ -23,7 +23,9 @@ stages:
   - index
 
 variables:
-  NODE_VERSION: "26"
+  # Node 24 (Krypton) is Active LTS through ~May 2028. Node 26 is still a
+  # "Current" release, which upstream advises against for production.
+  NODE_VERSION: "24"
   # Pin wrangler to a major version so a breaking release cannot land in a
   # deploy unreviewed. Minor/patch updates still come in automatically.
   WRANGLER_VERSION: "4"
