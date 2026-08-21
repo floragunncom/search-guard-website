@@ -82,13 +82,12 @@ build:
     expire_in: 1 hour
   only:
     - branches
-    - tags
 
-# Deploy to Cloudflare Pages - runs for every branch and tag.
+# Deploy to Cloudflare Pages - runs for every branch.
 # Cloudflare routes it to production or to a preview based on --branch below.
-# Keep it unscoped: the two post-deploy jobs declare `needs: deploy_cloudflare`,
-# and a `needs` pointing at a job absent from the pipeline is a hard YAML error
-# that blocks pipeline creation entirely.
+# Keep it scoped no tighter than this: the two post-deploy jobs declare
+# `needs: deploy_cloudflare`, and a `needs` pointing at a job absent from the
+# pipeline is a hard YAML error that blocks pipeline creation entirely.
 deploy_cloudflare:
   tags:
     - build
@@ -103,11 +102,13 @@ deploy_cloudflare:
     - echo "Deploying to Cloudflare Pages (Branch ${CI_COMMIT_BRANCH})..."
     # --branch drives Cloudflare's production-vs-preview routing: it is a
     # production deploy only when it matches the Pages project's configured
-    # production branch. CI_COMMIT_BRANCH is empty on tag pipelines.
+    # production branch. Branch pipelines only, so it is always set.
     - wrangler pages deploy dist --project-name=${CLOUDFLARE_PROJECT_NAME} --branch=${CI_COMMIT_BRANCH} --commit-hash=${CI_COMMIT_SHA} --commit-message="${CI_COMMIT_MESSAGE}"
     - echo "Deployment complete!"
     - echo "Main URL - https://search-guard-website.pages.dev"
     - echo "Deployment URL - https://$(echo ${CI_COMMIT_SHA} | cut -c1-8).search-guard-website.pages.dev"
+  only:
+    - branches
   when: on_success
 
 # Purge the Cloudflare edge cache - master only, and only once new content is
@@ -123,10 +124,12 @@ purge_cloudflare_cache:
   needs:
     - job: deploy_cloudflare
       artifacts: false
-  # Note: `only: master` matches the ref *name*, so a tag named "master" would
-  # match too. Add `except: - tags` if that ever becomes a real possibility.
+  # `only` matches the ref *name*, so `except: - tags` is what keeps a tag named
+  # "master" from matching and pulling in an absent deploy_cloudflare via `needs`.
   only:
     - master
+  except:
+    - tags
   script:
     - echo "Purging Cloudflare cache for production deployment..."
     # Fail fast with a clear message rather than sending an unauthenticated request.
@@ -173,6 +176,8 @@ algolia_index:
       artifacts: false
   only:
     - master
+  except:
+    - tags
   # A stale search index is a real user-facing problem, so surface it as a red
   # pipeline rather than an easily-missed warning. Safe because this job is
   # terminal - nothing `needs` it and no stage follows `index`, so a failure
