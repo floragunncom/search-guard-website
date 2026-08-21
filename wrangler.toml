@@ -2,12 +2,15 @@
 # Documentation: https://developers.cloudflare.com/pages/
 
 name = "search-guard-website"
-compatibility_date = "2024-01-01"
+# Bump periodically; test against a preview deployment first.
+compatibility_date = "2026-08-01"
 
 # Pages configuration
 pages_build_output_dir = "dist"
 
-# Environment variables for local development
-# Production variables should be set in Cloudflare dashboard or GitLab CI/CD
-[vars]
-ENVIRONMENT = "migration"
+# No compatibility_flags needed: functions/ uses only Web-standard APIs
+# (fetch/Response/JSON), so nodejs_compat is unnecessary.
+
+# Smart Placement deliberately not enabled: these Functions call globally
+# distributed third-party APIs (SendGrid, Zoho, Matrix, Turnstile) with no
+# single backend to sit near, so visitor-proximate execution is better.
