@@ -10,6 +10,8 @@
  * Accepts the fields sent by the website newsletter form (Email.js):
  *   Required: email
  *   Required: ids   - SendGrid marketing list id(s); single value or array
+ *   Required: cf-turnstile-response (Cloudflare Turnstile token, injected
+ *             into the form by the Turnstile widget)
  *
  * Handles a subscription by (in parallel):
  * 1. Adding the email to the given SendGrid marketing list(s)
@@ -17,7 +19,8 @@
  */
 
 import { subscribeToLists } from '../lib/sendgrid.js';
-import { sendMatrixNotification } from '../lib/matrix.js';
+import { sendMatrixNotification, sendMatrixFailureAlert } from '../lib/matrix.js';
+import { validateTurnstile } from '../lib/turnstile.js';
 import { createLogger, sanitizeForLogging } from '../lib/logger.js';
 
 export async function onRequestPost(context) {
@@ -84,6 +87,32 @@ export async function onRequestPost(context) {
     // (the old Lambda used the CloudFront-Viewer-Country header for the notice).
     const visitorCountry = request.headers.get('CF-IPCountry') || '';
 
+    // Spam protection: Cloudflare Turnstile server-side token validation.
+    // Same cryptic-error convention as the contact endpoint so bots get no
+    // useful signal (0x7d = server-side problem, 0x7c = failed challenge).
+    const turnstileResult = await validateTurnstile({
+      token: body['cf-turnstile-response'],
+      secretKey: env.TURNSTILE_SECRET_KEY,
+      remoteIp: request.headers.get('CF-Connecting-IP'),
+      logger,
+    });
+
+    if (!turnstileResult.ok) {
+      const crypticCode =
+        turnstileResult.reason === 'config' || turnstileResult.reason === 'verify-error'
+          ? '0x7d'
+          : '0x7c';
+      logger.warn('Subscription rejected by Turnstile', {
+        reason: turnstileResult.reason,
+        visitorCountry,
+        email,
+      });
+      return new Response(JSON.stringify(`INVALID FORMAT ${crypticCode}`), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     logger.info('Starting parallel execution of integrations', {
       email,
       listIds,
@@ -120,7 +149,10 @@ export async function onRequestPost(context) {
       message: 'Thank you for signing up to our newsletter!',
       details: {
         list: listResult.status === 'fulfilled' ? 'added' : 'failed',
-        matrix: matrixResult.status === 'fulfilled' ? 'sent' : 'failed',
+        matrix:
+          matrixResult.status === 'fulfilled'
+            ? (matrixResult.value?.skipped ? 'skipped' : 'sent')
+            : 'failed',
       },
     };
 
@@ -136,10 +168,47 @@ export async function onRequestPost(context) {
       logger.error('Matrix notification failed', {
         error: matrixResult.reason?.message || matrixResult.reason,
       });
+    } else if (matrixResult.value?.skipped) {
+      logger.warn('Matrix notification skipped (missing configuration)');
     } else {
       logger.info('Matrix notification sent successfully', {
         eventId: matrixResult.value?.eventId,
       });
+    }
+
+    // Alert the Matrix room when any integration failed, so failures are
+    // noticed despite function logs not being persistent.
+    const failures = [];
+    if (listResult.status === 'rejected') {
+      failures.push({
+        step: 'SendGrid newsletter list',
+        error: listResult.reason?.message || String(listResult.reason),
+      });
+    }
+    if (matrixResult.status === 'rejected') {
+      failures.push({
+        step: 'Matrix notification',
+        error: matrixResult.reason?.message || String(matrixResult.reason),
+      });
+    }
+
+    if (failures.length > 0) {
+      try {
+        await sendMatrixFailureAlert(
+          { email },
+          'newsletter',
+          failures,
+          env.MATRIX_ROOM_ID,
+          env.MATRIX_SERVER_URL,
+          env.MATRIX_TOKEN,
+          logger
+        );
+      } catch (alertErr) {
+        logger.error('Matrix failure alert could not be sent', {
+          error: alertErr.message,
+          failedSteps: failures.map((f) => f.step),
+        });
+      }
     }
 
     logger.info('Newsletter request completed successfully', {
