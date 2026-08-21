@@ -24,6 +24,9 @@ stages:
 
 variables:
   NODE_VERSION: "26"
+  # Pin wrangler to a major version so a breaking release cannot land in a
+  # deploy unreviewed. Minor/patch updates still come in automatically.
+  WRANGLER_VERSION: "4"
   CLOUDFLARE_PROJECT_NAME: "search-guard-website"
   # The build shells out to Node scripts that emit UTF-8 content (Contentful
   # copy, sitemap); force a UTF-8 locale so they don't mangle it.
@@ -97,7 +100,7 @@ deploy_cloudflare:
   dependencies:
     - build
   before_script:
-    - npm install -g wrangler
+    - npm install -g wrangler@${WRANGLER_VERSION}
   script:
     - echo "Deploying to Cloudflare Pages (Branch ${CI_COMMIT_BRANCH})..."
     # --branch drives Cloudflare's production-vs-preview routing: it is a
