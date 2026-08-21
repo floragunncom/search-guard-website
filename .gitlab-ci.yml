@@ -1,22 +1,41 @@
 # GitLab CI/CD Pipeline for Search Guard Website
-# Builds static site and deploys to Cloudflare Pages
+# Builds the Next.js static export and deploys it to Cloudflare Pages.
+#
+# Pipeline shape per ref:
+#   master                -> build -> deploy_cloudflare -> { purge_cloudflare_cache, algolia_index }
+#   any other branch/Tag  -> build -> deploy_cloudflare
+#
+# Required GitLab CI/CD variables:
+#   CLOUDFLARE_API_TOKEN   - wrangler auth + cache purge (deploy + purge jobs)
+#   CLOUDFLARE_ACCOUNT_ID  - wrangler auth (deploy job)
+#   CLOUDFLARE_ZONE_ID     - cache purge target (purge job)
+#   ALGOLIA_APP_ID         - optional; algolia_index self-skips when unset
+#   ALGOLIA_API_KEY        - optional; algolia_index self-skips when unset
+# Note: if these are marked "protected" in GitLab, master must be a protected
+# branch or the jobs will see them as empty.
 
 stages:
   - build
   - deploy
+  # Post-deploy stages. Both are gated on deploy_cloudflare via `needs`, so they
+  # run concurrently and neither waits on the other.
   - cache
   - index
 
 variables:
   NODE_VERSION: "26"
   CLOUDFLARE_PROJECT_NAME: "search-guard-website"
+  # The build shells out to Node scripts that emit UTF-8 content (Contentful
+  # copy, sitemap); force a UTF-8 locale so they don't mangle it.
   LC_ALL: "C.UTF-8"
   LANG: "en_US.UTF-8"
   LANGUAGE: "en_US.UTF-8"
+  # Keep `npm ci` output focused on real errors.
   NPM_CONFIG_AUDIT: "false"
   NPM_CONFIG_FUND: "false"
 
-# Cache node_modules for faster builds
+# Shared npm cache. Keyed on package-lock.json so it is invalidated whenever
+# dependencies change. Applies to every job; only the Node-image jobs use it.
 cache:
   key:
     files:
@@ -26,7 +45,9 @@ cache:
     - .npm/
 
 
-# Build job - runs for all branches
+# Build job - runs for every branch and tag.
+# Deliberately branch-agnostic: no deploy/index/purge logic lives here, so a
+# build behaves identically no matter where it runs.
 build:
   tags:
     - build
@@ -37,64 +58,78 @@ build:
       set -euo pipefail
       echo "Installing dependencies..."
       npm ci --cache .npm --prefer-offline
+      # `npm run build` = fetch (Contentful -> src/Api/*.json) + next build + sitemap
       echo "Building static site ..."
       npm run build
+      # Fail loudly on a silently empty/partial export rather than deploying it.
       echo "Validating static output..."
       test -f out/index.html
       test -f out/sitemap.xml
       index_count="$(find out -name 'index.html' | wc -l | tr -d ' ')"
       echo "Found ${index_count} prerendered index.html files in out/"
       test "${index_count}" -gt 0
+      # Next exports to out/; wrangler is invoked against dist/ below.
       mv out/ dist/
   artifacts:
     paths:
       - dist/
-      # Freshly fetched Contentful posts, consumed by the algolia_index job
+      # Freshly fetched Contentful posts, consumed by the algolia_index job.
+      # A copy is committed in git, but it goes stale - `npm run fetch` above
+      # rewrites it, and this artifact overwrites the checkout downstream so we
+      # index exactly the content we just deployed.
       - src/Api/contentfulPosts.json
+    # Only needs to outlive the deploy/index jobs in the same pipeline.
     expire_in: 1 hour
   only:
     - branches
     - tags
 
-# Deploy to Cloudflare Pages - Production (master branch)
-deploy_production:
+# Deploy to Cloudflare Pages - runs for every branch and tag.
+# Cloudflare routes it to production or to a preview based on --branch below.
+# Keep it unscoped: the two post-deploy jobs declare `needs: deploy_cloudflare`,
+# and a `needs` pointing at a job absent from the pipeline is a hard YAML error
+# that blocks pipeline creation entirely.
+deploy_cloudflare:
   tags:
     - build
   stage: deploy
   image: node:${NODE_VERSION}
+  # Pulls dist/ from the build job.
   dependencies:
     - build
   before_script:
     - npm install -g wrangler
   script:
-    - echo "Deploying to Cloudflare Pages (Production)..."
+    - echo "Deploying to Cloudflare Pages (Branch ${CI_COMMIT_BRANCH})..."
+    # --branch drives Cloudflare's production-vs-preview routing: it is a
+    # production deploy only when it matches the Pages project's configured
+    # production branch. CI_COMMIT_BRANCH is empty on tag pipelines.
     - wrangler pages deploy dist --project-name=${CLOUDFLARE_PROJECT_NAME} --branch=${CI_COMMIT_BRANCH} --commit-hash=${CI_COMMIT_SHA} --commit-message="${CI_COMMIT_MESSAGE}"
-    - echo "Production deployment complete!"
+    - echo "Deployment complete!"
     - echo "Main URL - https://search-guard-website.pages.dev"
     - echo "Deployment URL - https://$(echo ${CI_COMMIT_SHA} | cut -c1-8).search-guard-website.pages.dev"
-  #environment:
-  #  name: migration
-  #  url: https://coretex-axiom.pages.dev
-  only:
-    - master
-    - cloudflare-migration
   when: on_success
 
-# Purge Cloudflare cache after a successful production deployment - master only
+# Purge the Cloudflare edge cache - master only, and only once new content is
+# actually live. Purging on a branch that never deployed would just cost us a
+# cold cache for nothing.
 purge_cloudflare_cache:
   tags:
     - build
   stage: cache
   image: curlimages/curl:latest
+  # No build artifacts needed - this job only talks to the Cloudflare API.
   dependencies: []
   needs:
-    - job: deploy_production
+    - job: deploy_cloudflare
       artifacts: false
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
-      when: on_success
+  # Note: `only: master` matches the ref *name*, so a tag named "master" would
+  # match too. Add `except: - tags` if that ever becomes a real possibility.
+  only:
+    - master
   script:
     - echo "Purging Cloudflare cache for production deployment..."
+    # Fail fast with a clear message rather than sending an unauthenticated request.
     - |
       if [ -z "$CLOUDFLARE_ZONE_ID" ] || [ -z "$CLOUDFLARE_API_TOKEN" ]; then
         echo "ERROR: CLOUDFLARE_ZONE_ID or CLOUDFLARE_API_TOKEN not set!"
@@ -102,43 +137,52 @@ purge_cloudflare_cache:
         exit 1
       fi
     - echo "Zone ID - ${CLOUDFLARE_ZONE_ID}"
+    # Full-zone purge: the static export rewrites hashed asset paths on every
+    # build, so a targeted per-URL purge would not be meaningfully cheaper.
     - |
       RESPONSE=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
         -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
         -H "Content-Type: application/json" \
         --data '{"purge_everything":true}')
     - echo "API Response - ${RESPONSE}"
+    # curl exits 0 on an HTTP error response, so the payload has to be inspected.
     - |
-      if echo "$RESPONSE" | grep -q '"success": true'; then
+      # Cloudflare answers with compact JSON ("success":true), so do not expect a space here
+      if echo "$RESPONSE" | grep -qE '"success":[[:space:]]*true'; then
         echo "✓ Cache purged successfully!"
       else
         echo "✗ Cache purge failed!"
         echo "$RESPONSE"
         exit 1
       fi
-  #environment:
-  #  name: production
 
-# Reindex blog posts in Algolia - master only, after a successful production deployment
+# Reindex blog posts in Algolia - master only, after a successful production
+# deployment, so the search index never describes content that is not live yet.
 algolia_index:
   tags:
     - build
   stage: index
   image: node:${NODE_VERSION}
   needs:
-    # artifacts: true pulls in the freshly fetched src/Api/contentfulPosts.json
+    # artifacts: true pulls in the freshly fetched src/Api/contentfulPosts.json,
+    # which is the file the indexing script reads.
     - job: build
       artifacts: true
-    - job: deploy_production
+    # Gate on the deploy without pulling dist/ - this job does not need it.
+    - job: deploy_cloudflare
       artifacts: false
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "master"'
-      when: on_success
-  # A failed reindex must not fail the deployment pipeline
-  allow_failure: true
+  only:
+    - master
+  # A stale search index is a real user-facing problem, so surface it as a red
+  # pipeline rather than an easily-missed warning. Safe because this job is
+  # terminal - nothing `needs` it and no stage follows `index`, so a failure
+  # here blocks nothing. The deploy and cache purge have already completed.
+  allow_failure: false
   script:
     - |
       set -euo pipefail
+      # Algolia credentials are optional - skip cleanly instead of failing when
+      # the variables are not configured. (`:-` is required under `set -u`.)
       if [ -z "${ALGOLIA_APP_ID:-}" ] || [ -z "${ALGOLIA_API_KEY:-}" ]; then
         echo "Skipping Algolia indexing because ALGOLIA_APP_ID/ALGOLIA_API_KEY are not set."
         exit 0
@@ -146,4 +190,8 @@ algolia_index:
       echo "Installing dependencies..."
       npm ci --cache .npm --prefer-offline
       echo "Running Algolia indexing..."
+      # --FORCE=true is required, not optional: indexBlogposts.js skips any post
+      # whose sys.updatedAt is in the past, which is every published post, so
+      # without it the job indexes nothing. Since this runs once per production
+      # deploy, a full reindex is the intended behaviour.
       npm run indexBlogPosts -- --ALGOLIA_APP_ID="$ALGOLIA_APP_ID" --ALGOLIA_API_KEY="$ALGOLIA_API_KEY" --FORCE=true
