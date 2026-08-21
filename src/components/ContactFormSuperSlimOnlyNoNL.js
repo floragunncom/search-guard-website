@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
+import Turnstile from './Turnstile/Turnstile';
 import {CONTACT_API_URL} from '../config/apiEndpoints';
 
 const ContactForm = () => {
@@ -259,6 +260,7 @@ const ContactForm = () => {
               </div>
             </div>
             <div className="contact-newsletter-wrapper">
+              <Turnstile />
               <div className="cta-wrapper">
                 <Button buttonStyle="default-button" text={sendbuttonValue}  />
               </div>
