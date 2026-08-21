@@ -10,6 +10,12 @@ import { createLogger } from './logger.js';
 
 const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
+// Abort the /siteverify call after this long. Without a timeout a hanging
+// verify request stalls the submission until the Workers limit kills it, which
+// the visitor experiences as a hung form rather than an error. On abort the
+// catch below maps the failure to 'verify-error', which callers already handle.
+const TURNSTILE_VERIFY_TIMEOUT_MS = 5000;
+
 /**
  * Validate a Turnstile token.
  *
@@ -25,7 +31,7 @@ const TURNSTILE_VERIFY_URL = 'https://challenges.cloudflare.com/turnstile/v0/sit
  * @param {string} params.secretKey - Turnstile secret key (env.TURNSTILE_SECRET_KEY)
  * @param {string} params.remoteIp - Visitor IP (CF-Connecting-IP header, optional)
  * @param {Object} params.logger - Logger instance (optional)
- * @returns {Promise<{ok: boolean, reason?: string, errorCodes?: string[]}>}
+ * @returns {Promise<{ok: boolean, reason?: string, errorCodes?: string[], timedOut?: boolean}>}
  */
 export async function validateTurnstile({ token, secretKey, remoteIp, logger = null }) {
   if (!logger) {
@@ -51,6 +57,7 @@ export async function validateTurnstile({ token, secretKey, remoteIp, logger = n
         response: token,
         remoteip: remoteIp || undefined,
       }),
+      signal: AbortSignal.timeout(TURNSTILE_VERIFY_TIMEOUT_MS),
     });
 
     const verifyResult = await verifyResponse.json();
@@ -72,9 +79,13 @@ export async function validateTurnstile({ token, secretKey, remoteIp, logger = n
     });
     return { ok: true };
   } catch (err) {
+    // AbortSignal.timeout() rejects with a TimeoutError DOMException.
+    const timedOut = err.name === 'TimeoutError' || err.name === 'AbortError';
     logger.error('Turnstile verification request failed, rejecting', {
       error: err.message,
+      timedOut,
+      timeoutMs: timedOut ? TURNSTILE_VERIFY_TIMEOUT_MS : undefined,
     });
-    return { ok: false, reason: 'verify-error' };
+    return { ok: false, reason: 'verify-error', timedOut };
   }
 }

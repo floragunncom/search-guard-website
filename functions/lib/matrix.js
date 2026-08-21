@@ -168,6 +168,87 @@ export async function sendMatrixFailureAlert(formData, formType, failures, matri
 }
 
 /**
+ * Send a Matrix alert for a server-side Turnstile failure.
+ *
+ * Turnstile fails closed: if the secret key is missing or the /siteverify API
+ * is unreachable, every submission is rejected. That is a total form outage,
+ * but it is returned as a deliberate 400 (so bots get no signal), which means
+ * uptime monitoring will not see it and the visitor gets no useful error.
+ * This alert is the only signal that the forms are down.
+ *
+ * Only called for the server-side reasons ('config', 'verify-error'). A failed
+ * challenge is ordinary bot traffic and must never alert.
+ *
+ * @param {string} reason - 'config' or 'verify-error'
+ * @param {string} formType - Type of form ('contact' or 'newsletter')
+ * @param {Object} details - Extra context, e.g. { timedOut, visitorCountry }
+ * @param {string} matrixRoomId - Matrix room ID
+ * @param {string} matrixServerUrl - Matrix server URL
+ * @param {string} matrixToken - Matrix access token
+ * @param {Object} logger - Logger instance (optional)
+ * @returns {Promise<Object>} Result of the send
+ */
+export async function sendMatrixTurnstileAlert(
+  reason,
+  formType,
+  details,
+  matrixRoomId,
+  matrixServerUrl,
+  matrixToken,
+  logger = null
+) {
+  if (!logger) {
+    logger = createLogger('matrix', {}, null);
+  }
+
+  if (!matrixRoomId || !matrixServerUrl || !matrixToken) {
+    logger.warn('Matrix Turnstile alert skipped: missing required configuration');
+    return { success: false, skipped: true, reason: 'Missing configuration' };
+  }
+
+  const message = formatTurnstileAlert(reason, formType, details);
+
+  const eventId = await sendMessageToRoom(message, matrixRoomId, matrixServerUrl, matrixToken, logger);
+
+  logger.info('Matrix Turnstile alert sent successfully', {
+    eventId,
+    roomId: matrixRoomId,
+    reason,
+  });
+
+  return { success: true, eventId };
+}
+
+/**
+ * Format a server-side Turnstile failure into a Matrix message
+ * @param {string} reason - 'config' or 'verify-error'
+ * @param {string} formType - Type of form ('contact' or 'newsletter')
+ * @param {Object} details - Extra context, e.g. { timedOut }
+ * @returns {Object} Formatted message with plain and HTML versions
+ */
+function formatTurnstileAlert(reason, formType, details = {}) {
+  let cause;
+  if (reason === 'config') {
+    cause = 'TURNSTILE_SECRET_KEY is not set on the Pages project';
+  } else if (details.timedOut) {
+    cause = 'the Turnstile /siteverify API timed out';
+  } else {
+    cause = 'the Turnstile /siteverify API could not be reached';
+  }
+
+  const plain =
+    `🚨 Search Guard ${formType} form is BLOCKED: ${cause}. ` +
+    `Turnstile fails closed, so every submission is currently being rejected.`;
+
+  const html = `<h3>🚨 ${escapeHtml(formType)} form is blocked</h3>
+<p><strong>Cause:</strong> ${escapeHtml(cause)}.</p>
+<p>Turnstile fails closed, so <strong>every ${escapeHtml(formType)} submission is currently rejected</strong> with a deliberate 400 response. Uptime monitoring will not catch this.</p>
+<p>Check the <code>TURNSTILE_SECRET_KEY</code> Pages secret and the status of <code>challenges.cloudflare.com</code>.</p>`;
+
+  return { plain, html };
+}
+
+/**
  * Format form data into a Matrix message
  * @param {Object} formData - Form submission data
  * @param {string} formType - Type of form ('contact' or 'newsletter')

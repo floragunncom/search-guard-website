@@ -19,7 +19,11 @@
  */
 
 import { subscribeToLists } from '../lib/sendgrid.js';
-import { sendMatrixNotification, sendMatrixFailureAlert } from '../lib/matrix.js';
+import {
+  sendMatrixNotification,
+  sendMatrixFailureAlert,
+  sendMatrixTurnstileAlert,
+} from '../lib/matrix.js';
 import { validateTurnstile } from '../lib/turnstile.js';
 import { createLogger, sanitizeForLogging } from '../lib/logger.js';
 
@@ -107,6 +111,30 @@ export async function onRequestPost(context) {
         visitorCountry,
         email,
       });
+
+      // A server-side failure blocks the form for everyone, but the reply
+      // below is a deliberate 400, so neither the visitor nor uptime
+      // monitoring will reveal it. Alert on it. Fired through waitUntil so it
+      // never delays the response, and a failed alert never breaks the reply.
+      if (turnstileResult.reason === 'config' || turnstileResult.reason === 'verify-error') {
+        context.waitUntil(
+          sendMatrixTurnstileAlert(
+            turnstileResult.reason,
+            'newsletter',
+            { timedOut: turnstileResult.timedOut, visitorCountry },
+            env.MATRIX_ROOM_ID,
+            env.MATRIX_SERVER_URL,
+            env.MATRIX_TOKEN,
+            logger
+          ).catch((alertErr) => {
+            logger.error('Matrix Turnstile alert could not be sent', {
+              error: alertErr.message,
+              reason: turnstileResult.reason,
+            });
+          })
+        );
+      }
+
       return new Response(JSON.stringify(`INVALID FORMAT ${crypticCode}`), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
