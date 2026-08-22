@@ -60,14 +60,23 @@ variables:
   NPM_CONFIG_AUDIT: "false"
   NPM_CONFIG_FUND: "false"
 
-# Shared npm cache. Keyed on package-lock.json so it is invalidated whenever
-# dependencies change. Applies to every job; only the Node-image jobs use it.
-cache:
-  key:
-    files:
-      - package-lock.json
+# Shared npm tarball cache - referenced explicitly by the jobs that need it, never
+# global. A global cache block applies to *every* job with a default policy of
+# pull-push, so all five jobs used to download and re-upload the archive - including
+# the curl and alpine jobs, which cannot use it (cache extraction runs in the runner
+# helper image, not the job image).
+#
+# Only .npm/ is cached, not node_modules/: `npm ci` deletes node_modules/ before
+# installing, so caching it uploaded ~27k files that were thrown away on arrival.
+# The .npm store is ~1.4k compressed tarballs by comparison.
+#
+# The key is deliberately stable rather than hashed on package-lock.json: the .npm
+# store is content-addressed and additive, so npm never needs it invalidated and
+# stale tarballs simply sit unused. A lockfile bump therefore reuses every unchanged
+# tarball instead of installing cold. Bump to npm-v2 by hand if it ever needs clearing.
+.npm_cache: &npm_cache
+  key: npm-v1
   paths:
-    - node_modules/
     - .npm/
 
 
@@ -79,6 +88,11 @@ build:
     - build
   stage: build
   image: node:${NODE_VERSION}
+  # The single cache writer in the pipeline. Every other job is pull-only or has no
+  # cache at all, so one pipeline means one upload against the object store.
+  cache:
+    <<: *npm_cache
+    policy: pull-push
   script:
     - |
       set -euo pipefail
@@ -192,6 +206,11 @@ algolia_index:
     - build
   stage: index
   image: node:${NODE_VERSION}
+  # Read-only: this job runs `npm ci` below so it needs the tarballs, but it must
+  # never write the cache back - build is the sole writer.
+  cache:
+    <<: *npm_cache
+    policy: pull
   needs:
     # artifacts: true pulls in the freshly fetched src/Api/contentfulPosts.json,
     # which is the file the indexing script reads.
