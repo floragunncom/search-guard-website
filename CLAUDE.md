@@ -77,7 +77,6 @@ Runs:
 1. `npm run fetch`
 2. `npm run next:build` (static export → `out/`)
 3. `npm run sitemap`
-4. `npm run postbuild:redirects`
 
 Note: `next:export-dist` (copy `out/` → `dist/`) is deprecated. Output goes directly to `out/`.
 
@@ -135,11 +134,6 @@ Important:
 
 ## 7) Redirects and Canonical Rules
 
-- `scripts/postbuild-redirects.js` creates static fallback page:
-  - `/blog/page/1/index.html` => immediate redirect to `/blog/`.
-- `scripts/postbuild-redirects.js` also creates:
-  - legacy root blog slug redirects to canonical `/blog/.../` routes
-  - explicit typo/legacy redirects (for example `/imprint/` => `/impressum/`)
 - Preferred production canonical redirect handling remains Cloudflare 301 rules.
 - Do not reintroduce `.htaccess` generation inside `out/` for this project.
 
@@ -247,10 +241,11 @@ CI/CD gating currently enforced:
 - Build fails if `out/index.html` is missing.
 - Build fails if `out/sitemap.xml` is missing.
 - Build fails if no exported `index.html` pages are found in `out`.
-- Build always regenerates sitemap and postbuild redirects through `npm run build`.
+- Build always regenerates sitemap through `npm run build`.
 
 Deploy expectations:
-- Upload `out/` via SFTP mirror (`lftp` with `--parallel=20`).
+- Deploy `dist/` to Cloudflare Pages via `wrangler pages deploy dist --project-name search-guard-website` (production branch: `master`).
+- Cloudflare Pages Functions under `functions/` are auto-discovered and deployed with the site; they require the form secrets to be set as Pages secrets (see section 20).
 - Optional Cloudflare cache purge.
 
 ## 11) Reusable Component Catalog
@@ -296,7 +291,6 @@ Page-specific sub-components go in `src/components/<PageName>/` (e.g. `src/compo
 - `src/Routes.js`: route table and redirect logic
 - `src/components/PageWrapper/PageWrapper.js`: default metadata
 - `scripts/sitemap.js`: sitemap generation
-- `scripts/postbuild-redirects.js`: fallback redirect page generation
 - `styles/main.scss`: central SCSS entry point (all component SCSS aggregated via `@use`, imported by `_app.js`)
 - `src/utils/styleUtils.js`: color schema CSS class utilities
 - `src/utils/routeDataLoader.js`: build-time page data loader (posts, persons, whitepapers)
@@ -326,7 +320,6 @@ Treat Vite pipeline as legacy/migration residue unless explicitly asked to reviv
 6. If SEO-sensitive changes were made, check:
    - `out/sitemap.xml`
    - 404 output
-   - redirect fallback output (`/blog/page/1/` + generated legacy redirects)
 
 ## 15) Frequent Failure Modes
 
@@ -359,8 +352,11 @@ Treat Vite pipeline as legacy/migration residue unless explicitly asked to reviv
 
 ## 16) Environment and Version Constraints
 
-- Node engine target: `>=20 <23`
-- Expected runtime in current setup: Node 20/22
+- Node engine target: `>=24`
+- Expected runtime in current setup: Node 24 (Active LTS); CI builds on `node:24`
+- No dependency in the tree caps the Node major, so the engine range has no
+  upper bound. Do not add one: the previous `<23` cap silently pinned the
+  project to Node versions that are now end-of-life.
 - Static host/CDN must support:
   - direct file serving for trailing slash routes
   - custom error page mapping to `404.html`
@@ -418,9 +414,8 @@ Preferred: Cloudflare 301 rule.
 
 Code-side fallback options:
 1. Add a route in `src/Routes.js` using `LegacyRedirect` to canonical path.
-2. If hard requirement exists for static fallback file route, extend `scripts/postbuild-redirects.js`.
-3. Keep canonical URL tag on target page correct.
-4. Run `npm run build-local` and verify redirect behavior in generated HTML.
+2. Keep canonical URL tag on target page correct.
+3. Run `npm run build-local` and verify redirect behavior in generated HTML.
 
 ### D) Fix missing/incorrect page metadata
 

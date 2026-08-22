@@ -1,0 +1,21 @@
+# Cloudflare Pages _headers for search-guard.com
+# Replicates the security + cache headers from the nginx config.
+# NOTE: HSTS is best enabled at the Cloudflare edge (SSL/TLS > Edge Certificates
+# > HTTP Strict Transport Security). Keeping it here too is harmless.
+
+/*
+  Strict-Transport-Security: max-age=63072000
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+
+# nginx set "Cache-Control: public" with "expires 30d" for all assets.
+# Cloudflare already caches static assets aggressively; these pin browser cache.
+/assets/*
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.css
+  Cache-Control: public, max-age=2592000
+
+/*.js
+  Cache-Control: public, max-age=2592000

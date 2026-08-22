@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
+import Turnstile from './Turnstile/Turnstile';
+import {CONTACT_API_URL} from '../config/apiEndpoints';
 
 const ContactForm = () => {
   const [sendbuttonValue, setSendbuttonValue] = React.useState('Send Message');
@@ -11,7 +13,7 @@ const ContactForm = () => {
       data[input.name] = input.value;
     });
 
-    return fetch('https://56dmarth25.execute-api.eu-central-1.amazonaws.com/prod/', {
+    return fetch(CONTACT_API_URL, {
       method: 'POST',
       cache: 'no-cache',
       headers: {
@@ -272,6 +274,7 @@ const ContactForm = () => {
                 our privacy policy for a better understanding on how we protect
                 and manage your submitted data.
               </div>
+                <Turnstile />
                 <div className="cta-wrapper">
                     <Button text={sendbuttonValue} additionalCss="cf-submit" variant="submit"/>
                 </div>
