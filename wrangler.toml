@@ -1,0 +1,16 @@
+# Wrangler configuration for Cloudflare Pages
+# Documentation: https://developers.cloudflare.com/pages/
+
+name = "search-guard-website"
+# Bump periodically; test against a preview deployment first.
+compatibility_date = "2026-08-01"
+
+# Pages configuration
+pages_build_output_dir = "dist"
+
+# No compatibility_flags needed: functions/ uses only Web-standard APIs
+# (fetch/Response/JSON), so nodejs_compat is unnecessary.
+
+# Smart Placement deliberately not enabled: these Functions call globally
+# distributed third-party APIs (SendGrid, Zoho, Matrix, Turnstile) with no
+# single backend to sit near, so visitor-proximate execution is better.

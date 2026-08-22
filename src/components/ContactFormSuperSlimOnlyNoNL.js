@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
+import Turnstile from './Turnstile/Turnstile';
+import {CONTACT_API_URL} from '../config/apiEndpoints';
 
 const ContactForm = () => {
 
@@ -12,7 +14,7 @@ const ContactForm = () => {
             data[input.name] = input.value;
         });
         // Default options are marked with *
-        return fetch('https://56dmarth25.execute-api.eu-central-1.amazonaws.com/prod/', {
+        return fetch(CONTACT_API_URL, {
             method: 'POST',
             cache: 'no-cache',
             headers: {
@@ -258,6 +260,7 @@ const ContactForm = () => {
               </div>
             </div>
             <div className="contact-newsletter-wrapper">
+              <Turnstile />
               <div className="cta-wrapper">
                 <Button buttonStyle="default-button" text={sendbuttonValue}  />
               </div>

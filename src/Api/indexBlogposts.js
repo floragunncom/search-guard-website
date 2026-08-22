@@ -45,7 +45,7 @@ async function indexBlogPosts() {
         const jsonArray = JSON.parse(data);
 
         // Iterate over all items in the array
-        for (const item of jsonArray) {
+        for (const [index, item] of jsonArray.entries()) {
             if (item.fields.postContent) {
 
                 // Only index new and unchanged blogposts
@@ -112,10 +112,15 @@ async function indexBlogPosts() {
                 console.warn(`Item at index ${index} does not have a "postContent" field.`);
             }
         }
-    } catch (parseErr) {
-        console.error('Error parsing JSON:', parseErr);
+    } catch (err) {
+        console.error('Error indexing blogposts:', err);
+        // Rethrow so the caller can fail the process instead of reporting a false success
+        throw err;
     }
 };
 
-indexBlogPosts();
+indexBlogPosts().catch((err) => {
+    console.error('Blogpost indexing failed:', err);
+    process.exitCode = 1;
+});
 
