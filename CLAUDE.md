@@ -226,10 +226,18 @@ When fixing UI regressions:
 
 File: `.gitlab-ci.yml`
 
-Stages:
-1. `build_prod` (stage: `build`)
-2. `deploy_to_prod` (stage: `deploy`)
-3. `flush_cloudflare_cache` (stage: `post_deploy`)
+Stages and jobs (the header comment in `.gitlab-ci.yml` is the authoritative version):
+
+| Stage | Job | Runs on |
+|-------|-----|---------|
+| `build` | `build` | every branch and tag |
+| `deploy` | `deploy_cloudflare` | branches only (`only: - branches`) |
+| `cache` | `purge_cloudflare_cache` | `master`, except tags |
+| `index` | `algolia_index` | `master`, except tags |
+| `cleanup` | `cleanup_cloudflare_deployments` | every pipeline — see caveat below |
+
+The three post-deploy stages (`cache`, `index`, `cleanup`) each gate on `deploy_cloudflare`
+via `needs`, so they run concurrently and none can block or skip the others.
 
 Build expectations:
 - `npm ci`
@@ -244,9 +252,36 @@ CI/CD gating currently enforced:
 - Build always regenerates sitemap through `npm run build`.
 
 Deploy expectations:
-- Deploy `dist/` to Cloudflare Pages via `wrangler pages deploy dist --project-name search-guard-website` (production branch: `master`).
-- Cloudflare Pages Functions under `functions/` are auto-discovered and deployed with the site; they require the form secrets to be set as Pages secrets (see section 20).
+- Deploy `dist/` to Cloudflare Pages via `wrangler pages deploy dist --project-name search-guard-website`.
+- `--branch=$CI_COMMIT_BRANCH` drives Cloudflare's production-vs-preview routing: the deploy
+  is a *production* deploy only when the branch matches the Pages project's configured
+  production branch. **Unresolved:** this file has said `master`, while
+  `FORMS-INTEGRATION.md` ("Production secrets & deploy") says `cloudflare-migration`.
+  Confirm against the Cloudflare dashboard before relying on either — the answer also
+  decides which branch belongs in `KEEP_LATEST_BRANCHES` (below).
+- Cloudflare Pages Functions under `functions/` are auto-discovered and deployed with the
+  site; they require the form secrets to be set as Pages secrets. The full variable list and
+  the `wrangler pages secret bulk` workflow live in `FORMS-INTEGRATION.md`, not in this file.
 - Optional Cloudflare cache purge.
+
+Housekeeping (`cleanup_cloudflare_deployments`):
+- Every branch pipeline creates a Pages deployment and Cloudflare keeps them forever, so
+  this job prunes them. It lists all deployments through the Pages API (paginated, stopping
+  on the first empty page), deletes everything older than `RETENTION_DAYS` (14), and always
+  keeps the newest deployment of each branch in `KEEP_LATEST_BRANCHES`.
+- `KEEP_LATEST_BRANCHES` currently reads `"master main release"`. Neither `main` nor
+  `release` exists in this repo — they are residue from the project the job was copied from.
+- It deliberately does not pass `force=true`, so Cloudflare's own refusal to delete the live
+  production deployment (error `8000034`) and aliased deployments (`8000035`) acts as a
+  second safety net under the branch guard. Rejections are logged and skipped, not fatal.
+- Set the `DRY_RUN` variable to `"true"` (CI/CD settings, or on "Run pipeline") to log what
+  would be deleted without deleting anything.
+- Needs `CLOUDFLARE_ACCOUNT_ID` explicitly: it builds the API URL with `curl` and cannot
+  resolve the account implicitly the way `wrangler` does.
+- Known rough edges, documented in the `.gitlab-ci.yml` header: the job has no
+  `only`/`except`, so it runs on every branch rather than just `master`, and it is pulled
+  into tag pipelines where its `needs` target (`deploy_cloudflare`, `only: - branches`) does
+  not exist — which makes GitLab fail pipeline creation. Latent until the first tag.
 
 ## 11) Reusable Component Catalog
 
