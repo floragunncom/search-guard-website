@@ -27,10 +27,12 @@
       "title": "About Search Guard",
       "entries": [
         {
+          "featured": true,
           "question": "What is Search Guard?",
           "answer": "Search Guard is an enterprise security and alerting suite for Elasticsearch and Kibana. It adds authentication, role-based access control, document- and field-level security, audit logging, encryption at rest, and alerting to your Elastic Stack — everything regulated organizations need to run Elasticsearch securely and stay compliant."
         },
         {
+          "featured": true,
           "question": "What are the main features?",
           "answer": "Search Guard covers the full security lifecycle of an Elasticsearch cluster: TLS encryption for all traffic, authentication via LDAP, Active Directory, SAML, OpenID Connect, Kerberos, and JSON Web Tokens, role-based access control down to individual documents and fields, Kibana multi-tenancy, comprehensive audit logging, encryption at rest, and the Signals alerting module for monitoring your data and triggering notifications via email, Slack, PagerDuty, Jira, webhooks, and more."
         },
@@ -39,6 +41,7 @@
           "answer": "Elasticsearch ships with basic security features free of charge, and for simple setups they may be all you need. Search Guard is built for organizations that need more: enterprise authentication (SAML, OpenID Connect, LDAP/Active Directory), fine-grained document- and field-level security, full audit logging for compliance, encryption at rest, and multi-tenancy — combined with a simple per-cluster license that doesn't grow with your node count, and support delivered directly by the engineers who build the product."
         },
         {
+          "featured": true,
           "question": "Who is Search Guard for?",
           "answer": "Organizations of every size that run Elasticsearch — with a special focus on regulated industries such as finance, healthcare, government, research, and critical infrastructure, where access control, auditability, and data protection are mandatory. Search Guard is trusted by enterprises, universities, and public institutions worldwide."
         },

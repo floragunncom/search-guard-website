@@ -21,7 +21,7 @@ const Resource = () => {
 
     const breadcrumb = [
         { id: 1, anchor: '/', name: t('breadcrumb.home') },
-        { id: 1, anchor: '/resource/', name: t('breadcrumb.resources') },
+        { id: 2, anchor: '/resource/', name: t('breadcrumb.resources') },
     ];
 
   return (

@@ -117,6 +117,102 @@ $navbar-height: 56px;
   text-align:left
 }
 
+// "From the labs" grouping in the Solutions menus (desktop dropdown + sidenav)
+
+#nav-solutions li.divider {
+  min-height: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(1, 239, 221, 0.4);
+  &:hover {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+}
+
+// The flyout submenu must be allowed to extend beyond the dropdown box.
+// The solid background (needs !important against the global
+// `.dropdown-content { background-color: unset !important }`) prevents
+// sub-pixel seams between item backgrounds from showing the page through.
+#nav-solutions.dropdown-content {
+  overflow: visible;
+  background-color: $darkBlueNav !important;
+}
+
+#nav-solutions li.nav-labs-flyout {
+  position: relative;
+
+  > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-labs-flyout__caret {
+    color: $secondary;
+    font-size: 20px;
+    margin-left: 8px;
+  }
+
+  .nav-labs-flyout__menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 250px;
+    // !important needed: Disclosure.scss leaks a global
+    // `ul { margin-left: 20px !important }` which would push the flyout
+    // 20px away from its parent, breaking hover continuity.
+    margin: 0 !important;
+    padding: 0;
+    list-style: none;
+    background-color: $darkBlueNav;
+
+    li {
+      clear: both;
+      cursor: pointer;
+      min-height: 50px;
+      line-height: 1.5rem;
+      width: 100%;
+      text-align: left;
+
+      > a {
+        display: block;
+        padding: 14px 16px;
+        background-color: $darkBlueNav;
+        color: $white;
+        font-size: 16px;
+      }
+
+      &:hover {
+        border-bottom: 2px solid #01EFDD;
+        margin-bottom: -2px;
+      }
+    }
+  }
+
+  &:hover > .nav-labs-flyout__menu,
+  &:focus-within > .nav-labs-flyout__menu {
+    display: block;
+  }
+}
+
+.sidenav li > span.nav-labs-header {
+  display: block;
+  padding: 0 32px;
+  line-height: 48px;
+  color: $secondary;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.sidenav li.nav-labs > ul > li > a {
+  padding-left: 48px;
+}
+
 .btn-search-mobile {
   text-align: center;
   width: 1.5rem;

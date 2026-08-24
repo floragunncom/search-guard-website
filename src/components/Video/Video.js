@@ -47,7 +47,7 @@ const Video = ({ playlist: showPlaylist, videos: allVideos = [] }) => {
         }
       >
         <div className="row">
-          <h3 className="video-headline" id="videos">Videos</h3>
+          <h3 className="video-headline">Videos</h3>
            <div className="video-description">
             <div className="video-description-video">
               <iframe

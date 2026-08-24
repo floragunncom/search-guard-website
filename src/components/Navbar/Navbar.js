@@ -120,11 +120,17 @@ const Navbar = ({ background = 'white', landing }) => {
             <a role="button" tabIndex={0} className="navbar__item" >{t('nav.solutions')}</a>
             <ul >
               <li><a href={lp('/security/')}>{t('nav.security')}</a></li>
+              <li><a href={lp('/compliance/')}>{t('nav.compliance')}</a></li>
               <li><a href={lp('/alerting/')}>{t('nav.alerting')}</a></li>
-              <li><a href={lp('/anomaly-detection/')}>{t('nav.anomalyDetection')}</a></li>
               <li><a href={lp('/encryption-at-rest/')}>{t('nav.encryptionAtRest')}</a></li>
-              <li><a href={lp('/indexmanagement/')}>{t('nav.indexManagement')}</a></li>
               <li><a href={lp('/tlstool/')}>{t('nav.tlsTool')}</a></li>
+              <li className="nav-labs">
+                <span className="nav-labs-header">{t('nav.fromTheLabs')}</span>
+                <ul>
+                  <li><a href={lp('/anomaly-detection/')}>{t('nav.anomalyDetection')}</a></li>
+                  <li><a href={lp('/indexmanagement/')}>{t('nav.indexManagement')}</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li><a className="navbar__item" href={lp('/search-guard-free-trial/')}>{t('nav.download')}</a></li>
@@ -161,11 +167,21 @@ const Navbar = ({ background = 'white', landing }) => {
         </ul>
         <ul id="nav-solutions" className="dropdown-content">
           <li><a href={lp('/security/')}>{t('nav.security')}</a></li>
+          <li><a href={lp('/compliance/')}>{t('nav.compliance')}</a></li>
           <li><a href={lp('/alerting/')}>{t('nav.alerting')}</a></li>
-          <li><a href={lp('/anomaly-detection/')}>{t('nav.anomalyDetection')}</a></li>
           <li><a href={lp('/encryption-at-rest/')}>{t('nav.encryptionAtRest')}</a></li>
-          <li><a href={lp('/indexmanagement/')}>{t('nav.indexManagement')}</a></li>
           <li><a href={lp('/tlstool/')}>{t('nav.tlsTool')}</a></li>
+          <li className="divider" tabIndex={-1} />
+          <li className="nav-labs-flyout">
+            <a role="button" tabIndex={0}>
+              {t('nav.fromTheLabs')}
+              <i className="material-icons nav-labs-flyout__caret">arrow_right</i>
+            </a>
+            <ul className="nav-labs-flyout__menu">
+              <li><a href={lp('/anomaly-detection/')}>{t('nav.anomalyDetection')}</a></li>
+              <li><a href={lp('/indexmanagement/')}>{t('nav.indexManagement')}</a></li>
+            </ul>
+          </li>
         </ul>
       </>
     );
