@@ -30,7 +30,7 @@ a.footer-links {
   color: $white;
 }
 
-.footer-list-headline a, .footer-list-item a {
+.footer-list-headline a, .footer-list-headline span, .footer-list-item a {
   font-size: 14px;
   line-height: 14px;
   letter-spacing: 1px;
@@ -53,6 +53,30 @@ a.footer-links {
     position: relative;
     text-align: center;
     top: -16px;
+  }
+}
+
+.footer-list-subheadline {
+  margin: 24px 0 16px;
+  span {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1px;
+    margin-left: 4.75px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $secondary;
+  }
+  @media only screen and (max-width: $mobile) {
+    text-align: center;
+    margin: 16px 0 0;
+  }
+}
+
+.footer-list-item--sub {
+  margin-left: 16px;
+  @media only screen and (max-width: $mobile) {
+    margin-left: 0;
   }
 }
 
