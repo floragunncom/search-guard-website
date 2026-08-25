@@ -233,19 +233,22 @@ class MyDocument extends Document {
           />
 
           {/* Google Tag Manager (GTM-TDLZ33C) — gated behind Cookie-Script "performance" consent.
-              type="text/plain" keeps it inert until the visitor accepts; Cookie-Script then
-              rewrites it to an executable script. */}
+              type="text/plain" keeps it inert; data-cookiescript="accepted" tells Cookie-Script
+              to rewrite it to an executable script once the visitor consents to the category.
+              Both attributes are required — without data-cookiescript the tag stays inert forever. */}
           <script
             type="text/plain"
+            data-cookiescript="accepted"
             data-cookiecategory="performance"
             dangerouslySetInnerHTML={{
               __html:
                 "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TDLZ33C');",
             }}
           />
-          {/* Microsoft Clarity — gated behind Cookie-Script "performance" consent. */}
+          {/* Microsoft Clarity — gated behind Cookie-Script "performance" consent (same pattern). */}
           <script
             type="text/plain"
+            data-cookiescript="accepted"
             data-cookiecategory="performance"
             dangerouslySetInnerHTML={{
               __html:
