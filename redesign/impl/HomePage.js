@@ -7,7 +7,6 @@ import HomeHero from '../../components/Hero/HomeHero';
 import WhySearchGuard from '../../components/WhySearchGuard/WhySearchGuard';
 import ProductPillars from '../../components/ProductPillars/ProductPillars';
 import TrustedBy from '../../components/TrustedBy/TrustedBy';
-import TrustBar from '../../components/TrustBar/TrustBar';
 import QuickstartStrip from '../../components/QuickstartStrip/QuickstartStrip';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
 import Quotes from '../../components/Quotes/Quotes';
@@ -52,15 +51,13 @@ const HomePage = () => {
             <ProductPillars colorschema="dark"/>
             {/* 4. Trust bar — logo wall + trust items; TrustBar replaces Labels (Task 4) */}
             <TrustedBy/>
-            <TrustBar/>
+            {/* TODO Task 4: replace <Labels/> with the new TrustBar items (see IMPLEMENTATION.md §4) */}
             {/* 5. 60-second quickstart (Task 5) */}
             <QuickstartStrip/>
             {/* 6. Pricing teaser — new headline + intro via home.json (Task 6) */}
             <LicensingModel
                 topButtons
                 headline={t('licensing.headline')}
-                subheadline={t('licensing.intro')}
-                quoteButton={{ text: t('licensing.quoteButton'), link: '/contacts/' }}
                 tableView={false}
             />
             {/* 7. Social proof — trim quotes content separately (Task 7) */}

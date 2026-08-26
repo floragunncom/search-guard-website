@@ -1,0 +1,29 @@
+@use '../../styles/Colors' as *;
+
+.hero-microtrust {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+  padding: 0;
+  list-style: none;
+
+  li {
+    color: $secondary-light;
+    font-size: 0.9rem;
+
+    &::before {
+      content: '✓';
+      color: $secondary;
+      margin-right: 0.4rem;
+    }
+  }
+}
+
+.hero-screenshot {
+  max-width: 100%;
+  margin-top: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}

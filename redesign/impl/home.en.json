@@ -36,7 +36,6 @@
     "intro": "Search Guard grew from securing Elasticsearch into everything around it — alerting, encryption, and index operations included.",
     "previewBadge": "Preview",
     "previewNote": "Preview features are included in every trial — try them and tell us what you think.",
-    "button": "Learn more",
     "security": {
       "headline": "Security",
       "text": "Authentication, role-based access control down to fields and documents, multi-tenancy, and full audit logging."
@@ -60,22 +59,10 @@
   },
   "trustbar": {
     "headline": "Trusted where security is non-negotiable",
-    "since": {
-      "headline": "Since 2013",
-      "text": "Securing Elasticsearch clusters for over a decade"
-    },
-    "cve": {
-      "headline": "CVE Numbering Authority",
-      "text": "Authorized by MITRE to issue CVEs"
-    },
-    "memberships": {
-      "headline": "BSI Alliance & TeleTrusT",
-      "text": "Member of the Alliance for Cybersecurity and TeleTrusT"
-    },
-    "germany": {
-      "headline": "Made in Germany",
-      "text": "Developed, hosted, and supported in the EU"
-    }
+    "since": { "headline": "Since 2013", "text": "Securing Elasticsearch clusters for over a decade" },
+    "cve": { "headline": "CVE Numbering Authority", "text": "Authorized by MITRE to issue CVEs" },
+    "memberships": { "headline": "BSI Alliance & TeleTrusT", "text": "Member of the Alliance for Cybersecurity and TeleTrusT" },
+    "germany": { "headline": "Made in Germany", "text": "Developed, hosted, and supported in the EU" }
   },
   "quickstart": {
     "headline": "See it running in 60 seconds",
@@ -85,13 +72,10 @@
     "copied": "Copied!",
     "docsLink": "Full quickstart guide"
   },
-  "trustedBy": {
-    "headline": "Search Guard is trusted by"
-  },
+  "trustedBy": { "headline": "Search Guard is trusted by" },
   "licensing": {
     "headline": "Simple pricing: per cluster, not per node",
     "intro": "One flat license per production cluster — unlimited nodes, dev and staging free. Your cluster grows; your costs don't.",
-    "quoteButton": "Get a quote",
     "standardEditions": "standard editions",
     "academicCustom": "academic & custom",
     "infoText": {
@@ -140,49 +124,6 @@
       "headline": "Get your quote",
       "text": "Tell us your cluster count — quote within one business day.",
       "button": "Get a quote"
-    }
-  },
-  "quotes": {
-    "headline": "What our clients say",
-    "0": {
-      "quote": "Search Guard met all of our needs and more. Not only have we found open source tools that meet our needs, but we've found a partner that's worked with us through the development of the new platform. They've been responsive and engaged every step of the way.",
-      "author": "Steve Croce",
-      "profession": " Senior Product Manager and Head of User Experience",
-      "company": "ObjectRocket"
-    },
-    "1": {
-      "quote": "Security is paramount to the protection of our customer's data. ICHEC chose Search Guard to protect its ELK-Stack environment because of its Single Sign-On authentication integration, access control measures and audit features. The licensing model is also flexible enough as we continue to grow our services.",
-      "author": "Tim Murphy",
-      "profession": " System Administrator",
-      "company": "Irish Centre for High-End Computing (ICHEC)"
-    },
-    "2": {
-      "quote": "Security is the prerequisite for every project in the IT industry, especially when it comes to data. HEAnet chooses Search Guard to protect its ELK cluster because it provides node-to-node encryption (TLS) and more features such as multi-tenancy, compliance, unlike its competitors who only provide security on the REST layer.",
-      "author": "Yasvanth Babu",
-      "profession": "Middleware System Administrator",
-      "company": "HEAnet CLG"
-    },
-    "3": {
-      "quote": "The Steinbuch Centre for Computing at KIT is using Search Guard to secure Elasticsearch instances operated in the World Wide LHC Computing Grid Tier-1 center \"GridKa\" and in the Large Scale Data Facility. Without fine-grained access control we would be unable to expose Elasticsearch to individual users or use single instances for both private and public data. The multitenancy features for Kibana offered by Search Guard are specially useful, enabling us to also use Kibana for public dashboards.",
-      "author": "Andreas Petzold",
-      "profession": "Manager \"GridKa\" WLCG Tier-1 Center",
-      "company": "Karlsruhe Institute of Technology (KIT) Steinbuch Centre for Computing (SCC)"
-    },
-    "4": {
-      "quote": "Search Guard makes it possible for us to use the ELK-Stack in a productive environment. We chose Search Guard primarily because of the Active Directory and role-permission features. We find their licensing model incredibly helpful, as well as the fact that we are able to use an unlimited amount of nodes.",
-      "author": "Arno Haß",
-      "profession": "Project Manager",
-      "company": "Max-Delbrück Centre for Molecular Medicine"
-    },
-    "5": {
-      "quote": "We have chosen SearchGuard because it matches our values of technical rigor, openness, and auditability. It has enabled us to ensure that data in transit is secure against eavesdropping in off-prem environments, to implement verifiable and granular access to our Elastic clusters, and most importantly to give our analysts access to restricted data sets with confidence that PII remains protected and confidential.",
-      "author": "Tom",
-      "company": "Deflect (DDoS protection CDN) & Deflect Labs (DDoS research)"
-    },
-    "6": {
-      "quote": "In 2019 we planned to install one large logging infrastructure cluster for about 100TB of data. Not as SIEM, but mainly to have logs available centrally for developers and admins. We chose one Elasticsearch instance as a large log repository.\nWe decided to install the 8 data nodes and 10 VMs with one contractor. He proposed two solutions to us for the \"role-based access control\" software. After testing, we quickly adopted SearchGuard.\nWe actually send all our critical logs to this cluster. About 15 users can log in to the system and see what they are looking for. With SearchGuard we can easily limit access to the logs of their applications only.\nThe right segregation is working well, and we are happy with the solution we chose for the user's access control.",
-      "author": "Y. Ghennai",
-      "company": "Universite de Lausanne"
     }
   }
 }

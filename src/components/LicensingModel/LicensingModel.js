@@ -4,10 +4,19 @@ import { useLocalizedPath } from '../../i18n/useLocalizedPath';
 import iconSearchGuard from '../../images/icon-search-guard.svg';
 import Button from '../Button/Button';
 
-const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline }) => {
+// quoteButton (optional): { text, link } — when passed, the paid edition cards
+// (Enterprise, Compliance) render a second button linking to the quote path.
+// Callers that omit it (e.g. the /licensing/ page) are unaffected.
+const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, quoteButton }) => {
   const { t } = useTranslation('license');
   const lp = useLocalizedPath();
   const [standardButton, setStandardButton] = useState(true);
+
+  const renderQuoteButton = quoteButton ? (
+    <div className="licensing-editions-button">
+      <Button text={quoteButton.text} link={lp(quoteButton.link)} />
+    </div>
+  ) : null;
 
   const onButtonPress = () => {
     setStandardButton(!standardButton);
@@ -104,6 +113,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
                   link={lp('/search-guard-free-trial/')}
                 />
               </div>
+              {renderQuoteButton}
             </div>
           </div>
           <div className="col s12 l4 licensing-right-border">
@@ -137,6 +147,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline })
                   link={lp('/search-guard-free-trial/')}
                 />
               </div>
+              {renderQuoteButton}
             </div>
             {infoButton}
           </div>
