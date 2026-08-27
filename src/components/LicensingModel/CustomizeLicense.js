@@ -5,9 +5,13 @@ import ColumnedTile from "../../components/Tiles/ColumnedTile/ColumnedTile";
 import iconBook from '../../images/book-solid.svg';
 import iconWheels from '../../images/gears-solid.svg';
 
-const CustomizeLicense = () => {
+// colorschema and buttonHref are optional; defaults preserve the historical
+// rendering (dark band, buttons to the contact page). The pricing page passes
+// buttonHref="#quote" so both blocks lead to the on-page quote form.
+const CustomizeLicense = ({ colorschema = 'dark', buttonHref }) => {
     const { t } = useTranslation('license');
     const lp = useLocalizedPath();
+    const href = buttonHref || lp('/contacts/');
 
     let customizelicense = [
         {
@@ -20,7 +24,7 @@ const CustomizeLicense = () => {
                 alt: t('customizeLicense.academic.alt'),
             },
             button: {
-                href: lp("/contacts/"),
+                href,
                 text: t('customizeLicense.academic.button'),
             },
         },
@@ -34,7 +38,7 @@ const CustomizeLicense = () => {
                 alt: t('customizeLicense.oem.alt'),
             },
             button: {
-                href: lp("/contacts/"),
+                href,
                 text: t('customizeLicense.oem.button'),
             },
         },
@@ -42,7 +46,7 @@ const CustomizeLicense = () => {
 
 
     return (
-        <ColumnedTile colorschema="dark" wrapperclass="default-padding-top-bottom" columns={customizelicense} headline={t('customizeLicense.headline')} />
+        <ColumnedTile colorschema={colorschema} wrapperclass="default-padding-top-bottom" columns={customizelicense} headline={t('customizeLicense.headline')} />
     );
 };
 
