@@ -22,6 +22,19 @@
   text-transform: uppercase;
   color: $primary;
   font-weight: normal;
+  // Column headers stay visible while the long table scrolls under the
+  // fixed navbar (64px desktop, 56px on mobile).
+  position: sticky;
+  top: 64px;
+  z-index: 2;
+  background-color: $white;
+  @media only screen and (max-width: $mobile) {
+    top: 56px;
+  }
+}
+
+.licensing-not-included span {
+  color: $darkGrey;
 }
 
 .licensing-table-body td {

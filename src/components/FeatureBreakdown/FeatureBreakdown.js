@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import compliance from '../../images/checkmark-red.svg';
-import enterprise from '../../images/checkmark-green.svg';
-import community from '../../images/checkmark-gold.svg';
+// Single checkmark style for every column ("included"); an em-dash marks
+// "not included". Both carry accessible labels.
+import checkmark from '../../images/checkmark-green.svg';
 
 const FeatureBreakdown = () => {
   const { t } = useTranslation('license');
@@ -388,26 +388,25 @@ const FeatureBreakdown = () => {
                         {serviceItem.type}
                       </div>
                     </td>
-                    {serviceItem.community ? (
-                      <td className="licensing-checkmark">
-                        <img loading="lazy" src={community} alt="checkmark icon" width="12px" height="12px" />
-                      </td>
-                    ) : (
-                      <td />
-                    )}
-                    {serviceItem.enterprise ? (
-                      <td className="licensing-checkmark">
-                        <img loading="lazy" src={enterprise} alt="checkmark icon" width="12px" height="12px" />
-                      </td>
-                    ) : (
-                      <td />
-                    )}
-                    {serviceItem.compliance ? (
-                      <td className="licensing-checkmark">
-                        <img loading="lazy" src={compliance} alt="checkmark icon" width="12px" height="12px" />
-                      </td>
-                    ) : (
-                      <td />
+                    {[serviceItem.community, serviceItem.enterprise, serviceItem.compliance].map(
+                      (included, columnIndex) =>
+                        included ? (
+                          <td className="licensing-checkmark" key={columnIndex}>
+                            <img
+                              loading="lazy"
+                              src={checkmark}
+                              alt={t('featureBreakdown.included')}
+                              width="12px"
+                              height="12px"
+                            />
+                          </td>
+                        ) : (
+                          <td className="licensing-not-included" key={columnIndex}>
+                            <span aria-label={t('featureBreakdown.notIncluded')} role="img">
+                              &ndash;
+                            </span>
+                          </td>
+                        )
                     )}
                   </tr>
                 );

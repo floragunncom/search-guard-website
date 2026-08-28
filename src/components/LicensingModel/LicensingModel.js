@@ -3,18 +3,25 @@ import {useTranslation} from 'react-i18next';
 import { useLocalizedPath } from '../../i18n/useLocalizedPath';
 import iconSearchGuard from '../../images/icon-search-guard.svg';
 import Button from '../Button/Button';
+import { Badge } from '../Badge/Badge';
 
-// quoteButton (optional): { text, link } — when passed, the paid edition cards
-// (Enterprise, Compliance) render a second button linking to the quote path.
-// Callers that omit it (e.g. the /licensing/ page) are unaffected.
-const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, quoteButton }) => {
+// Opt-in props (default off, so the homepage and Heise usages are unchanged):
+// - popularBadge (string): renders a badge on the Enterprise card headline.
+// - quoteButton ({ text, href }): renders a secondary ghost-style link under
+//   the primary button on the Enterprise and Compliance cards.
+// - colorschema: section background schema; defaults to the historical 'light'.
+// - headlineTag: heading element for the section headline; defaults to the
+//   historical 'h3' (the pricing page passes 'h2' for a sequential outline).
+const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, popularBadge, quoteButton, colorschema = 'light', headlineTag: HeadlineTag = 'h3' }) => {
   const { t } = useTranslation('license');
   const lp = useLocalizedPath();
   const [standardButton, setStandardButton] = useState(true);
 
-  const renderQuoteButton = quoteButton ? (
-    <div className="licensing-editions-button">
-      <Button text={quoteButton.text} link={lp(quoteButton.link)} />
+  const renderQuoteLink = quoteButton ? (
+    <div className="licensing-quote-link-wrapper">
+      <a className="licensing-quote-link" href={quoteButton.href}>
+        {quoteButton.text}
+      </a>
     </div>
   ) : null;
 
@@ -92,6 +99,11 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, q
                   width="145px" height="145px"
                 />
               </div>
+              {popularBadge && (
+                <div className="licensing-popular-badge">
+                  <Badge text={popularBadge} bgColor="#02F0DD" textColor="#184962" />
+                </div>
+              )}
               <h5 className="licensing-editions-headline">
                 {t('editions.enterprise.headline')}
               </h5>
@@ -113,7 +125,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, q
                   link={lp('/search-guard-free-trial/')}
                 />
               </div>
-              {renderQuoteButton}
+              {renderQuoteLink}
             </div>
           </div>
           <div className="col s12 l4 licensing-right-border">
@@ -147,7 +159,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, q
                   link={lp('/search-guard-free-trial/')}
                 />
               </div>
-              {renderQuoteButton}
+              {renderQuoteLink}
             </div>
             {infoButton}
           </div>
@@ -257,7 +269,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, q
   }
 
   return (
-    <div className="color-schema-light">
+    <div className={`color-schema-${colorschema}`}>
       <div
         className={
           tableView ? 'licensing-wrapper-expanded' : plain ? '' : 'licensing-wrapper'
@@ -266,7 +278,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, q
       >
         <div className="row">
           <div className="col s12">
-            <h3 className="licensing-headline">{headline}</h3>
+            <HeadlineTag className="licensing-headline">{headline}</HeadlineTag>
             {subheadline ? <div className="licensing-subheadline">{subheadline}</div> : null}
             {buttons}
             {renderContent}

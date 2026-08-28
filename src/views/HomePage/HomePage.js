@@ -60,7 +60,7 @@ const HomePage = () => {
                 topButtons
                 headline={t('licensing.headline')}
                 subheadline={t('licensing.intro')}
-                quoteButton={{ text: t('licensing.quoteButton'), link: '/contacts/' }}
+                quoteButton={{ text: t('licensing.quoteButton'), href: '/licensing/#quote' }}
                 tableView={false}
             />
             {/* 7. Social proof — trim quotes content separately (Task 7) */}
