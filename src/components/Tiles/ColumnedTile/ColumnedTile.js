@@ -8,7 +8,10 @@ import {getColorSchemaCSS, getColorSchemaCSSForSVG} from '../../../utils/styleUt
 // count does not divide the 12-column grid (e.g. 5 items in rows of 3) — the
 // flex row wraps and centers a partial last row.
 // subheadline (optional): intro text rendered centered under the headline.
-const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, subheadline, columns, columnsPerRow}) => {
+// alignedHeadlines (optional): reserve two headline lines per column
+// (top-aligned) so headlines and copy text start at the same vertical
+// position in every column, whether a headline wraps to one line or two.
+const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, subheadline, columns, columnsPerRow, alignedHeadlines}) => {
 
     if (!columns || !Array.isArray(columns)) {
         throw new Error('The "columns" property is required and must be an array.');
@@ -104,7 +107,7 @@ const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, subheadlin
     }
 
     return (
-        <div className={`columnedtile default-padding-top-bottom ${baseCss} ${wrapperclass}`}>
+        <div className={`columnedtile default-padding-top-bottom ${baseCss} ${wrapperclass}${alignedHeadlines ? ' columnedtile--aligned-headlines' : ''}`}>
             {headline && (
                 <div className={`row ${baseCss}`}>
                     <h2 className="col s12 columnedtile-wrapper-headline">

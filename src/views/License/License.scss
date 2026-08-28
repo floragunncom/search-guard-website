@@ -7,16 +7,6 @@
 
 /* ---------------------------------------------------- How pricing works (§4.2) */
 
-// Reserve two headline lines (2 × 30px line-height) so both the headlines
-// (top-aligned) and the copy text below start at the same vertical position
-// in every tile, whether a headline wraps to one line or two. Skipped on
-// mobile, where the tiles stack and cross-tile alignment doesn't apply.
-.how-pricing-works h2.columnedtile-headline {
-  @media only screen and (min-width: $mobile) {
-    min-height: 60px;
-  }
-}
-
 .how-pricing-works-note-wrapper {
   padding: 0 24px 48px;
 }

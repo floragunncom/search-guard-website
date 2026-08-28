@@ -52,7 +52,8 @@ const TrustBar = () => {
   return (
       <ColumnedTile
           colorschema="white"
-          wrapperclass="default-padding-top-bottom labels-section trustbar-section"
+          wrapperclass="default-padding-top-bottom labels-section"
+          alignedHeadlines
           headline={t('trustbar.headline')}
           columns={content}
       />

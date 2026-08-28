@@ -3,19 +3,8 @@
 @use '../styles/Colors' as *;
 @use '../styles/Breakpoints' as *;
 
-// Trust bar + final CTA: reserve two headline lines (2 × 30px line-height) and
-// bottom-align the headline inside that space, so the copy text of every tile
-// starts at the same vertical position whether its headline wraps to one line
-// or two.
-.trustbar-section h2.columnedtile-headline,
-.finalcta-section h2.columnedtile-headline {
-  @media only screen and (min-width: $mobile) {
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-}
+// Headline/copy alignment across tile columns now comes from ColumnedTile's
+// alignedHeadlines prop (see ColumnedTile.scss).
 
 .section-headline {
   text-align: center;

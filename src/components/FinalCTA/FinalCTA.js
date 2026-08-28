@@ -36,6 +36,7 @@ const FinalCTA = ({colorschema = 'white'}) => {
         <ColumnedTile
             colorschema={colorschema}
             wrapperclass="default-padding-top-bottom finalcta-section"
+            alignedHeadlines
             headline={t('finalcta.headline')}
             columns={columns}
         />

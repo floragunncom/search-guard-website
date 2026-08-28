@@ -136,6 +136,7 @@ const License = () => {
                     wrapperclass="default-padding-top-bottom"
                     headline={t('howItWorks.headline')}
                     columns={howItWorks}
+                    alignedHeadlines
                 />
                 <div className="color-schema-light how-pricing-works-note-wrapper">
                     <p className="how-pricing-works-note">{t('howItWorks.note')}</p>
