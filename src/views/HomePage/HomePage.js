@@ -60,6 +60,7 @@ const HomePage = () => {
                 topButtons
                 headline={t('licensing.headline')}
                 subheadline={t('licensing.intro')}
+                popularBadge
                 quoteButton={{ text: t('licensing.quoteButton'), href: '/licensing/#quote' }}
                 tableView={false}
             />

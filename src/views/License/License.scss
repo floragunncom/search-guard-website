@@ -20,33 +20,6 @@
 
 /* ------------------------------------------- Edition cards additions (§4.3) */
 
-.licensing-popular-badge {
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-/* Ghost-style secondary CTA: intentionally quieter than the primary Button. */
-.licensing-quote-link-wrapper {
-  text-align: center;
-  margin-top: 12px;
-}
-
-.licensing-quote-link {
-  display: inline-block;
-  padding: 10px 20px;
-  border: 2px solid $secondary-dark;
-  border-radius: 3px;
-  color: $primary;
-  text-decoration: none;
-  text-transform: capitalize;
-
-  &:hover,
-  &:focus {
-    background-color: $secondary-dark;
-    color: $white;
-  }
-}
-
 /* -------------------------------------------------- Feature table area (§4.5) */
 
 .licensing-table-intro {

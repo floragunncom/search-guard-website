@@ -223,3 +223,35 @@ img.licensing-icon {
     margin-bottom: -16px;
   };
 }
+/* Fixed-height badge slot rendered in every edition card when the
+   popularBadge prop is set, so the highlighted card's content is not
+   pushed down relative to its siblings. */
+.licensing-badge-slot {
+  height: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Ghost-style secondary CTA (quoteButton prop): intentionally quieter than
+   the primary Button. */
+.licensing-quote-link-wrapper {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.licensing-quote-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid $secondary-dark;
+  border-radius: 3px;
+  color: $primary;
+  text-decoration: none;
+  text-transform: capitalize;
+
+  &:hover,
+  &:focus {
+    background-color: $secondary-dark;
+    color: $white;
+  }
+}

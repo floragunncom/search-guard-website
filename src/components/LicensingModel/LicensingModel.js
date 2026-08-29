@@ -5,8 +5,10 @@ import iconSearchGuard from '../../images/icon-search-guard.svg';
 import Button from '../Button/Button';
 import { Badge } from '../Badge/Badge';
 
-// Opt-in props (default off, so the homepage and Heise usages are unchanged):
-// - popularBadge (string): renders a badge on the Enterprise card headline.
+// Opt-in props (default off, so callers like Heise are unchanged):
+// - popularBadge (boolean): marks the Enterprise card as "most popular"
+//   (label from editions.popularBadge). Every card renders an equal-height
+//   badge slot so the marked card's content is not pushed down.
 // - quoteButton ({ text, href }): renders a secondary ghost-style link under
 //   the primary button on the Enterprise and Compliance cards.
 // - colorschema: section background schema; defaults to the historical 'light'.
@@ -16,6 +18,15 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, p
   const { t } = useTranslation('license');
   const lp = useLocalizedPath();
   const [standardButton, setStandardButton] = useState(true);
+
+  // Fixed-height slot in every card keeps headlines/bullets/buttons on the
+  // same lines whether or not the card carries the badge.
+  const renderBadgeSlot = (highlighted) =>
+    popularBadge ? (
+      <div className="licensing-badge-slot">
+        {highlighted && <Badge text={t('editions.popularBadge')} bgColor="#02F0DD" textColor="#184962" />}
+      </div>
+    ) : null;
 
   const renderQuoteLink = quoteButton ? (
     <div className="licensing-quote-link-wrapper">
@@ -66,6 +77,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, p
                   width="145px" height="145px"
                 />
               </div>
+              {renderBadgeSlot(false)}
               <h5 className="licensing-editions-headline">
                 {t('editions.community.headline')}
               </h5>
@@ -99,11 +111,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, p
                   width="145px" height="145px"
                 />
               </div>
-              {popularBadge && (
-                <div className="licensing-popular-badge">
-                  <Badge text={popularBadge} bgColor="#02F0DD" textColor="#184962" />
-                </div>
-              )}
+              {renderBadgeSlot(true)}
               <h5 className="licensing-editions-headline">
                 {t('editions.enterprise.headline')}
               </h5>
@@ -138,6 +146,7 @@ const LicensingModel = ({ tableView, plain, topButtons, headline, subheadline, p
                   width="145px" height="145px"
                 />
               </div>
+              {renderBadgeSlot(false)}
               <h5 className="licensing-editions-headline">
                 {t('editions.compliance.headline')}
               </h5>

@@ -150,7 +150,7 @@ const License = () => {
                 colorschema="white"
                 topButtons
                 tableView={false}
-                popularBadge={t('editions.popularBadge')}
+                popularBadge
                 quoteButton={{ text: t('editions.quoteButton'), href: '#quote' }}
             />
 
