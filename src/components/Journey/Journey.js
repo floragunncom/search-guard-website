@@ -403,7 +403,7 @@ const Journey = () => {
       ],
     },
   ];
-  
+
   React.useEffect(() => {
     const elements = document.querySelectorAll('.collapse-header');
     const listeners = [];
@@ -460,7 +460,10 @@ const Journey = () => {
                       <h2 className="collapse-header">
                         <time>{event.year}</time><i id="icon" className="material-icons">{`${index > 1 ? "keyboard_arrow_up" : "keyboard_arrow_down"}`}</i>
                       </h2>
-                      <p className={`details ${index > 1 ? "hidden" : "show fadein"}`}>
+                      {/* div, not p: the entries are block elements, and a <div>
+                          inside <p> is invalid HTML — browsers re-parent it while
+                          parsing, causing a hydration mismatch. */}
+                      <div className={`details ${index > 1 ? "hidden" : "show fadein"}`}>
                         {event.events.map(content => {
                           return (
                             <div key={content.text} >
@@ -474,7 +477,7 @@ const Journey = () => {
                             </div>
                           );
                         })}
-                      </p>
+                      </div>
                     </div>
                   </li>
                 );
