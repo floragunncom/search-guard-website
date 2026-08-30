@@ -70,7 +70,9 @@
             line-height: 43px;
           }
         }
-        p{
+        /* Class selector, not `p`: the details container is a <div> since the
+           invalid p>div nesting was fixed (hydration mismatch). */
+        .details{
           background: $white;
           padding: 16px;
           #headline {
