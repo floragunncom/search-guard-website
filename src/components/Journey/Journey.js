@@ -5,8 +5,61 @@ const Journey = () => {
   const { t } = useTranslation('company');
   const timelineContent = [
     {
+      year: 2026,
+      events: [
+        {
+          headline: 'July',
+          text: 'Packed booth at the WeAreDevelopers World Congress in Berlin — three days of demos and conversations'
+        },
+        {
+          headline: 'July',
+          text: 'Live webinar: Encryption at Rest for Elasticsearch'
+        },
+        {
+          headline: 'June',
+          text: 'Berlin Buzzwords: we publicly unveil enclaivis, the new floragunn project'
+        },
+        {
+          headline: 'June',
+          text: 'Search Guard FLX 4.1.1 and 4.1.2 released, keeping pace with the latest Elasticsearch 9 releases'
+        },
+        {
+          headline: 'March',
+          text: 'Search Guard FLX 4.1.0 released'
+        },
+        {
+          headline: 'January',
+          text: 'Launch of the Search Guard webinar series with "Beyond Access Control: Modern Elasticsearch Security"'
+        },
+      ],
+    },
+    {
       year: 2025,
       events: [
+        {
+          headline: 'November',
+          text: 'OSMC Nuremberg: our founder speaks on "Challenges and Pitfalls of Applying GenAI in Monitoring"'
+        },
+        {
+          headline: 'October',
+          text: 'Search Guard FLX 4.0.0 released'
+        },
+        {
+          headline: 'October',
+          text: 'Search Guard becomes available on the AWS Marketplace through our partner Excelerate Systems'
+        },
+        {
+          headline: 'July',
+          text: 'Signals Alerting is now included for free in every Search Guard edition'
+        },
+        {
+          headline: 'June',
+          text: 'Search Guard FLX brings full Elasticsearch 9 compatibility'
+        },
+        {
+          headline: 'June',
+          text: 'Sponsors and exhibitors at Berlin Buzzwords 2025'
+        },
         {
           headline: 'March',
           text: 'First technical preview of our Encryption at Rest plugin'
