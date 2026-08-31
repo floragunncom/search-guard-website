@@ -3,22 +3,17 @@ import {Helmet} from 'react-helmet-async';
 import {useTranslation} from 'react-i18next';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
-import Hero from '../../components/Hero/Hero';
-import SimpleHero from '../../components/Hero/SimpleHero';
-import ImageTextTile from '../../components/Tiles/ImageTextTile/ImageTextTile';
-import Labels from '../../components/Labels/Labels';
+import HomeHero from '../../components/Hero/HomeHero';
+import WhySearchGuard from '../../components/WhySearchGuard/WhySearchGuard';
+import ProductPillars from '../../components/ProductPillars/ProductPillars';
 import TrustedBy from '../../components/TrustedBy/TrustedBy';
-import PreFooter from '../../components/PreFooter/PreFooter';
-import Services from '../../components/Services/Services';
-import Quotes from '../../components/Quotes/Quotes';
+import TrustBar from '../../components/TrustBar/TrustBar';
+import QuickstartStrip from '../../components/QuickstartStrip/QuickstartStrip';
 import LicensingModel from '../../components/LicensingModel/LicensingModel';
-import cog_cog from '../../images/cog-cog.svg';
-import server_lock from '../../images/server-lock.svg';
-import objects_shield from '../../images/objects-shield.svg';
-import FilledDivider from "../../components/FilledDivider/FilledDivider";
-import CTAStartFreeTrial from "../../components/CTA/CTAStartFreeTrial";
+import Quotes from '../../components/Quotes/Quotes';
+import FinalCTA from '../../components/FinalCTA/FinalCTA';
+import PreFooter from '../../components/PreFooter/PreFooter';
 import { toAbsoluteSiteUrl } from '../../utils/urlUtils';
-
 
 const HomePage = () => {
     const { t, i18n } = useTranslation('home');
@@ -33,16 +28,9 @@ const HomePage = () => {
         <PageWrapper background="#184962">
             <Helmet>
                 <meta charSet="utf-8"/>
-                <title>
-                    {t('meta.title')}
-                </title>
-                <meta
-                    name="description"
-                    content={t('meta.description')}
-                />
-                <script
-                    type="application/ld+json"
-                >
+                <title>{t('meta.title')}</title>
+                <meta name="description" content={t('meta.description')}/>
+                <script type="application/ld+json">
                     {JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'WebSite',
@@ -56,39 +44,30 @@ const HomePage = () => {
                     })}
                 </script>
             </Helmet>
-            <SimpleHero/>
-            <ImageTextTile
-                icon={server_lock}
-                iconPosition="left"
-                colorschema="dark"
-                headline={t('tile1.headline')}
-                text={t('tile1.text')}
-            />
-            <ImageTextTile
-                icon={cog_cog}
-                iconPosition="right"
-                colorschema="dark"
-                headline={t('tile2.headline')}
-                text={t('tile2.text')}
-            />
-            <ImageTextTile
-                icon={objects_shield}
-                iconPosition="left"
-                colorschema="dark"
-                headline={t('tile3.headline')}
-                text={t('tile3.text')}
-            />
+            {/* 1. Hero — rewritten, dual CTA (Task 1) */}
+            <HomeHero/>
+            {/* 2. Why Search Guard — replaces the three ImageTextTiles (Task 2) */}
+            <WhySearchGuard colorschema="light"/>
+            {/* 3. Product pillars — the suite story, replaces Services (Task 3) */}
+            <ProductPillars colorschema="dark"/>
+            {/* 4. Trust bar — logo wall + trust items; TrustBar replaces Labels (Task 4) */}
             <TrustedBy/>
-            <Labels/>
-            <FilledDivider colorschema="light"/>
-            <Services/>
+            <TrustBar/>
+            {/* 5. 60-second quickstart (Task 5) */}
+            <QuickstartStrip/>
+            {/* 6. Pricing teaser — new headline + intro via home.json (Task 6) */}
             <LicensingModel
                 topButtons
                 headline={t('licensing.headline')}
+                subheadline={t('licensing.intro')}
+                popularBadge
+                quoteButton={{ text: t('licensing.quoteButton'), href: '/licensing/#quote' }}
                 tableView={false}
             />
-            <CTAStartFreeTrial colorschema="white" />
+            {/* 7. Social proof — trim quotes content separately (Task 7) */}
             <Quotes/>
+            {/* 8. Final CTA — replaces CTAStartFreeTrial (Task 8) */}
+            <FinalCTA colorschema="white"/>
             <PreFooter/>
         </PageWrapper>
     );
