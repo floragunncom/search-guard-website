@@ -1,0 +1,83 @@
+// Styles for the new homepage sections (WhySearchGuard, ProductPillars,
+// QuickstartStrip, FinalCTA, TrustBar). Registered in styles/main.scss.
+@use '../styles/Colors' as *;
+@use '../styles/Breakpoints' as *;
+
+// Headline/copy alignment across tile columns now comes from ColumnedTile's
+// alignedHeadlines prop (see ColumnedTile.scss).
+
+.section-headline {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+// Extra breathing room between the wrapped card rows (3 + 2 layout)
+.product-pillars .columnedtile-row {
+  row-gap: 48px;
+}
+
+.preview-badge {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: $secondary;
+  color: $primary;
+}
+
+.product-pillars-note-wrapper {
+  padding: 0 24px 48px;
+}
+
+.product-pillars-note {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+// Shared content column: headline, codebox, text, and button share width + left edge.
+.quickstart-content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.quickstart-text {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.quickstart-codebox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1rem;
+  padding: 1rem 1.25rem;
+  background: $darkBlueNav;
+  border-radius: 8px;
+
+  code {
+    color: $secondary-light;
+    font-family: monospace;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+.quickstart-copy {
+  background: $secondary;
+  color: $primary;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+
+  &:hover { background: $secondary-dark; color: $white; }
+}
+

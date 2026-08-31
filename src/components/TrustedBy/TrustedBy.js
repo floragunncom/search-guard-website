@@ -1,7 +1,6 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import sieMonster from '../../images/sie-monster.svg';
-import pivotal from '../../images/pivotal.svg';
 import wuerthPhoenix from '../../images/wuerth-phoenix.svg';
 import redHat from '../../images/redHatNew.svg';
 import objectRocket from '../../images/objectRocket.svg';
@@ -77,10 +76,6 @@ const TrustedBy = () => {
     {
       name: 'Würth Phoenix',
       logo: wuerthPhoenix
-    },
-    {
-      name: 'Pivotal',
-      logo: pivotal
     },
     {
       name: 'SieMonster',

@@ -1,5 +1,139 @@
 @use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
 
 .arrows-bg {
   background-color: $secondary-light;
+}
+
+/* ---------------------------------------------------- How pricing works (§4.2) */
+
+.how-pricing-works-note-wrapper {
+  padding: 0 24px 48px;
+}
+
+.how-pricing-works-note {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+/* ------------------------------------------- Edition cards additions (§4.3) */
+
+/* -------------------------------------------------- Feature table area (§4.5) */
+
+.licensing-table-intro {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.licensing-table-cta {
+  text-align: center;
+  margin-top: 32px;
+
+  a {
+    color: $secondary-dark;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ------------------------------------------------------- Quote section (§4.7) */
+
+.quote-section {
+  scroll-margin-top: 96px;
+}
+
+.quote-section-text {
+  padding: 0 24px;
+
+  p {
+    text-align: left;
+  }
+}
+
+.quote-section-headline {
+  text-align: left;
+  font-size: 40px;
+  line-height: 100%;
+  margin-bottom: 24px;
+
+  @media only screen and (max-width: $mobile) {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+.quote-section-trust {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+
+  li {
+    color: $secondary-light;
+    margin-bottom: 8px;
+
+    &::before {
+      content: '✓';
+      color: $secondary;
+      margin-right: 8px;
+    }
+  }
+}
+
+/* The embedded form keeps its light styling by sitting on a white card. */
+.quote-form-card {
+  background-color: $white;
+  border-radius: 8px;
+  padding: 8px 24px 24px;
+}
+
+.quote-section-alt {
+  text-align: center;
+  margin-top: 16px;
+
+  a {
+    color: $secondary;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* --------------------------------------------------------- Pricing FAQ (§4.8) */
+
+.pricing-faq-headline {
+  margin-bottom: 48px;
+}
+
+.pricing-faq-more {
+  text-align: center;
+  margin-top: 32px;
+
+  a {
+    color: $secondary-dark;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ----------------------------------------------------------- Final CTA (§4.10) */
+
+.licensing-final-cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }

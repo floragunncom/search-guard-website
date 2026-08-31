@@ -14,10 +14,30 @@
   }
 }
 
-/* Ensure the row behaves as a flex container so all columns are the same height and buttons are at the bottom of each column */
+/* Ensure the row behaves as a flex container so all columns are the same height and buttons are at the bottom of each column.
+   justify-content: center only affects a partial last row (full rows fill 100%),
+   so multi-row layouts via columnsPerRow get a centered final row. */
 .columnedtile-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Opt-in (alignedHeadlines prop): reserve two headline lines (2 × 30px
+   line-height), top-aligned, so headlines and copy text start at the same
+   vertical position across columns regardless of headline wrapping. Skipped
+   on mobile, where columns stack and cross-column alignment doesn't apply. */
+.columnedtile--aligned-headlines h2.columnedtile-headline {
+  @media only screen and (min-width: $mobile) {
+    min-height: 60px;
+  }
+}
+
+/* Optional intro text under the section headline */
+.columnedtile-subheadline {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
 }
 
 /* Make columns stretch to the same height */

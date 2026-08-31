@@ -36,7 +36,6 @@
 @use '../src/components/Quotes/Quotes.scss';
 @use '../src/components/References/References.scss';
 @use '../src/components/SEOSection/SEOSection.scss';
-@use '../src/components/Services/Services.scss';
 @use '../src/components/SummarizeWithAI/SummarizeWithAI.scss';
 @use '../src/components/Team/Team.scss';
 @use '../src/components/TextInput.scss';
@@ -78,3 +77,7 @@
 @use '../src/views/TlsTool/TlsTool.scss';
 @use '../src/views/WhitePapers/WhitePaperArticle.scss';
 @use '../src/views/WhitePapers/WhitePapers.scss';
+
+// Homepage redesign (homepage-redesign branch)
+@use '../src/components/Hero/HomeHero.scss';
+@use '../src/components/HomeSections.scss';
