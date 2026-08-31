@@ -1,92 +1,187 @@
 {
-  "meta.title": "Seguridad y Alertas para Elasticsearch | Search Guard",
-  "meta.description": "Search Guard es un plugin de seguridad para Elasticsearch y Kibana. Search Guard ofrece seguridad, registro de auditoría, cumplimiento, alertas y detección de anomalías.",
-  "hero.headline": "Seguridad y Alertas para Elasticsearch y Kibana",
-  "hero.text": "Search Guard es un plugin de seguridad y alertas que cifra y protege sus datos y flujos de datos contra el acceso no autorizado en todo el Elastic Stack.",
-  "hero.button": "Prueba gratuita de Search Guard",
-  "hero.teaser": "Ver nuestros webinars",
-  "tile1.headline": "Search Guard ofrece seguridad en todos los niveles",
-  "tile1.text": "Search Guard proporciona una solución de seguridad integral para mantener sus datos más confidenciales a salvo. Utilizando RBAC, Search Guard garantiza el más alto nivel de protección en sus clústeres, índices y documentos añadiendo cifrado, autenticación, autorización, registro de auditoría, cumplimiento, así como funciones de alertas y detección de anomalías.",
-  "tile2.headline": "Search Guard es compatible con todos los estándares de la industria",
-  "tile2.text": "Search Guard es compatible con todos los estándares de la industria para autenticación y autorización como LDAP, Active Directory, OpenID, SAML, Kerberos, tokens web JSON o certificados de cliente. Puede elegir entre una amplia variedad de suites de cifrado modernas y altamente seguras.",
-  "tile3.headline": "Search Guard protege todos los componentes del Elastic Stack",
-  "tile3.text": "Search Guard implementa un control de acceso completo sobre todo su entorno de Elasticsearch. Proteja todos los componentes del Elastic Stack, incluyendo Kibana, Logstash y Beats.",
-  "trustedBy.headline": "Confían en Search Guard",
-  "labels.certified.headline": "Certificado",
-  "labels.certified.text": "Desde 2013, Search Guard ha estado ampliando los límites de la seguridad del Elastic Stack.",
-  "labels.support.headline": "Soporte prioritario",
-  "labels.support.text": "Nuestros clientes disfrutan de soporte prioritario con acuerdos de nivel de servicio garantizados y acceso directo al equipo de desarrollo de Search Guard.",
-  "labels.trustedBy.headline": "Confianza de",
-  "labels.trustedBy.text": "Nuestros clientes abarcan todo el mundo, desde empresas Fortune 500 y entidades federales hasta startups innovadoras. Confían en nosotros para sus proyectos más importantes, sin importar el tamaño o tipo.",
-  "services.headline": "Seguridad empresarial en todos los niveles",
-  "services.encryption": "Cifrado",
-  "services.authentication": "Autenticación",
-  "services.authorization": "Autorización",
-  "services.rbac": "Control de acceso basado en roles",
-  "services.auditLogging": "Registro de auditoría",
-  "services.multitenancy": "Multitenencia",
-  "services.elasticStackSupport": "Soporte de Elastic Stack",
-  "services.compliance": "Cumplimiento",
-  "services.button": "ver todas las funciones",
-  "licensing.headline": "Modelos de licencia",
-  "licensing.standardEditions": "ediciones estándar",
-  "licensing.academicCustom": "académica y personalizada",
-  "licensing.infoText.prefix": "Ofrecemos una",
-  "licensing.infoText.academic": "Licencia Académica y Científica",
-  "licensing.infoText.middle": ", así como",
-  "licensing.infoText.custom": "Licencias Personalizadas",
-  "licensing.infoText.suffix": "para sus necesidades personales.",
-  "licensing.infoButton": "ver todos los modelos de licencia",
-  "licensing.community.name": "Search Guard Community Edition",
-  "licensing.community.feature1": "Cubre todas las necesidades esenciales de seguridad y alertas",
-  "licensing.community.feature2": "Gratuito",
-  "licensing.community.feature3": "Integrado con todo el Elastic Stack",
-  "licensing.community.button": "instalar",
-  "licensing.enterprise.name": "Search Guard Enterprise Edition",
-  "licensing.enterprise.feature1": "Se integra con todos los principales estándares de seguridad",
-  "licensing.enterprise.feature2": "Seguridad a nivel de campo y documento",
-  "licensing.enterprise.feature3": "API de gestión y multitenencia de Kibana",
-  "licensing.enterprise.button": "iniciar prueba gratuita",
-  "licensing.compliance.name": "Search Guard Compliance Edition",
-  "licensing.compliance.feature1": "Diseñado para cumplir con las regulaciones de cumplimiento, p. ej. RGPD",
-  "licensing.compliance.feature2": "Registrar todos los accesos de lectura y escritura a los datos",
-  "licensing.compliance.feature3": "Monitorear la integridad de la instalación de Elasticsearch",
-  "licensing.compliance.button": "iniciar prueba gratuita",
-  "licensing.academic.name": "Edición Académica y Científica",
-  "licensing.academic.feature1": "Licencias Search Guard Enterprise y Compliance gratuitas",
-  "licensing.academic.feature2": "Para todos los proyectos académicos y científicos sin fines de lucro",
-  "licensing.academic.feature3": "Clústeres ilimitados, nodos ilimitados.",
-  "licensing.academic.button": "Contáctenos",
-  "licensing.custom.name": "Edición personalizada",
-  "licensing.custom.feature1": "Para socios OEM e integradores de sistemas",
-  "licensing.custom.feature2": "Sin tarifas iniciales",
-  "licensing.custom.feature3": "Soporte directo del equipo de Search Guard",
-  "licensing.custom.button": "Contáctenos",
-  "quotes.headline": "Lo que dicen nuestros clientes",
-  "quotes.0.quote": "Search Guard cumplió con todas nuestras necesidades y más. No solo encontramos herramientas de código abierto que satisfacen nuestras necesidades, sino que encontramos un socio que trabajó con nosotros en el desarrollo de la nueva plataforma. Han sido receptivos y comprometidos en cada paso del camino.",
-  "quotes.0.author": "Steve Croce",
-  "quotes.0.profession": " Senior Product Manager y Director de Experiencia de Usuario",
-  "quotes.0.company": "ObjectRocket",
-  "quotes.1.quote": "La seguridad es fundamental para la protección de los datos de nuestros clientes. ICHEC eligió Search Guard para proteger su entorno ELK-Stack debido a su integración de autenticación Single Sign-On, medidas de control de acceso y funciones de auditoría. El modelo de licencia también es lo suficientemente flexible a medida que continuamos haciendo crecer nuestros servicios.",
-  "quotes.1.author": "Tim Murphy",
-  "quotes.1.profession": " Administrador de Sistemas",
-  "quotes.1.company": "Irish Centre for High-End Computing (ICHEC)",
-  "quotes.2.quote": "La seguridad es el requisito previo para cada proyecto en la industria de TI, especialmente cuando se trata de datos. HEAnet elige Search Guard para proteger su clúster ELK porque proporciona cifrado de nodo a nodo (TLS) y más funciones como multitenencia y cumplimiento, a diferencia de sus competidores que solo proporcionan seguridad en la capa REST.",
-  "quotes.2.author": "Yasvanth Babu",
-  "quotes.2.profession": "Administrador de Sistemas Middleware",
-  "quotes.2.company": "HEAnet CLG",
-  "quotes.3.quote": "El Steinbuch Centre for Computing del KIT utiliza Search Guard para proteger las instancias de Elasticsearch operadas en el centro Tier-1 del World Wide LHC Computing Grid \"GridKa\" y en el Large Scale Data Facility. Sin un control de acceso detallado no podríamos exponer Elasticsearch a usuarios individuales ni usar instancias únicas para datos públicos y privados. Las funciones de multitenencia para Kibana ofrecidas por Search Guard son especialmente útiles, permitiéndonos también usar Kibana para paneles públicos.",
-  "quotes.3.author": "Andreas Petzold",
-  "quotes.3.profession": "Director del Centro \"GridKa\" WLCG Tier-1",
-  "quotes.3.company": "Karlsruhe Institute of Technology (KIT) Steinbuch Centre for Computing (SCC)",
-  "quotes.4.quote": "Search Guard nos permite usar el ELK-Stack en un entorno productivo. Elegimos Search Guard principalmente por las funciones de Active Directory y permisos de roles. Encontramos su modelo de licencia increíblemente útil, así como el hecho de que podemos usar una cantidad ilimitada de nodos.",
-  "quotes.4.author": "Arno Haß",
-  "quotes.4.profession": "Director de Proyecto",
-  "quotes.4.company": "Max-Delbrück Centre for Molecular Medicine",
-  "quotes.5.quote": "Elegimos SearchGuard porque coincide con nuestros valores de rigor técnico, apertura y auditabilidad. Nos ha permitido asegurar que los datos en tránsito estén protegidos contra la interceptación en entornos fuera de las instalaciones, implementar un acceso verificable y granular a nuestros clústeres Elastic y, lo más importante, dar a nuestros analistas acceso a conjuntos de datos restringidos con la confianza de que la información personal permanece protegida y confidencial.",
-  "quotes.5.author": "Tom",
-  "quotes.5.company": "Deflect (CDN de protección DDoS) & Deflect Labs (investigación DDoS)",
-  "quotes.6.quote": "En 2019 planeamos instalar un gran clúster de infraestructura de registro para aproximadamente 100 TB de datos. No como SIEM, sino principalmente para tener registros disponibles centralmente para desarrolladores y administradores. Elegimos una instancia de Elasticsearch como un gran repositorio de registros.\nDecidimos instalar los 8 nodos de datos y 10 VMs con un contratista. Nos propuso 2 soluciones para el software de \"control de acceso basado en roles\". Después de las pruebas, adoptamos rápidamente SearchGuard.\nActualmente enviamos todos nuestros registros críticos a este clúster. Aproximadamente 15 usuarios pueden iniciar sesión en el sistema y ver lo que buscan. Con SearchGuard podemos limitar fácilmente los accesos solo a los registros de sus aplicaciones.\nLa segregación correcta funciona bien y estamos satisfechos con la solución que elegimos para el control de acceso de los usuarios.",
-  "quotes.6.author": "Y. Ghennai",
-  "quotes.6.company": "Universidad de Lausana"
+  "meta": {
+    "title": "Seguridad empresarial y alertas para Elasticsearch | Search Guard",
+    "description": "Search Guard prepara Elasticsearch para la empresa: seguridad, alertas, cifrado en reposo y gestión de índices. Un plugin, una licencia fija por clúster, nodos ilimitados."
+  },
+  "hero": {
+    "headline": "Todo lo que Elasticsearch necesita para estar listo para la empresa",
+    "text": "Seguridad, alertas, cifrado en reposo y gestión de índices — un plugin, una licencia fija por clúster, nodos ilimitados. Desarrollado y soportado en Alemania desde 2013.",
+    "buttonPrimary": "Comience la prueba gratuita de 60 días",
+    "buttonSecondary": "Reserve una demo",
+    "microtrust1": "Sin tarjeta de crédito",
+    "microtrust2": "Todas las funciones",
+    "microtrust3": "Desarrollo y staging siempre gratis"
+  },
+  "why": {
+    "headline": "Por qué los equipos eligen Search Guard",
+    "card1": {
+      "headline": "Seguridad más allá de lo básico",
+      "text": "Elasticsearch incluye seguridad esencial de serie. Search Guard añade lo que las empresas realmente usan: SAML, OpenID Connect, LDAP y Active Directory, seguridad a nivel de documento y de campo, multi-tenancy de Kibana y registro de auditoría que satisface a su equipo de cumplimiento."
+    },
+    "card2": {
+      "headline": "Una licencia fija por clúster",
+      "text": "Licenciado por clúster de producción — nunca por nodo. Crezca de 3 a 300 nodos sin que sus costos se muevan un centímetro. Los sistemas de desarrollo, staging y QA son siempre gratuitos."
+    },
+    "card3": {
+      "headline": "Un plugin en lugar de cinco herramientas",
+      "text": "Alertas, cifrado en reposo, gestión del ciclo de vida de índices y detección de anomalías vienen en el mismo plugin que la seguridad. Una descarga, una ruta de actualización, un contacto de soporte — sin proyecto de integración."
+    },
+    "card4": {
+      "headline": "Soporte de quienes lo construyen",
+      "text": "Su ticket lo responden los ingenieros que escribieron el código — con SLAs, directamente desde Berlín. Desarrollado, alojado y soportado íntegramente en Alemania."
+    }
+  },
+  "pillars": {
+    "headline": "Un plugin. El kit de herramientas completo.",
+    "intro": "Search Guard creció de asegurar Elasticsearch a todo lo que lo rodea — alertas, cifrado y operaciones de índices incluidos.",
+    "previewBadge": "Vista previa",
+    "previewNote": "Las funciones en vista previa están incluidas en cada prueba — pruébelas y díganos qué piensa.",
+    "button": "Más información",
+    "security": {
+      "headline": "Seguridad",
+      "text": "Autenticación, control de acceso basado en roles hasta el nivel de campos y documentos, multi-tenancy y registro de auditoría completo."
+    },
+    "alerting": {
+      "headline": "Alertas",
+      "text": "Vigile sus datos las 24 horas. Escale por correo, Slack, PagerDuty, Jira y webhooks — gratis en todas las ediciones."
+    },
+    "encryption": {
+      "headline": "Cifrado en reposo",
+      "text": "Cifre índices a nivel de Lucene. Las claves permanecen en memoria, nunca en disco — listo para el Reglamento de Ciberresiliencia de la UE."
+    },
+    "indexManagement": {
+      "headline": "Gestión de índices",
+      "text": "Automatice las políticas de rollover, retención y eliminación. Mantenga los clústeres ágiles sin arqueología de cron-jobs."
+    },
+    "anomalyDetection": {
+      "headline": "Detección de anomalías",
+      "text": "Detección asistida por IA de patrones inusuales en sus datos — encuentre lo que las alertas basadas en reglas no pueden."
+    }
+  },
+  "trustbar": {
+    "headline": "De confianza donde la seguridad no es negociable",
+    "since": {
+      "headline": "Desde 2013",
+      "text": "Asegurando clústeres de Elasticsearch durante más de una década"
+    },
+    "cve": {
+      "headline": "Autoridad de numeración CVE",
+      "text": "Autorizados por MITRE para emitir CVEs"
+    },
+    "memberships": {
+      "headline": "Alianza BSI y TeleTrusT",
+      "text": "Miembro de la Alianza para la Ciberseguridad y de TeleTrusT"
+    },
+    "germany": {
+      "headline": "Hecho en Alemania",
+      "text": "Desarrollado, alojado y soportado en la UE"
+    }
+  },
+  "quickstart": {
+    "headline": "Véalo funcionando en 60 segundos",
+    "text": "Un comando: Elasticsearch, Kibana y Search Guard, preconfigurados en su máquina.",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "docsLink": "Guía completa de inicio rápido"
+  },
+  "trustedBy": {
+    "headline": "Confían en Search Guard"
+  },
+  "licensing": {
+    "headline": "Precios simples: por clúster, no por nodo",
+    "intro": "Una licencia fija por clúster de producción — nodos ilimitados, desarrollo y staging gratis. Su clúster crece; sus costos no.",
+    "quoteButton": "Solicitar cotización",
+    "standardEditions": "ediciones estándar",
+    "academicCustom": "académica y personalizada",
+    "infoText": {
+      "prefix": "Ofrecemos una",
+      "academic": "Licencia Académica y Científica",
+      "middle": ", así como",
+      "custom": "Licencias Personalizadas",
+      "suffix": "para sus necesidades personales."
+    },
+    "infoButton": "ver todos los modelos de licencia",
+    "community": {
+      "name": "Search Guard Community Edition",
+      "feature1": "Gratis para siempre. Licencia Apache 2.0",
+      "feature2": "Seguridad esencial más alertas completas",
+      "feature3": "Nodos ilimitados, clústeres ilimitados",
+      "button": "instalar ahora"
+    },
+    "enterprise": {
+      "name": "Search Guard Enterprise Edition",
+      "feature1": "SAML, OIDC, LDAP / Active Directory",
+      "feature2": "Seguridad a nivel de documento y de campo",
+      "feature3": "Registro de auditoría y soporte con SLA",
+      "button": "Prueba gratuita"
+    },
+    "compliance": {
+      "name": "Search Guard Compliance Edition",
+      "feature1": "Todo lo de Enterprise, más:",
+      "feature2": "Herramientas para GDPR, HIPAA, SOX e ISO",
+      "feature3": "Seguimiento de accesos de lectura a datos sensibles",
+      "button": "Prueba gratuita"
+    }
+  },
+  "finalcta": {
+    "headline": "Listos cuando usted lo esté",
+    "try": {
+      "headline": "Pruébelo usted mismo",
+      "text": "Todas las funciones en su infraestructura. Sin tarjeta de crédito, nada que cancelar.",
+      "button": "Comience la prueba gratuita de 60 días"
+    },
+    "see": {
+      "headline": "Véalo en vivo",
+      "text": "30 minutos con un ingeniero que construye Search Guard. Sus preguntas, respuestas en vivo.",
+      "button": "Reserve una demo"
+    },
+    "buy": {
+      "headline": "Obtenga su cotización",
+      "text": "Díganos cuántos clústeres tiene — cotización en un día hábil.",
+      "button": "Solicitar cotización"
+    }
+  },
+  "quotes": {
+    "headline": "Lo que dicen nuestros clientes",
+    "0": {
+      "quote": "Search Guard cumplió con todas nuestras necesidades y más. No solo encontramos herramientas de código abierto que satisfacen nuestras necesidades, sino que encontramos un socio que trabajó con nosotros en el desarrollo de la nueva plataforma. Han sido receptivos y comprometidos en cada paso del camino.",
+      "author": "Steve Croce",
+      "profession": " Senior Product Manager y Director de Experiencia de Usuario",
+      "company": "ObjectRocket"
+    },
+    "1": {
+      "quote": "La seguridad es fundamental para la protección de los datos de nuestros clientes. ICHEC eligió Search Guard para proteger su entorno ELK-Stack debido a su integración de autenticación Single Sign-On, medidas de control de acceso y funciones de auditoría. El modelo de licencia también es lo suficientemente flexible a medida que continuamos haciendo crecer nuestros servicios.",
+      "author": "Tim Murphy",
+      "profession": " Administrador de Sistemas",
+      "company": "Irish Centre for High-End Computing (ICHEC)"
+    },
+    "2": {
+      "quote": "La seguridad es el requisito previo para cada proyecto en la industria de TI, especialmente cuando se trata de datos. HEAnet elige Search Guard para proteger su clúster ELK porque proporciona cifrado de nodo a nodo (TLS) y más funciones como multitenencia y cumplimiento, a diferencia de sus competidores que solo proporcionan seguridad en la capa REST.",
+      "author": "Yasvanth Babu",
+      "profession": "Administrador de Sistemas Middleware",
+      "company": "HEAnet CLG"
+    },
+    "3": {
+      "quote": "El Steinbuch Centre for Computing del KIT utiliza Search Guard para proteger las instancias de Elasticsearch operadas en el centro Tier-1 del World Wide LHC Computing Grid \"GridKa\" y en el Large Scale Data Facility. Sin un control de acceso detallado no podríamos exponer Elasticsearch a usuarios individuales ni usar instancias únicas para datos públicos y privados. Las funciones de multitenencia para Kibana ofrecidas por Search Guard son especialmente útiles, permitiéndonos también usar Kibana para paneles públicos.",
+      "author": "Andreas Petzold",
+      "profession": "Director del Centro \"GridKa\" WLCG Tier-1",
+      "company": "Karlsruhe Institute of Technology (KIT) Steinbuch Centre for Computing (SCC)"
+    },
+    "4": {
+      "quote": "Search Guard nos permite usar el ELK-Stack en un entorno productivo. Elegimos Search Guard principalmente por las funciones de Active Directory y permisos de roles. Encontramos su modelo de licencia increíblemente útil, así como el hecho de que podemos usar una cantidad ilimitada de nodos.",
+      "author": "Arno Haß",
+      "profession": "Director de Proyecto",
+      "company": "Max-Delbrück Centre for Molecular Medicine"
+    },
+    "5": {
+      "quote": "Elegimos SearchGuard porque coincide con nuestros valores de rigor técnico, apertura y auditabilidad. Nos ha permitido asegurar que los datos en tránsito estén protegidos contra la interceptación en entornos fuera de las instalaciones, implementar un acceso verificable y granular a nuestros clústeres Elastic y, lo más importante, dar a nuestros analistas acceso a conjuntos de datos restringidos con la confianza de que la información personal permanece protegida y confidencial.",
+      "author": "Tom",
+      "company": "Deflect (CDN de protección DDoS) & Deflect Labs (investigación DDoS)"
+    },
+    "6": {
+      "quote": "En 2019 planeamos instalar un gran clúster de infraestructura de registro para aproximadamente 100 TB de datos. No como SIEM, sino principalmente para tener registros disponibles centralmente para desarrolladores y administradores. Elegimos una instancia de Elasticsearch como un gran repositorio de registros.\nDecidimos instalar los 8 nodos de datos y 10 VMs con un contratista. Nos propuso 2 soluciones para el software de \"control de acceso basado en roles\". Después de las pruebas, adoptamos rápidamente SearchGuard.\nActualmente enviamos todos nuestros registros críticos a este clúster. Aproximadamente 15 usuarios pueden iniciar sesión en el sistema y ver lo que buscan. Con SearchGuard podemos limitar fácilmente los accesos solo a los registros de sus aplicaciones.\nLa segregación correcta funciona bien y estamos satisfechos con la solución que elegimos para el control de acceso de los usuarios.",
+      "author": "Y. Ghennai",
+      "company": "Universidad de Lausana"
+    }
+  }
 }
