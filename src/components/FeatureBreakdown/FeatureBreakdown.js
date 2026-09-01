@@ -12,14 +12,33 @@ import checkmark from '../../images/checkmark-green.svg';
 // matrix — the restructure moves rows, it does not re-tier features.
 
 // Documentation links — every URL verified against the live docs sitemap
-// (docs.search-guard.com/latest/sitemap.xml). The OIDC/SAML URLs from the
-// redesign spec were 404s; these are the sitemap-confirmed overview pages.
+// (docs.search-guard.com/latest/sitemap.xml); never guess slugs. Rows without
+// an entry here have no dedicated docs page (custom backends, Kibana SSO) or
+// are a service rather than a documented feature (SLA support). The forum row
+// links to the forum itself. configuration-integrity covers both change-
+// tracking rows (its content: Search Guard config tracking + Elasticsearch
+// configuration monitoring).
 const DOCS = {
   ldap: 'https://docs.search-guard.com/latest/active-directory-ldap',
+  kerberos: 'https://docs.search-guard.com/latest/kerberos-spnego',
+  jwt: 'https://docs.search-guard.com/latest/kibana-authentication-jwt',
   oidc: 'https://docs.search-guard.com/latest/kibana-authentication-openid-overview',
   saml: 'https://docs.search-guard.com/latest/kibana-authentication-saml-overview',
   dls: 'https://docs.search-guard.com/latest/document-level-security',
+  fls: 'https://docs.search-guard.com/latest/field-level-security',
   multiTenancy: 'https://docs.search-guard.com/latest/kibana-multi-tenancy',
+  anonymization: 'https://docs.search-guard.com/latest/field-anonymization',
+  immutable: 'https://docs.search-guard.com/latest/immutable-indices',
+  auditSecurity: 'https://docs.search-guard.com/latest/audit-logging-compliance',
+  auditRead: 'https://docs.search-guard.com/latest/compliance-read-history',
+  auditWrite: 'https://docs.search-guard.com/latest/compliance-write-history',
+  configChange: 'https://docs.search-guard.com/latest/configuration-integrity',
+  systemChange: 'https://docs.search-guard.com/latest/configuration-integrity',
+  pagerduty: 'https://docs.search-guard.com/latest/elasticsearch-alerting-actions-pagerduty',
+  jira: 'https://docs.search-guard.com/latest/elasticsearch-alerting-actions-jira',
+  restApi: 'https://docs.search-guard.com/latest/rest-api',
+  gui: 'https://docs.search-guard.com/latest/configuration-gui',
+  forum: 'https://forum.search-guard.com/',
 };
 
 // incl: [Community, Enterprise, Compliance]; sub: has a *Sub i18n key.
@@ -28,52 +47,52 @@ const MATRIX = [
     key: 'auth',
     rows: [
       { key: 'ldap', sub: true, docs: DOCS.ldap, incl: [false, true, true] },
-      { key: 'kerberos', incl: [false, true, true] },
-      { key: 'jwt', incl: [false, true, true] },
+      { key: 'kerberos', sub: true, docs: DOCS.kerberos, incl: [false, true, true] },
+      { key: 'jwt', sub: true, docs: DOCS.jwt, incl: [false, true, true] },
       { key: 'oidc', sub: true, docs: DOCS.oidc, incl: [false, true, true] },
       { key: 'saml', sub: true, docs: DOCS.saml, incl: [false, true, true] },
       { key: 'custom', sub: true, incl: [false, true, true] },
-      { key: 'kibanaSso', incl: [false, true, true] },
+      { key: 'kibanaSso', sub: true, incl: [false, true, true] },
     ],
   },
   {
     key: 'access',
     rows: [
       { key: 'dls', sub: true, docs: DOCS.dls, incl: [false, true, true] },
-      { key: 'fls', sub: true, incl: [false, true, true] },
+      { key: 'fls', sub: true, docs: DOCS.fls, incl: [false, true, true] },
       { key: 'multiTenancy', sub: true, docs: DOCS.multiTenancy, incl: [false, true, true] },
-      { key: 'anonymization', sub: true, incl: [false, false, true] },
-      { key: 'immutable', sub: true, incl: [false, false, true] },
+      { key: 'anonymization', sub: true, docs: DOCS.anonymization, incl: [false, false, true] },
+      { key: 'immutable', sub: true, docs: DOCS.immutable, incl: [false, false, true] },
     ],
   },
   {
     key: 'audit',
     rows: [
-      { key: 'security', sub: true, incl: [false, true, true] },
-      { key: 'read', sub: true, incl: [false, false, true] },
-      { key: 'write', sub: true, incl: [false, false, true] },
-      { key: 'configChange', incl: [false, false, true] },
-      { key: 'systemChange', incl: [false, false, true] },
+      { key: 'security', sub: true, docs: DOCS.auditSecurity, incl: [false, true, true] },
+      { key: 'read', sub: true, docs: DOCS.auditRead, incl: [false, false, true] },
+      { key: 'write', sub: true, docs: DOCS.auditWrite, incl: [false, false, true] },
+      { key: 'configChange', sub: true, docs: DOCS.configChange, incl: [false, false, true] },
+      { key: 'systemChange', sub: true, docs: DOCS.systemChange, incl: [false, false, true] },
     ],
   },
   {
     key: 'alerting',
     rows: [
-      { key: 'pagerduty', incl: [false, true, true] },
-      { key: 'jira', incl: [false, true, true] },
+      { key: 'pagerduty', sub: true, docs: DOCS.pagerduty, incl: [false, true, true] },
+      { key: 'jira', sub: true, docs: DOCS.jira, incl: [false, true, true] },
     ],
   },
   {
     key: 'ops',
     rows: [
-      { key: 'restApi', sub: true, incl: [false, true, true] },
-      { key: 'gui', sub: true, incl: [false, true, true] },
+      { key: 'restApi', sub: true, docs: DOCS.restApi, incl: [false, true, true] },
+      { key: 'gui', sub: true, docs: DOCS.gui, incl: [false, true, true] },
     ],
   },
   {
     key: 'support',
     rows: [
-      { key: 'forum', incl: [true, true, true] },
+      { key: 'forum', sub: true, docs: DOCS.forum, incl: [true, true, true] },
       { key: 'sla', sub: true, incl: [false, true, true] },
     ],
   },
