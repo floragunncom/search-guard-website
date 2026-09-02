@@ -1,58 +1,64 @@
 {
-  "meta": {
-    "title": "Inicie su prueba gratuita de Search Guard ahora",
-    "description": "Cómo descargar y ejecutar su prueba gratuita de 60 días de Search Guard Enterprise"
-  },
-  "breadcrumb": {
-    "home": "Inicio",
-    "freeTrial": "Iniciar prueba gratuita"
-  },
-  "title": {
-    "headline": "Inicie su prueba gratuita",
-    "text": "Puede utilizar la Community Edition, completamente Open Source y gratuita para siempre, o iniciar su prueba de 60 días de Search Guard Enterprise"
-  },
-  "step1": {
-    "headline": "Descargue Search Guard",
-    "text": "Descargue el plugin de Search Guard que corresponda a la versión de Elasticsearch que está utilizando. Por ejemplo, si está ejecutando Elasticsearch 9.4.3, necesita descargar también Search Guard para 9.4.3. La descarga es independiente de la plataforma.",
-    "button": "visite nuestra página de descargas"
-  },
-  "step2": {
-    "headline": "Instale Search Guard",
-    "text": "Detenga su clúster de Elasticsearch e instale Search Guard en todos los nodos."
-  },
-  "step3": {
-    "headline": "(Opcional) Instale la configuración de demostración",
-    "text": "Search Guard incluye usuarios y roles de demostración que puede instalar para una prueba de concepto rápida:"
-  },
-  "step4": {
-    "headline": "Reinicie Elasticsearch",
-    "text": "Después de instalar Search Guard, inicie su clúster normalmente:"
-  },
-  "docker": {
-    "headline": "Docker",
-    "text1": "Ofrecemos una <1>demo basada en Docker</1> con Elasticsearch y Kibana que incluye Search Guard",
-    "text1_plain": "Proporcionamos una ",
-    "text1_link": "demostración basada en Docker",
-    "text1_after": " que incluye Elasticsearch y Kibana con Search Guard y Signals Alerting preinstalados:",
-    "startText": "Para iniciar la imagen, ejecute:",
-    "kibanaText": "Una vez que el contenedor esté activo, puede acceder a Kibana en:",
-    "esText": "Elasticsearch se ejecuta en:",
-    "usersText": "El contenedor incluye algunos usuarios de demostración preinstalados. Para acceso completo y para configurar nuevos roles y permisos, utilice admin/admin para iniciar sesión."
-  },
-  "kubernetes": {
-    "headline": "Kubernetes",
-    "text1_plain": "Proporcionamos ",
-    "text1_link": "Helm Charts",
-    "text1_after": " para ejecutar Search Guard en Kubernetes."
-  },
-  "otherResources": {
-    "headline": "Otros recursos",
-    "documentation": "Documentación de Search Guard",
-    "forum": "Foro de la comunidad de Search Guard",
-    "gitlab": "Repositorios en GitLab",
-    "blog": "Blog de Search Guard"
-  },
-  "contactForm": {
-    "headline": "¿Tiene alguna pregunta? ¡Escríbanos!"
-  }
+  "meta.title": "Prueba gratuita de 60 días — Descargue Search Guard para Elasticsearch",
+  "meta.description": "Descargue Search Guard y comience su prueba gratuita de 60 días de todas las funciones Enterprise y Compliance — activada automáticamente al instalar. Sin registro, sin tarjeta de crédito.",
+  "breadcrumb.home": "Inicio",
+  "breadcrumb.freeTrial": "Prueba gratuita",
+  "title.headline": "Inicie su prueba gratuita",
+  "title.text": "Descargue Search Guard e instálelo — su prueba de 60 días de todas las funciones Enterprise y Compliance se activa automáticamente. Sin registro, sin clave de licencia, sin tarjeta de crédito. ¿Prefiere la Community Edition, gratuita para siempre? La misma descarga.",
+  "step1.headline": "Descargue Search Guard",
+  "step1.text": "Descargue el plugin de Search Guard correspondiente a la versión de Elasticsearch que utiliza — la matriz de versiones muestra exactamente qué versión de Search Guard corresponde a cada versión de Elasticsearch. La descarga es independiente de la plataforma.",
+  "step1.button": "Abrir la matriz de versiones y descargas",
+  "step2.headline": "Instale Search Guard",
+  "step2.text": "Detenga su clúster de Elasticsearch e instale Search Guard en todos los nodos.",
+  "step3.headline": "(Opcional) Instale la configuración de demostración",
+  "step3.text": "Search Guard incluye usuarios y roles de demostración que puede instalar para una prueba de concepto rápida:",
+  "step4.headline": "Reinicie Elasticsearch",
+  "step4.text": "Después de instalar Search Guard, inicie su clúster normalmente:",
+  "docker.headline": "Docker",
+  "docker.text1": "Ofrecemos una <1>demo basada en Docker</1> con Elasticsearch y Kibana que incluye Search Guard",
+  "docker.text1_plain": "Proporcionamos una ",
+  "docker.text1_link": "demostración basada en Docker",
+  "docker.text1_after": " que incluye Elasticsearch y Kibana con Search Guard y Signals Alerting preinstalados:",
+  "docker.startText": "Para iniciar la imagen, ejecute:",
+  "docker.kibanaText": "Una vez que el contenedor esté activo, puede acceder a Kibana en:",
+  "docker.esText": "Elasticsearch se ejecuta en:",
+  "docker.usersText": "El contenedor incluye algunos usuarios de demostración preinstalados. Para acceso completo y para configurar nuevos roles y permisos, utilice admin/admin para iniciar sesión.",
+  "kubernetes.headline": "Kubernetes",
+  "kubernetes.text1_plain": "Proporcionamos ",
+  "kubernetes.text1_link": "Helm Charts",
+  "kubernetes.text1_after": " para ejecutar Search Guard en Kubernetes.",
+  "otherResources.headline": "Otros recursos",
+  "otherResources.documentation": "Documentación de Search Guard",
+  "otherResources.forum": "Foro de la comunidad de Search Guard",
+  "otherResources.gitlab": "Repositorios en GitLab",
+  "otherResources.blog": "Blog de Search Guard",
+  "howItWorks.download.headline": "Descargar",
+  "howItWorks.download.text": "Obtenga el plugin de Search Guard correspondiente a su versión de Elasticsearch — o ejecute nuestra demo de Docker con un solo comando.",
+  "howItWorks.install.headline": "Instalar",
+  "howItWorks.install.text": "Instale en sus nodos o inicie el contenedor. Cuestión de minutos, no de días.",
+  "howItWorks.active.headline": "Prueba activa",
+  "howItWorks.active.text": "La licencia de prueba de 60 días se genera automáticamente. Todas las funciones Enterprise y Compliance, sin limitaciones, sin clave que pegar.",
+  "howItWorks.note": "¿Necesita más tiempo? Las extensiones de prueba están a un mensaje de distancia. Cuando esté listo para producción, las licencias son por clúster — nodos ilimitados, desarrollo y staging incluidos.",
+  "howItWorks.pricingLink": "Ver precios →",
+  "paths.headline": "Dos formas de empezar",
+  "paths.tabDocker": "Evaluación rápida con Docker",
+  "paths.tabCluster": "Instalar en su propio clúster",
+  "paths.dockerClosing": "La licencia de prueba también está activa dentro del contenedor — todas las funciones están ahí para explorar.",
+  "paths.stepsClosing_plain": "Eso es todo — su prueba de 60 días ya está activa. Compruebe el estado de la licencia en el log de Elasticsearch al arrancar o mediante el endpoint de licencias (",
+  "paths.stepsClosing_link": "ver documentación",
+  "paths.stepsClosing_after": ").",
+  "included.headline": "Todo desbloqueado durante 60 días",
+  "included.item1": "SAML, OpenID Connect, LDAP / Active Directory y Kerberos",
+  "included.item2": "Seguridad a nivel de documento y de campo",
+  "included.item3": "Multi-tenancy de Kibana",
+  "included.item4": "Registro de auditoría y seguimiento de cumplimiento",
+  "included.item5": "Cifrado en reposo",
+  "included.item6": "Alertas Signals con todas las integraciones",
+  "included.item7": "Funciones en vista previa: gestión de índices y detección de anomalías",
+  "included.item8": "Documentación completa y foro de la comunidad",
+  "included.link": "Compare las ediciones en detalle →",
+  "evalHelp.headline": "¿Quiere ayuda con su evaluación?",
+  "evalHelp.text": "Déjenos su correo y le enviaremos una breve lista de verificación para una prueba de concepto de nivel de producción — y, si lo desea, una llamada de 30 minutos con uno de nuestros ingenieros para revisar su configuración. Sin discurso de ventas.",
+  "evalHelp.demoText": "¿Prefiere verlo primero?",
+  "evalHelp.demoLink": "Reserve una demo →"
 }
