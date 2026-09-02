@@ -1,58 +1,64 @@
 {
-  "meta": {
-    "title": "Démarrez votre essai gratuit de Search Guard dès maintenant",
-    "description": "Comment télécharger et exécuter votre essai gratuit de 60 jours de Search Guard Enterprise"
-  },
-  "breadcrumb": {
-    "home": "Accueil",
-    "freeTrial": "Démarrer l'essai gratuit"
-  },
-  "title": {
-    "headline": "Démarrez votre essai gratuit",
-    "text": "Vous pouvez utiliser l'édition Community, entièrement Open Source et gratuite à vie, ou démarrer votre essai de 60 jours de Search Guard Enterprise"
-  },
-  "step1": {
-    "headline": "Téléchargez Search Guard",
-    "text": "Téléchargez le plugin Search Guard correspondant à la version d'Elasticsearch que vous utilisez. Par exemple, si vous utilisez Elasticsearch 9.4.3, vous devez également télécharger Search Guard pour la version 9.4.3. Le téléchargement est indépendant de la plateforme.",
-    "button": "visitez notre page de téléchargements"
-  },
-  "step2": {
-    "headline": "Installez Search Guard",
-    "text": "Arrêtez votre cluster Elasticsearch et installez Search Guard sur tous les nœuds."
-  },
-  "step3": {
-    "headline": "(Optionnel) Installez la configuration de démonstration",
-    "text": "Search Guard est livré avec des utilisateurs et des rôles de démonstration que vous pouvez installer pour un PoC rapide :"
-  },
-  "step4": {
-    "headline": "Redémarrez Elasticsearch",
-    "text": "Après avoir installé Search Guard, démarrez votre cluster normalement :"
-  },
-  "docker": {
-    "headline": "Docker",
-    "text1": "Nous fournissons une <1>démo basée sur Docker</1> avec Elasticsearch et Kibana incluant Search Guard",
-    "text1_plain": "Nous fournissons une ",
-    "text1_link": "démonstration basée sur Docker",
-    "text1_after": " incluant Elasticsearch et Kibana avec Search Guard et Signals Alerting pré-installés :",
-    "startText": "Pour démarrer l'image, exécutez :",
-    "kibanaText": "Une fois le conteneur démarré, vous pouvez accéder à Kibana sur :",
-    "esText": "Elasticsearch est accessible sur :",
-    "usersText": "Le conteneur est livré avec des utilisateurs de démonstration pré-installés. Pour un accès complet et pour configurer de nouveaux rôles et permissions, utilisez admin/admin pour vous connecter."
-  },
-  "kubernetes": {
-    "headline": "Kubernetes",
-    "text1_plain": "Nous fournissons des ",
-    "text1_link": "Helm Charts",
-    "text1_after": " pour exécuter Search Guard sur Kubernetes."
-  },
-  "otherResources": {
-    "headline": "Autres ressources",
-    "documentation": "Documentation Search Guard",
-    "forum": "Forum communautaire Search Guard",
-    "gitlab": "Dépôts GitLab",
-    "blog": "Blog Search Guard"
-  },
-  "contactForm": {
-    "headline": "Des questions ? Envoyez-nous un message !"
-  }
+  "meta.title": "Essai gratuit de 60 jours — Téléchargez Search Guard pour Elasticsearch",
+  "meta.description": "Téléchargez Search Guard et démarrez votre essai gratuit de 60 jours de toutes les fonctionnalités Enterprise et Compliance — activé automatiquement à l'installation. Sans inscription, sans carte bancaire.",
+  "breadcrumb.home": "Accueil",
+  "breadcrumb.freeTrial": "Essai gratuit",
+  "title.headline": "Démarrez votre essai gratuit",
+  "title.text": "Téléchargez Search Guard et installez-le — votre essai de 60 jours de toutes les fonctionnalités Enterprise et Compliance s'active automatiquement. Sans inscription, sans clé de licence, sans carte bancaire. Vous préférez la Community Edition, gratuite pour toujours ? Même téléchargement.",
+  "step1.headline": "Téléchargez Search Guard",
+  "step1.text": "Téléchargez le plugin Search Guard correspondant à la version d'Elasticsearch que vous utilisez — la matrice des versions montre exactement quelle version de Search Guard correspond à quelle version d'Elasticsearch. Le téléchargement est indépendant de la plateforme.",
+  "step1.button": "Ouvrir la matrice des versions et téléchargements",
+  "step2.headline": "Installez Search Guard",
+  "step2.text": "Arrêtez votre cluster Elasticsearch et installez Search Guard sur tous les nœuds.",
+  "step3.headline": "(Optionnel) Installez la configuration de démonstration",
+  "step3.text": "Search Guard est livré avec des utilisateurs et des rôles de démonstration que vous pouvez installer pour un PoC rapide :",
+  "step4.headline": "Redémarrez Elasticsearch",
+  "step4.text": "Après avoir installé Search Guard, démarrez votre cluster normalement :",
+  "docker.headline": "Docker",
+  "docker.text1": "Nous fournissons une <1>démo basée sur Docker</1> avec Elasticsearch et Kibana incluant Search Guard",
+  "docker.text1_plain": "Nous fournissons une ",
+  "docker.text1_link": "démonstration basée sur Docker",
+  "docker.text1_after": " incluant Elasticsearch et Kibana avec Search Guard et Signals Alerting pré-installés :",
+  "docker.startText": "Pour démarrer l'image, exécutez :",
+  "docker.kibanaText": "Une fois le conteneur démarré, vous pouvez accéder à Kibana sur :",
+  "docker.esText": "Elasticsearch est accessible sur :",
+  "docker.usersText": "Le conteneur est livré avec des utilisateurs de démonstration pré-installés. Pour un accès complet et pour configurer de nouveaux rôles et permissions, utilisez admin/admin pour vous connecter.",
+  "kubernetes.headline": "Kubernetes",
+  "kubernetes.text1_plain": "Nous fournissons des ",
+  "kubernetes.text1_link": "Helm Charts",
+  "kubernetes.text1_after": " pour exécuter Search Guard sur Kubernetes.",
+  "otherResources.headline": "Autres ressources",
+  "otherResources.documentation": "Documentation Search Guard",
+  "otherResources.forum": "Forum communautaire Search Guard",
+  "otherResources.gitlab": "Dépôts GitLab",
+  "otherResources.blog": "Blog Search Guard",
+  "howItWorks.download.headline": "Télécharger",
+  "howItWorks.download.text": "Récupérez le plugin Search Guard correspondant à votre version d'Elasticsearch — ou lancez notre démo Docker en une seule commande.",
+  "howItWorks.install.headline": "Installer",
+  "howItWorks.install.text": "Installez sur vos nœuds ou démarrez le conteneur. Une affaire de minutes, pas de jours.",
+  "howItWorks.active.headline": "Essai actif",
+  "howItWorks.active.text": "Une licence d'essai de 60 jours est générée automatiquement. Toutes les fonctionnalités Enterprise et Compliance, sans limitations, sans clé à coller.",
+  "howItWorks.note": "Besoin de plus de temps ? Une prolongation d'essai ne demande qu'un message. Quand vous êtes prêt pour la production, les licences sont par cluster — nœuds illimités, dev et staging inclus.",
+  "howItWorks.pricingLink": "Voir les tarifs →",
+  "paths.headline": "Deux façons de démarrer",
+  "paths.tabDocker": "Évaluation rapide avec Docker",
+  "paths.tabCluster": "Installer sur votre propre cluster",
+  "paths.dockerClosing": "La licence d'essai est aussi active dans le conteneur — toutes les fonctionnalités sont là, à explorer.",
+  "paths.stepsClosing_plain": "C'est tout — votre essai de 60 jours est maintenant actif. Vérifiez l'état de la licence dans le log Elasticsearch au démarrage ou via l'endpoint de licence (",
+  "paths.stepsClosing_link": "voir la documentation",
+  "paths.stepsClosing_after": ").",
+  "included.headline": "Tout est débloqué pendant 60 jours",
+  "included.item1": "SAML, OpenID Connect, LDAP / Active Directory et Kerberos",
+  "included.item2": "Sécurité au niveau document et champ",
+  "included.item3": "Multi-tenancy Kibana",
+  "included.item4": "Journalisation d'audit et suivi de conformité",
+  "included.item5": "Chiffrement au repos",
+  "included.item6": "Alerting Signals avec toutes les intégrations",
+  "included.item7": "Fonctionnalités en aperçu : gestion d'index et détection d'anomalies",
+  "included.item8": "Documentation complète et forum communautaire",
+  "included.link": "Comparez les éditions en détail →",
+  "evalHelp.headline": "Besoin d'un coup de main pour votre évaluation ?",
+  "evalHelp.text": "Laissez-nous votre e-mail et nous vous enverrons une courte checklist de configuration pour une preuve de concept de niveau production — et, si vous le souhaitez, un échange de 30 minutes avec l'un de nos ingénieurs autour de votre installation. Sans discours commercial.",
+  "evalHelp.demoText": "Vous préférez d'abord une démonstration ?",
+  "evalHelp.demoLink": "Réserver une démo →"
 }

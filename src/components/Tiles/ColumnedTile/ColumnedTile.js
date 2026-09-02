@@ -64,7 +64,11 @@ const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, subheadlin
     const renderImage = (imageJSON, imageCSS, headline) => {
         const source = resolveAssetSrc(imageJSON.src);
 
-        if (isSVG(imageJSON.src)) {
+        // image.raw (opt-in): render the SVG as a plain <img> and keep its own
+        // colors. The default ReactSVG path strips fills and forces the schema
+        // color onto every element, which turns multi-color artwork (e.g. the
+        // numbered-circle assets) into a single-color blob.
+        if (isSVG(imageJSON.src) && !imageJSON.raw) {
             return (
                 <ReactSVG
                     src={source}

@@ -116,3 +116,128 @@
   overflow: scroll;
 }
 
+
+/* ------------------------------------------- Trial page redesign (issue #22) */
+
+.trial-how-note-wrapper {
+  padding: 0 24px 48px;
+}
+
+.trial-how-note {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+
+  a {
+    color: $secondary-dark;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.trial-section-headline {
+  margin-bottom: 48px;
+}
+
+.trial-paths-tabbar {
+  margin-bottom: 48px;
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
+}
+
+.trial-tabpanel {
+  max-width: 860px;
+  margin: 0 auto;
+
+  p {
+    text-align: left;
+  }
+
+  .quickstart-codebox {
+    margin-bottom: 24px;
+  }
+}
+
+.trial-paths-closing {
+  font-weight: bold;
+  margin-top: 24px;
+
+  a {
+    color: $secondary-dark;
+  }
+}
+
+.trial-kubernetes {
+  max-width: 860px;
+  margin: 48px auto 0;
+  text-align: left;
+}
+
+.trial-included-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+
+  @media only screen and (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: left;
+
+    img {
+      flex: 0 0 auto;
+      margin-top: 5px;
+    }
+  }
+}
+
+.trial-included-link {
+  text-align: center;
+  margin-top: 32px;
+
+  a {
+    color: $secondary;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.trial-evalhelp-text {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 32px;
+}
+
+.trial-evalhelp-demo {
+  text-align: center;
+  margin-top: 16px;
+
+  a {
+    color: $secondary-dark;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
