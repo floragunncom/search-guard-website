@@ -507,13 +507,29 @@ export async function sendRawEmail({ to, subject, text, from }, apiKey, logger =
  * Subscribe an email address to one or more SendGrid marketing lists.
  * Ported from the old AWS Lambda newsletter `addNewsletterSubscriber`.
  *
+ * Optionally forwards a first name and campaign metadata (source / score),
+ * used by the /10-years quiz gate. `first_name` is a SendGrid reserved field
+ * and always goes top-level. `source` and `score` are custom fields: SendGrid
+ * addresses custom fields by field ID (e.g. `e1_T`), not by name, so they are
+ * only sent when the matching field IDs are supplied in `customFieldIds`. When
+ * an id is missing the value is dropped (and logged) rather than sent under a
+ * name SendGrid would silently ignore.
+ *
  * @param {Object} params
  * @param {string} params.email - Subscriber email
  * @param {string|string[]} params.listIds - One or more SendGrid list IDs
+ * @param {string} [params.firstName] - Optional first name (reserved field)
+ * @param {string} [params.source] - Optional campaign source (custom field)
+ * @param {number} [params.score] - Optional quiz score (custom field)
+ * @param {Object} [params.customFieldIds] - `{ source, score }` SendGrid custom field IDs
  * @param {string} apiKey - SendGrid API key
  * @param {Object} logger - Logger instance (optional)
  */
-export async function subscribeToLists({ email, listIds }, apiKey, logger = null) {
+export async function subscribeToLists(
+  { email, listIds, firstName, source, score, customFieldIds = {} },
+  apiKey,
+  logger = null
+) {
   if (!logger) {
     logger = createLogger('sendgrid', {}, null);
   }
@@ -521,14 +537,38 @@ export async function subscribeToLists({ email, listIds }, apiKey, logger = null
   // Normalise to an array (old behaviour: accept single id or array)
   const list_ids = Array.isArray(listIds) ? listIds : [listIds];
 
+  const contact = { email };
+  if (firstName) {
+    contact.first_name = firstName;
+  }
+
+  // Custom fields are keyed by SendGrid field ID, only sent when configured.
+  const custom_fields = {};
+  if (customFieldIds.source && source != null && source !== '') {
+    custom_fields[customFieldIds.source] = source;
+  }
+  if (customFieldIds.score && score != null && score !== '') {
+    custom_fields[customFieldIds.score] = score;
+  }
+  if (Object.keys(custom_fields).length > 0) {
+    contact.custom_fields = custom_fields;
+  } else if (source != null || score != null) {
+    logger.warn(
+      'source/score provided but SendGrid custom field IDs are not configured; values not stored',
+      { hasSourceFieldId: !!customFieldIds.source, hasScoreFieldId: !!customFieldIds.score }
+    );
+  }
+
   logger.debug('Subscribing contact to SendGrid list(s)', {
     email,
     listIds: list_ids,
+    hasFirstName: !!firstName,
+    hasCustomFields: !!contact.custom_fields,
   });
 
   const payload = {
     list_ids,
-    contacts: [{ email }],
+    contacts: [contact],
   };
 
   const response = await fetch(`${SENDGRID_API_BASE}/marketing/contacts`, {

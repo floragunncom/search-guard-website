@@ -12,6 +12,12 @@
  *   Required: ids   - SendGrid marketing list id(s); single value or array
  *   Required: cf-turnstile-response (Cloudflare Turnstile token, injected
  *             into the form by the Turnstile widget)
+ *   Optional: firstName - subscriber first name (SendGrid reserved field)
+ *   Optional: source    - campaign source, e.g. "10y-quiz" (SendGrid custom field)
+ *   Optional: score     - quiz score 0-10 (SendGrid custom field)
+ *             The optional trio is sent by the /10-years quiz gate. source/score
+ *             are only stored when SENDGRID_SOURCE_FIELD_ID / SENDGRID_SCORE_FIELD_ID
+ *             are configured (SendGrid addresses custom fields by id, not name).
  *
  * Handles a subscription by (in parallel):
  * 1. Adding the email to the given SendGrid marketing list(s)
@@ -59,7 +65,10 @@ export async function onRequestPost(context) {
     const body = await request.json();
     logger.debug('Request body parsed', sanitizeForLogging(body));
 
-    const { email, ids } = body;
+    // `firstName`, `source` and `score` are optional — the standalone
+    // newsletter form (Email.js) sends only email + ids; the /10-years quiz
+    // gate additionally sends these for campaign attribution.
+    const { email, ids, firstName, source, score } = body;
 
     // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -148,8 +157,25 @@ export async function onRequestPost(context) {
     });
 
     const results = await Promise.allSettled([
-      // 1. Add to SendGrid marketing list(s) (Marketing scope)
-      subscribeToLists({ email, listIds }, env.SENDGRID_MARKETING_KEY, logger),
+      // 1. Add to SendGrid marketing list(s) (Marketing scope). firstName is a
+      // reserved field; source/score are custom fields, only stored when their
+      // SendGrid field IDs are configured (SENDGRID_SOURCE_FIELD_ID /
+      // SENDGRID_SCORE_FIELD_ID).
+      subscribeToLists(
+        {
+          email,
+          listIds,
+          firstName,
+          source,
+          score,
+          customFieldIds: {
+            source: env.SENDGRID_SOURCE_FIELD_ID,
+            score: env.SENDGRID_SCORE_FIELD_ID,
+          },
+        },
+        env.SENDGRID_MARKETING_KEY,
+        logger
+      ),
 
       // 2. Send notification to Matrix room
       sendMatrixNotification(
