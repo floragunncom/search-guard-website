@@ -18,6 +18,21 @@ SENDGRID_MARKETING_KEY=SG.xxxxxxxxxxxxxxxxxxxxxx
 # SendGrid marketing list the contact form subscribes people to.
 # (The old contact-form code hardcoded ce911ea8-88b2-4574-80be-adc58b67a87a.)
 SENDGRID_CONTACT_LIST_ID=00000000-0000-0000-0000-000000000000
+# SendGrid custom-field IDs for the /10-years quiz gate (source + score).
+# Create the custom fields in SendGrid (Marketing > Custom Fields) first, then
+# paste their field IDs here — SendGrid addresses custom fields by id, not name
+# (text ids look like e1_T, number ids like e2_N). Leave unset to skip storing
+# source/score; the subscribe still succeeds and the function logs a warning.
+SENDGRID_SOURCE_FIELD_ID=
+SENDGRID_SCORE_FIELD_ID=
+# /10-years cookbook delivery: SendGrid dynamic template id (d-…) sent, as a
+# transactional single-send, to every quiz entrant who leaves an email. The
+# download link can live in the template, or be passed in via SENDGRID_COOKBOOK_URL
+# (exposed to the template as the `cookbook_url` dynamic variable). The send uses
+# the Mail Send key (SENDGRID_SENDMAIL_KEY). Leave the template id unset to skip
+# cookbook delivery entirely.
+SENDGRID_COOKBOOK_TEMPLATE_ID=
+SENDGRID_COOKBOOK_URL=
 
 # --- Matrix (room notifications) ---
 # Server URL and room id are configuration, not secrets. Only the token is secret.

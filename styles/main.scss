@@ -78,3 +78,7 @@
 @use '../src/views/TlsTool/TlsTool.scss';
 @use '../src/views/WhitePapers/WhitePaperArticle.scss';
 @use '../src/views/WhitePapers/WhitePapers.scss';
+
+// 10-year anniversary quiz (/10-years)
+@use '../src/components/TenYears/BrickPlate.scss';
+@use '../src/components/TenYears/Quiz.scss';

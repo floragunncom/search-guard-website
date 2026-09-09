@@ -1,0 +1,484 @@
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+
+// Feedback colours for right/wrong answers. Green reuses the brand mint-dark
+// token; the site has no red token, so a single accessible red is defined here
+// for the "wrong answer" state only.
+$quiz-good: $secondary-dark;
+$quiz-bad: #c2523a;
+
+.tenyears-quiz {
+  // Brick tones, mirrored from BrickPlate so the score-screen prize chip can
+  // reference them too.
+  --brick-navy: #{$primary};
+  --brick-cyan: #{$secondary};
+  --brick-accent: #{$primary-light};
+
+  padding-top: 64px;
+  padding-bottom: 64px;
+
+  @media (max-width: $mobile) {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+}
+
+.tenyears-stage {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $tabletBig) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+
+    .tenyears-build {
+      order: 2;
+      position: sticky;
+      top: 32px;
+    }
+    .tenyears-panel {
+      order: 1;
+    }
+  }
+}
+
+/* ---------- card ---------- */
+.tenyears-panel {
+  background: $white;
+  border: 1px solid $lightGrey;
+  border-radius: 14px;
+  box-shadow: 0 1px 0 rgba($primary, 0.06), 0 12px 32px -18px rgba($primary, 0.45);
+  padding: clamp(20px, 3.5vw, 32px);
+}
+
+.tenyears-eyebrow {
+  font-family: 'Inter-Regular', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $secondary-dark;
+  margin: 0 0 12px;
+}
+
+// Left-aligned, sentence-case display headings — deliberately overriding the
+// global uppercase/centre heading defaults, scoped under the panel to win.
+.tenyears-panel .tenyears-h1 {
+  font-family: 'Parafina-SemiWideXBold', 'Inter', sans-serif;
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.04;
+  letter-spacing: -0.5px;
+  text-transform: none;
+  text-align: left;
+  color: $primary;
+  margin: 0 0 12px;
+}
+
+.tenyears-panel .tenyears-h2 {
+  font-family: 'Parafina-SemiWideXBold', 'Inter', sans-serif;
+  font-size: clamp(21px, 3.2vw, 28px);
+  line-height: 1.15;
+  letter-spacing: -0.2px;
+  text-transform: none;
+  text-align: left;
+  color: $primary;
+  margin: 0 0 20px;
+}
+
+.tenyears-lede {
+  font-family: 'Inter-Regular', 'Inter', sans-serif;
+  color: $darkGrey;
+  max-width: 56ch;
+  margin: 0 0 24px;
+}
+
+.tenyears-meta {
+  font-family: 'Inter-Regular', 'Inter', sans-serif;
+  font-size: 14px;
+  color: $darkGrey;
+  margin: 0 0 28px;
+}
+
+.tenyears-cookbook {
+  font-family: 'Inter-Regular', 'Inter', sans-serif;
+  font-size: 15px;
+  color: $darkGrey;
+  max-width: 56ch;
+  margin: -8px 0 20px;
+  padding-left: 14px;
+  border-left: 3px solid $secondary;
+}
+
+.tenyears-replay {
+  border-top: 1px solid $lightGrey;
+  margin-top: 28px;
+  padding-top: 20px;
+}
+
+/* ---------- options ---------- */
+.tenyears-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 20px;
+}
+
+.tenyears-opt {
+  font-family: 'Inter-Regular', 'Inter', sans-serif;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  color: $primary;
+  border: 1.5px solid $lightGrey;
+  border-radius: 10px;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+
+  &:hover:not(:disabled) {
+    border-color: $secondary-dark;
+    transform: translateX(2px);
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &.is-right {
+    border-color: $quiz-good;
+    background: rgba($secondary, 0.16);
+  }
+  &.is-wrong {
+    border-color: $quiz-bad;
+    background: rgba($quiz-bad, 0.1);
+  }
+  &.is-dim {
+    opacity: 0.5;
+  }
+}
+
+.tenyears-key {
+  font-family: 'Inter-Regular', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: $darkGrey;
+  border: 1px solid $lightGrey;
+  border-radius: 5px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+
+.is-right .tenyears-key {
+  border-color: $quiz-good;
+  color: $quiz-good;
+}
+.is-wrong .tenyears-key {
+  border-color: $quiz-bad;
+  color: $quiz-bad;
+}
+
+/* ---------- reveal ---------- */
+.tenyears-reveal {
+  border-left: 3px solid $secondary-dark;
+  padding: 2px 0 2px 16px;
+  margin: 0 0 24px;
+  animation: tenyears-fade 0.3s ease both;
+
+  &.is-wrong {
+    border-left-color: $quiz-bad;
+  }
+
+  p {
+    margin: 0;
+    color: $darkGrey;
+    max-width: 58ch;
+  }
+
+  strong {
+    color: $primary;
+    font-weight: 600;
+  }
+}
+
+.tenyears-verdict {
+  font-family: 'Inter-Regular', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 6px !important;
+  color: $quiz-good;
+
+  &.is-no {
+    color: $quiz-bad;
+  }
+}
+
+@keyframes tenyears-fade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- buttons ---------- */
+.tenyears-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tenyears-btn {
+  font-family: 'Inter-Regular', 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  padding: 13px 26px;
+  background: $secondary;
+  color: $primary;
+  transition: box-shadow 0.1s linear, transform 0.1s;
+
+  &:hover:not(:disabled) {
+    box-shadow: 0 6px 18px -6px rgba($primary, 0.55);
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  &.is-ghost {
+    background: transparent;
+    color: $darkGrey;
+    border: 1.5px solid $lightGrey;
+
+    &:hover:not(:disabled) {
+      color: $primary;
+      border-color: $darkGrey;
+      box-shadow: none;
+    }
+  }
+}
+
+/* ---------- score screen: prize + gate ---------- */
+.tenyears-prize {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  border: 1px solid $lightGrey;
+  border-radius: 11px;
+  padding: 16px 18px;
+  margin: 0 0 24px;
+  background: rgba($secondary-light, 0.35);
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    color: $darkGrey;
+  }
+  strong {
+    color: $primary;
+    font-weight: 600;
+  }
+}
+
+.tenyears-prize-mini {
+  display: grid;
+  grid-template-columns: repeat(2, 10px);
+  gap: 3px;
+  flex: none;
+  margin-top: 3px;
+
+  i {
+    display: block;
+    height: 10px;
+    border-radius: 2px;
+  }
+}
+
+.tenyears-gate {
+  border-top: 1px solid $lightGrey;
+  margin-top: 28px;
+  padding-top: 24px;
+}
+
+.tenyears-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 16px;
+  max-width: 26rem;
+
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary;
+  }
+
+  input[type='email'] {
+    font-family: 'Inter-Regular', 'Inter', sans-serif;
+    font-size: 16px;
+    padding: 11px 14px;
+    border-radius: 9px;
+    border: 1.5px solid $lightGrey;
+    background: $white;
+    color: $primary;
+  }
+}
+
+.tenyears-check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 0 0 20px;
+  max-width: 34rem;
+  cursor: pointer;
+
+  input {
+    margin-top: 4px;
+    accent-color: $secondary-dark;
+    width: 16px;
+    height: 16px;
+    flex: none;
+  }
+
+  span {
+    font-size: 14px;
+    color: $darkGrey;
+  }
+  strong {
+    color: $primary;
+    font-weight: 600;
+  }
+}
+
+.tenyears-check-draw {
+  border: 1px solid rgba($secondary-dark, 0.4);
+  background: rgba($secondary-light, 0.3);
+  border-radius: 9px;
+  padding: 12px 14px;
+
+  a {
+    color: $secondary-dark;
+    font-weight: 600;
+  }
+}
+
+.turnstile-widget {
+  margin: 0 0 16px;
+}
+
+.tenyears-fineprint {
+  font-size: 13px;
+  color: $darkGrey;
+  margin: 20px 0 0;
+  max-width: 54ch;
+}
+
+:where(.tenyears-quiz) :focus-visible {
+  outline: 2.5px solid $secondary-dark;
+  outline-offset: 2px;
+}
+
+/* ---------- hint link (answer is on our timeline) ---------- */
+.tenyears-hint {
+  margin: 0 0 20px;
+  font-size: 14px;
+
+  a {
+    color: $secondary-dark;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba($secondary-dark, 0.35);
+
+    &:hover {
+      border-bottom-color: $secondary-dark;
+    }
+  }
+}
+
+/* ---------- score number ---------- */
+.tenyears-panel .tenyears-score-number {
+  font-size: clamp(40px, 8vw, 68px);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 8px;
+}
+
+/* ---------- answer recap ---------- */
+.tenyears-recap {
+  border-top: 1px solid $lightGrey;
+  margin-top: 28px;
+  padding-top: 20px;
+}
+
+.tenyears-panel .tenyears-recap-heading {
+  font-family: 'Inter-Regular', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: left;
+  color: $darkGrey;
+  margin: 0 0 14px;
+}
+
+.tenyears-recap ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tenyears-recap li {
+  display: flex;
+  gap: 14px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba($lightGrey, 0.7);
+  font-size: 15px;
+  color: $primary;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+
+.tenyears-recap-year {
+  flex: none;
+  width: 84px;
+  font-weight: 700;
+  color: $secondary-dark;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- gate: optional / consent note / errors ---------- */
+.tenyears-optional,
+.tenyears-consent-note {
+  font-weight: 400;
+  color: $darkGrey;
+}
+
+.tenyears-error {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: $quiz-bad;
+}

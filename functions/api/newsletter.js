@@ -22,9 +22,12 @@
  * Handles a subscription by (in parallel):
  * 1. Adding the email to the given SendGrid marketing list(s)
  * 2. Sending a Matrix room notification
+ * 3. (Quiz submissions only, i.e. source = 10y-quiz, when
+ *    SENDGRID_COOKBOOK_TEMPLATE_ID is set) sending the cookbook delivery email
+ *    as a transactional single-send.
  */
 
-import { subscribeToLists } from '../lib/sendgrid.js';
+import { subscribeToLists, sendCookbookEmail } from '../lib/sendgrid.js';
 import {
   sendMatrixNotification,
   sendMatrixFailureAlert,
@@ -156,7 +159,13 @@ export async function onRequestPost(context) {
       visitorCountry,
     });
 
-    const results = await Promise.allSettled([
+    // Deliver the cookbook only for quiz submissions (source = 10y-quiz) and only
+    // when a template is configured. This keeps the standalone newsletter form
+    // (which sends no source) from ever triggering a cookbook email.
+    const shouldSendCookbook =
+      source === '10y-quiz' && !!env.SENDGRID_COOKBOOK_TEMPLATE_ID;
+
+    const tasks = [
       // 1. Add to SendGrid marketing list(s) (Marketing scope). firstName is a
       // reserved field; source/score are custom fields, only stored when their
       // SendGrid field IDs are configured (SENDGRID_SOURCE_FIELD_ID /
@@ -189,13 +198,28 @@ export async function onRequestPost(context) {
         env.MATRIX_TOKEN,
         logger
       ),
-    ]);
+    ];
 
-    const [listResult, matrixResult] = results;
+    // 3. (Quiz only) Deliver the cookbook via SendGrid transactional template.
+    if (shouldSendCookbook) {
+      tasks.push(
+        sendCookbookEmail(
+          { email, firstName, cookbookUrl: env.SENDGRID_COOKBOOK_URL },
+          env.SENDGRID_COOKBOOK_TEMPLATE_ID,
+          env.SENDGRID_SENDMAIL_KEY,
+          logger
+        )
+      );
+    }
+
+    const results = await Promise.allSettled(tasks);
+
+    const [listResult, matrixResult, cookbookResult] = results;
 
     logger.debug('Integration results', {
       list: listResult.status,
       matrix: matrixResult.status,
+      cookbook: cookbookResult ? cookbookResult.status : 'skipped',
     });
 
     const response = {
@@ -207,8 +231,23 @@ export async function onRequestPost(context) {
           matrixResult.status === 'fulfilled'
             ? (matrixResult.value?.skipped ? 'skipped' : 'sent')
             : 'failed',
+        cookbook: !cookbookResult
+          ? 'skipped'
+          : cookbookResult.status === 'fulfilled'
+            ? 'sent'
+            : 'failed',
       },
     };
+
+    if (cookbookResult) {
+      if (cookbookResult.status === 'rejected') {
+        logger.error('Cookbook email failed', {
+          error: cookbookResult.reason?.message || cookbookResult.reason,
+        });
+      } else {
+        logger.info('Cookbook email sent successfully');
+      }
+    }
 
     if (listResult.status === 'rejected') {
       logger.error('SendGrid list subscription failed', {
@@ -243,6 +282,12 @@ export async function onRequestPost(context) {
       failures.push({
         step: 'Matrix notification',
         error: matrixResult.reason?.message || String(matrixResult.reason),
+      });
+    }
+    if (cookbookResult && cookbookResult.status === 'rejected') {
+      failures.push({
+        step: '10y cookbook email',
+        error: cookbookResult.reason?.message || String(cookbookResult.reason),
       });
     }
 

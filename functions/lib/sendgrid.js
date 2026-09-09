@@ -599,3 +599,54 @@ export async function subscribeToLists(
 
   return { success: true, jobId: result.job_id };
 }
+
+/**
+ * Send the /10-years cookbook delivery email — a transactional single-send via a
+ * SendGrid dynamic template. Legally this is fulfilling the resource the visitor
+ * explicitly asked for (not marketing), so no double opt-in is needed here; the
+ * newsletter opt-in is separate.
+ *
+ * The cookbook download link normally lives inside the template; an optional
+ * `cookbookUrl` is also passed as the `cookbook_url` dynamic-template variable so
+ * the link can be changed via env without editing the template. `first_name` is
+ * passed for personalisation.
+ *
+ * @param {Object} params
+ * @param {string} params.email - Recipient
+ * @param {string} [params.firstName] - For personalisation
+ * @param {string} [params.cookbookUrl] - Optional download link (dynamic var)
+ * @param {string} templateId - SendGrid dynamic template id (d-…)
+ * @param {string} apiKey - SendGrid API key (Mail Send scope)
+ * @param {Object} logger - Logger instance (optional)
+ */
+export async function sendCookbookEmail(
+  { email, firstName, cookbookUrl },
+  templateId,
+  apiKey,
+  logger = null
+) {
+  if (!logger) {
+    logger = createLogger('sendgrid', {}, null);
+  }
+
+  const dynamicTemplateData = { first_name: firstName || '' };
+  if (cookbookUrl) {
+    dynamicTemplateData.cookbook_url = cookbookUrl;
+  }
+
+  const payload = {
+    from: SG_FROM,
+    template_id: templateId,
+    categories: ['10y-cookbook'],
+    personalizations: [
+      {
+        to: [{ email }],
+        dynamic_template_data: dynamicTemplateData,
+      },
+    ],
+  };
+
+  await postMailSend(payload, apiKey, logger, '10y cookbook');
+  logger.info('Cookbook email sent', { email });
+  return { success: true };
+}
