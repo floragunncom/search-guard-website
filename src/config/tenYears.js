@@ -21,12 +21,10 @@
 // list, a visitor can get the cookbook without subscribing to the newsletter —
 // which is the Koppelungsverbot requirement from the build brief.
 
-// TODO(marketing): replace this placeholder with the real 10y-quiz campaign list
-// id before launch. Until it is set, entries are POSTed with a list id SendGrid
-// will reject, so no addresses are actually captured. Can also be supplied at
-// build time via NEXT_PUBLIC_QUIZ_LIST_ID.
+// SendGrid "10y-quiz" campaign list — every quiz entrant lands here (cookbook
+// delivery + attribution). Overridable at build time via NEXT_PUBLIC_QUIZ_LIST_ID.
 export const QUIZ_CAMPAIGN_LIST_ID =
-  process.env.NEXT_PUBLIC_QUIZ_LIST_ID || 'REPLACE_ME_10Y_QUIZ_LIST_ID';
+  process.env.NEXT_PUBLIC_QUIZ_LIST_ID || '179da79e-ed9d-45fa-84c1-93164cddf846';
 
 // Existing newsletter list id, mirrored from src/components/Email/Email.js.
 export const NEWSLETTER_LIST_ID = '9254dc87-0c97-43a8-bf7b-85a624da753e';
@@ -35,7 +33,6 @@ export const NEWSLETTER_LIST_ID = '9254dc87-0c97-43a8-bf7b-85a624da753e';
 // when they scored a perfect 10 AND ticked the draw opt-in (accepting the
 // Teilnahmebedingungen). The winner is drawn from this list, so it stays clean
 // of everyone who only wanted the cookbook.
-// TODO(marketing): create this list in SendGrid and set the real id (or supply
-// NEXT_PUBLIC_QUIZ_DRAW_LIST_ID at build time).
+// SendGrid "1010 Draw Entrants" list. Overridable via NEXT_PUBLIC_QUIZ_DRAW_LIST_ID.
 export const QUIZ_DRAW_LIST_ID =
-  process.env.NEXT_PUBLIC_QUIZ_DRAW_LIST_ID || 'REPLACE_ME_10Y_DRAW_LIST_ID';
+  process.env.NEXT_PUBLIC_QUIZ_DRAW_LIST_ID || 'ab021e16-852b-4e09-8cc4-8ac494cd05df';
