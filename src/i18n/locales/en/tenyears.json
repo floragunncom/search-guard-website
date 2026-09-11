@@ -14,9 +14,10 @@
     "text": "That invoice is the birthday we're counting — not a founding date, not a first commit. Below is the decade that followed, and one question for every year of it."
   },
   "intro": {
-    "eyebrow": "Search Guard turns 10",
+    "eyebrow": "Search Guard · 10th anniversary",
     "instruction": "One question for every year, 2016 to 2025. Every right answer lays a brick — ten bricks build the 10.",
     "cookbook": "The cookbook waiting at the end is a real one: beloved home recipes from the people who build Search Guard, collected over ten years of offsites. Yours for an email, whatever you score.",
+    "prize": "And a perfect ten? That puts you in the running for our anniversary prize draw.",
     "meta": "10 questions · about 90 seconds · no sign-up to play · a cookbook at the end",
     "start": "Start with 2016"
   },
@@ -51,7 +52,7 @@
       "year": "2018",
       "q": "Everyone remembers the inbox flood of May 2018. But the GDPR had already been law for two years by then — from which date?",
       "opts": ["1 January 2018", "24 May 2016", "14 April 2016"],
-      "reveal": "Parliament adopted it on 14 April 2016, it entered into force on 24 May 2016, and it became directly applicable on 25 May 2018. Two full years of notice — which makes the scramble of May 2018 quite an achievement.",
+      "reveal": "The European Parliament adopted it on 14 April 2016, it entered into force on 24 May 2016, and it became directly applicable on 25 May 2018. Two full years of notice — which makes the scramble of May 2018 quite an achievement.",
       "hint": ""
     },
     {
@@ -120,14 +121,10 @@
       "1": "One right. We admire the commitment to guessing.",
       "0": "Perfectly wrong throughout. That takes a kind of talent."
     },
-    "shareLinkedIn": "Share on LinkedIn",
-    "copyResult": "Copy my result",
-    "copied": "Copied",
-    "shareText": "I scored {{score}}/10 on the Search Guard Time Machine — ten questions for ten years of Elasticsearch security. search-guard.com/10-years",
     "recapHeading": "What the answers were"
   },
   "gate": {
-    "heading": "Want the cookbook?",
+    "heading": "Want the Search Guard Team cookbook?",
     "bodyDraw": "Leave an email and we'll send you the Search Guard cookbook — our own recipes, collected over ten years of offsites. A perfect ten also earns you a place in the anniversary draw — opt in below.",
     "bodyNoDraw": "Leave an email and we'll send you the Search Guard cookbook — our own recipes, collected over ten years of offsites. The cookbook is yours whatever you scored; only a perfect ten can enter the anniversary draw.",
     "drawLabel": "Enter me in the anniversary draw",

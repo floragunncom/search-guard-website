@@ -12,8 +12,6 @@ import QuizGate from './QuizGate';
 // hydration mismatch. If you re-order an option array, update its index here.
 const CORRECT = [1, 2, 1, 0, 2, 1, 2, 0, 1, 1];
 
-const PAGE_URL = 'https://search-guard.com/10-years/';
-
 const SCREENS = {
   INTRO: 'intro',
   QUESTION: 'question',
@@ -32,7 +30,6 @@ const Quiz = () => {
   const [idx, setIdx] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [picked, setPicked] = React.useState(null); // chosen option index, or null
-  const [copied, setCopied] = React.useState(false);
 
   const answered = picked !== null;
   const current = list[idx];
@@ -55,7 +52,6 @@ const Quiz = () => {
     setScore(0);
     setIdx(0);
     setPicked(null);
-    setCopied(false);
     setScreen(SCREENS.INTRO);
   };
 
@@ -77,19 +73,6 @@ const Quiz = () => {
     }
     setIdx((i) => i + 1);
     setPicked(null);
-  };
-
-  const copyResult = () => {
-    const text = t('score.shareText', { score });
-    if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      navigator.clipboard.writeText(text).then(
-        () => {
-          setCopied(true);
-          setTimeout(() => setCopied(false), 2000);
-        },
-        () => {}
-      );
-    }
   };
 
   const renderOptions = () => (
@@ -159,6 +142,7 @@ const Quiz = () => {
       <p className="tenyears-eyebrow">{t('intro.eyebrow')}</p>
       <p className="tenyears-lede">{t('intro.instruction')}</p>
       <p className="tenyears-cookbook">{t('intro.cookbook')}</p>
+      <p className="tenyears-prize-line">{t('intro.prize')}</p>
       <p className="tenyears-meta">{t('intro.meta')}</p>
       <div className="tenyears-actions">
         <button className="tenyears-btn" type="button" onClick={start}>
@@ -201,28 +185,11 @@ const Quiz = () => {
   };
 
   const renderScore = () => {
-    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-      PAGE_URL
-    )}`;
     return (
       <div className="tenyears-panel">
         <p className="tenyears-eyebrow">{t('score.eyebrow')}</p>
         <h2 className="tenyears-h1 tenyears-score-number">{t('score.headline', { score })}</h2>
         <p className="tenyears-lede">{t(`score.lines.${score}`)}</p>
-
-        <div className="tenyears-actions">
-          <a
-            className="tenyears-btn"
-            href={linkedInUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t('score.shareLinkedIn')}
-          </a>
-          <button className="tenyears-btn is-ghost" type="button" onClick={copyResult}>
-            {copied ? t('score.copied') : t('score.copyResult')}
-          </button>
-        </div>
 
         {renderRecap()}
 
