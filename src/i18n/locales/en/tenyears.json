@@ -30,12 +30,7 @@
   "buttons": {
     "next": "Next question",
     "last": "See my result",
-    "tiebreak": "One last question",
-    "result": "See my result",
     "playAgain": "Play again"
-  },
-  "bonus": {
-    "eyebrow": "Tiebreaker · a perfect ten deserves one more"
   },
   "questions": [
     {
@@ -109,13 +104,6 @@
       "hint": "It's on our timeline, under 2025 →"
     }
   ],
-  "bonusQuestion": {
-    "year": "Tiebreaker",
-    "q": "Search Guard went from version 2 to version 5 in 2016. What happened to 3 and 4?",
-    "opts": ["They were internal-only releases", "Nothing — we skipped them", "They were withdrawn after bugs"],
-    "reveal": "Search Guard 2 shipped in June 2016. Elastic then unified every version number in their stack at 5.0 that October, so Search Guard 5 arrived in November to match. Versions 3 and 4 never existed.",
-    "hint": ""
-  },
   "score": {
     "eyebrow": "Your result",
     "headline": "{{score}}/10",
@@ -161,7 +149,7 @@
   "confirm": {
     "eyebrow": "Check your inbox",
     "heading": "The cookbook is on its way.",
-    "body": "The cookbook email is landing in your inbox now — give it a minute, and check spam if it's shy. The anniversary draw closes on 30 September, and we announce the winner in the October newsletter.",
+    "body": "The cookbook email is landing in your inbox now — give it a minute, and check spam if it's shy. The anniversary draw closes on 20 October, and we announce the winner in our October newsletter on the 22nd.",
     "button": "Read the ten-year timeline"
   }
 }

@@ -11,14 +11,12 @@ import QuizGate from './QuizGate';
 // would differ between the static (SSR) HTML and client hydration and trip a
 // hydration mismatch. If you re-order an option array, update its index here.
 const CORRECT = [1, 2, 1, 0, 2, 1, 2, 0, 1, 1];
-const BONUS_CORRECT = 1;
 
 const PAGE_URL = 'https://search-guard.com/10-years/';
 
 const SCREENS = {
   INTRO: 'intro',
   QUESTION: 'question',
-  BONUS: 'bonus',
   SCORE: 'score',
   CONFIRM: 'confirm',
 };
@@ -27,7 +25,6 @@ const Quiz = () => {
   const { t } = useTranslation('tenyears');
 
   const questions = t('questions', { returnObjects: true });
-  const bonusQuestion = t('bonusQuestion', { returnObjects: true });
   const list = Array.isArray(questions) ? questions : [];
   const lastIndex = list.length - 1;
 
@@ -38,9 +35,8 @@ const Quiz = () => {
   const [copied, setCopied] = React.useState(false);
 
   const answered = picked !== null;
-  const isBonus = screen === SCREENS.BONUS;
-  const current = isBonus ? bonusQuestion : list[idx];
-  const correctIndex = isBonus ? BONUS_CORRECT : CORRECT[idx];
+  const current = list[idx];
+  const correctIndex = CORRECT[idx];
 
   const tallyLabel = (
     <span
@@ -68,20 +64,15 @@ const Quiz = () => {
       return;
     }
     setPicked(choice);
-    if (!isBonus && choice === correctIndex) {
+    if (choice === correctIndex) {
       setScore((s) => s + 1);
     }
   };
 
   const advance = () => {
-    if (isBonus) {
-      setScreen(SCREENS.SCORE);
-      return;
-    }
     if (idx === lastIndex) {
       setPicked(null);
-      // The tiebreaker is only offered on a perfect run.
-      setScreen(score === 10 ? SCREENS.BONUS : SCREENS.SCORE);
+      setScreen(SCREENS.SCORE);
       return;
     }
     setIdx((i) => i + 1);
@@ -145,12 +136,7 @@ const Quiz = () => {
 
   const renderReveal = () => {
     const right = picked === correctIndex;
-    let nextLabel = t('buttons.next');
-    if (isBonus) {
-      nextLabel = t('buttons.result');
-    } else if (idx === lastIndex) {
-      nextLabel = score === 10 ? t('buttons.tiebreak') : t('buttons.last');
-    }
+    const nextLabel = idx === lastIndex ? t('buttons.last') : t('buttons.next');
     return (
       <div className="tenyears-after">
         <div className={`tenyears-reveal${right ? '' : ' is-wrong'}`}>
@@ -185,9 +171,7 @@ const Quiz = () => {
   const renderQuestion = () => (
     <div className="tenyears-panel">
       <p className="tenyears-eyebrow">
-        {isBonus
-          ? t('bonus.eyebrow')
-          : t('progress', { year: current.year, index: idx + 1 })}
+        {t('progress', { year: current.year, index: idx + 1 })}
       </p>
       <h2 className="tenyears-h2">{current.q}</h2>
       {renderOptions()}
@@ -201,9 +185,6 @@ const Quiz = () => {
       year: item.year,
       text: item.opts[CORRECT[i]],
     }));
-    if (score === 10) {
-      rows.push({ year: bonusQuestion.year, text: bonusQuestion.opts[BONUS_CORRECT] });
-    }
     return (
       <div className="tenyears-recap">
         <h3 className="tenyears-recap-heading">{t('score.recapHeading')}</h3>

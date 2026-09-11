@@ -125,14 +125,6 @@ const QuizGate = ({ score, onDone }) => {
         />
       </div>
 
-      <label className="tenyears-check" htmlFor="tenyears-newsletter">
-        <input id="tenyears-newsletter" name="newsletter" type="checkbox" />
-        <span>
-          {t('gate.consentLabel')}{' '}
-          <span className="tenyears-consent-note">({t('gate.consentNote')})</span>
-        </span>
-      </label>
-
       {score === 10 ? (
         <label className="tenyears-check tenyears-check-draw" htmlFor="tenyears-draw">
           <input id="tenyears-draw" name="draw" type="checkbox" />
@@ -153,6 +145,14 @@ const QuizGate = ({ score, onDone }) => {
           </span>
         </label>
       ) : null}
+
+      <label className="tenyears-check" htmlFor="tenyears-newsletter">
+        <input id="tenyears-newsletter" name="newsletter" type="checkbox" />
+        <span>
+          {t('gate.consentLabel')}{' '}
+          <span className="tenyears-consent-note">({t('gate.consentNote')})</span>
+        </span>
+      </label>
 
       <Turnstile />
 
