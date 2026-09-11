@@ -376,6 +376,15 @@ $quiz-bad: #c2523a;
   span {
     font-size: 14px;
     color: $darkGrey;
+    // Materialize globally styles `[type="checkbox"] + span` with a fixed
+    // height/line-height of 25px (for its custom checkbox). That clips a
+    // multi-line consent label so it overflows onto the Turnstile below.
+    // Let the label wrap; keep 25px as a minimum so the fake box still fits.
+    // !important is needed because Materialize's attribute selector outweighs
+    // this class selector.
+    height: auto !important;
+    line-height: 1.45 !important;
+    min-height: 25px;
   }
   strong {
     color: $primary;
