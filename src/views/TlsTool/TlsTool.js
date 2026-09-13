@@ -28,34 +28,34 @@ const TlsTool = () => {
     ]
 
     let benefits = [
-        {
-            headline: t('benefits.free.headline'),
-            text: t('benefits.free.text'),
-            button: {
-                text: t('benefits.free.button'),
-                href: "https://git.floragunn.com/search-guard/search-guard-tlstool",
-                target: "_blank"
-            }
+      {
+        headline: t('benefits.free.headline'),
+        text: t('benefits.free.text'),
+        button: {
+          text: t('benefits.free.button'),
+          href: 'https://git.floragunn.com/search-guard/search-guard-tlstool',
+          target: '_blank',
         },
-        {
-            headline: t('benefits.platform.headline'),
-            text: t('benefits.platform.text'),
-            button: {
-                text: t('benefits.platform.button'),
-                href: "https://maven.search-guard.com/artifactory/webapp/#/artifacts/browse/tree/General/search-guard-tlstool/com/floragunn/search-guard-tlstool/3.0.3",
-                target: "_blank"
-            }
+      },
+      {
+        headline: t('benefits.platform.headline'),
+        text: t('benefits.platform.text'),
+        button: {
+          text: t('benefits.platform.button'),
+          href: 'https://docs.search-guard.com/latest/offline-tls-tool',
+          target: '_blank',
         },
-        {
-            headline: t('benefits.easy.headline'),
-            text: t('benefits.easy.text'),
-            button: {
-                text: t('benefits.easy.button'),
-                href: "https://docs.search-guard.com/latest/offline-tls-tool",
-                target: "_blank"
-            }
+      },
+      {
+        headline: t('benefits.easy.headline'),
+        text: t('benefits.easy.text'),
+        button: {
+          text: t('benefits.easy.button'),
+          href: 'https://docs.search-guard.com/latest/offline-tls-tool',
+          target: '_blank',
         },
-    ]
+      },
+    ];
 
     const breadcrumb = [
         {id: 1, anchor: '/', name: t('breadcrumb.home')},

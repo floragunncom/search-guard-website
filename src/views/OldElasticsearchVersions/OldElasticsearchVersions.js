@@ -21,25 +21,25 @@ const OldElasticsearchVersions = () => {
     ];
 
     let benefits = [
-        {
-            headline: "Stuck on an old Elasticsearch Version?",
-            text: "Are you stuck on Elasticsearch 6? Or even version 5 or 2? Elasticsearch’s older versions have a list of well known issues that are fixed in later versions as well as significant feature enhancements. However many organizations implemented Elasticsearch sometime ago and find they don’t have the skills or knowledge to unpick the integrations built at the time.",
-            button: {
-                text: "Visit our Docs",
-                href: "https://docs.search-guard.com/v5/",
-                target: "_blank"
-            }
+      {
+        headline: 'Stuck on an old Elasticsearch Version?',
+        text: 'Are you stuck on Elasticsearch 6? Or even version 5 or 2? Elasticsearch’s older versions have a list of well known issues that are fixed in later versions as well as significant feature enhancements. However many organizations implemented Elasticsearch sometime ago and find they don’t have the skills or knowledge to unpick the integrations built at the time.',
+        button: {
+          text: 'Visit our Docs',
+          href: 'https://docs.search-guard.com/v5/',
+          target: '_blank',
         },
-        {
-            headline: "We still provide security for Elasticsearch 2, 5 and 6",
-            text: "Search Guard has been providing Enterprise security for Elasticsearch since Version 2. Search guard still provides versions of our Security plugins for Elasticsearch 6 as well as version 5 and, yes, even version 2. By implementing Search Guard you can stabilize your security particularly with Encryption in motion, Authn and Authz. We can also provide guidance on how to migrate to more current versions of Elasticsearch (Paid service).",
-            button: {
-                text: "View our Maven Repository",
-                href: "https://maven.search-guard.com/artifactory/webapp/#/artifacts/browse/tree/General/search-guard-release/com/floragunn/search-guard-5",
-                target: "_blank"
-            }
+      },
+      {
+        headline: 'We still provide security for Elasticsearch 2, 5 and 6',
+        text: 'Search Guard has been providing Enterprise security for Elasticsearch since Version 2. Search guard still provides versions of our Security plugins for Elasticsearch 6 as well as version 5 and, yes, even version 2. By implementing Search Guard you can stabilize your security particularly with Encryption in motion, Authn and Authz. We can also provide guidance on how to migrate to more current versions of Elasticsearch (Paid service).',
+        button: {
+          text: 'View our Archive',
+          href: 'https://archive.search-guard.com/search-guard-release/com/floragunn/',
+          target: '_blank',
         },
-    ]
+      },
+    ];
 
     return (
         <PageWrapper>
