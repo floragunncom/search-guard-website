@@ -139,7 +139,7 @@
     "consentNote": "Optional — the cookbook and the prize draw are yours either way.",
     "submit": "Send me the cookbook",
     "processing": "Sending…",
-    "fineprint": "We use your address to send the cookbook and to run the anniversary draw, and we delete draw entries afterwards. Full detail in our privacy notice and the terms of the draw.",
+    "fineprint": "We use your address to send the cookbook and to run the anniversary draw, and we delete draw entries afterwards. Full detail in our <a href=\"/dataprotection/\" target=\"_blank\" rel=\"noopener noreferrer\">privacy notice</a> and the <a href=\"{{termsUrl}}\" target=\"_blank\" rel=\"noopener noreferrer\">terms of the draw</a>.",
     "validationError": "Please enter a valid email address.",
     "serverError": "Something went wrong on our side. Please try once more."
   },

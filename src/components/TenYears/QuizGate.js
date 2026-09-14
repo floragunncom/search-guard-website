@@ -168,7 +168,15 @@ const QuizGate = ({ score, onDone }) => {
         </button>
       </div>
 
-      <p className="tenyears-fineprint">{t('gate.fineprint')}</p>
+      {/* The fineprint is shown at every score, so it carries the privacy +
+          terms links for entrants who never see the draw checkbox (10/10 only).
+          The terms URL is interpolated from the single source in i18n. */}
+      <p
+        className="tenyears-fineprint"
+        dangerouslySetInnerHTML={{
+          __html: t('gate.fineprint', { termsUrl: t('gate.drawTermsUrl') }),
+        }}
+      />
     </form>
   );
 };
