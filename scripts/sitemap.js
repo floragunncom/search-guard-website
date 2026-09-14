@@ -22,6 +22,7 @@ const baseBlackList = [
     'https://search-guard.com/elasticsearch-kibana-security/',
     'https://search-guard.com/tls-certificate-generator/',
     'https://search-guard.com/blog/page/1/',
+    'https://search-guard.com/10-years-terms/',
 ];
 // Generate locale variants of blacklisted URLs for localizable pages
 let blackList = [
