@@ -507,13 +507,29 @@ export async function sendRawEmail({ to, subject, text, from }, apiKey, logger =
  * Subscribe an email address to one or more SendGrid marketing lists.
  * Ported from the old AWS Lambda newsletter `addNewsletterSubscriber`.
  *
+ * Optionally forwards a first name and campaign metadata (source / score),
+ * used by the /10-years quiz gate. `first_name` is a SendGrid reserved field
+ * and always goes top-level. `source` and `score` are custom fields: SendGrid
+ * addresses custom fields by field ID (e.g. `e1_T`), not by name, so they are
+ * only sent when the matching field IDs are supplied in `customFieldIds`. When
+ * an id is missing the value is dropped (and logged) rather than sent under a
+ * name SendGrid would silently ignore.
+ *
  * @param {Object} params
  * @param {string} params.email - Subscriber email
  * @param {string|string[]} params.listIds - One or more SendGrid list IDs
+ * @param {string} [params.firstName] - Optional first name (reserved field)
+ * @param {string} [params.source] - Optional campaign source (custom field)
+ * @param {number} [params.score] - Optional quiz score (custom field)
+ * @param {Object} [params.customFieldIds] - `{ source, score }` SendGrid custom field IDs
  * @param {string} apiKey - SendGrid API key
  * @param {Object} logger - Logger instance (optional)
  */
-export async function subscribeToLists({ email, listIds }, apiKey, logger = null) {
+export async function subscribeToLists(
+  { email, listIds, firstName, source, score, customFieldIds = {} },
+  apiKey,
+  logger = null
+) {
   if (!logger) {
     logger = createLogger('sendgrid', {}, null);
   }
@@ -521,14 +537,38 @@ export async function subscribeToLists({ email, listIds }, apiKey, logger = null
   // Normalise to an array (old behaviour: accept single id or array)
   const list_ids = Array.isArray(listIds) ? listIds : [listIds];
 
+  const contact = { email };
+  if (firstName) {
+    contact.first_name = firstName;
+  }
+
+  // Custom fields are keyed by SendGrid field ID, only sent when configured.
+  const custom_fields = {};
+  if (customFieldIds.source && source != null && source !== '') {
+    custom_fields[customFieldIds.source] = source;
+  }
+  if (customFieldIds.score && score != null && score !== '') {
+    custom_fields[customFieldIds.score] = score;
+  }
+  if (Object.keys(custom_fields).length > 0) {
+    contact.custom_fields = custom_fields;
+  } else if (source != null || score != null) {
+    logger.warn(
+      'source/score provided but SendGrid custom field IDs are not configured; values not stored',
+      { hasSourceFieldId: !!customFieldIds.source, hasScoreFieldId: !!customFieldIds.score }
+    );
+  }
+
   logger.debug('Subscribing contact to SendGrid list(s)', {
     email,
     listIds: list_ids,
+    hasFirstName: !!firstName,
+    hasCustomFields: !!contact.custom_fields,
   });
 
   const payload = {
     list_ids,
-    contacts: [{ email }],
+    contacts: [contact],
   };
 
   const response = await fetch(`${SENDGRID_API_BASE}/marketing/contacts`, {
@@ -558,4 +598,55 @@ export async function subscribeToLists({ email, listIds }, apiKey, logger = null
   });
 
   return { success: true, jobId: result.job_id };
+}
+
+/**
+ * Send the /10-years cookbook delivery email — a transactional single-send via a
+ * SendGrid dynamic template. Legally this is fulfilling the resource the visitor
+ * explicitly asked for (not marketing), so no double opt-in is needed here; the
+ * newsletter opt-in is separate.
+ *
+ * The cookbook download link normally lives inside the template; an optional
+ * `cookbookUrl` is also passed as the `cookbook_url` dynamic-template variable so
+ * the link can be changed via env without editing the template. `first_name` is
+ * passed for personalisation.
+ *
+ * @param {Object} params
+ * @param {string} params.email - Recipient
+ * @param {string} [params.firstName] - For personalisation
+ * @param {string} [params.cookbookUrl] - Optional download link (dynamic var)
+ * @param {string} templateId - SendGrid dynamic template id (d-…)
+ * @param {string} apiKey - SendGrid API key (Mail Send scope)
+ * @param {Object} logger - Logger instance (optional)
+ */
+export async function sendCookbookEmail(
+  { email, firstName, cookbookUrl },
+  templateId,
+  apiKey,
+  logger = null
+) {
+  if (!logger) {
+    logger = createLogger('sendgrid', {}, null);
+  }
+
+  const dynamicTemplateData = { first_name: firstName || '' };
+  if (cookbookUrl) {
+    dynamicTemplateData.cookbook_url = cookbookUrl;
+  }
+
+  const payload = {
+    from: SG_FROM,
+    template_id: templateId,
+    categories: ['10y-cookbook'],
+    personalizations: [
+      {
+        to: [{ email }],
+        dynamic_template_data: dynamicTemplateData,
+      },
+    ],
+  };
+
+  await postMailSend(payload, apiKey, logger, '10y cookbook');
+  logger.info('Cookbook email sent', { email });
+  return { success: true };
 }

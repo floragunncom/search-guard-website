@@ -81,3 +81,7 @@
 // Homepage redesign (homepage-redesign branch)
 @use '../src/components/Hero/HomeHero.scss';
 @use '../src/components/HomeSections.scss';
+
+// 10-year anniversary quiz (/10-years)
+@use '../src/components/TenYears/BrickPlate.scss';
+@use '../src/components/TenYears/Quiz.scss';

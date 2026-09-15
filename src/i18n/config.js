@@ -17,6 +17,7 @@ import enCompany from './locales/en/company.json';
 import enResource from './locales/en/resource.json';
 import enFaq from './locales/en/faq.json';
 import enWebinars from './locales/en/webinars.json';
+import enTenYears from './locales/en/tenyears.json';
 
 import deCommon from './locales/de/common.json';
 import deMeta from './locales/de/meta.json';
@@ -88,6 +89,9 @@ i18n.use(initReactI18next).init({
       resource: enResource,
       faq: enFaq,
       webinars: enWebinars,
+      // English-only for now; de/es/fr fall back to English via fallbackLng
+      // until the quiz is translated (see 10y-handover build brief).
+      tenyears: enTenYears,
     },
     de: {
       common: deCommon,

@@ -45,6 +45,8 @@ import Newsletter from './views/Newsletter/Newsletter';
 import HtmlSitemap from './views/HtmlSitemap/HtmlSitemap';
 import Error from './views/Error/Error';
 import EncryptionAtRest from "./views/EncryptionAtRest/EncryptionAtRest";
+import TenYears from './views/TenYears/TenYears';
+import TenYearsTerms from './views/TenYearsTerms/TenYearsTerms';
 import PageWrapper from './components/PageWrapper/PageWrapper';
 
 const PrerenderReadySignal = () => {
@@ -128,6 +130,8 @@ const Routes = () => {
           <Route exact path="/whitepapers/" component={WhitePapers} />
           <Route exact path="/compliance/" component={Compliance} />
           <Route exact path="/company/" component={Company} />
+          <Route exact path="/10-years/" component={TenYears} />
+          <Route exact path="/10-years-terms/" component={TenYearsTerms} />
           <Route exact path="/resource/" component={Resource} />
           <Route exact path="/licensing/" component={License} />
           <Route exact path="/faq/" component={Faqs} />
