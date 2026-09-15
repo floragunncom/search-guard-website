@@ -4,6 +4,8 @@ import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 import Turnstile from './Turnstile/Turnstile';
 import {CONTACT_API_URL} from '../config/apiEndpoints';
+import {CONTACT_FORM_COUNTRIES} from '../config/countries';
+import RegionalSalesContacts from './RegionalSalesContacts/RegionalSalesContacts';
 
 const ContactForm = () => {
   const [sendbuttonValue, setSendbuttonValue] = React.useState('Send Message');
@@ -106,163 +108,10 @@ const ContactForm = () => {
                 </div>
               </div>
               <div className="contact-info-input-fields">
-                <div className="input-field col s12 m6">
-                  <input
-                    id="job_title"
-                    name="job_position"
-                    type="text"
-                    className="input-field-contact"
-                  />
-                  <label htmlFor="job_title" className="input-field-label">
-                    Job title (optional)
-                  </label>
-                </div>
-                <div className="input-field col s12 m6">
-                  <input
-                    id="phone_number"
-                    name="phone"
-                    type="text"
-                    className="input-field-contact"
-                  />
-                  <label htmlFor="phone_number" className="input-field-label">
-                    Phone number (optional)
-                  </label>
-                </div>
                 <DropDown
                   category="Country"
                   name="country"
-                  options={[
-                    'United States',
-                    'Argentina',
-                    'Australia',
-                    'Austria',
-                    'Bahrain',
-                    'Bangladesh',
-                    'Barbados',
-                    'Belarus',
-                    'Belgium',
-                    'Belize',
-                    'Benin',
-                    'Bermuda',
-                    'Bolivia',
-                    'Bosnia and Herzegovina',
-                    'Botswana',
-                    'Brazil',
-                    'Bulgaria',
-                    'Burkina Faso',
-                    'Burundi',
-                    'Cambodia',
-                    'Cameroon',
-                    'Canada',
-                    'Cape Verde',
-                    'Cayman Islands',
-                    'Central African Republic',
-                    'Chile',
-                    'China',
-                    'Colombia',
-                    'Congo',
-                    'Costa Rica',
-                    'Croatia',
-                    'Cuba',
-                    'Cyprus',
-                    'Czech Republic',
-                    'Denmark',
-                    'Dominican Republic',
-                    'Ecuador',
-                    'Egypt',
-                    'Estonia',
-                    'Faroe Islands',
-                    'Fiji',
-                    'Finland',
-                    'France',
-                    'Gabon',
-                    'Gambia',
-                    'Georgia',
-                    'Germany',
-                    'Ghana',
-                    'Gibraltar',
-                    'Greece',
-                    'Greenland',
-                    'Grenada',
-                    'Honduras',
-                    'Hong Kong',
-                    'Hungary',
-                    'Iceland',
-                    'India',
-                    'Indonesia',
-                    'Iran',
-                    'Iraq',
-                    'Ireland',
-                    'Isle of Man',
-                    'Israel',
-                    'Italy',
-                    'Jamaica',
-                    'Japan',
-                    'Jordan',
-                    'Kazakhstan',
-                    'Kuwait',
-                    'Kyrgyzstan',
-                    'Latvia',
-                    'Liechtenstein',
-                    'Lithuania',
-                    'Luxembourg',
-                    'Macedonia',
-                    'Malaysia',
-                    'Maldives',
-                    'Malta',
-                    'Mexico',
-                    'Moldova',
-                    'Monaco',
-                    'Mongolia',
-                    'Montenegro',
-                    'Montserrat',
-                    'Morocco',
-                    'Myanmar',
-                    'Nepal',
-                    'Netherlands',
-                    'New Zealand',
-                    'Norway',
-                    'Oman',
-                    'Pakistan',
-                    'Palestine',
-                    'Panama',
-                    'Paraguay',
-                    'Peru',
-                    'Philippines',
-                    'Poland',
-                    'Portugal',
-                    'Puerto Rico',
-                    'Qatar',
-                    'Romania',
-                    'Russia',
-                    'San Marino',
-                    'Saudi Arabia',
-                    'Serbia',
-                    'Singapore',
-                    'Slovakia',
-                    'Slovenia',
-                    'Solomon Islands',
-                    'South Africa',
-                    'South Korea',
-                    'Spain',
-                    'Sri Lanka',
-                    'Sweden',
-                    'Switzerland',
-                    'Syrian Arab Republic',
-                    'Taiwan',
-                    'Tajikistan',
-                    'Thailand',
-                    'Tunisia',
-                    'Turkey',
-                    'Turkmenistan',
-                    'Ukraine',
-                    'United Arab Emirates',
-                    'United Kingdom',
-                    'Uruguay',
-                    'Uzbekistan',
-                    'Venezuela',
-                    'Viet Nam',
-                  ]}
+                  options={CONTACT_FORM_COUNTRIES}
                 />
               </div>
             </div>
@@ -328,38 +177,7 @@ const ContactForm = () => {
                     <br />
                     <a href="mailto:info@floragunn.com">info@floragunn.com</a>
                 </p>
-                <h4 className="company-information-header">Authorized Partners</h4>
-                <p className="company-information-text">
-                    <b className="subtitle">USA and Canada</b>
-                    <br />
-                    Excelerate Systems LLC
-                    <br /> 2205 152nd Avenue NE Redmond
-                    <br />
-                    WA 98052
-                    <br />
-                    <a href="mailto:david.bennett@exceleratesystems.net">
-                        david.bennett@exceleratesystems.net
-                    </a>
-                </p>
-                <p className="company-information-text">
-                    <b className="subtitle">France & North Africa</b>
-                    <br />
-                    Ian Quakenbos
-                    <br />
-                    <a href="mailto:iquackenbos@search-guard.com">
-                        iquackenbos@search-guard.com
-                    </a>
-                </p>
-                <p className="company-information-text">
-                    <b className="subtitle">South America</b>
-                    <br /> Excelerate Systems S de R.L. de C.V.
-                    <br /> Córdoba 42, Roma Norte, Cuauhtémoc, C.P.
-                    <br /> 06700, Ciudad de México
-                    <br />
-                    <a href="mailto:victor.pichardo@exceleratesystems.net">
-                        victor.pichardo@exceleratesystems.net
-                    </a>
-                </p>
+                <RegionalSalesContacts />
             </div>
         </div>
     </div>

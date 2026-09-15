@@ -1,8 +1,13 @@
 {
   "meta.title": "Kontakt zum Search Guard Team",
-  "meta.description": "Fragen zu Search Guard Lizenzierung, Preisen oder Features? Schreiben Sie uns – wir melden uns schnellstmöglich.",
+  "meta.description": "Fragen zu Search Guard Lizenzierung, Preisen oder Features? Schreiben Sie uns – wir melden uns innerhalb eines Werktags.",
   "breadcrumb.home": "Startseite",
   "breadcrumb.contactUs": "Kontakt",
-  "title.headline": "Kontakt aufnehmen",
-  "title.text": "Fragen zur Lizenzierung, Preisen, OEM-Lizenzen oder Partnerschaften? Füllen Sie das Kontaktformular aus – wir melden uns schnellstmöglich."
+  "title.headline": "Sprechen Sie mit uns",
+  "title.text": "Ob Sie Search Guard evaluieren, Editionen vergleichen, bei einer Konfiguration nicht weiterkommen oder eine Partnerschaft ausloten möchten — hier sind Sie richtig. Ihre Nachricht landet direkt bei unserem Team in Berlin, und Sie erhalten innerhalb eines Werktags eine Antwort.",
+  "selfHelp.text_plain": "Sie suchen Dokumentation oder Hilfe aus der Community? Werfen Sie einen Blick in die ",
+  "selfHelp.docsLink": "Dokumentation",
+  "selfHelp.between": " oder das ",
+  "selfHelp.forumLink": "Forum",
+  "selfHelp.after": "."
 }
