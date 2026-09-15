@@ -30,6 +30,14 @@ const ContactUs = () => {
                 text={t('title.text')}
                 breadcrumb={breadcrumb}
             />
+            {/* Self-help shortcut for visitors who don't need the form */}
+            <p className="contact-selfhelp">
+                {t('selfHelp.text_plain')}
+                <a href="https://docs.search-guard.com/" target="_blank" rel="noopener noreferrer">{t('selfHelp.docsLink')}</a>
+                {t('selfHelp.between')}
+                <a href="https://forum.search-guard.com/" target="_blank" rel="noopener noreferrer">{t('selfHelp.forumLink')}</a>
+                {t('selfHelp.after')}
+            </p>
             <ContactForm/>
             <CTAContactUs colorschema="white"/>
             <PreFooter/>
