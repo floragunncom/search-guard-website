@@ -31,6 +31,19 @@ import {
  * rather than hard-coded because the message wraps to two or three lines on a
  * phone.
  */
+/**
+ * useLayoutEffect on the client, useEffect on the server.
+ *
+ * Hooks are called unconditionally, so the height-measuring effect below runs
+ * during the static render too — even though the bar returns null there — and
+ * React warns that useLayoutEffect cannot work on the server. useEffect is the
+ * correct no-op in that pass. On the client we still want the layout variant:
+ * it sets --sg-campaign-bar-h before paint, so the navbar is already in its
+ * offset position rather than visibly jumping down a frame later.
+ */
+const useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
+
 const CampaignBar = ({ campaign, onVisibilityChange }) => {
   const { t } = useTranslation('campaign');
   const [isVisible, setIsVisible] = React.useState(false);
@@ -53,7 +66,7 @@ const CampaignBar = ({ campaign, onVisibilityChange }) => {
 
   // Publish the bar's height so the fixed navbar can be pushed down by exactly
   // as much as the bar actually occupies, at any width.
-  React.useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const root = document.documentElement;
 
     if (!isVisible || !barRef.current) {
