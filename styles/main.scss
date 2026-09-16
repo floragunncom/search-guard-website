@@ -85,3 +85,9 @@
 // 10-year anniversary quiz (/10-years)
 @use '../src/components/TenYears/BrickPlate.scss';
 @use '../src/components/TenYears/Quiz.scss';
+
+// Site-wide campaign bar (generic, outlives any one campaign) and the
+// anniversary corner badge. See src/config/campaign.js for the lifecycle —
+// the badge retires after 20 Oct 2026, the bar carries on.
+@use '../src/components/CampaignBar/CampaignBar.scss';
+@use '../src/components/TenYears/QuizBadge.scss';

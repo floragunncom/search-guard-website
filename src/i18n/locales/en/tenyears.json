@@ -17,7 +17,7 @@
     "eyebrow": "Search Guard anniversary",
     "instruction": "One question for every year, 2016 to 2025. Every right answer lays a brick — ten bricks build the 10.",
     "cookbook": "The cookbook waiting at the end is a real one: beloved home recipes from the people who build Search Guard, collected over ten years of offsites. Yours for an email, whatever you score.",
-    "prize": "And a perfect ten? That puts you in the running for our anniversary prize draw.",
+    "prize": "And a perfect ten? That puts you in the draw for a €110 LEGO gift card.",
     "meta": "10 questions · about 90 seconds · no sign-up to play · a cookbook at the end",
     "start": "Start with 2016"
   },
@@ -136,7 +136,7 @@
     "emailLabel": "Email address",
     "emailPlaceholder": "you@company.com",
     "consentLabel": "Yes, also send me the Search Guard newsletter — Elasticsearch security, roughly monthly. I can unsubscribe any time.",
-    "consentNote": "Optional — the cookbook and the prize draw are yours either way.",
+    "consentNote": "Optional — the cookbook and your draw entry are yours either way.",
     "submit": "Send me the cookbook",
     "processing": "Sending…",
     "fineprint": "We use your address to send the cookbook and to run the anniversary draw, and we delete draw entries afterwards. Full detail in our <a href=\"/dataprotection/\" target=\"_blank\" rel=\"noopener noreferrer\">privacy notice</a> and the <a href=\"{{termsUrl}}\" target=\"_blank\" rel=\"noopener noreferrer\">terms of the draw</a>.",

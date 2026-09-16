@@ -18,6 +18,7 @@ import enResource from './locales/en/resource.json';
 import enFaq from './locales/en/faq.json';
 import enWebinars from './locales/en/webinars.json';
 import enTenYears from './locales/en/tenyears.json';
+import enCampaign from './locales/en/campaign.json';
 
 import deCommon from './locales/de/common.json';
 import deMeta from './locales/de/meta.json';
@@ -35,6 +36,7 @@ import deCompany from './locales/de/company.json';
 import deResource from './locales/de/resource.json';
 import deFaq from './locales/de/faq.json';
 import deWebinars from './locales/de/webinars.json';
+import deCampaign from './locales/de/campaign.json';
 
 import esCommon from './locales/es/common.json';
 import esMeta from './locales/es/meta.json';
@@ -52,6 +54,7 @@ import esCompany from './locales/es/company.json';
 import esResource from './locales/es/resource.json';
 import esFaq from './locales/es/faq.json';
 import esWebinars from './locales/es/webinars.json';
+import esCampaign from './locales/es/campaign.json';
 
 import frCommon from './locales/fr/common.json';
 import frMeta from './locales/fr/meta.json';
@@ -69,6 +72,7 @@ import frCompany from './locales/fr/company.json';
 import frResource from './locales/fr/resource.json';
 import frFaq from './locales/fr/faq.json';
 import frWebinars from './locales/fr/webinars.json';
+import frCampaign from './locales/fr/campaign.json';
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -92,6 +96,7 @@ i18n.use(initReactI18next).init({
       // English-only for now; de/es/fr fall back to English via fallbackLng
       // until the quiz is translated (see 10y-handover build brief).
       tenyears: enTenYears,
+      campaign: enCampaign,
     },
     de: {
       common: deCommon,
@@ -110,6 +115,7 @@ i18n.use(initReactI18next).init({
       resource: deResource,
       faq: deFaq,
       webinars: deWebinars,
+      campaign: deCampaign,
     },
     es: {
       common: esCommon,
@@ -128,6 +134,7 @@ i18n.use(initReactI18next).init({
       resource: esResource,
       faq: esFaq,
       webinars: esWebinars,
+      campaign: esCampaign,
     },
     fr: {
       common: frCommon,
@@ -146,6 +153,7 @@ i18n.use(initReactI18next).init({
       resource: frResource,
       faq: frFaq,
       webinars: frWebinars,
+      campaign: frCampaign,
     },
   },
   lng: 'en',
