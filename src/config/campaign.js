@@ -16,6 +16,8 @@
  * banner can never advertise a prize draw that has already been won.
  */
 
+import { DRAW_CLOSES_AT } from './tenYears';
+
 export const ACTIVE_CAMPAIGN = {
   // Also the localStorage dismissal key, so changing it re-shows the bar to
   // people who dismissed the previous campaign. Always change it for a new one.
@@ -34,9 +36,10 @@ export const ACTIVE_CAMPAIGN = {
   // read as site chrome rather than as an announcement.
   tone: 'cyan',
 
-  // Draw closes end of 20 Oct 2026 (Berlin). Matches the Teilnahmebedingungen
-  // at /10-years-terms/ §4 — keep the two in step if the date ever moves.
-  endsAt: '2026-10-20T23:59:59+02:00',
+  // Derived, not repeated: the draw's own deadline lives in src/config/tenYears.js
+  // and is also what closes the opt-in on the quiz. One date, three consumers —
+  // move it there and the banners follow.
+  endsAt: DRAW_CLOSES_AT,
 
   // Show the brick "10" alongside the message. Campaign-specific; a webinar
   // announcement would set this false.
@@ -57,7 +60,9 @@ export const ACTIVE_CAMPAIGN = {
  * worked example of a second campaign so the next person does not have to
  * reverse-engineer the shape — swap it into ACTIVE_CAMPAIGN when the time comes.
  *
- * export const ACTIVE_CAMPAIGN = {
+ * import { DRAW_CLOSES_AT } from './tenYears';
+
+export const ACTIVE_CAMPAIGN = {
  *   id: 'webinar-encryption-at-rest-oct-2026',
  *   href: '/webinars/',
  *   i18nKey: 'webinarEncryption',

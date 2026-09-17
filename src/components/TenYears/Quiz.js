@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import BrickPlate from './BrickPlate';
 import QuizGate from './QuizGate';
+import { isDrawOpen } from '../../config/tenYears';
 
 // Correct-answer indices live in the component, NOT in the translatable strings
 // (the build brief keeps indices and brick geometry out of i18n). The option
@@ -20,6 +21,17 @@ const SCREENS = {
 };
 
 const Quiz = () => {
+  // Whether the prize draw is still running. Starts true and is corrected on
+  // mount — reading the clock during render would disagree with the static
+  // HTML (built whenever CI last ran) and trip a hydration mismatch. Once the
+  // draw closes the quiz carries on as a cookbook giveaway; see
+  // DRAW_CLOSES_AT in src/config/tenYears.js.
+  const [drawOpen, setDrawOpen] = React.useState(true);
+
+  React.useEffect(() => {
+    setDrawOpen(isDrawOpen());
+  }, []);
+
   const { t } = useTranslation('tenyears');
 
   const questions = t('questions', { returnObjects: true });
@@ -142,7 +154,7 @@ const Quiz = () => {
       <p className="tenyears-eyebrow">{t('intro.eyebrow')}</p>
       <p className="tenyears-lede">{t('intro.instruction')}</p>
       <p className="tenyears-cookbook">{t('intro.cookbook')}</p>
-      <p className="tenyears-prize-line">{t('intro.prize')}</p>
+      {drawOpen ? <p className="tenyears-prize-line">{t('intro.prize')}</p> : null}
       <p className="tenyears-meta">{t('intro.meta')}</p>
       <div className="tenyears-actions">
         <button className="tenyears-btn" type="button" onClick={start}>
@@ -196,7 +208,9 @@ const Quiz = () => {
         <div className="tenyears-gate">
           <h3 className="tenyears-h2">{t('gate.heading')}</h3>
           <p className="tenyears-lede">
-            {t(score === 10 ? 'gate.bodyDraw' : 'gate.bodyNoDraw')}
+            {drawOpen
+              ? t(score === 10 ? 'gate.bodyDraw' : 'gate.bodyNoDraw')
+              : t('gate.bodyClosed')}
           </p>
           <QuizGate score={score} onDone={() => setScreen(SCREENS.CONFIRM)} />
         </div>
@@ -214,7 +228,9 @@ const Quiz = () => {
     <div className="tenyears-panel">
       <p className="tenyears-eyebrow">{t('confirm.eyebrow')}</p>
       <h2 className="tenyears-h1">{t('confirm.heading')}</h2>
-      <p className="tenyears-lede">{t('confirm.body')}</p>
+      <p className="tenyears-lede">
+        {t(drawOpen ? 'confirm.body' : 'confirm.bodyClosed')}
+      </p>
       <div className="tenyears-actions">
         <a className="tenyears-btn" href="/company/">
           {t('confirm.button')}
