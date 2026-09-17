@@ -6,6 +6,7 @@ import {
   QUIZ_CAMPAIGN_LIST_ID,
   NEWSLETTER_LIST_ID,
   QUIZ_DRAW_LIST_ID,
+  isDrawOpen,
 } from '../../config/tenYears';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -19,11 +20,29 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
  * newsletter are two different list ids (Koppelungsverbot).
  *
  * On success it calls onDone() so the parent can show the confirmation screen.
+ *
+ * AFTER THE DRAW CLOSES (DRAW_CLOSES_AT in src/config/tenYears.js) this form
+ * keeps working and keeps delivering the cookbook — the quiz is meant to stay up
+ * and be reused. The draw is what goes away: no opt-in, nothing written to
+ * QUIZ_DRAW_LIST_ID, and the draw sentences swap for cookbook-only variants.
+ *
+ * `drawOpen` starts true and is corrected in an effect rather than read during
+ * the first render. Reading the clock at render time would disagree with the
+ * static HTML — which was built whenever CI last ran — and trip a hydration
+ * mismatch. The consequence is that a stale cached page can show the opt-in for
+ * one frame after the deadline; it cannot accept one, because handleSubmit
+ * re-checks isDrawOpen() at submit time, which is the check that actually
+ * matters.
  */
 const QuizGate = ({ score, onDone }) => {
   const { t } = useTranslation('tenyears');
   const [isProcessing, setIsProcessing] = React.useState(false);
   const [error, setError] = React.useState(null); // 'validation' | 'server' | null
+  const [drawOpen, setDrawOpen] = React.useState(true);
+
+  React.useEffect(() => {
+    setDrawOpen(isDrawOpen());
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -41,9 +60,12 @@ const QuizGate = ({ score, onDone }) => {
     setIsProcessing(true);
 
     const wantsNewsletter = formData.get('newsletter') === 'on';
-    // A perfect score can opt into the prize draw; the box only renders at 10/10,
-    // but guard on the score here too so a tampered form can't self-enter.
-    const wantsDraw = score === 10 && formData.get('draw') === 'on';
+    // A perfect score can opt into the prize draw; the box only renders at 10/10
+    // and only while the draw is open, but re-check both here so a tampered form
+    // — or a page cached from before the deadline — can't self-enter. isDrawOpen()
+    // is called fresh rather than reading `drawOpen`, so a tab left open across
+    // the deadline is judged on submit time, not load time.
+    const wantsDraw = score === 10 && isDrawOpen() && formData.get('draw') === 'on';
     // The campaign list is always included (cookbook delivery); the newsletter
     // and draw lists are added only when their box is ticked, so the cookbook is
     // never conditional on either consent (Koppelungsverbot).
@@ -125,7 +147,7 @@ const QuizGate = ({ score, onDone }) => {
         />
       </div>
 
-      {score === 10 ? (
+      {score === 10 && drawOpen ? (
         <label className="tenyears-check tenyears-check-draw" htmlFor="tenyears-draw">
           <input id="tenyears-draw" name="draw" type="checkbox" />
           <span>
@@ -150,7 +172,9 @@ const QuizGate = ({ score, onDone }) => {
         <input id="tenyears-newsletter" name="newsletter" type="checkbox" />
         <span>
           {t('gate.consentLabel')}{' '}
-          <span className="tenyears-consent-note">({t('gate.consentNote')})</span>
+          <span className="tenyears-consent-note">
+            ({t(drawOpen ? 'gate.consentNote' : 'gate.consentNoteClosed')})
+          </span>
         </span>
       </label>
 
@@ -170,11 +194,15 @@ const QuizGate = ({ score, onDone }) => {
 
       {/* The fineprint is shown at every score, so it carries the privacy +
           terms links for entrants who never see the draw checkbox (10/10 only).
-          The terms URL is interpolated from the single source in i18n. */}
+          The terms URL is interpolated from the single source in i18n. Once the
+          draw has closed it drops to the cookbook-only variant, which makes no
+          claim about a draw and no longer links its terms. */}
       <p
         className="tenyears-fineprint"
         dangerouslySetInnerHTML={{
-          __html: t('gate.fineprint', { termsUrl: t('gate.drawTermsUrl') }),
+          __html: drawOpen
+            ? t('gate.fineprint', { termsUrl: t('gate.drawTermsUrl') })
+            : t('gate.fineprintClosed'),
         }}
       />
     </form>

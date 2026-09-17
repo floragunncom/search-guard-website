@@ -1,0 +1,201 @@
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+
+// Above the Materialize navbar (z-index 997) but below the mobile sidenav
+// panel (999), so an open sidenav still covers the bar rather than the bar
+// punching through it.
+$campaign-bar-z: 998;
+// Materialize's own .navbar-fixed placeholder height, which we have to grow by
+// the bar's height rather than replace.
+$materialize-navbar-h: 64px;
+
+.campaign-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $campaign-bar-z;
+  // Clear of the close button at every width, including when the message wraps.
+  padding: 9px 46px 9px 18px;
+
+  &--cyan {
+    background-color: $secondary;
+    color: $primary;
+  }
+
+  &--navy {
+    background-color: $darkBlueNav;
+    color: $white;
+    border-bottom: 2px solid $secondary;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__msg {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  &__detail {
+    opacity: 0.86;
+  }
+
+  &__cta {
+    flex: none;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &--cyan &__cta {
+    background-color: $primary;
+    color: $secondary;
+  }
+
+  &--navy &__cta {
+    background-color: $secondary;
+    color: $primary;
+  }
+
+  // The plate's default tones come from BrickPlate, which is drawn on white.
+  // Two of them ($secondary itself, and white) would be invisible on the cyan
+  // bar, which breaks the numeral into disconnected fragments instead of a 10.
+  // Remap to three tones that all read on cyan, keeping the same
+  // structural/fill distinction as the quiz page.
+  &--cyan {
+    .campaign-plate__brick--navy {
+      background-color: $primary;
+    }
+
+    .campaign-plate__brick--cyan {
+      background-color: $white;
+    }
+
+    .campaign-plate__brick--accent {
+      background-color: $primary-light;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    padding: 4px 8px;
+    color: inherit;
+    opacity: 0.6;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  @media only screen and (max-width: $tablet) {
+    padding: 8px 40px 8px 12px;
+
+    &__inner {
+      gap: 9px;
+    }
+
+    &__msg {
+      font-size: 12.5px;
+      text-align: center;
+    }
+
+    // The brick "10" is the first thing to go when space is tight — the message
+    // and the link have to survive, the decoration does not.
+    .campaign-plate {
+      display: none;
+    }
+  }
+}
+
+// Push the fixed navbar (and its in-flow placeholder) down by however tall the
+// bar actually is. --sg-campaign-bar-h is measured and set by CampaignBar.js;
+// the 0px fallback means these rules are harmless if it is ever missing.
+.has-campaign-bar {
+  .navbar-fixed {
+    height: calc(#{$materialize-navbar-h} + var(--sg-campaign-bar-h, 0px));
+  }
+
+  .navbar-fixed nav {
+    top: var(--sg-campaign-bar-h, 0px);
+  }
+}
+
+// ---- the shared mini brick "10" -------------------------------------------
+// Tones mirror BrickPlate.scss so the numeral matches the quiz page.
+.campaign-plate {
+  --cell: 6px;
+  display: grid;
+  grid-template-columns: repeat(8, var(--cell));
+  grid-template-rows: repeat(5, var(--cell));
+  gap: 1px;
+  flex: none;
+
+  &__brick {
+    border-radius: calc(var(--cell) * 0.14);
+
+    &--navy {
+      background-color: $primary;
+    }
+
+    &--cyan {
+      background-color: $secondary;
+    }
+
+    &--accent {
+      background-color: $primary-light;
+    }
+
+    &--ghost {
+      border: 1px dashed rgba($primary, 0.3);
+    }
+  }
+
+  // On a dark ground the structural navy bricks would disappear, so they invert.
+  &--on-dark &__brick--navy {
+    background-color: $white;
+  }
+
+  &--on-dark &__brick--ghost {
+    border-color: rgba($white, 0.34);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .campaign-bar__cta {
+    transition: transform 0.15s ease;
+  }
+
+  .campaign-bar__cta:hover {
+    transform: translateX(2px);
+  }
+}

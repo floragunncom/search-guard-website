@@ -17,7 +17,7 @@
     "eyebrow": "Search Guard anniversary",
     "instruction": "One question for every year, 2016 to 2025. Every right answer lays a brick — ten bricks build the 10.",
     "cookbook": "The cookbook waiting at the end is a real one: beloved home recipes from the people who build Search Guard, collected over ten years of offsites. Yours for an email, whatever you score.",
-    "prize": "And a perfect ten? That puts you in the running for our anniversary prize draw.",
+    "prize": "And a perfect ten? That puts you in the draw for a €110 LEGO gift card.",
     "meta": "10 questions · about 90 seconds · no sign-up to play · a cookbook at the end",
     "start": "Start with 2016"
   },
@@ -37,70 +37,110 @@
     {
       "year": "2016",
       "q": "One of these launched in the same month as our first licence. Which?",
-      "opts": ["Slack", "Douyin — the app that became TikTok", "Spotify"],
+      "opts": [
+        "Slack",
+        "Douyin — the app that became TikTok",
+        "Spotify"
+      ],
       "reveal": "Douyin launched on 20 September 2016, originally called A.me. TikTok didn't reach the rest of the world until September 2017. So Search Guard and TikTok are almost exactly the same age.",
       "hint": ""
     },
     {
       "year": "2017",
       "q": "Search Guard finally got a face in January 2017. What shipped?",
-      "opts": ["The REST management API", "The TLS Tool", "The Kibana plugin"],
+      "opts": [
+        "The REST management API",
+        "The TLS Tool",
+        "The Kibana plugin"
+      ],
       "reveal": "Until then Search Guard was configured entirely without a UI. The Kibana plugin arrived in January 2017; the TLS Tool followed in February 2018.",
       "hint": "It's on our timeline, under 2017 →"
     },
     {
       "year": "2018",
       "q": "The GDPR became fully enforceable across the EU — the deadline every company scrambled for. In which year?",
-      "opts": ["2016", "2018", "2020"],
+      "opts": [
+        "2016",
+        "2018",
+        "2020"
+      ],
       "reveal": "25 May 2018 was the day it took full effect and the inboxes overflowed. It had actually been adopted back in 2016, so the deadline was never really a surprise — though plenty of last-minute emails suggested otherwise.",
       "hint": ""
     },
     {
       "year": "2019",
       "q": "We started building something in May 2019 that let Elasticsearch tell you when things go wrong. What?",
-      "opts": ["Signals — alerting for Elasticsearch", "Anomaly Detection", "Index Management"],
+      "opts": [
+        "Signals — alerting for Elasticsearch",
+        "Anomaly Detection",
+        "Index Management"
+      ],
       "reveal": "Signals began in May 2019, went to beta that December, and reached GA in January 2020. Before it, most teams found out about a problem when somebody complained.",
       "hint": "It's on our timeline, under 2019 →"
     },
     {
       "year": "2020",
       "q": "Which supply-chain breach, disclosed in December 2020, had every security team re-reading their vendor list?",
-      "opts": ["Heartbleed", "Log4Shell", "SolarWinds"],
+      "opts": [
+        "Heartbleed",
+        "Log4Shell",
+        "SolarWinds"
+      ],
       "reveal": "Disclosed 13 December 2020. Around 18,000 organisations downloaded the compromised update, and the attackers had been inside for eight to nine months before anyone noticed. Heartbleed was 2014; Log4Shell was still a year away.",
       "hint": ""
     },
     {
       "year": "2021",
       "q": "Elasticsearch 7.10.2 has a particular place in history. Why?",
-      "opts": ["It was the fastest release ever benchmarked", "It was the last version under the Apache 2 licence", "It was the first version to support Kubernetes"],
+      "opts": [
+        "It was the fastest release ever benchmarked",
+        "It was the last version under the Apache 2 licence",
+        "It was the first version to support Kubernetes"
+      ],
       "reveal": "Elastic moved to the SSPL in 2021, making 7.10.2 the last Apache-2 licensed release. We announced long-term support for it that June, because a lot of people needed somewhere to stand.",
       "hint": "See June 2021 on our timeline →"
     },
     {
       "year": "2022",
       "q": "What did we call the next generation of Search Guard, GA in August 2022?",
-      "opts": ["NEO", "MAX", "FLX"],
+      "opts": [
+        "NEO",
+        "MAX",
+        "FLX"
+      ],
       "reveal": "Search Guard FLX went GA in August 2022 after three betas, and shipped for Elasticsearch 8 the following month.",
       "hint": "It's on our timeline, under 2022 →"
     },
     {
       "year": "2023",
       "q": "One feature returned to FLX in August 2023, seven years after it first appeared in Search Guard 5. Which?",
-      "opts": ["Audit logging", "Field anonymization", "The TLS Tool"],
+      "opts": [
+        "Audit logging",
+        "Field anonymization",
+        "The TLS Tool"
+      ],
       "reveal": "Audit logging shipped in Search Guard 5 in November 2016 and came back in FLX 1.3.0 in August 2023. Rebuilding a product means earning your own features back one at a time.",
       "hint": "Both dates are on our timeline →"
     },
     {
       "year": "2024",
       "q": "In July 2024 a single software update took down an estimated 8.5 million computers worldwide — grounding flights and stalling hospitals. Whose update was it?",
-      "opts": ["Microsoft", "CrowdStrike", "Cloudflare"],
+      "opts": [
+        "Microsoft",
+        "CrowdStrike",
+        "Cloudflare"
+      ],
       "reveal": "On 19 July 2024 a faulty CrowdStrike Falcon update blue-screened around 8.5 million Windows machines — the largest IT outage in history, and no attacker involved. Just a security tool doing more damage than the threats it was guarding against. Test what you push to production.",
       "hint": ""
     },
     {
       "year": "2025",
       "q": "What went into technical preview in March 2025?",
-      "opts": ["Anomaly Detection", "Encryption at Rest", "Automated Index Management"],
+      "opts": [
+        "Anomaly Detection",
+        "Encryption at Rest",
+        "Automated Index Management"
+      ],
       "reveal": "Encryption at Rest, which encrypts the data Elasticsearch writes to disk — indices, translogs and all. Anomaly Detection started the month before, and Automated Index Management back in February 2024.",
       "hint": "It's on our timeline, under 2025 →"
     }
@@ -136,17 +176,21 @@
     "emailLabel": "Email address",
     "emailPlaceholder": "you@company.com",
     "consentLabel": "Yes, also send me the Search Guard newsletter — Elasticsearch security, roughly monthly. I can unsubscribe any time.",
-    "consentNote": "Optional — the cookbook and the prize draw are yours either way.",
+    "consentNote": "Optional — the cookbook and your draw entry are yours either way.",
     "submit": "Send me the cookbook",
     "processing": "Sending…",
     "fineprint": "We use your address to send the cookbook and to run the anniversary draw, and we delete draw entries afterwards. Full detail in our <a href=\"/dataprotection/\" target=\"_blank\" rel=\"noopener noreferrer\">privacy notice</a> and the <a href=\"{{termsUrl}}\" target=\"_blank\" rel=\"noopener noreferrer\">terms of the draw</a>.",
     "validationError": "Please enter a valid email address.",
-    "serverError": "Something went wrong on our side. Please try once more."
+    "serverError": "Something went wrong on our side. Please try once more.",
+    "bodyClosed": "Leave an email and we’ll send you the Search Guard cookbook — our own recipes, collected over ten years of offsites. Yours whatever you scored.",
+    "consentNoteClosed": "Optional — the cookbook is yours either way.",
+    "fineprintClosed": "We use your address to send you the cookbook. Full detail in our <a href=\"/dataprotection/\" target=\"_blank\" rel=\"noopener noreferrer\">privacy notice</a>."
   },
   "confirm": {
     "eyebrow": "Check your inbox",
     "heading": "The cookbook is on its way.",
     "body": "The cookbook email is landing in your inbox now — give it a minute, and check spam if it's shy. The anniversary draw closes on 20 October, and we announce the winner in our October newsletter on the 22nd.",
-    "button": "Read the ten-year timeline"
+    "button": "Read the ten-year timeline",
+    "bodyClosed": "The cookbook email is landing in your inbox now — give it a minute, and check spam if it’s shy. Thanks for playing, and happy cooking."
   }
 }

@@ -14,6 +14,8 @@ import Quotes from '../../components/Quotes/Quotes';
 import FinalCTA from '../../components/FinalCTA/FinalCTA';
 import PreFooter from '../../components/PreFooter/PreFooter';
 import { toAbsoluteSiteUrl } from '../../utils/urlUtils';
+import AnniversaryBand from '../../components/TenYears/AnniversaryBand';
+import { ACTIVE_CAMPAIGN } from '../../config/campaign';
 
 const HomePage = () => {
     const { t, i18n } = useTranslation('home');
@@ -46,6 +48,11 @@ const HomePage = () => {
             </Helmet>
             {/* 1. Hero — rewritten, dual CTA (Task 1) */}
             <HomeHero/>
+
+            {/* Anniversary campaign band. Remove this line and the import when
+                the draw closes (20 Oct 2026) to return the homepage to its
+                original state. */}
+            <AnniversaryBand campaign={ACTIVE_CAMPAIGN}/>
             {/* 2. Why Search Guard — replaces the three ImageTextTiles (Task 2) */}
             <WhySearchGuard colorschema="light"/>
             {/* 3. Product pillars — the suite story, replaces Services (Task 3) */}

@@ -36,3 +36,33 @@ export const NEWSLETTER_LIST_ID = '9254dc87-0c97-43a8-bf7b-85a624da753e';
 // SendGrid "1010 Draw Entrants" list. Overridable via NEXT_PUBLIC_QUIZ_DRAW_LIST_ID.
 export const QUIZ_DRAW_LIST_ID =
   process.env.NEXT_PUBLIC_QUIZ_DRAW_LIST_ID || 'ab021e16-852b-4e09-8cc4-8ac494cd05df';
+
+// ---------------------------------------------------------------------------
+// When the prize draw closes — the single source of truth for that date.
+//
+// Everything that has to know about it reads this: the draw opt-in on the score
+// screen, the copy that mentions the draw, and the campaign banners
+// (src/config/campaign.js derives its `endsAt` from this value). Keep it in step
+// with /10-years-terms/ §4, which states the same date in prose.
+//
+// AFTER THIS DATE the quiz keeps working and keeps sending the cookbook — it is
+// meant to stay up and be reused. Only the prize draw goes away: the opt-in
+// disappears, QUIZ_DRAW_LIST_ID stops being written to, and the draw sentences
+// swap for cookbook-only variants. Nothing has to be redeployed for that to
+// happen, so entries can never be collected for a draw that has been won.
+export const DRAW_CLOSES_AT = '2026-10-20T23:59:59+02:00';
+
+/**
+ * Whether the prize draw is still accepting entries.
+ *
+ * An unparseable date counts as CLOSED. That is the opposite of the banners'
+ * fail-open behaviour, and deliberately so: a typo there shows an advert too
+ * long, whereas a typo here would keep taking entries for a finished draw.
+ */
+export const isDrawOpen = () => {
+  const closes = Date.parse(DRAW_CLOSES_AT);
+  if (Number.isNaN(closes)) {
+    return false;
+  }
+  return Date.now() <= closes;
+};

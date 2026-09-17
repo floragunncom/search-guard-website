@@ -1,0 +1,120 @@
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+
+// Below the navbar (997) and the campaign bar (998): the badge is the least
+// important thing on screen and must never cover site navigation.
+$quiz-badge-z: 995;
+
+.quiz-badge {
+  position: fixed;
+  right: 18px;
+  // Clears the iOS home indicator on phones; 0 everywhere else.
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: $quiz-badge-z;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  max-width: calc(100vw - 36px);
+  padding: 10px 12px 10px 14px;
+  background-color: $primary;
+  border: 2px solid $secondary;
+  border-radius: 8px;
+  box-shadow: 0 8px 22px rgba(9, 28, 38, 0.38);
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__text {
+    min-width: 0;
+
+    strong {
+      display: block;
+      color: $white;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+  }
+
+  &__cta {
+    display: block;
+    margin-top: 2px;
+    color: $secondary;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &__close {
+    flex: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: rgba($white, 0.55);
+    font-size: 16px;
+    line-height: 1;
+    padding: 0 2px;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+  }
+
+  .campaign-plate {
+    --cell: 7px;
+  }
+
+  // On a phone it collapses to a pill: the second line goes, the numeral stays.
+  // Without the bricks it reads as a chat widget and gets swatted away.
+  @media only screen and (max-width: $mobile) {
+    right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    padding: 8px 10px;
+    border-radius: 999px;
+    gap: 4px;
+
+    &__link {
+      gap: 9px;
+    }
+
+    &__text strong {
+      font-size: 12px;
+    }
+
+    &__cta {
+      display: none;
+    }
+
+    .campaign-plate {
+      --cell: 5px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .quiz-badge {
+    animation: quiz-badge-in 0.22s ease-out both;
+  }
+
+  @keyframes quiz-badge-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

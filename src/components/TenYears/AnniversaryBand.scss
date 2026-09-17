@@ -1,0 +1,122 @@
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+
+.anniversary-band {
+  background-color: $secondary;
+  padding: 38px 24px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 34px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  &__copy {
+    flex: 1 1 340px;
+    min-width: 0;
+    max-width: 560px;
+  }
+
+  &__headline {
+    margin: 0 0 12px;
+    color: $primary;
+    font-size: 40px;
+    line-height: 1.04;
+    letter-spacing: -0.018em;
+  }
+
+  &__sub {
+    margin: 0;
+    color: rgba($primary, 0.88);
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 52ch;
+  }
+
+  &__cta {
+    flex: none;
+    background-color: $primary;
+    color: $secondary;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px 30px;
+    border-radius: 999px;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: $secondary;
+    }
+  }
+
+  // The plate is a graphic here, not the quiz's progress meter. At this size the
+  // ghost outlines stop it reading as a numeral at all, so every brick is
+  // filled — MiniPlate's default.
+  .campaign-plate {
+    --cell: 24px;
+    gap: 2px;
+  }
+
+  // Cyan-on-cyan: the quiz's own mint bricks are invisible against this
+  // background, which breaks the 10 into disconnected pieces. Remap to three
+  // tones that all read on cyan, same fix as the campaign bar.
+  .campaign-plate__brick--navy {
+    background-color: $primary;
+  }
+
+  .campaign-plate__brick--cyan {
+    background-color: $white;
+  }
+
+  .campaign-plate__brick--accent {
+    background-color: $primary-light;
+  }
+
+  @media only screen and (max-width: $tabletBig) {
+    padding: 32px 20px;
+
+    &__inner {
+      gap: 26px;
+    }
+
+    &__headline {
+      font-size: 32px;
+    }
+
+    .campaign-plate {
+      --cell: 19px;
+    }
+  }
+
+  @media only screen and (max-width: $mobile) {
+    padding: 28px 16px;
+
+    &__inner {
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    &__headline {
+      font-size: 27px;
+    }
+
+    &__sub {
+      font-size: 14px;
+    }
+
+    &__cta {
+      width: 100%;
+      text-align: center;
+    }
+
+    .campaign-plate {
+      --cell: 15px;
+    }
+  }
+}
