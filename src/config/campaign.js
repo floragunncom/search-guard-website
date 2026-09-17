@@ -45,6 +45,11 @@ export const ACTIVE_CAMPAIGN = {
   // Render the corner badge as well. Set false (or delete the component) after
   // 20 Oct 2026 — the bar outlives the badge.
   badge: true,
+
+  // Render the prominent homepage band under the hero. Homepage only, and the
+  // other half of what goes away after 20 Oct 2026 when the homepage returns to
+  // its original state — see AnniversaryBand.js.
+  band: true,
 };
 
 /**
@@ -60,6 +65,7 @@ export const ACTIVE_CAMPAIGN = {
  *   endsAt: '2026-10-14T18:00:00+02:00',
  *   plate: false,
  *   badge: false,
+ *   band: false,
  * };
  */
 export const TEN_YEARS_SUCCESSOR_EXAMPLE = null;

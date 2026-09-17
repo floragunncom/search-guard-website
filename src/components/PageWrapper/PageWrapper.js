@@ -33,6 +33,9 @@ const OG_LOCALE_MAP = {
 // the pages that actually matter. Matched on the locale-stripped path, so the
 // /de/ and /fr/ variants are covered too. The bar itself stays everywhere.
 const BADGE_EXCLUDED_PATHS = [
+  // The homepage has the AnniversaryBand instead. A badge there would be a
+  // third element competing for the same click.
+  '/',
   '/10-years/',
   '/10-years-terms/',
   '/contacts/',

@@ -35,7 +35,10 @@ import {
  * The brick "10" is not decoration here: without it the badge reads as a chat
  * widget and gets dismissed on reflex.
  */
-const SCROLL_TRIGGER = 0.4;
+// Low on purpose. At 0.4 the badge only turned up near the footer, by which
+// point the reader has usually decided to leave. 0.15 puts it on screen while
+// they are still reading.
+const SCROLL_TRIGGER = 0.15;
 
 const QuizBadge = ({ campaign }) => {
   const { t } = useTranslation('campaign');
