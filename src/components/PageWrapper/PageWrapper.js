@@ -9,6 +9,9 @@ import {
 } from '../../i18n/locales';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import CampaignBar from '../CampaignBar/CampaignBar';
+import QuizBadge from '../TenYears/QuizBadge';
+import { ACTIVE_CAMPAIGN } from '../../config/campaign';
 
 const BASE_URL = 'https://search-guard.com';
 const DEFAULT_TITLE = 'Security and Alerting for Elasticsearch and Kibana | Search Guard';
@@ -23,6 +26,24 @@ const OG_LOCALE_MAP = {
   es: 'es_ES',
   fr: 'fr_FR',
 };
+
+// Pages where the corner badge would be in the way rather than useful: the
+// campaign's own landing page (it is already there), and any page whose whole
+// job is a form — a floating chip over a submit button costs conversions on
+// the pages that actually matter. Matched on the locale-stripped path, so the
+// /de/ and /fr/ variants are covered too. The bar itself stays everywhere.
+const BADGE_EXCLUDED_PATHS = [
+  // The homepage has the AnniversaryBand instead. A badge there would be a
+  // third element competing for the same click.
+  '/',
+  '/10-years/',
+  '/10-years-terms/',
+  '/contacts/',
+  '/search-guard-free-trial/',
+  '/newsletter/',
+  '/thanks/',
+  '/404/',
+];
 
 const PageWrapper = ({ children, background, landing }) => {
   const location = useLocation();
@@ -41,6 +62,14 @@ const PageWrapper = ({ children, background, landing }) => {
 
   // Determine if this route should have hreflang alternates
   const showHreflang = isLocalizableRoute(normalizedPath);
+
+  // The router's basename already strips the locale prefix in the browser, but
+  // the static render passes the full path — strip it here so both agree.
+  const localeStrippedPath =
+    locale !== DEFAULT_LOCALE && normalizedPath.startsWith(`/${locale}/`)
+      ? normalizedPath.slice(locale.length + 1)
+      : normalizedPath;
+  const showBadge = !BADGE_EXCLUDED_PATHS.includes(localeStrippedPath);
 
   return (
     <>
@@ -85,9 +114,11 @@ const PageWrapper = ({ children, background, landing }) => {
           />
         )}
       </Helmet>
+      <CampaignBar campaign={ACTIVE_CAMPAIGN} />
       <Navbar background={background} landing={landing} />
       {children}
       <Footer landing={landing} />
+      {showBadge ? <QuizBadge campaign={ACTIVE_CAMPAIGN} /> : null}
     </>
   );
 };
