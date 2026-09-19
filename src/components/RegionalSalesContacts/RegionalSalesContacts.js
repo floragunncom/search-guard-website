@@ -17,7 +17,7 @@ const CONTACTS = [
   },
   {
     region: 'South America',
-    name: 'Excelerate Systems',
+    name: 'Victor Pichardo · Excelerate Systems',
     email: 'victor.pichardo@exceleratesystems.net',
   },
   {
