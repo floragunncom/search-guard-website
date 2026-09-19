@@ -3,6 +3,7 @@ import Button from './Button/Button';
 import DropDown from './DropDown/DropDown';
 import Turnstile from './Turnstile/Turnstile';
 import {CONTACT_API_URL} from '../config/apiEndpoints';
+import RegionalSalesContacts from './RegionalSalesContacts/RegionalSalesContacts';
 
 const ContactForm = () => {
 
@@ -66,38 +67,15 @@ const ContactForm = () => {
             <br />
             Germnay
           </p>
-          <p className="company-information-header">Authorized Partners</p>
-            <p className="company-information-text">
-                <b>USA and Canada</b>
-                <br />
-                Excelerate Systems LLC
-                <br /> 2205 152nd Avenue NE Redmond
-                <br />
-                WA 98052
-                <br />
-                <a href="mailto:david.bennett@exceleratesystems.net">
-                    david.bennett@exceleratesystems.net
-                </a>
-            </p>
-            <p className="company-information-text">
-                <b>France & North Africa</b>
-                <br />
-                Ian Quakenbos
-                <br />
-                <a href="mailto:iquackenbos@search-guard.com">
-                    iquackenbos@search-guard.com
-                </a>
-            </p>
-            <p className="company-information-text">
-                <b>South America</b>
-                <br /> Excelerate Systems S de R.L. de C.V.
-                <br /> Córdoba 42, Roma Norte, Cuauhtémoc, C.P.
-                <br /> 06700, Ciudad de México
-                <br />
-                <a href="mailto:victor.pichardo@exceleratesystems.net">
-                    victor.pichardo@exceleratesystems.net
-                </a>
-            </p>
+          {/* The form sits directly beside this listing and the layout's
+              first id="contact" is this very column, so an in-page anchor
+              would jump nowhere useful — the "All other regions" row links
+              the HQ mailbox instead. */}
+          <RegionalSalesContacts
+              headingTag="p"
+              otherRegionsHref="mailto:info@floragunn.com"
+              otherRegionsLinkText="info@floragunn.com"
+          />
         </div>
       </div>
       <div className="col s12 l8" id="contact">
