@@ -1,0 +1,22 @@
+@use '../../styles/Colors' as *;
+
+// Self-help line between the hero and the contact form, for visitors who
+// are looking for documentation or community support instead.
+.contact-selfhelp {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
+  // No top padding: the Title section above already ends with 64px of
+  // padding plus the headline margin — that spacing alone is enough.
+  padding: 0 24px;
+
+  a {
+    color: $secondary-dark;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -31,7 +31,7 @@ const Thanks = () => {
               Your contact form was successfully submitted.
               <br />
               Thank you for your interest in Search Guard, we will get back to
-              you as soon as possible.
+              you within one business day.
               <br />
               <br />
               Kindly,
