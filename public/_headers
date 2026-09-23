@@ -19,3 +19,10 @@
 
 /*.js
   Cache-Control: public, max-age=2592000
+
+# Blog article PDFs (generated at build time by scripts/generate-blog-pdfs.js).
+# attachment => the "Download as PDF" link saves the file instead of opening it.
+# Content changes on redeploy under the same name, so only a short browser TTL.
+/downloads/blog/*
+  Content-Disposition: attachment
+  Cache-Control: public, max-age=3600
