@@ -107,8 +107,11 @@ build:
       # Chromium + its system libraries, for the blog-PDF step. The browser
       # binary comes from the CI cache after the first run; --install-deps
       # (apt) is cheap and keeps the library list maintained by puppeteer.
+      # The node image ships with EMPTY apt package lists, so without the
+      # update every dependency is reported "not installable".
       echo "Installing Chromium for PDF generation..."
-      npx puppeteer browsers install chrome --install-deps
+      apt-get update -qq
+      DEBIAN_FRONTEND=noninteractive npx puppeteer browsers install chrome --install-deps
       # `npm run build` = fetch (Contentful -> src/Api/*.json) + next build
       #                   + sitemap + blog PDFs (out/downloads/blog/)
       echo "Building static site ..."
