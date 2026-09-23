@@ -3,24 +3,81 @@ import {Helmet} from 'react-helmet-async';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import Title from '../../components/Title/Title';
 import PreFooter from '../../components/PreFooter/PreFooter';
-import { ensureTrailingSlash } from '../../utils/urlUtils';
+import { ensureTrailingSlash, toLocalePath } from '../../utils/urlUtils';
+import { isLocalizableRoute } from '../../i18n/locales';
+import { useLocale } from '../../i18n/LocaleContext';
 import { usePageData } from '../../context/PageDataContext';
 
+// The static page list for this HTML sitemap. Every path here must exist as a
+// `<Route path="...">` in src/Routes.js, or the link lands on the catch-all 404.
+//
+// Deliberately NOT listed:
+//   - /security-for-elasticsearch/, /elasticsearch-kibana-security/,
+//     /tls-certificate-generator/  -> LegacyRedirect aliases, and blacklisted in
+//     scripts/sitemap.js. Linking them from here would contradict the XML sitemap.
+//   - /10-years-terms/             -> noindex, deliberately sitemap-excluded.
+//   - /heise/, /thanks/, /error/, /404/, /preview/*  -> utility pages.
+//   - /sitemap/                    -> this page itself.
+//   - /press/*                     -> listed in its own section below.
+//
+// Paths that appear in LOCALIZABLE_ROUTES (src/i18n/locales.js) are rendered with
+// a locale prefix, so /de/sitemap/ links to /de/security/ rather than /security/.
+// Everything else (blog, authors, whitepapers, press, legal, /10-years/) exists
+// in English only and is always linked at its unprefixed path.
+const PAGE_LINKS = [
+    { path: '/', label: 'Home' },
+    { path: '/search-guard-flx/', label: 'Search Guard FLX' },
+    { path: '/security/', label: 'Security' },
+    { path: '/alerting/', label: 'Alerting' },
+    { path: '/anomaly-detection/', label: 'Anomaly Detection' },
+    { path: '/encryption-at-rest/', label: 'Encryption at Rest' },
+    { path: '/indexmanagement/', label: 'Index Management' },
+    { path: '/tlstool/', label: 'TLS Tool' },
+    { path: '/compliance/', label: 'Compliance' },
+    { path: '/licensing/', label: 'Licensing' },
+    { path: '/search-guard-free-trial/', label: 'Search Guard Free Trial' },
+    { path: '/certificates/', label: 'Certificates' },
+    { path: '/company/', label: 'About us' },
+    { path: '/contacts/', label: 'Contact' },
+    { path: '/resource/', label: 'Resource hub' },
+    { path: '/blog/', label: 'Blog' },
+    { path: '/webinars/', label: 'Webinars' },
+    { path: '/presentations/', label: 'Presentations' },
+    { path: '/whitepapers/', label: 'Whitepapers' },
+    { path: '/authors/', label: 'Authors' },
+    { path: '/faq/', label: 'FAQ' },
+    { path: '/newsletter/', label: 'Newsletter' },
+    { path: '/10-years/', label: '10 Years of Search Guard' },
+    { path: '/outdated-elasticsearch-versions-suppport/', label: 'Support for old Elasticsearch Versions' },
+    { path: '/security-information/', label: 'Security Information' },
+    { path: '/cve-advisory/', label: 'CVE Advisory' },
+    { path: '/disclosure-policy/', label: 'Disclosure Policy' },
+    { path: '/impressum/', label: 'Imprint' },
+    { path: '/datenschutz/', label: 'Datenschutzerklärung (German)' },
+    { path: '/dataprotection/', label: 'Data Protection (English)' },
+];
+
 const HtmlSitemap = () => {
+    const locale = useLocale();
     const pageData = usePageData();
     const posts = pageData?.posts || [];
     const authors = pageData?.authors || [];
     const whitepapers = pageData?.whitepapers || [];
     const presentations = pageData?.presentations || [];
+
+    // Localizable routes follow the visitor's locale; everything else stays on
+    // its English path so the link does not 404 on /de/, /es/ or /fr/.
+    const hrefFor = (path) => (isLocalizableRoute(path) ? toLocalePath(path, locale) : path);
+
     return (
         <PageWrapper>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Search Guard - Security and Alerting for Elasticsearch and Kibana</title>
-                <link rel="canonical" href="https://search-guard.com/sitemap/" />
+                <title>Sitemap | Search Guard</title>
+                <link rel="canonical" href={`https://search-guard.com${toLocalePath('/sitemap/', locale)}`} />
                 <meta
                     name="description"
-                    content="Search Guard is an Open Source security plugin for Elasticsearch, Kibana and the entire ELK stack. Search Guard offers encryption, authentication, authorization, audit logging, compliance as well as alerting and anomaly detection features."
+                    content="Full index of Search Guard pages: product and security features, licensing, documentation resources, blog posts, whitepapers, presentations and company information."
                 />
             </Helmet>
             <Title
@@ -32,28 +89,11 @@ const HtmlSitemap = () => {
                     <h2>Pages</h2>
                 </div>
                 <div className="tilesimple-text default-margin-bottom">
-                    <a href="/search-guard-flx/">Search Guard FLX</a><br />
-                    <a href="/contacts/">Contact</a><br />
-                    <a href="/security/">Security</a><br />
-                    <a href="/alerting/">Alerting</a><br />
-                    <a href="/anomaly-detection/">Anomaly Detection</a><br />
-                    <a href="/whitepapers/">Whitepapers</a><br />
-                    <a href="/compliance/">Compliance</a><br />
-                    <a href="/company/">About us</a><br />
-                    <a href="/resource/">Resource hub</a><br />
-                    <a href="/licensing/">Licensing</a><br />
-                    <a href="/faq/">FAQ</a><br />
-                    <a href="/impressum/">Imprint</a><br />
-                    <a href="/presentations/">Presentations</a><br />
-                    <a href="/datenschutz/">Data Protection</a><br />
-                    <a href="/education-program/">Scientific and Educational License Programme</a><br />
-                    <a href="/outdated-elasticsearch-versions-suppport/">Support for old Elasticsearch Versions</a><br />
-                    <a href="/security-for-elasticsearch/">Security for Elasticsearch Overview</a><br />
-                    <a href="/elasticsearch-kibana-security/">Security for Kibana Overview</a><br />
-                    <a href="/search-guard-free-trial/">Search Guard Free Trial</a><br />
-                    <a href="/security-information/">Security Information</a><br />
-                    <a href="/cve-advisory/">CVE Advisory</a><br />
-                    <a href="/disclosure-policy/">Disclosure Policy</a><br />
+                    {PAGE_LINKS.map(({ path, label }) => (
+                        <React.Fragment key={path}>
+                            <a href={hrefFor(path)}>{label}</a><br />
+                        </React.Fragment>
+                    ))}
                 </div>
             </div>
 
