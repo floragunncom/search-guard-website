@@ -353,6 +353,21 @@ const BlogPostArticleContent = ({postContent, relatedPosts}) => {
                 </div>
             </div>
 
+            {/* PDF generated at build time by scripts/generate-blog-pdfs.js,
+                named after the slug; _headers forces it to download. */}
+            <div className="row blogpostarticle-wrapper">
+                <div className="col s12 offset-l2 l8">
+                    <a
+                        className="blogpostarticle-pdf-link"
+                        href={`/downloads/blog/${postContent.fields.slug.replace(/\/+$/, '')}.pdf`}
+                        download
+                    >
+                        <i className="material-icons" aria-hidden="true">file_download</i>
+                        Download this article as PDF
+                    </a>
+                </div>
+            </div>
+
             <div className="row blogpostarticle-wrapper">
                 <div className="col s12 offset-l2 l8">
 
