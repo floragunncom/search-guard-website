@@ -134,6 +134,23 @@
   text-align: center;
 }
 
+.blogpostarticle-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: $secondary-dark;
+  font-weight: bold;
+  font-size: 16px;
+
+  .material-icons {
+    font-size: 20px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .blogpostarticle-text {
   margin-bottom: 32px;
   margin-top: 32px;

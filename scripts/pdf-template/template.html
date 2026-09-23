@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Relative URLs inside article markdown (images, links) resolve against
+     the production site, so they stay valid inside the PDF. -->
+<base href="https://search-guard.com/">
+<style>
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 400;
+    src: url('{{FONT_REGULAR}}') format('truetype');
+  }
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 600;
+    src: url('{{FONT_SEMIBOLD}}') format('truetype');
+  }
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 700;
+    src: url('{{FONT_BOLD}}') format('truetype');
+  }
+
+  :root {
+    --primary: #184962;
+    --secondary-dark: #00B7A8;
+    --dark-grey: #63737E;
+    --light-grey: #E8ECED;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    color: #1a1a1a;
+    margin: 0;
+  }
+
+  a { color: var(--secondary-dark); text-decoration: none; }
+
+  /* ---- Cover block ---- */
+  .pdf-title {
+    font-size: 22pt;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--primary);
+    margin: 0 0 10px;
+  }
+  .pdf-meta {
+    font-size: 9.5pt;
+    color: var(--dark-grey);
+    margin: 0 0 18px;
+  }
+  .pdf-meta .sep { margin: 0 6px; }
+  .pdf-hero {
+    width: 100%;
+    border-radius: 4px;
+    margin: 0 0 22px;
+  }
+
+  /* ---- Article body ---- */
+  .pdf-body h1, .pdf-body h2, .pdf-body h3, .pdf-body h4 {
+    color: var(--primary);
+    line-height: 1.3;
+    margin: 22px 0 8px;
+    break-after: avoid;
+  }
+  .pdf-body h1 { font-size: 16pt; }
+  .pdf-body h2 { font-size: 14pt; }
+  .pdf-body h3 { font-size: 12pt; }
+  .pdf-body h4 { font-size: 11pt; }
+  .pdf-body p { margin: 0 0 10px; }
+  .pdf-body img {
+    max-width: 100%;
+    height: auto;
+    margin: 12px 0;
+    break-inside: avoid;
+  }
+  .pdf-body pre {
+    background: #f5f7f8;
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    break-inside: avoid;
+  }
+  .pdf-body code {
+    font-family: 'SFMono-Regular', Consolas, Menlo, monospace;
+    font-size: 8.5pt;
+    background: #f5f7f8;
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+  .pdf-body pre code { background: none; padding: 0; }
+  .pdf-body blockquote {
+    border-left: 3px solid var(--secondary-dark);
+    margin: 12px 0;
+    padding: 4px 0 4px 14px;
+    color: var(--dark-grey);
+  }
+  .pdf-body table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 9pt;
+    margin: 12px 0;
+  }
+  .pdf-body th, .pdf-body td {
+    border: 1px solid var(--light-grey);
+    padding: 6px 8px;
+    text-align: left;
+  }
+  .pdf-body th { background: #f5f7f8; color: var(--primary); }
+  .pdf-body ul, .pdf-body ol { margin: 0 0 10px; padding-left: 22px; }
+  .pdf-body li { margin-bottom: 4px; }
+  .pdf-body hr { border: none; border-top: 1px solid var(--light-grey); margin: 18px 0; }
+
+  /* ---- Closing note ---- */
+  .pdf-closing {
+    margin-top: 28px;
+    padding-top: 14px;
+    border-top: 1px solid var(--light-grey);
+    font-size: 9pt;
+    color: var(--dark-grey);
+  }
+</style>
+</head>
+<body>
+  <h1 class="pdf-title">{{TITLE}}</h1>
+  <p class="pdf-meta">{{AUTHOR}}<span class="sep">·</span>{{DATE}}</p>
+  <img class="pdf-hero" src="{{HERO_IMG}}" alt="">
+  <div class="pdf-body">{{BODY}}</div>
+  <p class="pdf-closing">
+    This article was published on the Search Guard blog:
+    <a href="{{POST_URL}}">{{POST_URL}}</a><br>
+    Search Guard is Security and Alerting for Elasticsearch and Kibana —
+    <a href="https://search-guard.com/">search-guard.com</a>
+    · <a href="https://search-guard.com/search-guard-free-trial/">Start a free trial</a>
+  </p>
+</body>
+</html>
