@@ -2,7 +2,9 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from "../Button/Button";
 
-const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink, buttontarget, titlestyle }) => {
+// button2text/button2link (optional): a secondary ghost-style link rendered
+// next to the primary button, for heroes with two calls to action.
+const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink, buttontarget, button2text, button2link, titlestyle }) => {
     const { i18n } = useTranslation();
     const pageLang = i18n?.resolvedLanguage || i18n?.language || 'en';
 
@@ -54,13 +56,16 @@ const Title = ({ headline, text, breadcrumb, buttonstyle, buttontext, buttonlink
         <h1 lang={pageLang} className={titleHeadlineStyle} dangerouslySetInnerHTML={{__html: headline}}></h1>
         <h2 className={titleTextStyle} dangerouslySetInnerHTML={{__html: text}}></h2>
           {buttontext ?
-              <div className={buttonWrapperStyle}>
+              <div className={button2text ? 'col s12 title-button-wrapper title-button-wrapper--dual' : buttonWrapperStyle}>
                   <Button
                       text={buttontext}
                       buttonStyle={buttonstyle}
                       link={buttonlink}
                       target={buttontarget}
                   />
+                  {button2text && (
+                      <a className="licensing-quote-link" href={button2link}>{button2text}</a>
+                  )}
               </div>
               : ""
           }

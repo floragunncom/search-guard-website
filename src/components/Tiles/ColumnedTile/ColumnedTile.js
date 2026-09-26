@@ -11,7 +11,10 @@ import {getColorSchemaCSS, getColorSchemaCSSForSVG} from '../../../utils/styleUt
 // alignedHeadlines (optional): reserve two headline lines per column
 // (top-aligned) so headlines and copy text start at the same vertical
 // position in every column, whether a headline wraps to one line or two.
-const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, subheadline, columns, columnsPerRow, alignedHeadlines}) => {
+// columnHeadlineTag (optional): heading element for the per-column headline
+// (default h2). Pass 'h3' when the tile sits under its own h2 section
+// headline so the document outline stays sequential.
+const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, subheadline, columns, columnsPerRow, alignedHeadlines, columnHeadlineTag: ColumnHeadline = 'h2'}) => {
 
     if (!columns || !Array.isArray(columns)) {
         throw new Error('The "columns" property is required and must be an array.');
@@ -141,7 +144,7 @@ const ColumnedTile = ({colorschema, svgcolor, wrapperclass, headline, subheadlin
                             {(col.headline || col.text) &&
                                 <div className="columnedtile-text-wrapper">
                                     {col.headline &&
-                                        <h2 className={`${baseCss} columnedtile-headline`}>{col.headline}</h2>
+                                        <ColumnHeadline className={`${baseCss} columnedtile-headline`}>{col.headline}</ColumnHeadline>
                                     }
                                     {col.text &&
                                         <div className="body1 columnedtile-content">

@@ -1,139 +1,212 @@
 @use '../../styles/Colors' as *;
 @use '../../styles/Breakpoints' as *;
 
-.compliance-wrapper {
-  padding-top: 64px;
+/* ------------------------- Compliance page redesign (issue #34) */
 
+.compliance-section-headline {
+  margin-bottom: 48px;
+}
+
+.compliance-section-headline--left {
+  text-align: left;
   @media only screen and (max-width: $tabletBig) {
-    padding: 64px 32px 0px 32px;
-  }
-  @media only screen and (max-width: $mobile) {
-    padding: 32px 24px 16px 24px;
+    text-align: center;
   }
 }
 
-.row.compliance {
-  max-width: 960px;
+.compliance-section-intro {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+/* Neutral slot rendered until the diagram/screenshot assets exist.
+   currentColor keeps it legible on light, white and dark sections. */
+.compliance-asset-placeholder {
+  border: 2px dashed currentColor;
+  border-radius: 6px;
+  opacity: 0.55;
+  min-height: 220px;
   display: flex;
   align-items: center;
-  flex-direction: column;
-}
-
-.compliance-headline {
-  margin-bottom: 32px;
-  color: $primary;
-  font-size: 48px;
-  line-height: 57px;
+  justify-content: center;
   text-align: center;
-  font-weight: 300;
+  padding: 24px;
+  font-size: 14px;
+  margin: 16px 0;
+}
+
+.compliance-asset-placeholder--wide {
+  min-height: 320px;
   @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
-  }
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 32px;
-    font-size: 24px;
-    line-height: 28px;
+    min-height: 220px;
   }
 }
 
-.compliance-headline-form {
-  margin-top: 32px;
-  color: $primary;
-  font-size: 48px;
-  line-height: 57px;
-  text-align: center;
-  font-weight: 300;
-  @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
-  }
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 32px;
-    font-size: 24px;
-    line-height: 28px;
+/* §3.2 auditor question cards */
+.compliance-auditor .compliance-question-card {
+  text-align: left;
+
+  p {
+    margin: 0 0 12px;
   }
 }
 
-.compliance-section {
-  margin-bottom: 24px;
-  margin-top: 24px;
-  display: flex;
-  justify-content: space-around;
-  max-width: 945px;
+.compliance-question-features {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.compliance-question-links a,
+.compliance-resource-link a {
+  color: $secondary-dark;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* §3.3 architecture text block */
+.compliance-architecture-text {
+  text-align: left;
+
+  p {
+    margin: 0 0 16px;
+  }
+}
+
+/* §3.6 regulation table — real table on desktop, stacked cards on mobile */
+.compliance-regulations-tablewrap {
+  overflow-x: auto;
+}
+
+.compliance-regulations-table {
   width: 100%;
-  &:last-child {
-    border-bottom: unset;
+  border-collapse: collapse;
+  background: $white;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 24px;
+
+  th,
+  td {
+    border: 1px solid $lightGrey;
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: top;
   }
+
+  thead th {
+    background: $primary;
+    color: $white;
+  }
+
+  tbody th[scope='row'] {
+    white-space: nowrap;
+    font-weight: 700;
+  }
+
   @media only screen and (max-width: $mobile) {
-    border-bottom: unset;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    &:last-child {
-      margin-bottom: 0px;
+    thead {
+      display: none;
+    }
+
+    tr {
+      display: block;
+      margin-bottom: 16px;
+      border: 1px solid $lightGrey;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    th[scope='row'],
+    td {
+      display: block;
+      border: none;
+      border-bottom: 1px solid $lightGrey;
+    }
+
+    th[scope='row'] {
+      background: $primary;
+      color: $white;
+    }
+
+    td:last-child {
+      border-bottom: none;
+    }
+
+    td::before {
+      content: attr(data-label);
+      display: block;
+      font-weight: 700;
+      margin-bottom: 4px;
     }
   }
 }
 
-.compliance-pic img {
-  margin-right: 32px;
-  display: flex;
-  justify-content: center;
-  @media only screen and (max-width: $mobile) {
-    margin-right: 0px;
-  }
+.compliance-regulations-disclaimer {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  max-width: 760px;
+  margin: 24px auto 0;
 }
 
-.compliance-content {
-  width: 80%;
+/* §3.7 edition boxes */
+.compliance-edition-card {
+  border: 1px solid $lightGrey;
+  border-radius: 6px;
+  padding: 32px 28px;
+  height: 100%;
+  text-align: left;
+  background: $white;
 }
 
-.compliance-content-headline {
-  color: $primary;
+.compliance-edition-card--highlight {
+  border-color: $secondary-dark;
+  background: #e6fefc; // same tint as the pricing feature table highlight
+}
+
+.compliance-edition-badge-slot {
+  min-height: 28px;
+  margin-bottom: 8px;
+}
+
+.compliance-edition-name {
   font-size: 24px;
   line-height: 30px;
-  text-align: left;
   letter-spacing: 0.8px;
-  margin-bottom: 16px;
+  text-align: left;
+  margin: 0 0 12px;
+}
+
+.compliance-editions-note {
   text-align: center;
+  margin: 32px auto 24px;
+  max-width: 760px;
+}
+
+.compliance-editions-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
   @media only screen and (max-width: $mobile) {
-    margin: 16px 0px;
+    flex-direction: column;
+    gap: 12px;
   }
 }
 
-.compliance-content-text {
-  color: $darkGrey;
+/* §3.8 contact section */
+.compliance-contact .compliance-section-intro {
+  margin-bottom: 32px;
+}
+
+/* §3.9 resource link cards */
+.compliance-resource-link {
   font-size: 18px;
   line-height: 27px;
-  text-align: left;
-  margin-bottom: 32px;
-  text-align: center;
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 16px;
-    font-size: 16px;
-    line-height: 24px;
-  }
 }
-
-.compliance-content-button {
-  display: flex;
-  margin-bottom: 64px;
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 16px;
-  }
-}
-
-.compliance-pre {
-  background-color: $lightGrey;
-  white-space: pre-wrap;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  font-family: Courier;
-  font-size: 16px;
-  line-height: 19px;
-  padding: 16px;
-  word-break: break-all;
-  overflow: scroll;
-}
-
