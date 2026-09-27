@@ -30,3 +30,7 @@ yarn-error.log*
 .wrangler/
 
 .claude/
+# Working documents for redesign/content tasks: keep the folder in git via
+# .empty, but never commit the actual documents placed here.
+redesign/*
+!redesign/.empty

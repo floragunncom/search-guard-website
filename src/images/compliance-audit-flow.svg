@@ -1,0 +1,100 @@
+<svg viewBox="0 0 1920 873" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-caf-title sg-caf-desc">
+<title id="sg-caf-title">Search Guard audit event routing</title>
+<desc id="sg-caf-desc">Search Guard audit events flow from the Elasticsearch cluster to multiple storage endpoints: an internal or immutable audit index, an external cluster, a SIEM via webhook, and log4j appenders</desc>
+<defs>
+<marker id="sg-caf-ah-sec" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#00B7A8"/></marker>
+<marker id="sg-caf-ah-comp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#478EB3"/></marker>
+<marker id="sg-caf-ah-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#184962"/></marker>
+<clipPath id="sg-caf-helmet-clip"><rect width="86" height="116" transform="translate(0 0.160645)"/></clipPath>
+</defs>
+<rect width="1920" height="1080" fill="#FFFFFF"/>
+
+<!-- Cluster -->
+<g>
+<rect x="80" y="370" width="440" height="260" rx="10" fill="#FFFFFF" stroke="#184962" stroke-width="2"/>
+<text x="108" y="438" font-family="Material Icons" font-size="32" fill="#00B7A8">storage</text>
+<text x="152" y="432" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">ELASTICSEARCH CLUSTER</text>
+<rect x="110" y="475" width="380" height="80" rx="3" fill="#02F0DD"/>
+<svg x="132" y="495" width="40" height="40" viewBox="0 0 86 117">
+<g clip-path="url(#sg-caf-helmet-clip)">
+<path d="M49.496 108.407C59.1993 108.407 67.1887 111.055 72.6139 116.147H87.0136C85.799 115.151 84.5979 113.826 83.5587 112.202C81.9528 109.69 80.7247 106.468 80.4143 102.604V92.9525C77.7962 88.9388 73.68 85.7579 67.7285 83.3141L63.4639 81.5394C60.0765 80.1059 56.1493 78.3311 56.1493 75.355C56.1493 72.7065 58.8754 71.7099 62.1548 71.7099C69.6988 71.7099 75.9338 75.0274 80.4143 81.6622V61.3207C80.4143 59.5869 80.2658 57.9486 80.0364 56.365C77.9311 41.5662 66.271 33.689 49.4825 33.689C31.0207 33.689 18.9962 43.6413 18.9962 62.0989V102.618C18.6318 109.253 15.5548 113.567 12.3699 116.161H26.8641C32.1948 111.082 39.9817 108.42 49.4825 108.42L49.496 108.407Z" fill="#FFFFFF"/>
+<path d="M72.0476 5.5387C69.6454 3.80489 58.0392 -0.358981 45.5154 0.214404C10.4001 1.82535 -4.43152 31.696 1.14213 52.5836C2.99102 59.5052 6.08149 65.3893 10.1302 70.0446C9.92772 69.2255 9.72528 68.42 9.60382 67.6282C6.98569 50.9591 13.477 38.1261 25.1642 29.6209C38.7407 19.7505 58.2822 22.9587 61.899 24.2147L72.0341 5.52505L72.0476 5.5387Z" fill="#FFFFFF"/>
+</g>
+</svg>
+<text x="188" y="524" font-family="Parafina-SemiWideXBold" font-size="24" fill="#184962">SEARCH GUARD</text>
+<text x="110" y="598" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#63737E">AUDIT &amp; COMPLIANCE LOGGING</text>
+</g>
+
+<!-- Emerging connector -->
+<path d="M490 515H560M560 368V632" fill="none" stroke="#184962" stroke-width="2"/>
+<g fill="none" stroke="#184962" stroke-width="2" marker-end="url(#sg-caf-ah-dark)">
+<path d="M560 368H598"/><path d="M560 434H598"/><path d="M560 500H598"/><path d="M560 566H598"/><path d="M560 632H598"/>
+</g>
+
+<!-- Event chips -->
+<g font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">
+<rect x="600" y="342" width="300" height="52" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><rect x="618" y="363" width="10" height="10" fill="#00B7A8"/><text x="644" y="374">Failed login</text>
+<rect x="600" y="408" width="300" height="52" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><rect x="618" y="429" width="10" height="10" fill="#00B7A8"/><text x="644" y="440">Missing privileges</text>
+<rect x="600" y="474" width="300" height="52" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><rect x="618" y="495" width="10" height="10" fill="#478EB3"/><text x="644" y="506">Read of sensitive field</text>
+<rect x="600" y="540" width="300" height="52" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><rect x="618" y="561" width="10" height="10" fill="#478EB3"/><text x="644" y="572">Document changed</text>
+<rect x="600" y="606" width="300" height="52" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><rect x="618" y="627" width="10" height="10" fill="#478EB3"/><text x="644" y="638">Config changed</text>
+</g>
+
+<!-- Collect into hub -->
+<path d="M900 368H940M900 434H940M900 500H940M900 566H940M900 632H940M940 368V632" fill="none" stroke="#184962" stroke-width="2"/>
+<path d="M940 500H996" fill="none" stroke="#184962" stroke-width="2" marker-end="url(#sg-caf-ah-dark)"/>
+
+<!-- Hub -->
+<g>
+<circle cx="1080" cy="500" r="80" fill="#184962"/>
+<circle cx="1080" cy="500" r="62" fill="none" stroke="#02F0DD" stroke-width="1.5" stroke-dasharray="4 6"/>
+<text x="1080" y="528" text-anchor="middle" font-family="Material Icons" font-size="56" fill="#02F0DD">call_split</text>
+<text x="1080" y="624" text-anchor="middle" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">EVENT ROUTING</text>
+</g>
+
+<!-- Routes -->
+<g fill="none" stroke-width="3" stroke-linecap="round">
+<path d="M1160 500C1260 500 1260 230 1360 230L1452 230" stroke="#478EB3" marker-end="url(#sg-caf-ah-comp)"/>
+<path d="M1160 500C1260 500 1260 410 1360 410L1452 410" stroke="#478EB3" marker-end="url(#sg-caf-ah-comp)"/>
+<path d="M1160 500C1260 500 1260 590 1360 590L1452 590" stroke="#00B7A8" marker-end="url(#sg-caf-ah-sec)"/>
+<path d="M1160 500C1260 500 1260 770 1360 770L1452 770" stroke="#00B7A8" marker-end="url(#sg-caf-ah-sec)"/>
+</g>
+
+<!-- Event-type tags -->
+<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">
+<rect x="1164" y="347" width="262" height="36" rx="3" fill="#FFFFFF" stroke="#478EB3" stroke-width="2"/><circle cx="1182" cy="365" r="5" fill="#478EB3"/><text x="1196" y="372">COMPLIANCE EVENTS</text>
+<rect x="1164" y="437" width="262" height="36" rx="3" fill="#FFFFFF" stroke="#478EB3" stroke-width="2"/><circle cx="1182" cy="455" r="5" fill="#478EB3"/><text x="1196" y="462">COMPLIANCE EVENTS</text>
+<rect x="1164" y="527" width="262" height="36" rx="3" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2"/><circle cx="1182" cy="545" r="5" fill="#00B7A8"/><text x="1196" y="552">SECURITY EVENTS</text>
+<rect x="1164" y="617" width="262" height="36" rx="3" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2"/><circle cx="1182" cy="635" r="5" fill="#00B7A8"/><text x="1196" y="642">SECURITY EVENTS</text>
+</g>
+
+<!-- Transport labels -->
+<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962" text-anchor="middle">
+<text x="1406" y="578">webhook</text>
+<text x="1406" y="758">log4j</text>
+</g>
+
+<!-- Destinations -->
+<g>
+<rect x="1460" y="175" width="400" height="110" rx="3" fill="#FFFFFF" stroke="#184962" stroke-width="2"/>
+<rect x="1482" y="198" width="64" height="64" rx="3" fill="#184962"/><text x="1514" y="246" text-anchor="middle" font-family="Material Icons" font-size="34" fill="#02F0DD">archive</text>
+<text x="1570" y="237" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">AUDIT INDEX</text>
+<rect x="1686" y="156" width="164" height="34" rx="3" fill="#184962"/>
+<text x="1707" y="180" text-anchor="middle" font-family="Material Icons" font-size="19" fill="#02F0DD">lock</text>
+<text x="1722" y="180" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#02F0DD">IMMUTABLE</text>
+
+<rect x="1460" y="355" width="400" height="110" rx="3" fill="#FFFFFF" stroke="#184962" stroke-width="2"/>
+<rect x="1482" y="378" width="64" height="64" rx="3" fill="#184962"/><text x="1514" y="426" text-anchor="middle" font-family="Material Icons" font-size="34" fill="#02F0DD">dns</text>
+<text x="1570" y="404" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">EXTERNAL</text>
+<text x="1570" y="428" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">ELASTICSEARCH CLUSTER</text>
+
+<rect x="1460" y="535" width="400" height="110" rx="3" fill="#FFFFFF" stroke="#184962" stroke-width="2"/>
+<rect x="1482" y="558" width="64" height="64" rx="3" fill="#184962"/><text x="1514" y="606" text-anchor="middle" font-family="Material Icons" font-size="34" fill="#02F0DD">security</text>
+<text x="1570" y="597" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">SIEM</text>
+
+<rect x="1460" y="715" width="400" height="110" rx="3" fill="#FFFFFF" stroke="#184962" stroke-width="2"/>
+<rect x="1482" y="738" width="64" height="64" rx="3" fill="#184962"/><text x="1514" y="786" text-anchor="middle" font-family="Material Icons" font-size="34" fill="#02F0DD">subject</text>
+<text x="1570" y="777" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">KAFKA / SYSLOG</text>
+</g>
+
+</svg>

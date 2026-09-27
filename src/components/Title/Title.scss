@@ -82,6 +82,19 @@
   };
 }
 
+// Two-CTA variant (opt-in via button2text): primary button + ghost link
+// side by side, stacked on mobile.
+.title-button-wrapper--dual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  @media only screen and (max-width: $mobile) {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
 
 .title-breadcrumb-item {
   color: $primary-dark;
