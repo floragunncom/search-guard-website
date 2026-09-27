@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-cfa-title sg-cfa-desc">
+<svg viewBox="0 0 1920 918" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-cfa-title sg-cfa-desc">
 <title id="sg-cfa-title">Search Guard field anonymization per role</title>
 <desc id="sg-cfa-desc">The same document shown to two roles: one sees clear-text personal data, the other sees anonymized values</desc>
 <defs>
@@ -67,7 +67,4 @@
 <text x="1052" y="844" fill="#B0F8F2">purchases:</text><text x="1228" y="844" fill="#FFFFFF">12</text>
 </g>
 
-<!-- Caption -->
-<rect x="920" y="920" width="80" height="5" fill="#02F0DD"/>
-<text x="960" y="982" text-anchor="middle" font-family="Parafina-SemiWideBold, sans-serif" font-size="32" letter-spacing="0.4" fill="#FFFFFF">SAME DATA, DIFFERENT VIEWS.</text>
 </svg>

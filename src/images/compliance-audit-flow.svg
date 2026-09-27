@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-caf-title sg-caf-desc">
+<svg viewBox="0 0 1920 873" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-caf-title sg-caf-desc">
 <title id="sg-caf-title">Search Guard audit event routing</title>
 <desc id="sg-caf-desc">Search Guard audit events flow from the Elasticsearch cluster to multiple storage endpoints: an internal or immutable audit index, an external cluster, a SIEM via webhook, and log4j appenders</desc>
 <defs>
@@ -97,7 +97,4 @@
 <text x="1570" y="777" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">KAFKA / SYSLOG</text>
 </g>
 
-<!-- Caption -->
-<rect x="920" y="900" width="80" height="5" fill="#02F0DD"/>
-<text x="960" y="962" text-anchor="middle" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="32" fill="#184962">EVERY EVENT, WHERE IT BELONGS.</text>
 </svg>

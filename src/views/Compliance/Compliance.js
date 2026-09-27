@@ -194,6 +194,7 @@ const Compliance = () => {
                             recoloring. Accessible name comes from the SVG's own
                             <title>/<desc>. The wrapping link is active on mobile
                             only (see SCSS) and opens the raw SVG for zooming. */}
+                        <h3 className="compliance-diagram-headline">{t('architecture.diagramHeadline')}</h3>
                         <a
                             className="compliance-audit-flow-link"
                             href={assetUrl(auditFlowDiagram)}
@@ -246,11 +247,14 @@ const Compliance = () => {
                         the width to stay legible). Slots and order are stable —
                         real screenshots (WebP) will replace them 1:1 later. */}
                     {[
-                        { key: 'dashboard', asset: illuAuditDashboard },
-                        { key: 'readEvent', asset: illuReadHistory },
-                        { key: 'writeDiff', asset: illuWriteDiff },
-                    ].map(({ key, asset }) => (
+                        // writeDiff's headline was the caption formerly baked into
+                        // the artwork; the other two follow the same cadence.
+                        { key: 'dashboard', asset: illuAuditDashboard, headline: t('gallery.dashboardHeadline') },
+                        { key: 'readEvent', asset: illuReadHistory, headline: t('gallery.readEventHeadline') },
+                        { key: 'writeDiff', asset: illuWriteDiff, headline: t('gallery.writeDiffHeadline') },
+                    ].map(({ key, asset, headline }) => (
                         <div className="col s12 compliance-gallery-item" key={key}>
+                            <h3 className="compliance-diagram-headline">{headline}</h3>
                             <a
                                 className="compliance-audit-flow-link"
                                 href={assetUrl(asset)}

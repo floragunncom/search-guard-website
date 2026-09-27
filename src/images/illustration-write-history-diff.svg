@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1920 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-iwd-title sg-iwd-desc">
+<svg viewBox="96 24 1728 1008" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-iwd-title sg-iwd-desc">
 <title id="sg-iwd-title">Search Guard write history audit event</title>
 <desc id="sg-iwd-desc">Illustration of a write history audit event showing a field-level change as a before/after comparison and a JSON patch</desc>
 <rect width="1920" height="1200" fill="#FFFFFF"/>
@@ -31,5 +31,4 @@
 <text x="168" y="690" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">audit_compliance_diff_content (JSON patch)</text>
 <rect x="168" y="708" width="1584" height="220" rx="3" fill="#F4F6F7" stroke="#E8ECED" stroke-width="1.5"/>
 <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21" fill="#184962" xml:space="preserve"><text x="200" y="756">[</text><text x="228" y="800">{ <tspan fill="#478EB3" font-weight="700">"op"</tspan>: "replace", <tspan fill="#478EB3" font-weight="700">"path"</tspan>: "/email", <tspan fill="#478EB3" font-weight="700">"value"</tspan>: "m.keller@example.org" },</text><text x="228" y="844">{ <tspan fill="#478EB3" font-weight="700">"op"</tspan>: "remove",  <tspan fill="#478EB3" font-weight="700">"path"</tspan>: "/phone" }</text><text x="200" y="888">]</text></g>
-<rect x="920" y="1060" width="80" height="5" fill="#02F0DD"/><text x="960" y="1122" text-anchor="middle" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="32" fill="#184962">EVERY CHANGE, AS AN EXACT DIFF.</text>
 </svg>

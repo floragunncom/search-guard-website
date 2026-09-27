@@ -146,6 +146,14 @@ ul.compliance-question-links {
   justify-content: center;
 }
 
+/* Small headline directly above a diagram (formerly captions baked into
+   the artwork). h3 element for the outline; sized well below section h2s. */
+.compliance-diagram-headline {
+  font-size: 28px;
+  line-height: 34px;
+  margin: 0 0 24px;
+}
+
 /* §3.5 gallery: stacked full-width illustrations with breathing room */
 .compliance-gallery-item {
   margin-bottom: 48px;
