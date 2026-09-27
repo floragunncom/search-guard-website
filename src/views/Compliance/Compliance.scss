@@ -146,6 +146,15 @@ ul.compliance-question-links {
   justify-content: center;
 }
 
+/* §3.5 gallery: stacked full-width illustrations with breathing room */
+.compliance-gallery-item {
+  margin-bottom: 48px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 /* §3.6 regulation table — real table on desktop, stacked cards on mobile */
 .compliance-regulations-tablewrap {
   overflow-x: auto;

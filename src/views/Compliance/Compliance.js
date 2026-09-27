@@ -25,6 +25,11 @@ import iconBell from '../../images/bell-solid.svg';
 import auditFlowDiagram from '../../images/compliance-audit-flow.svg';
 
 import fieldAnonDiagram from '../../images/compliance-field-anonymization.svg';
+// §3.5 gallery illustrations — same slots the real screenshots (WebP) will
+// take over later; filenames and order are deliberately stable.
+import illuAuditDashboard from '../../images/illustration-audit-dashboard.svg';
+import illuReadHistory from '../../images/illustration-read-history-event.svg';
+import illuWriteDiff from '../../images/illustration-write-history-diff.svg';
 
 // Legacy asset imports resolve to {src}/{default} shapes; the _app patch
 // normalizes component props (ReactSVG's src) but not a plain <a href>.
@@ -237,19 +242,26 @@ const Compliance = () => {
                         <h2 className="compliance-section-headline">{t('gallery.headline')}</h2>
                         <p className="compliance-section-intro">{t('gallery.intro')}</p>
                     </div>
-                    {/* TODO(asset): three screenshots — uncomment each <img> when the file exists. */}
-                    <div className="col s12 m4">
-                        {/* <img src={screenshotAuditDashboard} alt="The pre-built Search Guard audit log dashboard in Kibana" className="responsive-img" loading="lazy" /> */}
-                        <AssetPlaceholder alt="The pre-built Search Guard audit log dashboard in Kibana"/>
-                    </div>
-                    <div className="col s12 m4">
-                        {/* <img src={screenshotReadHistory} alt="A read history audit event showing user, document and accessed sensitive fields" className="responsive-img" loading="lazy" /> */}
-                        <AssetPlaceholder alt="A read history audit event showing user, document and accessed sensitive fields"/>
-                    </div>
-                    <div className="col s12 m4">
-                        {/* <img src={screenshotWriteHistoryDiff} alt="A write history audit event showing the field-level change as a JSON patch" className="responsive-img" loading="lazy" /> */}
-                        <AssetPlaceholder alt="A write history audit event showing the field-level change as a JSON patch"/>
-                    </div>
+                    {/* Full-width stacked illustrations (dense UI content needs
+                        the width to stay legible). Slots and order are stable —
+                        real screenshots (WebP) will replace them 1:1 later. */}
+                    {[
+                        { key: 'dashboard', asset: illuAuditDashboard },
+                        { key: 'readEvent', asset: illuReadHistory },
+                        { key: 'writeDiff', asset: illuWriteDiff },
+                    ].map(({ key, asset }) => (
+                        <div className="col s12 compliance-gallery-item" key={key}>
+                            <a
+                                className="compliance-audit-flow-link"
+                                href={assetUrl(asset)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <ReactSVG src={asset} className="compliance-audit-flow"/>
+                            </a>
+                            <p className="compliance-diagram-enlarge" aria-hidden="true">{t('architecture.tapToEnlarge')}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
 

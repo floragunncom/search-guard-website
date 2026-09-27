@@ -1,0 +1,29 @@
+<svg viewBox="0 0 1920 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-irh-title sg-irh-desc">
+<title id="sg-irh-title">Search Guard read history audit event</title>
+<desc id="sg-irh-desc">Illustration of a read history audit event showing the user, the document and the watched fields that were read</desc>
+<rect width="1920" height="1200" fill="#FFFFFF"/>
+<rect x="160" y="120" width="1600" height="960" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/>
+<text x="208" y="201" font-family="Material Icons" font-size="34" fill="#00B7A8">description</text><text x="258" y="194" font-family="Parafina-SemiWideXBold" font-size="32" fill="#184962">AUDIT EVENT</text>
+<rect x="570" y="164" width="291" height="36" rx="18" fill="#FFFFFF" stroke="#478EB3" stroke-width="2"/><circle cx="590" cy="182" r="6" fill="#478EB3"/><text x="606" y="188" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">COMPLIANCE_DOC_READ</text>
+<text x="1712" y="196" text-anchor="end" font-family="Material Icons" font-size="30" fill="#184962">close</text>
+<rect x="208" y="234" width="1504" height="2" fill="#E8ECED"/><rect x="208" y="233" width="80" height="4" fill="#02F0DD"/>
+<rect x="208" y="262" width="1504" height="64" fill="#e6fefc"/><text x="1688" y="300" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">WHEN</text>
+<text x="240" y="301" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#63737E">@timestamp</text><text x="900" y="302" font-family="Inter-Regular, -apple-system, sans-serif" font-size="21" font-weight="500" fill="#184962">2026-09-14 13:58:21 UTC</text>
+<text x="240" y="365" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#63737E">audit_category</text><text x="900" y="366" font-family="Inter-Regular, -apple-system, sans-serif" font-size="21" font-weight="500" fill="#184962">COMPLIANCE_DOC_READ</text>
+<rect x="208" y="390" width="1504" height="64" fill="#e6fefc"/><text x="1688" y="428" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">WHO</text>
+<text x="240" y="429" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#63737E">audit_request_effective_user</text><text x="900" y="430" font-family="Inter-Regular, -apple-system, sans-serif" font-size="21" font-weight="500" fill="#184962">support_agent</text>
+<rect x="208" y="517" width="1504" height="1" fill="#E8ECED"/>
+<text x="240" y="493" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#63737E">audit_request_origin</text><text x="900" y="494" font-family="Inter-Regular, -apple-system, sans-serif" font-size="21" font-weight="500" fill="#184962">REST</text>
+<rect x="208" y="581" width="1504" height="1" fill="#E8ECED"/>
+<text x="240" y="557" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#63737E">audit_request_remote_address</text><text x="900" y="558" font-family="Inter-Regular, -apple-system, sans-serif" font-size="21" font-weight="500" fill="#184962">192.0.2.41</text>
+<text x="240" y="621" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#63737E">audit_trace_indices</text><text x="900" y="622" font-family="Inter-Regular, -apple-system, sans-serif" font-size="21" font-weight="500" fill="#184962">customers</text>
+<rect x="208" y="646" width="1504" height="64" fill="#e6fefc"/><text x="1688" y="684" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">WHAT</text>
+<text x="240" y="685" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#63737E">audit_trace_doc_id</text><text x="900" y="686" font-family="Inter-Regular, -apple-system, sans-serif" font-size="21" font-weight="500" fill="#184962">c-10482</text>
+<text x="208" y="790" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">audit_request_body — fields as seen by the user</text>
+<rect x="208" y="810" width="820" height="190" rx="3" fill="#F4F6F7" stroke="#E8ECED" stroke-width="1.5"/>
+<rect x="258" y="870" width="92" height="34" rx="2" fill="#e6fefc"/><rect x="258" y="910" width="102" height="34" rx="2" fill="#e6fefc"/>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21" fill="#184962"><text x="240" y="856">{</text><text x="266" y="896"><tspan fill="#478EB3" font-weight="700">"name"</tspan>: "Maria Keller",</text><text x="266" y="936"><tspan fill="#478EB3" font-weight="700">"email"</tspan>: "maria.keller@example.com"</text><text x="240" y="976">}</text></g>
+<g stroke="#00B7A8" stroke-width="2.5" fill="none"><path d="M1052 874 H1062 V940 H1052"/><path d="M1062 907 H1150" stroke-dasharray="6 6"/></g><circle cx="1150" cy="907" r="6" fill="#00B7A8"/>
+<text x="1178" y="880" font-family="Material Icons" font-size="30" fill="#00B7A8">visibility</text>
+<g font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#184962"><text x="1222" y="874">Watched fields <tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#478EB3" font-weight="700">name</tspan> and <tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#478EB3" font-weight="700">email</tspan></text><text x="1222" y="906">were part of the result — so the</text><text x="1222" y="938">read was recorded.</text></g>
+</svg>

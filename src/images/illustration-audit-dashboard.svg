@@ -1,0 +1,101 @@
+<svg viewBox="0 0 1920 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-iad-title sg-iad-desc">
+<title id="sg-iad-title">Search Guard audit log dashboard</title>
+<desc id="sg-iad-desc">Illustration of the Search Guard audit log dashboard: events over time, events by category, top users and recent events</desc>
+<defs>
+<clipPath id="sg-iad-helmet-clip"><rect width="86" height="116" transform="translate(0 0.160645)"/></clipPath>
+</defs>
+<rect width="1920" height="1200" fill="#FFFFFF"/>
+<svg x="80" y="92" width="44" height="44" viewBox="0 0 86 117">
+<g clip-path="url(#sg-iad-helmet-clip)">
+<path d="M49.496 108.407C59.1993 108.407 67.1887 111.055 72.6139 116.147H87.0136C85.799 115.151 84.5979 113.826 83.5587 112.202C81.9528 109.69 80.7247 106.468 80.4143 102.604V92.9525C77.7962 88.9388 73.68 85.7579 67.7285 83.3141L63.4639 81.5394C60.0765 80.1059 56.1493 78.3311 56.1493 75.355C56.1493 72.7065 58.8754 71.7099 62.1548 71.7099C69.6988 71.7099 75.9338 75.0274 80.4143 81.6622V61.3207C80.4143 59.5869 80.2658 57.9486 80.0364 56.365C77.9311 41.5662 66.271 33.689 49.4825 33.689C31.0207 33.689 18.9962 43.6413 18.9962 62.0989V102.618C18.6318 109.253 15.5548 113.567 12.3699 116.161H26.8641C32.1948 111.082 39.9817 108.42 49.4825 108.42L49.496 108.407Z" fill="#184962"/>
+<path d="M72.0476 5.5387C69.6454 3.80489 58.0392 -0.358981 45.5154 0.214404C10.4001 1.82535 -4.43152 31.696 1.14213 52.5836C2.99102 59.5052 6.08149 65.3893 10.1302 70.0446C9.92772 69.2255 9.72528 68.42 9.60382 67.6282C6.98569 50.9591 13.477 38.1261 25.1642 29.6209C38.7407 19.7505 58.2822 22.9587 61.899 24.2147L72.0341 5.52505L72.0476 5.5387Z" fill="#184962"/>
+</g>
+</svg>
+<text x="142" y="128" font-family="Parafina-SemiWideXBold" font-size="34" fill="#184962">AUDIT LOG DASHBOARD</text>
+<rect x="1640" y="90" width="200" height="48" rx="3" fill="#FFFFFF" stroke="#184962" stroke-width="2"/><text x="1658" y="123" font-family="Material Icons" font-size="22" fill="#00B7A8">schedule</text><text x="1690" y="120" font-family="Inter-Regular, -apple-system, sans-serif" font-size="19" font-weight="500" fill="#184962">Last 7 days</text><text x="1808" y="124" font-family="Material Icons" font-size="22" fill="#184962">expand_more</text>
+<rect x="80" y="176" width="1760" height="2" fill="#E8ECED"/><rect x="80" y="175" width="80" height="4" fill="#02F0DD"/>
+
+<!-- Events over time -->
+<rect x="80" y="220" width="864" height="434" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="112" y="276" font-family="Material Icons" font-size="26" fill="#00B7A8">show_chart</text><text x="150" y="270" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">EVENTS OVER TIME</text>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">
+<rect x="112" y="287" width="18" height="4" fill="#184962"/><text x="138" y="294">AUTHENTICATED</text>
+<rect x="320" y="287" width="18" height="4" fill="#00B7A8"/><text x="346" y="294">FAILED_LOGIN</text>
+<rect x="516" y="287" width="18" height="4" fill="#478EB3"/><text x="542" y="294">COMPLIANCE_DOC_READ</text>
+</g>
+<g font-family="Inter-Regular, -apple-system, sans-serif" font-size="19" fill="#63737E">
+<line x1="170" x2="904" y1="606" y2="606" stroke="#E8ECED" stroke-width="1.5"/><text x="156" y="611" text-anchor="end">0</text>
+<line x1="170" x2="904" y1="542" y2="542" stroke="#E8ECED" stroke-width="1.5"/><text x="156" y="547" text-anchor="end">200</text>
+<line x1="170" x2="904" y1="478" y2="478" stroke="#E8ECED" stroke-width="1.5"/><text x="156" y="483" text-anchor="end">400</text>
+<line x1="170" x2="904" y1="414" y2="414" stroke="#E8ECED" stroke-width="1.5"/><text x="156" y="419" text-anchor="end">600</text>
+<line x1="170" x2="904" y1="350" y2="350" stroke="#E8ECED" stroke-width="1.5"/><text x="156" y="355" text-anchor="end">800</text>
+<text x="170" y="636" text-anchor="middle">Mon</text>
+<text x="292.33" y="636" text-anchor="middle">Tue</text>
+<text x="414.67" y="636" text-anchor="middle">Wed</text>
+<text x="537" y="636" text-anchor="middle">Thu</text>
+<text x="659.33" y="636" text-anchor="middle">Fri</text>
+<text x="781.67" y="636" text-anchor="middle">Sat</text>
+<text x="904" y="636" text-anchor="middle">Sun</text>
+</g>
+<polyline points="170,401.2 292.33,382.0 414.67,385.2 537,375.6 659.33,388.4 781.67,378.8 904,391.0" fill="none" stroke="#184962" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="170" cy="401.2" r="4" fill="#FFFFFF" stroke="#184962" stroke-width="2.5"/>
+<circle cx="292.33" cy="382.0" r="4" fill="#FFFFFF" stroke="#184962" stroke-width="2.5"/>
+<circle cx="414.67" cy="385.2" r="4" fill="#FFFFFF" stroke="#184962" stroke-width="2.5"/>
+<circle cx="537" cy="375.6" r="4" fill="#FFFFFF" stroke="#184962" stroke-width="2.5"/>
+<circle cx="659.33" cy="388.4" r="4" fill="#FFFFFF" stroke="#184962" stroke-width="2.5"/>
+<circle cx="781.67" cy="378.8" r="4" fill="#FFFFFF" stroke="#184962" stroke-width="2.5"/>
+<circle cx="904" cy="391.0" r="4" fill="#FFFFFF" stroke="#184962" stroke-width="2.5"/>
+<polyline points="170,602.2 292.33,601.2 414.67,602.8 537,601.5 659.33,570.8 781.67,601.5 904,602.2" fill="none" stroke="#00B7A8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="170" cy="602.2" r="4" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2.5"/>
+<circle cx="292.33" cy="601.2" r="4" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2.5"/>
+<circle cx="414.67" cy="602.8" r="4" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2.5"/>
+<circle cx="537" cy="601.5" r="4" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2.5"/>
+<circle cx="659.33" cy="570.8" r="4" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2.5"/>
+<circle cx="781.67" cy="601.5" r="4" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2.5"/>
+<circle cx="904" cy="602.2" r="4" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2.5"/>
+<polyline points="170,554.8 292.33,545.2 414.67,551.6 537,546.8 659.33,550.0 781.67,548.4 904,549.7" fill="none" stroke="#478EB3" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="170" cy="554.8" r="4" fill="#FFFFFF" stroke="#478EB3" stroke-width="2.5"/>
+<circle cx="292.33" cy="545.2" r="4" fill="#FFFFFF" stroke="#478EB3" stroke-width="2.5"/>
+<circle cx="414.67" cy="551.6" r="4" fill="#FFFFFF" stroke="#478EB3" stroke-width="2.5"/>
+<circle cx="537" cy="546.8" r="4" fill="#FFFFFF" stroke="#478EB3" stroke-width="2.5"/>
+<circle cx="659.33" cy="550.0" r="4" fill="#FFFFFF" stroke="#478EB3" stroke-width="2.5"/>
+<circle cx="781.67" cy="548.4" r="4" fill="#FFFFFF" stroke="#478EB3" stroke-width="2.5"/>
+<circle cx="904" cy="549.7" r="4" fill="#FFFFFF" stroke="#478EB3" stroke-width="2.5"/>
+<line x1="659.33" x2="659.33" y1="350" y2="558.8" stroke="#00B7A8" stroke-width="1.5" stroke-dasharray="4 5"/><circle cx="659.33" cy="570.8" r="10" fill="none" stroke="#00B7A8" stroke-width="2"/><rect x="615.33" y="344" width="88" height="26" rx="3" fill="#184962"/><text x="659.33" y="362" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#02F0DD">SPIKE</text>
+
+<!-- Events by category -->
+<rect x="976" y="220" width="864" height="434" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="1008" y="276" font-family="Material Icons" font-size="26" fill="#00B7A8">bar_chart</text><text x="1046" y="270" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">EVENTS BY CATEGORY</text>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">
+<text x="1008" y="316">AUTHENTICATED</text>
+<text x="1008" y="368">GRANTED_PRIVILEGES</text>
+<text x="1008" y="420">COMPLIANCE_DOC_READ</text>
+<text x="1008" y="472">COMPLIANCE_DOC_WRITE</text>
+<text x="1008" y="524">FAILED_LOGIN</text>
+<text x="1008" y="576">MISSING_PRIVILEGES</text>
+</g>
+<g font-family="Inter-Regular, -apple-system, sans-serif" font-size="19" font-weight="500" fill="#184962">
+<rect x="1272" y="300" width="440.0" height="22" rx="2" fill="#184962"/><text x="1724" y="317">4,812</text>
+<rect x="1272" y="352" width="363.6" height="22" rx="2" fill="#184962"/><text x="1647.6" y="369">3,977</text>
+<rect x="1272" y="404" width="113.0" height="22" rx="2" fill="#478EB3"/><text x="1397" y="421">1,236</text>
+<rect x="1272" y="456" width="38.2" height="22" rx="2" fill="#478EB3"/><text x="1322.2" y="473">418</text>
+<rect x="1272" y="508" width="17.1" height="22" rx="2" fill="#00B7A8"/><text x="1301.1" y="525">187</text>
+<rect x="1272" y="560" width="5.9" height="22" rx="2" fill="#00B7A8"/><text x="1289.9" y="577">64</text>
+</g>
+
+<!-- Top users -->
+<rect x="80" y="686" width="864" height="434" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="112" y="742" font-family="Material Icons" font-size="26" fill="#00B7A8">group</text><text x="150" y="736" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">TOP USERS</text>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#63737E"><text x="112" y="786">USER</text><text x="912" y="786" text-anchor="end">EVENTS</text></g><rect x="112" y="800" width="800" height="1.5" fill="#E8ECED"/>
+<g font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">
+<rect x="112" y="818" width="36" height="36" rx="3" fill="#184962"/><text x="130" y="845" text-anchor="middle" font-family="Material Icons" font-size="24" fill="#02F0DD">person</text><text x="166" y="843">analyst_01</text><text x="912" y="843" text-anchor="end">1,904</text><rect x="112" y="872" width="800" height="1" fill="#E8ECED"/>
+<rect x="112" y="890" width="36" height="36" rx="3" fill="#184962"/><text x="130" y="917" text-anchor="middle" font-family="Material Icons" font-size="24" fill="#02F0DD">person</text><text x="166" y="915">support_agent</text><text x="912" y="915" text-anchor="end">1,211</text><rect x="112" y="944" width="800" height="1" fill="#E8ECED"/>
+<rect x="112" y="962" width="36" height="36" rx="3" fill="#184962"/><text x="130" y="989" text-anchor="middle" font-family="Material Icons" font-size="24" fill="#02F0DD">person</text><text x="166" y="987">etl_service</text><text x="912" y="987" text-anchor="end">866</text><rect x="112" y="1016" width="800" height="1" fill="#E8ECED"/>
+<rect x="112" y="1034" width="36" height="36" rx="3" fill="#184962"/><text x="130" y="1061" text-anchor="middle" font-family="Material Icons" font-size="24" fill="#02F0DD">person</text><text x="166" y="1059">compliance_officer</text><text x="912" y="1059" text-anchor="end">142</text>
+</g>
+
+<!-- Recent events -->
+<rect x="976" y="686" width="864" height="434" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="1008" y="742" font-family="Material Icons" font-size="26" fill="#00B7A8">list</text><text x="1046" y="736" font-family="Parafina-SemiWideBold" letter-spacing="0.4" font-size="20" fill="#184962">RECENT EVENTS</text>
+<text x="1008" y="786" font-family="Inter-Regular, -apple-system, sans-serif" font-size="19" font-weight="500" fill="#63737E">14:02</text><rect x="1080" y="766" width="198" height="30" rx="15" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2"/><circle cx="1098" cy="781" r="5" fill="#00B7A8"/><text x="1112" y="786" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">FAILED_LOGIN</text><text x="1420" y="787" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">unknown_user</text><rect x="1008" y="810" width="800" height="1" fill="#E8ECED"/>
+<text x="1008" y="852" font-family="Inter-Regular, -apple-system, sans-serif" font-size="19" font-weight="500" fill="#63737E">13:58</text><rect x="1080" y="832" width="287" height="30" rx="15" fill="#FFFFFF" stroke="#478EB3" stroke-width="2"/><circle cx="1098" cy="847" r="5" fill="#478EB3"/><text x="1112" y="852" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">COMPLIANCE_DOC_READ</text><text x="1420" y="853" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">support_agent</text><rect x="1008" y="876" width="800" height="1" fill="#E8ECED"/>
+<text x="1008" y="918" font-family="Inter-Regular, -apple-system, sans-serif" font-size="19" font-weight="500" fill="#63737E">13:51</text><rect x="1080" y="898" width="299" height="30" rx="15" fill="#FFFFFF" stroke="#478EB3" stroke-width="2"/><circle cx="1098" cy="913" r="5" fill="#478EB3"/><text x="1112" y="918" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">COMPLIANCE_DOC_WRITE</text><text x="1420" y="919" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">etl_service</text><rect x="1008" y="942" width="800" height="1" fill="#E8ECED"/>
+<text x="1008" y="984" font-family="Inter-Regular, -apple-system, sans-serif" font-size="19" font-weight="500" fill="#63737E">13:47</text><rect x="1080" y="964" width="276" height="30" rx="15" fill="#FFFFFF" stroke="#00B7A8" stroke-width="2"/><circle cx="1098" cy="979" r="5" fill="#00B7A8"/><text x="1112" y="984" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">MISSING_PRIVILEGES</text><text x="1420" y="985" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">analyst_01</text><rect x="1008" y="1008" width="800" height="1" fill="#E8ECED"/>
+<text x="1008" y="1050" font-family="Inter-Regular, -apple-system, sans-serif" font-size="19" font-weight="500" fill="#63737E">13:40</text><rect x="1080" y="1030" width="210" height="30" rx="15" fill="#FFFFFF" stroke="#184962" stroke-width="2"/><circle cx="1098" cy="1045" r="5" fill="#184962"/><text x="1112" y="1050" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">AUTHENTICATED</text><text x="1420" y="1051" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">compliance_officer</text>
+</svg>
