@@ -1,139 +1,327 @@
 @use '../../styles/Colors' as *;
 @use '../../styles/Breakpoints' as *;
 
-.compliance-wrapper {
-  padding-top: 64px;
+/* ------------------------- Compliance page redesign (issue #34) */
 
-  @media only screen and (max-width: $tabletBig) {
-    padding: 64px 32px 0px 32px;
-  }
-  @media only screen and (max-width: $mobile) {
-    padding: 32px 24px 16px 24px;
-  }
+.compliance-section-headline {
+  margin-bottom: 48px;
 }
 
-.row.compliance {
-  max-width: 960px;
+.compliance-section-intro {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+/* Neutral slot rendered until the diagram/screenshot assets exist.
+   currentColor keeps it legible on light, white and dark sections. */
+.compliance-asset-placeholder {
+  border: 2px dashed currentColor;
+  border-radius: 6px;
+  opacity: 0.55;
+  min-height: 220px;
   display: flex;
   align-items: center;
-  flex-direction: column;
-}
-
-.compliance-headline {
-  margin-bottom: 32px;
-  color: $primary;
-  font-size: 48px;
-  line-height: 57px;
+  justify-content: center;
   text-align: center;
-  font-weight: 300;
+  padding: 24px;
+  font-size: 14px;
+  margin: 16px 0;
+}
+
+.compliance-asset-placeholder--wide {
+  min-height: 320px;
   @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
-  }
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 32px;
-    font-size: 24px;
-    line-height: 28px;
+    min-height: 220px;
   }
 }
 
-.compliance-headline-form {
-  margin-top: 32px;
-  color: $primary;
-  font-size: 48px;
-  line-height: 57px;
-  text-align: center;
-  font-weight: 300;
-  @media only screen and (max-width: $tabletBig) {
-    font-size: 36px;
-    line-height: 43px;
-  }
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 32px;
-    font-size: 24px;
-    line-height: 28px;
+/* §3.2 auditor question cards */
+.compliance-auditor .compliance-question-card {
+  text-align: left;
+
+  p {
+    margin: 0 0 12px;
   }
 }
 
-.compliance-section {
-  margin-bottom: 24px;
-  margin-top: 24px;
-  display: flex;
-  justify-content: space-around;
-  max-width: 945px;
-  width: 100%;
-  &:last-child {
-    border-bottom: unset;
-  }
-  @media only screen and (max-width: $mobile) {
-    border-bottom: unset;
+/* Align the doc-link lists across each card row: stretch the flex chain
+   from the tile container down to the card, anchor the list to the card
+   bottom, and reserve a fixed two-row slot — so every list STARTS at the
+   same vertical position regardless of answer length or link count.
+   Only meaningful while cards sit side by side, so off on mobile. */
+@media only screen and (min-width: $mobile) {
+  .compliance-auditor .columnedtile-text-wrapper,
+  .compliance-auditor .columnedtile-content,
+  .compliance-auditor .compliance-question-card {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    &:last-child {
-      margin-bottom: 0px;
+    flex: 1;
+  }
+
+  .compliance-auditor ul.compliance-question-links {
+    margin-top: auto !important;
+    min-height: 64px;
+  }
+}
+
+/* Doc links inside the question cards: one bullet per link. Materialize
+   strips list bullets from every ul, and a global ul rule adds a 20px
+   !important margin — both countered here. */
+ul.compliance-question-links {
+  margin: 0 !important;
+  padding-left: 20px;
+  list-style: disc outside;
+  text-align: left;
+
+  li {
+    margin-bottom: 6px;
+    list-style-type: disc;
+  }
+}
+
+.compliance-question-links a,
+.compliance-resource-link a {
+  color: $secondary-dark;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* §3.3 audit-flow diagram: full content width, keep the 16:9 viewBox */
+.compliance-audit-flow svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* The link around the diagram exists for mobile (tap to open the raw SVG
+   in a new tab for zooming); on larger screens it is inert. */
+.compliance-audit-flow-link {
+  display: block;
+  pointer-events: none;
+
+  @media only screen and (max-width: $mobile) {
+    pointer-events: auto;
+  }
+}
+
+.compliance-diagram-enlarge {
+  display: none;
+
+  @media only screen and (max-width: $mobile) {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: $darkGrey;
+    margin: 4px 0 0;
+  }
+}
+
+// On the dark anonymization section the grey caption would vanish.
+.compliance-anon-views .compliance-diagram-enlarge {
+  @media only screen and (max-width: $mobile) {
+    color: $secondary-light;
+  }
+}
+
+/* §3.3 architecture text block — centered reading column above the diagram */
+.compliance-architecture-text {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+
+  p {
+    margin: 0 0 16px;
+  }
+}
+
+/* Bulleted links inside the centered block: bullets stay left-aligned,
+   the list itself is centered as a unit. */
+.compliance-architecture-links {
+  display: flex;
+  justify-content: center;
+}
+
+/* Small headline directly above a diagram (formerly captions baked into
+   the artwork). h3 element for the outline; sized well below section h2s. */
+.compliance-diagram-headline {
+  font-size: 28px;
+  line-height: 34px;
+  margin: 0 0 24px;
+}
+
+/* §3.5 gallery: stacked full-width illustrations with breathing room */
+.compliance-gallery-item {
+  margin-bottom: 64px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  // "Figure mat": a light-grey bordered card around the artwork separates
+  // page copy (the h3 above, on white) from the illustration's own text.
+  // The artworks have no background of their own, so their panels float
+  // on the mat.
+  .compliance-audit-flow-link {
+    border: 1px solid $lightGrey;
+    border-radius: 6px;
+    background: rgba($lightGrey, 0.35);
+    padding: 32px;
+
+    @media only screen and (max-width: $mobile) {
+      padding: 12px;
     }
   }
 }
 
-.compliance-pic img {
-  margin-right: 32px;
-  display: flex;
-  justify-content: center;
+/* §3.6 regulation table — real table on desktop, stacked cards on mobile */
+.compliance-regulations-tablewrap {
+  overflow-x: auto;
+}
+
+.compliance-regulations-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: $white;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 24px;
+
+  th,
+  td {
+    border: 1px solid $lightGrey;
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  thead th {
+    background: $primary;
+    color: $white;
+  }
+
+  tbody th[scope='row'] {
+    white-space: nowrap;
+    font-weight: 700;
+  }
+
   @media only screen and (max-width: $mobile) {
-    margin-right: 0px;
+    thead {
+      display: none;
+    }
+
+    tr {
+      display: block;
+      margin-bottom: 16px;
+      border: 1px solid $lightGrey;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    th[scope='row'],
+    td {
+      display: block;
+      border: none;
+      border-bottom: 1px solid $lightGrey;
+    }
+
+    th[scope='row'] {
+      background: $primary;
+      color: $white;
+    }
+
+    td:last-child {
+      border-bottom: none;
+    }
+
+    td::before {
+      content: attr(data-label);
+      display: block;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
   }
 }
 
-.compliance-content {
-  width: 80%;
+.compliance-regulations-disclaimer {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  max-width: 760px;
+  margin: 24px auto 0;
 }
 
-.compliance-content-headline {
-  color: $primary;
+/* §3.7 edition boxes */
+/* Materialize's float grid never equalizes column heights; flex does.
+   Cols keep their Materialize widths (float is ignored in flex), and the
+   cards' height:100% then makes both boxes equally tall. */
+.compliance-editions .row {
+  display: flex;
+  flex-wrap: wrap;
+
+  // Keep the Materialize column widths authoritative: without this, flex
+  // shrinks the two s12 cards onto one line on mobile instead of stacking.
+  > .col {
+    flex: 0 0 auto;
+  }
+}
+
+.compliance-edition-card {
+  border: 1px solid $lightGrey;
+  border-radius: 6px;
+  padding: 32px 28px;
+  height: 100%;
+  text-align: left;
+  background: $white;
+}
+
+.compliance-edition-card--highlight {
+  border-color: $secondary-dark;
+  background: #e6fefc; // same tint as the pricing feature table highlight
+}
+
+.compliance-edition-badge-slot {
+  min-height: 28px;
+  margin-bottom: 8px;
+}
+
+.compliance-edition-name {
   font-size: 24px;
   line-height: 30px;
-  text-align: left;
   letter-spacing: 0.8px;
-  margin-bottom: 16px;
+  text-align: left;
+  margin: 0 0 12px;
+}
+
+.compliance-editions-note {
   text-align: center;
+  margin: 32px auto 24px;
+  max-width: 760px;
+}
+
+.compliance-editions-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
   @media only screen and (max-width: $mobile) {
-    margin: 16px 0px;
+    flex-direction: column;
+    gap: 12px;
   }
 }
 
-.compliance-content-text {
-  color: $darkGrey;
+/* §3.8 contact section */
+.compliance-contact .compliance-section-intro {
+  margin-bottom: 32px;
+}
+
+/* §3.9 resource link cards */
+.compliance-resource-link {
   font-size: 18px;
   line-height: 27px;
-  text-align: left;
-  margin-bottom: 32px;
-  text-align: center;
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 16px;
-    font-size: 16px;
-    line-height: 24px;
-  }
 }
-
-.compliance-content-button {
-  display: flex;
-  margin-bottom: 64px;
-  @media only screen and (max-width: $mobile) {
-    margin-bottom: 16px;
-  }
-}
-
-.compliance-pre {
-  background-color: $lightGrey;
-  white-space: pre-wrap;
-  margin-top: 24px;
-  margin-bottom: 24px;
-  font-family: Courier;
-  font-size: 16px;
-  line-height: 19px;
-  padding: 16px;
-  word-break: break-all;
-  overflow: scroll;
-}
-
