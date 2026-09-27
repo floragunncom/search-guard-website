@@ -156,10 +156,25 @@ ul.compliance-question-links {
 
 /* §3.5 gallery: stacked full-width illustrations with breathing room */
 .compliance-gallery-item {
-  margin-bottom: 48px;
+  margin-bottom: 64px;
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  // "Figure mat": a light-grey bordered card around the artwork separates
+  // page copy (the h3 above, on white) from the illustration's own text.
+  // The artworks have no background of their own, so their panels float
+  // on the mat.
+  .compliance-audit-flow-link {
+    border: 1px solid $lightGrey;
+    border-radius: 6px;
+    background: rgba($lightGrey, 0.35);
+    padding: 32px;
+
+    @media only screen and (max-width: $mobile) {
+      padding: 12px;
+    }
   }
 }
 

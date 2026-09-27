@@ -1,7 +1,6 @@
 <svg viewBox="136 96 1648 1008" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-irh-title sg-irh-desc">
 <title id="sg-irh-title">Search Guard read history audit event</title>
 <desc id="sg-irh-desc">Illustration of a read history audit event showing the user, the document and the watched fields that were read</desc>
-<rect width="1920" height="1200" fill="#FFFFFF"/>
 <rect x="160" y="120" width="1600" height="960" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/>
 <text x="208" y="201" font-family="Material Icons" font-size="34" fill="#00B7A8">description</text><text x="258" y="194" font-family="Parafina-SemiWideXBold" font-size="32" fill="#184962">AUDIT EVENT</text>
 <rect x="570" y="164" width="291" height="36" rx="18" fill="#FFFFFF" stroke="#478EB3" stroke-width="2"/><circle cx="590" cy="182" r="6" fill="#478EB3"/><text x="606" y="188" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" letter-spacing="1.2" font-size="19" fill="#184962">COMPLIANCE_DOC_READ</text>
