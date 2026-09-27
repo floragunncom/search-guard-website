@@ -101,15 +101,12 @@ const Compliance = () => {
     }));
 
     // §3.6 Regulation overview table rows.
+    // Names come from the locale file: German says DSGVO, Spanish and
+    // French say RGPD.
     const regulations = [
-        { key: 'gdpr', name: 'GDPR' },
-        { key: 'hipaa', name: 'HIPAA' },
-        { key: 'pcidss', name: 'PCI DSS' },
-        { key: 'sox', name: 'SOX' },
-        { key: 'iso27001', name: 'ISO 27001' },
+        'gdpr', 'hipaa', 'pcidss', 'sox', 'iso27001',
         // REVIEW: confirm NIS2/DORA rows with marketing/legal before release
-        { key: 'nis2', name: 'NIS2' },
-        { key: 'dora', name: 'DORA' },
+        'nis2', 'dora',
     ];
 
     // §3.10 Mini FAQ + FAQPage JSON-LD.
@@ -286,9 +283,9 @@ const Compliance = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {regulations.map(({ key, name }) => (
+                                    {regulations.map((key) => (
                                         <tr key={key}>
-                                            <th scope="row">{name}</th>
+                                            <th scope="row">{t(`regulations.${key}.name`)}</th>
                                             <td data-label={t('regulations.colRequirements')}>{t(`regulations.${key}.req`)}</td>
                                             <td data-label={t('regulations.colCapabilities')}>{t(`regulations.${key}.cap`)}</td>
                                         </tr>
