@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {Helmet} from 'react-helmet-async';
+import {ReactSVG} from 'react-svg';
 import { useTranslation } from 'react-i18next';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -19,6 +20,14 @@ import iconPen from '../../images/pen-to-square-solid.svg';
 import iconFileShield from '../../images/file-shield-solid.svg';
 import iconLock from '../../images/lock-solid.svg';
 import iconBell from '../../images/bell-solid.svg';
+// §3.3 diagram — must render INLINE (ReactSVG) so its text picks up the
+// site's loaded fonts (Parafina, Inter-Regular, Material Icons ligatures).
+import auditFlowDiagram from '../../images/compliance-audit-flow.svg';
+
+// Legacy asset imports resolve to {src}/{default} shapes; the _app patch
+// normalizes component props (ReactSVG's src) but not a plain <a href>.
+const assetUrl = (asset) =>
+    typeof asset === 'string' ? asset : asset?.src || asset?.default || '';
 
 const DOCS = {
     fieldAnonymization: 'https://docs.search-guard.com/latest/field-anonymization',
@@ -74,17 +83,11 @@ const Compliance = () => {
         text: (
             <div className="compliance-question-card">
                 <p>{t(`auditor.${key}.answer`)}</p>
-                <p className="compliance-question-features">
-                    <strong>{t('auditor.featuresLabel')}</strong> {t(`auditor.${key}.features`)}
-                </p>
-                <p className="compliance-question-links">
-                    {links.map(([href, labelKey], i) => (
-                        <React.Fragment key={labelKey}>
-                            {i > 0 && <span className="compliance-link-sep"> · </span>}
-                            {docLink(href, t(`auditor.${key}.${labelKey}`))}
-                        </React.Fragment>
+                <ul className="compliance-question-links">
+                    {links.map(([href, labelKey]) => (
+                        <li key={labelKey}>{docLink(href, t(`auditor.${key}.${labelKey}`))}</li>
                     ))}
-                </p>
+                </ul>
             </div>
         ),
         image: { src: icon, width: 64, height: 64 },
@@ -166,34 +169,36 @@ const Compliance = () => {
                 alignedHeadlines
             />
 
-            {/* §3.3 Audit trail architecture */}
+            {/* §3.3 Audit trail architecture — text on top, diagram full width */}
             <div className="color-schema-white default-padding-top-bottom compliance-architecture">
                 <div className="row">
                     <div className="col s12">
                         <h2 className="compliance-section-headline">{t('architecture.headline')}</h2>
-                    </div>
-                    <div className="col s12 l6">
                         <div className="compliance-architecture-text">
                             <p>{t('architecture.text')}</p>
-                            <p className="compliance-question-links">
-                                {docLink(DOCS.auditLogging, t('architecture.link1'))}
-                                <span className="compliance-link-sep"> · </span>
-                                {docLink(DOCS.auditStorage, t('architecture.link2'))}
-                            </p>
+                            <div className="compliance-architecture-links">
+                                <ul className="compliance-question-links">
+                                    <li>{docLink(DOCS.auditLogging, t('architecture.link1'))}</li>
+                                    <li>{docLink(DOCS.auditStorage, t('architecture.link2'))}</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col s12 l6">
-                        {/* TODO(asset): compliance-audit-flow.svg — uncomment when the diagram exists.
-                        <img
-                            src={auditFlowDiagram}
-                            alt="Search Guard audit events flow from the Elasticsearch cluster to multiple storage endpoints: an internal or immutable audit index, an external cluster, a SIEM via webhook, and log4j appenders"
-                            className="responsive-img"
-                            loading="lazy"
-                        /> */}
-                        <AssetPlaceholder
-                            ratio="wide"
-                            alt="Search Guard audit events flow from the Elasticsearch cluster to multiple storage endpoints: an internal or immutable audit index, an external cluster, a SIEM via webhook, and log4j appenders"
-                        />
+                        {/* Diagram keeps its own brand colors — no beforeInjection
+                            recoloring. Accessible name comes from the SVG's own
+                            <title>/<desc>. The wrapping link is active on mobile
+                            only (see SCSS) and opens the raw SVG for zooming. */}
+                        <a
+                            className="compliance-audit-flow-link"
+                            href={assetUrl(auditFlowDiagram)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <ReactSVG
+                                src={auditFlowDiagram}
+                                className="compliance-audit-flow"
+                            />
+                        </a>
+                        <p className="compliance-diagram-enlarge" aria-hidden="true">{t('architecture.tapToEnlarge')}</p>
                     </div>
                 </div>
             </div>
@@ -206,13 +211,6 @@ const Compliance = () => {
                         <p>{t('anonViews.text')}</p>
                     </div>
                     <div className="col s12 l6">
-                        {/* TODO(asset): compliance-field-anonymization.svg — uncomment when the diagram exists.
-                        <img
-                            src={fieldAnonDiagram}
-                            alt="The same document shown to two roles: one sees clear-text personal data, the other sees anonymized values"
-                            className="responsive-img"
-                            loading="lazy"
-                        /> */}
                         <AssetPlaceholder
                             ratio="wide"
                             alt="The same document shown to two roles: one sees clear-text personal data, the other sees anonymized values"
@@ -292,7 +290,10 @@ const Compliance = () => {
                     <div className="col s12 m6">
                         <div className="compliance-edition-card compliance-edition-card--highlight">
                             <div className="compliance-edition-badge-slot">
-                                <Badge text={t('editions.compliance.badge')}/>
+                                {/* Same brand colors as the "Most popular" badge on the
+                                    pricing edition cards (Badge's own default is an
+                                    off-palette Bootstrap blue). */}
+                                <Badge text={t('editions.compliance.badge')} bgColor="#02F0DD" textColor="#184962"/>
                             </div>
                             <h3 className="compliance-edition-name">{t('editions.compliance.name')}</h3>
                             <p>{t('editions.compliance.text')}</p>

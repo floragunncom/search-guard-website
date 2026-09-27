@@ -52,9 +52,39 @@
   }
 }
 
-.compliance-question-features {
-  font-size: 14px;
-  line-height: 20px;
+/* Align the doc-link lists across each card row: stretch the flex chain
+   from the tile container down to the card, anchor the list to the card
+   bottom, and reserve a fixed two-row slot — so every list STARTS at the
+   same vertical position regardless of answer length or link count.
+   Only meaningful while cards sit side by side, so off on mobile. */
+@media only screen and (min-width: $mobile) {
+  .compliance-auditor .columnedtile-text-wrapper,
+  .compliance-auditor .columnedtile-content,
+  .compliance-auditor .compliance-question-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .compliance-auditor ul.compliance-question-links {
+    margin-top: auto !important;
+    min-height: 64px;
+  }
+}
+
+/* Doc links inside the question cards: one bullet per link. Materialize
+   strips list bullets from every ul, and a global ul rule adds a 20px
+   !important margin — both countered here. */
+ul.compliance-question-links {
+  margin: 0 !important;
+  padding-left: 20px;
+  list-style: disc outside;
+  text-align: left;
+
+  li {
+    margin-bottom: 6px;
+    list-style-type: disc;
+  }
 }
 
 .compliance-question-links a,
@@ -68,13 +98,52 @@
   }
 }
 
-/* §3.3 architecture text block */
+/* §3.3 audit-flow diagram: full content width, keep the 16:9 viewBox */
+.compliance-audit-flow svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* The link around the diagram exists for mobile (tap to open the raw SVG
+   in a new tab for zooming); on larger screens it is inert. */
+.compliance-audit-flow-link {
+  display: block;
+  pointer-events: none;
+
+  @media only screen and (max-width: $mobile) {
+    pointer-events: auto;
+  }
+}
+
+.compliance-diagram-enlarge {
+  display: none;
+
+  @media only screen and (max-width: $mobile) {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: $darkGrey;
+    margin: 4px 0 0;
+  }
+}
+
+/* §3.3 architecture text block — centered reading column above the diagram */
 .compliance-architecture-text {
-  text-align: left;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
 
   p {
     margin: 0 0 16px;
   }
+}
+
+/* Bulleted links inside the centered block: bullets stay left-aligned,
+   the list itself is centered as a unit. */
+.compliance-architecture-links {
+  display: flex;
+  justify-content: center;
 }
 
 /* §3.6 regulation table — real table on desktop, stacked cards on mobile */
@@ -155,6 +224,20 @@
 }
 
 /* §3.7 edition boxes */
+/* Materialize's float grid never equalizes column heights; flex does.
+   Cols keep their Materialize widths (float is ignored in flex), and the
+   cards' height:100% then makes both boxes equally tall. */
+.compliance-editions .row {
+  display: flex;
+  flex-wrap: wrap;
+
+  // Keep the Materialize column widths authoritative: without this, flex
+  // shrinks the two s12 cards onto one line on mobile instead of stacking.
+  > .col {
+    flex: 0 0 auto;
+  }
+}
+
 .compliance-edition-card {
   border: 1px solid $lightGrey;
   border-radius: 6px;
