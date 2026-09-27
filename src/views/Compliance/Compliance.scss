@@ -7,13 +7,6 @@
   margin-bottom: 48px;
 }
 
-.compliance-section-headline--left {
-  text-align: left;
-  @media only screen and (max-width: $tabletBig) {
-    text-align: center;
-  }
-}
-
 .compliance-section-intro {
   text-align: center;
   max-width: 760px;
@@ -125,6 +118,13 @@ ul.compliance-question-links {
     font-size: 14px;
     color: $darkGrey;
     margin: 4px 0 0;
+  }
+}
+
+// On the dark anonymization section the grey caption would vanish.
+.compliance-anon-views .compliance-diagram-enlarge {
+  @media only screen and (max-width: $mobile) {
+    color: $secondary-light;
   }
 }
 

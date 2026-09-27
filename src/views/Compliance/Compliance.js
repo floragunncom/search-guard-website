@@ -24,6 +24,8 @@ import iconBell from '../../images/bell-solid.svg';
 // site's loaded fonts (Parafina, Inter-Regular, Material Icons ligatures).
 import auditFlowDiagram from '../../images/compliance-audit-flow.svg';
 
+import fieldAnonDiagram from '../../images/compliance-field-anonymization.svg';
+
 // Legacy asset imports resolve to {src}/{default} shapes; the _app patch
 // normalizes component props (ReactSVG's src) but not a plain <a href>.
 const assetUrl = (asset) =>
@@ -203,18 +205,27 @@ const Compliance = () => {
                 </div>
             </div>
 
-            {/* §3.4 Field anonymization illustration */}
+            {/* §3.4 Field anonymization illustration — text on top, diagram full width */}
             <div className="color-schema-dark default-padding-top-bottom compliance-anon-views">
                 <div className="row">
-                    <div className="col s12 l6">
-                        <h2 className="compliance-section-headline compliance-section-headline--left">{t('anonViews.headline')}</h2>
-                        <p>{t('anonViews.text')}</p>
-                    </div>
-                    <div className="col s12 l6">
-                        <AssetPlaceholder
-                            ratio="wide"
-                            alt="The same document shown to two roles: one sees clear-text personal data, the other sees anonymized values"
-                        />
+                    <div className="col s12">
+                        <h2 className="compliance-section-headline">{t('anonViews.headline')}</h2>
+                        <p className="compliance-section-intro">{t('anonViews.text')}</p>
+                        {/* Inline like the audit-flow diagram: own brand colors,
+                            fonts from the document; the SVG's dark background
+                            matches this section's colorschema. */}
+                        <a
+                            className="compliance-audit-flow-link"
+                            href={assetUrl(fieldAnonDiagram)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <ReactSVG
+                                src={fieldAnonDiagram}
+                                className="compliance-audit-flow"
+                            />
+                        </a>
+                        <p className="compliance-diagram-enlarge" aria-hidden="true">{t('architecture.tapToEnlarge')}</p>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,73 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-cfa-title sg-cfa-desc">
+<title id="sg-cfa-title">Search Guard field anonymization per role</title>
+<desc id="sg-cfa-desc">The same document shown to two roles: one sees clear-text personal data, the other sees anonymized values</desc>
+<defs>
+<marker id="sg-cfa-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#02F0DD"/></marker>
+<clipPath id="sg-cfa-helmet-clip"><rect width="86" height="116" transform="translate(0 0.160645)"/></clipPath>
+</defs>
+<rect width="1920" height="1080" fill="#184962"/>
+
+<!-- Arrows (behind bar) -->
+<path d="M960 352V392M630 392H1290M630 392V556M1290 392V556" fill="none" stroke="#02F0DD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- One path per arrow: marker-end only renders on a path's final subpath,
+     so a combined path would drop the left arrowhead. -->
+<path d="M630 540V560" fill="none" stroke="#02F0DD" stroke-width="3" marker-end="url(#sg-cfa-ah)"/>
+<path d="M1290 540V560" fill="none" stroke="#02F0DD" stroke-width="3" marker-end="url(#sg-cfa-ah)"/>
+
+<!-- Source record -->
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20">
+<rect x="690" y="80" width="540" height="272" rx="3" fill="#133346" stroke="#246E94" stroke-width="2"/>
+<text x="722" y="138" font-family="Material Icons" font-size="30" fill="#02F0DD">description</text>
+<text x="766" y="132" font-family="Parafina-SemiWideBold, sans-serif" font-size="20" letter-spacing="0.4" fill="#FFFFFF">CUSTOMER RECORD</text>
+<rect x="722" y="162" width="476" height="1" fill="#246E94"/>
+<text x="722" y="206" fill="#B0F8F2">name:</text><text x="898" y="206" fill="#FFFFFF">Maria Keller</text>
+<text x="722" y="246" fill="#B0F8F2">email:</text><text x="898" y="246" fill="#FFFFFF">maria.keller@example.com</text>
+<text x="722" y="286" fill="#B0F8F2">country:</text><text x="898" y="286" fill="#FFFFFF">Germany</text>
+<text x="722" y="326" fill="#B0F8F2">purchases:</text><text x="898" y="326" fill="#FFFFFF">12</text>
+</g>
+
+<!-- Search Guard bar -->
+<g>
+<rect x="360" y="440" width="1200" height="64" rx="3" fill="#02F0DD"/>
+<svg x="721" y="454" width="36" height="36" viewBox="0 0 86 117">
+<g clip-path="url(#sg-cfa-helmet-clip)">
+<path d="M49.496 108.407C59.1993 108.407 67.1887 111.055 72.6139 116.147H87.0136C85.799 115.151 84.5979 113.826 83.5587 112.202C81.9528 109.69 80.7247 106.468 80.4143 102.604V92.9525C77.7962 88.9388 73.68 85.7579 67.7285 83.3141L63.4639 81.5394C60.0765 80.1059 56.1493 78.3311 56.1493 75.355C56.1493 72.7065 58.8754 71.7099 62.1548 71.7099C69.6988 71.7099 75.9338 75.0274 80.4143 81.6622V61.3207C80.4143 59.5869 80.2658 57.9486 80.0364 56.365C77.9311 41.5662 66.271 33.689 49.4825 33.689C31.0207 33.689 18.9962 43.6413 18.9962 62.0989V102.618C18.6318 109.253 15.5548 113.567 12.3699 116.161H26.8641C32.1948 111.082 39.9817 108.42 49.4825 108.42L49.496 108.407Z" fill="#FFFFFF"/>
+<path d="M72.0476 5.5387C69.6454 3.80489 58.0392 -0.358981 45.5154 0.214404C10.4001 1.82535 -4.43152 31.696 1.14213 52.5836C2.99102 59.5052 6.08149 65.3893 10.1302 70.0446C9.92772 69.2255 9.72528 68.42 9.60382 67.6282C6.98569 50.9591 13.477 38.1261 25.1642 29.6209C38.7407 19.7505 58.2822 22.9587 61.899 24.2147L72.0341 5.52505L72.0476 5.5387Z" fill="#FFFFFF"/>
+</g>
+</svg>
+<text x="773" y="481" font-family="Parafina-SemiWideBold, sans-serif" font-size="22" letter-spacing="0.4" fill="#184962">SEARCH GUARD — ANONYMIZATION PER ROLE</text>
+</g>
+
+<!-- Panel A: analyst -->
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20">
+<rect x="360" y="570" width="540" height="300" rx="3" fill="#133346" stroke="#246E94" stroke-width="2"/>
+<circle cx="410" cy="620" r="22" fill="#02F0DD"/>
+<text x="410" y="633" text-anchor="middle" font-family="Material Icons" font-size="28" fill="#184962">person</text>
+<text x="448" y="628" font-family="Parafina-SemiWideBold, sans-serif" font-size="20" letter-spacing="0.4" fill="#FFFFFF">ROLE: ANALYST</text>
+<rect x="392" y="664" width="476" height="1" fill="#246E94"/>
+<text x="392" y="712" fill="#B0F8F2">name:</text>
+<rect x="568" y="694" width="60" height="24" rx="2" fill="#478EB3"/><rect x="640" y="694" width="72" height="24" rx="2" fill="#478EB3"/>
+<text x="868" y="711" text-anchor="end" font-size="19" letter-spacing="1.2" fill="#02F0DD">MASKED</text>
+<text x="392" y="756" fill="#B0F8F2">email:</text><text x="568" y="756" fill="#02F0DD">7f3a9c…e21b</text>
+<text x="868" y="755" text-anchor="end" font-size="19" letter-spacing="1.2" fill="#02F0DD">HASHED</text>
+<text x="392" y="800" fill="#B0F8F2">country:</text><text x="568" y="800" fill="#FFFFFF">Germany</text>
+<text x="392" y="844" fill="#B0F8F2">purchases:</text><text x="568" y="844" fill="#FFFFFF">12</text>
+</g>
+
+<!-- Panel B: compliance officer -->
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20">
+<rect x="1020" y="570" width="540" height="300" rx="3" fill="#133346" stroke="#246E94" stroke-width="2"/>
+<circle cx="1070" cy="620" r="22" fill="#02F0DD"/>
+<text x="1070" y="633" text-anchor="middle" font-family="Material Icons" font-size="28" fill="#184962">person</text>
+<text x="1108" y="628" font-family="Parafina-SemiWideBold, sans-serif" font-size="20" letter-spacing="0.4" fill="#FFFFFF">ROLE: COMPLIANCE OFFICER</text>
+<rect x="1052" y="664" width="476" height="1" fill="#246E94"/>
+<text x="1052" y="712" fill="#B0F8F2">name:</text><text x="1228" y="712" fill="#FFFFFF">Maria Keller</text>
+<text x="1052" y="756" fill="#B0F8F2">email:</text><text x="1228" y="756" fill="#FFFFFF">maria.keller@example.com</text>
+<text x="1052" y="800" fill="#B0F8F2">country:</text><text x="1228" y="800" fill="#FFFFFF">Germany</text>
+<text x="1052" y="844" fill="#B0F8F2">purchases:</text><text x="1228" y="844" fill="#FFFFFF">12</text>
+</g>
+
+<!-- Caption -->
+<rect x="920" y="920" width="80" height="5" fill="#02F0DD"/>
+<text x="960" y="982" text-anchor="middle" font-family="Parafina-SemiWideBold, sans-serif" font-size="32" letter-spacing="0.4" fill="#FFFFFF">SAME DATA, DIFFERENT VIEWS.</text>
+</svg>
