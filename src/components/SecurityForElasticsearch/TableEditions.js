@@ -297,12 +297,6 @@ const TableEditions = () => {
           compliance: true,
         },
         {
-          type: 'Cross-cluster replication',
-          community: true,
-          enterprise: true,
-          compliance: true,
-        },
-        {
           type: 'Elastic Stack Monitoring',
           community: true,
           enterprise: true,
