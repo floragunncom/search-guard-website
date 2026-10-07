@@ -8,6 +8,7 @@ import {
   QUIZ_DRAW_LIST_ID,
   isDrawOpen,
 } from '../../config/tenYears';
+import { trackConversion } from '../../utils/trackConversion';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -112,6 +113,11 @@ const QuizGate = ({ score, onDone }) => {
       setError('server');
       return;
     }
+
+    trackConversion('cookbook_signup', {
+      form: '10y-quiz',
+      newsletter: wantsNewsletter ? 'yes' : 'no',
+    });
 
     setIsProcessing(false);
     if (onDone) {

@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../Button/Button';
 import Turnstile from '../Turnstile/Turnstile';
 import {NEWSLETTER_API_URL} from '../../config/apiEndpoints';
+import {trackConversion} from '../../utils/trackConversion';
 
 const Email = () => {
     const [isProcessing, setIsProcessing] = React.useState(false);
@@ -34,7 +35,12 @@ const Email = () => {
         };
 
         handleNewsletterSubmit(formValuesJson)
-            .then(() => {
+            .then((response) => {
+                // Count only signups the endpoint accepted. The thank-you
+                // message below still shows either way, as before.
+                if (response && response.ok) {
+                    trackConversion('newsletter_signup', {form: 'prefooter'});
+                }
                 setIsProcessing(false);
                 setIsSubmitted(true);
             })
