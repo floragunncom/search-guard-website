@@ -28,9 +28,10 @@ import iconLock from '../../images/lock-solid.svg';
 // To activate a slot: import the file (inline via ReactSVG, like the
 // Compliance diagrams) and put the import here. Filenames and order are
 // stable so WebP screenshots can replace the illustrations 1:1 later.
-//   import architectureDiagram from '../../images/security-architecture-overview.svg';
+import architectureDiagram from '../../images/security-architecture-overview.svg';
+
 const ASSETS = {
-    architecture: null, // TODO src/images/security-architecture-overview.svg (§3.3)
+    architecture: architectureDiagram, // §3.3 — src/images/security-architecture-overview.svg
     requestFlow: null, // TODO src/images/security-request-flow.svg (§3.4, dark section)
     illuRoles: null, // TODO src/images/illustration-config-gui-roles.svg (§3.5 A)
     illuDls: null, // TODO src/images/illustration-dls-editor.svg (§3.5 B)
