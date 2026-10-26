@@ -20,8 +20,15 @@
   margin-bottom: 64px;
   text-align: center;
   color: $primary;
+  // Element is an h2 (document outline); keep the h3 scale it always had.
+  font-size: 48px;
+  letter-spacing: 0;
+  @media only screen and (max-width: $tabletBig) {
+    font-size: 42px;
+  }
   @media only screen and (max-width: $mobile) {
     margin-bottom: 32px;
+    font-size: 36px;
   }
 }
 

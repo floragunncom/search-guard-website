@@ -1,0 +1,53 @@
+<svg viewBox="0 0 1920 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-imt-title sg-imt-desc">
+<title id="sg-imt-title">Illustration of switching between Kibana tenants with Search Guard multi-tenancy</title>
+<desc id="sg-imt-desc">A Kibana dashboards view showing three analytics dashboards (traffic, errors, latency) that belong to the selected tenant analytics. An open tenant switcher lists the Global and Private tenants and the analytics, finance and support team tenants, with analytics checked. A note reads: same cluster, separate dashboards per team.</desc>
+<rect width="1920" height="1200" fill="#FFFFFF"/>
+<g transform="translate(0 70)">
+<text x="120" y="150" font-family="Material Icons" font-size="38" fill="#00B7A8">dashboard</text><text x="174" y="142" font-family="Parafina-SemiWideXBold, sans-serif" font-size="34" fill="#184962">DASHBOARDS</text>
+<rect x="120" y="190" width="1680" height="2" fill="#E8ECED"/><rect x="120" y="189" width="80" height="4" fill="#02F0DD"/>
+<text x="120" y="262" font-family="Inter-Regular, -apple-system, sans-serif" font-size="21" font-weight="500" fill="#63737E">Showing dashboards in tenant</text><rect x="444" y="238" width="152" height="34" rx="17" fill="#FFFFFF" stroke="#478EB3" stroke-width="2"/><text x="520" y="261" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#184962">analytics</text>
+<g transform="translate(0 80)">
+<rect x="120" y="520" width="520" height="400" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="152" y="578" font-family="Material Icons" font-size="26" fill="#00B7A8">show_chart</text><text x="190" y="572" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="20" fill="#184962">ANALYTICS — TRAFFIC</text>
+<rect x="152" y="598" width="152" height="34" rx="17" fill="#FFFFFF" stroke="#478EB3" stroke-width="1.5"/><text x="228" y="621" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#184962">analytics</text>
+<line x1="152" x2="608" y1="880" y2="880" stroke="#E8ECED" stroke-width="1.5"/>
+<line x1="152" x2="608" y1="775" y2="775" stroke="#E8ECED" stroke-width="1.5"/>
+<line x1="152" x2="608" y1="670" y2="670" stroke="#E8ECED" stroke-width="1.5"/>
+<polyline points="152.0,817.0 187.1,791.8 222.2,800.2 257.2,764.5 292.3,775.0 327.4,749.8 362.5,758.2 397.5,733.0 432.6,741.4 467.7,716.2 502.8,728.8 537.8,703.6 572.9,712.0 608.0,695.2" fill="none" stroke="#184962" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="700" y="520" width="520" height="400" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="732" y="578" font-family="Material Icons" font-size="26" fill="#00B7A8">bar_chart</text><text x="770" y="572" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="20" fill="#184962">ANALYTICS — ERRORS</text>
+<rect x="732" y="598" width="152" height="34" rx="17" fill="#FFFFFF" stroke="#478EB3" stroke-width="1.5"/><text x="808" y="621" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#184962">analytics</text>
+<line x1="732" x2="1188" y1="880" y2="880" stroke="#E8ECED" stroke-width="1.5"/>
+<line x1="732" x2="1188" y1="775" y2="775" stroke="#E8ECED" stroke-width="1.5"/>
+<line x1="732" x2="1188" y1="670" y2="670" stroke="#E8ECED" stroke-width="1.5"/>
+<rect x="736.0" y="819.5" width="24.6" height="60.5" rx="2" fill="#00B7A8"/>
+<rect x="768.6" y="789.3" width="24.6" height="90.7" rx="2" fill="#00B7A8"/>
+<rect x="801.1" y="834.6" width="24.6" height="45.4" rx="2" fill="#00B7A8"/>
+<rect x="833.7" y="769.1" width="24.6" height="110.9" rx="2" fill="#00B7A8"/>
+<rect x="866.3" y="809.4" width="24.6" height="70.6" rx="2" fill="#00B7A8"/>
+<rect x="898.9" y="728.8" width="24.6" height="151.2" rx="2" fill="#00B7A8"/>
+<rect x="931.4" y="824.6" width="24.6" height="55.4" rx="2" fill="#00B7A8"/>
+<rect x="964.0" y="799.4" width="24.6" height="80.6" rx="2" fill="#00B7A8"/>
+<rect x="996.6" y="749.0" width="24.6" height="131.0" rx="2" fill="#00B7A8"/>
+<rect x="1029.1" y="814.5" width="24.6" height="65.5" rx="2" fill="#00B7A8"/>
+<rect x="1061.7" y="784.2" width="24.6" height="95.8" rx="2" fill="#00B7A8"/>
+<rect x="1094.3" y="839.7" width="24.6" height="40.3" rx="2" fill="#00B7A8"/>
+<rect x="1126.9" y="759.0" width="24.6" height="121.0" rx="2" fill="#00B7A8"/>
+<rect x="1159.4" y="804.4" width="24.6" height="75.6" rx="2" fill="#00B7A8"/>
+<rect x="1280" y="520" width="520" height="400" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="1312" y="578" font-family="Material Icons" font-size="26" fill="#00B7A8">timeline</text><text x="1350" y="572" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="20" fill="#184962">ANALYTICS — LATENCY</text>
+<rect x="1312" y="598" width="152" height="34" rx="17" fill="#FFFFFF" stroke="#478EB3" stroke-width="1.5"/><text x="1388" y="621" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#184962">analytics</text>
+<line x1="1312" x2="1768" y1="880" y2="880" stroke="#E8ECED" stroke-width="1.5"/>
+<line x1="1312" x2="1768" y1="775" y2="775" stroke="#E8ECED" stroke-width="1.5"/>
+<line x1="1312" x2="1768" y1="670" y2="670" stroke="#E8ECED" stroke-width="1.5"/>
+<polyline points="1312.0,754.0 1347.1,770.8 1382.2,758.2 1417.2,779.2 1452.3,745.6 1487.4,762.4 1522.5,733.0 1557.5,766.6 1592.6,775.0 1627.7,749.8 1662.8,783.4 1697.8,758.2 1732.9,770.8 1768.0,779.2" fill="none" stroke="#478EB3" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</g>
+<text x="900" y="372" font-family="Material Icons" font-size="30" fill="#00B7A8">visibility</text><g font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#184962"><text x="944" y="364">Same cluster, separate</text><text x="944" y="396">dashboards per team.</text></g>
+<path d="M1214 380H1424" fill="none" stroke="#00B7A8" stroke-width="2.5" stroke-dasharray="6 6"/><circle cx="1430" cy="380" r="6" fill="#00B7A8"/>
+<rect x="1440" y="100" width="360" height="56" rx="3" fill="#FFFFFF" stroke="#184962" stroke-width="2"/><text x="1458" y="138" font-family="Material Icons" font-size="26" fill="#00B7A8">group</text><text x="1496" y="135" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#63737E">Tenant:</text><text x="1580" y="135" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">analytics</text><text x="1784" y="140" text-anchor="end" font-family="Material Icons" font-size="26" fill="#184962">expand_less</text>
+<rect x="1440" y="168" width="360" height="400" rx="3" fill="#FFFFFF" stroke="#184962" stroke-width="2"/><text x="1464" y="214" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="20" fill="#63737E">SWITCH TENANT</text><rect x="1441" y="236" width="358" height="1.5" fill="#E8ECED"/>
+<text x="1468" y="282" font-family="Material Icons" font-size="24" fill="#63737E">public</text><text x="1508" y="279" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">Global</text>
+<text x="1468" y="346" font-family="Material Icons" font-size="24" fill="#63737E">lock</text><text x="1508" y="343" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">Private</text>
+<rect x="1450" y="372" width="340" height="56" rx="3" fill="#B0F8F2" fill-opacity="0.35"/><text x="1772" y="410" text-anchor="end" font-family="Material Icons" font-size="26" fill="#184962">check</text>
+<text x="1468" y="410" font-family="Material Icons" font-size="24" fill="#184962">group</text><text x="1508" y="407" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">analytics</text>
+<text x="1468" y="474" font-family="Material Icons" font-size="24" fill="#63737E">group</text><text x="1508" y="471" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">finance</text>
+<text x="1468" y="538" font-family="Material Icons" font-size="24" fill="#63737E">group</text><text x="1508" y="535" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">support</text>
+</g>
+</svg>
