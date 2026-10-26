@@ -304,6 +304,23 @@ Centered text block with optional CTA button. Tall section (160px top/bottom on 
 
 Decorative SVG arrow band (`src/images/arrows_group.svg`) used as a visual breath between sections. Single prop: `colorschema`. Background and arrow color follow the schema (using both `getColorSchemaCSS` and `getColorSchemaCSSForSVG`).
 
+### 4.5 `DiagramFigure` (`src/components/DiagramFigure/DiagramFigure.js`)
+
+Full-width diagram / illustration slot, extracted from the Compliance page and shared with the Security page. Always renders at full content width with the section text above it (never two columns). The SVG is injected inline via `ReactSVG` so its text uses the site fonts; it is **not** recolored (no `beforeInjection`), and its accessible name comes from the SVG's own `<title>`/`<desc>`. The smallest label should stay ≥ 11px at a 1280px viewport. The wrapping link is inert on desktop and active on mobile (`<= $mobile`), where it opens the raw SVG in a new tab under a "Tap to enlarge" caption (`common:diagram.tapToEnlarge`).
+
+**Props**
+
+| Prop | Type | Notes |
+| --- | --- | --- |
+| `src` | imported SVG | Falsy → renders `AssetPlaceholder` (dashed box) instead |
+| `headline` | string | Optional small `h3` directly above the figure |
+| `dark` | bool | On `color-schema-dark` sections; flips the mobile caption color |
+| `mat` | bool | Light-grey bordered "figure mat" around the artwork (gallery pattern) |
+| `placeholderAlt` | string | `aria-label` of the placeholder — use the final alt text |
+| `className` | string | Extra class on the outer wrapper |
+
+Companions: `assetUrl()` in `src/utils/assetUrl.js` (resolves legacy `{src}`/`{default}` import shapes for raw attributes) and `docLink(href, label)` in `src/components/DocLink/DocLink.js` (external links open in a new tab with `rel="noopener noreferrer"`).
+
 ---
 
 ## 5. Form & input components
@@ -383,7 +400,7 @@ Specialized title for blog posts. Hardcodes the breadcrumb chain `Home > Resourc
 
 ### 7.2 `Certified` (`src/components/Certified/Certified.js`)
 
-Two-column trust block (Alliance for Cybersecurity + TeleTrust). i18n `security` namespace.
+Three-column trust block (Alliance for Cybersecurity, TeleTrusT, CVE Numbering Authority). Section heading is an `h2` pinned to the h3 scale. i18n `security` namespace.
 
 ### 7.3 `Labels` (`src/components/Labels/Labels.js`)
 
@@ -399,7 +416,7 @@ Glide.js carousel of 15 academic/research customer logos (Heanet, Harvard, KIT, 
 
 ### 7.6 `Integrators` (`src/components/Integrators/Integrators.js`)
 
-Same Glide pattern; 8 integration partner logos (Red Hat, ObjectRocket, Würth Phoenix, Pivotal, SieMonster, Mitratech, KubeDB, Siren). Headline from i18n `security.integrators.headline`.
+`ColumnedTile` grid (4 per row, raw logos via `image.raw` + `svgcolor="none"`) of 7 integration partners, each logo + one sentence (Red Hat, ObjectRocket, Würth Phoenix, SIEMonster, Mitratech, KubeDB, Siren). Optional `colorschema` prop (default `white`). Copy from i18n `security.integrators.*`. Replaced the former logo-only Glide carousel.
 
 ### 7.7 `Partners` (`src/components/Partners/Partners.js`)
 
