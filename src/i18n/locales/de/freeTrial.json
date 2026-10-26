@@ -34,6 +34,7 @@
   "otherResources.blog": "Search Guard Blog",
   "howItWorks.download.headline": "Herunterladen",
   "howItWorks.download.text": "Holen Sie sich das Search-Guard-Plugin passend zu Ihrer Elasticsearch-Version — oder starten Sie unsere Docker-Demo mit einem Befehl.",
+  "howItWorks.download.link": "Versionsmatrix & Downloads",
   "howItWorks.install.headline": "Installieren",
   "howItWorks.install.text": "Installieren Sie auf Ihren Nodes oder starten Sie den Container. Dauert Minuten, nicht Tage.",
   "howItWorks.active.headline": "Trial aktiv",

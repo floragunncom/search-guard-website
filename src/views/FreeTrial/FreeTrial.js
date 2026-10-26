@@ -52,6 +52,13 @@ const FreeTrial = () => {
     ].map(({icon, key}) => ({
         headline: t(`howItWorks.${key}.headline`),
         text: t(`howItWorks.${key}.text`),
+        // The Download card links straight to the version matrix, so visitors
+        // who already know their path don't have to find it in the cluster tab.
+        button: key === 'download' ? {
+            text: t('howItWorks.download.link'),
+            href: VERSION_MATRIX_URL,
+            target: '_blank',
+        } : undefined,
         image: {
             src: icon,
             width: 100,
