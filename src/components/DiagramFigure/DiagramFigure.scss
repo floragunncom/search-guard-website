@@ -1,0 +1,86 @@
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+
+/* ------------------------- DiagramFigure (shared diagram / illustration slot)
+   Extracted 1:1 from the Compliance page styles (compliance-audit-flow*,
+   compliance-diagram-*, compliance-asset-placeholder). Values must stay in
+   sync with how Compliance rendered before the extraction. */
+
+/* Small headline directly above a diagram (formerly captions baked into
+   the artwork). h3 element for the outline; sized well below section h2s. */
+.diagram-figure-headline {
+  font-size: 28px;
+  line-height: 34px;
+  margin: 0 0 24px;
+}
+
+/* Full content width, keep the SVG's own viewBox ratio. */
+.diagram-figure-svg svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* The link around the diagram exists for mobile (tap to open the raw SVG
+   in a new tab for zooming); on larger screens it is inert. */
+.diagram-figure-link {
+  display: block;
+  pointer-events: none;
+
+  @media only screen and (max-width: $mobile) {
+    pointer-events: auto;
+  }
+}
+
+/* "Figure mat": a light-grey bordered card around the artwork separates
+   page copy (the h3 above) from the illustration's own text. The artworks
+   have no background of their own, so their panels float on the mat. */
+.diagram-figure-link--mat {
+  border: 1px solid $lightGrey;
+  border-radius: 6px;
+  background: rgba($lightGrey, 0.35);
+  padding: 32px;
+
+  @media only screen and (max-width: $mobile) {
+    padding: 12px;
+  }
+}
+
+.diagram-figure-enlarge {
+  display: none;
+
+  @media only screen and (max-width: $mobile) {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: $darkGrey;
+    margin: 4px 0 0;
+  }
+}
+
+// On dark sections the grey caption would vanish.
+.diagram-figure--dark .diagram-figure-enlarge {
+  @media only screen and (max-width: $mobile) {
+    color: $secondary-light;
+  }
+}
+
+/* Neutral slot rendered until the diagram/screenshot asset exists.
+   currentColor keeps it legible on light, white and dark sections. */
+.diagram-figure-placeholder {
+  border: 2px dashed currentColor;
+  border-radius: 6px;
+  opacity: 0.55;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  font-size: 14px;
+  margin: 16px 0;
+
+  @media only screen and (max-width: $tabletBig) {
+    min-height: 220px;
+  }
+}

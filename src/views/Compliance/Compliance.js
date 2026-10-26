@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {Helmet} from 'react-helmet-async';
-import {ReactSVG} from 'react-svg';
 import { useTranslation } from 'react-i18next';
 import {initGA, PageView} from '../../components/Tracking/Tracking';
 import PreFooter from '../../components/PreFooter/PreFooter';
@@ -12,6 +11,8 @@ import Button from '../../components/Button/Button';
 import FaqAccordion from '../../components/FaqAccordion/FaqAccordion';
 import FinalCTA from '../../components/FinalCTA/FinalCTA';
 import ContactFormSlimOnly from '../../components/ContactFormSuperSlimOnly';
+import DiagramFigure from '../../components/DiagramFigure/DiagramFigure';
+import { docLink } from '../../components/DocLink/DocLink';
 import { useLocalizedPath } from '../../i18n/useLocalizedPath';
 // FA6 Free icons for the auditor-questions grid
 import iconUserLock from '../../images/user-lock-solid.svg';
@@ -31,11 +32,6 @@ import illuAuditDashboard from '../../images/illustration-audit-dashboard.svg';
 import illuReadHistory from '../../images/illustration-read-history-event.svg';
 import illuWriteDiff from '../../images/illustration-write-history-diff.svg';
 
-// Legacy asset imports resolve to {src}/{default} shapes; the _app patch
-// normalizes component props (ReactSVG's src) but not a plain <a href>.
-const assetUrl = (asset) =>
-    typeof asset === 'string' ? asset : asset?.src || asset?.default || '';
-
 const DOCS = {
     fieldAnonymization: 'https://docs.search-guard.com/latest/field-anonymization',
     fieldLevelSecurity: 'https://docs.search-guard.com/latest/field-level-security',
@@ -47,21 +43,6 @@ const DOCS = {
     auditLogging: 'https://docs.search-guard.com/latest/audit-logging-compliance',
     auditStorage: 'https://docs.search-guard.com/latest/audit-logging-storage',
 };
-
-// Diagram/screenshot slots ship as neutral placeholder boxes until the
-// assets exist; the real <img> is prepared next to each placeholder with a
-// TODO comment and final alt text.
-const AssetPlaceholder = ({ alt, ratio }) => (
-    <div className={`compliance-asset-placeholder${ratio === 'wide' ? ' compliance-asset-placeholder--wide' : ''}`} role="img" aria-label={alt}>
-        <span>Image slot: {alt}</span>
-    </div>
-);
-
-const docLink = (href, label) => (
-    <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>
-        {label}
-    </a>
-);
 
 const Compliance = () => {
     const { t } = useTranslation('compliance');
@@ -187,23 +168,13 @@ const Compliance = () => {
                                 </ul>
                             </div>
                         </div>
-                        {/* Diagram keeps its own brand colors — no beforeInjection
-                            recoloring. Accessible name comes from the SVG's own
-                            <title>/<desc>. The wrapping link is active on mobile
-                            only (see SCSS) and opens the raw SVG for zooming. */}
-                        <h3 className="compliance-diagram-headline">{t('architecture.diagramHeadline')}</h3>
-                        <a
-                            className="compliance-audit-flow-link"
-                            href={assetUrl(auditFlowDiagram)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <ReactSVG
-                                src={auditFlowDiagram}
-                                className="compliance-audit-flow"
-                            />
-                        </a>
-                        <p className="compliance-diagram-enlarge" aria-hidden="true">{t('architecture.tapToEnlarge')}</p>
+                        {/* Diagram keeps its own brand colors; accessible name from
+                            the SVG's own <title>/<desc>; tap-to-enlarge on mobile.
+                            All of that lives in DiagramFigure. */}
+                        <DiagramFigure
+                            src={auditFlowDiagram}
+                            headline={t('architecture.diagramHeadline')}
+                        />
                     </div>
                 </div>
             </div>
@@ -214,21 +185,9 @@ const Compliance = () => {
                     <div className="col s12">
                         <h2 className="compliance-section-headline">{t('anonViews.headline')}</h2>
                         <p className="compliance-section-intro">{t('anonViews.text')}</p>
-                        {/* Inline like the audit-flow diagram: own brand colors,
-                            fonts from the document; the SVG's dark background
-                            matches this section's colorschema. */}
-                        <a
-                            className="compliance-audit-flow-link"
-                            href={assetUrl(fieldAnonDiagram)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <ReactSVG
-                                src={fieldAnonDiagram}
-                                className="compliance-audit-flow"
-                            />
-                        </a>
-                        <p className="compliance-diagram-enlarge" aria-hidden="true">{t('architecture.tapToEnlarge')}</p>
+                        {/* The SVG's dark background matches this section's
+                            colorschema; `dark` keeps the mobile caption visible. */}
+                        <DiagramFigure src={fieldAnonDiagram} dark />
                     </div>
                 </div>
             </div>
@@ -251,16 +210,7 @@ const Compliance = () => {
                         { key: 'writeDiff', asset: illuWriteDiff, headline: t('gallery.writeDiffHeadline') },
                     ].map(({ key, asset, headline }) => (
                         <div className="col s12 compliance-gallery-item" key={key}>
-                            <h3 className="compliance-diagram-headline">{headline}</h3>
-                            <a
-                                className="compliance-audit-flow-link"
-                                href={assetUrl(asset)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <ReactSVG src={asset} className="compliance-audit-flow"/>
-                            </a>
-                            <p className="compliance-diagram-enlarge" aria-hidden="true">{t('architecture.tapToEnlarge')}</p>
+                            <DiagramFigure src={asset} headline={headline} mat />
                         </div>
                     ))}
                 </div>

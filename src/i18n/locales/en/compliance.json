@@ -34,7 +34,6 @@
   "architecture.text": "Search Guard generates audit events inside every node — login failures, missing privileges, reads of sensitive fields, document changes, configuration changes. You decide where they go: an audit index on the same cluster, an immutable index, a separate Elasticsearch cluster, a webhook, or any log4j appender such as Kafka or syslog. Route security events to your SIEM and compliance events to long-term storage — at the same time.",
   "architecture.link1": "Audit logging documentation →",
   "architecture.link2": "Storage options →",
-  "architecture.tapToEnlarge": "Tap to enlarge",
   "architecture.diagramHeadline": "Every event, where it belongs.",
   "anonViews.headline": "Same data, different views",
   "anonViews.text": "An analyst and a compliance officer run the same query on the same index. The analyst sees hashed email addresses and masked names; the compliance officer sees clear text. No copies, no ETL — anonymization happens on the fly, per role.",

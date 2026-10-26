@@ -13,29 +13,6 @@
   margin: 0 auto 48px;
 }
 
-/* Neutral slot rendered until the diagram/screenshot assets exist.
-   currentColor keeps it legible on light, white and dark sections. */
-.compliance-asset-placeholder {
-  border: 2px dashed currentColor;
-  border-radius: 6px;
-  opacity: 0.55;
-  min-height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 24px;
-  font-size: 14px;
-  margin: 16px 0;
-}
-
-.compliance-asset-placeholder--wide {
-  min-height: 320px;
-  @media only screen and (max-width: $tabletBig) {
-    min-height: 220px;
-  }
-}
-
 /* §3.2 auditor question cards */
 .compliance-auditor .compliance-question-card {
   text-align: left;
@@ -91,42 +68,9 @@ ul.compliance-question-links {
   }
 }
 
-/* §3.3 audit-flow diagram: full content width, keep the 16:9 viewBox */
-.compliance-audit-flow svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* The link around the diagram exists for mobile (tap to open the raw SVG
-   in a new tab for zooming); on larger screens it is inert. */
-.compliance-audit-flow-link {
-  display: block;
-  pointer-events: none;
-
-  @media only screen and (max-width: $mobile) {
-    pointer-events: auto;
-  }
-}
-
-.compliance-diagram-enlarge {
-  display: none;
-
-  @media only screen and (max-width: $mobile) {
-    display: block;
-    text-align: center;
-    font-size: 14px;
-    color: $darkGrey;
-    margin: 4px 0 0;
-  }
-}
-
-// On the dark anonymization section the grey caption would vanish.
-.compliance-anon-views .compliance-diagram-enlarge {
-  @media only screen and (max-width: $mobile) {
-    color: $secondary-light;
-  }
-}
+/* §3.3 / §3.4 / §3.5 diagrams and illustrations are rendered by the shared
+   DiagramFigure component (src/components/DiagramFigure) — figure, link,
+   mobile caption, placeholder and gallery "mat" styles live there. */
 
 /* §3.3 architecture text block — centered reading column above the diagram */
 .compliance-architecture-text {
@@ -146,35 +90,13 @@ ul.compliance-question-links {
   justify-content: center;
 }
 
-/* Small headline directly above a diagram (formerly captions baked into
-   the artwork). h3 element for the outline; sized well below section h2s. */
-.compliance-diagram-headline {
-  font-size: 28px;
-  line-height: 34px;
-  margin: 0 0 24px;
-}
-
-/* §3.5 gallery: stacked full-width illustrations with breathing room */
+/* §3.5 gallery: stacked full-width illustrations with breathing room
+   (the figure mat itself is DiagramFigure's `mat` prop) */
 .compliance-gallery-item {
   margin-bottom: 64px;
 
   &:last-child {
     margin-bottom: 0;
-  }
-
-  // "Figure mat": a light-grey bordered card around the artwork separates
-  // page copy (the h3 above, on white) from the illustration's own text.
-  // The artworks have no background of their own, so their panels float
-  // on the mat.
-  .compliance-audit-flow-link {
-    border: 1px solid $lightGrey;
-    border-radius: 6px;
-    background: rgba($lightGrey, 0.35);
-    padding: 32px;
-
-    @media only screen and (max-width: $mobile) {
-      padding: 12px;
-    }
   }
 }
 
