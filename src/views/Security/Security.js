@@ -32,13 +32,14 @@ import architectureDiagram from '../../images/security-architecture-overview.svg
 import requestFlowDiagram from '../../images/security-request-flow.svg';
 import illuRoles from '../../images/illustration-config-gui-roles.svg';
 import illuDls from '../../images/illustration-dls-editor.svg';
+import illuTenants from '../../images/illustration-multitenancy.svg';
 
 const ASSETS = {
     architecture: architectureDiagram, // §3.3 — src/images/security-architecture-overview.svg
     requestFlow: requestFlowDiagram, // §3.4 (dark section) — src/images/security-request-flow.svg
     illuRoles, // §3.5 A — src/images/illustration-config-gui-roles.svg
     illuDls, // §3.5 B — src/images/illustration-dls-editor.svg
-    illuTenants: null, // TODO src/images/illustration-multitenancy.svg (§3.5 C)
+    illuTenants, // §3.5 C — src/images/illustration-multitenancy.svg
 };
 
 // All URLs verified HTTP 200 on 2026-10-26 — do not guess new ones.
