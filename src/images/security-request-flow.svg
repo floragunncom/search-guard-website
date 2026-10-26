@@ -1,0 +1,31 @@
+<svg viewBox="0 0 1920 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-srf-title sg-srf-desc">
+<title id="sg-srf-title">Request lifecycle in Search Guard: authentication, authorization, document- and field-level filtering, audit logging</title>
+<desc id="sg-srf-desc">A request passes four gates inside Search Guard before a response is returned: authentication (who are you?), authorization (may you do this?), and document- and field-level security (which documents and fields?). The audit log observes all three gates and records what happened. Every request, every time.</desc>
+<defs>
+<marker id="sg-srf-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#02F0DD"/></marker>
+</defs>
+<rect width="1920" height="640" fill="#184962"/>
+<g fill="none" stroke="#02F0DD" stroke-width="3" marker-end="url(#sg-srf-ah)"><path d="M310 160H386"/><path d="M710 160H786"/><path d="M1110 160H1186"/><path d="M1510 160H1584"/></g>
+<g fill="none" stroke="#02F0DD" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#sg-srf-ah)"><path d="M550 250V305H870V352"/><path d="M950 250V352"/><path d="M1350 250V305H1030V352"/></g>
+<rect x="90" y="70" width="220" height="180" rx="10" fill="#133346" stroke="#246E94" stroke-width="2"/><rect x="168" y="96" width="64" height="64" rx="3" fill="#184962" stroke="#246E94" stroke-width="1.5"/><text x="200" y="144" text-anchor="middle" font-family="Material Icons" font-size="38" fill="#02F0DD">person</text><text x="200" y="212" text-anchor="middle" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="22" fill="#FFFFFF">REQUEST</text>
+<rect x="390" y="70" width="320" height="180" rx="10" fill="#133346" stroke="#246E94" stroke-width="2"/>
+<text x="418" y="126" font-family="Material Icons" font-size="34" fill="#02F0DD">security</text><text x="682" y="118" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#B0F8F2">GATE 1</text><text x="418" y="172" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="22" fill="#FFFFFF">AUTHENTICATION</text>
+<text x="418" y="208" font-family="Inter-Regular, -apple-system, sans-serif" font-weight="500" font-size="20" fill="#B0F8F2">Who are you?</text>
+<rect x="790" y="70" width="320" height="180" rx="10" fill="#133346" stroke="#246E94" stroke-width="2"/>
+<text x="818" y="126" font-family="Material Icons" font-size="34" fill="#02F0DD">vpn_key</text><text x="1082" y="118" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#B0F8F2">GATE 2</text><text x="818" y="172" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="22" fill="#FFFFFF">AUTHORIZATION</text>
+<text x="818" y="208" font-family="Inter-Regular, -apple-system, sans-serif" font-weight="500" font-size="20" fill="#B0F8F2">May you do this?</text>
+<rect x="1190" y="70" width="320" height="180" rx="10" fill="#133346" stroke="#246E94" stroke-width="2"/>
+<text x="1218" y="126" font-family="Material Icons" font-size="34" fill="#02F0DD">filter_list</text><text x="1482" y="118" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#B0F8F2">GATE 3</text><text x="1218" y="172" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="22" fill="#FFFFFF">DLS / FLS</text>
+<text x="1218" y="208" font-family="Inter-Regular, -apple-system, sans-serif" font-weight="500" font-size="20" fill="#B0F8F2">Which documents</text>
+<text x="1218" y="234" font-family="Inter-Regular, -apple-system, sans-serif" font-weight="500" font-size="20" fill="#B0F8F2">and fields?</text>
+<rect x="790" y="360" width="320" height="120" rx="10" fill="#133346" stroke="#246E94" stroke-width="2"/>
+<text x="818" y="416" font-family="Material Icons" font-size="34" fill="#02F0DD">assignment</text><text x="1082" y="408" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#B0F8F2">GATE 4</text><text x="864" y="410" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="22" fill="#FFFFFF">AUDIT LOG</text><text x="818" y="452" font-family="Inter-Regular, -apple-system, sans-serif" font-weight="500" font-size="20" fill="#B0F8F2">What happened?</text>
+<rect x="1626" y="62" width="204" height="168" rx="3" fill="#133346" stroke="#246E94" stroke-width="1.5"/><rect x="1608" y="76" width="204" height="168" rx="3" fill="#133346" stroke="#246E94" stroke-width="1.5"/><rect x="1590" y="90" width="204" height="168" rx="3" fill="#133346" stroke="#02F0DD" stroke-width="2"/>
+<text x="1610" y="126" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="20" fill="#FFFFFF">RESPONSE</text>
+<rect x="1610" y="142" width="164" height="12" rx="2" fill="#B0F8F2"/>
+<rect x="1610" y="166" width="164" height="12" rx="2" fill="none" stroke="#246E94" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="1610" y="190" width="120" height="12" rx="2" fill="#B0F8F2"/>
+<rect x="1610" y="214" width="164" height="12" rx="2" fill="none" stroke="#246E94" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="1610" y="238" width="164" height="12" rx="2" fill="#B0F8F2"/>
+<rect x="920" y="522" width="80" height="5" fill="#02F0DD"/><text x="960" y="584" text-anchor="middle" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="32" fill="#FFFFFF">EVERY REQUEST. EVERY TIME.</text>
+</svg>

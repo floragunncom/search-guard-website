@@ -1,0 +1,43 @@
+<svg viewBox="0 0 1920 1200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sg-icr-title sg-icr-desc">
+<title id="sg-icr-title">Illustration of role management in the Search Guard configuration GUI</title>
+<desc id="sg-icr-desc">A roles overview table in the Search Guard configuration GUI. Five example roles (analyst_team, finance_team, support_agent, etl_service, security_admin) are listed with their cluster permissions, index permissions such as read or write on index patterns, DLS and FLS markers, and the Kibana tenants they can access. A search field and a Create role button sit above the table.</desc>
+<rect width="1920" height="1200" fill="#FFFFFF"/>
+<rect x="120" y="170" width="1680" height="860" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/>
+<text x="168" y="270" font-family="Material Icons" font-size="38" fill="#00B7A8">group</text><text x="222" y="262" font-family="Parafina-SemiWideXBold, sans-serif" font-size="34" fill="#184962">ROLES</text>
+<rect x="1170" y="220" width="340" height="56" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="1188" y="258" font-family="Material Icons" font-size="26" fill="#63737E">search</text><text x="1226" y="255" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#63737E">Search roles</text>
+<rect x="1534" y="220" width="218" height="56" rx="3" fill="#184962"/><text x="1556" y="259" font-family="Material Icons" font-size="26" fill="#02F0DD">add</text><text x="1592" y="255" font-family="Parafina-SemiWideBold, sans-serif" letter-spacing="0.4" font-size="20" fill="#FFFFFF">CREATE ROLE</text>
+<rect x="168" y="308" width="1584" height="2" fill="#E8ECED"/><rect x="168" y="307" width="80" height="4" fill="#02F0DD"/>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#63737E"><text x="168" y="368">ROLE</text><text x="620" y="368">CLUSTER PERMISSIONS</text><text x="980" y="368">INDEX PERMISSIONS</text><text x="1480" y="368">TENANTS</text></g><rect x="168" y="391" width="1584" height="1.5" fill="#E8ECED"/>
+<rect x="168" y="428" width="40" height="40" rx="3" fill="#184962"/><text x="188" y="459" text-anchor="middle" font-family="Material Icons" font-size="24" fill="#FFFFFF">person</text><text x="226" y="456" font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#184962">analyst_team</text>
+<text x="620" y="455" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" fill="#184962">cluster:monitor</text>
+<text x="980" y="455" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" fill="#184962">logs-*</text>
+<text x="1066" y="455" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#63737E">(read)</text>
+<rect x="1480" y="431" width="173" height="34" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="1492" y="457" font-family="Material Icons" font-size="20" fill="#00B7A8">dashboard</text><text x="1522" y="455" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">analytics</text>
+<rect x="136" y="505" width="1648" height="110" rx="3" fill="#B0F8F2" fill-opacity="0.35"/>
+<rect x="168" y="540" width="40" height="40" rx="3" fill="#184962"/><text x="188" y="571" text-anchor="middle" font-family="Material Icons" font-size="24" fill="#FFFFFF">person</text><text x="226" y="568" font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#184962">finance_team</text>
+<text x="620" y="568" font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#63737E">—</text>
+<text x="980" y="567" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" fill="#184962">finance-*</text>
+<text x="1102" y="567" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#63737E">(read)</text>
+<rect x="1172" y="545" width="66" height="30" rx="15" fill="#FFFFFF" stroke="#478EB3" stroke-width="2"/><text x="1205" y="566" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#184962">DLS</text>
+<rect x="1480" y="543" width="150" height="34" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="1492" y="569" font-family="Material Icons" font-size="20" fill="#00B7A8">dashboard</text><text x="1522" y="567" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">finance</text>
+<text x="1690" y="572" font-family="Material Icons" font-size="28" fill="#184962">edit</text><text x="1734" y="572" font-family="Material Icons" font-size="28" fill="#184962">more_vert</text>
+<rect x="168" y="652" width="40" height="40" rx="3" fill="#184962"/><text x="188" y="683" text-anchor="middle" font-family="Material Icons" font-size="24" fill="#FFFFFF">person</text><text x="226" y="680" font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#184962">support_agent</text>
+<text x="620" y="680" font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#63737E">—</text>
+<text x="980" y="679" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" fill="#184962">customers</text>
+<text x="1102" y="679" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#63737E">(read)</text>
+<rect x="1172" y="657" width="66" height="30" rx="15" fill="#FFFFFF" stroke="#478EB3" stroke-width="2"/><text x="1205" y="678" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="1.2" font-size="20" fill="#184962">FLS</text>
+<rect x="1480" y="655" width="150" height="34" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="1492" y="681" font-family="Material Icons" font-size="20" fill="#00B7A8">dashboard</text><text x="1522" y="679" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">support</text>
+<rect x="168" y="727" width="1584" height="1" fill="#E8ECED"/>
+<rect x="168" y="764" width="40" height="40" rx="3" fill="#184962"/><text x="188" y="795" text-anchor="middle" font-family="Material Icons" font-size="24" fill="#FFFFFF">settings</text><text x="226" y="792" font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#184962">etl_service</text>
+<text x="620" y="792" font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#63737E">—</text>
+<text x="980" y="791" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" fill="#184962">customers</text>
+<text x="1102" y="791" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#63737E">(write)</text>
+<text x="1480" y="792" font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#63737E">—</text>
+<rect x="168" y="839" width="1584" height="1" fill="#E8ECED"/>
+<rect x="168" y="876" width="40" height="40" rx="3" fill="#184962"/><text x="188" y="907" text-anchor="middle" font-family="Material Icons" font-size="24" fill="#FFFFFF">verified_user</text><text x="226" y="904" font-family="Inter-Regular, -apple-system, sans-serif" font-size="22" font-weight="500" fill="#184962">security_admin</text>
+<text x="620" y="903" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" fill="#184962">cluster:admin</text>
+<text x="980" y="903" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="20" fill="#184962">*</text>
+<text x="1006" y="903" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#63737E">(all)</text>
+<rect x="1480" y="879" width="138" height="34" rx="3" fill="#FFFFFF" stroke="#E8ECED" stroke-width="1.5"/><text x="1492" y="905" font-family="Material Icons" font-size="20" fill="#00B7A8">dashboard</text><text x="1522" y="903" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#184962">global</text>
+<text x="168" y="1000" font-family="Inter-Regular, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#63737E">5 roles</text>
+</svg>

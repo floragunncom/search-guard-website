@@ -1,0 +1,142 @@
+@use '../../styles/Colors' as *;
+@use '../../styles/Breakpoints' as *;
+
+/* ------------------------- Security page rebuild (issue #25)
+   Mirrors the Compliance page patterns (compliance-* classes) without
+   touching them, so the two pages can evolve independently. */
+
+.security-section-headline {
+  margin-bottom: 48px;
+}
+
+.security-section-intro {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+/* §3.2 capability cards */
+.security-capabilities .security-capability-card {
+  text-align: left;
+
+  p {
+    margin: 0 0 12px;
+  }
+}
+
+/* Align the doc-link lists across each card row (see Compliance §3.2 for
+   the reasoning): stretch the flex chain down to the card, anchor the list
+   to the card bottom and reserve a two-row slot. Side-by-side only. */
+@media only screen and (min-width: $mobile) {
+  .security-capabilities .columnedtile-text-wrapper,
+  .security-capabilities .columnedtile-content,
+  .security-capabilities .security-capability-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .security-capabilities ul.security-doc-links {
+    margin-top: auto !important;
+    min-height: 64px;
+  }
+}
+
+/* Doc links inside the cards: one bullet per link. Materialize strips list
+   bullets from every ul, and a global ul rule adds a 20px !important
+   margin — both countered here. */
+ul.security-doc-links {
+  margin: 0 !important;
+  padding-left: 20px;
+  list-style: disc outside;
+  text-align: left;
+
+  li {
+    margin-bottom: 6px;
+    list-style-type: disc;
+  }
+}
+
+.security-doc-links a,
+.security-inline-link a {
+  color: $secondary-dark;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* §3.3 architecture: centered reading column above the diagram, and the
+   configuration note + link below it */
+.security-architecture-text {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+
+  p {
+    margin: 0 0 16px;
+  }
+}
+
+.security-architecture-config {
+  text-align: center;
+  max-width: 760px;
+  margin: 32px auto 0;
+
+  p {
+    margin: 0 0 8px;
+  }
+}
+
+/* §3.5 gallery: stacked full-width illustrations with breathing room
+   (the figure mat itself is DiagramFigure's `mat` prop) */
+.security-gallery-item {
+  margin-bottom: 64px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* §3.6 editions */
+.security-editions-text {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 32px;
+}
+
+.security-editions-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  @media only screen and (max-width: $mobile) {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* §3.7 compliance teaser: slim band between the editions block and the
+   certifications — deliberately lighter than a full section */
+.security-compliance-teaser {
+  padding: 48px 0;
+  border-top: 1px solid $lightGrey;
+  border-bottom: 1px solid $lightGrey;
+
+  .row {
+    margin-bottom: 0;
+  }
+
+  p {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 8px;
+  }
+
+  @media only screen and (max-width: $mobile) {
+    padding: 32px 0;
+  }
+}

@@ -99,5 +99,8 @@
   },
   "languageSwitcher": {
     "label": "Sprache"
+  },
+  "diagram": {
+    "tapToEnlarge": "Zum Vergrößern tippen"
   }
 }

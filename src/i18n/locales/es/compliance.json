@@ -34,7 +34,6 @@
   "architecture.text": "Search Guard genera eventos de auditoría dentro de cada nodo: inicios de sesión fallidos, privilegios faltantes, lecturas de campos sensibles, cambios en documentos y en la configuración. Usted decide adónde van: un índice de auditoría en el mismo clúster, un índice inmutable, un clúster de Elasticsearch independiente, un webhook o cualquier appender de log4j como Kafka o syslog. Enrute los eventos de seguridad a su SIEM y los eventos de cumplimiento al almacenamiento a largo plazo — al mismo tiempo.",
   "architecture.link1": "Documentación de registro de auditoría →",
   "architecture.link2": "Opciones de almacenamiento →",
-  "architecture.tapToEnlarge": "Toque para ampliar",
   "architecture.diagramHeadline": "Cada evento, donde corresponde.",
   "anonViews.headline": "Mismos datos, vistas diferentes",
   "anonViews.text": "Un analista y un responsable de cumplimiento ejecutan la misma consulta sobre el mismo índice. El analista ve direcciones de correo con hash y nombres enmascarados; el responsable de cumplimiento ve texto claro. Sin copias, sin ETL: la anonimización se realiza sobre la marcha, por rol.",
