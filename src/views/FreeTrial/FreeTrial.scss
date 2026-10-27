@@ -119,6 +119,13 @@
 
 /* ------------------------------------------- Trial page redesign (issue #22) */
 
+// As a flex item the button shrinks to its label instead of filling the row.
+.trial-how-button {
+  display: flex;
+  justify-content: center;
+  padding: 0 24px 32px;
+}
+
 .trial-how-note-wrapper {
   padding: 0 24px 48px;
 }

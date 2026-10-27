@@ -93,6 +93,15 @@ const FreeTrial = () => {
                     alignedHeadlines
                     columns={howItWorks}
                 />
+                {/* Version matrix straight from the top, so visitors who already
+                    know their path don't have to find it in the cluster tab. */}
+                <div className="color-schema-light trial-how-button">
+                    <Button
+                        text={t('howItWorks.download.link')}
+                        link={VERSION_MATRIX_URL}
+                        target="_blank"
+                    />
+                </div>
                 <div className="color-schema-light trial-how-note-wrapper">
                     <p className="trial-how-note">
                         {t('howItWorks.note')}{' '}

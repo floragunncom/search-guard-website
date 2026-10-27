@@ -34,6 +34,7 @@
   "otherResources.blog": "Blog Search Guard",
   "howItWorks.download.headline": "Télécharger",
   "howItWorks.download.text": "Récupérez le plugin Search Guard correspondant à votre version d'Elasticsearch — ou lancez notre démo Docker en une seule commande.",
+  "howItWorks.download.link": "Matrice des versions et téléchargements",
   "howItWorks.install.headline": "Installer",
   "howItWorks.install.text": "Installez sur vos nœuds ou démarrez le conteneur. Une affaire de minutes, pas de jours.",
   "howItWorks.active.headline": "Essai actif",
