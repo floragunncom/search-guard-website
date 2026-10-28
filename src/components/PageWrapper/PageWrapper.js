@@ -17,8 +17,13 @@ const BASE_URL = 'https://search-guard.com';
 const DEFAULT_TITLE = 'Security and Alerting for Elasticsearch and Kibana | Search Guard';
 const DEFAULT_DESCRIPTION =
   'Search Guard is a security plugin for Elasticsearch and Kibana. Search Guard offers security, audit logging, compliance, alerting and anomaly detection.';
-const DEFAULT_SOCIAL_IMAGE = `${BASE_URL}/assets/sg_dlic_small-CY9a9bWK.png`;
+// Default share image for link previews (WhatsApp, Slack, LinkedIn, X):
+// 1200x630 PNG, white logo on the brand blue. Rendered from
+// src/images/sg_logo_white.svg; messengers do not accept SVG here.
+const DEFAULT_SOCIAL_IMAGE = `${BASE_URL}/assets/sg-social-default.png`;
 const DEFAULT_SOCIAL_IMAGE_ALT = 'Search Guard logo';
+const DEFAULT_SOCIAL_IMAGE_WIDTH = '1200';
+const DEFAULT_SOCIAL_IMAGE_HEIGHT = '630';
 
 const OG_LOCALE_MAP = {
   en: 'en_US',
@@ -82,6 +87,9 @@ const PageWrapper = ({ children, background, landing }) => {
         <meta property="og:locale" content={OG_LOCALE_MAP[locale] || 'en_US'} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={DEFAULT_SOCIAL_IMAGE} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content={DEFAULT_SOCIAL_IMAGE_WIDTH} />
+        <meta property="og:image:height" content={DEFAULT_SOCIAL_IMAGE_HEIGHT} />
         <meta property="og:image:alt" content={DEFAULT_SOCIAL_IMAGE_ALT} />
 
         <meta name="twitter:card" content="summary_large_image" />
